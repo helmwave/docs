@@ -27,7 +27,7 @@ $ mv helmwave /usr/local/bin/
 > Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
 
-## Install with ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave)
+## Install with go get ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave)
 
 ```sh
 $ GO111MODULE=on go get github.com/helmwave/helmwave/cmd/helmwave@0.9.1
@@ -42,4 +42,8 @@ $ go build ./cmd/helmwave
 $ mv helmwave /usr/local/bin/
 ```
 
+## Install with [marcosnils/bin](https://github.com/marcosnils/bin)
 
+```bash
+$ bin install github.com/helmwave/helmwave
+```
