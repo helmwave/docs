@@ -5,7 +5,10 @@ docs_dir: docs/
 repo_name: 'helmwave/helmwave'
 repo_url: 'https://github.com/helmwave/helmwave'
 nav:
-    - Home: index.md
+  - Home: index.md
+  - install.md
+  - Examples:
+      -
 theme:
   name: material
   logo: https://raw.githubusercontent.com/helmwave/logo/main/logo.png
