@@ -1,0 +1,10 @@
+site_name: Helmwave
+site_description: 'A docs helmwave'
+site_author: 'Dmitriy Zhilyaev'
+docs_dir: docs/
+repo_name: 'helmwave/helmwave'
+repo_url: 'https://github.com/helmwave/helmwave'
+nav:
+    - Home: index.md
+theme:
+  name: 'material'
