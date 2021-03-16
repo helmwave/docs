@@ -1,11 +1,13 @@
-# Install
+# 📥 Installation
 
-You can install the pre-compiled binary from [releases](https://github.com/helmwave/helmwave/releases),
-use Docker or compile from source.
+You can install the pre-compiled binary from 
+[releases](https://github.com/helmwave/helmwave/releases), 
+[packages](https://github.com/helmwave/helmwave/packages/),
+use Docker or compile from the source.
 
 Here are the steps for each of them:
 
-## Mac OS
+## 🍏 Mac OS
 
 > Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
@@ -13,7 +15,7 @@ Here are the steps for each of them:
 brew install helmwave/tap/helmwave
 ```
 
-## Linux
+## 🐧 Linux
 
 > Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
@@ -22,7 +24,7 @@ $ wget -c https://github.com/helmwave/helmwave/releases/download/0.9.1/helmwave_
 $ mv helmwave /usr/local/bin/
 ```
 
-## Windows
+## 🪟 Windows
 
 > Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
@@ -46,4 +48,11 @@ $ mv helmwave /usr/local/bin/
 
 ```bash
 $ bin install github.com/helmwave/helmwave
+```
+
+### Run as a container ![Docker Pulls](https://img.shields.io/docker/pulls/diamon/helmwave)
+
+```
+$ docker run diamon/helmwave
+$ docker run --entrypoint=ash -it --rm --name helmwave diamon/helmwave
 ```
