@@ -1,4 +1,4 @@
-# 🔰 Tags
+# 🔖 Tags
 
 > It allows you to choose releases for sync
 

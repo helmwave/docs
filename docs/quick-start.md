@@ -1,6 +1,6 @@
 # 🔰 Quick Start
 
-1. **[install helmwave](install)**
+1. **[install helmwave](/install)**
    
 2. **create helmwave.yml.tpl**
 
@@ -64,3 +64,8 @@ redis-b-slave-1    1/1     Running   0          51s
 ```
 
 **Congratulations!**
+
+
+## Live mode
+
+<script id="asciicast-399656" src="https://asciinema.org/a/399656.js" async></script>

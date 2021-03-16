@@ -1,4 +1,4 @@
-# 🔰 Store
+# Store
 
 It allows pass you custom values to render release.
 
