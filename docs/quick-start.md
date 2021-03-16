@@ -70,4 +70,4 @@ redis-b-slave-1    1/1     Running   0          51s
 
 ## Live mode
 
-<script id="asciicast-399670" src="https://asciinema.org/a/399670.js" async></script>
+<script id="asciicast-399676" src="https://asciinema.org/a/399676.js" async></script>
