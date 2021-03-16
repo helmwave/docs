@@ -18,4 +18,5 @@ nav:
 
 theme:
   name: material
-  logo: https://raw.githubusercontent.com/helmwave/logo/main/logo.png
+  logo: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
+  favicon: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
