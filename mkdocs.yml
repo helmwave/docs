@@ -16,6 +16,10 @@ nav:
   - cookbooks.md
   - ci.md
 
+plugins:
+  - search
+  - macros
+
 theme:
   name: material
   logo: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico

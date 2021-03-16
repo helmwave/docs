@@ -7,30 +7,7 @@
 Suppose the `helmwave.yml.tpl` representing the desired state of your helm releases looks like:
 
 ```yaml
-project: my-project
-version: 0.9.1
-
-
-repositories:
-  - name: bitnami
-    url: https://charts.bitnami.com/bitnami
-
-
-.options: &options
-  install: true
-  namespace: my-namespace
-
-
-releases:
-  - name: redis-a
-    chart: bitnami/redis
-    options:
-      <<: *options
-
-  - name: redis-b
-    chart: bitnami/redis
-    options:
-      <<: *options
+{% include 'examples/quick-start/helmwave.yml.tpl' %}
 ```
 
 3. **run helmwave**
