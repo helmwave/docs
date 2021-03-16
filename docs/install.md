@@ -50,7 +50,7 @@ $ mv helmwave /usr/local/bin/
 $ bin install github.com/helmwave/helmwave
 ```
 
-### Run as a container ![Docker Pulls](https://img.shields.io/docker/pulls/diamon/helmwave)
+## Run as a container ![Docker Pulls](https://img.shields.io/docker/pulls/diamon/helmwave)
 
 ```
 $ docker run diamon/helmwave
