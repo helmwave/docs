@@ -12,8 +12,11 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v2
 
+      - name: markdown-include
+        run: |
+          pip install markdown-include
+
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          EXTRA_PACKAGES: markdown-include
