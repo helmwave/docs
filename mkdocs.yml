@@ -24,9 +24,11 @@ nav:
 
 plugins:
   - search
-  - macros
 
 theme:
   name: material
   logo: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
   favicon: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
+
+markdown_extensions:
+  - markdown_include.include:
