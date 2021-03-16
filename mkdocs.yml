@@ -7,11 +7,17 @@ repo_url: 'https://github.com/helmwave/helmwave'
 nav:
   - Home: index.md
   - install.md
-  - quick-start.md
+  - examples/quick-start/README.md
   - Configuration:
     - configuration/tags.md
     - configuration/store.md
     - configuration/full.md
+  - tpl.md
+  - Examples:
+      - 'Beginners': examples/quick-start/README.md
+      - 'Passing `image.tag`': examples/CI_COMMIT_TAG/README.md
+      - 'Passing `podAnnotations.gitCommit`': examples/CI_ENVIRONMENT_NAME/README.md
+      - 'Multiple environments': examples/CI_ENVIRONMENT_NAME/README.md
   - anno.md
   - cookbooks.md
   - ci.md

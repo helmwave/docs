@@ -1,4 +1,4 @@
-# 🧬 Full yaml configuration
+# 🧬 Full yaml
 
 ## General
 

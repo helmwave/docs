@@ -1,4 +1,4 @@
-# CI
+# 🧋 Continuous Integration
 
 Helmwave was built from the very first commit with the idea of running it as part of the CI pipeline in mind.
 
