@@ -1,4 +1,4 @@
-# CI_ENVIRONMENT_NAME [ [source] ](https://github.com/helmwave/helmwave/tree/main/docs/examples/CI_ENVIRONMENT_NAME)
+# CI_ENVIRONMENT_NAME [ [source] ](https://github.com/helmwave/helmwave.github.io/tree/main/docs/examples/CI_ENVIRONMENT_NAME)
 
 #### Project structure
 

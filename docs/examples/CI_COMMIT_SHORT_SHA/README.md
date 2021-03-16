@@ -1,4 +1,4 @@
-# CI_COMMIT_SHORT_SHA [ [source] ](https://github.com/helmwave/helmwave/tree/main/docs/examples/CI_COMMIT_SHORT_SHA)
+# CI_COMMIT_SHORT_SHA [ [source] ](https://github.com/helmwave/helmwave.github.io/tree/main/docs/examples/CI_COMMIT_SHORT_SHA)
 
 Project Structure
 
