@@ -13,41 +13,25 @@
 
 #### `helmwave.yml.tpl`
 
-```yaml
-project: my-project
-version: 0.1.6
 
-releases:
-  - name: my-release
-    chart: my-chart-repo/{{ env "CI_PROJECT_NAME" }}
-    values:
-      # Default
-      - values/_.yml
-      # For specific ENVIRONMENT
-      - values/{{ env "CI_ENVIRONMENT_NAME" }}.yml
-    options:
-      install: true
-      namespace: {{ env "CI_ENVIRONMENT_NAME" }}
+```yaml
+{% include "helmwave.yml.tpl" %}
 ```
 
 #### `_.yml`
 
 ```yaml
-image:
-  tag: {{ env "CI_COMMIT_TAG" }}
-
-podAnnotations:
-  gitCommit: {{ requiredEnv "CI_COMMIT_SHORT_SHA" | quote }}
+{% include "values/_.yml" %}
 ```
 
 #### `prod.yml`
 
 ```yaml
-replicaCount: 6
+{% include "values/prod.yml" %}
 ```
 
 #### `stage.yml`
 
 ```yaml
-replicaCount: 2
+{% include "values/stage.yml" %}
 ```

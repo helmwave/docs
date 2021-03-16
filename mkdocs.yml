@@ -14,9 +14,8 @@ nav:
     - configuration/full.md
   - tpl.md
   - Examples:
-      - 'Beginners': examples/quick-start/README.md
-      - 'Passing `image.tag`': examples/CI_COMMIT_TAG/README.md
-      - 'Passing `podAnnotations.gitCommit`': examples/CI_ENVIRONMENT_NAME/README.md
+      - 'Passing image.tag': examples/CI_COMMIT_TAG/README.md
+      - 'Passing gitCommit': examples/CI_ENVIRONMENT_NAME/README.md
       - 'Multiple environments': examples/CI_ENVIRONMENT_NAME/README.md
   - anno.md
   - cookbooks.md
@@ -24,6 +23,7 @@ nav:
 
 plugins:
   - search
+  - include-markdown
 
 theme:
   name: material
@@ -31,4 +31,4 @@ theme:
   favicon: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
 
 markdown_extensions:
-  - markdown_include.include:
+  - pymdownx.highlight

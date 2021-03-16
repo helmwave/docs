@@ -7,7 +7,7 @@
 Suppose the `helmwave.yml.tpl` representing the desired state of your helm releases looks like:
 
 ```yaml
-{% include 'helmwave.yml.tpl' %}
+{% include "helmwave.yml.tpl" %}
 ```
 
 3. **run helmwave**

@@ -10,25 +10,14 @@ Project Structure
 
 ```
 
+#### `helmwave.yml.tpl`
+
 ```yaml
-project: my-project # Имя проекта
-version: 0.1.6 # Версия helmwave
-
-releases:
-  - name: my-release
-    chart: my-chart-repo/my-app
-    values:
-      - values.yml
-    options:
-      install: true
-      namespace: my-namespace
-
+{% include "helmwave.yml.tpl" %}
 ```
 
-```yaml
-image:
-  tag: {{ env "CI_COMMIT_TAG" }}
+#### `values.yml`
 
-podAnnotations:
-  gitCommit: {{ requiredEnv "CI_COMMIT_SHORT_SHA" | quote }}
+```yaml
+{% include "values.yml" %}
 ```
