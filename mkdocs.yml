@@ -1,5 +1,5 @@
 site_name: Helmwave
-site_description: 'A docs helmwave'
+site_description: 'The helmwave`s docs'
 site_author: 'Dmitriy Zhilyaev'
 docs_dir: docs/
 repo_name: 'helmwave/helmwave'
@@ -12,6 +12,7 @@ nav:
       - configuration/store.md
       - configuration/full.md
   - Annotations: anno.md
+  - ci.md
 
 theme:
   name: material

@@ -18,9 +18,17 @@ spec:
         helmwave.dev/show-service-messages: "true"
 ```
 
-## [kubedog](https://github.com/werf/kubedog)
+## Annotations for the [kubedog](https://github.com/werf/kubedog)
 
 > inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html)
+
+First step you need enable kubedog for helmwave.
+
+```shell
+export HELMWAVE_KUBEDOG_ENABLED=true
+```
+
+
 
 ### `helmwave.dev/track-termination-mode`
 
