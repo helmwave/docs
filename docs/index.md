@@ -1,4 +1,4 @@
-<h1 align="center"> HelmWave</h1>
+<h1 align="center">HelmWave</h1>
 
 <p align="center">
   <a href="https://github.com/helmwave/helmwave/actions?query=workflow%3Arelease"><img src="https://github.com/helmwave/helmwave/workflows/release/badge.svg" /></a>

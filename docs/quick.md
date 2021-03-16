@@ -1,4 +1,4 @@
-## 🔰 Quick Start
+# 🔰 Quick Start
 
 1. **[install helmwave](install)**
    
