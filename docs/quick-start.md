@@ -34,11 +34,13 @@ releases:
 ```
 
 3. **run helmwave**
-```shell script
+
+```shell
 $ helmwave deploy
 ```
 
 Output will be like that:
+
 ```shell
 [🙃 aka INFO]: ✅ redis-a@my-namespace
 [🙃 aka INFO]: ✅ redis-b@my-namespace
@@ -47,7 +49,7 @@ Output will be like that:
 
 4. **check**
 
-```shell script
+```shell
 $ helm list -n my-namespace
 NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
 redis-a                 my-namespace    1               2020-10-31 17:05:35.829766 +0300 MSK    deployed        redis-11.2.3            6.0.9      
@@ -68,4 +70,4 @@ redis-b-slave-1    1/1     Running   0          51s
 
 ## Live mode
 
-<script id="asciicast-399656" src="https://asciinema.org/a/399656.js" async></script>
+<script id="asciicast-399670" src="https://asciinema.org/a/399670.js" async></script>
