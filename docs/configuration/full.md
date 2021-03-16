@@ -1,16 +1,20 @@
-# 🧬 Full Configuration
+# 🧬 Full yaml configuration
 
 ## General
 
+top level configuration
+
 ```yaml
 project: my-project
-version: 0.5.0
+version: 0.9.3
 
 repositories: []
 releases: []
 ```
 
 ## 🗄 Repository
+
+Array of repositories
 
 ```yaml
 repositories:
@@ -27,33 +31,16 @@ repositories:
 
 ## 🛥 Release
 
+Array of releases
+
 ```yaml
 releases:
-- name: redis
-  chart: bitnami/redis
+- name:  ""
+  chart: ""
   tags: []
   values: []
-  store: 
+  store: {}
   options:
-    install: true
-    devel: false
-    namespace: b
-    skipcrds: false
-    timeout: 0s
-    wait: false
-    disablehooks: false
-    dryrun: false
-    force: false
-    resetvalues: false
-    reusevalues: false
-    recreate: false
-    maxhistory: 0
-    atomic: false
-    cleanuponfail: false
-    subnotes: false
-    description: ""
-    postrenderer: null
-    disableopenapivalidation: false
     chartpathoptions:
       cafile: ""
       certfile: ""
@@ -64,5 +51,25 @@ releases:
       repourl: ""
       username: ""
       verify: false
-      version: ""
+      version: 1.0.0
+    install: true
+    devel: false
+    namespace: test1
+    skipcrds: false
+    timeout: 15m0s
+    wait: true
+    waitforjobs: false
+    disablehooks: false
+    dryrun: false
+    force: false
+    resetvalues: false
+    reusevalues: false
+    recreate: false
+    maxhistory: 10
+    atomic: false
+    cleanuponfail: false
+    subnotes: false
+    description: ""
+    postrenderer: null
+    disableopenapivalidation: false
 ```
