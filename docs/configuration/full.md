@@ -14,7 +14,7 @@ releases: []
 
 ## 🗄 Repository
 
-Array of repositories
+Array of [repositories](https://github.com/helm/helm/blob/617c9e1b1297a75fd89d72ec3595d7bc62bf9367/pkg/repo/chartrepo.go#L42)
 
 ```yaml
 repositories:
@@ -32,6 +32,8 @@ repositories:
 ## 🛥 Release
 
 Array of releases
+
+- Options provides [action.upgrade](https://github.com/helm/helm/blob/617c9e1b1297a75fd89d72ec3595d7bc62bf9367/pkg/action/upgrade.go#L42)
 
 ```yaml
 releases:

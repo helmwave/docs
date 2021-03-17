@@ -19,6 +19,7 @@ nav:
       - 'Multiple environments': examples/CI_ENVIRONMENT_NAME/README.md
   - anno.md
   - cookbooks.md
+  - cli.md
   - ci.md
 
 plugins:
