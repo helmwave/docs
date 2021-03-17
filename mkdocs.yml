@@ -9,15 +9,16 @@ nav:
   - install.md
   - examples/quick-start/README.md
   - Configuration:
-    - configuration/tags.md
-    - configuration/store.md
-    - configuration/full.md
+    - yml/tags/README.md
+    - yml/options/README.md
+    - yml/store/README.md
+    - yml/depends_on/README.md
+    - yml/README.md
   - tpl.md
   - Examples:
       - 'Passing image.tag': examples/CI_COMMIT_TAG/README.md
       - 'Passing gitCommit': examples/CI_COMMIT_SHORT_SHA/README.md
       - 'Multiple environments': examples/CI_ENVIRONMENT_NAME/README.md
-      - 'Use depends_on': examples/depends_on/README.md
   - anno.md
   - cookbooks.md
   - cli.md

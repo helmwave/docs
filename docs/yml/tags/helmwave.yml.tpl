@@ -1,11 +1,3 @@
-# 🔖 Tags
-
-> It allows you to choose releases for sync
-
-
-Suppose the `helmwave.yml.tpl` looks like:
-
-```yaml
 project: my-project
 version: 0.9.3
 
@@ -52,22 +44,3 @@ releases:
       - memcached
     options:
       <<: *options
-```
-
-This command will deploy only `redis-a` & `memcached-a`
-
-```sh
-$ helmwave -t a deploy
-```
-
-This command will deploy only `redis-a` & `redis-b`
-
-```sh
-$ helmwave -t redis deploy
-```
-
-This command will deploy only `redis-b`
-
-```sh
-$ helmwave -t redis,b deploy
-```

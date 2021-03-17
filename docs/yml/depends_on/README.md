@@ -1,8 +1,4 @@
-# DEPENDS_ON [ [source] ](https://github.com/helmwave/helmwave.github.io/tree/main/docs/examples/depends_on)
-
-
-
-## Receipt
+# depends_on 
 
 **Suppose we have application contains next services (of course, each service provide as helm-chart) :**
 

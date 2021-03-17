@@ -1,22 +1,10 @@
 # 🧬 Full yaml
 
-## General
-
-top level configuration
-
 ```yaml
 project: my-project
 version: 0.9.3
 
-repositories: []
-releases: []
-```
 
-## 🗄 Repository
-
-Array of [repositories](https://github.com/helm/helm/blob/617c9e1b1297a75fd89d72ec3595d7bc62bf9367/pkg/repo/chartrepo.go#L42)
-
-```yaml
 repositories:
 - name: bitnami
   url: https://charts.bitnami.com/bitnami
@@ -27,15 +15,7 @@ repositories:
   cafile: ""
   insecureskiptlsverify: false
   force: false
-```
 
-## 🛥 Release
-
-Array of releases
-
-- Options provides [action.upgrade](https://github.com/helm/helm/blob/617c9e1b1297a75fd89d72ec3595d7bc62bf9367/pkg/action/upgrade.go#L42)
-
-```yaml
 releases:
 - name:  ""
   chart: ""
