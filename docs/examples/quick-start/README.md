@@ -1,8 +1,8 @@
 # 🔰 Quick Start
 
-1. **[install helmwave](/install)**
+1) **[install helmwave](/install)**
    
-2. **create helmwave.yml.tpl**
+2) **create helmwave.yml.tpl**
 
 Suppose the `helmwave.yml.tpl` representing the desired state of your helm releases looks like:
 
@@ -10,7 +10,7 @@ Suppose the `helmwave.yml.tpl` representing the desired state of your helm relea
 {% include "helmwave.yml.tpl" %}
 ```
 
-3. **run helmwave**
+3) **run helmwave**
 
 ```shell
 $ helmwave deploy
@@ -24,7 +24,7 @@ Output will be like that:
 [🙃 aka INFO]: Success 2 / 2
 ```
 
-4. **check**
+4) **check**
 
 ```shell
 $ helm list -n my-namespace
