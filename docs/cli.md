@@ -1,6 +1,6 @@
 # 🛠 CLI Reference
 
-```console                                                                                                                                     (k8s-sbs/stage)
+```
 NAME:
    helmwave - composer for helm
 
@@ -71,7 +71,7 @@ releases:
 
 This command will render `helmwave.yml.tpl` to `helmwave.yml`
 
-```shell script
+```shell
 $ export NS=stage
 $ export CI_PROJECT_NAME=my-project
 $ export GITHUB_TOKEN=my-secret-token
