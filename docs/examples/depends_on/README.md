@@ -30,8 +30,7 @@ graph LR
 
 ```
 .
-├── helmwave.yml.tpl
-└── values.yml
+└── helmwave.yml.tpl
 
 ```
 
