@@ -21,11 +21,11 @@ advanced functions:
   <summary>my-releases.yml</summary>
 
   ```yaml
-releases:
-  - name: redis
-    repo: bitnami
-  - name: memcached
-    repo: bitnami
+  releases:
+    - name: redis
+      repo: bitnami
+    - name: memcached
+      repo: bitnami
   ```
 
 </details>

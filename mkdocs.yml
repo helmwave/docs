@@ -15,8 +15,9 @@ nav:
   - tpl.md
   - Examples:
       - 'Passing image.tag': examples/CI_COMMIT_TAG/README.md
-      - 'Passing gitCommit': examples/CI_ENVIRONMENT_NAME/README.md
+      - 'Passing gitCommit': examples/CI_COMMIT_SHORT_SHA/README.md
       - 'Multiple environments': examples/CI_ENVIRONMENT_NAME/README.md
+      - 'Like docker-compose': examples/depends_on/README.md
   - anno.md
   - cookbooks.md
   - cli.md
@@ -24,6 +25,7 @@ nav:
 
 plugins:
   - search
+  - mermaid2
   - include-markdown
 
 theme:
@@ -33,4 +35,9 @@ theme:
 
 markdown_extensions:
   - pymdownx.highlight
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
