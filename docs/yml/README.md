@@ -1,5 +1,7 @@
 # 🧬 Full yaml
 
+See [options](https://helmwave.github.io/yml/options/) for more details.
+
 ```yaml
 project: my-project
 version: 0.9.3
