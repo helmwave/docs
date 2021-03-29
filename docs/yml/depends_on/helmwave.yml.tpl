@@ -1,5 +1,5 @@
 project: my-project
-version: 0.9.1
+version: 0.9.6
 
 .options: &options
   install: true
@@ -22,12 +22,12 @@ releases:
     options:
       <<: *options
     depends_on:
-      - db
-      - queue
+      - db@my-namespace
+      - queue@my-namespace
 
   - name: frontend
     chart: some/frontend
     options:
       <<: *options
     depends_on:
-      - backend
+      - backend@my-namespace

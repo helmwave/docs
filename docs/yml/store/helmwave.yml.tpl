@@ -1,11 +1,12 @@
 project: my-project
-version: 0.5.0
+version: 0.9.5
 
 releases:
   - name: backend
     chart: my/backend
     options:
       install: true
+      namespace: my-ns
     store:
       secret:
         type: vault
@@ -17,6 +18,7 @@ releases:
     chart: my/frontend
     options:
       install: true
+      namespace: my-ns
     store:
       secret:
         type: vault

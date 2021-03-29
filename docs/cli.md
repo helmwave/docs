@@ -8,7 +8,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.9.2
+   0.9.5
 
 DESCRIPTION:
    🏖 This tool helps you compose your helm releases!
@@ -34,82 +34,48 @@ GLOBAL OPTIONS:
    --kubedog-status-interval value  Interval of kubedog status messages (default: 5s) [$HELMWAVE_KUBEDOG_STATUS_INTERVAL]
    --kubedog-start-delay value      Delay kubedog start, don't make it too late (default: 1s) [$HELMWAVE_KUBEDOG_START_DELAY]
    --kubedog-timeout value          Timout of kubedog multitrackers (default: 5m0s) [$HELMWAVE_KUBEDOG_TIMEOUT]
+   --kubedog-log-width value        Set kubedog max log line width (default: 140) [$HELMWAVE_KUBEDOG_LOG_WIDTH]
    --enable-dependencies            Enable dependencies (default: false) [$HELMWAVE_ENABLE_DEPENDENCIES]
    --help, -h                       show help (default: false)
    --version, -v                    print the version (default: false)
+
 ```
 
 ## yml
 
-[Templating](/tpl) helmwave.yml.tpl to helmwave.yml
+> [Templating](/tpl) `helmwave.yml.tpl` to `helmwave.yml`
+
+We added the ability to template itself. To make the tool even more flexible.
+
+- You can change path to `helmwave.yml.tpl` use `$HELMWAVE_TPL_FILE` or `--tpl`
+- You can change path to `helmwave.yml` use `$HELMWAVE_YML_FILE` or `--file`
 
 
+#### Best practice
 
-Suppose the `helmwave.yml.tpl` looks like:
+- add `helmwave.yml` to your `.gitignore`
 
-```yaml
-project: {{ env "CI_PROJECT_NAME" }}
-version: 0.9.1
-
-
-repositories:
-- name: your-private-git-repo-hosted-charts
-  url: https://{{ env "GITHUB_TOKEN"}}@raw.githubusercontent.com/foo/bar/master/
-
-
-.options: &options
-  install: true
-  namespace: {{ env "NS" }}
-
-
-releases:
-  - name: redis-a
-    chart: bitnami/redis
-    options:
-      <<: *options
-```
-
-This command will render `helmwave.yml.tpl` to `helmwave.yml`
-
-```shell
-$ export NS=stage
-$ export CI_PROJECT_NAME=my-project
-$ export GITHUB_TOKEN=my-secret-token
-$ helmwave yml
-```
-
-Once applied, your `helmwave.yml` will look like:
-
-```yaml
-project: my-project
-version: 0.9.1
-
-
-repositories:
-- name: your-private-git-repo-hosted-charts
-  url: https://my-secret-token@raw.githubusercontent.com/foo/bar/master/
-
-
-.options: &options
-  install: true
-  namespace: stage
-
-
-releases:
-  - name: redis-a
-    chart: bitnami/redis
-    options:
-      <<: *options
-```
 
 ## planfile, plan
 
-This command will generate `planfile`
+> This command will generate `planfile`
 
+Default it will be `.helmwave/`. You can change it use `--plan-dir` option or `$HELMWAVE_PLAN_DIR`
+
+Plan contents 2 part.
+
+1. Rendered values. Save as `.helmwave/<path_to_file>.<release_name>@<namespace>.plan`. 
+2. Rendered helm manifests. Save as `.helmwave/.manifest/<release_name>@<namespace>.yml`
+
+
+**Plan use [tags](https://helmwave.github.io/yml/tags/) for choose releases**
 
 ## deploy
 
 This command will deploy your `planfile`
+
+1. Generate plan.
+2. Deploy plan.
 
 ## manifest
 
@@ -117,3 +83,47 @@ This command generate helm manifests of your `planfile`.
 
 This is accomplished  with `--dry-run` option for `deploy` command.
 
+## Logs
+
+> Options for logs. Helmwave use logrus as internal logger.
+
+### Log Format
+
+Helmwave supports several log-format
+
+features | `text` | `json` | `pad` | `emoji`
+:---: |:---:|:---:|:---:|:---:
+Color | ✅   | ❌  | ✅  | 🌈
+Human readable | 🧐   | 🤖  | 🧐🧐  | ✅
+Performance | 🚀   | 🐢  | ✈️  | 🐢
+Module | TextFormatter (in-built logrus formatter)  | JSONFormatter (in-built logrus formatter)  | TextFormatter (in-built logrus formatter)  |  [logrus-emoji-formatter](https://github.com/helmwave/logrus-emoji-formatter) special for helmwave
+
+
+### Log Level
+
+_ | `info` (default) | `warn` | `debug` | `fatal` | `panic` | `trace`
+:---:|:---:|:---:|:---:|:---:|:---:|:---:
+general info         | ✅   | ✅  | ✅  | ✅   | ✅  | ✅
+incompatible version | ❌   | ✅  | ✅  | ✅   | ✅  | ✅
+helm-debug           | ❌   | ❌  | ✅  | ✅   | ✅  | ✅
+file content         | ❌   | ❌  | ✅  | ✅   | ✅  | ✅
+helm manifests       | ❌   | ❌  | ❌  | ❌   | ❌  | ✅
+
+`info` or `debug` is prefer.
+
+
+
+### How to use?
+
+```bash
+$ helmwave <cmd> --log-color=true --log-level=debug --log-format=pad
+```
+
+or
+
+```bash
+$ export HELMWAVE_LOG_FORMAT=pad
+$ export HELMWAVE_LOG_LEVEL=debug
+$ export HELMWAVE_LOG_COLOR=true
+$ helmwave <cmd>
+```
