@@ -8,7 +8,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.9.5
+   0.11.0
 
 DESCRIPTION:
    🏖 This tool helps you compose your helm releases!
@@ -19,6 +19,8 @@ COMMANDS:
    deploy, apply, sync, release  🛥 Deploy your helmwave!
    manifest, manifest            🛥 Fake Deploy
    version                       Print helmwave version
+   status                        Show release status
+   ls, list                      List deployed releases
    help, h                       Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
@@ -36,6 +38,8 @@ GLOBAL OPTIONS:
    --kubedog-timeout value          Timout of kubedog multitrackers (default: 5m0s) [$HELMWAVE_KUBEDOG_TIMEOUT]
    --kubedog-log-width value        Set kubedog max log line width (default: 140) [$HELMWAVE_KUBEDOG_LOG_WIDTH]
    --enable-dependencies            Enable dependencies (default: false) [$HELMWAVE_ENABLE_DEPENDENCIES]
+   --plan-dependencies              Automatically add dependencies to plan (default: false) [$HELMWAVE_PLAN_DEPENDENCIES]
+   --match-all-tags                 Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
    --help, -h                       show help (default: false)
    --version, -v                    print the version (default: false)
 
@@ -79,9 +83,17 @@ This command will deploy your `planfile`
 
 ## manifest
 
-This command generate helm manifests of your `planfile`.
+This command generates helm manifests of your `planfile`.
 
-This is accomplished  with `--dry-run` option for `deploy` command.
+This is accomplished with `--dry-run` option for `deploy` command.
+
+## status
+
+This command shows release status of your `helmwave.yml` similar to `helm status` command
+
+## list, ls
+
+This command shows list of deployed releases of your `helmwave.yml` similar to `helm list` command
 
 ## Logs
 
