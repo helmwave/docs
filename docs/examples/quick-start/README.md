@@ -13,7 +13,7 @@ Suppose the `helmwave.yml.tpl` representing the desired state of your helm relea
 3) **run helmwave**
 
 ```shell
-$ helmwave deploy
+helmwave deploy
 ```
 
 Output will be like that:

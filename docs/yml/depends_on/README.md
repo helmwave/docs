@@ -4,7 +4,7 @@ Nowadays, `depends_on` is unstable feature.
 You need enable it before v1.0.0 manually.
 
 ```bash
-$ export HELMWAVE_ENABLE_DEPENDENCIES=true
+export HELMWAVE_ENABLE_DEPENDENCIES=true
 ```
 
 
@@ -47,7 +47,7 @@ graph LR
 ## Deploy
 
 ```shell
-$ helmwave deploy
+helmwave deploy
 ```
 
 

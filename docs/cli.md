@@ -128,14 +128,14 @@ helm manifests       | ❌   | ❌  | ❌  | ❌   | ❌  | ✅
 ### How to use?
 
 ```bash
-$ helmwave <cmd> --log-color=true --log-level=debug --log-format=pad
+helmwave <cmd> --log-color=true --log-level=debug --log-format=pad
 ```
 
 or
 
 ```bash
-$ export HELMWAVE_LOG_FORMAT=pad
-$ export HELMWAVE_LOG_LEVEL=debug
-$ export HELMWAVE_LOG_COLOR=true
-$ helmwave <cmd>
+export HELMWAVE_LOG_FORMAT=pad
+export HELMWAVE_LOG_LEVEL=debug
+export HELMWAVE_LOG_COLOR=true
+helmwave <cmd>
 ```

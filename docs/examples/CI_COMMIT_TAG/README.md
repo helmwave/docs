@@ -37,12 +37,12 @@ This values will override default values
 ## Deploy
 
 ```shell
-$ helmwave deploy
+helmwave deploy
 ```
 
 
 ### CLI analog via helm3
 
 ```shell
-$ helm upgrade --instal my-release my-chart-repo/my-app --set="image.tag=$CI_COMMIT_TAG" -n my-namespace
+helm upgrade --instal my-release my-chart-repo/my-app --set="image.tag=$CI_COMMIT_TAG" -n my-namespace
 ```

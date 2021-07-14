@@ -61,7 +61,7 @@ advanced functions:
 </details>
 
 ```bash
-$ helmwave yml
+helmwave yml
 ```
 
 <details>

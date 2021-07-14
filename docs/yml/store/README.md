@@ -19,7 +19,7 @@ Please note that `my-custom-values.yml` file is common for both helm releases
 *Let's generate [plan](https://helmwave.github.io/cli/#planfile-plan)*
 
 ```bash
-$ helmwave plan
+helmwave plan
 ```
 
 Helmwave created plan!
