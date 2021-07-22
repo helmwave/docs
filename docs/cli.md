@@ -40,6 +40,8 @@ GLOBAL OPTIONS:
 
 ```
 
+---
+
 ## step #0: yml
 
 It allows render `helmwave.yml.tpl` to `helmwave.yml`
@@ -76,7 +78,8 @@ Helmwave will rollback helm-releases from plan.
 
 Helmwave will validate plan.
 
---- 
+
+---
 
 ## Logs
 
@@ -123,7 +126,9 @@ export HELMWAVE_LOG_COLOR=true
 helmwave <cmd>
 ```
 
+
 ---
+
 
 ## Get Version
 
@@ -148,3 +153,35 @@ $ helmwave version
 $ helmwave ver
 0.12.1
 ```
+
+## Completion
+
+### Bash
+
+Add this code to your ~/.bashrc
+
+```bash
+source <(helmwave completion bash)
+```
+
+```bash
+echo "source <(helmwave completion bash)" >> ~/.bashrc
+```
+
+
+![completion-bash](assets/completion-bash.png)
+
+### ZSH
+
+Add this code to your ~/.zshrc
+
+```bash
+source <(helmwave completion zsh)
+```
+
+```bash
+echo "source <(helmwave completion zsh)" >> ~/.zshrc
+```
+
+![completion-zsh](assets/completion-zsh.png)
+
