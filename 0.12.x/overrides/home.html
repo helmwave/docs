@@ -18,6 +18,7 @@
         display: none
     }
 
+
     .tx-container {
         padding-top: 1rem;
         padding-bottom: 60px;
@@ -122,22 +123,27 @@
             </div>
             <div class="tx-hero__content">
                 <h1>Helmwave</h1>
-                <h2>Compose your release!</h2>
+                <h2>Docker-Compose for helm</h2>
                 <p>With helmwave, you can:</p>
                 <ul>
                     <li>Templating values</li>
                     <li>Select specific release or group of releases</li>
-                    <li>Deploy with 1 command</li>
                     <li>Parallel deploy</li>
                     <li>... and much more!</li>
                 </ul>
+                <a href="https://t.me/helmwave" title="Chat" class="md-button">
+                    <span class="twemoji">
+                        {% include ".icons/fontawesome/brands/telegram.svg" %}
+                    </span>
+                    telegram chat
+                </a>
                 <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}"
                    class="md-button md-button--primary">
                     Get started
                 </a>
-                <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">
-                    Go to GitHub
-                </a>
+<!--                <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">-->
+<!--                    Go to GitHub-->
+<!--                </a>-->
             </div>
         </div>
     </div>

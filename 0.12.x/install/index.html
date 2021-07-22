@@ -162,13 +162,18 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#material-docker-run-as-a-container">
+    :material-docker: Run as a container
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#install-with-go-get">
     Install with go get
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compile-from-source">
-    Compile from source
+<a class="md-nav__link" href="#material-git-compile-from-source">
+    :material-git: Compile from source
   </a>
 </li>
 <li class="md-nav__item">
@@ -176,17 +181,12 @@
     Install with marcosnils/bin
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#run-as-a-container">
-    Run as a container
-  </a>
-</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/quick-start/">
-        🔰 Quick Start
+<a class="md-nav__link" href="../examples/quick-start/README.md">
+        None
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -202,28 +202,28 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yml/tags/">
-        🔖 Tags
+<a class="md-nav__link" href="../yml/tags/README.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yml/options/">
-        Options
+<a class="md-nav__link" href="../yml/options/README.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yml/store/">
-        🗳️ Store
+<a class="md-nav__link" href="../yml/store/README.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yml/depends_on/">
-        depends_on
+<a class="md-nav__link" href="../yml/depends_on/README.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yml/">
-        🧬 Full yaml
+<a class="md-nav__link" href="../yml/README.md">
+        None
       </a>
 </li>
 </ul>
@@ -247,22 +247,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/CI_COMMIT_TAG/">
+<a class="md-nav__link" href="../examples/CI_COMMIT_TAG/README.md">
         Passing image.tag
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/CI_COMMIT_SHORT_SHA/">
+<a class="md-nav__link" href="../examples/CI_COMMIT_SHORT_SHA/README.md">
         Passing gitCommit
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/CI_ENVIRONMENT_NAME/">
+<a class="md-nav__link" href="../examples/CI_ENVIRONMENT_NAME/README.md">
         Multiple environments
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/GITHUB_TOKEN/">
+<a class="md-nav__link" href="../examples/GITHUB_TOKEN/README.md">
         Private github helm repostories
       </a>
 </li>
@@ -275,8 +275,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../cookbooks/">
-        🧾 Cookbooks
+<a class="md-nav__link" href="../cookbooks.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
@@ -319,23 +319,23 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#material-docker-run-as-a-container">
+    :material-docker: Run as a container
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#install-with-go-get">
     Install with go get
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compile-from-source">
-    Compile from source
+<a class="md-nav__link" href="#material-git-compile-from-source">
+    :material-git: Compile from source
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#install-with-marcosnilsbin">
     Install with marcosnils/bin
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#run-as-a-container">
-    Run as a container
   </a>
 </li>
 </ul>
@@ -354,38 +354,45 @@
 <a href="https://github.com/helmwave/helmwave/packages/">packages</a>,
 use Docker or compile from the source.</p>
 <p>Here are the steps for each of them:</p>
+<hr/>
 <h2 id="mac-os">🍏 Mac OS</h2>
-<blockquote>
 <p>Download one of <a href="https://github.com/helmwave/helmwave/releases">releases</a></p>
-</blockquote>
+<p>Install with :beer: brew</p>
 <div class="highlight"><pre><span></span><code>brew install helmwave/tap/helmwave
 </code></pre></div>
+<p>or use wget
+<div class="highlight"><pre><span></span><code>wget -c https://github.com/helmwave/helmwave/releases/download/v0.12.1/helmwave_0.12.1_darwin_amd64.tar.gz -O - <span class="p">|</span> tar -xz
+mv helmwave /usr/local/bin/
+</code></pre></div></p>
+<hr/>
 <h2 id="linux">🐧 Linux</h2>
-<blockquote>
 <p>Download one of <a href="https://github.com/helmwave/helmwave/releases">releases</a></p>
-</blockquote>
-<div class="highlight"><pre><span></span><code>wget -c https://github.com/helmwave/helmwave/releases/download/0.9.1/helmwave_0.9.1_linux_amd64.tar.gz -O - <span class="p">|</span> tar -xz
+<div class="highlight"><pre><span></span><code>wget -c https://github.com/helmwave/helmwave/releases/download/v0.12.1/helmwave_0.12.1_linux_amd64.tar.gz -O - <span class="p">|</span> tar -xz
 mv helmwave /usr/local/bin/
 </code></pre></div>
+<hr/>
 <h2 id="windows">🪟 Windows</h2>
-<blockquote>
+<p>!!! attention "We haven't tried running this on Windows."</p>
 <p>Download one of <a href="https://github.com/helmwave/helmwave/releases">releases</a></p>
-</blockquote>
-<h2 id="install-with-go-get">Install with go get <img alt="GitHub go.mod Go version" src="https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave"/></h2>
-<div class="highlight"><pre><span></span><code><span class="nv">GO111MODULE</span><span class="o">=</span>on go get github.com/helmwave/helmwave/cmd/helmwave@0.9.1
+<hr/>
+<h2 id="material-docker-run-as-a-container">:material-docker: Run as a container <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/diamon/helmwave"/></h2>
+<div class="highlight"><pre><span></span><code>docker run diamon/helmwave
+docker run --entrypoint=ash -it --rm --name helmwave diamon/helmwave
 </code></pre></div>
-<h2 id="compile-from-source">Compile from source</h2>
+<hr/>
+<h2 id="install-with-go-get">Install with go get <img alt="GitHub go.mod Go version" src="https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave"/></h2>
+<div class="highlight"><pre><span></span><code><span class="nv">GO111MODULE</span><span class="o">=</span>on go get github.com/helmwave/helmwave/cmd/helmwave@0.12.1
+</code></pre></div>
+<hr/>
+<h2 id="material-git-compile-from-source">:material-git: Compile from source</h2>
 <div class="highlight"><pre><span></span><code>git clone git@github.com:helmwave/helmwave.git
 <span class="nb">cd</span> helmwave
 go build ./cmd/helmwave
 mv helmwave /usr/local/bin/
 </code></pre></div>
+<hr/>
 <h2 id="install-with-marcosnilsbin">Install with <a href="https://github.com/marcosnils/bin">marcosnils/bin</a></h2>
 <div class="highlight"><pre><span></span><code>bin install github.com/helmwave/helmwave
-</code></pre></div>
-<h2 id="run-as-a-container">Run as a container <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/diamon/helmwave"/></h2>
-<div class="highlight"><pre><span></span><code>docker run diamon/helmwave
-docker run --entrypoint=ash -it --rm --name helmwave diamon/helmwave
 </code></pre></div>
 </article>
 </div>
@@ -406,13 +413,13 @@ docker run --entrypoint=ash -it --rm --name helmwave diamon/helmwave
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../examples/quick-start/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="../tpl/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              🔰 Quick Start
+              📄 Templating
             </div>
 </div>
 <div class="md-footer__button md-icon">

@@ -137,8 +137,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/quick-start/">
-        🔰 Quick Start
+<a class="md-nav__link" href="../examples/quick-start/README.md">
+        None
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -154,28 +154,28 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yml/tags/">
-        🔖 Tags
+<a class="md-nav__link" href="../yml/tags/README.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yml/options/">
-        Options
+<a class="md-nav__link" href="../yml/options/README.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yml/store/">
-        🗳️ Store
+<a class="md-nav__link" href="../yml/store/README.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yml/depends_on/">
-        depends_on
+<a class="md-nav__link" href="../yml/depends_on/README.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yml/">
-        🧬 Full yaml
+<a class="md-nav__link" href="../yml/README.md">
+        None
       </a>
 </li>
 </ul>
@@ -199,22 +199,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/CI_COMMIT_TAG/">
+<a class="md-nav__link" href="../examples/CI_COMMIT_TAG/README.md">
         Passing image.tag
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/CI_COMMIT_SHORT_SHA/">
+<a class="md-nav__link" href="../examples/CI_COMMIT_SHORT_SHA/README.md">
         Passing gitCommit
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/CI_ENVIRONMENT_NAME/">
+<a class="md-nav__link" href="../examples/CI_ENVIRONMENT_NAME/README.md">
         Multiple environments
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/GITHUB_TOKEN/">
+<a class="md-nav__link" href="../examples/GITHUB_TOKEN/README.md">
         Private github helm repostories
       </a>
 </li>
@@ -227,8 +227,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../cookbooks/">
-        🧾 Cookbooks
+<a class="md-nav__link" href="../cookbooks.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
@@ -252,13 +252,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#github-action">
-    Github action
+<a class="md-nav__link" href="#material-github-github-action">
+    :material-github: GitHub action
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#gitlab-ci">
-    Gitlab-CI
+<a class="md-nav__link" href="#material-gitlab-gitlab-ci">
+    :material-gitlab: Gitlab-CI
   </a>
 </li>
 </ul>
@@ -279,13 +279,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#github-action">
-    Github action
+<a class="md-nav__link" href="#material-github-github-action">
+    :material-github: GitHub action
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#gitlab-ci">
-    Gitlab-CI
+<a class="md-nav__link" href="#material-gitlab-gitlab-ci">
+    :material-gitlab: Gitlab-CI
   </a>
 </li>
 </ul>
@@ -301,38 +301,30 @@
 <h1 id="continuous-integration">🧋 Continuous Integration</h1>
 <p>Helmwave was built from the very first commit with the idea of running it as part of the CI pipeline in mind.</p>
 <p>Let's see how we can get it working on popular CI software.</p>
-<h2 id="github-action">Github action</h2>
+<hr/>
+<h2 id="material-github-github-action">:material-github: GitHub action</h2>
 <ul>
 <li><a href="https://github.com/marketplace/actions/helmwave">official github action</a></li>
 </ul>
-<h2 id="gitlab-ci">Gitlab-CI</h2>
+<h2 id="material-gitlab-gitlab-ci">:material-gitlab: Gitlab-CI</h2>
 <div class="highlight"><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
-  <span class="nt">HELMWAVE_LOG_LEVEL</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">debug</span>
+  <span class="nt">HELMWAVE_LOG_LEVEL</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">trace</span>
 
-<span class="nt">helmwave-deploy</span><span class="p">:</span>
+<span class="nt">helmwave</span><span class="p">:</span>
   <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">deploy</span>
   <span class="nt">environment</span><span class="p">:</span>
     <span class="nt">name</span><span class="p">:</span> <span class="s">"ref/$CI_COMMIT_REF_SLUG"</span>
   <span class="nt">image</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">diamon/helmwave:0.9.3</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">diamon/helmwave:0.12.1</span>
     <span class="nt">entrypoint</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
   <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">helmwave yml</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">helmwave plan</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">helmwave deploy</span>
-
-
-<span class="nt">stop environment</span><span class="p">:</span>
-  <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">deploy</span>
-  <span class="nt">image</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">lachlanevenson/k8s-kubectl:v1.18.4</span>
-    <span class="nt">entrypoint</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
-  <span class="nt">variables</span><span class="p">:</span>
-    <span class="nt">GIT_STRATEGY</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">none</span>
-  <span class="nt">script</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">kubectl delete ns $CI_COMMIT_REF_SLUG</span>
-  <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">manual</span>
-  <span class="nt">environment</span><span class="p">:</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="s">"ref/$CI_COMMIT_REF_SLUG"</span>
-    <span class="nt">action</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stop</span>
+  <span class="nt">artifacts</span><span class="p">:</span>
+    <span class="nt">paths</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">.helmwave</span>
+    <span class="nt">expire_in</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2 week</span>
 </code></pre></div>
 </article>
 </div>
