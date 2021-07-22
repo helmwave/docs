@@ -103,12 +103,33 @@
 </nav>
 </header>
 <div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+      Home
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="./">
+        Getting started
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../cli/">
+        Reference
+      </a>
+</li>
+</ul>
+</div>
+</nav>
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Helmwave" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Helmwave">
 <img alt="logo" src="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico"/>
@@ -131,6 +152,18 @@
         Home
       </a>
 </li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        Getting started
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Getting started" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -162,8 +195,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#material-docker-run-as-a-container">
-    :material-docker: Run as a container
+<a class="md-nav__link" href="#run-as-a-container">
+     Run as a container
   </a>
 </li>
 <li class="md-nav__item">
@@ -172,8 +205,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#material-git-compile-from-source">
-    :material-git: Compile from source
+<a class="md-nav__link" href="#compile-from-source">
+     Compile from source
   </a>
 </li>
 <li class="md-nav__item">
@@ -183,106 +216,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../examples/quick-start/README.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
-        Configuration
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Configuration" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
-          Configuration
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../yml/tags/README.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../yml/options/README.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../yml/store/README.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../yml/depends_on/README.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../yml/README.md">
-        None
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../tpl/">
-        📄 Templating
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6">
-        Examples
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Examples" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-          Examples
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../examples/CI_COMMIT_TAG/README.md">
-        Passing image.tag
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../examples/CI_COMMIT_SHORT_SHA/README.md">
-        Passing gitCommit
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../examples/CI_ENVIRONMENT_NAME/README.md">
-        Multiple environments
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../examples/GITHUB_TOKEN/README.md">
-        Private github helm repostories
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../anno/">
-        📔 Annotations
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../cookbooks.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../cli/">
-        🛠 CLI Reference
-      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../ci/">
@@ -291,52 +224,36 @@
 </li>
 </ul>
 </nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+        Reference
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Reference" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          Reference
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#mac-os">
-    🍏 Mac OS
-  </a>
+<a class="md-nav__link" href="../cli/">
+        🛠 CLI Reference
+      </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#linux">
-    🐧 Linux
-  </a>
+<a class="md-nav__link" href="../tpl/">
+        📄 Templating
+      </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#windows">
-    🪟 Windows
-  </a>
+<a class="md-nav__link" href="../anno/">
+        📔 Annotations
+      </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#material-docker-run-as-a-container">
-    :material-docker: Run as a container
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#install-with-go-get">
-    Install with go get
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#material-git-compile-from-source">
-    :material-git: Compile from source
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#install-with-marcosnilsbin">
-    Install with marcosnils/bin
-  </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -357,7 +274,7 @@ use Docker or compile from the source.</p>
 <hr/>
 <h2 id="mac-os">🍏 Mac OS</h2>
 <p>Download one of <a href="https://github.com/helmwave/helmwave/releases">releases</a></p>
-<p>Install with :beer: brew</p>
+<p>Install with <img alt="🍺" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f37a.svg" title=":beer:"> brew</img></p>
 <div class="highlight"><pre><span></span><code>brew install helmwave/tap/helmwave
 </code></pre></div>
 <p>or use wget
@@ -372,10 +289,12 @@ mv helmwave /usr/local/bin/
 </code></pre></div>
 <hr/>
 <h2 id="windows">🪟 Windows</h2>
-<p>!!! attention "We haven't tried running this on Windows."</p>
+<div class="admonition attention">
+<p class="admonition-title">We haven't tried running this on Windows.</p>
+</div>
 <p>Download one of <a href="https://github.com/helmwave/helmwave/releases">releases</a></p>
 <hr/>
-<h2 id="material-docker-run-as-a-container">:material-docker: Run as a container <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/diamon/helmwave"/></h2>
+<h2 id="run-as-a-container"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24-.19-.14m-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"></path></svg></span> Run as a container <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/diamon/helmwave"/></h2>
 <div class="highlight"><pre><span></span><code>docker run diamon/helmwave
 docker run --entrypoint=ash -it --rm --name helmwave diamon/helmwave
 </code></pre></div>
@@ -384,7 +303,7 @@ docker run --entrypoint=ash -it --rm --name helmwave diamon/helmwave
 <div class="highlight"><pre><span></span><code><span class="nv">GO111MODULE</span><span class="o">=</span>on go get github.com/helmwave/helmwave/cmd/helmwave@0.12.1
 </code></pre></div>
 <hr/>
-<h2 id="material-git-compile-from-source">:material-git: Compile from source</h2>
+<h2 id="compile-from-source"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.6 10.59L8.38 4.8l1.69 1.7c-.24.85.15 1.78.93 2.23v5.54c-.6.34-1 .99-1 1.73a2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-.74-.4-1.39-1-1.73V9.41l2.07 2.09c-.07.15-.07.32-.07.5a2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2c-.18 0-.35 0-.5.07L13.93 7.5a1.98 1.98 0 0 0-1.15-2.34c-.43-.16-.88-.2-1.28-.09L9.8 3.38l.79-.78c.78-.79 2.04-.79 2.82 0l7.99 7.99c.79.78.79 2.04 0 2.82l-7.99 7.99c-.78.79-2.04.79-2.82 0L2.6 13.41c-.79-.78-.79-2.04 0-2.82z"></path></svg></span> Compile from source</h2>
 <div class="highlight"><pre><span></span><code>git clone git@github.com:helmwave/helmwave.git
 <span class="nb">cd</span> helmwave
 go build ./cmd/helmwave
@@ -413,13 +332,13 @@ mv helmwave /usr/local/bin/
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../tpl/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="../ci/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              📄 Templating
+              🧋 Continuous Integration
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -446,6 +365,9 @@ mv helmwave /usr/local/bin/
 <a class="md-footer-social__link" href="https://github.com/helmwave" rel="noopener" target="_blank" title="github.com">
 <svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
 </a>
+<a class="md-footer-social__link" href="https://t.me/helmwave" rel="noopener" target="_blank" title="t.me">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg>
+</a>
 </div>
 </div>
 </div>
@@ -454,7 +376,7 @@ mv helmwave /usr/local/bin/
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": {"analytics": {"property": null, "provider": "google"}, "default": "latest", "provider": "mike"}}</script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": {"analytics": {"property": null, "provider": "google"}, "default": "latest", "provider": "mike"}}</script>
 <script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
 </body>
 </html>
