@@ -10,14 +10,22 @@ copyright: Copyright © 2020 - 2021 Dmitriy Zhilyaev
 
 
 nav:
-  - Home: index.md
+- Home: index.md
+
+
+- Getting started:
   - install.md
-  - Templating: tpl.md
+  - ci.md
+
+- Reference:
+  - cli.md
+  - tpl.md
+  - anno.md
 
 plugins:
-  - search
-  - mermaid2
-  - include-markdown
+- search
+- mermaid2
+- include-markdown
 
 theme:
   name: material
@@ -26,7 +34,13 @@ theme:
   custom_dir: docs/overrides
   features:
   - navigation.top
-
+  - navigation.instant
+  - navigation.tabs
+  - navigation.sections
+  - navigation.expand
+  - toc.integrate
+  - search.suggest
+  - search.share
 
 extra:
   version:
@@ -46,12 +60,14 @@ extra:
     link: https://t.me/helmwave
 
 markdown_extensions:
-  - pymdownx.highlight
-  - pymdownx.superfences:
-      # make exceptions to highlighting of code:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid
-
-
+- admonition
+- pymdownx.emoji:
+    emoji_index: !!python/name:materialx.emoji.twemoji
+    emoji_generator: !!python/name:materialx.emoji.to_svg
+- pymdownx.highlight
+- pymdownx.superfences:
+    # make exceptions to highlighting of code:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:mermaid2.fence_mermaid
