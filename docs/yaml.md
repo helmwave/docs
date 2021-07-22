@@ -117,3 +117,24 @@ devel| 🙅 | bool    | false
 reusevalues| 🙅 | bool    | false
 
 
+### 🗳️ Store
+
+> It allows to pass you custom fields from helmwave.yml to values.
+
+It works when you call `$ helmwave build`:
+
+### depends_on
+
+> It allows waiting releases
+
+### 🔖 Tags
+
+> It allows you to choose releases for build
+
+It works with next options when you call `$ helmwave build`:
+
+```bash
+--tags value, -t value  It allows you choose releases for build. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+--match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+```
+

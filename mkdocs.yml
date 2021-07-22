@@ -23,6 +23,9 @@ nav:
   - anno.md
   - yaml.md
 
+- Examples:
+  - examples/index.md
+
 plugins:
 - search
 - mermaid2

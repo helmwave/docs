@@ -46,10 +46,25 @@ GLOBAL OPTIONS:
 
 It allows render `helmwave.yml.tpl` to `helmwave.yml`
 
+**Options**
+
+```
+--tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+--file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML]
+```
+
+
 ## step #1: build
 
 This command generates `.helmwave/` 
 
+```
+--plandir value         Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR]
+--tags value, -t value  It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+--match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+--file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML]
+--diff-wide value       Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
+```
 
 ## step #2: Working with plan
 
