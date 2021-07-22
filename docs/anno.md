@@ -21,7 +21,7 @@ spec:
 ## Annotations for the [kubedog](https://github.com/werf/kubedog) 🐶
 
 ???+ danger
-  Kubedog currently in beta.
+    Kubedog currently in beta.
 
 > inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html)
 
