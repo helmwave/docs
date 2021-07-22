@@ -43,5 +43,7 @@ jobs:
       id: extract_branch
 
     - name: Mike
+      env:
+        GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
       run: |
         mike deploy --push --update-aliases ${{ steps.extract_branch.outputs.branch }}
