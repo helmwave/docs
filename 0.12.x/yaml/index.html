@@ -7,19 +7,19 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="The helmwave`s docs" name="description"/>
 <meta content="Dmitriy Zhilyaev" name="author"/>
-<link href="https://helmwave.github.io/0.12.x/cli/" rel="canonical"/>
+<link href="https://helmwave.github.io/0.12.x/yaml/" rel="canonical"/>
 <link href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico" rel="icon"/>
 <meta content="mkdocs-1.2.2, mkdocs-material-7.2.0" name="generator"/>
-<title>🛠 CLI Reference - Helmwave</title>
+<title>Yaml - Helmwave</title>
 <link href="../assets/stylesheets/main.fe914879.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
 <meta content="website" property="og:type"/>
-<meta content="Helmwave - 🛠 CLI Reference" property="og:title"/>
+<meta content="Helmwave - Yaml" property="og:title"/>
 <meta content="The helmwave`s docs" property="og:description"/>
-<meta content="https://helmwave.github.io/0.12.x/cli/" property="og:url"/>
+<meta content="https://helmwave.github.io/0.12.x/yaml/" property="og:url"/>
 <meta content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -31,7 +31,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#cli-reference">
+<a class="md-skip" href="#yaml">
           Skip to content
         </a>
 </div>
@@ -55,7 +55,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              🛠 CLI Reference
+              Yaml
             
           </span>
 </div>
@@ -122,7 +122,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
+<a class="md-tabs__link md-tabs__link--active" href="../cli/">
         Reference
       </a>
 </li>
@@ -194,134 +194,10 @@
           Reference
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          🛠 CLI Reference
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cli/">
         🛠 CLI Reference
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-0-yml">
-    step #0: yml
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-1-build">
-    step #1: build
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-2-working-with-plan">
-    step #2: Working with plan
-  </a>
-<nav aria-label="step #2: Working with plan" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#up">
-    up
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#down">
-    down
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ls">
-    ls
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#status">
-    status
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rollback">
-    rollback
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#validate">
-    validate
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#logs">
-    Logs
-  </a>
-<nav aria-label="Logs" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#log-format">
-    Log Format
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#log-level">
-    Log Level
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-use">
-    How to use?
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#get-version">
-    Get Version
-  </a>
-<nav aria-label="Get Version" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#long-version">
-    Long version
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#short-version">
-    Short version
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#completion">
-    Completion
-  </a>
-<nav aria-label="Completion" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bash">
-    Bash
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#zsh">
-    ZSH
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../tpl/">
@@ -333,10 +209,43 @@
         📔 Annotations
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../yaml/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Yaml
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Yaml
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#project">
+    Project
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#version">
+    Version
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repositories">
+    Repositories[]
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#releases">
+    Releases[]
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -348,215 +257,327 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/helmwave/helmwave.github.io/edit/main/docs/cli.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/helmwave/helmwave.github.io/edit/main/docs/yaml.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="cli-reference">🛠 CLI Reference</h1>
-<div class="highlight"><pre><span></span><code>NAME:
-   helmwave - is like docker-compose for helm
-
-USAGE:
-   helmwave [global options] command [command options] [arguments...]
-
-VERSION:
-   0.12.1
-
-DESCRIPTION:
-   This tool helps you compose your helm releases!
-   0. $ helmwave yml
-   1. $ helmwave build
-   2. $ helmwave up
-
-COMMANDS:
-   build, plan                                        🏗 Build a plan
-   diff, vs                                           🆚 Differences between plan1 and plan2
-   up, install, apply, sync, deploy                   🚢 Apply your plan
-   list, ls                                           👀 List of deployed releases
-   rollback                                           ⏮  Rollback your plan
-   status                                             👁️ Status of deployed releases
-   down, uninstall, destroy, delete, del, rm, remove  🔪 Delete all
-   validate, check, lint                              🛂 Validate your plan
-   yml                                                📄 Render helmwave.yml.tpl -&gt; helmwave.yml
-   version, ver                                       Show shorts version
-   completion                                         Generate completion script
-   help, h                                            Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --log-format value         You can set: [ text | json | pad | emoji ] (default: "emoji") [$HELMWAVE_LOG_FORMAT]
-   --log-level value          You can set: [ debug | info | warn  | fatal | panic | trace ] (default: "info") [$HELMWAVE_LOG_LEVEL, $HELMWAVE_LOG_LVL]
-   --log-color                Force color (default: true) [$HELMWAVE_LOG_COLOR]
-   --kubedog-log-width value  Set kubedog max log line width (default: 140) [$HELMWAVE_KUBEDOG_LOG_WIDTH]
-   --help, -h                 show help (default: false)
-   --version, -v              print the version (default: false)
+<h1 id="yaml">Yaml</h1>
+<div class="highlight"><pre><span></span><code><span class="nt">project</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Test07</span>
+<span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev</span>
+<span class="nt">repositories</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bitnami</span>
+  <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span>
+  <span class="nt">username</span><span class="p">:</span> <span class="s">""</span>
+  <span class="nt">password</span><span class="p">:</span> <span class="s">""</span>
+  <span class="nt">certfile</span><span class="p">:</span> <span class="s">""</span>
+  <span class="nt">keyfile</span><span class="p">:</span> <span class="s">""</span>
+  <span class="nt">cafile</span><span class="p">:</span> <span class="s">""</span>
+  <span class="nt">insecureskiptlsverify</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">releases</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="nt">store</span><span class="p">:</span>
+    <span class="nt">pullPolicy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Always</span>
+  <span class="nt">chart</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span>
+    <span class="nt">cafile</span><span class="p">:</span> <span class="s">""</span>
+    <span class="nt">certfile</span><span class="p">:</span> <span class="s">""</span>
+    <span class="nt">keyfile</span><span class="p">:</span> <span class="s">""</span>
+    <span class="nt">insecureskiptlsverify</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="nt">keyring</span><span class="p">:</span> <span class="s">""</span>
+    <span class="nt">password</span><span class="p">:</span> <span class="s">""</span>
+    <span class="nt">repourl</span><span class="p">:</span> <span class="s">""</span>
+    <span class="nt">username</span><span class="p">:</span> <span class="s">""</span>
+    <span class="nt">verify</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="nt">version</span><span class="p">:</span> <span class="s">""</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test</span>
+  <span class="nt">description</span><span class="p">:</span> <span class="s">""</span>
+  <span class="nt">depends_on</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+  <span class="nt">values</span><span class="p">:</span> 
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">.helmwave/values/nginx@test/5ae83192a2a53eec01dee5207fcf3cccbc5af87f.yml</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tests/07_values.yaml</span>
+  <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+  <span class="nt">timeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0s</span>
+  <span class="nt">maxhistory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+  <span class="nt">createnamespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">resetvalues</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">recreate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">atomic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">cleanuponfail</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">subnotes</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">disablehooks</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">disableopenapivalidation</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">waitforjobs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">wait</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">skipcrds</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">devel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">reusevalues</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
-<hr/>
-<h2 id="step-0-yml">step #0: yml</h2>
-<p>It allows render <code>helmwave.yml.tpl</code> to <code>helmwave.yml</code></p>
-<h2 id="step-1-build">step #1: build</h2>
-<p>This command generates <code>.helmwave/</code> </p>
-<h2 id="step-2-working-with-plan">step #2: Working with plan</h2>
-<h3 id="up">up</h3>
-<p>Helmwave will install repositories and helm-releases from plan.</p>
-<h3 id="down">down</h3>
-<p>Helmwave will uninstall helm-releases from plan.</p>
-<h3 id="ls">ls</h3>
-<p>Helmwave try getting list of helm-releases from plan.</p>
-<h3 id="status">status</h3>
-<p>Helmwave try getting status of helm-releases from plan.</p>
-<h3 id="rollback">rollback</h3>
-<p>Helmwave will rollback helm-releases from plan.</p>
-<h3 id="validate">validate</h3>
-<p>Helmwave will validate plan.</p>
-<hr/>
-<h2 id="logs">Logs</h2>
-<blockquote>
-<p>Logs options. Helmwave use <a href="https://github.com/sirupsen/logrus">logrus</a> as internal logger.</p>
-</blockquote>
-<h3 id="log-format">Log Format</h3>
-<p>Helmwave supports several log-format</p>
+<h2 id="project">Project</h2>
+<p>Reserved for future.</p>
+<h2 id="version">Version</h2>
+<p>Check current version and project version.</p>
+<p>In the future it is planned to be used for major compatibility. </p>
+<h2 id="repositories">Repositories[]</h2>
 <table>
 <thead>
 <tr>
-<th align="center">features</th>
-<th align="center"><code>text</code></th>
-<th align="center"><code>json</code></th>
-<th align="center"><code>pad</code></th>
-<th align="center"><code>emoji</code> (default)</th>
+<th align="center">field</th>
+<th align="center">required</th>
+<th align="center">type</th>
+<th align="center">default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">Color</td>
+<td align="center">name</td>
 <td align="center">✅</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">🌈</td>
+<td align="center">string</td>
+<td align="center">""</td>
 </tr>
 <tr>
-<td align="center">Human readable</td>
-<td align="center">🧐</td>
-<td align="center">🤖</td>
-<td align="center">🧐🧐</td>
+<td align="center">url</td>
 <td align="center">✅</td>
+<td align="center">url</td>
+<td align="center">""</td>
 </tr>
 <tr>
-<td align="center">Performance</td>
-<td align="center">🚀</td>
-<td align="center">🐢</td>
-<td align="center">✈️</td>
-<td align="center">🐢</td>
+<td align="center">username</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
 </tr>
 <tr>
-<td align="center">Module</td>
-<td align="center">TextFormatter (in-built logrus formatter)</td>
-<td align="center">JSONFormatter (in-built logrus formatter)</td>
-<td align="center">TextFormatter (in-built logrus formatter)</td>
-<td align="center"><a href="https://github.com/helmwave/logrus-emoji-formatter">logrus-emoji-formatter</a> special for helmwave</td>
+<td align="center">password</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">certfile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">keyfile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">cafile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">insecureskiptlsverify</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">force</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
 </tr>
 </tbody>
 </table>
-<h3 id="log-level">Log Level</h3>
+<h2 id="releases">Releases[]</h2>
 <table>
 <thead>
 <tr>
-<th align="center">_</th>
-<th align="center"><code>info</code> (default)</th>
-<th align="center"><code>warn</code></th>
-<th align="center"><code>debug</code></th>
-<th align="center"><code>fatal</code></th>
-<th align="center"><code>panic</code></th>
-<th align="center"><code>trace</code></th>
+<th align="center">field</th>
+<th align="center">required</th>
+<th align="center">type</th>
+<th align="center">default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">general info</td>
+<td align="center">name</td>
 <td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td align="center">string</td>
+<td align="center">""</td>
 </tr>
 <tr>
-<td align="center">incompatible version</td>
-<td align="center">❌</td>
+<td align="center">namespace</td>
 <td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td align="center">string</td>
+<td align="center">""</td>
 </tr>
 <tr>
-<td align="center">helm-debug</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
+<td align="center">chart.name</td>
 <td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td align="center">string</td>
+<td align="center">""</td>
 </tr>
 <tr>
-<td align="center">file content</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td align="center">chart.username</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
 </tr>
 <tr>
-<td align="center">helm manifests, bug report</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td align="center">chart.password</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">chart.certfile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">chart.keyfile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">chart.cafile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">chart.insecureskiptlsverify</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">description</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">depends_on</td>
+<td align="center">🙅</td>
+<td align="center">array</td>
+<td align="center">[]</td>
+</tr>
+<tr>
+<td align="center">values</td>
+<td align="center">🙅</td>
+<td align="center">array</td>
+<td align="center">[]</td>
+</tr>
+<tr>
+<td align="center">tags</td>
+<td align="center">🙅</td>
+<td align="center">array</td>
+<td align="center">[]</td>
+</tr>
+<tr>
+<td align="center">store</td>
+<td align="center">🙅</td>
+<td align="center">object</td>
+<td align="center">{}</td>
+</tr>
+<tr>
+<td align="center">timeout</td>
+<td align="center">🙅</td>
+<td align="center">interval</td>
+<td align="center">0s</td>
+</tr>
+<tr>
+<td align="center">maxhistory</td>
+<td align="center">🙅</td>
+<td align="center">int</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">createnamespace</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">resetvalues</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">recreate</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">force</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">atomic</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">cleanuponfail</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">subnotes</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">disablehooks</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">disableopenapivalidation</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">waitforjobs</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">wait</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">skipcrds</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">devel</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">reusevalues</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
 </tr>
 </tbody>
 </table>
-<p><code>info</code> or <code>debug</code> is preferred.</p>
-<h3 id="how-to-use">How to use?</h3>
-<div class="highlight"><pre><span></span><code>helmwave &lt;cmd&gt; --log-color<span class="o">=</span><span class="nb">true</span> --log-level<span class="o">=</span>debug --log-format<span class="o">=</span>pad
-</code></pre></div>
-<p>or</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">HELMWAVE_LOG_FORMAT</span><span class="o">=</span>pad
-<span class="nb">export</span> <span class="nv">HELMWAVE_LOG_LEVEL</span><span class="o">=</span>debug
-<span class="nb">export</span> <span class="nv">HELMWAVE_LOG_COLOR</span><span class="o">=</span><span class="nb">true</span>
-helmwave &lt;cmd&gt;
-</code></pre></div>
-<hr/>
-<h2 id="get-version">Get Version</h2>
-<h3 id="long-version">Long version</h3>
-<div class="highlight"><pre><span></span><code>$ helmwave --version  
-helmwave version <span class="m">0</span>.12.1
-
-$ helmwave -v
-helmwave version <span class="m">0</span>.12.1
-</code></pre></div>
-<h3 id="short-version">Short version</h3>
-<div class="highlight"><pre><span></span><code>$ helmwave version
-<span class="m">0</span>.12.1
-
-$ helmwave ver
-<span class="m">0</span>.12.1
-</code></pre></div>
-<h2 id="completion">Completion</h2>
-<h3 id="bash">Bash</h3>
-<p>Add this code to your ~/.bashrc</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> &lt;<span class="o">(</span>helmwave completion bash<span class="o">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">"source &lt;(helmwave completion bash)"</span> &gt;&gt; ~/.bashrc
-</code></pre></div>
-<p><img alt="completion-bash" src="../assets/completion-bash.png"/></p>
-<h3 id="zsh">ZSH</h3>
-<p>Add this code to your ~/.zshrc</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> &lt;<span class="o">(</span>helmwave completion zsh<span class="o">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">"source &lt;(helmwave completion zsh)"</span> &gt;&gt; ~/.zshrc
-</code></pre></div>
-<p><img alt="completion-zsh" src="../assets/completion-zsh.png"/></p>
 </article>
 </div>
 </div>
@@ -567,7 +588,7 @@ $ helmwave ver
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 🧋 Continuous Integration" class="md-footer__link md-footer__link--prev" href="../ci/" rel="prev">
+<a aria-label="Previous: 📔 Annotations" class="md-footer__link md-footer__link--prev" href="../anno/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -576,21 +597,8 @@ $ helmwave ver
 <span class="md-footer__direction">
                 Previous
               </span>
-              🧋 Continuous Integration
+              📔 Annotations
             </div>
-</div>
-</a>
-<a aria-label="Next: 📄 Templating" class="md-footer__link md-footer__link--next" href="../tpl/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              📄 Templating
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
 </div>
 </a>
 </nav>
