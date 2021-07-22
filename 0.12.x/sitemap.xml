@@ -35,4 +35,9 @@
          <lastmod>2021-07-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://helmwave.github.io/0.12.x/examples/</loc>
+         <lastmod>2021-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>

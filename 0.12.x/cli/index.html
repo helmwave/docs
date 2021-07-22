@@ -126,6 +126,11 @@
         Reference
       </a>
 </li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../examples/">
+        Examples
+      </a>
+</li>
 </ul>
 </div>
 </nav>
@@ -341,6 +346,26 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Examples" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/">
+        WIP
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -392,8 +417,18 @@ GLOBAL OPTIONS:
 <hr/>
 <h2 id="step-0-yml">step #0: yml</h2>
 <p>It allows render <code>helmwave.yml.tpl</code> to <code>helmwave.yml</code></p>
+<p><strong>Options</strong></p>
+<div class="highlight"><pre><span></span><code>--tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+--file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML]
+</code></pre></div>
 <h2 id="step-1-build">step #1: build</h2>
 <p>This command generates <code>.helmwave/</code> </p>
+<div class="highlight"><pre><span></span><code>--plandir value         Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR]
+--tags value, -t value  It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+--match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+--file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML]
+--diff-wide value       Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
+</code></pre></div>
 <h2 id="step-2-working-with-plan">step #2: Working with plan</h2>
 <h3 id="up">up</h3>
 <p>Helmwave will install repositories and helm-releases from plan.</p>
