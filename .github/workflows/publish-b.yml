@@ -30,4 +30,5 @@ jobs:
 
     - name: Mike
       run: |
-        poetry run mike deploy --push --update-aliases ${{ steps.extract_branch.outputs.branch }}
+        pip install mike
+        mike deploy --push --update-aliases ${{ steps.extract_branch.outputs.branch }}
