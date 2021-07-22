@@ -47,5 +47,5 @@ jobs:
         GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         #  https://github.com/jimporter/mike/issues/64
       run: |
-        envsubst < mkdocs.yml > mkdocs.yml
+        envsubst < mkdocs.yml.tpl > mkdocs.yml
         mike deploy --push --update-aliases ${{ steps.extract_branch.outputs.branch }}
