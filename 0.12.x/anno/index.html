@@ -316,7 +316,7 @@
 <h2 id="annotations-for-the-kubedog">Annotations for the <a href="https://github.com/werf/kubedog">kubedog</a> 🐶</h2>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>Kubedog currently in beta.</p>
+<p>Kubedog currently in <em>beta</em>.</p>
 </div>
 <p>inspired by <a href="https://werf.io/documentation/reference/deploy_annotations.html">werf annotations</a></p>
 <blockquote>
@@ -324,6 +324,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">HELMWAVE_KUBEDOG_ENABLED</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 </blockquote>
+<hr/>
 <h3 id="helmwavedevtrack-termination-mode"><code>helmwave.dev/track-termination-mode</code></h3>
 <p>Defines a condition when helmwave should stop tracking of the resource:</p>
 <ul>
@@ -332,6 +333,7 @@
   resources to be ready.</li>
 <li><code>NonBlocking</code> — the resource is tracked only if there are other resources that are not yet ready.</li>
 </ul>
+<hr/>
 <h3 id="helmwavedevfail-mode"><code>helmwave.dev/fail-mode</code></h3>
 <p>Defines how helmwave will handle a resource failure condition which occured after failures threshold has been reached
 for the resource during deploy process:</p>
@@ -343,6 +345,7 @@ for the resource during deploy process:</p>
   back to “normal” and fail the whole deploy process if an error for this resource occurs once again.</li>
 <li><code>IgnoreAndContinueDeployProcess</code> — resource errors do not affect the deployment process.</li>
 </ul>
+<hr/>
 <h3 id="helmwavedevfailures-allowed-per-replica"><code>helmwave.dev/failures-allowed-per-replica</code></h3>
 <p>By default, one error per replica is allowed before considering the whole deployment process unsuccessful. This setting
 defines a threshold of failures after which resource will be considered as failed and helmwave will handle this
@@ -350,6 +353,7 @@ situation using fail mode.</p>
 <ul>
 <li>NUMBER</li>
 </ul>
+<hr/>
 <h3 id="helmwavedevlog-regex"><code>helmwave.dev/log-regex</code></h3>
 <p>Defines a Re2 regex template that applies to all logs of all containers of all Pods owned by a resource with this
 annotation. helmwave would show only those log lines that fit the specified regex template. By default, helmwave shows
@@ -357,6 +361,7 @@ all log lines.</p>
 <ul>
 <li>RE2_REGEX</li>
 </ul>
+<hr/>
 <h3 id="helmwavedevlog-regex-for-container"><code>helmwave.dev/log-regex-for-{container}</code></h3>
 <p>Defines a Re2 regex template that applies to all logs of specified container of all Pods owned by a resource with this
 annotation. helmwave would show only those log lines that fit the specified regex template. By default, helmwave shows
@@ -364,24 +369,28 @@ all log lines.</p>
 <ul>
 <li>RE2_REGEX</li>
 </ul>
+<hr/>
 <h3 id="helmwavedevskip-logs"><code>helmwave.dev/skip-logs</code></h3>
 <p>Set to "true" to turn off printing logs of all containers of all Pods owned by a resource with this annotation. This
 annotation is disabled by default.</p>
 <ul>
 <li>"true"|"false"</li>
 </ul>
+<hr/>
 <h3 id="helmwavedevskip-logs-for-containers"><code>helmwave.dev/skip-logs-for-containers</code></h3>
 <p>Turn off printing logs of specified containers of all Pods owned by a resource with this annotation. This annotation is
 disabled by default.</p>
 <ul>
 <li>string with <code>,</code> as a separator</li>
 </ul>
+<hr/>
 <h3 id="helmwavedevshow-logs-only-for-containers"><code>helmwave.dev/show-logs-only-for-containers</code></h3>
 <p>Turn off printing logs of all containers except specified of all Pods owned by a resource with this annotation. This
 annotation is disabled by default.</p>
 <ul>
 <li>string with <code>,</code> as a separator</li>
 </ul>
+<hr/>
 <h3 id="helmwavedevshow-service-messages"><code>helmwave.dev/show-service-messages</code></h3>
 <p>Set to "true" to enable additional real-time debugging info (including Kubernetes events) for a resource during
 tracking. By default, helmwave would show these service messages only if the resource has failed the entire deploy
