@@ -107,7 +107,7 @@ helm-debug           | ❌   | ❌  | ✅  | ✅   | ✅  | ✅
 file content         | ❌   | ❌  | ✅  | ✅   | ✅  | ✅
 helm manifests, bug report       | ❌   | ❌  | ❌  | ❌   | ❌  | ✅
 
-`info` or `debug` is prefer.
+`info` or `debug` is preferred.
 
 
 
