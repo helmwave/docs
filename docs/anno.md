@@ -1,8 +1,9 @@
 # 📔 Annotations
 
+
 ## How to use?
 
-You should add annotation to your deployment / statefulset / jobs / daemonset
+You should add an annotation to your Deployment / StatefulSet / Jobs / DaemonSet
 
 ```yaml
 apiVersion: apps/v1
@@ -14,7 +15,6 @@ spec:
   template:
     metadata:
       annotations:
-        gitCommit: 5b4c2ff5
         helmwave.dev/show-service-messages: "true"
 ```
 

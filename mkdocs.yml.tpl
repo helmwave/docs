@@ -12,23 +12,7 @@ copyright: Copyright © 2020 - 2021 Dmitriy Zhilyaev
 nav:
   - Home: index.md
   - install.md
-  - examples/quick-start/README.md
-  - Configuration:
-    - yml/tags/README.md
-    - yml/options/README.md
-    - yml/store/README.md
-    - yml/depends_on/README.md
-    - yml/README.md
-  - tpl.md
-  - Examples:
-      - 'Passing image.tag': examples/CI_COMMIT_TAG/README.md
-      - 'Passing gitCommit': examples/CI_COMMIT_SHORT_SHA/README.md
-      - 'Multiple environments': examples/CI_ENVIRONMENT_NAME/README.md
-      - 'Private github helm repostories': examples/GITHUB_TOKEN/README.md
-  - anno.md
-  - cookbooks.md
-  - cli.md
-  - ci.md
+  - Templating: tpl.md
 
 plugins:
   - search
@@ -48,18 +32,18 @@ extra:
   version:
     provider: mike
     default: latest
-#  https://github.com/jimporter/mike/issues/64
-#  analytics:
-#    provider: google
-#    property: !ENV GOOGLE_ANALYTICS_KEY
     analytics:
       provider: google
       property: ${GOOGLE_ANALYTICS_KEY}
+      #  https://github.com/jimporter/mike/issues/64
+      # property: !ENV GOOGLE_ANALYTICS_KEY
   social:
   - icon: fontawesome/brands/docker
     link: https://hub.docker.com/diamon/helmwave
   - icon: fontawesome/brands/github
     link: https://github.com/helmwave
+  - icon: fontawesome/brands/telegram
+    link: https://t.me/helmwave
 
 markdown_extensions:
   - pymdownx.highlight
@@ -69,3 +53,5 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:mermaid2.fence_mermaid
+
+
