@@ -22,7 +22,7 @@ spec:
 
 
 !!! danger
-    Kubedog currently in beta.
+    Kubedog currently in *beta*.
 
 inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html)
 
@@ -34,7 +34,7 @@ inspired by [werf annotations](https://werf.io/documentation/reference/deploy_an
 >  export HELMWAVE_KUBEDOG_ENABLED=true
 >  ```
 
-
+---
 
 ### `helmwave.dev/track-termination-mode`
 
@@ -44,6 +44,8 @@ Defines a condition when helmwave should stop tracking of the resource:
   resource having this annotation. Since this mode is enabled by default, the deployment process would wait for all
   resources to be ready.
 - `NonBlocking` — the resource is tracked only if there are other resources that are not yet ready.
+
+---
 
 ### `helmwave.dev/fail-mode`
 
@@ -57,6 +59,8 @@ for the resource during deploy process:
   back to “normal” and fail the whole deploy process if an error for this resource occurs once again.
 - `IgnoreAndContinueDeployProcess` — resource errors do not affect the deployment process.
 
+---
+
 ### `helmwave.dev/failures-allowed-per-replica`
 
 By default, one error per replica is allowed before considering the whole deployment process unsuccessful. This setting
@@ -64,6 +68,8 @@ defines a threshold of failures after which resource will be considered as faile
 situation using fail mode.
 
 - NUMBER
+
+---
 
 ### `helmwave.dev/log-regex`
 
@@ -73,6 +79,8 @@ all log lines.
 
 - RE2_REGEX
 
+---
+
 ### `helmwave.dev/log-regex-for-{container}`
 
 Defines a Re2 regex template that applies to all logs of specified container of all Pods owned by a resource with this
@@ -81,12 +89,16 @@ all log lines.
 
 - RE2_REGEX
 
+---
+
 ### `helmwave.dev/skip-logs`
 
 Set to "true" to turn off printing logs of all containers of all Pods owned by a resource with this annotation. This
 annotation is disabled by default.
 
 - "true"|"false"
+
+---
 
 ### `helmwave.dev/skip-logs-for-containers`
 
@@ -95,12 +107,16 @@ disabled by default.
 
 - string with `,` as a separator
 
+---
+
 ### `helmwave.dev/show-logs-only-for-containers`
 
 Turn off printing logs of all containers except specified of all Pods owned by a resource with this annotation. This
 annotation is disabled by default.
 
 - string with `,` as a separator
+
+---
 
 ### `helmwave.dev/show-service-messages`
 
