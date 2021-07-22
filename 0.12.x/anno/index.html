@@ -314,14 +314,16 @@
         <span class="nt">helmwave.dev/show-service-messages</span><span class="p">:</span> <span class="s">"true"</span>
 </code></pre></div>
 <h2 id="annotations-for-the-kubedog">Annotations for the <a href="https://github.com/werf/kubedog">kubedog</a> 🐶</h2>
-<p>???+ danger
-    Kubedog currently in beta.</p>
-<blockquote>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Kubedog currently in beta.</p>
+</div>
 <p>inspired by <a href="https://werf.io/documentation/reference/deploy_annotations.html">werf annotations</a></p>
-</blockquote>
+<blockquote>
 <p>First step you need enable kubedog for helmwave.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">HELMWAVE_KUBEDOG_ENABLED</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
+</blockquote>
 <h3 id="helmwavedevtrack-termination-mode"><code>helmwave.dev/track-termination-mode</code></h3>
 <p>Defines a condition when helmwave should stop tracking of the resource:</p>
 <ul>
