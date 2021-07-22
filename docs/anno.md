@@ -20,17 +20,19 @@ spec:
 
 ## Annotations for the [kubedog](https://github.com/werf/kubedog) 🐶
 
-???+ danger
+
+!!! danger
     Kubedog currently in beta.
 
-> inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html)
+inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html)
 
 
-First step you need enable kubedog for helmwave.
 
-```shell
-export HELMWAVE_KUBEDOG_ENABLED=true
-```
+> First step you need enable kubedog for helmwave.
+>
+>  ```shell
+>  export HELMWAVE_KUBEDOG_ENABLED=true
+>  ```
 
 
 
