@@ -39,6 +39,11 @@ theme:
   favicon: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
   custom_dir: docs/overrides
 
+extra:
+  version:
+    provider: mike
+    default: latest
+
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences:
