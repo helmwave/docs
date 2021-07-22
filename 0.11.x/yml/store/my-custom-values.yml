@@ -1,0 +1,3 @@
+secretForApp:
+  kind: {{ .Release.Store.secret.type }}
+  path: {{ .Release.Store.secret.path | quote }}

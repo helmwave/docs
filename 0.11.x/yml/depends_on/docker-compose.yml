@@ -1,0 +1,17 @@
+services:
+  db:
+    image: some/db:latest
+
+  queue:
+    image: some/queue:latest
+
+  backend:
+    image: some/backend:latest
+    depends_on:
+      - db
+      - queue
+
+  frontend:
+    image: some/frontend:latest
+    depends_on:
+      - backend
