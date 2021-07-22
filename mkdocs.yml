@@ -48,9 +48,10 @@ extra:
   version:
     provider: mike
     default: latest
-  analytics:
-    provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
+#  https://github.com/jimporter/mike/issues/64
+#  analytics:
+#    provider: google
+#    property: !ENV GOOGLE_ANALYTICS_KEY
   social:
   - icon: fontawesome/brands/docker
     link: https://hub.docker.com/diamon/helmwave
