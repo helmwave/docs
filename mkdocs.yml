@@ -41,6 +41,11 @@ theme:
   favicon: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
   custom_dir: docs/overrides
 
+theme:
+    name: mkdocs
+    analytics:
+        gtag: G-FTBLK54FKZ
+        
 extra:
   version:
     provider: mike
@@ -56,6 +61,7 @@ extra:
     link: https://github.com/helmwave
   - icon: fontawesome/brands/telegram
     link: https://t.me/helmwave
+
 
 
 markdown_extensions:
