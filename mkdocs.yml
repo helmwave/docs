@@ -32,7 +32,6 @@ plugins:
 - include-markdown
 
 theme:
-  name: material
   logo: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
   favicon: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
   custom_dir: docs/overrides
@@ -45,11 +44,9 @@ theme:
   - toc.integrate
   - search.suggest
   - search.share
-  
-theme:
-    name: mkdocs
-    analytics:
-        gtag: G-FTBLK54FKZ
+  analytics:
+    gtag: G-FTBLK54FKZ
+    
 
 extra:
   version:
