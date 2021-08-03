@@ -45,6 +45,11 @@ theme:
   - toc.integrate
   - search.suggest
   - search.share
+  
+theme:
+    name: mkdocs
+    analytics:
+        gtag: G-FTBLK54FKZ
 
 extra:
   version:
