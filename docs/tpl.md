@@ -3,7 +3,7 @@
 Helmwave uses [Go templates](https://godoc.org/text/template) for templating.
 
 Helmwave supports all built-in functions, [Sprig library](https://godoc.org/github.com/Masterminds/sprig), and several
-[advanced functions](https://github.com/helmwave/helmwave/blob/release-0.12.1/pkg/template/func.go):
+[advanced functions](https://github.com/helmwave/helmwave/blob/release-0.13.0/pkg/template/func.go):
 
 - `toYaml` marshals a map into a string
 - `fromYaml` reads a golang string and generates a map
