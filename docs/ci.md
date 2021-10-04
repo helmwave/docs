@@ -22,12 +22,12 @@ helmwave:
   environment:
     name: "ref/$CI_COMMIT_REF_SLUG"
   image:
-    name: diamon/helmwave:0.12.1
+    name: diamon/helmwave:0.12.8
     entrypoint: [""]
   script:
     - helmwave yml
     - helmwave plan
-    - helmwave deploy
+    - helmwave up
   artifacts:
     paths:
     - .helmwave
