@@ -311,6 +311,7 @@ helm upgrade --install app charts/backend <span class="se">\</span>
    -f values/product/app/_.yml <span class="se">\</span>
    -f values/product/app/<span class="nv">$CI_ENVIRONMENT</span>.yml
 </code></pre></div>
+<hr/>
 <h2 id="how-to-use-secret-manager">How to use secret manager?</h2>
 <p><strong>Step 1. Create next secret</strong></p>
 <div class="highlight"><pre><span></span><code>aws secretsmanager create-secret --name hello/foobar --secret-string <span class="s1">'{"foo":"bar"}'</span>
