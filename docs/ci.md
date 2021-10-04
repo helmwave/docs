@@ -25,9 +25,7 @@ helmwave:
     name: diamon/helmwave:0.13.0
     entrypoint: [""]
   script:
-    - helmwave yml
-    - helmwave plan
-    - helmwave up
+    - helmwave up --build --yml
   artifacts:
     paths:
     - .helmwave
