@@ -1,5 +1,3 @@
-# Examples
-
 ## Managed environments for an app
 
 ```yaml
@@ -40,3 +38,50 @@ helm upgrade --install app charts/backend \
    -f values/product/app/_.yml \
    -f values/product/app/$CI_ENVIRONMENT.yml
 ```
+
+## How to use secret manager?
+
+**Step 1. Create next secret**
+
+```bash
+aws secretsmanager create-secret --name hello/foobar --secret-string '{"foo":"bar"}'
+```
+
+
+**Step 2. Create `helmwave.yml`**
+
+```yaml
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+
+template:
+  gomplate:
+    enabled: true
+    data:
+      sources:
+        secret:
+          url:
+            scheme: aws+sm
+            path: 'hello/foobar'
+
+releases:
+  - name: app
+    chart:
+      name: bitnami/nginx
+    namespace: test
+    values:
+      - vaules-secret.yaml
+```
+
+**Step 3. Create `vaules-secret.yaml`**
+
+```yaml
+secret: {{ datasource "secret" }}
+```
+
+
+**Step 4. Run `helmwave build`**
+
+You will get `secret: {"foo":"bar"}`
+
