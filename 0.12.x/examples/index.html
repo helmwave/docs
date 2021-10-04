@@ -9,15 +9,15 @@
 <meta content="Dmitriy Zhilyaev" name="author"/>
 <link href="https://helmwave.github.io/0.12.x/examples/" rel="canonical"/>
 <link href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico" rel="icon"/>
-<meta content="mkdocs-1.2.2, mkdocs-material-7.2.2" name="generator"/>
-<title>WIP - Helmwave</title>
-<link href="../assets/stylesheets/main.1118c9be.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.3.1" name="generator"/>
+<title>Examples - Helmwave</title>
+<link href="../assets/stylesheets/main.1c75ef36.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
 <meta content="website" property="og:type"/>
-<meta content="Helmwave - WIP" property="og:title"/>
+<meta content="Helmwave - Examples" property="og:title"/>
 <meta content="The helmwave`s docs" property="og:description"/>
 <meta content="https://helmwave.github.io/0.12.x/examples/" property="og:url"/>
 <meta content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png" property="og:image"/>
@@ -31,7 +31,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#wip">
+<a class="md-skip" href="#examples">
           Skip to content
         </a>
 </div>
@@ -55,7 +55,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              WIP
+              Examples
             
           </span>
 </div>
@@ -165,8 +165,8 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2">
-        Getting started
-        <span class="md-nav__icon md-icon"></span>
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Getting started" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
@@ -190,8 +190,8 @@
 <li class="md-nav__item md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
-        Reference
-        <span class="md-nav__icon md-icon"></span>
+          Reference
+          <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Reference" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
@@ -225,8 +225,8 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4">
-        Examples
-        <span class="md-nav__icon md-icon"></span>
+          Examples
+          <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Examples" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
@@ -236,9 +236,26 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        WIP
+        Examples
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#managed-environments-for-an-app">
+    Managed environments for an app
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -253,7 +270,42 @@
 <a class="md-content__button md-icon" href="https://github.com/helmwave/helmwave.github.io/edit/main/docs/examples/index.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="wip">WIP</h1>
+<h1 id="examples">Examples</h1>
+<h2 id="managed-environments-for-an-app">Managed environments for an app</h2>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.12.8</span>
+
+<span class="nt">.options</span><span class="p">:</span> <span class="nl">&amp;options</span>
+  <span class="nt">wait</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test</span>
+
+<span class="nt">releases</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">app</span>
+    <span class="nt">chart</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">charts/backend</span>
+    <span class="nt">&lt;&lt;</span><span class="p">:</span> <span class="nv">*options</span>
+    <span class="nt">tags</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">app</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">product</span>
+    <span class="nt">values</span><span class="p">:</span>
+      <span class="c1"># all products &amp; all envs</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/product/_/_.yml</span>
+      <span class="c1"># all products &amp; an env</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/product/_/{{ requiredEnv "CI_ENVIRONMENT" }}.yml</span>
+      <span class="c1"># a product &amp; all envs</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/product/app/_.yml</span>
+      <span class="c1"># a product &amp; an env</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/product/app/{{ requiredEnv "CI_ENVIRONMENT" }}.yml</span>
+</code></pre></div>
+<p>This example does something similar to this</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CI_ENVIRONMENT</span><span class="o">=</span>stage
+
+helm upgrade --install app charts/backend <span class="se">\</span>
+   --namespace <span class="nb">test</span> --wait <span class="se">\</span>
+   -f values/product/_/_.yml <span class="se">\</span>
+   -f values/product/_/<span class="nv">$CI_ENVIRONMENT</span>.yml <span class="se">\</span>
+   -f values/product/app/_.yml <span class="se">\</span>
+   -f values/product/app/<span class="nv">$CI_ENVIRONMENT</span>.yml
+</code></pre></div>
 </article>
 </div>
 </div>
@@ -285,10 +337,11 @@
             Copyright © 2020 - 2021 Dmitriy Zhilyaev
           </div>
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+            Material for MkDocs
+          </a>
 </div>
 <div class="md-footer-social">
 <a class="md-footer-social__link" href="https://hub.docker.com/diamon/helmwave" rel="noopener" target="_blank" title="hub.docker.com">
@@ -308,7 +361,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": {"analytics": {"property": "G-FTBLK54FKZ", "provider": "google"}, "default": "latest", "provider": "mike"}}</script>
-<script src="../assets/javascripts/bundle.2b46852b.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": {"analytics": {"property": "G-FTBLK54FKZ", "provider": "google"}, "default": "latest", "provider": "mike"}}</script>
+<script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
 </body>
 </html>
