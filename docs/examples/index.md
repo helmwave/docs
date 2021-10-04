@@ -3,7 +3,7 @@
 ## Managed environments for an app
 
 ```yaml
-version: 0.12.8
+version: 0.13.0
 
 .options: &options
   wait: true
