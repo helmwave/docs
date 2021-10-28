@@ -22,7 +22,7 @@ brew install helmwave/tap/helmwave
 or use wget
 ```sh
 export VERSION=0.14.1
-wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_$VERSION_darwin_amd64.tar.gz -O - | tar -xz
+wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_darwin_amd64.tar.gz -O - | tar -xz
 mv helmwave /usr/local/bin/
 ```
 
@@ -34,7 +34,7 @@ Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
 ```sh
 export VERSION=0.14.1
-wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_$VERSION_linux_amd64.tar.gz -O - | tar -xz
+wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_linux_amd64.tar.gz -O - | tar -xz
 mv helmwave /usr/local/bin/
 ```
 
