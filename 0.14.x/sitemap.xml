@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://helmwave.github.io/0.14.x/</loc>
-         <lastmod>2021-10-04</lastmod>
+         <lastmod>2021-10-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.14.x/anno/</loc>
-         <lastmod>2021-10-04</lastmod>
+         <lastmod>2021-10-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.14.x/ci/</loc>
-         <lastmod>2021-10-04</lastmod>
+         <lastmod>2021-10-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.14.x/cli/</loc>
-         <lastmod>2021-10-04</lastmod>
+         <lastmod>2021-10-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.14.x/install/</loc>
-         <lastmod>2021-10-04</lastmod>
+         <lastmod>2021-10-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.14.x/tpl/</loc>
-         <lastmod>2021-10-04</lastmod>
+         <lastmod>2021-10-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.14.x/yaml/</loc>
-         <lastmod>2021-10-04</lastmod>
+         <lastmod>2021-10-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.14.x/examples/</loc>
-         <lastmod>2021-10-04</lastmod>
+         <lastmod>2021-10-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
