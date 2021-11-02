@@ -136,8 +136,8 @@ It works when you call `$ helmwave up`
 Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application
 
 ```mermaid
-flowchart LR
-  frontend --> backend --> db
+graph LR;
+  frontend --> backend --> db;
 ```
 
 Your helmwave will
