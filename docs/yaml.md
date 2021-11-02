@@ -1,6 +1,6 @@
 # Yaml
 
-> works on [helm v3.7.0](https://github.com/helmwave/helmwave/blob/v0.14.1/go.mod)
+> works on [helm v3.7.1](https://github.com/helmwave/helmwave/blob/v0.15.0/go.mod)
 
 ```yaml
 project: Test07
@@ -15,6 +15,7 @@ repositories:
   cafile: ""
   insecureskiptlsverify: false
   force: false
+  allow_faulure: true
 releases:
 - store:
     pullPolicy: Always
@@ -123,11 +124,40 @@ reusevalues| 🙅 | bool    | false
 
 > It allows to pass you custom fields from helmwave.yml to values.
 
-It works when you call `$ helmwave build`:
+It works when you call `$ helmwave build`
 
 ### depends_on
 
 > It allows waiting releases
+
+It works when you call `$ helmwave up`
+
+
+Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application
+
+```mermaid
+flowchart LR
+  frontend --> backend --> db
+```
+
+Your helmwave will
+
+```yaml
+releases:
+  - name: frontend
+    depends_on: backend
+
+  - name: backend
+    depends_on: db
+
+  - name: db
+    allow_failure: false
+```
+
+When `allow_failure` is set true. It allows the installation to proceed.
+
+
+
 
 ### 🔖 Tags
 
@@ -139,4 +169,8 @@ It works with next options when you call `$ helmwave build`:
 --tags value, -t value  It allows you choose releases for build. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
 --match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
 ```
+
+### createnamespace
+
+> if `true` Helmwave will create namespace for release.
 
