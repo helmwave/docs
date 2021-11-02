@@ -82,6 +82,9 @@ cafile| 🙅 | string    | ""
 insecureskiptlsverify | 🙅 | bool | false
 force | 🙅 | bool | false
 
+### force
+
+Don't skip if repository exists.
 
 ## Releases[]
 
