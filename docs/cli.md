@@ -8,7 +8,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.15.0
+   0.15.1
 
 DESCRIPTION:
    This tool helps you compose your helm releases!
@@ -152,10 +152,10 @@ helmwave <cmd>
 
 ```bash
 $ helmwave --version  
-helmwave version 0.15.0
+helmwave version 0.15.1
 
 $ helmwave -v
-helmwave version 0.15.0
+helmwave version 0.15.1
 ```
 
 
@@ -163,10 +163,10 @@ helmwave version 0.15.0
 
 ```bash
 $ helmwave version
-0.15.0
+0.15.1
 
 $ helmwave ver
-0.15.0
+0.15.1
 ```
 
 ## Completion
