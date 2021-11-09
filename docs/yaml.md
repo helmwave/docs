@@ -182,8 +182,7 @@ Suppose we have next `helmwave.yml` with 4 releases.
 3. memcached-a
 4. memcached-b
 
-![](https://habrastorage.org/webt/45/f7/o_/45f7o_wad_mokyvpy-rtmqs7rno.png)
-
+<img width="200" src="https://habrastorage.org/webt/45/f7/o_/45f7o_wad_mokyvpy-rtmqs7rno.png" />
 
 ```yaml
 repositories:
