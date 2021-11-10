@@ -1,3 +1,0 @@
-secretForApp:
-  kind: vault
-  path: "secret/my/backend"

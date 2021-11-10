@@ -4,40 +4,30 @@ Helmwave was built from the very first commit with the idea of running it as par
 
 Let's see how we can get it working on popular CI software.
 
-## Github action
+--- 
+
+## :material-github: GitHub action
 
 - [official github action](https://github.com/marketplace/actions/helmwave)
 
 
-## Gitlab-CI
+## :material-gitlab: Gitlab-CI
 
 ```yaml
 variables:
-  HELMWAVE_LOG_LEVEL: debug
+  HELMWAVE_LOG_LEVEL: trace
 
-helmwave-deploy:
+helmwave:
   stage: deploy
   environment:
     name: "ref/$CI_COMMIT_REF_SLUG"
   image:
-    name: diamon/helmwave:0.9.3
+    name: diamon/helmwave:0.16.0
     entrypoint: [""]
   script:
-    - helmwave deploy
-
-
-stop environment:
-  stage: deploy
-  image:
-    name: lachlanevenson/k8s-kubectl:v1.18.4
-    entrypoint: [""]
-  variables:
-    GIT_STRATEGY: none
-  script:
-    - kubectl delete ns $CI_COMMIT_REF_SLUG
-  when: manual
-  environment:
-    name: "ref/$CI_COMMIT_REF_SLUG"
-    action: stop
+    - helmwave up --build
+  artifacts:
+    paths:
+    - .helmwave
+    expire_in: 2 week
 ```
-

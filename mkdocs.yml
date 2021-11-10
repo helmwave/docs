@@ -21,6 +21,10 @@ nav:
   - cli.md
   - tpl.md
   - anno.md
+  - yaml.md
+
+- Examples:
+  - examples/index.md
 
 plugins:
 - search
@@ -32,6 +36,8 @@ theme:
   logo: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
   favicon: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
   custom_dir: docs/overrides
+  analytics:
+       gtag: G-FTBLK54FKZ
   features:
   - navigation.top
   - navigation.instant
