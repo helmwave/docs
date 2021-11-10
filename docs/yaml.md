@@ -1,6 +1,6 @@
 # Yaml
 
-> works on [helm v3.7.1](https://github.com/helmwave/helmwave/blob/v0.15.1/go.mod)
+> works on [helm v3.7.1](https://github.com/helmwave/helmwave/blob/v0.16.0/go.mod)
 
 ```yaml
 project: Test07

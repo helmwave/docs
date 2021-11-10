@@ -8,7 +8,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.15.1
+   0.16.0
 
 DESCRIPTION:
    This tool helps you compose your helm releases!
@@ -17,18 +17,19 @@ DESCRIPTION:
    2. $ helmwave up
 
 COMMANDS:
-   build, plan                                        🏗 Build a plan
-   diff, vs                                           🆚 Differences between plan1 and plan2
-   up, install, apply, sync, deploy                   🚢 Apply your plan
-   list, ls                                           👀 List of deployed releases
-   rollback                                           ⏮  Rollback your plan
-   status                                             👁️ Status of deployed releases
-   down, uninstall, destroy, delete, del, rm, remove  🔪 Delete all
-   validate, check, lint                              🛂 Validate your plan
-   yml                                                📄 Render helmwave.yml.tpl -> helmwave.yml
-   version, ver                                       Show shorts version
-   completion                                         Generate completion script
-   help, h                                            Shows a list of commands or help for one command
+   build         🏗 Build a plan
+   diff, vs      🆚 Show Differences
+   up            🚢 Apply your plan
+   list, ls      👀 List of deployed releases
+   rollback      ⏮  Rollback your plan
+   status        👁️ Status of deployed releases
+   down          🔪 Delete all
+   validate      🛂 Validate your plan
+   yml           📄 Render helmwave.yml.tpl -> helmwave.yml
+   version, ver  Show shorts version
+   completion    Generate completion script
+   help, h       Shows a list of commands or help for one command
+
 
 GLOBAL OPTIONS:
    --log-format value         You can set: [ text | json | pad | emoji ] (default: "emoji") [$HELMWAVE_LOG_FORMAT]
@@ -37,7 +38,6 @@ GLOBAL OPTIONS:
    --kubedog-log-width value  Set kubedog max log line width (default: 140) [$HELMWAVE_KUBEDOG_LOG_WIDTH]
    --help, -h                 show help (default: false)
    --version, -v              print the version (default: false)
-
 ```
 
 ---
@@ -63,7 +63,9 @@ This command generates `.helmwave/`
 --tags value, -t value  It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
 --match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
 --file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML]
---diff-wide value       Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
+--diff-mode value       You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
+--wide value            Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
+--show-secret           Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
 ```
 
 ## step #2: Working with plan
@@ -73,26 +75,89 @@ This command generates `.helmwave/`
 
 Helmwave will install repositories and helm-releases from plan.
 
+
+
 ### down
 
 Helmwave will uninstall helm-releases from plan.
+
+```bash
+$ helmwave down      
+[🙃 aka INFO]: ✅ frontend@test uninstalled!
+[🙃 aka INFO]: ✅ database@test uninstalled!
+[🙃 aka INFO]: ✅ backend@test uninstalled!
+```
 
 ### ls
 
 Helmwave try getting list of helm-releases from plan.
 
+```bash
+$ helmwave ls      
+[🙃 aka INFO]: Should be 3 releases
+   NAME    | NAMESPACE | REVISION |            UPDATED             |  STATUS  | CHART | VERSION  
+-----------+-----------+----------+--------------------------------+----------+-------+----------
+  frontend | test      |        1 | 2021-11-10 04:41:23.330989     | deployed | this  | 0.1.0    
+           |           |          | +0300 MSK                      |          |       |          
+  database | test      |        1 | 2021-11-10 04:41:23.353473     | deployed | this  | 0.1.0    
+           |           |          | +0300 MSK                      |          |       |          
+  backend  | test      |        1 | 2021-11-10 04:41:23.270076     | deployed | this  | 0.1.0    
+           |           |          | +0300 MSK                      |          |       |
+```
+
 ### status
 
 Helmwave try getting status of helm-releases from plan.
+
+
+```bash
+$ helmwave status      
+[🙃 aka INFO]: Status of frontend@test
+        status: deployed
+        revision: 1
+        name: frontend
+        namespace: test
+        chart: frontend-0.1.0
+        last deployed: 2021-11-10 04:41:23.330989 +0300 MSK
+[🙃 aka INFO]: Status of database@test
+        status: deployed
+        revision: 1
+        name: database
+        namespace: test
+        chart: database-0.1.0
+        last deployed: 2021-11-10 04:41:23.353473 +0300 MSK
+[🙃 aka INFO]: Status of backend@test
+        name: backend
+        namespace: test
+        chart: backend-0.1.0
+        last deployed: 2021-11-10 04:41:23.270076 +0300 MSK
+        status: deployed
+        revision: 1
+
+```
 
 ### rollback
 
 Helmwave will rollback helm-releases from plan.
 
+```bash
+$ helmwave down      
+[🙃 aka INFO]: ✅ frontend@test rollback!
+[🙃 aka INFO]: ✅ database@test rollback!
+[🙃 aka INFO]: ✅ backend@test rollback!
+```
+
 ### validate
 
 Helmwave will validate plan.
 
+
+### diff
+
+Diff has 2 subcommands 
+
+1. `helmwave diff live` will diff with manifests in the k8s-cluster 
+2. `helmwave diff plan` will diff with your another local plan.
 
 ---
 
@@ -152,10 +217,10 @@ helmwave <cmd>
 
 ```bash
 $ helmwave --version  
-helmwave version 0.15.1
+helmwave version 0.16.0
 
 $ helmwave -v
-helmwave version 0.15.1
+helmwave version 0.16.0
 ```
 
 
@@ -163,10 +228,10 @@ helmwave version 0.15.1
 
 ```bash
 $ helmwave version
-0.15.1
+0.16.0
 
 $ helmwave ver
-0.15.1
+0.16.0
 ```
 
 ## Completion
