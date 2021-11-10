@@ -243,7 +243,7 @@ helmwave build -t a
 [🙃 aka INFO]: 🏗 Plan
         releases: 
           - redis-a@test
-          - memcached-b@test
+          - memcached-a@test
 ```
 
 
