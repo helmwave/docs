@@ -39,6 +39,40 @@ helm upgrade --install app charts/backend \
    -f values/product/app/$CI_ENVIRONMENT.yml
 ```
 
+
+## Git tag –> Docker image tag
+
+> Pass git tag to docker image tag
+
+default values:
+
+```yaml
+image:
+  repository: registry.gitlab.local/example/app
+  tag: latest
+```
+
+Create 2 files `helmwave.yml` and `my-values.yml`.
+
+`helmwave.yml`
+
+```yaml
+releases:
+- name: my-release
+  namespace: default
+  chart: 
+    name: my-chart-repo/my-chart-app
+  values:
+    - my-values.yml
+```
+
+`my-values.yml`
+
+```yaml
+image:
+  tag: {{ env "CI_COMMIT_TAG" }}
+```
+
 ## How to use secret manager?
 
 **Step 1. Create next secret**
