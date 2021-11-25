@@ -360,17 +360,112 @@
     <span class="nt">repo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">renovate</span>
     <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">25.76.1</span>
 </code></pre></div>
-<p>Run all</p>
+<p><strong>Render helmwave.yml.tpl -&gt; helmwave.yml</strong></p>
 <div class="highlight"><pre><span></span><code>helmwave yml
-helmwave build
-helmwave up
 </code></pre></div>
+<p>You will get it</p>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.16.2</span>
+
+
+<span class="nt">repositories</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bitnami</span>
+    <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">renovate</span>
+    <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://docs.renovatebot.com/helm-charts</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stevehipwell</span>
+    <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://stevehipwell.github.io/helm-charts</span>
+
+
+
+<span class="c1"># General options</span>
+<span class="nt">.options</span><span class="p">:</span> <span class="nl">&amp;options</span>
+  <span class="nt">wait</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">waitforjobs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">force</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">timeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10m</span>
+  <span class="nt">atomic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">maxhistory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+  <span class="nt">createnamespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+
+
+<span class="nt">releases</span><span class="p">:</span>
+
+
+<span class="c1">#################################</span>
+<span class="c1">#                               #</span>
+<span class="c1">#      harbor</span>
+<span class="c1">#                               #</span>
+<span class="c1">#################################</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">harbor</span>
+  <span class="nt">chart</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bitnami/harbor</span>
+    <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">11.0.5</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">harbor</span>
+  <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">harbor</span><span class="p p-Indicator">]</span>
+  <span class="nt">values</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/harbor.yml</span>
+  <span class="nt">&lt;&lt;</span><span class="p">:</span> <span class="nv">*options</span>
+
+
+
+<span class="c1">#################################</span>
+<span class="c1">#                               #</span>
+<span class="c1">#      minio</span>
+<span class="c1">#                               #</span>
+<span class="c1">#################################</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">minio</span>
+  <span class="nt">chart</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bitnami/minio</span>
+    <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9.0.2</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">minio</span>
+  <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">minio</span><span class="p p-Indicator">]</span>
+  <span class="nt">values</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/minio.yml</span>
+  <span class="nt">&lt;&lt;</span><span class="p">:</span> <span class="nv">*options</span>
+
+
+
+<span class="c1">#################################</span>
+<span class="c1">#                               #</span>
+<span class="c1">#      plantuml</span>
+<span class="c1">#                               #</span>
+<span class="c1">#################################</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">plantuml</span>
+  <span class="nt">chart</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stevehipwell/plantuml</span>
+    <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.3.0</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">plantuml</span>
+  <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">plantuml</span><span class="p p-Indicator">]</span>
+  <span class="nt">values</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/plantuml.yml</span>
+  <span class="nt">&lt;&lt;</span><span class="p">:</span> <span class="nv">*options</span>
+
+
+
+<span class="c1">#################################</span>
+<span class="c1">#                               #</span>
+<span class="c1">#      renovate</span>
+<span class="c1">#                               #</span>
+<span class="c1">#################################</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">renovate</span>
+  <span class="nt">chart</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">renovate/renovate</span>
+    <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">25.76.1</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">renovate</span>
+  <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">renovate</span><span class="p p-Indicator">]</span>
+  <span class="nt">values</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/renovate.yml</span>
+  <span class="nt">&lt;&lt;</span><span class="p">:</span> <span class="nv">*options</span>
+</code></pre></div>
+<p><strong>Build plan</strong></p>
+<div class="highlight"><pre><span></span><code>helmwave build
+</code></pre></div>
+<p><strong>Deploy plan</strong></p>
 <p>if we want to deploy only <code>plantuml</code></p>
-<div class="highlight"><pre><span></span><code>helmwave yml
-helmwave build -t plantuml
+<div class="highlight"><pre><span></span><code>helmwave build -t plantuml
 helmwave up
 </code></pre></div>
-<p>looks how to work HELMWAVE_TAGS</p>
+<p>looks how to work <a href="https://helmwave.github.io/docs/0.16.x/yaml/#tags">HELMWAVE_TAGS</a></p>
 </article>
 </div>
 </div>
