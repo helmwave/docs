@@ -38,6 +38,20 @@ plugins:
 - include-markdown
 
 theme:
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
   name: material
   logo: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
   favicon: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
