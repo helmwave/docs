@@ -2,21 +2,8 @@
 
 > [Source](https://github.com/helmwave/docs/tree/main/docs/examples/pass-git-commit)
 
-nginx/template/deployment.yaml looks like that:
 
-```yaml
-    ...
-    metadata:  
-      {{- with .Values.podAnnotations }}  
-      annotations:  
-        {{- toYaml . | nindent 8 }}  
-      {{- end }}
-    ...
-```
-
-We will pass pod annotations with  `values`
-
-## Project Structure
+**Project Structure**
 
 > [Source]()
 
@@ -31,6 +18,21 @@ We will pass pod annotations with  `values`
 ```yaml
 {% include "helmwave.yml" %}
 ```
+
+`nginx/template/deployment.yaml` looks like that:
+
+```yaml
+    ...
+    metadata:  
+      {{- with .Values.podAnnotations }}  
+      annotations:  
+        {{- toYaml . | nindent 8 }}  
+      {{- end }}
+    ...
+```
+
+We will pass pod annotations with  `values`
+
 
 `values.yml`
 
