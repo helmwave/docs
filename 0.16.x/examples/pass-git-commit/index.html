@@ -288,9 +288,6 @@
 <p><a href="https://github.com/helmwave/docs/tree/main/docs/examples/pass-git-commit">Source</a></p>
 </blockquote>
 <p><strong>Project Structure</strong></p>
-<blockquote>
-<p><a href="">Source</a></p>
-</blockquote>
 <div class="highlight"><pre><span></span><code>.
 ├── helmwave.yml
 └── values.yml
@@ -323,11 +320,8 @@
 </code></pre></div>
 <p>We will pass pod annotations with  <code>values</code></p>
 <p><code>values.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
-  <span class="nt">tag</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">env "pass-git-tag"</span> <span class="p p-Indicator">}}</span>
-
-<span class="nt">podAnnotations</span><span class="p">:</span>
-  <span class="nt">gitCommit</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">requiredEnv "pass-git-commit" | quote</span> <span class="p p-Indicator">}}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">podAnnotations</span><span class="p">:</span>
+  <span class="nt">gitCommit</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">requiredEnv "CI_COMMIT_SHORT_SHA" | quote</span> <span class="p p-Indicator">}}</span>
 </code></pre></div>
 <p><strong>Run</strong></p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">helmwave build</span>

@@ -1,2 +1,2 @@
 image:
-  tag: {{ env "pass-git-tag" }}
+  tag: {{ env "CI_COMMIT_TAG" }}

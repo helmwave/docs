@@ -295,7 +295,7 @@
 <span class="l l-Scalar l-Scalar-Plain">│</span><span class="err">  </span><span class="l l-Scalar l-Scalar-Plain"> └── renovate.yml</span>
 <span class="l l-Scalar l-Scalar-Plain">└── vars.yaml</span>
 </code></pre></div></p>
-<p>Create main <code>helmwave.yml.tpl</code></p>
+<p><strong>Step 1. Create <code>helmwave.yml.tpl</code></strong></p>
 <div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.16.2</span>
 
 
@@ -342,6 +342,7 @@
 <span class="p p-Indicator">{{</span> <span class="nv">end</span> <span class="p p-Indicator">}}</span>
 <span class="p p-Indicator">{{</span><span class="nv">- end</span> <span class="p p-Indicator">}}</span>
 </code></pre></div>
+<p><strong>Step 2. Create <code>vars.yaml</code></strong></p>
 <p>We will manage list apps with additional <code>vars.yaml</code> file</p>
 <div class="highlight"><pre><span></span><code><span class="nt">releases</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">harbor</span>
@@ -360,7 +361,7 @@
     <span class="nt">repo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">renovate</span>
     <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">25.76.1</span>
 </code></pre></div>
-<p><strong>Render helmwave.yml.tpl -&gt; helmwave.yml</strong></p>
+<p><strong>Step 3. Render <code>helmwave.yml.tpl</code> -&gt;  <code>helmwave.yml</code></strong></p>
 <div class="highlight"><pre><span></span><code>helmwave yml
 </code></pre></div>
 <p>You will get it</p>
@@ -457,10 +458,10 @@
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/renovate.yml</span>
   <span class="nt">&lt;&lt;</span><span class="p">:</span> <span class="nv">*options</span>
 </code></pre></div>
-<p><strong>Build plan</strong></p>
+<p><strong>Step 4. Build plan</strong></p>
 <div class="highlight"><pre><span></span><code>helmwave build
 </code></pre></div>
-<p><strong>Deploy plan</strong></p>
+<p><strong>Step 5. Deploy plan</strong></p>
 <p>if we want to deploy only <code>plantuml</code></p>
 <div class="highlight"><pre><span></span><code>helmwave build -t plantuml
 helmwave up

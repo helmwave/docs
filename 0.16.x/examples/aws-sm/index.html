@@ -287,14 +287,14 @@
 <blockquote>
 <p><a href="https://github.com/helmwave/docs/tree/main/docs/examples/aws-sm">Source</a></p>
 </blockquote>
-<p><strong>Step 1. Create next secret</strong></p>
-<div class="highlight"><pre><span></span><code>aws secretsmanager create-secret --name hello/foobar --secret-string <span class="s1">'{"foo":"bar"}'</span>
-</code></pre></div>
 <p><strong>Project structure</strong>
 <div class="highlight"><pre><span></span><code>├── README.md
 ├── helmwave.yml
 └── vaules-secret.yaml
 </code></pre></div></p>
+<p><strong>Step 1. Create next secret</strong></p>
+<div class="highlight"><pre><span></span><code>aws secretsmanager create-secret --name hello/foobar --secret-string <span class="s1">'{"foo":"bar"}'</span>
+</code></pre></div>
 <p><strong>Step 2. Create <code>helmwave.yml</code></strong></p>
 <div class="highlight"><pre><span></span><code>repositories:
   - name: bitnami

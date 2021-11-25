@@ -359,7 +359,7 @@
 <h4 id="valuesyml"><code>values.yml</code></h4>
 <p>This values will override default values </p>
 <div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
-  <span class="nt">tag</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">env "pass-git-tag"</span> <span class="p p-Indicator">}}</span>
+  <span class="nt">tag</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">env "CI_COMMIT_TAG"</span> <span class="p p-Indicator">}}</span>
 </code></pre></div>
 <h2 id="run">Run</h2>
 <div class="highlight"><pre><span></span><code><span class="go">helmwave build</span>
