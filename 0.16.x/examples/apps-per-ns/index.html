@@ -254,9 +254,31 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Apps per namespace
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Apps per namespace
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-the-project">
+    Create the project
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cicd-with-gitlab-ci">
+    CI/CD with Gitlab-CI
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../single-app-multi-envs/">
@@ -298,6 +320,7 @@
 </a>
 <h1 id="apps-per-namespace">Apps per namespace</h1>
 <p>If you want to install each application in your own namespace. </p>
+<h2 id="create-the-project">Create the project</h2>
 <p><strong>Project structure</strong>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">├── README.md</span>
 <span class="l l-Scalar l-Scalar-Plain">├── helmwave.yml.tpl</span>
@@ -480,6 +503,32 @@
 helmwave up
 </code></pre></div>
 <p>looks how to work <a href="https://helmwave.github.io/docs/0.16.x/yaml/#tags">HELMWAVE_TAGS</a></p>
+<h2 id="cicd-with-gitlab-ci">CI/CD with Gitlab-CI</h2>
+<div class="highlight"><pre><span></span><code><span class="nt">variables</span><span class="p">:</span>
+  <span class="nt">HELMWAVE_LOG_LEVEL</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">debug</span>
+
+<span class="nt">Deploy to prod</span><span class="p">:</span>
+  <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">deploy</span>
+  <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">manual</span>
+  <span class="nt">environment</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">prod</span>
+  <span class="nt">image</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ghcr.io/helmwave/helmwave:0.16.2</span>
+    <span class="nt">entrypoint</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+  <span class="nt">before_script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">printenv | grep HELMWAVE</span>
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">helmwave yml</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">helmwave build</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">helmwave up</span>
+  <span class="nt">artifacts</span><span class="p">:</span>
+    <span class="nt">paths</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">.helmwave</span>
+    <span class="nt">expire_in</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2 week</span>
+</code></pre></div>
+<p>if you want to deploy only <code>plantuml</code> via CI.</p>
+<p><img alt="" src="https://habrastorage.org/webt/bd/aq/3r/bdaq3rroa0ak03g3qycvlp84w90.png"/></p>
+<p><img alt="" src="https://habrastorage.org/webt/ew/2k/5v/ew2k5vrv7tmbcjpngwehknymjy4.png"/></p>
 </article>
 </div>
 </div>
