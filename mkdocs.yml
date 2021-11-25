@@ -31,8 +31,6 @@ nav:
   - examples/private-github-repo/README.md
   - examples/single-app-multi-envs/README.md
 
-
-
 plugins:
 - search
 - mermaid2
