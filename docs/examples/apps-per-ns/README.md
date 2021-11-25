@@ -2,6 +2,8 @@
 
 If you want to install each application in your own namespace. 
 
+## Create the project
+
 **Project structure**
 ```yaml
 ├── README.md
@@ -59,3 +61,36 @@ helmwave up
 ```
 
 looks how to work [HELMWAVE_TAGS](https://helmwave.github.io/docs/0.16.x/yaml/#tags)
+
+## CI/CD with Gitlab-CI
+
+
+```yaml
+variables:
+  HELMWAVE_LOG_LEVEL: debug
+
+Deploy to prod:
+  stage: deploy
+  when: manual
+  environment:
+    name: prod
+  image:
+    name: ghcr.io/helmwave/helmwave:0.16.2
+    entrypoint: [""]
+  before_script:
+    - printenv | grep HELMWAVE
+  script:
+    - helmwave yml
+    - helmwave build
+    - helmwave up
+  artifacts:
+    paths:
+    - .helmwave
+    expire_in: 2 week
+```
+
+if you want to deploy only `plantuml` via CI.
+
+![](https://habrastorage.org/webt/bd/aq/3r/bdaq3rroa0ak03g3qycvlp84w90.png)
+
+![](https://habrastorage.org/webt/ew/2k/5v/ew2k5vrv7tmbcjpngwehknymjy4.png)
