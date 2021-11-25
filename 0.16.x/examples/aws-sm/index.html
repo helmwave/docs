@@ -7,31 +7,31 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="The helmwave`s docs" name="description"/>
 <meta content="Dmitriy Zhilyaev" name="author"/>
-<link href="https://helmwave.github.io/0.16.x/examples/" rel="canonical"/>
+<link href="https://helmwave.github.io/0.16.x/examples/aws-sm/" rel="canonical"/>
 <link href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-7.3.6" name="generator"/>
-<title>Index - Helmwave</title>
-<link href="../assets/stylesheets/main.a57b2b03.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
+<title>How to use AWS secret manager? - Helmwave</title>
+<link href="../../assets/stylesheets/main.a57b2b03.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
 <meta content="website" property="og:type"/>
-<meta content="Helmwave - Index" property="og:title"/>
+<meta content="Helmwave - How to use AWS secret manager?" property="og:title"/>
 <meta content="The helmwave`s docs" property="og:description"/>
-<meta content="https://helmwave.github.io/0.16.x/examples/" property="og:url"/>
+<meta content="https://helmwave.github.io/0.16.x/examples/aws-sm/" property="og:url"/>
 <meta content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 </head>
 <body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
-<script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#managed-environments-for-an-app">
+<a class="md-skip" href="#how-to-use-aws-secret-manager">
           Skip to content
         </a>
 </div>
@@ -39,7 +39,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Helmwave" class="md-header__button md-logo" data-md-component="logo" href=".." title="Helmwave">
+<a aria-label="Helmwave" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Helmwave">
 <img alt="logo" src="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -55,7 +55,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Index
+              How to use AWS secret manager?
             
           </span>
 </div>
@@ -112,22 +112,22 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="..">
+<a class="md-tabs__link" href="../..">
       Home
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../install/">
+<a class="md-tabs__link" href="../../install/">
         Getting started
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../cli/">
+<a class="md-tabs__link" href="../../cli/">
         Reference
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
+<a class="md-tabs__link md-tabs__link--active" href="../quick-start/">
         Examples
       </a>
 </li>
@@ -141,7 +141,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Helmwave" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Helmwave">
+<a aria-label="Helmwave" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Helmwave">
 <img alt="logo" src="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico"/>
 </a>
     Helmwave
@@ -158,7 +158,7 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="..">
+<a class="md-nav__link" href="../..">
         Home
       </a>
 </li>
@@ -175,12 +175,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../install/">
+<a class="md-nav__link" href="../../install/">
         📥 Installation
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ci/">
+<a class="md-nav__link" href="../../ci/">
         🧋 Continuous Integration
       </a>
 </li>
@@ -200,22 +200,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../cli/">
+<a class="md-nav__link" href="../../cli/">
         🛠 CLI Reference
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../tpl/">
+<a class="md-nav__link" href="../../tpl/">
         📄 Templating
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../anno/">
+<a class="md-nav__link" href="../../anno/">
         📔 Annotations
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../yaml/">
+<a class="md-nav__link" href="../../yaml/">
         Yaml
       </a>
 </li>
@@ -234,38 +234,36 @@
           Examples
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../quick-start/">
+        🔰 Quick Start
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Index
-          <span class="md-nav__icon md-icon"></span>
-</label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Index
+        How to use AWS secret manager?
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#managed-environments-for-an-app">
-    Managed environments for an app
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#git-tag-docker-image-tag">
-    Git tag –&gt; Docker image tag
-  </a>
+<a class="md-nav__link" href="../pass-git-commit/">
+        Restart pods via git-commit
+      </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-use-secret-manager">
-    How to use secret manager?
-  </a>
+<a class="md-nav__link" href="../pass-git-tag/">
+        Pass Git tag -&gt; Docker image tag
+      </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../private-github-repo/">
+        Private GitHub repo
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../single-app-multi-envs/">
+        Single app multi envs
+      </a>
 </li>
 </ul>
 </nav>
@@ -277,95 +275,43 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/helmwave/helmwave.github.io/edit/main/docs/examples/index.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/helmwave/docs/edit/main/docs/examples/aws-sm/README.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1>Index</h1>
-<h2 id="managed-environments-for-an-app">Managed environments for an app</h2>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.16.2</span>
-
-<span class="nt">.options</span><span class="p">:</span> <span class="nl">&amp;options</span>
-  <span class="nt">wait</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test</span>
-  <span class="nt">createnamespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-
-<span class="nt">releases</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">app</span>
-    <span class="nt">chart</span><span class="p">:</span>
-      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">charts/backend</span>
-    <span class="nt">&lt;&lt;</span><span class="p">:</span> <span class="nv">*options</span>
-    <span class="nt">tags</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">app</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">product</span>
-    <span class="nt">values</span><span class="p">:</span>
-      <span class="c1"># all products &amp; all envs</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/product/_/_.yml</span>
-      <span class="c1"># all products &amp; an env</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/product/_/{{ requiredEnv "CI_ENVIRONMENT" }}.yml</span>
-      <span class="c1"># a product &amp; all envs</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/product/app/_.yml</span>
-      <span class="c1"># a product &amp; an env</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">values/product/app/{{ requiredEnv "CI_ENVIRONMENT" }}.yml</span>
-</code></pre></div>
-<p>This example does something similar to this</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CI_ENVIRONMENT</span><span class="o">=</span>stage
-
-helm upgrade --install app charts/backend <span class="se">\</span>
-   --namespace <span class="nb">test</span> --wait <span class="se">\</span>
-   -f values/product/_/_.yml <span class="se">\</span>
-   -f values/product/_/<span class="nv">$CI_ENVIRONMENT</span>.yml <span class="se">\</span>
-   -f values/product/app/_.yml <span class="se">\</span>
-   -f values/product/app/<span class="nv">$CI_ENVIRONMENT</span>.yml
-</code></pre></div>
-<h2 id="git-tag-docker-image-tag">Git tag –&gt; Docker image tag</h2>
+<h1 id="how-to-use-aws-secret-manager">How to use AWS secret manager?</h1>
 <blockquote>
-<p>Pass git tag to docker image tag</p>
+<p><a href="https://github.com/helmwave/docs/tree/main/docs/examples/aws-sm">Source</a></p>
 </blockquote>
-<p>default values:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
-  <span class="nt">repository</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">registry.gitlab.local/example/app</span>
-  <span class="nt">tag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
-</code></pre></div>
-<p>Create 2 files <code>helmwave.yml</code> and <code>my-values.yml</code>.</p>
-<p><code>helmwave.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">releases</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-release</span>
-  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
-  <span class="nt">chart</span><span class="p">:</span> 
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-chart-repo/my-chart-app</span>
-  <span class="nt">values</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">my-values.yml</span>
-</code></pre></div>
-<p><code>my-values.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
-  <span class="nt">tag</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">env "CI_COMMIT_TAG"</span> <span class="p p-Indicator">}}</span>
-</code></pre></div>
-<h2 id="how-to-use-secret-manager">How to use secret manager?</h2>
 <p><strong>Step 1. Create next secret</strong></p>
 <div class="highlight"><pre><span></span><code>aws secretsmanager create-secret --name hello/foobar --secret-string <span class="s1">'{"foo":"bar"}'</span>
 </code></pre></div>
+<p><strong>Project structure</strong>
+<div class="highlight"><pre><span></span><code>├── README.md
+├── helmwave.yml
+└── vaules-secret.yaml
+</code></pre></div></p>
 <p><strong>Step 2. Create <code>helmwave.yml</code></strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">repositories</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bitnami</span>
-    <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span>
+<div class="highlight"><pre><span></span><code>repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
 
-<span class="nt">template</span><span class="p">:</span>
-  <span class="nt">gomplate</span><span class="p">:</span>
-    <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">data</span><span class="p">:</span>
-      <span class="nt">sources</span><span class="p">:</span>
-        <span class="nt">secret</span><span class="p">:</span>
-          <span class="nt">url</span><span class="p">:</span>
-            <span class="nt">scheme</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws+sm</span>
-            <span class="nt">path</span><span class="p">:</span> <span class="s">'hello/foobar'</span>
+template:
+  gomplate:
+    enabled: <span class="nb">true</span>
+    data:
+      sources:
+        secret:
+          url:
+            scheme: aws+sm
+            path: <span class="s1">'hello/foobar'</span>
 
-<span class="nt">releases</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">app</span>
-    <span class="nt">chart</span><span class="p">:</span>
-      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span>
-    <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test</span>
-    <span class="nt">values</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">vaules-secret.yaml</span>
+releases:
+  - name: app
+    chart:
+      name: bitnami/nginx
+    namespace: <span class="nb">test</span>
+    values:
+      - vaules-secret.yaml
 </code></pre></div>
 <p><strong>Step 3. Create <code>vaules-secret.yaml</code></strong></p>
 <div class="highlight"><pre><span></span><code><span class="nt">secret</span><span class="p">:</span> <span class="p p-Indicator">{{</span> <span class="nv">datasource "secret"</span> <span class="p p-Indicator">}}</span>
@@ -382,7 +328,7 @@ helm upgrade --install app charts/backend <span class="se">\</span>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Yaml" class="md-footer__link md-footer__link--prev" href="../yaml/" rel="prev">
+<a aria-label="Previous: 🔰 Quick Start" class="md-footer__link md-footer__link--prev" href="../quick-start/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -391,8 +337,21 @@ helm upgrade --install app charts/backend <span class="se">\</span>
 <span class="md-footer__direction">
                 Previous
               </span>
-              Yaml
+              🔰 Quick Start
             </div>
+</div>
+</a>
+<a aria-label="Next: Restart pods via git-commit" class="md-footer__link md-footer__link--next" href="../pass-git-commit/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Restart pods via git-commit
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
 </div>
 </a>
 </nav>
@@ -427,7 +386,7 @@ helm upgrade --install app charts/backend <span class="se">\</span>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": {"provider": "mike", "default": "latest", "analytics": {"provider": "google", "property": "G-FTBLK54FKZ"}}}</script>
-<script src="../assets/javascripts/bundle.b1047164.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": {"provider": "mike", "default": "latest", "analytics": {"provider": "google", "property": "G-FTBLK54FKZ"}}}</script>
+<script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
 </body>
 </html>

@@ -127,7 +127,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../examples/">
+<a class="md-tabs__link" href="../examples/quick-start/">
         Examples
       </a>
 </li>
@@ -310,8 +310,33 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/">
-        Index
+<a class="md-nav__link" href="../examples/quick-start/">
+        🔰 Quick Start
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/aws-sm/">
+        How to use AWS secret manager?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/pass-git-commit/">
+        Restart pods via git-commit
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/pass-git-tag/">
+        Pass Git tag -&gt; Docker image tag
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/private-github-repo/">
+        Private GitHub repo
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/single-app-multi-envs/">
+        Single app multi envs
       </a>
 </li>
 </ul>
@@ -324,14 +349,15 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/helmwave/helmwave.github.io/edit/main/docs/yaml.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/helmwave/docs/edit/main/docs/yaml.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="yaml">Yaml</h1>
 <blockquote>
 <p>works on <a href="https://github.com/helmwave/helmwave/blob/v0.16.2/go.mod">helm v3.7.1</a></p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="nt">project</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Test07</span>
+<p>Sample: </p>
+<div class="highlight"><pre><span></span><code><span class="nt">project</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-project</span>
 <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev</span>
 <span class="nt">repositories</span><span class="p">:</span>
 <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bitnami</span>
@@ -666,15 +692,20 @@
   frontend --&gt; backend --&gt; db;
 </div>
 <p>Your helmwave will</p>
-<div class="highlight"><pre><span></span><code><span class="nt">releases</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">n</span>
+
+<span class="l l-Scalar l-Scalar-Plain">releases</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">frontend</span>
-    <span class="nt">depends_on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">backend</span>
+    <span class="nt">depends_on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">backend@test</span>
+    <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test</span>
 
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">backend</span>
-    <span class="nt">depends_on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">db</span>
+    <span class="nt">depends_on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">db@test</span>
+    <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test</span>
 
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">db</span>
     <span class="nt">allow_failure</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test</span>
 </code></pre></div>
 <p>When <code>allow_failure</code> is set true. It allows the installation to proceed.</p>
 <h3 id="tags">🔖 Tags</h3>
@@ -795,13 +826,13 @@ This flag changes logic for query releases.</p>
             </div>
 </div>
 </a>
-<a aria-label="Next: Index" class="md-footer__link md-footer__link--next" href="../examples/" rel="next">
+<a aria-label="Next: 🔰 Quick Start" class="md-footer__link md-footer__link--next" href="../examples/quick-start/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Index
+              🔰 Quick Start
             </div>
 </div>
 <div class="md-footer__button md-icon">
