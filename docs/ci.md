@@ -35,3 +35,5 @@ helmwave:
     - .helmwave
     expire_in: 2 week
 ```
+
+See [example](https://helmwave.github.io/docs/0.16.x/examples/apps-per-ns/#cicd-with-gitlab-ci)
