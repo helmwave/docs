@@ -5,8 +5,6 @@
 
 **Project Structure**
 
-> [Source]()
-
 ```
 .
 ├── helmwave.yml

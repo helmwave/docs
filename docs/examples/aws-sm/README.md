@@ -2,18 +2,19 @@
 
 > [Source](https://github.com/helmwave/docs/tree/main/docs/examples/aws-sm)
 
-**Step 1. Create next secret**
-
-```bash
-aws secretsmanager create-secret --name hello/foobar --secret-string '{"foo":"bar"}'
-```
-
 **Project structure**
 ```
 ├── README.md
 ├── helmwave.yml
 └── vaules-secret.yaml
 ```
+
+**Step 1. Create next secret**
+
+```bash
+aws secretsmanager create-secret --name hello/foobar --secret-string '{"foo":"bar"}'
+```
+
 
 **Step 2. Create `helmwave.yml`**
 

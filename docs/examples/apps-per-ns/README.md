@@ -15,11 +15,13 @@ If you want to install each application in your own namespace.
 
 ```
 
-Create main `helmwave.yml.tpl`
+**Step 1. Create `helmwave.yml.tpl`**
 
 ```yaml
 {% include "helmwave.yml.tpl" %}
 ```
+
+**Step 2. Create `vars.yaml`**
 
 We will manage list apps with additional `vars.yaml` file
 
@@ -27,7 +29,7 @@ We will manage list apps with additional `vars.yaml` file
 {% include "vars.yaml" %}
 ```
 
-**Render helmwave.yml.tpl -> helmwave.yml**
+**Step 3. Render `helmwave.yml.tpl` ->  `helmwave.yml`**
 
 ```shell
 helmwave yml
@@ -41,13 +43,13 @@ You will get it
 
 
 
-**Build plan**
+**Step 4. Build plan**
 
 ```shell
 helmwave build
 ```
 
-**Deploy plan**
+**Step 5. Deploy plan**
 
 if we want to deploy only `plantuml`
 

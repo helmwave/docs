@@ -4,7 +4,7 @@
 
 
 
-#### Suppose the `helmwave.yml.tpl` looks like
+**Suppose the `helmwave.yml.tpl` looks like**
 
 
 ```yaml
@@ -18,13 +18,11 @@ This command will render `helmwave.yml.tpl` to `helmwave.yml`
 $ export NS=stage
 $ export GITHUB_TOKEN=my-secret-token
 $ helmwave yml
-[🙃 aka INFO]: 🛠 Your planfile is .helmwave/planfile
-[🙃 aka INFO]: 📄 Render file
-        from: helmwave.yml
-        to: helmwave.yml
+[🙃 aka INFO]: 📄 YML is ready!
+        build plan with next command: helmwave build -f helmwave.yml
 ```
 
-#### Once applied, your `helmwave.yml` will look like
+Once applied, your `helmwave.yml` will look like
 
 ```yaml
 {% include "helmwave.yml" %}
