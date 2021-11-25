@@ -72,9 +72,9 @@ extra:
   version:
     provider: mike
     default: latest
-    analytics:
-      provider: google
-      property: G-FTBLK54FKZ
+  analytics:
+    provider: google
+    property: G-FTBLK54FKZ
 
   social:
   - icon: fontawesome/brands/docker

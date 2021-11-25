@@ -10,14 +10,15 @@
 
 ```bash
 pip install -r requirements.txt
-mkdocs serv
+mkdocs serve
+mike serve
 ```
 
 ### Prod
 
 ```bash
 pip install -r requirements.txt
-mike deploy --push 0.12.x
+mike deploy --push --update-aliases 0.16.x latest
 ```
 
 ## Deploy new branch
