@@ -27,20 +27,33 @@ We will manage list apps with additional `vars.yaml` file
 {% include "vars.yaml" %}
 ```
 
-Run all
+**Render helmwave.yml.tpl -> helmwave.yml**
 
 ```shell
 helmwave yml
-helmwave build
-helmwave up
 ```
+
+You will get it
+
+```yaml
+{% include "helmwave.yml" %}
+```
+
+
+
+**Build plan**
+
+```shell
+helmwave build
+```
+
+**Deploy plan**
 
 if we want to deploy only `plantuml`
 
 ```shell
-helmwave yml
 helmwave build -t plantuml
 helmwave up
 ```
 
-looks how to work HELMWAVE_TAGS
+looks how to work [HELMWAVE_TAGS](https://helmwave.github.io/docs/0.16.x/yaml/#tags)
