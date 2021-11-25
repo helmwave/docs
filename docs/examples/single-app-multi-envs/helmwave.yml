@@ -9,5 +9,5 @@ releases:
       # Default
       - values/_.yml
       # For specific ENVIRONMENT
-      - values/{{ requiredEnv "CI_ENVIRONMENT_NAME" }}.yml
+      - values/stage.yml
     createnamespace: true
