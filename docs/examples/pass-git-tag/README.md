@@ -1,7 +1,7 @@
 # Pass Git tag -> Docker image tag
 
 
-> [Source](https://github.com/helmwave/docs/tree/main/docs/examples/pass-git-commit)
+> [Source](https://github.com/helmwave/docs/tree/0.16.x/docs/examples/pass-git-commit)
 
 
 

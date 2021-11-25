@@ -25,31 +25,7 @@ template:
     enabled: true
 ```
 
-#### Usage
-
-```yaml
-repositories:
-  - name: bitnami
-    url: https://charts.bitnami.com/bitnami
-
-template:
-  gomplate:
-    enabled: true
-    data:
-      sources:
-        secret:
-          url:
-            scheme: aws+sm
-            path: 'hello/foobar'
-
-releases:
-  - name: app
-    chart:
-      name: bitnami/nginx
-    namespace: test
-    values:
-      - vaules-secret.yaml
-```
+see [example]()
 
 
 ### Issues

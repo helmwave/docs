@@ -1,6 +1,6 @@
 # How to use AWS secret manager?
 
-> [Source](https://github.com/helmwave/docs/tree/main/docs/examples/aws-sm)
+> [Source](https://github.com/helmwave/docs/tree/0.16.x/docs/examples/aws-sm)
 
 **Project structure**
 ```
