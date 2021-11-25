@@ -60,7 +60,7 @@ releases:
 
 
 
-## [Custom](https://github.com/helmwave/helmwave/blob/release-0.16.0/pkg/template/func.go)
+## [Custom](https://github.com/helmwave/helmwave/blob/release-0.16.2/pkg/template/func.go)
 
 - `toYaml` marshals a map into a string
 - `fromYaml` reads a golang string and generates a map

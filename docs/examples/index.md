@@ -1,11 +1,12 @@
 ## Managed environments for an app
 
 ```yaml
-version: 0.16.0
+version: 0.16.2
 
 .options: &options
   wait: true
   namespace: test
+  createnamespace: true
 
 releases:
   - name: app
