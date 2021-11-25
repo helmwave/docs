@@ -15,7 +15,7 @@ http://masterminds.github.io/sprig/
 
 Since v0.14.0. Helmwave works with Gomplate.
 
-### How to enable gomplate for v0.14.0 helmwave
+### How to enable gomplate for v0.14.0 and later
 
 **helmwave.yml**
 

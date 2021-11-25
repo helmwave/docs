@@ -2,8 +2,10 @@
 
 > works on [helm v3.7.1](https://github.com/helmwave/helmwave/blob/v0.16.2/go.mod)
 
+Sample: 
+
 ```yaml
-project: Test07
+project: my-project
 version: dev
 repositories:
 - name: bitnami
@@ -146,15 +148,20 @@ graph LR;
 Your helmwave will
 
 ```yaml
+n
+
 releases:
   - name: frontend
-    depends_on: backend
+    depends_on: backend@test
+    namespace: test
 
   - name: backend
-    depends_on: db
+    depends_on: db@test
+    namespace: test
 
   - name: db
     allow_failure: false
+    namespace: test
 ```
 
 When `allow_failure` is set true. It allows the installation to proceed.

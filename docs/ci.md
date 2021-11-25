@@ -15,7 +15,7 @@ Let's see how we can get it working on popular CI software.
 
 ```yaml
 variables:
-  HELMWAVE_LOG_LEVEL: trace
+  HELMWAVE_LOG_LEVEL: debug
 
 helmwave:
   stage: deploy
@@ -24,8 +24,12 @@ helmwave:
   image:
     name: diamon/helmwave:0.16.2
     entrypoint: [""]
+  before_script:
+    - printenv | grep HELMWAVE
   script:
-    - helmwave up --build
+    - helmwave yml # if it needs
+    - helmwave build
+    - helmwave up
   artifacts:
     paths:
     - .helmwave

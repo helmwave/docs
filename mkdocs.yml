@@ -4,7 +4,7 @@ site_author: 'Dmitriy Zhilyaev'
 docs_dir: docs/
 repo_name: 'helmwave/helmwave'
 repo_url: 'https://github.com/helmwave/helmwave'
-edit_uri: 'https://github.com/helmwave/helmwave.github.io/edit/main/docs/'
+edit_uri: 'https://github.com/helmwave/docs/edit/main/docs/'
 site_url: 'https://helmwave.github.io'
 copyright: Copyright © 2020 - 2022 Dmitriy Zhilyaev
 
@@ -24,7 +24,14 @@ nav:
   - yaml.md
 
 - Examples:
-  - examples/index.md
+  - examples/quick-start/README.md
+  - examples/aws-sm/README.md
+  - examples/pass-git-commit/README.md
+  - examples/pass-git-tag/README.md
+  - examples/private-github-repo/README.md
+  - examples/single-app-multi-envs/README.md
+
+
 
 plugins:
 - search
