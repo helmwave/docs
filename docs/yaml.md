@@ -15,7 +15,7 @@ repositories:
   cafile: ""
   insecureskiptlsverify: false
   force: false
-  allow_faulure: true
+  allow_failure: true
 releases:
 - store:
     pullPolicy: Always
