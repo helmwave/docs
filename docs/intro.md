@@ -13,7 +13,7 @@ HelmWave is like docker-compose for helm.
 
 |  | Helmfile | Helmsman | 🌊 HelmWave |
 | --- | :-------------: | :------------: | :-----------: |
-| Syntax | YAML | TOML | YAML + [sprig](http://masterminds.github.io/sprig/)/[gomplate](https://docs.gomplate.ca/) |
+| Syntax | YAML + [sprig](http://masterminds.github.io/sprig/) | TOML | YAML + [sprig](http://masterminds.github.io/sprig/)/[gomplate](https://docs.gomplate.ca/) |
 | Requirements | `kubectl`, `helm`<br> *`helm-diff`, `helm-secrets`, `helm-s3`, `helm-git`* | `kubectl`, `helm`<br> *`helm-diff`* | No |
 | Helm execution | `os.Exec` | `os.Exec` | function call of bundled helm |
 | Remote values | Yes | No | Partially |
