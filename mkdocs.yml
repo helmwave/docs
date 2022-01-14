@@ -24,7 +24,6 @@ nav:
       - yaml.md
 
   - Examples:
-      - examples/index.md
       - examples/quick-start/README.md
       - examples/apps-per-ns/README.md
       - examples/single-app-multi-envs/README.md
