@@ -10,32 +10,32 @@ copyright: Copyright © 2020 - 2022 Dmitriy Zhilyaev
 
 
 nav:
-- Home: index.md
+  - Home: index.md
 
+  - Getting started:
+      - intro.md
+      - install.md
+      - ci.md
 
-- Getting started:
-  - install.md
-  - ci.md
+  - Reference:
+      - cli.md
+      - tpl.md
+      - anno.md
+      - yaml.md
 
-- Reference:
-  - cli.md
-  - tpl.md
-  - anno.md
-  - yaml.md
-
-- Examples:
-  - examples/quick-start/README.md
-  - examples/apps-per-ns/README.md
-  - examples/single-app-multi-envs/README.md
-  - examples/aws-sm/README.md
-  - examples/pass-git-tag/README.md
-  - examples/pass-git-commit/README.md
-  - examples/private-github-repo/README.md
+  - Examples:
+      - examples/quick-start/README.md
+      - examples/apps-per-ns/README.md
+      - examples/single-app-multi-envs/README.md
+      - examples/aws-sm/README.md
+      - examples/pass-git-tag/README.md
+      - examples/pass-git-commit/README.md
+      - examples/private-github-repo/README.md
 
 plugins:
-- search
-- mermaid2
-- include-markdown
+  - search
+  - mermaid2
+  - include-markdown
 
 theme:
   palette:
@@ -57,16 +57,16 @@ theme:
   favicon: https://raw.githubusercontent.com/helmwave/logo/main/logo.ico
   custom_dir: docs/overrides
   analytics:
-       gtag: G-FTBLK54FKZ
+    gtag: G-FTBLK54FKZ
   features:
-  - navigation.top
-  - navigation.instant
-  - navigation.tabs
-  - navigation.sections
-  - navigation.expand
-  - toc.integrate
-  - search.suggest
-  - search.share
+    - navigation.top
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - search.suggest
+    - search.share
 
 extra:
   version:
@@ -77,22 +77,22 @@ extra:
     property: G-FTBLK54FKZ
 
   social:
-  - icon: fontawesome/brands/docker
-    link: https://hub.docker.com/diamon/helmwave
-  - icon: fontawesome/brands/github
-    link: https://github.com/helmwave
-  - icon: fontawesome/brands/telegram
-    link: https://t.me/helmwave
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/diamon/helmwave
+    - icon: fontawesome/brands/github
+      link: https://github.com/helmwave
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/helmwave
 
 markdown_extensions:
-- admonition
-- pymdownx.emoji:
+  - admonition
+  - pymdownx.emoji:
     emoji_index: !!python/name:materialx.emoji.twemoji
     emoji_generator: !!python/name:materialx.emoji.to_svg
-- pymdownx.highlight
-- pymdownx.superfences:
+  - pymdownx.highlight
+  - pymdownx.superfences:
     # make exceptions to highlighting of code:
     custom_fences:
-    - name: mermaid
-      class: mermaid
-      format: !!python/name:mermaid2.fence_mermaid
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:mermaid2.fence_mermaid
