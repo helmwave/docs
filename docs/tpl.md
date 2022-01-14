@@ -15,7 +15,7 @@ http://masterminds.github.io/sprig/
 
 Since v0.14.0. Helmwave works with Gomplate.
 
-### How to enable gomplate for v0.14.0 helmwave
+### How to enable gomplate for v0.14.0 and later
 
 **helmwave.yml**
 
@@ -25,31 +25,7 @@ template:
     enabled: true
 ```
 
-#### Usage
-
-```yaml
-repositories:
-  - name: bitnami
-    url: https://charts.bitnami.com/bitnami
-
-template:
-  gomplate:
-    enabled: true
-    data:
-      sources:
-        secret:
-          url:
-            scheme: aws+sm
-            path: 'hello/foobar'
-
-releases:
-  - name: app
-    chart:
-      name: bitnami/nginx
-    namespace: test
-    values:
-      - vaules-secret.yaml
-```
+see [example]()
 
 
 ### Issues
@@ -60,7 +36,7 @@ releases:
 
 
 
-## [Custom](https://github.com/helmwave/helmwave/blob/release-0.16.0/pkg/template/func.go)
+## [Custom](https://github.com/helmwave/helmwave/blob/release-0.16.2/pkg/template/func.go)
 
 - `toYaml` marshals a map into a string
 - `fromYaml` reads a golang string and generates a map
