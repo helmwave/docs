@@ -1,9 +1,11 @@
 # Yaml
 
-> works on [helm v3.7.1](https://github.com/helmwave/helmwave/blob/v0.16.0/go.mod)
+> works on [helm v3.7.1](https://github.com/helmwave/helmwave/blob/v0.16.2/go.mod)
+
+Sample: 
 
 ```yaml
-project: Test07
+project: my-project
 version: dev
 repositories:
 - name: bitnami
@@ -139,22 +141,27 @@ It works when you call `$ helmwave up`
 Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application
 
 ```mermaid
-graph LR;
-  frontend --> backend --> db;
+graph LR
+    frontend --> backend --> db;
 ```
 
 Your helmwave will
 
 ```yaml
+n
+
 releases:
   - name: frontend
-    depends_on: backend
+    depends_on: backend@test
+    namespace: test
 
   - name: backend
-    depends_on: db
+    depends_on: db@test
+    namespace: test
 
   - name: db
     allow_failure: false
+    namespace: test
 ```
 
 When `allow_failure` is set true. It allows the installation to proceed.
