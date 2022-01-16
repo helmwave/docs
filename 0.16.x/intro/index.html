@@ -7,22 +7,22 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="The helmwave`s docs" name="description"/>
 <meta content="Dmitriy Zhilyaev" name="author"/>
-<link href="https://helmwave.github.io/0.16.x/examples/pass-git-tag/" rel="canonical"/>
+<link href="https://helmwave.github.io/0.16.x/intro/" rel="canonical"/>
 <link href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.6" name="generator"/>
-<title>Pass Git tag -&gt; Docker image tag - Helmwave</title>
-<link href="../../assets/stylesheets/main.cd566b2a.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
+<title>Intro - Helmwave</title>
+<link href="../assets/stylesheets/main.cd566b2a.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-FTBLK54FKZ"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-FTBLK54FKZ",{page_path:e.pathname})})})</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FTBLK54FKZ"></script>
 <meta content="website" property="og:type"/>
-<meta content="Helmwave - Pass Git tag -&gt; Docker image tag" property="og:title"/>
+<meta content="Helmwave - Intro" property="og:title"/>
 <meta content="The helmwave`s docs" property="og:description"/>
-<meta content="https://helmwave.github.io/0.16.x/examples/pass-git-tag/" property="og:url"/>
+<meta content="https://helmwave.github.io/0.16.x/intro/" property="og:url"/>
 <meta content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#pass-git-tag-docker-image-tag">
+<a class="md-skip" href="#comparison-to-alternatives">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Helmwave" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Helmwave">
+<a aria-label="Helmwave" class="md-header__button md-logo" data-md-component="logo" href=".." title="Helmwave">
 <img alt="logo" src="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -62,7 +62,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Pass Git tag -&gt; Docker image tag
+              Intro
             
           </span>
 </div>
@@ -129,22 +129,22 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../..">
+<a class="md-tabs__link" href="..">
       Home
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../intro/">
+<a class="md-tabs__link md-tabs__link--active" href="./">
         Getting started
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../cli/">
+<a class="md-tabs__link" href="../cli/">
         Reference
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../quick-start/">
+<a class="md-tabs__link" href="../examples/quick-start/">
         Examples
       </a>
 </li>
@@ -158,7 +158,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Helmwave" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Helmwave">
+<a aria-label="Helmwave" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Helmwave">
 <img alt="logo" src="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico"/>
 </a>
     Helmwave
@@ -175,12 +175,12 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../..">
+<a class="md-nav__link" href="..">
         Home
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2">
           Getting started
           <span class="md-nav__icon md-icon"></span>
@@ -191,18 +191,36 @@
           Getting started
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../intro/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Intro
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Intro
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comparison-to-alternatives">
+    Comparison to alternatives
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../install/">
+<a class="md-nav__link" href="../install/">
         📥 Installation
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../ci/">
+<a class="md-nav__link" href="../ci/">
         🧋 Continuous Integration
       </a>
 </li>
@@ -222,30 +240,30 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../cli/">
+<a class="md-nav__link" href="../cli/">
         🛠 CLI Reference
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../tpl/">
+<a class="md-nav__link" href="../tpl/">
         📄 Templating
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../anno/">
+<a class="md-nav__link" href="../anno/">
         📔 Annotations
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../yaml/">
+<a class="md-nav__link" href="../yaml/">
         Yaml
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-state="indeterminate" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4">
           Examples
           <span class="md-nav__icon md-icon"></span>
@@ -257,79 +275,37 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../quick-start/">
+<a class="md-nav__link" href="../examples/quick-start/">
         🔰 Quick Start
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../apps-per-ns/">
+<a class="md-nav__link" href="../examples/apps-per-ns/">
         Apps per namespace
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../single-app-multi-envs/">
+<a class="md-nav__link" href="../examples/single-app-multi-envs/">
         Single app multi envs
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../aws-sm/">
+<a class="md-nav__link" href="../examples/aws-sm/">
         How to use AWS secret manager?
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Pass Git tag -&gt; Docker image tag
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/pass-git-tag/">
         Pass Git tag -&gt; Docker image tag
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#receipt">
-    Receipt
-  </a>
-<nav aria-label="Receipt" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#project-structure">
-    Project Structure
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#helmwaveymltpl">
-    helmwave.yml.tpl
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#valuesyml">
-    values.yml
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#run">
-    Run
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../pass-git-commit/">
+<a class="md-nav__link" href="../examples/pass-git-commit/">
         Restart pods via git-commit
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../private-github-repo/">
+<a class="md-nav__link" href="../examples/private-github-repo/">
         Private GitHub repo
       </a>
 </li>
@@ -343,51 +319,82 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/helmwave/docs/edit/main/docs/examples/pass-git-tag/README.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/helmwave/docs/edit/main/docs/intro.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="pass-git-tag-docker-image-tag">Pass Git tag -&gt; Docker image tag</h1>
-<blockquote>
-<p><a href="https://github.com/helmwave/docs/tree/0.16.x/docs/examples/pass-git-commit">Source</a></p>
-</blockquote>
-<h2 id="receipt">Receipt</h2>
-<p>Suppose <code>my-chart</code> has default <code>values.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.gitlab.local/example/app</span><span class="w"></span>
-<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1.0.0</span><span class="w"></span>
-<span class="nn">...</span><span class="w"></span>
-</code></pre></div>
-<p>If we need to create CI/CD pipeline, we need use next script</p>
-<div class="highlight"><pre><span></span><code>helm upgrade --instal my-release my-chart-repo/my-chart-app --set<span class="o">=</span><span class="s2">"image.tag=</span><span class="nv">$CI_COMMIT_TAG</span><span class="s2">"</span> -n my-namespace
-</code></pre></div>
-<p>HelmWave allows use declarative way to approach this goal.</p>
-<h4 id="project-structure">Project Structure</h4>
-<div class="highlight"><pre><span></span><code>.
-├── helmwave.yml
-└── values.yml
-</code></pre></div>
-<h4 id="helmwaveymltpl"><code>helmwave.yml.tpl</code></h4>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.16.2</span><span class="w"></span>
-
-<span class="nt">releases</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-release</span><span class="w"></span>
-<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-chart-repo/my-chart-app</span><span class="w"></span>
-<span class="w">    </span><span class="nt">values</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-namespace</span><span class="w"></span>
-<span class="w">    </span><span class="nt">createnamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-</code></pre></div>
-<h4 id="valuesyml"><code>values.yml</code></h4>
-<p>This values will override default values </p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env "CI_COMMIT_TAG"</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
-</code></pre></div>
-<h2 id="run">Run</h2>
-<div class="highlight"><pre><span></span><code><span class="go">helmwave build</span>
-<span class="go">helmwave up</span>
-</code></pre></div>
-<p>or <code>helmwave up --build</code></p>
+<h1>Intro</h1>
+<p>🌊 Helmwave is <strong><a href="https://github.com/helm/helm/">helm</a>-native</strong> tool for deploy your Helm Charts via <strong>GitOps</strong>.
+HelmWave is like docker-compose for helm.</p>
+<ul>
+<li>Deploy multiple environments by one step</li>
+<li>Separate values for environments</li>
+<li>Common values for apps</li>
+<li>Keep a directory of chart value files</li>
+<li>Maintain changes in version control.</li>
+<li>Template values</li>
+<li>Step by Step deployment.</li>
+</ul>
+<h2 id="comparison-to-alternatives">Comparison to alternatives</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">Helmfile</th>
+<th align="center">Helmsman</th>
+<th align="center">🌊 HelmWave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td align="center">YAML + <a href="http://masterminds.github.io/sprig/">sprig</a></td>
+<td align="center">TOML</td>
+<td align="center">YAML + <a href="http://masterminds.github.io/sprig/">sprig</a>/<a href="https://docs.gomplate.ca/">gomplate</a></td>
+</tr>
+<tr>
+<td>Requirements</td>
+<td align="center"><code>kubectl</code>, <code>helm</code><br/> <em><code>helm-diff</code>, <code>helm-secrets</code>, <code>helm-s3</code>, <code>helm-git</code></em></td>
+<td align="center"><code>kubectl</code>, <code>helm</code><br/> <em><code>helm-diff</code></em></td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td>Helm execution</td>
+<td align="center"><code>os.Exec</code></td>
+<td align="center"><code>os.Exec</code></td>
+<td align="center">function call of bundled helm</td>
+</tr>
+<tr>
+<td>Remote values</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Partially</td>
+</tr>
+<tr>
+<td>Parallel releases</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td>Releases dependencies</td>
+<td align="center">Yes (needs)</td>
+<td align="center">Kind of (priority)</td>
+<td align="center">Yes (depends_on)</td>
+</tr>
+<tr>
+<td>Latest docker image size</td>
+<td align="center"><img alt="" src="https://img.shields.io/docker/image-size/chatwork/helmfile"/></td>
+<td align="center"><img alt="" src="https://img.shields.io/docker/image-size/praqma/helmsman"/></td>
+<td align="center"><img alt="" src="https://img.shields.io/docker/image-size/diamon/helmwave"/></td>
+</tr>
+<tr>
+<td>Linux amd64 binary size</td>
+<td align="center"><img alt="" src="https://img.shields.io/badge/v0.143.0-43.9%20MB-blue"/> + requirements</td>
+<td align="center"><img alt="" src="https://img.shields.io/badge/v3.8.0-17.7%20MB-blue"/> + requirements</td>
+<td align="center"><img alt="" src="https://img.shields.io/badge/v0.16.7-73.8%20MB-blue"/></td>
+</tr>
+</tbody>
+</table>
 </article>
 </div>
 </div>
@@ -398,7 +405,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: How to use AWS secret manager?" class="md-footer__link md-footer__link--prev" href="../aws-sm/" rel="prev">
+<a aria-label="Previous: Home" class="md-footer__link md-footer__link--prev" href=".." rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -407,17 +414,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              How to use AWS secret manager?
+              Home
             </div>
 </div>
 </a>
-<a aria-label="Next: Restart pods via git-commit" class="md-footer__link md-footer__link--next" href="../pass-git-commit/" rel="next">
+<a aria-label="Next: 📥 Installation" class="md-footer__link md-footer__link--next" href="../install/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Restart pods via git-commit
+              📥 Installation
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -456,7 +463,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js", "version": {"provider": "mike", "default": "latest"}}</script>
-<script src="../../assets/javascripts/bundle.1514a9a0.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js", "version": {"provider": "mike", "default": "latest"}}</script>
+<script src="../assets/javascripts/bundle.1514a9a0.min.js"></script>
 </body>
 </html>
