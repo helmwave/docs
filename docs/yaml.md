@@ -301,7 +301,7 @@ When `allow_failure` is set true. It allows the installation to proceed.
 
 > Release name
 
-I hope know you know what it is.
+I hope you know what it is.
 
 ### namespace
 
