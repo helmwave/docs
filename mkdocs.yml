@@ -31,6 +31,7 @@ nav:
       - examples/pass-git-tag/README.md
       - examples/pass-git-commit/README.md
       - examples/private-github-repo/README.md
+      - examples/store-greeting-hello/README.md
 
 plugins:
   - search
