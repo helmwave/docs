@@ -62,11 +62,11 @@ releases:
 
 ## Project
 
-Reserved for future.
+> Reserved for future.
 
 ## Version
 
-Check current version and project version.
+> Helmwave will check current version and project version.
 
 In the future it is planned to be used for major compatibility. 
 
@@ -84,9 +84,19 @@ In the future it is planned to be used for major compatibility.
 | insecureskiptlsverify |    🙅    |  bool  |  false  |
 |         force         |    🙅    |  bool  |  false  |
 
+### name
+
+> Local name alias
+
+### url
+
+> URL for chart repository
+
 ### force
 
-Don't skip if repository exists.
+> Don't skip if repository exists.
+
+
 
 ## Releases[]
 
@@ -131,45 +141,7 @@ Don't skip if repository exists.
 
 It works when you call `$ helmwave build`
 
-See more [examples](https://helmwave.github.io/docs/0.16.x/examples/store-greeting-hello/)
-
-
-
-### depends_on
-
-> It allows waiting releases
-
-It works when you call `$ helmwave up`
-
-
-Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application
-
-```mermaid
-graph LR
-    frontend --> backend --> db;
-```
-
-Your helmwave will
-
-```yaml
-n
-
-releases:
-  - name: frontend
-    depends_on: backend@test
-    namespace: test
-
-  - name: backend
-    depends_on: db@test
-    namespace: test
-
-  - name: db
-    allow_failure: false
-    namespace: test
-```
-
-When `allow_failure` is set true. It allows the installation to proceed.
-
+[example](https://helmwave.github.io/docs/0.16.x/examples/store-greeting-hello/)
 
 
 
@@ -183,8 +155,8 @@ It works with next options when you call `$ helmwave build`:
 --tags value, -t value  It allows you choose releases for build. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
 --match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
 ```
-
-#### Matching with tags
+ 
+**Matching with tags**
 
 Suppose we have next `helmwave.yml` with 4 releases.
 
@@ -292,9 +264,55 @@ helmwave build -t redis -t a --match-all-tags
           - redis-a@test
 ```
 
+### depends_on & allow_failure
+
+> It allows waiting releases
+
+It works when you call `$ helmwave up`
+
+
+Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application
+
+```mermaid
+graph LR
+    frontend --> backend --> db;
+```
+
+Your `helmwave.yml` will
+
+```yaml
+releases:
+  - name: frontend
+    depends_on: backend@test
+    namespace: test
+
+  - name: backend
+    depends_on: db@test
+    namespace: test
+
+  - name: db
+    allow_failure: false
+    namespace: test
+```
+
+When `allow_failure` is set true. It allows the installation to proceed.
+
+### name
+
+> Release name
+
+I hope know you know what it is.
+
+### namespace
+
+> Kubernetes namespace
+
 
 ### createnamespace
 
 > if `true` Helmwave will create the release namespace if not present
 
+### timeout
+
+>  time to wait for any individual Kubernetes operation
 

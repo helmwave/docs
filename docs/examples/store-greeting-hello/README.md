@@ -2,9 +2,12 @@
 
 > [ [source] ](https://github.com/helmwave/docs/tree/0.16.x/docs/examples/store-greeting-hello)
 
-This is very helpful when you need to pass the same values to different fields with your releases.
+[Store](https://helmwave.github.io/docs/0.16.x/yaml/#store) is very helpful when you need to pass the same values to different fields with your releases.
 
-```concole
+
+**Project Structure**
+
+```console
 .
 ├── README.md
 ├── a.yml
@@ -13,7 +16,7 @@ This is very helpful when you need to pass the same values to different fields w
 
 ```
 
-`helmwave.yml`
+**`helmwave.yml`**
 
 
 ```yaml

@@ -26,10 +26,10 @@ nav:
   - Examples:
       - examples/quick-start/README.md
       - examples/apps-per-ns/README.md
-      - examples/single-app-multi-envs/README.md
-      - examples/aws-sm/README.md
       - examples/pass-git-tag/README.md
       - examples/pass-git-commit/README.md
+      - examples/single-app-multi-envs/README.md
+      - examples/aws-sm/README.md
       - examples/private-github-repo/README.md
       - examples/store-greeting-hello/README.md
 

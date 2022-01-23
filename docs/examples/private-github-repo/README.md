@@ -4,6 +4,13 @@
 
 
 
+```console
+.
+├── README.md
+├── helmwave.yml
+└── helmwave.yml.tpl
+```
+
 **Suppose the `helmwave.yml.tpl` looks like**
 
 

@@ -40,8 +40,10 @@ We will pass pod annotations with  `values`
 
 **Run**
 
-```yaml
+```console
 helmwave build
 helmwave up
 ```
+
+or `helmwave up --build`
 

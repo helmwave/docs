@@ -3,6 +3,7 @@
 > [Source](https://github.com/helmwave/docs/tree/0.16.x/docs/examples/aws-sm)
 
 **Project structure**
+
 ```
 ├── README.md
 ├── helmwave.yml
