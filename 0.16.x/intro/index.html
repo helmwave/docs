@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#comparison-to-alternatives">
+<a class="md-skip" href="#features">
           Skip to content
         </a>
 </div>
@@ -207,6 +207,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#features">
+    🚀 Features
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#comparison-to-alternatives">
     Comparison to alternatives
   </a>
@@ -309,6 +314,11 @@
         Private GitHub repo
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/store-greeting-hello/">
+        How to use [Store](https://helmwave.github.io/docs/0.16.x/yaml/#store)
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -323,78 +333,107 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1>Intro</h1>
-<p>🌊 Helmwave is <strong><a href="https://github.com/helm/helm/">helm</a>-native</strong> tool for deploy your Helm Charts via <strong>GitOps</strong>.
+<p>🌊 Helmwave is <strong><a href="https://github.com/helm/helm/">helm3</a>-native</strong> tool for deploy your Helm Charts via <strong>GitOps</strong>.
 HelmWave is like docker-compose for helm.</p>
+<h2 id="features">🚀 Features</h2>
+<blockquote>
+<p>We focus on speed execution, tiny size, pretty debugging.</p>
+</blockquote>
+<p>With helmwave you will become a superhero:</p>
 <ul>
 <li>Deploy multiple environments by one step</li>
 <li>Separate values for environments</li>
 <li>Common values for apps</li>
 <li>Keep a directory of chart value files</li>
-<li>Maintain changes in version control.</li>
+<li>Maintain changes in version control</li>
 <li>Template values</li>
-<li>Step by Step deployment.</li>
+<li>Step by Step deployment (depends_on, allow_failure)</li>
+<li>Live tracking kubernetes resources with kubedog</li>
+<li>Fetch data from external datasource like vault, aws ssm</li>
+<li>... and much more!</li>
 </ul>
 <h2 id="comparison-to-alternatives">Comparison to alternatives</h2>
 <table>
 <thead>
 <tr>
-<th></th>
+<th align="center"></th>
+<th align="center">🌊 HelmWave</th>
 <th align="center">Helmfile</th>
 <th align="center">Helmsman</th>
-<th align="center">🌊 HelmWave</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Syntax</td>
+<td align="center">Syntax</td>
+<td align="center">YAML + <a href="http://masterminds.github.io/sprig/">sprig</a>/<a href="https://docs.gomplate.ca/">gomplate</a></td>
 <td align="center">YAML + <a href="http://masterminds.github.io/sprig/">sprig</a></td>
 <td align="center">TOML/YAML</td>
-<td align="center">YAML + <a href="http://masterminds.github.io/sprig/">sprig</a>/<a href="https://docs.gomplate.ca/">gomplate</a></td>
 </tr>
 <tr>
-<td>Requirements</td>
+<td align="center">Requirements</td>
+<td align="center">No</td>
 <td align="center"><code>kubectl</code>, <code>helm</code><br/> <em><code>helm-diff</code> (optional: <code>helm-secrets</code>, <code>helm-s3</code>, <code>helm-git</code></em>)</td>
 <td align="center"><code>kubectl</code>, <code>helm</code><br/> <em><code>helm-diff</code></em></td>
-<td align="center">No</td>
 </tr>
 <tr>
-<td>Helm execution</td>
-<td align="center"><code>os.Exec</code></td>
-<td align="center"><code>os.Exec</code></td>
+<td align="center">Helm execution</td>
 <td align="center">function call of bundled helm</td>
+<td align="center"><code>os.Exec</code></td>
+<td align="center"><code>os.Exec</code></td>
 </tr>
 <tr>
-<td>Remote values</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
+<td align="center">Remote values</td>
 <td align="center">Partially</td>
-</tr>
-<tr>
-<td>Parallel releases</td>
 <td align="center">Yes</td>
 <td align="center">No</td>
-<td align="center">Yes</td>
 </tr>
 <tr>
-<td>Releases dependencies</td>
+<td align="center">Parallel releases</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td align="center">Releases dependencies</td>
+<td align="center">Yes (depends_on)</td>
 <td align="center">Yes (needs)</td>
 <td align="center">Kind of (priority)</td>
-<td align="center">Yes (depends_on)</td>
 </tr>
 <tr>
-<td>Latest docker image size</td>
+<td align="center">Latest docker image size</td>
+<td align="center"><img alt="" src="https://img.shields.io/docker/image-size/diamon/helmwave"/></td>
 <td align="center"><img alt="" src="https://img.shields.io/docker/image-size/chatwork/helmfile"/></td>
 <td align="center"><img alt="" src="https://img.shields.io/docker/image-size/praqma/helmsman"/></td>
-<td align="center"><img alt="" src="https://img.shields.io/docker/image-size/diamon/helmwave"/></td>
 </tr>
 <tr>
-<td>Linux amd64 binary size</td>
+<td align="center">Linux amd64 binary size</td>
+<td align="center"><img alt="" src="https://img.shields.io/badge/v0.16.7-73.8%20MB-blue"/></td>
 <td align="center"><img alt="" src="https://img.shields.io/badge/v0.143.0-43.9%20MB-blue"/> + requirements</td>
 <td align="center"><img alt="" src="https://img.shields.io/badge/v3.8.0-17.7%20MB-blue"/> + requirements</td>
-<td align="center"><img alt="" src="https://img.shields.io/badge/v0.16.7-73.8%20MB-blue"/></td>
+</tr>
+<tr>
+<td align="center">Live-tracking kubernetes resources</td>
+<td align="center"><a href="https://github.com/werf/kubedog">Kubedog</a></td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td align="center">Compatible with helm v2</td>
+<td align="center">no</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center">Graph dependencies</td>
+<td align="center">yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
 </tr>
 </tbody>
 </table>
+<p>🌊 Helmwave is inspired by docker-compose, terraform and helmfile,</p>
+<hr/>
+<p>Here I would like to express our gratitude to all contributors for their commits, authors of third-party dependencies and all open source community ❤️</p>
 </article>
 </div>
 </div>
