@@ -61,3 +61,9 @@ helmwave yml
 helmwave build
 helmwave up
 ```
+
+or one command 
+
+```
+helmwave up --build --yml
+```

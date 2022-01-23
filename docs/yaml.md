@@ -131,7 +131,7 @@ Don't skip if repository exists.
 
 It works when you call `$ helmwave build`
 
-See more [examples](examples/store-greeting-hello)
+See more [examples](https://helmwave.github.io/docs/0.16.x/examples/store-greeting-hello/)
 
 
 

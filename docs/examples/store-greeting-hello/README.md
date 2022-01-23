@@ -1,4 +1,4 @@
-# How to use [Store](https://helmwave.github.io/docs/0.16.x/yaml/#store)
+# Same values -> different  fields
 
 > [ [source] ](https://github.com/helmwave/docs/tree/0.16.x/docs/examples/store-greeting-hello)
 
