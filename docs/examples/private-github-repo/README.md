@@ -8,7 +8,7 @@
 
 
 ```yaml
-{% include "helmwave.yml" %}
+{% include "helmwave.yml.tpl" %}
 ```
 
 
