@@ -9,9 +9,9 @@
 <meta content="Dmitriy Zhilyaev" name="author"/>
 <link href="https://helmwave.github.io/0.16.x/yaml/" rel="canonical"/>
 <link href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico" rel="icon"/>
-<meta content="mkdocs-1.2.3, mkdocs-material-8.1.7" name="generator"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.8" name="generator"/>
 <title>Yaml - Helmwave</title>
-<link href="../assets/stylesheets/main.cd566b2a.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.6e60f8b8.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -399,7 +399,7 @@
 <span class="w">  </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 <span class="nt">releases</span><span class="p">:</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">store</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">pullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Always</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hello</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">world</span><span class="w"></span>
 <span class="w">  </span><span class="nt">chart</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span><span class="w"></span>
 <span class="w">    </span><span class="nt">cafile</span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w"></span>
@@ -519,6 +519,8 @@
 <th align="center">required</th>
 <th align="center">type</th>
 <th align="center">default</th>
+<th align="center"><code>helmwave build</code></th>
+<th align="center"><code>helmwave up</code></th>
 </tr>
 </thead>
 <tbody>
@@ -527,180 +529,248 @@
 <td align="center">✅</td>
 <td align="center">string</td>
 <td align="center">""</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">namespace</td>
 <td align="center">✅</td>
 <td align="center">string</td>
 <td align="center">""</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">chart.name</td>
 <td align="center">✅</td>
 <td align="center">string</td>
 <td align="center">""</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">chart.username</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">chart.password</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">chart.certfile</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">chart.keyfile</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">chart.cafile</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">chart.insecureskiptlsverify</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">description</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">depends_on</td>
 <td align="center">🙅</td>
 <td align="center">array</td>
 <td align="center">[]</td>
+<td align="center"></td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td align="center">allow_failure</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">values</td>
 <td align="center">🙅</td>
 <td align="center">array</td>
 <td align="center">[]</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">tags</td>
 <td align="center">🙅</td>
 <td align="center">array</td>
 <td align="center">[]</td>
+<td align="center">✅</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">store</td>
 <td align="center">🙅</td>
 <td align="center">object</td>
 <td align="center">{}</td>
+<td align="center">✅</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td align="center">timeout</td>
 <td align="center">🙅</td>
 <td align="center">interval</td>
 <td align="center">0s</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">maxhistory</td>
 <td align="center">🙅</td>
 <td align="center">int</td>
 <td align="center">0</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">createnamespace</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">resetvalues</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">recreate</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">force</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">atomic</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">cleanuponfail</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">subnotes</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">disablehooks</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">disableopenapivalidation</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">waitforjobs</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">wait</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">skipcrds</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">devel</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">reusevalues</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 </tbody>
 </table>
@@ -709,6 +779,7 @@
 <p>It allows to pass you custom fields from helmwave.yml to values.</p>
 </blockquote>
 <p>It works when you call <code>$ helmwave build</code></p>
+<p>See more <a href="examples/store-greeting-hello">examples</a></p>
 <h3 id="depends_on">depends_on</h3>
 <blockquote>
 <p>It allows waiting releases</p>
@@ -821,14 +892,14 @@ This flag changes logic for query releases.</p>
 <p>If you know SQL. It looks like that:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">releases</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">"redis"</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">"a"</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>helmwave build -t redis -t a --match-all-tags
-<span class="o">[</span>🙃 aka INFO<span class="o">]</span>: 🏗 Plan
-        releases: 
-          - redis-a@test
+<div class="highlight"><pre><span></span><code><span class="go">helmwave build -t redis -t a --match-all-tags</span>
+<span class="go">[🙃 aka INFO]: 🏗 Plan</span>
+<span class="go">        releases: </span>
+<span class="go">          - redis-a@test</span>
 </code></pre></div>
 <h3 id="createnamespace">createnamespace</h3>
 <blockquote>
-<p>if <code>true</code> Helmwave will create namespace for release.</p>
+<p>if <code>true</code> Helmwave will create the release namespace if not present</p>
 </blockquote>
 </article>
 </div>
@@ -899,6 +970,6 @@ This flag changes logic for query releases.</p>
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js", "version": {"provider": "mike", "default": "latest"}}</script>
-<script src="../assets/javascripts/bundle.01de222e.min.js"></script>
+<script src="../assets/javascripts/bundle.960e086b.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
 </html>
