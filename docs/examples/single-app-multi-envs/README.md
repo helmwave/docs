@@ -22,11 +22,11 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
     └── stage.yml
 ```
 
- `helmwave.yml.tpl`
+`helmwave.yml.tpl`
 
 
 ```yaml
-{% include "helmwave.yml" %}
+{% include "helmwave.yml.tpl" %}
 ```
 
  `_.yml`

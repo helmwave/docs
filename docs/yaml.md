@@ -20,7 +20,7 @@ repositories:
   allow_failure: true
 releases:
 - store:
-    pullPolicy: Always
+    hello: world
   chart:
     name: bitnami/nginx
     cafile: ""
@@ -72,17 +72,17 @@ In the future it is planned to be used for major compatibility.
 
 ## Repositories[]
 
-field | required | type  | default
-:----:|:----:|:----:|:----:
-name |  ✅   |  string | ""
-url  |  ✅   |  url    | ""
-username | 🙅 | string | ""
-password | 🙅 | string | ""
-certfile | 🙅 | string | ""
-keyfile | 🙅 | string  | ""
-cafile| 🙅 | string    | ""
-insecureskiptlsverify | 🙅 | bool | false
-force | 🙅 | bool | false
+|         field         | required |  type  | default |
+|:---------------------:|:--------:|:------:|:-------:|
+|         name          |    ✅     | string |   ""    |
+|          url          |    ✅     |  url   |   ""    |
+|       username        |    🙅    | string |   ""    |
+|       password        |    🙅    | string |   ""    |
+|       certfile        |    🙅    | string |   ""    |
+|        keyfile        |    🙅    | string |   ""    |
+|        cafile         |    🙅    | string |   ""    |
+| insecureskiptlsverify |    🙅    |  bool  |  false  |
+|         force         |    🙅    |  bool  |  false  |
 
 ### force
 
@@ -91,45 +91,49 @@ Don't skip if repository exists.
 ## Releases[]
 
 
-field | required | type  | default
-:----:|:----:|:----:|:----:
-name            | ✅ | string | ""
-namespace       | ✅ | string | ""
-chart.name      | ✅ | string | ""
-chart.username  | 🙅 | string | ""
-chart.password  | 🙅 | string | ""
-chart.certfile  | 🙅 | string | ""
-chart.keyfile   | 🙅 | string  | ""
-chart.cafile    | 🙅 | string    | ""
-chart.insecureskiptlsverify | 🙅 | bool | false
-description      | 🙅 | string  | ""
-depends_on       | 🙅 | array   | []
-values           | 🙅 | array   | []
-tags             | 🙅 | array   | []
-store            | 🙅 | object  | {}
-timeout          | 🙅 | interval   | 0s
-maxhistory       | 🙅 | int   | 0
-createnamespace  | 🙅 | bool    | false
-resetvalues      | 🙅 | bool    | false
-recreate| 🙅 | bool    | false
-force| 🙅 | bool    | false
-atomic| 🙅 | bool    | false
-cleanuponfail| 🙅 | bool    | false
-subnotes| 🙅 | bool    | false
-disablehooks| 🙅 | bool    | false
-disableopenapivalidation| 🙅 | bool    | false
-waitforjobs| 🙅 | bool    | false
-wait| 🙅 | bool    | false
-skipcrds| 🙅 | bool    | false
-devel| 🙅 | bool    | false
-reusevalues| 🙅 | bool    | false
-
+|            field            | required |   type   | default | `helmwave build` | `helmwave up` |
+|:---------------------------:|:--------:|:--------:|:-------:|:----------------:|:-------------:|
+|            name             |    ✅     |  string  |   ""    |        ✅         |       ✅       |
+|          namespace          |    ✅     |  string  |   ""    |        ✅         |       ✅       |
+|         chart.name          |    ✅     |  string  |   ""    |        ✅         |       ✅       |
+|       chart.username        |    🙅    |  string  |   ""    |                  |               |
+|       chart.password        |    🙅    |  string  |   ""    |                  |               |
+|       chart.certfile        |    🙅    |  string  |   ""    |                  |               |
+|        chart.keyfile        |    🙅    |  string  |   ""    |                  |               |
+|        chart.cafile         |    🙅    |  string  |   ""    |                  |               |
+| chart.insecureskiptlsverify |    🙅    |   bool   |  false  |                  |               |
+|         description         |    🙅    |  string  |   ""    |                  |               |
+|         depends_on          |    🙅    |  array   |   []    |                  |       ✅       |
+|        allow_failure        |    🙅    |   bool   |  false  |                  |       ✅       |
+|           values            |    🙅    |  array   |   []    |        ✅         |       ✅       |
+|            tags             |    🙅    |  array   |   []    |        ✅         |               |
+|            store            |    🙅    |  object  |   {}    |        ✅         |               |
+|           timeout           |    🙅    | interval |   0s    |                  |       ✅       |
+|         maxhistory          |    🙅    |   int    |    0    |                  |       ✅       |
+|       createnamespace       |    🙅    |   bool   |  false  |                  |       ✅       |
+|         resetvalues         |    🙅    |   bool   |  false  |                  |       ✅       |
+|          recreate           |    🙅    |   bool   |  false  |                  |       ✅       |
+|            force            |    🙅    |   bool   |  false  |                  |       ✅       |
+|           atomic            |    🙅    |   bool   |  false  |                  |       ✅       |
+|        cleanuponfail        |    🙅    |   bool   |  false  |                  |       ✅       |
+|          subnotes           |    🙅    |   bool   |  false  |                  |       ✅       |
+|        disablehooks         |    🙅    |   bool   |  false  |                  |       ✅       |
+|  disableopenapivalidation   |    🙅    |   bool   |  false  |                  |       ✅       |
+|         waitforjobs         |    🙅    |   bool   |  false  |                  |       ✅       |
+|            wait             |    🙅    |   bool   |  false  |                  |       ✅       |
+|          skipcrds           |    🙅    |   bool   |  false  |                  |       ✅       |
+|            devel            |    🙅    |   bool   |  false  |                  |       ✅       |
+|         reusevalues         |    🙅    |   bool   |  false  |                  |       ✅       |
 
 ### 🗳️ Store
 
 > It allows to pass you custom fields from helmwave.yml to values.
 
 It works when you call `$ helmwave build`
+
+See more [examples](examples/store-greeting-hello)
+
+
 
 ### depends_on
 
@@ -281,7 +285,7 @@ If you know SQL. It looks like that:
 SELECT * FROM releases WHERE tag = "redis" AND tag = "a"
 ```
 
-```bash
+```console
 helmwave build -t redis -t a --match-all-tags
 [🙃 aka INFO]: 🏗 Plan
         releases: 
@@ -291,5 +295,6 @@ helmwave build -t redis -t a --match-all-tags
 
 ### createnamespace
 
-> if `true` Helmwave will create namespace for release.
+> if `true` Helmwave will create the release namespace if not present
+
 
