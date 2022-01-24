@@ -8,8 +8,30 @@ Let's see how we can get it working on popular CI software.
 
 ## :material-github: GitHub action
 
-- [official github action](https://github.com/marketplace/actions/helmwave)
+- [official github action](https://github.com/marketplace/actions/helmwave-installer)
 
+```yaml
+name: Deploy
+on:
+  push:
+
+
+jobs:
+  external:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: helmwave/setup-action@v0.2.0
+        name: Install helmwave
+        with:
+          version: '0.16.2'
+      - name: templating helmwave.yml.tpl  
+        run: helmwave yml
+      - name: plan
+        run: helmwave build
+      - name: deploy
+        run: helmwave up
+```
 
 ## :material-gitlab: Gitlab-CI
 
