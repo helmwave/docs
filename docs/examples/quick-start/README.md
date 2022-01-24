@@ -1,6 +1,6 @@
 # 🔰 Quick Start
 
-1) **[install helmwave](https://helmwave.github.io/docs/0.16.x/install/)**
+1) **[install helmwave](https://helmwave.github.io/docs/0.17.x/install/)**
    
 2) **create helmwave.yml**
 
@@ -16,7 +16,7 @@ Suppose the `helmwave.yml` representing the desired state of your helm releases 
 helmwave build
 ```
 
-this steps generate [plan](https://helmwave.github.io/docs/0.16.x/cli/#step-2-working-with-plan)
+this steps generate [plan](https://helmwave.github.io/docs/0.17.x/cli/#step-2-working-with-plan)
 
 4) if everything is ok , deploy plan 
 

@@ -1,6 +1,6 @@
 # Apps per namespace
 
-> [Source](https://github.com/helmwave/docs/tree/0.16.x/docs/examples/apps-per-ns)
+> [Source](https://github.com/helmwave/docs/tree/0.17.x/docs/examples/apps-per-ns)
 
 If you want to install each application in your own namespace. 
 
@@ -62,7 +62,7 @@ helmwave build -t plantuml
 helmwave up
 ```
 
-looks how to work [HELMWAVE_TAGS](https://helmwave.github.io/docs/0.16.x/yaml/#tags)
+looks how to work [HELMWAVE_TAGS](https://helmwave.github.io/docs/0.17.x/yaml/#tags)
 
 ## CI/CD with Gitlab-CI
 
@@ -77,7 +77,7 @@ Deploy to prod:
   environment:
     name: prod
   image:
-    name: ghcr.io/helmwave/helmwave:0.16.2
+    name: ghcr.io/helmwave/helmwave:0.17.2
     entrypoint: [""]
   before_script:
     - printenv | grep HELMWAVE

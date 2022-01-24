@@ -8,7 +8,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.16.2
+   0.17.1
 
 DESCRIPTION:
    This tool helps you compose your helm releases!
@@ -30,12 +30,12 @@ COMMANDS:
    completion    Generate completion script
    help, h       Shows a list of commands or help for one command
 
-
 GLOBAL OPTIONS:
    --log-format value         You can set: [ text | json | pad | emoji ] (default: "emoji") [$HELMWAVE_LOG_FORMAT]
    --log-level value          You can set: [ debug | info | warn  | fatal | panic | trace ] (default: "info") [$HELMWAVE_LOG_LEVEL, $HELMWAVE_LOG_LVL]
    --log-color                Force color (default: true) [$HELMWAVE_LOG_COLOR]
    --kubedog-log-width value  Set kubedog max log line width (default: 140) [$HELMWAVE_KUBEDOG_LOG_WIDTH]
+   --log-timestamps           Add timestamps to log messages (default: false) [$HELMWAVE_LOG_TIMESTAMPS]
    --help, -h                 show help (default: false)
    --version, -v              print the version (default: false)
 ```
@@ -48,9 +48,10 @@ It allows render `helmwave.yml.tpl` to `helmwave.yml`
 
 **Options**
 
-```
---tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
---file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML]
+```console
+   --tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+   --file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+   --templater value       Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
 ```
 
 
@@ -58,14 +59,17 @@ It allows render `helmwave.yml.tpl` to `helmwave.yml`
 
 This command generates `.helmwave/` 
 
-```
---plandir value         Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR]
---tags value, -t value  It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
---match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
---file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML]
---diff-mode value       You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
---wide value            Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
---show-secret           Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
+```console
+   --plandir value, -p value  Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
+   --tags value, -t value     It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+   --match-all-tags           Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+   --diff-mode value          You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
+   --yml                      Auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
+   --wide value               Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
+   --show-secret              Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
+   --tpl value                Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+   --file value, -f value     Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+   --templater value          Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
 ```
 
 ## step #2: Working with plan
@@ -75,6 +79,24 @@ This command generates `.helmwave/`
 
 Helmwave will install repositories and helm-releases from plan.
 
+```console
+   --build                          auto build (default: false) [$HELMWAVE_AUTO_BUILD]
+   --kubedog                        Enable/Disable kubedog (default: false) [$HELMWAVE_KUBEDOG_ENABLED, $HELMWAVE_KUBEDOG]
+   --kubedog-status-interval value  Interval of kubedog status messages (default: 5s) [$HELMWAVE_KUBEDOG_STATUS_INTERVAL]
+   --kubedog-start-delay value      Delay kubedog start, don't make it too late (default: 1s) [$HELMWAVE_KUBEDOG_START_DELAY]
+   --kubedog-timeout value          Timeout of kubedog multitrackers (default: 5m0s) [$HELMWAVE_KUBEDOG_TIMEOUT]
+   --progress                       Enable progress logs of helm (INFO log level) (default: false) [$HELMWAVE_PROGRESS]
+   --plandir value, -p value        Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
+   --tags value, -t value           It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+   --match-all-tags                 Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+   --diff-mode value                You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
+   --yml                            Auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
+   --wide value                     Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
+   --show-secret                    Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
+   --tpl value                      Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+   --file value, -f value           Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+   --templater value                Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+```
 
 
 ### down
@@ -169,25 +191,24 @@ Diff has 2 subcommands
 
 Helmwave supports several log-format
 
-features | `text` | `json` | `pad` | `emoji` (default)
-:---: |:---:|:---:|:---:|:---:
-Color | ✅   | ❌  | ✅  | 🌈
-Human readable | 🧐   | 🤖  | 🧐🧐  | ✅
-Performance | 🚀   | 🐢  | ✈️  | 🐢
-Module | TextFormatter (in-built logrus formatter)  | JSONFormatter (in-built logrus formatter)  | TextFormatter (in-built logrus formatter)  |  [logrus-emoji-formatter](https://github.com/helmwave/logrus-emoji-formatter) special for helmwave
-
+|    features    |                  `text`                   |                  `json`                   |                   `pad`                   |                                         `emoji` (default)                                         |
+|:--------------:|:-----------------------------------------:|:-----------------------------------------:|:-----------------------------------------:|:-------------------------------------------------------------------------------------------------:|
+|     Color      |                     ✅                     |                     ❌                     |                     ✅                     |                                                🌈                                                 |
+| Human readable |                    🧐                     |                    🤖                     |                   🧐🧐                    |                                                 ✅                                                 |
+|  Performance   |                    🚀                     |                    🐢                     |                    ✈️                     |                                                🐢                                                 |
+|     Module     | TextFormatter (in-built logrus formatter) | JSONFormatter (in-built logrus formatter) | TextFormatter (in-built logrus formatter) | [logrus-emoji-formatter](https://github.com/helmwave/logrus-emoji-formatter) special for helmwave |
 
 ### Log Level
 
-_ | `info` (default) | `warn` | `debug` | `fatal` | `panic` | `trace`
-:---:|:---:|:---:|:---:|:---:|:---:|:---:
-general info         | ✅   | ✅  | ✅  | ✅   | ✅  | ✅
-incompatible version | ❌   | ✅  | ✅  | ✅   | ✅  | ✅
-helm-debug           | ❌   | ❌  | ✅  | ✅   | ✅  | ✅
-file content         | ❌   | ❌  | ✅  | ✅   | ✅  | ✅
-helm manifests, bug report       | ❌   | ❌  | ❌  | ❌   | ❌  | ✅
+|             _              | `info` (default) | `warn` | `debug` | `fatal` | `panic` | `trace` |
+|:--------------------------:|:----------------:|:------:|:-------:|:-------:|:-------:|:-------:|
+|        general info        |        ✅         |   ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
+|    incompatible version    |        ❌         |   ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
+|         helm-debug         |        ❌         |   ❌    |    ✅    |    ✅    |    ✅    |    ✅    |
+|        file content        |        ❌         |   ❌    |    ✅    |    ✅    |    ✅    |    ✅    |
+| helm manifests, bug report |        ❌         |   ❌    |    ❌    |    ❌    |    ❌    |    ✅    |
 
-`info` or `debug` is preferred.
+`info` is prefer.
 
 
 
@@ -217,10 +238,10 @@ helmwave <cmd>
 
 ```bash
 $ helmwave --version  
-helmwave version 0.16.2
+helmwave version 0.17.2
 
 $ helmwave -v
-helmwave version 0.16.2
+helmwave version 0.17.2
 ```
 
 
@@ -228,10 +249,10 @@ helmwave version 0.16.2
 
 ```bash
 $ helmwave version
-0.16.2
+0.17.2
 
 $ helmwave ver
-0.16.2
+0.17.2
 ```
 
 ## Completion
