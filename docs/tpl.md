@@ -25,7 +25,7 @@ template:
     enabled: true
 ```
 
-see [example]()
+see [example](https://helmwave.github.io/docs/0.16.x/examples/aws-sm/)
 
 
 ### Issues
