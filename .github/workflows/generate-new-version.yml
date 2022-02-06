@@ -7,6 +7,10 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   generate-new-docs:
     runs-on: ubuntu-latest
@@ -28,28 +32,44 @@ jobs:
             github.rest.git.getRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: "refs/heads/" + process.env.VERSION,
+              ref: "heads/" + process.env.VERSION,
             })
+        continue-on-error: true
         env:
           VERSION: ${{ steps.parse-version.outputs.version }}
 
       - name: Create branch and PR for new version
         id: create-version
         uses: actions/github-script@v5
+        if: ${{ steps.find-branch.outcome == 'failure' }}
         with:
           github-token: ${{ github.token }}
           script: |
-            const mainBranch = await github.rest.git.getRef({
+            const mainBranch = github.rest.git.getRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: "refs/heads/main",
+              ref: "heads/main",
+            })
+
+            const lastMainCommit = github.rest.git.getCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: (await mainBranch).data.object.sha,
+            })
+
+            const newCommit = github.rest.git.createCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              message: "chore: empty commit for " + process.env.VERSION + " version",
+              tree: (await lastMainCommit).data.tree.sha,
+              parents: [(await lastMainCommit).data.sha],
             })
 
             await github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: "refs/heads/" + process.env.VERSION,
-              sha: mainBranch.object.sha
+              sha: (await newCommit).data.sha,
             })
 
             await github.rest.pulls.create({
@@ -57,7 +77,7 @@ jobs:
               repo: context.repo.repo,
               head: process.env.VERSION,
               base: "main",
-              draft: true,
+              title: "Generate docs for " + process.env.VERSION + " version"
             })
         env:
           VERSION: ${{ steps.parse-version.outputs.version }}
