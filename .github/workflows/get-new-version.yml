@@ -1,3 +1,4 @@
+name: Generate docs for new version
 on:
   workflow_dispatch:
     inputs:
