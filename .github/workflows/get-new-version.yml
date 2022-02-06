@@ -1,0 +1,62 @@
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Helmwave tag to generate docs for"
+        required: true
+        type: string
+
+jobs:
+  generate-new-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse tag into docs version
+        id: parse-version
+        run: |
+          VERSION=$(echo "$TAG" | sed 's#^\(.*\)\.\(.*\)\..*$#\1.\2.x#g')
+          echo "::set-output name=version::${VERSION}"
+        env:
+          TAG: ${{ github.event.inputs.tag }}
+
+      - name: Find existing branch for version
+        id: find-branch
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            github.rest.git.getRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/heads/" + process.env.VERSION,
+            })
+        env:
+          VERSION: ${{ steps.parse-version.outputs.version }}
+
+      - name: Create branch and PR for new version
+        id: create-version
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const mainBranch = await github.rest.git.getRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/heads/main",
+            })
+
+            await github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/heads/" + process.env.VERSION,
+              sha: mainBranch.object.sha
+            })
+
+            await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: process.env.VERSION,
+              base: "main",
+              draft: true,
+            })
+        env:
+          VERSION: ${{ steps.parse-version.outputs.version }}
