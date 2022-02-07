@@ -5,10 +5,9 @@ This document outlines the process to help get your contribution accepted.
 
 # Branch-flow
 
-1. merge the latest branch to main.
-2. create new branch: `<major>.<minor>.x` from main
-3. working on branch
-
+1. Wait for new branch to appear (it is created automatically in [helmwave repository](https://github.com/helmwave/helmwave) with corresponding PR)
+1. Feel free to add commits to this branch
+1. Merge the PR after everything is updated
 
 ## Versioning
 
