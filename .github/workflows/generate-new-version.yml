@@ -1,0 +1,83 @@
+name: Generate docs for new version
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Helmwave tag to generate docs for"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-new-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse tag into docs version
+        id: parse-version
+        run: |
+          VERSION=$(echo "$TAG" | sed 's#^\(.*\)\.\(.*\)\..*$#\1.\2.x#g')
+          echo "::set-output name=version::${VERSION}"
+        env:
+          TAG: ${{ github.event.inputs.tag }}
+
+      - name: Find existing branch for version
+        id: find-branch
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            github.rest.git.getRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "heads/" + process.env.VERSION,
+            })
+        continue-on-error: true
+        env:
+          VERSION: ${{ steps.parse-version.outputs.version }}
+
+      - name: Create branch and PR for new version
+        id: create-version
+        uses: actions/github-script@v5
+        if: ${{ steps.find-branch.outcome == 'failure' }}
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const mainBranch = github.rest.git.getRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "heads/main",
+            })
+
+            const lastMainCommit = github.rest.git.getCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: (await mainBranch).data.object.sha,
+            })
+
+            const newCommit = github.rest.git.createCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              message: "chore: empty commit for " + process.env.VERSION + " version",
+              tree: (await lastMainCommit).data.tree.sha,
+              parents: [(await lastMainCommit).data.sha],
+            })
+
+            await github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/heads/" + process.env.VERSION,
+              sha: (await newCommit).data.sha,
+            })
+
+            await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: process.env.VERSION,
+              base: "main",
+              title: "Generate docs for " + process.env.VERSION + " version"
+            })
+        env:
+          VERSION: ${{ steps.parse-version.outputs.version }}
