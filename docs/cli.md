@@ -8,7 +8,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.16.2
+   0.18.0
 
 DESCRIPTION:
    This tool helps you compose your helm releases!
@@ -217,10 +217,10 @@ helmwave <cmd>
 
 ```bash
 $ helmwave --version  
-helmwave version 0.16.2
+helmwave version 0.18.0
 
 $ helmwave -v
-helmwave version 0.16.2
+helmwave version 0.18.0
 ```
 
 
@@ -228,10 +228,10 @@ helmwave version 0.16.2
 
 ```bash
 $ helmwave version
-0.16.2
+0.18.0
 
 $ helmwave ver
-0.16.2
+0.18.0
 ```
 
 ## Completion
@@ -264,4 +264,3 @@ echo "source <(helmwave completion zsh)" >> ~/.zshrc
 ```
 
 ![completion-zsh](assets/completion-zsh.png)
-

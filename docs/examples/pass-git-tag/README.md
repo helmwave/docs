@@ -1,7 +1,7 @@
 # Pass Git tag -> Docker image tag
 
 
-> [Source](https://github.com/helmwave/docs/tree/0.16.x/docs/examples/pass-git-commit)
+> [Source](https://github.com/helmwave/docs/tree/0.18.x/docs/examples/pass-git-commit)
 
 
 
@@ -55,4 +55,3 @@ helmwave up
 ```
 
 or `helmwave up --build`
-

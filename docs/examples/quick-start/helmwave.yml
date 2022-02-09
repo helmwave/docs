@@ -1,9 +1,8 @@
-version: 0.16.2
+version: 0.18.0
 
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami
-
 
 .options: &options
   namespace: my-namespace
@@ -15,9 +14,7 @@ releases:
     chart:
       name: bitnami/redis
 
-
   - name: redis-b
     <<: *options
     chart:
       name: bitnami/redis
-

@@ -60,7 +60,7 @@ helmwave build -t plantuml
 helmwave up
 ```
 
-looks how to work [HELMWAVE_TAGS](https://helmwave.github.io/docs/0.16.x/yaml/#tags)
+looks how to work [HELMWAVE_TAGS](https://helmwave.github.io/docs/0.18.x/yaml/#tags)
 
 ## CI/CD with Gitlab-CI
 
@@ -75,7 +75,7 @@ Deploy to prod:
   environment:
     name: prod
   image:
-    name: ghcr.io/helmwave/helmwave:0.16.2
+    name: ghcr.io/helmwave/helmwave:0.18.0
     entrypoint: [""]
   before_script:
     - printenv | grep HELMWAVE

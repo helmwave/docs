@@ -1,6 +1,6 @@
-# How to use [Store](https://helmwave.github.io/docs/0.16.x/yaml/#store)
+# How to use [Store](https://helmwave.github.io/docs/0.18.x/yaml/#store)
 
-> [ [source] ](https://github.com/helmwave/docs/tree/0.16.x/docs/examples/store-greeting-hello)
+> [ [source] ](https://github.com/helmwave/docs/tree/0.18.x/docs/examples/store-greeting-hello)
 
 This is very helpful when you need to pass the same values to different fields with your releases.
 
