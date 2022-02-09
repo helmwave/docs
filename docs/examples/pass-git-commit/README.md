@@ -1,6 +1,6 @@
 # Restart pods via git-commit
 
-> [Source](https://github.com/helmwave/docs/tree/0.16.x/docs/examples/pass-git-commit)
+> [Source](https://github.com/helmwave/docs/tree/0.18.x/docs/examples/pass-git-commit)
 
 
 **Project Structure**
@@ -44,4 +44,3 @@ We will pass pod annotations with  `values`
 helmwave build
 helmwave up
 ```
-

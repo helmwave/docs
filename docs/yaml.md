@@ -1,6 +1,6 @@
 # Yaml
 
-> works on [helm v3.7.1](https://github.com/helmwave/helmwave/blob/v0.16.2/go.mod)
+> works on [helm v3.7.1](https://github.com/helmwave/helmwave/blob/v0.18.0/go.mod)
 
 Sample: 
 
@@ -296,5 +296,3 @@ helmwave build -t redis -t a --match-all-tags
 ### createnamespace
 
 > if `true` Helmwave will create the release namespace if not present
-
-
