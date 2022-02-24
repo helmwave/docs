@@ -2,7 +2,6 @@ releases:
 - name: a
   chart:
     name: my/a
-  namespace: test
   store:
     msg: hello
   values:
@@ -11,7 +10,6 @@ releases:
 - name: b
   chart:
     name: my/b
-  namespace: test
   store:
     msg: hello
   values:
