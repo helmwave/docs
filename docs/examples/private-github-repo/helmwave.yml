@@ -4,9 +4,11 @@ repositories:
   - name: your-private-git-repo-hosted-charts
     url: https://my-secret-token@raw.githubusercontent.com/foo/bar/master/
 
+
 .options: &options
   namespace: ips
-  createnamespace: true
+  create_namespace: true
+
 
 releases:
   - name: hello

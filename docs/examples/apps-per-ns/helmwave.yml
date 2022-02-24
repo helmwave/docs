@@ -8,6 +8,8 @@ repositories:
   - name: stevehipwell
     url: https://stevehipwell.github.io/helm-charts
 
+
+
 # General options
 .options: &options
   wait: true
@@ -78,3 +80,6 @@ releases:
     values:
       - values/renovate.yml
     <<: *options
+
+
+

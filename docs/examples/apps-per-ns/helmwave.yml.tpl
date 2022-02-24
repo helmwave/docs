@@ -14,12 +14,12 @@ repositories:
 # General options
 .options: &options
   wait: true
-  waitforjobs: true
+  wait_for_jobs: true
   force: false
   timeout: 10m
   atomic: false
-  maxhistory: 3
-  createnamespace: true
+  max_history: 3
+  create_namespace: true
 
 
 releases:
@@ -43,3 +43,4 @@ releases:
 
 {{ end }}
 {{- end }}
+

@@ -54,11 +54,10 @@ Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
 > We use 2 docker registries. 
 
-Registry | URL | project page
-:---:|:---:|:----------:
-Docker hub | https://hub.docker.com | [view](https://hub.docker.com/repository/docker/diamon/helmwave)
-Github Container registry | https://ghcr.io | [view](https://github.com/orgs/helmwave/packages/container/helmwave/settings)
-
+|         Registry          |          URL           |                                 project page                                  |
+|:-------------------------:|:----------------------:|:-----------------------------------------------------------------------------:|
+|        Docker hub         | https://hub.docker.com |       [view](https://hub.docker.com/repository/docker/diamon/helmwave)        |
+| Github Container registry |    https://ghcr.io     | [view](https://github.com/orgs/helmwave/packages/container/helmwave/settings) |
 
 ```bash
 docker pull diamon/helmwave
@@ -86,8 +85,8 @@ scratch image run with [nobody user](https://unix.stackexchange.com/questions/18
 docker pull diamon/helmwave:scratch
 docker pull ghcr.io/helmwave/helmwave:scratch
 
-docker run ghcr.io/helmwave/helmwave:0.18.0-scratch version
-0.18.0
+docker run ghcr.io/helmwave/helmwave:0.16.2-scratch version
+0.16.2
 ```
 
 **Use [scratch image](https://hub.docker.com/_/scratch) with specific helmwave version**

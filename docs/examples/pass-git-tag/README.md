@@ -1,11 +1,9 @@
-# Pass Git tag -> Docker image tag
-
+# Git tag -> Docker image tag
 
 > [Source](https://github.com/helmwave/docs/tree/0.18.x/docs/examples/pass-git-commit)
 
+> [Source](https://github.com/helmwave/docs/tree/0.17.x/docs/examples/pass-git-commit)
 
-
-## Receipt
 
 Suppose `my-chart` has default `values.yaml`:
 
@@ -24,7 +22,7 @@ helm upgrade --instal my-release my-chart-repo/my-chart-app --set="image.tag=$CI
 
 HelmWave allows use declarative way to approach this goal.
 
-#### Project Structure
+**Project Structure**
 
 ```
 .
@@ -33,13 +31,13 @@ HelmWave allows use declarative way to approach this goal.
 
 ```
 
-#### `helmwave.yml.tpl`
+**`helmwave.yml.tpl`**
 
 ```yaml
 {% include "helmwave.yml" %}
 ```
 
-#### `values.yml`
+**`values.yml`**
 
 This values will override default values 
 
@@ -47,7 +45,7 @@ This values will override default values
 {% include "values.yml" %}
 ```
 
-## Run
+**Run**
 
 ```console
 helmwave build

@@ -1,10 +1,13 @@
 # Apps per namespace
 
+> [Source](https://github.com/helmwave/docs/tree/0.17.x/docs/examples/apps-per-ns)
+
 If you want to install each application in your own namespace. 
 
 ## Create the project
 
 **Project structure**
+
 ```yaml
 ├── README.md
 ├── helmwave.yml.tpl
@@ -66,27 +69,7 @@ looks how to work [HELMWAVE_TAGS](https://helmwave.github.io/docs/0.18.x/yaml/#t
 
 
 ```yaml
-variables:
-  HELMWAVE_LOG_LEVEL: debug
-
-Deploy to prod:
-  stage: deploy
-  when: manual
-  environment:
-    name: prod
-  image:
-    name: ghcr.io/helmwave/helmwave:0.18.0
-    entrypoint: [""]
-  before_script:
-    - printenv | grep HELMWAVE
-  script:
-    - helmwave yml
-    - helmwave build
-    - helmwave up
-  artifacts:
-    paths:
-    - .helmwave
-    expire_in: 2 week
+{% include ".gitlab-ci.yml" %}
 ```
 
 if you want to deploy only `plantuml` via CI.
