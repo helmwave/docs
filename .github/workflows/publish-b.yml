@@ -42,9 +42,9 @@ jobs:
       - name: Mike with updating aliases
         if: ${{ github.event.created }}
         run: |
-          mike deploy --push --update-aliases ${{ steps.extract_branch.outputs.branch }} latest --rebase
+          mike deploy --push --force --update-aliases ${{ steps.extract_branch.outputs.branch }} latest --rebase
 
       - name: Mike
         if: ${{ !github.event.created }}
         run: |
-          mike deploy --push ${{ steps.extract_branch.outputs.branch }}
+          mike deploy --force --push ${{ steps.extract_branch.outputs.branch }}
