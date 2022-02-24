@@ -4,6 +4,9 @@ Helmwave uses [Go templates](https://godoc.org/text/template) for templating.
 
 Helmwave supports all built-in functions / sprig / gomplate / custom.
 
+Since v0.17.0. You can chose template engine with next flag:
+
+` --templater value                Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]`
 
 ## [Sprig](https://godoc.org/github.com/Masterminds/sprig)
 
@@ -13,25 +16,7 @@ http://masterminds.github.io/sprig/
 
 ## [Gomplate](https://docs.gomplate.ca/)
 
-Since v0.14.0. Helmwave works with Gomplate.
-
-### How to enable gomplate for v0.14.0 and later
-
-**helmwave.yml**
-
-```yaml
-template:
-  gomplate:
-    enabled: true
-```
-
-see [example]()
-
-
-### Issues
-
-- https://github.com/helmwave/helmwave/issues/159
-- https://github.com/helmwave/helmwave/issues/103
+> gomplate is a template renderer which supports a growing list of datasources, such as: JSON (including EJSON - encrypted JSON), YAML, AWS EC2 metadata, BoltDB, Hashicorp Consul and Hashicorp Vault secrets.
 
 
 

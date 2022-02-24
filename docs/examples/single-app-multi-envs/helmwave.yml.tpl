@@ -10,4 +10,4 @@ releases:
       - values/_.yml
       # For specific ENVIRONMENT
       - values/{{ requiredEnv "CI_ENVIRONMENT_NAME" }}.yml
-    createnamespace: true
+    create_namespace: true

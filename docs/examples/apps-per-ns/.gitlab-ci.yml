@@ -1,0 +1,21 @@
+variables:
+  HELMWAVE_LOG_LEVEL: debug
+
+deploy to prod:
+  stage: deploy
+  when: manual
+  environment:
+    name: prod
+  image:
+    name: ghcr.io/helmwave/helmwave:0.17.2
+    entrypoint: [""]
+  before_script:
+  - printenv | grep HELMWAVE
+  script:
+  - helmwave yml
+  - helmwave build
+  - helmwave up
+  artifacts:
+    paths:
+    - .helmwave
+    expire_in: 2 week

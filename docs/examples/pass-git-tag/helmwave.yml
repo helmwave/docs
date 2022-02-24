@@ -7,4 +7,4 @@ releases:
     values:
       - values.yml
     namespace: my-namespace
-    createnamespace: true
+    create_namespace: true

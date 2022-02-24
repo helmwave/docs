@@ -56,6 +56,6 @@ redis-b-slave-1    1/1     Running   0          51s
 
 ## Live mode
 
-> Ascinema cast is too old.
+> !!! Ascinema cast is too old.
 
 <script id="asciicast-399676" src="https://asciinema.org/a/399676.js" async></script>

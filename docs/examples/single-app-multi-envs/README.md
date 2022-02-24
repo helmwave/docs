@@ -10,7 +10,7 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
 ```
 
 
-## Project structure
+**Project structure**
 
 ```
 .
@@ -53,11 +53,17 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
 {% include "values/stage.yml" %}
 ```
 
-## Run
+**Run**
 
 ```shell
 export CI_ENVIRONMENT_NAME=stage
 helmwave yml
 helmwave build
 helmwave up
+```
+
+or one command 
+
+```shell
+helmwave up --build --yml
 ```

@@ -1,8 +1,9 @@
-# How to use AWS secret manager?
+# AWS secret manager
 
 > [Source](https://github.com/helmwave/docs/tree/0.18.x/docs/examples/aws-sm)
 
 **Project structure**
+
 ```
 ├── README.md
 ├── helmwave.yml
@@ -32,3 +33,4 @@ aws secretsmanager create-secret --name hello/foobar --secret-string '{"foo":"ba
 **Step 4. Run `helmwave build`**
 
 You will get `secret: {"foo":"bar"}`
+
