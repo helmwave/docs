@@ -1,11 +1,11 @@
 # Publications
 
 
-## HelmWave v0.18.0
+## [HelmWave v0.18.0](https://habr.com/ru/post/650963/)
 
 > https://habr.com/ru/post/650963/
 
-## HelmWave v0.12.8 
+## [HelmWave v0.12.8](https://habr.com/ru/post/575646/) 
 
 > https://habr.com/ru/post/575646/
 
@@ -15,7 +15,7 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Nzt_l0Njx38" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## HelmWave v0.5.0
+## [HelmWave v0.5.0](https://habr.com/ru/post/532596/)
 
 > https://habr.com/ru/post/532596/
 
