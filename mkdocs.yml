@@ -16,6 +16,7 @@ nav:
       - intro.md
       - install.md
       - ci.md
+      - pub.md
 
   - Reference:
       - cli.md
