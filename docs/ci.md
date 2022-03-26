@@ -44,7 +44,7 @@ helmwave:
   environment:
     name: "ref/$CI_COMMIT_REF_SLUG"
   image:
-    name: diamon/helmwave:0.18.0
+    name: diamon/helmwave:0.19.0
     entrypoint: [""]
   before_script:
     - printenv | grep HELMWAVE
@@ -58,7 +58,7 @@ helmwave:
     expire_in: 2 week
 ```
 
-See [example](https://helmwave.github.io/docs/0.18.x/examples/apps-per-ns/#cicd-with-gitlab-ci)
+See [example](https://helmwave.github.io/docs/0.19.x/examples/apps-per-ns/#cicd-with-gitlab-ci)
 
 
 ###  Kube-Linter and Helmwave
@@ -81,7 +81,7 @@ variables:
   after_script: 
     - ls -la $HELMWAVE_PLAN
   image:
-    name: ghcr.io/helmwave/helmwave:0.18.0
+    name: ghcr.io/helmwave/helmwave:0.19.0
     entrypoint: ['']
 
 ###############  BUILD  ################

@@ -4,7 +4,7 @@
 
 > coming soon... 14.02.2022.
 
-## [HelmWave v0.18.0](https://habr.com/ru/post/650963/)
+## [HelmWave v0.19.0](https://habr.com/ru/post/650963/)
 
 > https://habr.com/ru/post/650963/
 
