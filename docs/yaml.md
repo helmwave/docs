@@ -1,62 +1,11 @@
 # Yaml
 
-> works on [helm v3.7.1](https://github.com/helmwave/helmwave/blob/v0.19.0/go.mod)
+> works on [helm v3.8.1](https://github.com/helmwave/helmwave/blob/v0.19.0/go.mod)
 
 Sample: 
 
 ```yaml
-project: my-project
-version: dev
-repositories:
-- name: bitnami
-  url: https://charts.bitnami.com/bitnami
-  username: ""
-  password: ""
-  certfile: ""
-  keyfile: ""
-  cafile: ""
-  insecureskiptlsverify: false
-  force: false
-  allow_failure: true
-releases:
-- store:
-    hello: world
-  chart:
-    name: bitnami/nginx
-    cafile: ""
-    certfile: ""
-    keyfile: ""
-    insecureskiptlsverify: false
-    keyring: ""
-    password: ""
-    repourl: ""
-    username: ""
-    verify: false
-    version: ""
-  name: nginx
-  namespace: test
-  description: ""
-  depends_on: []
-  values: 
-  - .helmwave/values/nginx@test/5ae83192a2a53eec01dee5207fcf3cccbc5af87f.yml
-  - tests/07_values.yaml
-  tags: []
-  timeout: 0s
-  maxhistory: 0
-  createnamespace: false
-  resetvalues: false
-  recreate: false
-  force: false
-  atomic: false
-  cleanuponfail: false
-  subnotes: false
-  disablehooks: false
-  disableopenapivalidation: false
-  waitforjobs: false
-  wait: false
-  skipcrds: false
-  devel: false
-  reusevalues: false
+<WIP>
 ```
 
 
