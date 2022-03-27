@@ -18,7 +18,16 @@ spec:
         helmwave.dev/show-service-messages: "true"
 ```
 
-## Annotations for the [kubedog](https://github.com/werf/kubedog) 🐶
+## Helmwave's annotations
+
+### `helmwave.dev/skip-diff`
+
+Skip resource for `helm diff` function.
+
+This is very useful for secret or sensitive data.
+
+
+## [kubedog's](https://github.com/werf/kubedog) 🐶
 
 
 !!! danger

@@ -1,62 +1,11 @@
 # Yaml
 
-> works on [helm v3.7.1](https://github.com/helmwave/helmwave/blob/v0.18.0/go.mod)
+> works on [helm v3.8.1](https://github.com/helmwave/helmwave/blob/v0.19.0/go.mod)
 
 Sample: 
 
 ```yaml
-project: my-project
-version: dev
-repositories:
-- name: bitnami
-  url: https://charts.bitnami.com/bitnami
-  username: ""
-  password: ""
-  certfile: ""
-  keyfile: ""
-  cafile: ""
-  insecureskiptlsverify: false
-  force: false
-  allow_failure: true
-releases:
-- store:
-    hello: world
-  chart:
-    name: bitnami/nginx
-    cafile: ""
-    certfile: ""
-    keyfile: ""
-    insecureskiptlsverify: false
-    keyring: ""
-    password: ""
-    repourl: ""
-    username: ""
-    verify: false
-    version: ""
-  name: nginx
-  namespace: test
-  description: ""
-  depends_on: []
-  values: 
-  - .helmwave/values/nginx@test/5ae83192a2a53eec01dee5207fcf3cccbc5af87f.yml
-  - tests/07_values.yaml
-  tags: []
-  timeout: 0s
-  maxhistory: 0
-  createnamespace: false
-  resetvalues: false
-  recreate: false
-  force: false
-  atomic: false
-  cleanuponfail: false
-  subnotes: false
-  disablehooks: false
-  disableopenapivalidation: false
-  waitforjobs: false
-  wait: false
-  skipcrds: false
-  devel: false
-  reusevalues: false
+<WIP>
 ```
 
 
@@ -69,6 +18,20 @@ releases:
 > Helmwave will check current version and project version.
 
 In the future it is planned to be used for major compatibility. 
+
+## Registries[]
+
+available since 0.19
+
+see [example](examples/oci/README.md)
+
+
+|  field   | required |  type  | default |
+|:--------:|:--------:|:------:|:-------:|
+|   host   |    ✅     | string |   ""    |
+| username |    ✅     | string |   ""    |
+| password |    ✅     | string |   ""    |
+
 
 ## Repositories[]
 
@@ -100,12 +63,13 @@ In the future it is planned to be used for major compatibility.
 
 ## Releases[]
 
+> Almost all options that are here are native helm options
 
 |            field            | required |   type   | default | `helmwave build` | `helmwave up` |
 |:---------------------------:|:--------:|:--------:|:-------:|:----------------:|:-------------:|
-|            name             |    ✅     |  string  |   ""    |        ✅         |       ✅       |
-|          namespace          |    ✅     |  string  |   ""    |        ✅         |       ✅       |
-|         chart.name          |    ✅     |  string  |   ""    |        ✅         |       ✅       |
+|          **name**           |    ✅     |  string  |   ""    |        ✅         |       ✅       |
+|        **namespace**        |    ✅     |  string  |   ""    |        ✅         |       ✅       |
+|       **chart.name**        |    ✅     |  string  |   ""    |        ✅         |       ✅       |
 |       chart.username        |    🙅    |  string  |   ""    |                  |               |
 |       chart.password        |    🙅    |  string  |   ""    |                  |               |
 |       chart.certfile        |    🙅    |  string  |   ""    |                  |               |
@@ -119,21 +83,21 @@ In the future it is planned to be used for major compatibility.
 |            tags             |    🙅    |  array   |   []    |        ✅         |               |
 |            store            |    🙅    |  object  |   {}    |        ✅         |               |
 |           timeout           |    🙅    | interval |   0s    |                  |       ✅       |
-|         maxhistory          |    🙅    |   int    |    0    |                  |       ✅       |
-|       createnamespace       |    🙅    |   bool   |  false  |                  |       ✅       |
-|         resetvalues         |    🙅    |   bool   |  false  |                  |       ✅       |
+|         max_history         |    🙅    |   int    |    0    |                  |       ✅       |
+|      create_namespace       |    🙅    |   bool   |  false  |                  |       ✅       |
+|        reset_values         |    🙅    |   bool   |  false  |                  |       ✅       |
 |          recreate           |    🙅    |   bool   |  false  |                  |       ✅       |
 |            force            |    🙅    |   bool   |  false  |                  |       ✅       |
 |           atomic            |    🙅    |   bool   |  false  |                  |       ✅       |
-|        cleanuponfail        |    🙅    |   bool   |  false  |                  |       ✅       |
+|       cleanup_on_fail       |    🙅    |   bool   |  false  |                  |       ✅       |
 |          subnotes           |    🙅    |   bool   |  false  |                  |       ✅       |
-|        disablehooks         |    🙅    |   bool   |  false  |                  |       ✅       |
-|  disableopenapivalidation   |    🙅    |   bool   |  false  |                  |       ✅       |
-|         waitforjobs         |    🙅    |   bool   |  false  |                  |       ✅       |
+|        disable_hooks        |    🙅    |   bool   |  false  |                  |       ✅       |
+| disable_open_api_validation |    🙅    |   bool   |  false  |                  |       ✅       |
+|        wait_for_jobs        |    🙅    |   bool   |  false  |                  |       ✅       |
 |            wait             |    🙅    |   bool   |  false  |                  |       ✅       |
-|          skipcrds           |    🙅    |   bool   |  false  |                  |       ✅       |
+|          skip_crds          |    🙅    |   bool   |  false  |                  |       ✅       |
 |            devel            |    🙅    |   bool   |  false  |                  |       ✅       |
-|         reusevalues         |    🙅    |   bool   |  false  |                  |       ✅       |
+|        reuse_values         |    🙅    |   bool   |  false  |                  |       ✅       |
 
 ### 🗳️ Store
 

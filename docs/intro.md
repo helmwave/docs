@@ -13,7 +13,7 @@ With helmwave you will become a superhero:
 - Keep a directory of chart value files
 - Maintain changes in version control
 - Template values
-- Step by Step deployment (depends_on, allow_failure)
+- Step by Step deployment (`depends_on`, `allow_failure`)
 - Live tracking kubernetes resources with kubedog
 - Fetch data from external datasource like vault, aws ssm
 - ... and much more!
@@ -25,7 +25,7 @@ With helmwave you will become a superhero:
 |               Syntax               | YAML + [sprig](http://masterminds.github.io/sprig/)/[gomplate](https://docs.gomplate.ca/) |                  YAML + [sprig](http://masterminds.github.io/sprig/)                  |                               TOML/YAML                                |
 |            Requirements            |                                            No                                             | `kubectl`, `helm`<br> *`helm-diff` (optional: `helm-secrets`, `helm-s3`, `helm-git`*) |                  `kubectl`, `helm`<br> *`helm-diff`*                   |
 |           Helm execution           |                               function call of bundled helm                               |                                       `os.Exec`                                       |                               `os.Exec`                                |
-|           Remote values            |                                         Partially                                         |                                          Yes                                          |                                   No                                   |
+|           Remote values            |                                            Yes                                            |                                          Yes                                          |                                   No                                   |
 |         Parallel releases          |                                            Yes                                            |                                          Yes                                          |                                   No                                   |
 |       Releases dependencies        |                                     Yes (depends_on)                                      |                                      Yes (needs)                                      |                           Kind of (priority)                           |
 |      Latest docker image size      |               ![](https://img.shields.io/docker/image-size/diamon/helmwave)               |            ![](https://img.shields.io/docker/image-size/chatwork/helmfile)            |     ![](https://img.shields.io/docker/image-size/praqma/helmsman)      |
