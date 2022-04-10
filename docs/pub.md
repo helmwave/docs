@@ -2,11 +2,11 @@
 
 ## Part 3. Deployment.
 
-> На финальном вебинаре с Работа.ру спикеры расскажут об организации непрерывной доставки сотен микросервисов и управлении этим процессом с помощью HelmWave.
+> На финальном вебинаре спикеры расскажут об организации непрерывной доставки сотен микросервисов и управлении этим процессом с помощью HelmWave.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Q9uD666Cw6s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## [HelmWave v0.19.0](https://habr.com/ru/post/650963/)
+## [HelmWave v0.18+](https://habr.com/ru/post/650963/)
 
 > https://habr.com/ru/post/650963/
 
