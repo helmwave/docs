@@ -1,6 +1,6 @@
 # Single app multi envs
 
-> [ [source] ](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/single-app-multi-envs)
+> [ [Source] ](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/single-app-multi-envs)
 
 When we work with helm sometimes we need dynamics chose environment.
 

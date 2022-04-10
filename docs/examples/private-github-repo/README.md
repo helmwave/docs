@@ -1,6 +1,6 @@
 # Private GitHub repo 
 
-> [Source](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/private-github-repo)
+> [ [Source] ](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/private-github-repo)
 
 
 
