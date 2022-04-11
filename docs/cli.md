@@ -8,7 +8,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.19.0
+   0.19.1
 
 DESCRIPTION:
    This tool helps you compose your helm releases!
@@ -97,7 +97,9 @@ Helmwave will install repositories and helm-releases from plan.
    --tpl value                      Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
    --file value, -f value           Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
    --templater value                Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+   --help, -h                       show help (default: false)
 ```
+
 
 
 ### down
@@ -164,7 +166,7 @@ $ helmwave status
 Helmwave will rollback helm-releases from plan.
 
 ```bash
-$ helmwave down      
+$ helmwave rollback      
 [🙃 aka INFO]: ✅ frontend@test rollback!
 [🙃 aka INFO]: ✅ database@test rollback!
 [🙃 aka INFO]: ✅ backend@test rollback!
@@ -211,12 +213,13 @@ Helmwave supports several log-format
 
 `info` is prefer.
 
+You can enable `--progress` flag for helm-debug output.
 
 
 ### How to use?
 
 ```bash
-helmwave <cmd> --log-color=true --log-level=debug --log-format=pad
+helmwave --log-color=true --log-level=debug --log-format=pad <cmd>
 ```
 
 or
@@ -239,10 +242,10 @@ helmwave <cmd>
 
 ```bash
 $ helmwave --version  
-helmwave version 0.19.0
+helmwave version 0.19.1
 
 $ helmwave -v
-helmwave version 0.19.0
+helmwave version 0.19.1
 ```
 
 
@@ -250,10 +253,10 @@ helmwave version 0.19.0
 
 ```bash
 $ helmwave version
-0.19.0
+0.19.1
 
 $ helmwave ver
-0.19.0
+0.19.1
 ```
 
 ## Completion

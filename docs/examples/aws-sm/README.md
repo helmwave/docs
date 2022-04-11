@@ -30,7 +30,7 @@ aws secretsmanager create-secret --name hello/foobar --secret-string '{"foo":"ba
 ```
 
 
-**Step 4. Run `helmwave build`**
+**Step 4. Run `helmwave build --templater gomplate`**
 
 You will get `secret: {"foo":"bar"}`
 

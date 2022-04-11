@@ -1,6 +1,6 @@
 # Yaml
 
-> works on [helm v3.8.1](https://github.com/helmwave/helmwave/blob/v0.19.0/go.mod)
+> works on [helm v3.8.1](https://github.com/helmwave/helmwave/blob/v0.19.1/go.mod)
 
 Sample: 
 
@@ -23,7 +23,7 @@ In the future it is planned to be used for major compatibility.
 
 available since 0.19
 
-see [example](examples/oci/README.md)
+[example](examples/oci/README.md)
 
 
 |  field   | required |  type  | default |
@@ -105,7 +105,7 @@ see [example](examples/oci/README.md)
 
 It works when you call `$ helmwave build`
 
-[example](https://helmwave.github.io/docs/0.17.x/examples/store-greeting-hello/)
+[example](https://helmwave.github.io/docs/0.19.x/examples/store-greeting-hello/)
 
 
 

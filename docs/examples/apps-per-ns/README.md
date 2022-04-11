@@ -1,6 +1,6 @@
 # Apps per namespace
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.17.x/docs/examples/apps-per-ns)
+> [ [Source] ](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/apps-per-ns)
 
 If you want to install each application in your own namespace. 
 

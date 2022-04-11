@@ -32,6 +32,7 @@ nav:
       - examples/single-app-multi-envs/README.md
       - examples/oci/README.md
       - examples/aws-sm/README.md
+      - examples/vault/README.md
       - examples/private-github-repo/README.md
       - Store: examples/store-greeting-hello/README.md
 
