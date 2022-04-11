@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="The helmwave`s docs" name="description"/>
 <meta content="Dmitriy Zhilyaev" name="author"/>
-<link href="https://helmwave.github.io/0.19.x/examples/pass-git-tag/" rel="canonical"/>
+<link href="https://helmwave.github.io/0.19.x/examples/vault/" rel="canonical"/>
 <link href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico" rel="icon"/>
 <meta content="mkdocs-1.3.0, mkdocs-material-8.2.9" name="generator"/>
-<title>Git tag -&gt; Docker image tag - Helmwave</title>
+<title>Vault - Helmwave</title>
 <link href="../../assets/stylesheets/main.120efc48.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.9647289d.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -20,9 +20,9 @@
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-FTBLK54FKZ"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-FTBLK54FKZ",{page_path:e.pathname})})})</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FTBLK54FKZ"></script>
 <meta content="website" property="og:type"/>
-<meta content="Helmwave - Git tag -&gt; Docker image tag" property="og:title"/>
+<meta content="Helmwave - Vault" property="og:title"/>
 <meta content="The helmwave`s docs" property="og:description"/>
-<meta content="https://helmwave.github.io/0.19.x/examples/pass-git-tag/" property="og:url"/>
+<meta content="https://helmwave.github.io/0.19.x/examples/vault/" property="og:url"/>
 <meta content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#git-tag-docker-image-tag">
+<a class="md-skip" href="#vault">
           Skip to content
         </a>
 </div>
@@ -62,7 +62,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Git tag -&gt; Docker image tag
+              Vault
             
           </span>
 </div>
@@ -271,9 +271,8 @@
         Apps per namespace
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../pass-git-tag/">
         Git tag -&gt; Docker image tag
       </a>
 </li>
@@ -297,10 +296,28 @@
         AWS secret manager
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../vault/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Vault
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Vault
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debug-with-gomplate">
+    Debug with gomplate
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../private-github-repo/">
@@ -322,50 +339,53 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/helmwave/docs/edit/main/docs/examples/pass-git-tag/README.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/helmwave/docs/edit/main/docs/examples/vault/README.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="git-tag-docker-image-tag">Git tag -&gt; Docker image tag</h1>
+<h1 id="vault">Vault</h1>
 <blockquote>
-<p><a href="https://github.com/helmwave/docs/tree/0.19.x/docs/examples/pass-git-commit"> [Source] </a></p>
+<p><a href="https://github.com/helmwave/docs/tree/0.19.x/docs/examples/vault"> [Source] </a></p>
 </blockquote>
-<p>Suppose <code>my-chart</code> has default <code>values.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.gitlab.local/example/app</span><span class="w"></span>
-<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1.0.0</span><span class="w"></span>
-<span class="nn">...</span><span class="w"></span>
-</code></pre></div>
-<p>If we need to create CI/CD pipeline, we need use next script</p>
-<div class="highlight"><pre><span></span><code>helm upgrade --instal my-release my-chart-repo/my-chart-app --set<span class="o">=</span><span class="s2">"image.tag=</span><span class="nv">$CI_COMMIT_TAG</span><span class="s2">"</span> -n my-namespace
-</code></pre></div>
-<p>HelmWave allows use declarative way to approach this goal.</p>
-<p><strong>Project Structure</strong></p>
-<div class="highlight"><pre><span></span><code>.
+<p><strong>Project structure</strong></p>
+<div class="highlight"><pre><span></span><code>├── README.md
 ├── helmwave.yml
-└── values.yml
+└── vaules-secret.yaml
 </code></pre></div>
-<p><strong><code>helmwave.yml.tpl</code></strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.19.1</span><span class="w"></span>
+<p><strong>Step 1. Create next secret</strong></p>
+<div class="highlight"><pre><span></span><code>vault kv put secret/test <span class="nv">hello</span><span class="o">=</span>world 
+</code></pre></div>
+<p><strong>Step 2. Create <code>helmwave.yml</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">repositories</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span><span class="w"></span>
+<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span><span class="w"></span>
 
 <span class="nt">releases</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-release</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="w"></span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-chart-repo/my-chart-app</span><span class="w"></span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span><span class="w"></span>
+<span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values.yml</span><span class="w"></span>
-<span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-namespace</span><span class="w"></span>
-<span class="w">    </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vaules-secret.yaml</span><span class="w"></span>
 </code></pre></div>
-<p><strong><code>values.yml</code></strong></p>
-<p>This values will override default values </p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env "CI_COMMIT_TAG"</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
+<p><strong>Step 3. Create <code>vaules-secret.yaml</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">defineDatasource "vault" "vault</span><span class="p p-Indicator">:</span><span class="nv">///secret/data/test"</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="c1"># `data` is required for vault kv2</span><span class="w"></span>
+
+<span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">(ds "vault").data.hello</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
+<span class="nt">revesion_of_secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">(ds "vault").metadata.version</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
 </code></pre></div>
-<p><strong>Run</strong></p>
-<div class="highlight"><pre><span></span><code><span class="go">helmwave build</span>
-<span class="go">helmwave up</span>
+<p><strong>Step 4. Run <code>helmwave build --templater gomplate</code></strong></p>
+<p>You will get </p>
+<div class="highlight"><pre><span></span><code><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">world</span><span class="w"></span>
+<span class="nt">revesion_of_secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </code></pre></div>
-<p>or <code>helmwave up --build</code></p>
+<h2 id="debug-with-gomplate">Debug with gomplate</h2>
+<ol>
+<li>install gomplate binary</li>
+<li>run it in your console</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="go">gomplate -d "vault=vault+https:///secret/data/test" -i '{{(ds "vault").metadata.version}}'</span>
+<span class="go">gomplate -d "vault=vault+https:///secret/data/test" -i '{{(ds "vault").data.hello}}'</span>
+</code></pre></div>
 </article>
 </div>
 </div>
@@ -376,7 +396,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Apps per namespace" class="md-footer__link md-footer__link--prev" href="../apps-per-ns/" rel="prev">
+<a aria-label="Previous: AWS secret manager" class="md-footer__link md-footer__link--prev" href="../aws-sm/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -385,17 +405,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Apps per namespace
+              AWS secret manager
             </div>
 </div>
 </a>
-<a aria-label="Next: Restart pods via git-commit" class="md-footer__link md-footer__link--next" href="../pass-git-commit/" rel="next">
+<a aria-label="Next: Private GitHub repo" class="md-footer__link md-footer__link--next" href="../private-github-repo/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Restart pods via git-commit
+              Private GitHub repo
             </div>
 </div>
 <div class="md-footer__button md-icon">

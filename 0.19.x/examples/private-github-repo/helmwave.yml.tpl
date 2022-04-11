@@ -1,4 +1,4 @@
-version: 0.19.0
+version: 0.19.1
 
 repositories:
   - name: your-private-git-repo-hosted-charts
@@ -7,7 +7,7 @@ repositories:
 
 .options: &options
   namespace: {{ requiredEnv "NS" }}
-  createnamespace: true
+  create_namespace: true
 
 
 releases:

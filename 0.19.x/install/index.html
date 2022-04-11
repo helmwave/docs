@@ -345,6 +345,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../examples/vault/">
+        Vault
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../examples/private-github-repo/">
         Private GitHub repo
       </a>
@@ -380,14 +385,14 @@ use Docker or compile from the source.</p>
 <div class="highlight"><pre><span></span><code>brew install helmwave/tap/helmwave
 </code></pre></div>
 <p>or use wget
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.19.0
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.19.1
 wget -c https://github.com/helmwave/helmwave/releases/download/v<span class="nv">$VERSION</span>/helmwave_<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>_darwin_amd64.tar.gz -O - <span class="p">|</span> tar -xz
 mv helmwave /usr/local/bin/
 </code></pre></div></p>
 <hr/>
 <h2 id="linux">🐧 Linux</h2>
 <p>Download one of <a href="https://github.com/helmwave/helmwave/releases">releases</a></p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.19.0
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.19.1
 wget -c https://github.com/helmwave/helmwave/releases/download/v<span class="nv">$VERSION</span>/helmwave_<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>_linux_amd64.tar.gz -O - <span class="p">|</span> tar -xz
 mv helmwave /usr/local/bin/
 </code></pre></div>
@@ -427,12 +432,12 @@ mv helmwave /usr/local/bin/
 docker pull ghcr.io/helmwave/helmwave
 </code></pre></div>
 <p><strong>Use specific version</strong></p>
-<div class="highlight"><pre><span></span><code>docker pull diamon/helmwave:0.19.0
-docker pull ghcr.io/helmwave/helmwave:0.19.0
+<div class="highlight"><pre><span></span><code>docker pull diamon/helmwave:0.19.1
+docker pull ghcr.io/helmwave/helmwave:0.19.1
 
-docker run --entrypoint<span class="o">=</span>ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:0.19.0
+docker run --entrypoint<span class="o">=</span>ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:0.19.1
 <span class="c1"># helmwave version</span>
-<span class="m">0</span>.19.0
+<span class="m">0</span>.19.1
 <span class="c1">#</span>
 </code></pre></div>
 <p><strong>Use <a href="https://hub.docker.com/_/scratch">scratch image</a></strong></p>
@@ -444,12 +449,12 @@ docker run ghcr.io/helmwave/helmwave:0.16.2-scratch version
 <span class="m">0</span>.16.2
 </code></pre></div>
 <p><strong>Use <a href="https://hub.docker.com/_/scratch">scratch image</a> with specific helmwave version</strong></p>
-<div class="highlight"><pre><span></span><code>docker pull diamon/helmwave:0.19.0-scratch
-docker pull ghcr.io/helmwave/helmwave:0.19.0-scratch
+<div class="highlight"><pre><span></span><code>docker pull diamon/helmwave:0.19.1-scratch
+docker pull ghcr.io/helmwave/helmwave:0.19.1-scratch
 </code></pre></div>
 <hr/>
 <h2 id="install-with-go-get">Install with go get <img alt="GitHub go.mod Go version" src="https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave"/></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.19.0
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.19.1
 <span class="nv">GO111MODULE</span><span class="o">=</span>on go get github.com/helmwave/helmwave/cmd/helmwave@<span class="nv">$VERSION</span>
 </code></pre></div>
 <hr/>
