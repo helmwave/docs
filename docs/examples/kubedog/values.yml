@@ -1,6 +1,7 @@
+# Uncommented it if you need
 #commonAnnotations:
 #  helmwave.dev/show-service-messages: "true"
-#  helmwave.dev/show-logs-only-for-containers: "nginx"
+#  helmwave.dev/show-logs-only-for-containers: "redis"
 
 podAnnotations:
   datetime: {{ now }}
