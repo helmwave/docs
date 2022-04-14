@@ -9,7 +9,7 @@
 ```
 .
 ├── helmwave.yml
-└── common.yml
+└── values.yml
 ```
 
 Create `helmwave.yml`
