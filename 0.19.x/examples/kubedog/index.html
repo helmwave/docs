@@ -352,9 +352,10 @@
 <span class="w">  </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <p>Then you should create <code>values.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">#commonAnnotations:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Uncommented it if you need</span><span class="w"></span>
+<span class="c1">#commonAnnotations:</span><span class="w"></span>
 <span class="c1">#  helmwave.dev/show-service-messages: "true"</span><span class="w"></span>
-<span class="c1">#  helmwave.dev/show-logs-only-for-containers: "nginx"</span><span class="w"></span>
+<span class="c1">#  helmwave.dev/show-logs-only-for-containers: "redis"</span><span class="w"></span>
 
 <span class="nt">podAnnotations</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">datetime</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">now</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
