@@ -10,12 +10,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api
-spec:
-  ...
-  template:
-    metadata:
-      annotations:
-        helmwave.dev/show-service-messages: "true"
+  annotations:
+    helmwave.dev/show-service-messages: "true"
 ```
 
 ## Helmwave's annotations
@@ -26,8 +22,25 @@ Skip resource for `helm diff` function.
 
 This is very useful for secret or sensitive data.
 
+mention with `--show-secret` flag.
 
-## [kubedog's](https://github.com/werf/kubedog) 🐶
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-secret
+  annotations:
+    helmwave.dev/show-service-messages: "true"
+```
+
+## [kubedog's annotations](https://github.com/werf/kubedog) 🐶
+
+> Kubedog will track all your resources by default.
+
+
+[example](examples/kubedog/README.md)
+
 
 
 !!! danger

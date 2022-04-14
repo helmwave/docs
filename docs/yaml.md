@@ -1,6 +1,6 @@
 # Yaml
 
-> works on [helm v3.8.1](https://github.com/helmwave/helmwave/blob/v0.19.1/go.mod)
+> works on [helm v3.8.2](https://github.com/helmwave/helmwave/blob/v0.19.3/go.mod)
 
 Sample: 
 
@@ -20,8 +20,6 @@ Sample:
 In the future it is planned to be used for major compatibility. 
 
 ## Registries[]
-
-available since 0.19
 
 [example](examples/oci/README.md)
 
