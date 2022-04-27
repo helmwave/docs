@@ -22,36 +22,37 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
     └── stage.yml
 ```
 
-`helmwave.yml.tpl`
+Create `helmwave.yml.tpl`
 
 
 ```yaml
 {% include "helmwave.yml.tpl" %}
 ```
 
- `_.yml`
+=== "values/_.yml"
 
-```yaml
-{% include "values/_.yml" %}
-```
+    ```yaml
+    {% include "values/_.yml" %}
+    ```
 
- `prod.yml`
+=== "values/prod.yml"
 
-```yaml
-{% include "values/prod.yml" %}
-```
+    ```yaml
+    {% include "values/prod.yml" %}
+    ```
 
- `qa.yml`
+=== "values/qa.yml"
 
-```yaml
-{% include "values/qa.yml" %}
-```
+    ```yaml
+    {% include "values/qa.yml" %}
+    ```
 
-`stage.yml`
+=== "values/stage.yml"
 
-```yaml
-{% include "values/stage.yml" %}
-```
+    ```yaml
+    {% include "values/stage.yml" %}
+    ```
+
 
 **Run**
 
@@ -62,7 +63,7 @@ helmwave build
 helmwave up
 ```
 
-or one command 
+or in one command 
 
 ```shell
 helmwave up --build --yml
