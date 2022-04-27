@@ -35,7 +35,7 @@ tree .helmwave
         └── 454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml
 ```
 
-=== "a's values"
+=== "`a` values"
 
     ```yaml
     release:
@@ -48,15 +48,16 @@ tree .helmwave
           dst: /var/folders/jn/gs32zb3s5939nf71b3836nq40000gr/T/values/a@test/454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml
     ```
 
-=== "b's values"
+=== "`b` values"
     
     ```yaml
     release:
       chart:
-          name: bitnami/nginx
+        name: bitnami/nginx
       name: b
       namespace: test
       values:
-          - src: _.yml
-            dst: /var/folders/jn/gs32zb3s5939nf71b3836nq40000gr/T/values/b@test/454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml
+        - src: _.yml
+          dst: /var/folders/jn/gs32zb3s5939nf71b3836nq40000gr/T/values/b@test/454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml
     ```
+
