@@ -778,7 +778,7 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
     ├── qa.yml
     └── stage.yml
 </code></pre></div>
-<p><code>helmwave.yml.tpl</code></p>
+<p>Create <code>helmwave.yml.tpl</code></p>
 <div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.19.3</span><span class="w"></span>
 
 <span class="nt">releases</span><span class="p">:</span><span class="w"></span>
@@ -793,29 +793,37 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values/{{ requiredEnv &quot;CI_ENVIRONMENT_NAME&quot; }}.yml</span><span class="w"></span>
 <span class="w">    </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
-<p><code>_.yml</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">values/_.yml</label><label for="__tabbed_1_2">values/prod.yml</label><label for="__tabbed_1_3">values/qa.yml</label><label for="__tabbed_1_4">values/stage.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;pass-git-tag&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
 
 <span class="nt">podAnnotations</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">gitCommit</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">requiredEnv &quot;pass-git-commit&quot; | quote</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
 </code></pre></div>
-<p><code>prod.yml</code></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span><span class="w"></span>
 </code></pre></div>
-<p><code>qa.yml</code></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </code></pre></div>
-<p><code>stage.yml</code></p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
 </code></pre></div>
+</div>
+</div>
+</div>
 <p><strong>Run</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CI_ENVIRONMENT_NAME</span><span class="o">=</span>stage
 helmwave yml
 helmwave build
 helmwave up
 </code></pre></div>
-<p>or one command </p>
+<p>or in one command </p>
 <div class="highlight"><pre><span></span><code>helmwave up --build --yml
 </code></pre></div>
 
