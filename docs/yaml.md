@@ -2,12 +2,6 @@
 
 > works on [helm v3.8.2](https://github.com/helmwave/helmwave/blob/v0.19.3/go.mod)
 
-Sample: 
-
-```yaml
-<WIP>
-```
-
 
 ## Project
 
@@ -27,8 +21,8 @@ In the future it is planned to be used for major compatibility.
 |  field   | required |  type  | default |
 |:--------:|:--------:|:------:|:-------:|
 |   host   |    ✅     | string |   ""    |
-| username |    ✅     | string |   ""    |
-| password |    ✅     | string |   ""    |
+| username |          | string |   ""    |
+| password |          | string |   ""    |
 
 
 ## Repositories[]

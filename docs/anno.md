@@ -42,10 +42,6 @@ metadata:
 [example](examples/kubedog/README.md)
 
 
-
-!!! danger
-    Kubedog currently in *beta*.
-
 inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html)
 
 

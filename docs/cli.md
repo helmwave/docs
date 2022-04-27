@@ -1,5 +1,8 @@
 # 🛠 CLI Reference
 
+{% set ver = '0.19.3' %}
+{{ ver }}
+
 ```
 NAME:
    helmwave - is like docker-compose for helm
@@ -8,7 +11,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.19.1
+   0.19.3
 
 DESCRIPTION:
    This tool helps you compose your helm releases!
@@ -30,7 +33,6 @@ COMMANDS:
    completion    Generate completion script
    help, h       Shows a list of commands or help for one command
 
-
 GLOBAL OPTIONS:
    --log-format value         You can set: [ text | json | pad | emoji ] (default: "emoji") [$HELMWAVE_LOG_FORMAT]
    --log-level value          You can set: [ debug | info | warn  | fatal | panic | trace ] (default: "info") [$HELMWAVE_LOG_LEVEL, $HELMWAVE_LOG_LVL]
@@ -39,38 +41,6 @@ GLOBAL OPTIONS:
    --log-timestamps           Add timestamps to log messages (default: false) [$HELMWAVE_LOG_TIMESTAMPS]
    --help, -h                 show help (default: false)
    --version, -v              print the version (default: false)
-```
-
----
-
-## step #0: yml
-
-It allows render `helmwave.yml.tpl` to `helmwave.yml`
-
-**Options**
-
-```console
-   --tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-   --file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-   --templater value       Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
-```
-
-
-## step #1: build
-
-This command generates `.helmwave/` 
-
-```console
-   --plandir value, -p value  Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
-   --tags value, -t value     It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
-   --match-all-tags           Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
-   --diff-mode value          You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
-   --yml                      Auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
-   --wide value               Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
-   --show-secret              Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
-   --tpl value                Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-   --file value, -f value     Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-   --templater value          Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
 ```
 
 ## step #2: Working with plan
@@ -163,7 +133,7 @@ $ helmwave status
 
 ### rollback
 
-Helmwave will rollback helm-releases from plan.
+Rollback helm-releases from plan.
 
 ```bash
 $ helmwave rollback      
@@ -242,10 +212,10 @@ helmwave <cmd>
 
 ```bash
 $ helmwave --version  
-helmwave version 0.19.1
+helmwave version 0.19.3
 
 $ helmwave -v
-helmwave version 0.19.1
+helmwave version 0.19.3
 ```
 
 
@@ -253,10 +223,10 @@ helmwave version 0.19.1
 
 ```bash
 $ helmwave version
-0.19.1
+0.19.3
 
 $ helmwave ver
-0.19.1
+0.19.3
 ```
 
 ## Completion

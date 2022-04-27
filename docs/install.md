@@ -21,7 +21,7 @@ brew install helmwave/tap/helmwave
 
 or use wget
 ```sh
-export VERSION=0.19.1
+export VERSION=0.19.3
 wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_darwin_amd64.tar.gz -O - | tar -xz
 mv helmwave /usr/local/bin/
 ```
@@ -33,7 +33,7 @@ mv helmwave /usr/local/bin/
 Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
 ```sh
-export VERSION=0.19.1
+export VERSION=0.19.3
 wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_linux_amd64.tar.gz -O - | tar -xz
 mv helmwave /usr/local/bin/
 ```
@@ -67,12 +67,12 @@ docker pull ghcr.io/helmwave/helmwave
 **Use specific version**
 
 ```bash
-docker pull diamon/helmwave:0.19.1
-docker pull ghcr.io/helmwave/helmwave:0.19.1
+docker pull diamon/helmwave:0.19.3
+docker pull ghcr.io/helmwave/helmwave:0.19.3
 
-docker run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:0.19.1
+docker run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:0.19.3
 # helmwave version
-0.19.1
+0.19.3
 #
 ```
 
@@ -92,8 +92,8 @@ docker run ghcr.io/helmwave/helmwave:0.16.2-scratch version
 **Use [scratch image](https://hub.docker.com/_/scratch) with specific helmwave version**
 
 ```bash
-docker pull diamon/helmwave:0.19.1-scratch
-docker pull ghcr.io/helmwave/helmwave:0.19.1-scratch
+docker pull diamon/helmwave:0.19.3-scratch
+docker pull ghcr.io/helmwave/helmwave:0.19.3-scratch
 ```
 
 ---
@@ -101,7 +101,7 @@ docker pull ghcr.io/helmwave/helmwave:0.19.1-scratch
 ## Install with go get ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave)
 
 ```sh
-export VERSION=0.19.1
+export VERSION=0.19.3
 GO111MODULE=on go get github.com/helmwave/helmwave/cmd/helmwave@$VERSION
 ```
 

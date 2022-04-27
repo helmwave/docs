@@ -19,10 +19,11 @@ nav:
       - pub.md
 
   - Reference:
+      - yaml.md
       - cli.md
       - tpl.md
       - anno.md
-      - yaml.md
+
 
   - Examples:
       - examples/quick-start/README.md
@@ -74,6 +75,7 @@ theme:
     - search.share
 
 extra:
+  ver: 0.19.3
   version:
     provider: mike
     default: latest

@@ -1,4 +1,4 @@
-version: 0.19.x
+version: 0.19.3
 
 registries:
 - host: localhost:5000
