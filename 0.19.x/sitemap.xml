@@ -56,6 +56,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://helmwave.github.io/0.19.x/examples/built-in-release/</loc>
+         <lastmod>2022-04-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://helmwave.github.io/0.19.x/examples/kubedog/</loc>
          <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>

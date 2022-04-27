@@ -12,14 +12,14 @@
         <meta name="author" content="Dmitriy Zhilyaev">
       
       
-        <link rel="canonical" href="https://helmwave.github.io/0.19.x/examples/kubedog/">
+        <link rel="canonical" href="https://helmwave.github.io/0.19.x/examples/built-in-release/">
       
       <link rel="icon" href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
     
     
       
-        <title>Kubedog - Helmwave</title>
+        <title>Release object - Helmwave</title>
       
     
     
@@ -62,9 +62,9 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Helmwave - Kubedog">
+<meta property="og:title" content="Helmwave - Release object">
 <meta property="og:description" content="The helmwave`s docs">
-<meta property="og:url" content="https://helmwave.github.io/0.19.x/examples/kubedog/">
+<meta property="og:url" content="https://helmwave.github.io/0.19.x/examples/built-in-release/">
 <meta property="og:image" content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kubedog" class="md-skip">
+        <a href="#release-object" class="md-skip">
           Skip to content
         </a>
       
@@ -130,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kubedog
+              Release object
             
           </span>
         </div>
@@ -675,21 +675,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../kubedog/" class="md-nav__link">
         Kubedog
       </a>
-      
     </li>
   
 
@@ -727,11 +717,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../built-in-release/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Release object
       </a>
+      
     </li>
   
 
@@ -755,76 +755,62 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/helmwave/docs/edit/main/docs/examples/kubedog/README.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/helmwave/docs/edit/main/docs/examples/built-in-release/README.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="kubedog">Kubedog</h1>
+<h1 id="release-object">Release object</h1>
 <blockquote>
-<p><a href="https://github.com/helmwave/docs/tree/0.19.x/docs/examples/kubedog"> [Source] </a></p>
+<p><a href="https://github.com/helmwave/docs/tree/0.19.x/docs/examples/built-in-release"> [Source] </a></p>
 </blockquote>
-<p><a href="https://helmwave.github.io/docs/0.19.x/anno/#kubedogs">full documentation</a></p>
 <p><strong>Project Structure</strong></p>
-<div class="highlight"><pre><span></span><code>.
-├── helmwave.yml
-└── values.yml
+<div class="highlight"><pre><span></span><code><span class="go">.</span>
+<span class="go">├── README.md</span>
+<span class="go">├── _.yml</span>
+<span class="go">└── helmwave.yml</span>
 </code></pre></div>
-<p>Create <code>helmwave.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.19.3</span><span class="w"></span>
-
-<span class="nt">repositories</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span><span class="w"></span>
-<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span><span class="w"></span>
-
-<span class="nt">releases</span><span class="p">:</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my1</span><span class="w"></span>
-<span class="w">  </span><span class="nt">chart</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/redis</span><span class="w"></span>
-<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16.8.5</span><span class="w"></span>
-<span class="w">  </span><span class="nt">values</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values.yml</span><span class="w"></span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-redis</span><span class="w"></span>
-<span class="w">  </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<p><strong>Run build</strong></p>
+<div class="highlight"><pre><span></span><code>helmwave build
 </code></pre></div>
-<p>Then you should create <code>values.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Uncommented it if you need</span><span class="w"></span>
-<span class="c1">#commonAnnotations:</span><span class="w"></span>
-<span class="c1">#  helmwave.dev/show-service-messages: &quot;true&quot;</span><span class="w"></span>
-<span class="c1">#  helmwave.dev/show-logs-only-for-containers: &quot;redis&quot;</span><span class="w"></span>
-
-<span class="nt">podAnnotations</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">datetime</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">now</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
-<span class="w">  </span><span class="nt">blame</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;USER&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
-
-<span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-
-<span class="nt">auth</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-
-<span class="nt">master</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">persistence</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-
-<span class="nt">replica</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">persistence</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<p><strong>Show rendered values</strong></p>
+<div class="highlight"><pre><span></span><code>tree .helmwave 
+.helmwave
+├── manifest
+│   ├── a@test.yml
+│   └── b@test.yml
+├── planfile
+└── values
+    ├── a@test
+    │   └── 454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml
+    └── b@test
+        └── 454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml
 </code></pre></div>
-<p>We are going to use <code>commonAnnotations</code>. </p>
-<blockquote>
-<p><code>commonAnnotations</code> is a part of bitnami common library <a href="https://github.com/bitnami/charts/tree/master/bitnami/common">chart</a>.</p>
-</blockquote>
-<p><strong>Run</strong></p>
-<div class="highlight"><pre><span></span><code><span class="go">helmwave up --build --kubedog</span>
+<p>=== "a's values"</p>
+<div class="highlight"><pre><span></span><code>```yaml
+release:
+  chart:
+    name: bitnami/nginx
+  name: a
+  namespace: test
+  values:
+    - src: _.yml
+      dst: /var/folders/jn/gs32zb3s5939nf71b3836nq40000gr/T/values/a@test/454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml
+```
 </code></pre></div>
-<p>or </p>
-<div class="highlight"><pre><span></span><code><span class="go">export HELMWAVE_KUBEDOG_ENABLED=true</span>
-<span class="go">export HELMWAVE_AUTO_BUILD=true</span>
-<span class="go">helmwave up</span>
+<p>=== "b's values"</p>
+<div class="highlight"><pre><span></span><code>```yaml
+release:
+  chart:
+      name: bitnami/nginx
+  name: b
+  namespace: test
+  values:
+      - src: _.yml
+        dst: /var/folders/jn/gs32zb3s5939nf71b3836nq40000gr/T/values/b@test/454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml
+```
 </code></pre></div>
-<p>Log with helmwave v0.19.3</p>
-<p><img alt="img.png" src="img.png" /></p>
 
               
             </article>
@@ -843,7 +829,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../vault/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vault" rel="prev">
+        <a href="../store-greeting-hello/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Store" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -852,26 +838,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Vault
+              Store
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../private-github-repo/" class="md-footer__link md-footer__link--next" aria-label="Next: Private GitHub repo" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Private GitHub repo
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
