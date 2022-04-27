@@ -2,102 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://helmwave.github.io/0.19.x/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/anno/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/ci/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/cli/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/install/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/intro/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/pub/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/tpl/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/yaml/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/apps-per-ns/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/aws-sm/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/kubedog/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/oci/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/pass-git-commit/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/pass-git-tag/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/private-github-repo/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/quick-start/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/single-app-multi-envs/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/store-greeting-hello/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.19.x/examples/vault/</loc>
-         <lastmod>2022-04-14</lastmod>
+         <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
