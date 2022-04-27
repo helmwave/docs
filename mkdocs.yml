@@ -37,6 +37,7 @@ nav:
       - examples/kubedog/README.md
       - examples/private-github-repo/README.md
       - Store: examples/store-greeting-hello/README.md
+      - examples/built-in-release/README.md
 
 plugins:
   - search
