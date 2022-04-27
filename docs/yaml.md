@@ -93,7 +93,7 @@ In the future it is planned to be used for major compatibility.
 
 ### 🗳️ Store
 
-> It allows to pass you custom fields from helmwave.yml to values.
+> It allows to pass your custom fields from `helmwave.yml` to values.
 
 It works when you call `$ helmwave build`
 
