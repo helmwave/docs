@@ -1,8 +1,5 @@
 # 🛠 CLI Reference
 
-{% set ver = '0.19.3' %}
-{{ ver }}
-
 ```
 NAME:
    helmwave - is like docker-compose for helm
