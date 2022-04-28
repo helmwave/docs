@@ -94,10 +94,11 @@ extra:
 
 markdown_extensions:
   - admonition
+  - pymdownx.details
+  - pymdownx.highlight
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.highlight
   - pymdownx.superfences:
       # make exceptions to highlighting of code:
       custom_fences:
