@@ -12,10 +12,6 @@ Helmwave supports all built-in functions / sprig / gomplate / custom.
     You cannot pass variables from helmwawve to your helm chart templates.
     You should use helmwave to render values of your chart.
 
-???+ warning "Template values"
-
-    When you template values. In your
-
 
 ## [Sprig](https://godoc.org/github.com/Masterminds/sprig)
 
