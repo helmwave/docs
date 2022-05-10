@@ -4,9 +4,14 @@ Helmwave uses [Go templates](https://godoc.org/text/template) for templating.
 
 Helmwave supports all built-in functions / sprig / gomplate / custom.
 
-Since v0.17.0. You can chose template engine with next flag:
-
 ` --templater value                Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]`
+
+???+ warning "Explain context helm vs helmwave"
+
+    There is a different context between `helm` and `helmwave`.
+    You cannot pass variables from helmwawve to your helm chart templates.
+    You should use helmwave to render values of your chart.
+
 
 ## [Sprig](https://godoc.org/github.com/Masterminds/sprig)
 
@@ -19,11 +24,10 @@ http://masterminds.github.io/sprig/
 > gomplate is a template renderer which supports a growing list of datasources, such as: JSON (including EJSON - encrypted JSON), YAML, AWS EC2 metadata, BoltDB, Hashicorp Consul and Hashicorp Vault secrets.
 
 
-
-
-## [Custom](https://github.com/helmwave/helmwave/blob/release-0.19.0/pkg/template/func.go)
+## [Custom](https://github.com/helmwave/helmwave/blob/release-0.19.3/pkg/template/func.go)
 
 - `toYaml` marshals a map into a string
+- `exec` exec command
 - `fromYaml` reads a golang string and generates a map
 - `readFile` get file as string
 - `hasKey` get true if field is exists

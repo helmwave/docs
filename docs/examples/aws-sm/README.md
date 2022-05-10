@@ -1,6 +1,6 @@
 # AWS secret manager
 
-> [Source](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/aws-sm)
+> [ [Source] ](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/aws-sm)
 
 **Project structure**
 
@@ -30,7 +30,7 @@ aws secretsmanager create-secret --name hello/foobar --secret-string '{"foo":"ba
 ```
 
 
-**Step 4. Run `helmwave build`**
+**Step 4. Run `helmwave build --templater gomplate`**
 
 You will get `secret: {"foo":"bar"}`
 

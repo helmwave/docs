@@ -1,12 +1,6 @@
 # Yaml
 
-> works on [helm v3.8.1](https://github.com/helmwave/helmwave/blob/v0.19.0/go.mod)
-
-Sample: 
-
-```yaml
-<WIP>
-```
+> works on [helm v3.8.2](https://github.com/helmwave/helmwave/blob/v0.19.3/go.mod)
 
 
 ## Project
@@ -21,16 +15,14 @@ In the future it is planned to be used for major compatibility.
 
 ## Registries[]
 
-available since 0.19
-
-see [example](examples/oci/README.md)
+[example](examples/oci/README.md)
 
 
 |  field   | required |  type  | default |
 |:--------:|:--------:|:------:|:-------:|
 |   host   |    ✅     | string |   ""    |
-| username |    ✅     | string |   ""    |
-| password |    ✅     | string |   ""    |
+| username |          | string |   ""    |
+| password |          | string |   ""    |
 
 
 ## Repositories[]
@@ -101,11 +93,11 @@ see [example](examples/oci/README.md)
 
 ### 🗳️ Store
 
-> It allows to pass you custom fields from helmwave.yml to values.
+> It allows to pass your custom fields from `helmwave.yml` to values.
 
 It works when you call `$ helmwave build`
 
-[example](https://helmwave.github.io/docs/0.17.x/examples/store-greeting-hello/)
+[example](https://helmwave.github.io/docs/0.19.x/examples/store-greeting-hello/)
 
 
 

@@ -1,6 +1,6 @@
 # How to use [Store](https://helmwave.github.io/docs/0.19.x/yaml/#store)
 
-> [ [source] ](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/store-greeting-hello)
+> [ [Source] ](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/store-greeting-hello)
 
 
 **Project Structure**
@@ -21,38 +21,35 @@
 {% include "helmwave.yml" %}
 ```
 
-*a.yml*
+=== "a.yml"
 
-```yaml
-{% include "a.yml" %}
-```
+    ```yaml
+    {% include "a.yml" %}
+    ```
 
+=== "b.yml"
 
-*b.yml*
+    ```yaml
+    {% include "b.yml" %}
+    ```
 
-```yaml
-{% include "b.yml" %}
-```
 
 *After run `helmwave build` you get*
 
+=== "a.yml"
 
-*a.yml* 
+    ```yaml
+    image:
+      repository: nginx
+    
+    greeting: hello
+    ```
 
+=== "b.yml"
 
-```yaml
-image:
-  repository: nginx
-
-greeting: hello
-```
-
-*b.yml*
-
-
-```yaml
-image:
-  tag: v1.0.0
-
-message: hello world
-```
+    ```yaml
+    image:
+    tag: v1.0.0
+    
+    message: hello world
+    ```

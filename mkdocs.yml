@@ -19,10 +19,11 @@ nav:
       - pub.md
 
   - Reference:
+      - yaml.md
       - cli.md
       - tpl.md
       - anno.md
-      - yaml.md
+
 
   - Examples:
       - examples/quick-start/README.md
@@ -32,8 +33,11 @@ nav:
       - examples/single-app-multi-envs/README.md
       - examples/oci/README.md
       - examples/aws-sm/README.md
+      - examples/vault/README.md
+      - examples/kubedog/README.md
       - examples/private-github-repo/README.md
       - Store: examples/store-greeting-hello/README.md
+      - examples/built-in-release/README.md
 
 plugins:
   - search
@@ -72,6 +76,7 @@ theme:
     - search.share
 
 extra:
+  ver: 0.19.3
   version:
     provider: mike
     default: latest
@@ -89,13 +94,16 @@ extra:
 
 markdown_extensions:
   - admonition
+  - pymdownx.details
+  - pymdownx.highlight
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.highlight
   - pymdownx.superfences:
       # make exceptions to highlighting of code:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:mermaid2.fence_mermaid
+  - pymdownx.tabbed:
+      alternate_style: true

@@ -1,4 +1,4 @@
-version: 0.19.0
+version: 0.19.3
 
 repositories:
   - name: bitnami
@@ -11,4 +11,4 @@ releases:
     values:
       - values.yml
     namespace: my-namespace
-    createnamespace: true
+    create_namespace: true
