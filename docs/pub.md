@@ -1,5 +1,9 @@
 # 📺 Publications
 
+## [New Wave for Helm!](https://medium.com/wriketechclub/new-wave-for-helm-b9800733587f)
+
+> https://medium.com/wriketechclub/new-wave-for-helm-b9800733587f
+
 ## 📄 [HelmWave is true release manager](https://diamon.medium.com/helmwave-is-true-release-manager-e7d085a6bd2d)
 
 > https://diamon.medium.com/helmwave-is-true-release-manager-e7d085a6bd2d
