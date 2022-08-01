@@ -1,0 +1,21 @@
+# Uncommented it if you need
+#commonAnnotations:
+#  helmwave.dev/show-service-messages: "true"
+#  helmwave.dev/show-logs-only-for-containers: "redis"
+
+podAnnotations:
+  datetime: {{ now }}
+  blame: {{ env "USER" }}
+
+replicaCount: 1
+
+auth:
+  enabled: false
+
+master:
+  persistence:
+    enabled: false
+
+replica:
+  persistence:
+    enabled: false
