@@ -79,7 +79,7 @@ theme:
     - search.share
 
 extra:
-  ver: 0.21.0
+  ver: 0.20.1
   version:
     provider: mike
     default: latest
