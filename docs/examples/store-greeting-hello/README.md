@@ -1,7 +1,8 @@
 # How to use [Store](https://helmwave.github.io/docs/0.20.x/yaml/#store)
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.20.x/docs/examples/store-greeting-hello)
+[ [Source] ](https://github.com/helmwave/docs/tree/0.20.x/docs/examples/store-greeting-hello)
 
+> Store allows to pass your custom fields from helmwave.yml to values.
 
 **Project Structure**
 

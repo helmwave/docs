@@ -36,6 +36,7 @@ nav:
       - examples/vault/README.md
       - examples/kubedog/README.md
       - examples/private-github-repo/README.md
+      - examples/values-render-flag/README.md
       - Store: examples/store-greeting-hello/README.md
       - examples/built-in-release/README.md
 

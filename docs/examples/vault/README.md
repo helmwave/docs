@@ -37,7 +37,7 @@ You will get
 
 ```yaml
 secret: world
-revesion_of_secret: 2
+revision_of_secret: 2
 ```
 
 
@@ -52,3 +52,4 @@ gomplate -d "vault=vault+https:///secret/data/test" -i '{{(ds "vault").metadata.
 gomplate -d "vault=vault+https:///secret/data/test" -i '{{(ds "vault").data.hello}}'
 ```
 
+see gomplate docs [here](https://gomplate.ca/)
