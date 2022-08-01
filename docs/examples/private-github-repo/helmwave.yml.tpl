@@ -1,4 +1,4 @@
-version: 0.19.3
+version: 0.20.1
 
 repositories:
   - name: your-private-git-repo-hosted-charts
@@ -12,6 +12,5 @@ repositories:
 
 releases:
   - name: hello
-    chart:
-      name: foo/bar
+    chart: foo/bar
     <<: *options

@@ -61,7 +61,8 @@ In the future it is planned to be used for major compatibility.
 |:---------------------------:|:--------:|:--------:|:-------:|:----------------:|:-------------:|
 |          **name**           |    ✅     |  string  |   ""    |        ✅         |       ✅       |
 |        **namespace**        |    ✅     |  string  |   ""    |        ✅         |       ✅       |
-|       **chart.name**        |    ✅     |  string  |   ""    |        ✅         |       ✅       |
+|          **chart**          |    ✅     |  string  |   ""    |        ✅         |       ✅       |
+|      **chart.version**      |    🙅    |  string  |   ""    |        ✅         |       ✅       |
 |       chart.username        |    🙅    |  string  |   ""    |                  |               |
 |       chart.password        |    🙅    |  string  |   ""    |                  |               |
 |       chart.certfile        |    🙅    |  string  |   ""    |                  |               |
@@ -91,13 +92,42 @@ In the future it is planned to be used for major compatibility.
 |            devel            |    🙅    |   bool   |  false  |                  |       ✅       |
 |        reuse_values         |    🙅    |   bool   |  false  |                  |       ✅       |
 
+### Chart Options
+
+
+|         field         | required |  type  | default |
+|:---------------------:|:--------:|:------:|:-------:|
+|       **name**        |    ✅     | string |   ""    |
+|      **version**      |    🙅    | string |   ""    |
+|       username        |    🙅    | string |   ""    |
+|       password        |    🙅    | string |   ""    |
+|       certfile        |    🙅    | string |   ""    |
+|        keyfile        |    🙅    | string |   ""    |
+|        cafile         |    🙅    | string |   ""    |
+| insecureskiptlsverify |    🙅    |  bool  |  false  |
+
+
+
+### Values option
+
+|         field         | required |  type  | default |
+|:---------------------:|:--------:|:------:|:-------:|
+|        **src**        |    ✅     | string |   ""    |
+|      **strict**       |    🙅    |  bool  |  false  |
+|      **render**       |    🙅    |  bool  |  true   |
+
+- `render` this flag controls render behavior.
+- `strict` disable skip behavior.
+
+
+
 ### 🗳️ Store
 
 > It allows to pass your custom fields from `helmwave.yml` to values.
 
 It works when you call `$ helmwave build`
 
-[example](https://helmwave.github.io/docs/0.19.x/examples/store-greeting-hello/)
+[example](https://helmwave.github.io/docs/0.20.x/examples/store-greeting-hello/)
 
 
 

@@ -18,9 +18,9 @@ mike serve
 
 ```bash
 pip install -r requirements.txt
-mike deploy --push --update-aliases 0.16.x latest
+mike deploy --push --update-aliases 0.19.x latest
 ```
 
 ## Deploy new branch
-- [ ] Sed previous version with new. (0.15.1 -> 0.16.0)
-- [ ] Sed previous links (0.16.x -> 0.19.x)
+- [ ] Sed previous version with new. (0.19.1 -> 0.20.1)
+- [ ] Sed previous links (0.19.x -> 0.20.x)

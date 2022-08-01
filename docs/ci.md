@@ -24,7 +24,7 @@ jobs:
       - uses: helmwave/setup-action@v0.2.0
         name: Install helmwave
         with:
-          version: '0.19.3'
+          version: '0.20.1'
       - name: templating helmwave.yml.tpl  
         run: helmwave yml
       - name: plan
@@ -44,7 +44,7 @@ helmwave:
   environment:
     name: "ref/$CI_COMMIT_REF_SLUG"
   image:
-    name: diamon/helmwave:0.19.3
+    name: diamon/helmwave:0.20.1
     entrypoint: [""]
   before_script:
     - printenv | grep HELMWAVE
@@ -58,7 +58,7 @@ helmwave:
     expire_in: 2 week
 ```
 
-See  the [example](https://helmwave.github.io/docs/0.19.x/examples/apps-per-ns/#cicd-with-gitlab-ci)
+See  the [example](https://helmwave.github.io/docs/0.20.x/examples/apps-per-ns/#cicd-with-gitlab-ci)
 
 
 ###  Kube-Linter and Helmwave
@@ -81,7 +81,7 @@ variables:
   after_script: 
     - ls -la $HELMWAVE_PLAN
   image:
-    name: ghcr.io/helmwave/helmwave:0.19.3
+    name: ghcr.io/helmwave/helmwave:0.20.1
     entrypoint: ['']
 
 ###############  BUILD  ################

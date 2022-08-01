@@ -4,8 +4,7 @@ repositories:
 
 releases:
   - name: app
-    chart:
-      name: bitnami/nginx
+    chart: bitnami/nginx
     namespace: test
     values:
       - vaules-secret.yaml

@@ -1,4 +1,4 @@
-version: 0.19.3
+version: 0.20.1
 
 
 repositories:
@@ -24,7 +24,7 @@ repositories:
 
 releases:
 {{- with readFile "vars.yaml" | fromYaml | get "releases" }}
-{{ range $v := . }}
+{{- range $v := . }}
 
 #################################
 #                               #
@@ -41,6 +41,6 @@ releases:
     - values/{{ $v | get "name" }}.yml
   <<: *options
 
-{{ end }}
+{{- end }}
 {{- end }}
 

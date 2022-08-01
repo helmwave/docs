@@ -4,15 +4,13 @@ repositories:
 
 releases:
 - name: a
-  chart:
-    name: bitnami/nginx
+  chart: bitnami/nginx
   namespace: test
   values:
   - _.yml
 
 - name: b
-  chart:
-    name: bitnami/nginx
+  chart: bitnami/nginx
   namespace: test
   values:
     - _.yml
