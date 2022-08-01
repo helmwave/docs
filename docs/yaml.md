@@ -62,13 +62,6 @@ In the future it is planned to be used for major compatibility.
 |          **name**           |    ✅     |  string  |   ""    |        ✅         |       ✅       |
 |        **namespace**        |    ✅     |  string  |   ""    |        ✅         |       ✅       |
 |          **chart**          |    ✅     |  string  |   ""    |        ✅         |       ✅       |
-|      **chart.version**      |    🙅    |  string  |   ""    |        ✅         |       ✅       |
-|       chart.username        |    🙅    |  string  |   ""    |                  |               |
-|       chart.password        |    🙅    |  string  |   ""    |                  |               |
-|       chart.certfile        |    🙅    |  string  |   ""    |                  |               |
-|        chart.keyfile        |    🙅    |  string  |   ""    |                  |               |
-|        chart.cafile         |    🙅    |  string  |   ""    |                  |               |
-| chart.insecureskiptlsverify |    🙅    |   bool   |  false  |                  |               |
 |         description         |    🙅    |  string  |   ""    |                  |               |
 |         depends_on          |    🙅    |  array   |   []    |                  |       ✅       |
 |        allow_failure        |    🙅    |   bool   |  false  |                  |       ✅       |
@@ -116,8 +109,8 @@ In the future it is planned to be used for major compatibility.
 |      **strict**       |    🙅    |  bool  |  false  |
 |      **render**       |    🙅    |  bool  |  true   |
 
-- `render` this flag controls render behavior.
-- `strict` disable skip behavior.
+- `render` this flag controls render behavior. [example](https://helmwave.github.io/docs/0.20.x/examples/values-render-flag)
+- `strict` disable skip behavior. [example](https://helmwave.github.io/docs/0.20.x/examples/values-strict-flag)
 
 
 

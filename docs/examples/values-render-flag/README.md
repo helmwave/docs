@@ -1,4 +1,4 @@
-# Render flag for values
+# Render flag
 
 > [ [Source] ](https://github.com/helmwave/docs/tree/0.20.x/docs/examples/values-render-flag)
 

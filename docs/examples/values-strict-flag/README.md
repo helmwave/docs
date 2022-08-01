@@ -1,4 +1,4 @@
-# Strict flag for values
+# Strict flag
 
 > [ [Source] ](https://github.com/helmwave/docs/tree/0.20.x/docs/examples/values-strict-flag)
 
