@@ -12,14 +12,14 @@
         <meta name="author" content="Dmitriy Zhilyaev">
       
       
-        <link rel="canonical" href="https://helmwave.github.io/0.20.x/examples/vault/">
+        <link rel="canonical" href="https://helmwave.github.io/0.20.x/examples/values-strict-flag/">
       
       <link rel="icon" href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Vault - Helmwave</title>
+        <title>Strict flag - Helmwave</title>
       
     
     
@@ -63,9 +63,9 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Helmwave - Vault">
+<meta property="og:title" content="Helmwave - Strict flag">
 <meta property="og:description" content="The helmwave`s docs">
-<meta property="og:url" content="https://helmwave.github.io/0.20.x/examples/vault/">
+<meta property="og:url" content="https://helmwave.github.io/0.20.x/examples/values-strict-flag/">
 <meta property="og:image" content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vault" class="md-skip">
+        <a href="#strict-flag" class="md-skip">
           Skip to content
         </a>
       
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Vault
+              Strict flag
             
           </span>
         </div>
@@ -662,52 +662,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Vault
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../vault/" class="md-nav__link">
         Vault
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#debug-with-gomplate" class="md-nav__link">
-    Debug with gomplate
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -759,11 +718,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../values-strict-flag/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Strict flag
       </a>
+      
     </li>
   
 
@@ -815,56 +784,37 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/helmwave/docs/edit/main/docs/examples/vault/README.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/helmwave/docs/edit/main/docs/examples/values-strict-flag/README.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="vault">Vault</h1>
+<h1 id="strict-flag">Strict flag</h1>
 <blockquote>
-<p><a href="https://github.com/helmwave/docs/tree/0.20.x/docs/examples/vault"> [Source] </a></p>
+<p><a href="https://github.com/helmwave/docs/tree/0.20.x/docs/examples/values-strict-flag"> [Source] </a></p>
 </blockquote>
-<p><strong>Project structure</strong></p>
-<div class="highlight"><pre><span></span><code>├── README.md
-├── helmwave.yml
-└── vaules-secret.yaml
-</code></pre></div>
-<p><strong>Step 1. Create next secret</strong></p>
-<div class="highlight"><pre><span></span><code>vault kv put secret/test <span class="nv">hello</span><span class="o">=</span>world 
-</code></pre></div>
-<p><strong>Step 2. Create <code>helmwave.yml</code></strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">repositories</span><span class="p">:</span><span class="w"></span>
+<p>Helmwave will fail when file does not exist.</p>
+<p><code>cat helmwave.yml</code>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.20.1</span><span class="w"></span>
+
+<span class="nt">repositories</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span><span class="w"></span>
 <span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span><span class="w"></span>
 
-<span class="nt">releases</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="w"></span>
-<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span><span class="w"></span>
-<span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
-<span class="w">    </span><span class="nt">values</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vaules-secret.yaml</span><span class="w"></span>
-</code></pre></div>
-<p><strong>Step 3. Create <code>vaules-secret.yaml</code></strong></p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">defineDatasource &quot;vault&quot; &quot;vault</span><span class="p p-Indicator">:</span><span class="nv">///secret/data/test&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="c1"># `data` is required for vault kv2</span><span class="w"></span>
 
-<span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">(ds &quot;vault&quot;).data.hello</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
-<span class="nt">revesion_of_secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">(ds &quot;vault&quot;).metadata.version</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
-</code></pre></div>
-<p><strong>Step 4. Run <code>helmwave build --templater gomplate</code></strong></p>
-<p>You will get </p>
-<div class="highlight"><pre><span></span><code><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">world</span><span class="w"></span>
-<span class="nt">revision_of_secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-</code></pre></div>
-<h2 id="debug-with-gomplate">Debug with gomplate</h2>
-<ol>
-<li>install gomplate binary</li>
-<li>run it in your console</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="go">gomplate -d &quot;vault=vault+https:///secret/data/test&quot; -i &#39;{{(ds &quot;vault&quot;).metadata.version}}&#39;</span>
-<span class="go">gomplate -d &quot;vault=vault+https:///secret/data/test&quot; -i &#39;{{(ds &quot;vault&quot;).data.hello}}&#39;</span>
-</code></pre></div>
-<p>see gomplate docs <a href="https://gomplate.ca/">here</a></p>
+<span class="nt">.options</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;options</span><span class="w"></span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-namespace</span><span class="w"></span>
+<span class="w">  </span><span class="nt">wait</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="nt">releases</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span><span class="w"></span>
+<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span><span class="w"></span>
+<span class="w">    </span><span class="nt">values</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">this_file_does_not_exist.yml</span><span class="w"></span>
+<span class="w">      </span><span class="nt">strict</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div></p>
 
               
             </article>
@@ -885,7 +835,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../aws-sm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS secret manager" rel="prev">
+        <a href="../values-render-flag/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Render flag" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -894,20 +844,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              AWS secret manager
+              Render flag
             </div>
           </div>
         </a>
       
       
         
-        <a href="../kubedog/" class="md-footer__link md-footer__link--next" aria-label="Next: Kubedog" rel="next">
+        <a href="../store-greeting-hello/" class="md-footer__link md-footer__link--next" aria-label="Next: Store" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Kubedog
+              Store
             </div>
           </div>
           <div class="md-footer__button md-icon">

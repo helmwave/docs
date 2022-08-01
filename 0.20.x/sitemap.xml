@@ -101,6 +101,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://helmwave.github.io/0.20.x/examples/values-render-flag/</loc>
+         <lastmod>2022-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://helmwave.github.io/0.20.x/examples/values-strict-flag/</loc>
+         <lastmod>2022-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://helmwave.github.io/0.20.x/examples/vault/</loc>
          <lastmod>2022-08-01</lastmod>
          <changefreq>daily</changefreq>

@@ -716,6 +716,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../values-render-flag/" class="md-nav__link">
+        Render flag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../values-strict-flag/" class="md-nav__link">
+        Strict flag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../store-greeting-hello/" class="md-nav__link">
         Store
       </a>
@@ -797,10 +825,10 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;pass-git-tag&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_COMMIT_TAG&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
 
 <span class="nt">podAnnotations</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">gitCommit</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">requiredEnv &quot;pass-git-commit&quot; | quote</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">gitCommit</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">requiredEnv &quot;CI_COMMIT_SHORT_SHA&quot; | quote</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
