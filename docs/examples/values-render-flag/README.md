@@ -1,6 +1,6 @@
 # Render flag for values
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.20.x/docs/examples/values-render-flag)
+> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/values-render-flag)
 
 Sometimes we need to disable render values. For example prometheus rules.
 
