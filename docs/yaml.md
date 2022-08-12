@@ -19,7 +19,7 @@ In the future it is planned to be used for major compatibility.
 
 
 |  field   | required |  type  | default |
-|:--------:|:--------:|:------:|:-------:|
+| :------: | :------: | :----: | :-----: |
 |   host   |    ✅     | string |   ""    |
 | username |          | string |   ""    |
 | password |          | string |   ""    |
@@ -28,16 +28,16 @@ In the future it is planned to be used for major compatibility.
 ## Repositories[]
 
 |         field         | required |  type  | default |
-|:---------------------:|:--------:|:------:|:-------:|
+| :-------------------: | :------: | :----: | :-----: |
 |         name          |    ✅     | string |   ""    |
 |          url          |    ✅     |  url   |   ""    |
-|       username        |    🙅    | string |   ""    |
-|       password        |    🙅    | string |   ""    |
-|       certfile        |    🙅    | string |   ""    |
-|        keyfile        |    🙅    | string |   ""    |
-|        cafile         |    🙅    | string |   ""    |
-| insecureskiptlsverify |    🙅    |  bool  |  false  |
-|         force         |    🙅    |  bool  |  false  |
+|       username        |    🙅     | string |   ""    |
+|       password        |    🙅     | string |   ""    |
+|       certfile        |    🙅     | string |   ""    |
+|        keyfile        |    🙅     | string |   ""    |
+|        cafile         |    🙅     | string |   ""    |
+| insecureskiptlsverify |    🙅     |  bool  |  false  |
+|         force         |    🙅     |  bool  |  false  |
 
 ### name
 
@@ -296,3 +296,12 @@ releases:
 
 When `allow_failure` is set true. It allows the installation to proceed.
 
+### pending_release_strategy
+
+> Strategy to handle releases in pending statuses (`pending-install`, `pending-upgrade`, `pending-rollback`)
+
+If helmwave tries to upgrade release that is currently in one of pending statuses it will follow specified strategy:
+
+- `""` (or not specified) - do nothing. Helm will fail in this case
+- `rollback` - rollback release to previous version. Upgrade will happen after rollback is complete
+- `uninstall` - uninstall release. Upgrade will happen after uninstall is complete

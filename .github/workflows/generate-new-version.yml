@@ -18,7 +18,7 @@ jobs:
       - name: Parse tag into docs version
         id: parse-version
         run: |
-          VERSION=$(echo "$TAG" | sed 's#^\(.*\)\.\(.*\)\..*$#\1.\2.x#g')
+          VERSION=$(echo "$TAG" | sed 's#^v?\(.*\)\.\(.*\)\..*$#\1.\2.x#g')
           echo "::set-output name=version::${VERSION}"
         env:
           TAG: ${{ github.event.inputs.tag }}
