@@ -287,21 +287,6 @@
 <nav aria-label="Releases[]" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#store">
-    🗳️ Store
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#tags">
-    🔖 Tags
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#depends_on-allow_failure">
-    depends_on &amp; allow_failure
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#name_1">
     name
   </a>
@@ -319,6 +304,40 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#timeout">
     timeout
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chart-options">
+    Chart Options
+  </a>
+<nav aria-label="Chart Options" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#values-option">
+    Values option
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#store">
+    🗳️ Store
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tags">
+    🔖 Tags
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#depends_on">
+    depends_on
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#allow_failure">
+    allow_failure
   </a>
 </li>
 <li class="md-nav__item">
@@ -415,6 +434,16 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../examples/private-gitlab-repo/">
         Private GitLub repo
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/values-render-flag/">
+        Render flag for values
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/values-strict-flag/">
+        Strict flag for values
       </a>
 </li>
 <li class="md-nav__item">
@@ -597,60 +626,12 @@
 <td align="center">✅</td>
 </tr>
 <tr>
-<td align="center"><strong>chart.name</strong></td>
+<td align="center"><strong>chart</strong></td>
 <td align="center">✅</td>
-<td align="center">string</td>
+<td align="center">string or object</td>
 <td align="center">""</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
-</tr>
-<tr>
-<td align="center">chart.username</td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">chart.password</td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">chart.certfile</td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">chart.keyfile</td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">chart.cafile</td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">chart.insecureskiptlsverify</td>
-<td align="center">🙅</td>
-<td align="center">bool</td>
-<td align="center">false</td>
-<td align="center"></td>
-<td align="center"></td>
 </tr>
 <tr>
 <td align="center">description</td>
@@ -828,24 +809,121 @@
 <td align="center"></td>
 <td align="center">✅</td>
 </tr>
+</tbody>
+</table>
+<h3 id="name_1">name</h3>
+<blockquote>
+<p>Release name</p>
+</blockquote>
+<p>I hope you know what it is.</p>
+<h3 id="namespace">namespace</h3>
+<blockquote>
+<p>Kubernetes namespace</p>
+</blockquote>
+<h3 id="create_namespace">create_namespace</h3>
+<blockquote>
+<p>if <code>true</code> Helmwave will create the release namespace if not present</p>
+</blockquote>
+<h3 id="timeout">timeout</h3>
+<blockquote>
+<p>time to wait for any individual Kubernetes operation</p>
+</blockquote>
+<h2 id="chart-options">Chart Options</h2>
+<table>
+<thead>
 <tr>
-<td align="center">reuse_values</td>
+<th align="center">field</th>
+<th align="center">required</th>
+<th align="center">type</th>
+<th align="center">default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>name</strong></td>
+<td align="center">✅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center"><strong>version</strong></td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">username</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">password</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">certfile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">keyfile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">cafile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">insecureskiptlsverify</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
-<td align="center"></td>
-<td align="center">✅</td>
-</tr>
-<tr>
-<td align="center">pending_release_strategy</td>
-<td align="center">🙅</td>
-<td align="center">string (<code>""</code> / <code>rollback</code> / <code>uninstall</code>)</td>
-<td align="center">""</td>
-<td align="center"></td>
-<td align="center">✅</td>
 </tr>
 </tbody>
 </table>
+<h3 id="values-option">Values option</h3>
+<table>
+<thead>
+<tr>
+<th align="center">field</th>
+<th align="center">required</th>
+<th align="center">type</th>
+<th align="center">default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>src</strong></td>
+<td align="center">✅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center"><strong>strict</strong></td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center"><strong>render</strong></td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">true</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>render</code> this flag controls render behavior. <a href="https://helmwave.github.io/docs/0.21.x/examples/values-render-flag">example</a></li>
+<li><code>strict</code> disable skip behavior. <a href="https://helmwave.github.io/docs/0.21.x/examples/values-strict-flag">example</a></li>
+</ul>
 <h3 id="store">🗳️ Store</h3>
 <blockquote>
 <p>It allows to pass your custom fields from <code>helmwave.yml</code> to values.</p>
@@ -943,7 +1021,7 @@ This flag changes logic for query releases.</p>
 <span class="go">        releases: </span>
 <span class="go">          - redis-a@test</span>
 </code></pre></div>
-<h3 id="depends_on-allow_failure">depends_on &amp; allow_failure</h3>
+<h3 id="depends_on">depends_on</h3>
 <blockquote>
 <p>It allows waiting releases</p>
 </blockquote>
@@ -966,24 +1044,8 @@ This flag changes logic for query releases.</p>
 <span class="w">    </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
 </code></pre></div>
+<h3 id="allow_failure">allow_failure</h3>
 <p>When <code>allow_failure</code> is set true. It allows the installation to proceed.</p>
-<h3 id="name_1">name</h3>
-<blockquote>
-<p>Release name</p>
-</blockquote>
-<p>I hope you know what it is.</p>
-<h3 id="namespace">namespace</h3>
-<blockquote>
-<p>Kubernetes namespace</p>
-</blockquote>
-<h3 id="create_namespace">create_namespace</h3>
-<blockquote>
-<p>if <code>true</code> Helmwave will create the release namespace if not present</p>
-</blockquote>
-<h3 id="timeout">timeout</h3>
-<blockquote>
-<p>time to wait for any individual Kubernetes operation</p>
-</blockquote>
 <h3 id="pending_release_strategy">pending_release_strategy</h3>
 <blockquote>
 <p>Strategy to handle releases in pending statuses (<code>pending-install</code>, <code>pending-upgrade</code>, <code>pending-rollback</code>)</p>

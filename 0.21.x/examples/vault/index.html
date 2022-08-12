@@ -761,6 +761,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../values-render-flag/" class="md-nav__link">
+        Render flag for values
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../values-strict-flag/" class="md-nav__link">
+        Strict flag for values
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../store-greeting-hello/" class="md-nav__link">
         Store
       </a>
@@ -841,7 +869,7 @@
 <p><strong>Step 4. Run <code>helmwave build --templater gomplate</code></strong></p>
 <p>You will get </p>
 <div class="highlight"><pre><span></span><code><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">world</span><span class="w"></span>
-<span class="nt">revesion_of_secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="nt">revision_of_secret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </code></pre></div>
 <h2 id="debug-with-gomplate">Debug with gomplate</h2>
 <ol>
@@ -851,6 +879,7 @@
 <div class="highlight"><pre><span></span><code><span class="go">gomplate -d &quot;vault=vault+https:///secret/data/test&quot; -i &#39;{{(ds &quot;vault&quot;).metadata.version}}&#39;</span>
 <span class="go">gomplate -d &quot;vault=vault+https:///secret/data/test&quot; -i &#39;{{(ds &quot;vault&quot;).data.hello}}&#39;</span>
 </code></pre></div>
+<p>see gomplate docs <a href="https://gomplate.ca/">here</a></p>
 
               
             </article>
