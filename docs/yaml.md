@@ -19,7 +19,7 @@ In the future it is planned to be used for major compatibility.
 
 
 |  field   | required |  type  | default |
-| :------: | :------: | :----: | :-----: |
+|:--------:|:--------:|:------:|:-------:|
 |   host   |    ✅     | string |   ""    |
 | username |          | string |   ""    |
 | password |          | string |   ""    |
@@ -28,16 +28,16 @@ In the future it is planned to be used for major compatibility.
 ## Repositories[]
 
 |         field         | required |  type  | default |
-| :-------------------: | :------: | :----: | :-----: |
+|:---------------------:|:--------:|:------:|:-------:|
 |         name          |    ✅     | string |   ""    |
 |          url          |    ✅     |  url   |   ""    |
-|       username        |    🙅     | string |   ""    |
-|       password        |    🙅     | string |   ""    |
-|       certfile        |    🙅     | string |   ""    |
-|        keyfile        |    🙅     | string |   ""    |
-|        cafile         |    🙅     | string |   ""    |
-| insecureskiptlsverify |    🙅     |  bool  |  false  |
-|         force         |    🙅     |  bool  |  false  |
+|       username        |    🙅    | string |   ""    |
+|       password        |    🙅    | string |   ""    |
+|       certfile        |    🙅    | string |   ""    |
+|        keyfile        |    🙅    | string |   ""    |
+|        cafile         |    🙅    | string |   ""    |
+| insecureskiptlsverify |    🙅    |  bool  |  false  |
+|         force         |    🙅    |  bool  |  false  |
 
 ### name
 
@@ -61,7 +61,7 @@ In the future it is planned to be used for major compatibility.
 |:---------------------------:|:--------:|:----------------:|:-------:|:----------------:|:-------------:|
 |          **name**           |    ✅     |      string      |   ""    |        ✅         |       ✅       |
 |        **namespace**        |    ✅     |      string      |   ""    |        ✅         |       ✅       |
-|          **chart**          |    ✅     | string or object |   ""    |        ✅         |       ✅       |
+|          **chart**          |    ✅     | string or object |   {}    |        ✅         |       ✅       |
 |         description         |    🙅    |      string      |   ""    |                  |               |
 |         depends_on          |    🙅    |      array       |   []    |                  |       ✅       |
 |        allow_failure        |    🙅    |       bool       |  false  |                  |       ✅       |
