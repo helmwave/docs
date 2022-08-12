@@ -36,6 +36,7 @@ nav:
       - examples/vault/README.md
       - examples/kubedog/README.md
       - examples/private-github-repo/README.md
+      - examples/private-gitlab-repo/README.md
       - Store: examples/store-greeting-hello/README.md
       - examples/built-in-release/README.md
 
@@ -76,7 +77,7 @@ theme:
     - search.share
 
 extra:
-  ver: 0.19.3
+  ver: 0.21.0
   version:
     provider: mike
     default: latest

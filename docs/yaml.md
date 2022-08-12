@@ -1,6 +1,6 @@
 # Yaml
 
-> works on [helm v3.8.2](https://github.com/helmwave/helmwave/blob/v0.19.3/go.mod)
+> works on [helm v3.8.2](https://github.com/helmwave/helmwave/blob/v0.21.0/go.mod)
 
 
 ## Project
@@ -19,7 +19,7 @@ In the future it is planned to be used for major compatibility.
 
 
 |  field   | required |  type  | default |
-|:--------:|:--------:|:------:|:-------:|
+| :------: | :------: | :----: | :-----: |
 |   host   |    ✅     | string |   ""    |
 | username |          | string |   ""    |
 | password |          | string |   ""    |
@@ -28,16 +28,16 @@ In the future it is planned to be used for major compatibility.
 ## Repositories[]
 
 |         field         | required |  type  | default |
-|:---------------------:|:--------:|:------:|:-------:|
+| :-------------------: | :------: | :----: | :-----: |
 |         name          |    ✅     | string |   ""    |
 |          url          |    ✅     |  url   |   ""    |
-|       username        |    🙅    | string |   ""    |
-|       password        |    🙅    | string |   ""    |
-|       certfile        |    🙅    | string |   ""    |
-|        keyfile        |    🙅    | string |   ""    |
-|        cafile         |    🙅    | string |   ""    |
-| insecureskiptlsverify |    🙅    |  bool  |  false  |
-|         force         |    🙅    |  bool  |  false  |
+|       username        |    🙅     | string |   ""    |
+|       password        |    🙅     | string |   ""    |
+|       certfile        |    🙅     | string |   ""    |
+|        keyfile        |    🙅     | string |   ""    |
+|        cafile         |    🙅     | string |   ""    |
+| insecureskiptlsverify |    🙅     |  bool  |  false  |
+|         force         |    🙅     |  bool  |  false  |
 
 ### name
 
@@ -57,39 +57,41 @@ In the future it is planned to be used for major compatibility.
 
 > Almost all options that are here are native helm options
 
-|            field            | required |   type   | default | `helmwave build` | `helmwave up` |
-|:---------------------------:|:--------:|:--------:|:-------:|:----------------:|:-------------:|
-|          **name**           |    ✅     |  string  |   ""    |        ✅         |       ✅       |
-|        **namespace**        |    ✅     |  string  |   ""    |        ✅         |       ✅       |
-|       **chart.name**        |    ✅     |  string  |   ""    |        ✅         |       ✅       |
-|       chart.username        |    🙅    |  string  |   ""    |                  |               |
-|       chart.password        |    🙅    |  string  |   ""    |                  |               |
-|       chart.certfile        |    🙅    |  string  |   ""    |                  |               |
-|        chart.keyfile        |    🙅    |  string  |   ""    |                  |               |
-|        chart.cafile         |    🙅    |  string  |   ""    |                  |               |
-| chart.insecureskiptlsverify |    🙅    |   bool   |  false  |                  |               |
-|         description         |    🙅    |  string  |   ""    |                  |               |
-|         depends_on          |    🙅    |  array   |   []    |                  |       ✅       |
-|        allow_failure        |    🙅    |   bool   |  false  |                  |       ✅       |
-|           values            |    🙅    |  array   |   []    |        ✅         |       ✅       |
-|            tags             |    🙅    |  array   |   []    |        ✅         |               |
-|            store            |    🙅    |  object  |   {}    |        ✅         |               |
-|           timeout           |    🙅    | interval |   0s    |                  |       ✅       |
-|         max_history         |    🙅    |   int    |    0    |                  |       ✅       |
-|      create_namespace       |    🙅    |   bool   |  false  |                  |       ✅       |
-|        reset_values         |    🙅    |   bool   |  false  |                  |       ✅       |
-|          recreate           |    🙅    |   bool   |  false  |                  |       ✅       |
-|            force            |    🙅    |   bool   |  false  |                  |       ✅       |
-|           atomic            |    🙅    |   bool   |  false  |                  |       ✅       |
-|       cleanup_on_fail       |    🙅    |   bool   |  false  |                  |       ✅       |
-|          subnotes           |    🙅    |   bool   |  false  |                  |       ✅       |
-|        disable_hooks        |    🙅    |   bool   |  false  |                  |       ✅       |
-| disable_open_api_validation |    🙅    |   bool   |  false  |                  |       ✅       |
-|        wait_for_jobs        |    🙅    |   bool   |  false  |                  |       ✅       |
-|            wait             |    🙅    |   bool   |  false  |                  |       ✅       |
-|          skip_crds          |    🙅    |   bool   |  false  |                  |       ✅       |
-|            devel            |    🙅    |   bool   |  false  |                  |       ✅       |
-|        reuse_values         |    🙅    |   bool   |  false  |                  |       ✅       |
+|            field            | required |                   type                   | default | `helmwave build` | `helmwave up` |
+| :-------------------------: | :------: | :--------------------------------------: | :-----: | :--------------: | :-----------: |
+|          **name**           |    ✅     |                  string                  |   ""    |        ✅         |       ✅       |
+|        **namespace**        |    ✅     |                  string                  |   ""    |        ✅         |       ✅       |
+|       **chart.name**        |    ✅     |                  string                  |   ""    |        ✅         |       ✅       |
+|       chart.username        |    🙅     |                  string                  |   ""    |                  |               |
+|       chart.password        |    🙅     |                  string                  |   ""    |                  |               |
+|       chart.certfile        |    🙅     |                  string                  |   ""    |                  |               |
+|        chart.keyfile        |    🙅     |                  string                  |   ""    |                  |               |
+|        chart.cafile         |    🙅     |                  string                  |   ""    |                  |               |
+| chart.insecureskiptlsverify |    🙅     |                   bool                   |  false  |                  |               |
+|         description         |    🙅     |                  string                  |   ""    |                  |               |
+|         depends_on          |    🙅     |                  array                   |   []    |                  |       ✅       |
+|        allow_failure        |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|           values            |    🙅     |                  array                   |   []    |        ✅         |       ✅       |
+|            tags             |    🙅     |                  array                   |   []    |        ✅         |               |
+|            store            |    🙅     |                  object                  |   {}    |        ✅         |               |
+|           timeout           |    🙅     |                 interval                 |   0s    |                  |       ✅       |
+|         max_history         |    🙅     |                   int                    |    0    |                  |       ✅       |
+|      create_namespace       |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|        reset_values         |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|          recreate           |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|            force            |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|           atomic            |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|       cleanup_on_fail       |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|          subnotes           |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|        disable_hooks        |    🙅     |                   bool                   |  false  |                  |       ✅       |
+| disable_open_api_validation |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|        wait_for_jobs        |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|            wait             |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|          skip_crds          |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|            devel            |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|        reuse_values         |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|        reuse_values         |    🙅     |                   bool                   |  false  |                  |       ✅       |
+|  pending_release_strategy   |    🙅     | string (`""` / `rollback` / `uninstall`) |   ""    |                  |       ✅       |
 
 ### 🗳️ Store
 
@@ -97,7 +99,7 @@ In the future it is planned to be used for major compatibility.
 
 It works when you call `$ helmwave build`
 
-[example](https://helmwave.github.io/docs/0.19.x/examples/store-greeting-hello/)
+[example](https://helmwave.github.io/docs/0.21.x/examples/store-greeting-hello/)
 
 
 
@@ -272,3 +274,12 @@ I hope you know what it is.
 
 >  time to wait for any individual Kubernetes operation
 
+### pending_release_strategy
+
+> Strategy to handle releases in pending statuses (`pending-install`, `pending-upgrade`, `pending-rollback`)
+
+If helmwave tries to upgrade release that is currently in one of pending statuses it will follow specified strategy:
+
+- `""` (or not specified) - do nothing. Helm will fail in this case
+- `rollback` - rollback release to previous version. Upgrade will happen after rollback is complete
+- `uninstall` - uninstall release. Upgrade will happen after uninstall is complete

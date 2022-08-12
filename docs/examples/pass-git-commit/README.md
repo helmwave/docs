@@ -1,6 +1,6 @@
 # Restart pods via git-commit
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/pass-git-commit)
+> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/pass-git-commit)
 
 
 **Project Structure**

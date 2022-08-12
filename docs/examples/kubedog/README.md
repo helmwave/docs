@@ -1,8 +1,8 @@
 # Kubedog
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.19.x/docs/examples/kubedog)
+> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/kubedog)
 
-[full documentation](https://helmwave.github.io/docs/0.19.x/anno/#kubedogs)
+[full documentation](https://helmwave.github.io/docs/0.21.x/anno/#kubedogs)
 
 **Project Structure**
 
@@ -46,6 +46,6 @@ export HELMWAVE_AUTO_BUILD=true
 helmwave up
 ```
 
-Log with helmwave v0.19.3
+Log with helmwave v0.21.0
 
 ![img.png](img.png)
