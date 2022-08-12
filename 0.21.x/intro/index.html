@@ -818,7 +818,7 @@ HelmWave is like docker-compose for helm.</p>
 <blockquote>
 <p>We focus on speed execution, tiny size, pretty debugging.</p>
 </blockquote>
-<p>With helmwave you will become a superhero:</p>
+<p>With 🌊 helmwave you will become a superhero:</p>
 <ul>
 <li>Deploy multiple environments by one step</li>
 <li>Separate values for environments</li>
@@ -826,8 +826,8 @@ HelmWave is like docker-compose for helm.</p>
 <li>Keep a directory of chart value files</li>
 <li>Maintain changes in version control</li>
 <li>Template values</li>
-<li>Step by Step deployment (<code>depends_on</code>, <code>allow_failure</code>)</li>
-<li>Live tracking kubernetes resources with kubedog</li>
+<li>Manage deploy behavior (<code>pending_release_strategy</code>, <code>depends_on</code>, <code>allow_failure</code>)</li>
+<li>Live tracking kubernetes resources with <a href="https://github.com/werf/kubedog">kubedog</a></li>
 <li>Fetch data from external datasource like vault, aws ssm</li>
 <li>... and much more!</li>
 </ul>
@@ -843,10 +843,16 @@ HelmWave is like docker-compose for helm.</p>
 </thead>
 <tbody>
 <tr>
-<td align="center">Syntax</td>
+<td align="center"><strong>Syntax</strong></td>
 <td align="center">YAML + <a href="http://masterminds.github.io/sprig/">sprig</a>/<a href="https://docs.gomplate.ca/">gomplate</a></td>
 <td align="center">YAML + <a href="http://masterminds.github.io/sprig/">sprig</a></td>
 <td align="center">TOML/YAML</td>
+</tr>
+<tr>
+<td align="center">Code style</td>
+<td align="center">snake_case</td>
+<td align="center">camelCase</td>
+<td align="center">camelCase</td>
 </tr>
 <tr>
 <td align="center">Requirements</td>
@@ -855,28 +861,82 @@ HelmWave is like docker-compose for helm.</p>
 <td align="center"><code>kubectl</code>, <code>helm</code><br> <em><code>helm-diff</code></em></td>
 </tr>
 <tr>
-<td align="center">Helm execution</td>
+<td align="center"><strong>Helm execution</strong></td>
 <td align="center">function call of bundled helm</td>
 <td align="center"><code>os.Exec</code></td>
 <td align="center"><code>os.Exec</code></td>
 </tr>
 <tr>
-<td align="center">Live-tracking kubernetes resources</td>
+<td align="center">Helm diff</td>
+<td align="center">function call of bundled helm-diff</td>
+<td align="center"><code>os.Exec</code></td>
+<td align="center"><code>os.Exec</code></td>
+</tr>
+<tr>
+<td align="center"><strong>Live-tracking kubernetes resources</strong></td>
 <td align="center"><a href="https://github.com/werf/kubedog">Kubedog</a></td>
 <td align="center">No</td>
 <td align="center">No</td>
 </tr>
 <tr>
-<td align="center">Parallel releases</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
+<td align="center">Get application logs</td>
+<td align="center"><a href="https://github.com/werf/kubedog">Kubedog</a></td>
+<td align="center">No</td>
 <td align="center">No</td>
 </tr>
 <tr>
+<td align="center">Get k8s events</td>
+<td align="center"><a href="https://github.com/werf/kubedog">Kubedog</a></td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td align="center">Labels</td>
+<td align="center"><code>tags</code></td>
+<td align="center"><code>labels</code></td>
+<td align="center">?</td>
+</tr>
+<tr>
+<td align="center">Manage kube-context via iac</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center">Parallel releases</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Releases with the same priority can be executed in parallel.</td>
+</tr>
+<tr>
+<td align="center">Parallel limitations</td>
+<td align="center">Smart DAG goroutine count by priority</td>
+<td align="center">concurrent helm processes</td>
+<td align="center">max number of concurrent helm releases to run</td>
+</tr>
+<tr>
 <td align="center">Releases dependencies</td>
-<td align="center">Yes (depends_on)</td>
-<td align="center">Yes (needs)</td>
-<td align="center">Kind of (priority)</td>
+<td align="center"><code>depends_on</code></td>
+<td align="center"><code>needs</code></td>
+<td align="center">Kind of (<code>priority</code>)</td>
+</tr>
+<tr>
+<td align="center">Dependencies cross namespaces</td>
+<td align="center">via <code>@</code></td>
+<td align="center">via <code>/</code></td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td align="center">Manage pending strategy</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td align="center">Explain graph dependencies</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">No</td>
 </tr>
 <tr>
 <td align="center">Latest docker image size</td>
@@ -885,22 +945,40 @@ HelmWave is like docker-compose for helm.</p>
 <td align="center"><img alt="" src="https://img.shields.io/docker/image-size/praqma/helmsman" /></td>
 </tr>
 <tr>
-<td align="center">Linux amd64 binary size</td>
-<td align="center"><img alt="" src="https://img.shields.io/badge/v0.16.7-73.8%20MB-blue" /></td>
-<td align="center"><img alt="" src="https://img.shields.io/badge/v0.143.0-43.9%20MB-blue" /> + requirements</td>
-<td align="center"><img alt="" src="https://img.shields.io/badge/v3.8.0-17.7%20MB-blue" /> + requirements</td>
-</tr>
-<tr>
 <td align="center">Compatible with helm v2</td>
-<td align="center">no</td>
+<td align="center">No</td>
 <td align="center">Yes</td>
 <td align="center">Yes</td>
 </tr>
 <tr>
-<td align="center">Graph dependencies</td>
-<td align="center">yes</td>
+<td align="center">OCI</td>
+<td align="center"><code>registries</code></td>
+<td align="center">option in <code>repositories</code></td>
+<td align="center">only <code>pull</code>, not <code>login</code></td>
+</tr>
+<tr>
+<td align="center">Sub-main config</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">?</td>
+</tr>
+<tr>
+<td align="center">Remote values</td>
+<td align="center"><code>go-fsimple</code></td>
+<td align="center"><code>go-getter</code></td>
+<td align="center">?</td>
+</tr>
+<tr>
+<td align="center"><strong>Planfile</strong></td>
+<td align="center">Yes</td>
 <td align="center">No</td>
 <td align="center">No</td>
+</tr>
+<tr>
+<td align="center">Vault / AWS SSM</td>
+<td align="center"><code>gomplate</code></td>
+<td align="center">custom functions</td>
+<td align="center">?</td>
 </tr>
 </tbody>
 </table>
