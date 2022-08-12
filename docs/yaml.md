@@ -1,6 +1,6 @@
 # Yaml
 
-> works on [helm v3.8.2](https://github.com/helmwave/helmwave/blob/v0.19.3/go.mod)
+> works on [helm v3.8.2](https://github.com/helmwave/helmwave/blob/v0.21.0/go.mod)
 
 
 ## Project
@@ -97,7 +97,7 @@ In the future it is planned to be used for major compatibility.
 
 It works when you call `$ helmwave build`
 
-[example](https://helmwave.github.io/docs/0.19.x/examples/store-greeting-hello/)
+[example](https://helmwave.github.io/docs/0.21.x/examples/store-greeting-hello/)
 
 
 
