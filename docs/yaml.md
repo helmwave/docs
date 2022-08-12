@@ -261,7 +261,7 @@ helmwave build -t redis -t a --match-all-tags
           - redis-a@test
 ```
 
-### depends_on & allow_failure
+### depends_on
 
 > It allows waiting releases
 
@@ -291,6 +291,8 @@ releases:
     allow_failure: false
     namespace: test
 ```
+
+### allow_failure
 
 When `allow_failure` is set true. It allows the installation to proceed.
 
