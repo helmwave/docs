@@ -6,8 +6,7 @@ repositories:
 
 releases:
   - name: my-app
-    chart:
-      name: bitnami/nginx
+    chart: bitnami/nginx
     values:
       - values.yml
     namespace: my-namespace

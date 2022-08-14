@@ -1,15 +1,13 @@
 releases:
 - name: a
-  chart:
-    name: my/a
+  chart: my/a
   store:
     msg: hello
   values:
   - a.yml
 
 - name: b
-  chart:
-    name: my/b
+  chart: my/b
   store:
     msg: hello
   values:
