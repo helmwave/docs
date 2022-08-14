@@ -1,4 +1,4 @@
-# OCI Github
+# OCI public
 
 > [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/oci)
 
