@@ -15,14 +15,19 @@ In the future it is planned to be used for major compatibility.
 
 ## Registries[]
 
-[example](examples/oci/README.md)
-
+> OCI registries
 
 |  field   | required |  type  | default |
 |:--------:|:--------:|:------:|:-------:|
 |   host   |    ✅     | string |   ""    |
 | username |          | string |   ""    |
 | password |          | string |   ""    |
+| insecure |          |  bool  |  false  |
+
+**Examples**
+
+- [private oci](examples/oci-private/README.md)
+- [github oci](examples/oci-private/README.md)
 
 
 ## Repositories[]

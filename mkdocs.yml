@@ -31,7 +31,8 @@ nav:
       - examples/pass-git-tag/README.md
       - examples/pass-git-commit/README.md
       - examples/single-app-multi-envs/README.md
-      - examples/oci/README.md
+      - examples/oci-private/README.md
+      - examples/oci-public/README.md
       - examples/aws-sm/README.md
       - examples/vault/README.md
       - examples/kubedog/README.md
