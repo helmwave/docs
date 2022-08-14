@@ -1,8 +1,8 @@
-# OCI GitHub
+# OCI Github
 
 > [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/oci)
 
-Just add `oci://` to your chart name and define a registry.
+This example demonstrate how to use public repositories with ghcr.io
 
 
 **helmwave.yml**
