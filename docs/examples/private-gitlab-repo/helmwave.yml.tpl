@@ -14,6 +14,5 @@ repositories:
 
 releases:
   - name: hello
-    chart:
-      name: foo/bar
+    chart: foo/bar
     <<: *options

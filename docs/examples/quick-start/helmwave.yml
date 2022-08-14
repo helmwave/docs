@@ -12,12 +12,10 @@ repositories:
 releases:
   - name: redis-a
     <<: *options
-    chart:
-      name: bitnami/redis
+    chart:  bitnami/redis
 
 
   - name: redis-b
     <<: *options
-    chart:
-      name: bitnami/redis
+    chart: bitnami/redis
 
