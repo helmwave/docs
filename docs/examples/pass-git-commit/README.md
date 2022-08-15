@@ -31,6 +31,7 @@
 
 We will pass pod annotations with  `values`
 
+Suppose that `CI_COMMIT_SHORT_SHA` contains commit short sha hash.
 
 `values.yml`
 

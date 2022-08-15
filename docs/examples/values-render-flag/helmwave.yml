@@ -1,4 +1,4 @@
-version: 0.21.0
+version: 0.20.1
 
 repositories:
   - name: bitnami
@@ -10,12 +10,9 @@ repositories:
   wait: true
 
 releases:
-  - name: redis-a
+  - name: nginx
     <<: *options
-    chart:  bitnami/redis
-
-
-  - name: redis-b
-    <<: *options
-    chart: bitnami/redis
-
+    chart: bitnami/nginx
+    values:
+    - src: values.yml
+      render: false
