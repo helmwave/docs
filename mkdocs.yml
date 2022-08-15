@@ -42,6 +42,7 @@ nav:
       - examples/values-strict-flag/README.md
       - Store: examples/store-greeting-hello/README.md
       - examples/built-in-release/README.md
+      - examples/hate-umbrella/README.md
 
 plugins:
   - search
