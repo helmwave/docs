@@ -109,7 +109,7 @@ I hope you know what it is.
 
 >  time to wait for any individual Kubernetes operation
 
-## Chart Options
+### Chart Options
 
 
 |         field         | required |  type  | default |
@@ -125,7 +125,7 @@ I hope you know what it is.
 
 
 
-### Values option
+#### Values option
 
 |         field         | required |  type  | default |
 |:---------------------:|:--------:|:------:|:-------:|
