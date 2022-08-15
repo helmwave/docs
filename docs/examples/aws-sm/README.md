@@ -1,13 +1,11 @@
 # AWS secret manager
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/aws-sm)
-
 **Project structure**
 
 ```
 ├── README.md
 ├── helmwave.yml
-└── vaules-secret.yaml
+└── values-secret.yaml
 ```
 
 **Step 1. Create next secret**
@@ -23,14 +21,13 @@ aws secretsmanager create-secret --name hello/foobar --secret-string '{"foo":"ba
 {% include "helmwave.yml" %}
 ```
 
-**Step 3. Create `vaules-secret.yaml`**
+**Step 3. Create `values-secret.yaml`**
 
 ```yaml
-{% include "vaules-secret.yaml" %}
+{% include "values-secret.yaml" %}
 ```
 
 
 **Step 4. Run `helmwave build --templater gomplate`**
 
 You will get `secret: {"foo":"bar"}`
-

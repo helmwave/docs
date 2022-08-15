@@ -7,4 +7,4 @@ releases:
     chart: bitnami/nginx
     namespace: test
     values:
-      - vaules-secret.yaml
+      - values-secret.yaml
