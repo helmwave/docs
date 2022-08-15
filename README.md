@@ -16,11 +16,13 @@ mike serve
 
 ### Prod
 
-```bash
-pip install -r requirements.txt
-mike deploy --push --update-aliases 0.16.x latest
-```
+Done automatically via GitHub Actions. Fresh created branches will update `latest` symlink, other pushes will just trigger deploy of corresponding version.
 
-## Deploy new branch
-- [ ] Sed previous version with new. (0.15.1 -> 0.16.0)
-- [ ] Sed previous links (0.16.x -> 0.21.x)
+The only thing you need to update is helmwave version in:
+
+- [examples](examples)
+- [docs/tpl.md](docs/tpl.md)
+- [docs/install.md](docs/install.md)
+- [docs/cli.md](docs/cli.md)
+- [docs/yaml.md](docs/yaml.md)
+- [docs/ci.md](docs/ci.md)

@@ -1,8 +1,6 @@
 # Private GitLab repo 
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/private-gitlub-repo)
-
-Learn more about GitLab Helm Registry:  https://docs.gitlab.com/ee/user/packages/helm_repository/
+Learn more about GitLab Helm Registry: https://docs.gitlab.com/ee/user/packages/helm_repository/
 
 
 ```console
@@ -37,4 +35,3 @@ helmwave:
     - .helmwave
     expire_in: 2 week
 ```
-

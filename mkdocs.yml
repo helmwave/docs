@@ -1,13 +1,12 @@
 site_name: Helmwave
-site_description: 'The helmwave`s docs'
-site_author: 'Dmitriy Zhilyaev'
+site_description: "The helmwave`s docs"
+site_author: "Dmitriy Zhilyaev"
 docs_dir: docs/
-repo_name: 'helmwave/helmwave'
-repo_url: 'https://github.com/helmwave/helmwave'
-edit_uri: 'https://github.com/helmwave/docs/edit/main/docs/'
-site_url: 'https://helmwave.github.io'
+repo_name: "helmwave/helmwave"
+repo_url: "https://github.com/helmwave/helmwave"
+edit_uri: "https://github.com/helmwave/docs/edit/main/docs/"
+site_url: "https://helmwave.github.io"
 copyright: Copyright © 2020 - 2022 Dmitriy Zhilyaev
-
 
 nav:
   - Home: index.md
@@ -23,7 +22,6 @@ nav:
       - cli.md
       - tpl.md
       - anno.md
-
 
   - Examples:
       - examples/quick-start/README.md
@@ -81,7 +79,6 @@ theme:
     - search.share
 
 extra:
-  ver: 0.20.1
   version:
     provider: mike
     default: latest

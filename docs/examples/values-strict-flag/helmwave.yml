@@ -1,9 +1,8 @@
-version: 0.20.1
+version: 0.21.1
 
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami
-
 
 .options: &options
   namespace: my-namespace
@@ -14,5 +13,5 @@ releases:
     <<: *options
     chart: bitnami/nginx
     values:
-    - src: this_file_does_not_exist.yml
-      strict: true
+      - src: this_file_does_not_exist.yml
+        strict: true

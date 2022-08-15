@@ -1,7 +1,5 @@
 # Apps per namespace
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/apps-per-ns)
-
 If you want to install each application in your own namespace. 
 
 ## Create the project
@@ -63,7 +61,7 @@ helmwave build -t plantuml
 helmwave up
 ```
 
-looks how to work [HELMWAVE_TAGS](https://helmwave.github.io/docs/0.21.x/yaml/#tags)
+looks how to work [HELMWAVE_TAGS](../../yaml/#tags)
 
 ## CI/CD with Gitlab-CI
 

@@ -1,57 +1,55 @@
 # 🔰 Quick Start
 
-1) **[install helmwave](https://helmwave.github.io/docs/0.21.x/install/)**
-   
-2) **create helmwave.yml**
+1. **[Install helmwave](../../install)** 
+1. **Create helmwave.yml**
 
-Suppose the `helmwave.yml` representing the desired state of your helm releases looks like:
+    Suppose the `helmwave.yml` representing the desired state of your helm releases looks like:
 
-```yaml
-{% include "helmwave.yml" %}
-```
+    ```yaml
+    {% include "helmwave.yml" %}
+    ```
 
-3) **build plan**
+1. **Build plan**
 
-```shell
-helmwave build
-```
+    ```shell
+    helmwave build
+    ```
 
-this steps generate [plan](https://helmwave.github.io/docs/0.21.x/cli/#step-2-working-with-plan)
+    This steps generates [plan](../../cli/#step-2-working-with-plan)
 
-4) if everything is ok , deploy plan 
+1. If everything is ok , deploy plan
 
+    ```shell
+    helmwave up 
+    ```
 
-```shell
-helmwave up 
-```
+    Output will be like that:
 
-Output will be like that:
+    ```shell
+    [🙃 aka INFO]: ✅ redis-a@my-namespace
+    [🙃 aka INFO]: ✅ redis-b@my-namespace
+    [🙃 aka INFO]: Success 2 / 2
+    ```
 
-```shell
-[🙃 aka INFO]: ✅ redis-a@my-namespace
-[🙃 aka INFO]: ✅ redis-b@my-namespace
-[🙃 aka INFO]: Success 2 / 2
-```
+1. **Check**
 
-6) **check**
+    ```shell
+    $ helm list -n my-namespace
+    NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+    redis-a                 my-namespace    1               2020-10-31 17:05:35.829766 +0300 MSK    deployed        redis-11.2.3            6.0.9      
+    redis-b                 my-namespace    1               2020-10-31 17:05:39.437556 +0300 MSK    deployed        redis-11.2.3            6.0.9  
 
-```shell
-$ helm list -n my-namespace
-NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
-redis-a                 my-namespace    1               2020-10-31 17:05:35.829766 +0300 MSK    deployed        redis-11.2.3            6.0.9      
-redis-b                 my-namespace    1               2020-10-31 17:05:39.437556 +0300 MSK    deployed        redis-11.2.3            6.0.9  
+    $ k get po -n my-namespace                                                                                                                         
+    NAME               READY   STATUS    RESTARTS   AGE
+    redis-a-master-0   1/1     Running   0          64s
+    redis-a-slave-0    1/1     Running   0          31s
+    redis-a-slave-1    1/1     Running   0          62s
+    redis-b-master-0   1/1     Running   0          59s
+    redis-b-slave-0    1/1     Running   0          32s
+    redis-b-slave-1    1/1     Running   0          51s
+    ```
 
-$ k get po -n my-namespace                                                                                                                         
-NAME               READY   STATUS    RESTARTS   AGE
-redis-a-master-0   1/1     Running   0          64s
-redis-a-slave-0    1/1     Running   0          31s
-redis-a-slave-1    1/1     Running   0          62s
-redis-b-master-0   1/1     Running   0          59s
-redis-b-slave-0    1/1     Running   0          32s
-redis-b-slave-1    1/1     Running   0          51s
-```
-
-**Congratulations!**
+1. **Congratulations!**
 
 
 ## Live mode

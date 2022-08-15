@@ -1,8 +1,6 @@
 # Kubedog
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/kubedog)
-
-[full documentation](https://helmwave.github.io/docs/0.21.x/anno/#kubedogs)
+[full documentation](../../anno/#kubedogs)
 
 **Project Structure**
 
