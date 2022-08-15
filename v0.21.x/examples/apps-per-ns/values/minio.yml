@@ -1,6 +1,0 @@
-persistence:
-  size: 10G
-
-ingress:
-  hostname: s3.example.com
-

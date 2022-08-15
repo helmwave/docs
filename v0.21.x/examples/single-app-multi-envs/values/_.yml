@@ -1,5 +1,0 @@
-image:
-  tag: {{ env "pass-git-tag" }}
-
-podAnnotations:
-  gitCommit: {{ requiredEnv "pass-git-commit" | quote }}

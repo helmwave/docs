@@ -1,4 +1,0 @@
-image:
-  repository: nginx
-
-greeting: {{ .Release.Store.msg }}

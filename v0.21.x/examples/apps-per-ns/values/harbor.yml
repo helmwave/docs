@@ -1,5 +1,0 @@
-metrics:
-  enabled: true
-
-persistence:
-  enabled: true

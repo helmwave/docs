@@ -1,4 +1,0 @@
-image:
-  tag: v1.0.0
-
-message: {{ .Release.Store.msg }} world

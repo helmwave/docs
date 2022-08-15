@@ -1,1 +1,0 @@
-release: {{- toYaml .Release | nindent 2 }}
