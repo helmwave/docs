@@ -25,7 +25,7 @@ jobs:
 
       - name: Find existing branch for version
         id: find-branch
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           github-token: ${{ github.token }}
           script: |
@@ -40,7 +40,7 @@ jobs:
 
       - name: Create branch and PR for new version
         id: create-version
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         if: ${{ steps.find-branch.outcome == 'failure' }}
         with:
           github-token: ${{ github.token }}
