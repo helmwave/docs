@@ -19,7 +19,7 @@
     
     
       
-        <title>Git tag -> Docker image tag - Helmwave</title>
+        <title>Git tag -> image tag - Helmwave</title>
       
     
     
@@ -65,7 +65,7 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Helmwave - Git tag -> Docker image tag">
+<meta property="og:title" content="Helmwave - Git tag -> image tag">
 <meta property="og:description" content="The helmwave`s docs">
 <meta property="og:url" content="https://helmwave.github.io/0.21.x/examples/pass-git-tag/">
 <meta property="og:image" content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png">
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git-tag-docker-image-tag" class="md-skip">
+        <a href="#git-tag-image-tag" class="md-skip">
           Skip to content
         </a>
       
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Git tag -> Docker image tag
+              Git tag -> image tag
             
           </span>
         </div>
@@ -604,7 +604,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Git tag -> Docker image tag
+        Git tag -> image tag
       </a>
       
     </li>
@@ -818,7 +818,7 @@
 
 
 
-<h1 id="git-tag-docker-image-tag">Git tag -&gt; Docker image tag</h1>
+<h1 id="git-tag-image-tag">Git tag -&gt; image tag</h1>
 <blockquote>
 <p><a href="https://github.com/helmwave/docs/tree/0.21.x/docs/examples/pass-git-commit"> [Source] </a></p>
 </blockquote>
@@ -849,7 +849,7 @@
 <span class="w">    </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 <p><strong><code>values.yml</code></strong></p>
-<p>This values will override default values </p>
+<p>This values will override default values</p>
 <div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_COMMIT_TAG&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
 </code></pre></div>
