@@ -833,9 +833,6 @@
 
 
 <h1 id="render-flag-for-values">Render flag for values</h1>
-<blockquote>
-<p><a href="https://github.com/helmwave/docs/tree/0.21.x/docs/examples/values-render-flag"> [Source] </a></p>
-</blockquote>
 <p>Sometimes we need to disable render values. For example prometheus rules.</p>
 <p><code>cat values.yml</code></p>
 <div class="highlight"><pre><span></span><code><span class="c1">## Prometheus Exporter / Metrics</span><span class="w"></span>
@@ -847,12 +844,11 @@
 <span class="w">      </span><span class="nt">prometheus.io/port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">.Values.metrics.service.port</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 </code></pre></div>
 <p><code>cat helmwave.yml</code>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.20.1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.21.1</span><span class="w"></span>
 
 <span class="nt">repositories</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span><span class="w"></span>
 <span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span><span class="w"></span>
-
 
 <span class="nt">.options</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;options</span><span class="w"></span>
 <span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-namespace</span><span class="w"></span>
@@ -863,8 +859,8 @@
 <span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span><span class="w"></span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span><span class="w"></span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values.yml</span><span class="w"></span>
-<span class="w">      </span><span class="nt">render</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values.yml</span><span class="w"></span>
+<span class="w">        </span><span class="nt">render</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div></p>
 
 

@@ -833,13 +833,10 @@
 
 
 <h1 id="aws-secret-manager">AWS secret manager</h1>
-<blockquote>
-<p><a href="https://github.com/helmwave/docs/tree/0.21.x/docs/examples/aws-sm"> [Source] </a></p>
-</blockquote>
 <p><strong>Project structure</strong></p>
 <div class="highlight"><pre><span></span><code>├── README.md
 ├── helmwave.yml
-└── vaules-secret.yaml
+└── values-secret.yaml
 </code></pre></div>
 <p><strong>Step 1. Create next secret</strong></p>
 <div class="highlight"><pre><span></span><code>aws secretsmanager create-secret --name hello/foobar --secret-string <span class="s1">&#39;{&quot;foo&quot;:&quot;bar&quot;}&#39;</span>
@@ -854,9 +851,9 @@
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span><span class="w"></span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vaules-secret.yaml</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values-secret.yaml</span><span class="w"></span>
 </code></pre></div>
-<p><strong>Step 3. Create <code>vaules-secret.yaml</code></strong></p>
+<p><strong>Step 3. Create <code>values-secret.yaml</code></strong></p>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">defineDatasource &quot;aws&quot; &quot;aws+sm</span><span class="p p-Indicator">:</span><span class="nv">///hello/foobar&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
 
 <span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">datasource &quot;aws&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>

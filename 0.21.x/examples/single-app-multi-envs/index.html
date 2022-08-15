@@ -833,9 +833,6 @@
 
 
 <h1 id="single-app-multi-envs">Single app multi envs</h1>
-<blockquote>
-<p><a href="https://github.com/helmwave/docs/tree/0.21.x/docs/examples/single-app-multi-envs"> [Source] </a></p>
-</blockquote>
 <p>When we work with helm sometimes we need dynamics chose environment.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CI_ENVIRONMENT_NAME</span><span class="o">=</span>stage
 helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f values/<span class="nv">$CI_ENVIRONMENT_NAME</span>.yaml

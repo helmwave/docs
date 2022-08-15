@@ -864,8 +864,10 @@
 
 
 <h1 id="quick-start">🔰 Quick Start</h1>
-<p>1) <strong><a href="https://helmwave.github.io/docs/0.21.x/install/">install helmwave</a></strong></p>
-<p>2) <strong>create helmwave.yml</strong></p>
+<ol>
+<li><strong><a href="../../install">Install helmwave</a></strong> </li>
+<li>
+<p><strong>Create helmwave.yml</strong></p>
 <p>Suppose the <code>helmwave.yml</code> representing the desired state of your helm releases looks like:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.21.0</span><span class="w"></span>
 
@@ -888,11 +890,15 @@
 <span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span><span class="w"></span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/redis</span><span class="w"></span>
 </code></pre></div>
-<p>3) <strong>build plan</strong></p>
+</li>
+<li>
+<p><strong>Build plan</strong></p>
 <div class="highlight"><pre><span></span><code>helmwave build
 </code></pre></div>
-<p>this steps generate <a href="https://helmwave.github.io/docs/0.21.x/cli/#step-2-working-with-plan">plan</a></p>
-<p>4) if everything is ok , deploy plan </p>
+<p>This steps generates <a href="../../cli/#step-2-working-with-plan">plan</a></p>
+</li>
+<li>
+<p>If everything is ok , deploy plan</p>
 <div class="highlight"><pre><span></span><code>helmwave up 
 </code></pre></div>
 <p>Output will be like that:</p>
@@ -900,7 +906,9 @@
 <span class="o">[</span>🙃 aka INFO<span class="o">]</span>: ✅ redis-b@my-namespace
 <span class="o">[</span>🙃 aka INFO<span class="o">]</span>: Success <span class="m">2</span> / <span class="m">2</span>
 </code></pre></div>
-<p>6) <strong>check</strong></p>
+</li>
+<li>
+<p><strong>Check</strong></p>
 <div class="highlight"><pre><span></span><code>$ helm list -n my-namespace
 NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
 redis-a                 my-namespace    <span class="m">1</span>               <span class="m">2020</span>-10-31 <span class="m">17</span>:05:35.829766 +0300 MSK    deployed        redis-11.2.3            <span class="m">6</span>.0.9      
@@ -915,7 +923,11 @@ redis-b-master-0   <span class="m">1</span>/1     Running   <span class="m">0</s
 redis-b-slave-0    <span class="m">1</span>/1     Running   <span class="m">0</span>          32s
 redis-b-slave-1    <span class="m">1</span>/1     Running   <span class="m">0</span>          51s
 </code></pre></div>
+</li>
+<li>
 <p><strong>Congratulations!</strong></p>
+</li>
+</ol>
 <h2 id="live-mode">Live mode</h2>
 <blockquote>
 <p>!!! Ascinema cast is too old.</p>

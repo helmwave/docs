@@ -833,17 +833,13 @@
 
 
 <h1 id="strict-flag-for-values">Strict flag for values</h1>
-<blockquote>
-<p><a href="https://github.com/helmwave/docs/tree/0.21.x/docs/examples/values-strict-flag"> [Source] </a></p>
-</blockquote>
 <p>Helmwave will fail when file does not exist.</p>
 <p><code>cat helmwave.yml</code>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.20.1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.21.1</span><span class="w"></span>
 
 <span class="nt">repositories</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span><span class="w"></span>
 <span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span><span class="w"></span>
-
 
 <span class="nt">.options</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;options</span><span class="w"></span>
 <span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-namespace</span><span class="w"></span>
@@ -854,8 +850,8 @@
 <span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span><span class="w"></span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span><span class="w"></span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">this_file_does_not_exist.yml</span><span class="w"></span>
-<span class="w">      </span><span class="nt">strict</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">this_file_does_not_exist.yml</span><span class="w"></span>
+<span class="w">        </span><span class="nt">strict</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div></p>
 
 

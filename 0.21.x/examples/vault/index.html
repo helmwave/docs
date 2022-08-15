@@ -864,13 +864,10 @@
 
 
 <h1 id="vault">Vault</h1>
-<blockquote>
-<p><a href="https://github.com/helmwave/docs/tree/0.21.x/docs/examples/vault"> [Source] </a></p>
-</blockquote>
 <p><strong>Project structure</strong></p>
 <div class="highlight"><pre><span></span><code>├── README.md
 ├── helmwave.yml
-└── vaules-secret.yaml
+└── values-secret.yaml
 </code></pre></div>
 <p><strong>Step 1. Create next secret</strong></p>
 <div class="highlight"><pre><span></span><code>vault kv put secret/test <span class="nv">hello</span><span class="o">=</span>world 
@@ -885,9 +882,9 @@
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span><span class="w"></span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vaules-secret.yaml</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values-secret.yaml</span><span class="w"></span>
 </code></pre></div>
-<p><strong>Step 3. Create <code>vaules-secret.yaml</code></strong></p>
+<p><strong>Step 3. Create <code>values-secret.yaml</code></strong></p>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">defineDatasource &quot;vault&quot; &quot;vault</span><span class="p p-Indicator">:</span><span class="nv">///secret/data/test&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="c1"># `data` is required for vault kv2</span><span class="w"></span>
 
 <span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">(ds &quot;vault&quot;).data.hello</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"></span>
