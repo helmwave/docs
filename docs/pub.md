@@ -8,7 +8,7 @@
 
 > https://diamon.medium.com/helmwave-is-true-release-manager-e7d085a6bd2d
 
-## 📄 [HelmWave v0.21.0](https://habr.com/ru/post/663344/)
+## 📄 [HelmWave v0.19.3](https://habr.com/ru/post/663344/)
 
 > https://habr.com/ru/post/575646/
 
@@ -35,4 +35,3 @@
 ## 📄 [HelmWave v0.5.0](https://habr.com/ru/post/532596/)
 
 > https://habr.com/ru/post/532596/
-
