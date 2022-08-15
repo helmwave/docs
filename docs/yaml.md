@@ -18,7 +18,7 @@ In the future it is planned to be used for major compatibility.
 > OCI registries
 
 |  field   | required |  type  | default |
-|:--------:|:--------:|:------:|:-------:|
+| :------: | :------: | :----: | :-----: |
 |   host   |    ✅     | string |   ""    |
 | username |          | string |   ""    |
 | password |          | string |   ""    |
@@ -26,23 +26,23 @@ In the future it is planned to be used for major compatibility.
 
 **Examples**
 
-- [private oci](examples/oci-private/README.md)
-- [github oci](examples/oci-private/README.md)
+- [private oci](../examples/oci-private)
+- [github oci](../examples/oci-private)
 
 
 ## Repositories[]
 
 |         field         | required |  type  | default |
-|:---------------------:|:--------:|:------:|:-------:|
+| :-------------------: | :------: | :----: | :-----: |
 |         name          |    ✅     | string |   ""    |
 |          url          |    ✅     |  url   |   ""    |
-|       username        |    🙅    | string |   ""    |
-|       password        |    🙅    | string |   ""    |
-|       certfile        |    🙅    | string |   ""    |
-|        keyfile        |    🙅    | string |   ""    |
-|        cafile         |    🙅    | string |   ""    |
-| insecureskiptlsverify |    🙅    |  bool  |  false  |
-|         force         |    🙅    |  bool  |  false  |
+|       username        |    🙅     | string |   ""    |
+|       password        |    🙅     | string |   ""    |
+|       certfile        |    🙅     | string |   ""    |
+|        keyfile        |    🙅     | string |   ""    |
+|        cafile         |    🙅     | string |   ""    |
+| insecureskiptlsverify |    🙅     |  bool  |  false  |
+|         force         |    🙅     |  bool  |  false  |
 
 ### name
 
@@ -63,32 +63,32 @@ In the future it is planned to be used for major compatibility.
 > Almost all options that are here are native helm options
 
 |            field            | required |       type       | default | `helmwave build` | `helmwave up` |
-|:---------------------------:|:--------:|:----------------:|:-------:|:----------------:|:-------------:|
+| :-------------------------: | :------: | :--------------: | :-----: | :--------------: | :-----------: |
 |          **name**           |    ✅     |      string      |   ""    |        ✅         |       ✅       |
 |        **namespace**        |    ✅     |      string      |   ""    |        ✅         |       ✅       |
 |          **chart**          |    ✅     | string or object |   {}    |        ✅         |       ✅       |
-|         description         |    🙅    |      string      |   ""    |                  |               |
-|         depends_on          |    🙅    |      array       |   []    |                  |       ✅       |
-|        allow_failure        |    🙅    |       bool       |  false  |                  |       ✅       |
-|           values            |    🙅    |      array       |   []    |        ✅         |       ✅       |
-|            tags             |    🙅    |      array       |   []    |        ✅         |               |
-|            store            |    🙅    |      object      |   {}    |        ✅         |               |
-|           timeout           |    🙅    |     interval     |   0s    |                  |       ✅       |
-|         max_history         |    🙅    |       int        |    0    |                  |       ✅       |
-|      create_namespace       |    🙅    |       bool       |  false  |                  |       ✅       |
-|        reset_values         |    🙅    |       bool       |  false  |                  |       ✅       |
-|          recreate           |    🙅    |       bool       |  false  |                  |       ✅       |
-|            force            |    🙅    |       bool       |  false  |                  |       ✅       |
-|           atomic            |    🙅    |       bool       |  false  |                  |       ✅       |
-|       cleanup_on_fail       |    🙅    |       bool       |  false  |                  |       ✅       |
-|          subnotes           |    🙅    |       bool       |  false  |                  |       ✅       |
-|        disable_hooks        |    🙅    |       bool       |  false  |                  |       ✅       |
-| disable_open_api_validation |    🙅    |       bool       |  false  |                  |       ✅       |
-|        wait_for_jobs        |    🙅    |       bool       |  false  |                  |       ✅       |
-|            wait             |    🙅    |       bool       |  false  |                  |       ✅       |
-|          skip_crds          |    🙅    |       bool       |  false  |                  |       ✅       |
-|            devel            |    🙅    |       bool       |  false  |                  |       ✅       |
-|        reuse_values         |    🙅    |       bool       |  false  |                  |       ✅       |
+|         description         |    🙅     |      string      |   ""    |                  |               |
+|         depends_on          |    🙅     |      array       |   []    |                  |       ✅       |
+|        allow_failure        |    🙅     |       bool       |  false  |                  |       ✅       |
+|           values            |    🙅     |      array       |   []    |        ✅         |       ✅       |
+|            tags             |    🙅     |      array       |   []    |        ✅         |               |
+|            store            |    🙅     |      object      |   {}    |        ✅         |               |
+|           timeout           |    🙅     |     interval     |   0s    |                  |       ✅       |
+|         max_history         |    🙅     |       int        |    0    |                  |       ✅       |
+|      create_namespace       |    🙅     |       bool       |  false  |                  |       ✅       |
+|        reset_values         |    🙅     |       bool       |  false  |                  |       ✅       |
+|          recreate           |    🙅     |       bool       |  false  |                  |       ✅       |
+|            force            |    🙅     |       bool       |  false  |                  |       ✅       |
+|           atomic            |    🙅     |       bool       |  false  |                  |       ✅       |
+|       cleanup_on_fail       |    🙅     |       bool       |  false  |                  |       ✅       |
+|          subnotes           |    🙅     |       bool       |  false  |                  |       ✅       |
+|        disable_hooks        |    🙅     |       bool       |  false  |                  |       ✅       |
+| disable_open_api_validation |    🙅     |       bool       |  false  |                  |       ✅       |
+|        wait_for_jobs        |    🙅     |       bool       |  false  |                  |       ✅       |
+|            wait             |    🙅     |       bool       |  false  |                  |       ✅       |
+|          skip_crds          |    🙅     |       bool       |  false  |                  |       ✅       |
+|            devel            |    🙅     |       bool       |  false  |                  |       ✅       |
+|        reuse_values         |    🙅     |       bool       |  false  |                  |       ✅       |
 
 ### name
 
@@ -113,28 +113,28 @@ I hope you know what it is.
 
 
 |         field         | required |  type  | default |
-|:---------------------:|:--------:|:------:|:-------:|
+| :-------------------: | :------: | :----: | :-----: |
 |       **name**        |    ✅     | string |   ""    |
-|      **version**      |    🙅    | string |   ""    |
-|       username        |    🙅    | string |   ""    |
-|       password        |    🙅    | string |   ""    |
-|       certfile        |    🙅    | string |   ""    |
-|        keyfile        |    🙅    | string |   ""    |
-|        cafile         |    🙅    | string |   ""    |
-| insecureskiptlsverify |    🙅    |  bool  |  false  |
+|      **version**      |    🙅     | string |   ""    |
+|       username        |    🙅     | string |   ""    |
+|       password        |    🙅     | string |   ""    |
+|       certfile        |    🙅     | string |   ""    |
+|        keyfile        |    🙅     | string |   ""    |
+|        cafile         |    🙅     | string |   ""    |
+| insecureskiptlsverify |    🙅     |  bool  |  false  |
 
 
 
 #### Values option
 
-|         field         | required |  type  | default |
-|:---------------------:|:--------:|:------:|:-------:|
-|        **src**        |    ✅     | string |   ""    |
-|      **strict**       |    🙅    |  bool  |  false  |
-|      **render**       |    🙅    |  bool  |  true   |
+|   field    | required |  type  | default |
+| :--------: | :------: | :----: | :-----: |
+|  **src**   |    ✅     | string |   ""    |
+| **strict** |    🙅     |  bool  |  false  |
+| **render** |    🙅     |  bool  |  true   |
 
-- `render` this flag controls render behavior. [example](https://helmwave.github.io/docs/0.21.x/examples/values-render-flag)
-- `strict` disable skip behavior. [example](https://helmwave.github.io/docs/0.21.x/examples/values-strict-flag)
+- `render` this flag controls render behavior. [example](../examples/values-render-flag)
+- `strict` disable skip behavior. [example](../examples/values-strict-flag)
 
 
 ### 🗳️ Store
@@ -143,7 +143,7 @@ I hope you know what it is.
 
 It works when you call `$ helmwave build`
 
-[example](https://helmwave.github.io/docs/0.21.x/examples/store-greeting-hello/)
+[example](../examples/store-greeting-hello/)
 
 
 

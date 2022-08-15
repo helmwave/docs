@@ -1,9 +1,5 @@
 # Private GitHub repo 
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/private-github-repo)
-
-
-
 ```console
 .
 ├── README.md

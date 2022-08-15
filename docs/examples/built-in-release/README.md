@@ -1,8 +1,5 @@
 # Release object
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/built-in-release)
-
-
 **Project Structure**
 
 ```console
@@ -60,4 +57,3 @@ tree .helmwave
         - src: _.yml
           dst: /var/folders/jn/gs32zb3s5939nf71b3836nq40000gr/T/values/b@test/454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml
     ```
-
