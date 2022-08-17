@@ -1,7 +1,5 @@
 # Single app multi envs
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/single-app-multi-envs)
-
 When we work with helm sometimes we need dynamics chose environment.
 
 ```shell

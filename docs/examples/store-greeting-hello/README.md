@@ -1,7 +1,4 @@
-# How to use [Store](https://helmwave.github.io/docs/0.21.x/yaml/#store)
-
-[ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/store-greeting-hello)
-
+# How to use [Store](../../yaml/#store)
 
 **Project Structure**
 

@@ -1,14 +1,11 @@
 # Vault
 
-> [ [Source] ](https://github.com/helmwave/docs/tree/0.21.x/docs/examples/vault)
-
-
 **Project structure**
 
 ```
 ├── README.md
 ├── helmwave.yml
-└── vaules-secret.yaml
+└── values-secret.yaml
 ```
 
 **Step 1. Create next secret**
@@ -24,10 +21,10 @@ vault kv put secret/test hello=world
 {% include "helmwave.yml" %}
 ```
 
-**Step 3. Create `vaules-secret.yaml`**
+**Step 3. Create `values-secret.yaml`**
 
 ```yaml
-{% include "vaules-secret.yaml" %}
+{% include "values-secret.yaml" %}
 ```
 
 
