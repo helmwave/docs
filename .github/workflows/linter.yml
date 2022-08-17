@@ -1,0 +1,15 @@
+on:
+  push:
+
+name: linter
+jobs:
+  linkinator:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: JustinBeckwith/linkinator-action@v1
+      with:
+        concurrency: 100
+        markdown: true
+        recurse: true
+        timeout: 180000
