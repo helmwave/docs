@@ -20,7 +20,7 @@ Done automatically via GitHub Actions. Fresh created branches will update `lates
 
 The only thing you need to update is helmwave version in:
 
-- [examples](examples)
+- [examples](docs/examples)
 - [docs/tpl.md](docs/tpl.md)
 - [docs/install.md](docs/install.md)
 - [docs/cli.md](docs/cli.md)
