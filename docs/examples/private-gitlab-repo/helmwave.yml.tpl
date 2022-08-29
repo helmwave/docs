@@ -10,6 +10,6 @@ repositories:
 
 releases:
   - name: hello
-    chart: foo/bar
+    chart: {{ env "CI_PROJECT_TITLE" }}/my-chart
     namespace: test
     create_namespace: true
