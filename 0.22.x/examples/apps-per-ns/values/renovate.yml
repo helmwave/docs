@@ -1,0 +1,22 @@
+cronjob:
+  schedule: "*/30 * * * *"
+  concurrencyPolicy: Forbid
+
+
+
+redis:
+  enabled: false
+  auth:
+    usePassword: false
+  master:
+    persistence:
+      enabled: false
+  replica:
+    replicaCount: 0
+    persistence:
+      enabled: false
+
+env: {}
+
+secrets:
+  LOG_LEVEL: "debug"

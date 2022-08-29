@@ -1,0 +1,14 @@
+releases:
+- name: a
+  chart: my/a
+  store:
+    msg: hello
+  values:
+  - a.yml
+
+- name: b
+  chart: my/b
+  store:
+    msg: hello
+  values:
+    - b.yml

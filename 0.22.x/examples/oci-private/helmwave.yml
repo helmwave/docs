@@ -1,0 +1,13 @@
+version: 0.21.0
+
+registries:
+- host: localhost:5000
+  username: <pass_username_here>
+  password: <pass_password_here>
+
+
+releases:
+- name: my
+  chart:
+    name: oci://localhost:5000/my-chart
+    version: 0.2.0 # required

@@ -1,0 +1,12 @@
+version: 0.21.0
+
+releases:
+  - name: my-release
+    chart:  my-chart-repo/my-chart-app
+    # yaml says "Who is the last one is right."
+    values:
+      # Default
+      - values/_.yml
+      # For specific ENVIRONMENT
+      - values/stage.yml
+    create_namespace: true
