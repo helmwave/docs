@@ -49,7 +49,9 @@ With 🌊 helmwave you will become a superhero:
 
 🌊 Helmwave is inspired by docker-compose, terraform and helmfile,
 
-
 ---
 
 Here I would like to express our gratitude to all contributors for their commits, authors of third-party dependencies and all open source community ❤️
+
+
+<a data-theme="dark" data-layers="1,2,3,4" data-stack-embed="true" href="https://embed.stackshare.io/stacks/embed/c53d33cff1a65c5a640b1f64c4e49c"></a><script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script>
