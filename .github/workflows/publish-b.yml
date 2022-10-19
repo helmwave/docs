@@ -28,15 +28,14 @@ jobs:
 
       - name: Extract branch name
         shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
+        run: echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
 
       - name: Mike with updating aliases
         if: ${{ github.event.created }}
         run: |
-          mike deploy --push --force --update-aliases ${{ steps.extract_branch.outputs.branch }} latest --rebase
+          mike deploy --push --force --update-aliases ${{ env.BRANCH }} latest --rebase
 
       - name: Mike
         if: ${{ !github.event.created }}
         run: |
-          mike deploy --force --push ${{ steps.extract_branch.outputs.branch }}
+          mike deploy --force --push ${{ env.BRANCH }}

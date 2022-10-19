@@ -8,6 +8,7 @@ on:
         type: string
 
 permissions:
+  actions: write # to trigger workflow_dispatch
   contents: write
   pull-requests: write
 
