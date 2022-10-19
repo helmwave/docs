@@ -4,6 +4,12 @@ on:
     branches:
       - "*.*.x"
   workflow_dispatch:
+    inputs:
+      update_aliases:
+        description: Whether to update mike aliases
+        required: false
+        type: boolean
+        default: true
 
 jobs:
   upload:
@@ -26,16 +32,12 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-      - name: Extract branch name
-        shell: bash
-        run: echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
-
       - name: Mike with updating aliases
-        if: ${{ github.event.created }}
+        if: ${{ github.event.created || inputs.update_aliases }}
         run: |
-          mike deploy --push --force --update-aliases ${{ env.BRANCH }} latest --rebase
+          mike deploy --push --force --update-aliases ${{ github.ref_name }} latest --rebase
 
       - name: Mike
-        if: ${{ !github.event.created }}
+        if: ${{ !github.event.created && !inputs.update_aliases }}
         run: |
-          mike deploy --force --push ${{ env.BRANCH }}
+          mike deploy --force --push ${{ github.ref_name }}

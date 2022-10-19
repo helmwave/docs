@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Helmwave tag to generate docs for"
+        description: Helmwave tag to generate docs for
         required: true
         type: string
 
@@ -22,7 +22,7 @@ jobs:
           VERSION=$(echo "$TAG" | sed 's#^v\?\(.*\)\.\(.*\)\..*$#\1.\2.x#g')
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
         env:
-          TAG: ${{ github.event.inputs.tag }}
+          TAG: ${{ inputs.tag }}
 
       - name: Find existing branch for version
         id: find-branch
@@ -89,4 +89,9 @@ jobs:
               repo: context.repo.repo,
               workflow_id: "publish-b.yml",
               ref: process.env.VERSION,
+              inputs: {
+                update_aliases: process.env.NEW_VERSION,
+              },
             })
+        env:
+          NEW_VERSION: ${{ steps.find-branch.outcome == 'failure' }}
