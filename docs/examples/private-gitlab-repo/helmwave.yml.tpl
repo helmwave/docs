@@ -1,4 +1,4 @@
-version: 0.22.0
+version: 0.23.1
 
 repositories:
   # Docs: https://docs.gitlab.com/ee/user/packages/helm_repository/

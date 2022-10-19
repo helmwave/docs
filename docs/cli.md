@@ -8,7 +8,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.22.2
+   0.23.1
 
 DESCRIPTION:
    This tool helps you compose your helm releases!
@@ -162,16 +162,16 @@ Diff has 2 subcommands
 Helmwave supports several log-format
 
 |    features    |                  `text`                   |                  `json`                   |                   `pad`                   |                                         `emoji` (default)                                         |
-|:--------------:|:-----------------------------------------:|:-----------------------------------------:|:-----------------------------------------:|:-------------------------------------------------------------------------------------------------:|
-|     Color      |                     ✅                     |                     ❌                     |                     ✅                     |                                                🌈                                                 |
-| Human readable |                    🧐                     |                    🤖                     |                   🧐🧐                    |                                                 ✅                                                 |
-|  Performance   |                    🚀                     |                    🐢                     |                    ✈️                     |                                                🐢                                                 |
+| :------------: | :---------------------------------------: | :---------------------------------------: | :---------------------------------------: | :-----------------------------------------------------------------------------------------------: |
+|     Color      |                     ✅                     |                     ❌                     |                     ✅                     |                                                 🌈                                                 |
+| Human readable |                     🧐                     |                     🤖                     |                    🧐🧐                     |                                                 ✅                                                 |
+|  Performance   |                     🚀                     |                     🐢                     |                     ✈️                     |                                                 🐢                                                 |
 |     Module     | TextFormatter (in-built logrus formatter) | JSONFormatter (in-built logrus formatter) | TextFormatter (in-built logrus formatter) | [logrus-emoji-formatter](https://github.com/helmwave/logrus-emoji-formatter) special for helmwave |
 
 ### Log Level
 
 |             _              | `info` (default) | `warn` | `debug` | `fatal` | `panic` | `trace` |
-|:--------------------------:|:----------------:|:------:|:-------:|:-------:|:-------:|:-------:|
+| :------------------------: | :--------------: | :----: | :-----: | :-----: | :-----: | :-----: |
 |        general info        |        ✅         |   ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
 |    incompatible version    |        ❌         |   ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
 |         helm-debug         |        ❌         |   ❌    |    ✅    |    ✅    |    ✅    |    ✅    |
@@ -209,10 +209,10 @@ helmwave <cmd>
 
 ```bash
 $ helmwave --version  
-helmwave version 0.22.2
+helmwave version 0.23.1
 
 $ helmwave -v
-helmwave version 0.22.2
+helmwave version 0.23.1
 ```
 
 
@@ -220,10 +220,10 @@ helmwave version 0.22.2
 
 ```bash
 $ helmwave version
-0.22.2
+0.23.1
 
 $ helmwave ver
-0.22.2
+0.23.1
 ```
 
 ## Completion
@@ -256,4 +256,3 @@ echo "source <(helmwave completion zsh)" >> ~/.zshrc
 ```
 
 ![completion-zsh](assets/completion-zsh.png)
-

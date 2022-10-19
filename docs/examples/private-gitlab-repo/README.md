@@ -22,7 +22,7 @@ Your `.gitlab-ci.yml`
 helmwave:
   stage: deploy
   image:
-    name: ghcr.io/helmwave/helmwave:0.21.1
+    name: ghcr.io/helmwave/helmwave:0.23.1
     entrypoint: [""]
   before_script:
   - printenv | grep HELMWAVE

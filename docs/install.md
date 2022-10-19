@@ -21,7 +21,7 @@ brew install helmwave/tap/helmwave
 
 or use wget
 ```sh
-export VERSION=0.22.2
+export VERSION=0.23.1
 wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_darwin_amd64.tar.gz -O - | tar -xz
 mv helmwave /usr/local/bin/
 ```
@@ -33,7 +33,7 @@ mv helmwave /usr/local/bin/
 Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
 ```sh
-export VERSION=0.22.2
+export VERSION=0.23.1
 wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_linux_amd64.tar.gz -O - | tar -xz
 mv helmwave /usr/local/bin/
 ```
@@ -55,7 +55,7 @@ Download one of [releases](https://github.com/helmwave/helmwave/releases)
 > We use 2 docker registries. 
 
 |         Registry          |          URL           |                                 project page                                  |
-|:-------------------------:|:----------------------:|:-----------------------------------------------------------------------------:|
+| :-----------------------: | :--------------------: | :---------------------------------------------------------------------------: |
 |        Docker hub         | https://hub.docker.com |       [view](https://hub.docker.com/repository/docker/diamon/helmwave)        |
 | Github Container registry |    https://ghcr.io     | [view](https://github.com/orgs/helmwave/packages/container/helmwave/settings) |
 
@@ -67,12 +67,12 @@ docker pull ghcr.io/helmwave/helmwave
 **Use specific version**
 
 ```bash
-docker pull diamon/helmwave:0.22.2
-docker pull ghcr.io/helmwave/helmwave:0.22.2
+docker pull diamon/helmwave:0.23.1
+docker pull ghcr.io/helmwave/helmwave:0.23.1
 
-docker run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:0.22.2
+docker run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:0.23.1
 # helmwave version
-0.22.2
+0.23.1
 #
 ```
 
@@ -92,8 +92,8 @@ docker run ghcr.io/helmwave/helmwave:0.16.2-scratch version
 **Use [scratch image](https://hub.docker.com/_/scratch) with specific helmwave version**
 
 ```bash
-docker pull diamon/helmwave:0.22.2-scratch
-docker pull ghcr.io/helmwave/helmwave:0.22.2-scratch
+docker pull diamon/helmwave:0.23.1-scratch
+docker pull ghcr.io/helmwave/helmwave:0.23.1-scratch
 ```
 
 ---
@@ -101,7 +101,7 @@ docker pull ghcr.io/helmwave/helmwave:0.22.2-scratch
 ## Install with go get ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave)
 
 ```sh
-export VERSION=0.22.2
+export VERSION=0.23.1
 GO111MODULE=on go get github.com/helmwave/helmwave/cmd/helmwave@$VERSION
 ```
 
