@@ -1,8 +1,8 @@
-version: 0.22.2
+version: 0.23.1
 
 releases:
   - name: my-release
-    chart:  my-chart-repo/my-chart-app
+    chart: my-chart-repo/my-chart-app
     # yaml says "Who is the last one is right."
     values:
       # Default

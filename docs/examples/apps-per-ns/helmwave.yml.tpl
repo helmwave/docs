@@ -1,4 +1,4 @@
-version: 0.22.2
+version: 0.23.1
 
 
 repositories:
@@ -43,4 +43,3 @@ releases:
 
 {{ end }}
 {{- end }}
-

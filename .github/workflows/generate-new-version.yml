@@ -19,7 +19,7 @@ jobs:
         id: parse-version
         run: |
           VERSION=$(echo "$TAG" | sed 's#^v\?\(.*\)\.\(.*\)\..*$#\1.\2.x#g')
-          echo "::set-output name=version::${VERSION}"
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
         env:
           TAG: ${{ github.event.inputs.tag }}
 
@@ -35,8 +35,6 @@ jobs:
               ref: "heads/" + process.env.VERSION,
             })
         continue-on-error: true
-        env:
-          VERSION: ${{ steps.parse-version.outputs.version }}
 
       - name: Create branch and PR for new version
         id: create-version
@@ -79,5 +77,15 @@ jobs:
               base: "main",
               title: "Generate docs for " + process.env.VERSION + " version"
             })
-        env:
-          VERSION: ${{ steps.parse-version.outputs.version }}
+
+      - name: Trigger publish branch workflow
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "publish-b.yml",
+              ref: process.env.VERSION,
+            })

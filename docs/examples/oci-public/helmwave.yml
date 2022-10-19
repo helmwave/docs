@@ -1,11 +1,10 @@
-version: 0.22.2
+version: 0.23.1
 
 registries:
-- host: ghcr.io
-
+  - host: ghcr.io
 
 releases:
-- name: my
-  chart:
-    name: oci://ghcr.io/helmwave/unit-test-oci
-    version: 0.1.0 # required
+  - name: my
+    chart:
+      name: oci://ghcr.io/helmwave/unit-test-oci
+      version: 0.1.0 # required
