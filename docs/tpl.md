@@ -24,7 +24,7 @@ http://masterminds.github.io/sprig/
 > gomplate is a template renderer which supports a growing list of datasources, such as: JSON (including EJSON - encrypted JSON), YAML, AWS EC2 metadata, BoltDB, Hashicorp Consul and Hashicorp Vault secrets.
 
 
-## [Custom](https://github.com/helmwave/helmwave/blob/release-0.21.0/pkg/template/func.go)
+## [Custom](https://github.com/helmwave/helmwave/blob/release-0.22.2/pkg/template/func.go)
 
 - `toYaml` marshals a map into a string
 - `exec` exec command
