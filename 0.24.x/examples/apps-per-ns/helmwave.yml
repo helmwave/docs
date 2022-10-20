@@ -1,0 +1,80 @@
+version: 0.23.1
+
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+  - name: renovate
+    url: https://docs.renovatebot.com/helm-charts
+  - name: stevehipwell
+    url: https://stevehipwell.github.io/helm-charts
+
+# General options
+.options: &options
+  wait: true
+  wait_for_jobs: true
+  force: false
+  timeout: 10m
+  atomic: false
+  max_history: 3
+  create_namespace: true
+
+releases:
+  #################################
+  #                               #
+  #      harbor
+  #                               #
+  #################################
+  - name: harbor
+    chart:
+      name: bitnami/harbor
+      version: 11.0.5
+    namespace: harbor
+    tags: [harbor]
+    values:
+      - values/harbor.yml
+    <<: *options
+
+  #################################
+  #                               #
+  #      minio
+  #                               #
+  #################################
+  - name: minio
+    chart:
+      name: bitnami/minio
+      version: 9.0.2
+    namespace: minio
+    tags: [minio]
+    values:
+      - values/minio.yml
+    <<: *options
+
+  #################################
+  #                               #
+  #      plantuml
+  #                               #
+  #################################
+  - name: plantuml
+    chart:
+      name: stevehipwell/plantuml
+      version: 3.3.0
+    namespace: plantuml
+    tags: [plantuml]
+    values:
+      - values/plantuml.yml
+    <<: *options
+
+  #################################
+  #                               #
+  #      renovate
+  #                               #
+  #################################
+  - name: renovate
+    chart:
+      name: renovate/renovate
+      version: 25.76.1
+    namespace: renovate
+    tags: [renovate]
+    values:
+      - values/renovate.yml
+    <<: *options
