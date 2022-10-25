@@ -803,7 +803,7 @@
 <div class="highlight"><pre><span></span><code><span class="go">--tags value, -t value  It allows you choose releases for build. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]</span>
 <span class="go">--match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]</span>
 </code></pre></div>
-<h4 id="matching-with-tags">Matching with tags</h4>
+<p><strong>Matching with tags</strong></p>
 <p>Suppose we have next <code>helmwave.yml</code> with 4 releases.</p>
 <ol>
 <li>redis-a</li>
@@ -849,21 +849,21 @@
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">memcached</span><span class="w"></span>
 </code></pre></div>
-<h4 id="match-all-redises">Match all redises</h4>
+<p><strong>Match all redises</strong></p>
 <div class="highlight"><pre><span></span><code>helmwave build -t redis
 <span class="o">[</span>🙃 aka INFO<span class="o">]</span>: 🏗 Plan
         releases: 
           - redis-a@test
           - redis-b@test
 </code></pre></div>
-<h4 id="match-the-group-a">Match the group <code>a</code></h4>
+<p><strong>Match the group <code>a</code></strong></p>
 <div class="highlight"><pre><span></span><code>helmwave build -t a 
 <span class="o">[</span>🙃 aka INFO<span class="o">]</span>: 🏗 Plan
         releases: 
           - redis-a@test
           - memcached-a@test
 </code></pre></div>
-<h4 id="match-any-tags">Match any tags</h4>
+<p><strong>Match any tags</strong></p>
 <p>If you know SQL. It looks like that:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">releases</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">"redis"</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">"a"</span><span class="w"></span>
 </code></pre></div>
@@ -874,7 +874,7 @@
           - redis-b@test
           - memcached-a@test
 </code></pre></div>
-<h4 id="match-all-tags">Match all tags</h4>
+<p><strong>Match all tags</strong></p>
 <p>All that was above, we used the logical <code>OR</code> operator.
 If you need strongly logic with <code>AND</code> you should use <code>--match-all-tags</code> flag. 
 This flag changes logic for query releases.</p>
