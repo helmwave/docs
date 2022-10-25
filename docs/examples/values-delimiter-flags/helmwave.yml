@@ -12,6 +12,8 @@ releases:
   - name: nginx
     <<: *options
     chart: bitnami/nginx
+    store:
+      metadata: 123
     values:
       - src: values.yml
         delimiter_left: "[["

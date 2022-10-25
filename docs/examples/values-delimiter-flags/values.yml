@@ -3,6 +3,6 @@
 metrics:
   service:
     annotations:
-      service_name: [[requiredEnv "SERVICE_NAME" | quote]]
+      service_name: [[.Release.Store.metadata | quote]]
       prometheus.io/scrape: "true"
       prometheus.io/port: "{{ .Values.metrics.service.port }}"
