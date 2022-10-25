@@ -241,7 +241,6 @@ Helmwave supports several log-format
 
 You can enable `--progress` flag for helm-debug output.
 
-
 ### How to use?
 
 ```bash
@@ -262,7 +261,6 @@ helmwave <cmd>
 ## Get Version
 
 ### Long version
-
 
 ```bash
 $ helmwave --version  

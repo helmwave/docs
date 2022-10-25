@@ -51,7 +51,6 @@
 
 1. **Congratulations!**
 
-
 ## Live mode
 
 > !!! Ascinema cast is too old.

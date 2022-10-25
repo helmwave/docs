@@ -9,11 +9,9 @@
 
 **Suppose the `helmwave.yml.tpl` looks like**
 
-
 ```yaml
 {% include "helmwave.yml.tpl" %}
 ```
-
 
 This command will render `helmwave.yml.tpl` to `helmwave.yml`
 

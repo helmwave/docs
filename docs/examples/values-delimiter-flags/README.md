@@ -8,7 +8,6 @@ Sometimes we need to include strings in values that will be templated by helm it
 {% include "values.yml" %}
 ```
 
-
 `cat helmwave.yml`
 ```yaml
 {% include "helmwave.yml" %}

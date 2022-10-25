@@ -8,7 +8,7 @@
 └── values.yml
 ```
 
-`helmwave.yml`
+`cat helmwave.yml`
 
 ```yaml
 {% include "helmwave.yml" %}

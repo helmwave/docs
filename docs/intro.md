@@ -20,8 +20,8 @@ With 🌊 helmwave you will become a superhero:
 
 ## Comparison to alternatives
 
-|                                        |                                        🌊 HelmWave                                        |                                       Helmfile                                        |                           Helmsman                            |
-|:--------------------------------------:|:-----------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------:|:-------------------------------------------------------------:|
+|                                        |                                        🌊 HelmWave                                         |                                       Helmfile                                        |                           Helmsman                            |
+| :------------------------------------: | :---------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :-----------------------------------------------------------: |
 |               **Syntax**               | YAML + [sprig](http://masterminds.github.io/sprig/)/[gomplate](https://docs.gomplate.ca/) |                  YAML + [sprig](http://masterminds.github.io/sprig/)                  |                           TOML/YAML                           |
 |               Code style               |                                        snake_case                                         |                                       camelCase                                       |                           camelCase                           |
 |              Requirements              |                                            No                                             | `kubectl`, `helm`<br> *`helm-diff` (optional: `helm-secrets`, `helm-s3`, `helm-git`*) |              `kubectl`, `helm`<br> *`helm-diff`*              |
@@ -52,6 +52,5 @@ With 🌊 helmwave you will become a superhero:
 ---
 
 Here I would like to express our gratitude to all contributors for their commits, authors of third-party dependencies and all open source community ❤️
-
 
 <a data-theme="dark" data-layers="1,2,3,4" data-stack-embed="true" href="https://embed.stackshare.io/stacks/embed/c53d33cff1a65c5a640b1f64c4e49c"></a><script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script>

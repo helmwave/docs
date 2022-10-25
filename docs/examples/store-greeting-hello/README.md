@@ -11,42 +11,40 @@
 
 ```
 
-**`helmwave.yml`**
-
+`cat helmwave.yml`
 
 ```yaml
 {% include "helmwave.yml" %}
 ```
 
-=== "a.yml"
+`cat a.yml`
 
-    ```yaml
-    {% include "a.yml" %}
-    ```
+```yaml
+{% include "a.yml" %}
+```
 
-=== "b.yml"
+`cat b.yml`
 
-    ```yaml
-    {% include "b.yml" %}
-    ```
+```yaml
+{% include "b.yml" %}
+```
 
+After running `helmwave build` you get rendered values inside `.helmwave/values`:
 
-*After run `helmwave build` you get*
+`a.yml`
 
-=== "a.yml"
+```yaml
+image:
+    repository: nginx
 
-    ```yaml
-    image:
-      repository: nginx
-    
-    greeting: hello
-    ```
+greeting: hello
+```
 
-=== "b.yml"
+`b.yml`
 
-    ```yaml
-    image:
-    tag: v1.0.0
-    
-    message: hello world
-    ```
+```yaml
+image:
+tag: v1.0.0
+
+message: hello world
+```

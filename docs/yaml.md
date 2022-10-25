@@ -2,7 +2,6 @@
 
 > works on [helm v3.10.1](https://github.com/helmwave/helmwave/blob/v0.24.0/go.mod)
 
-
 ## Project
 
 > Reserved for future.
@@ -28,7 +27,6 @@ In the future it is planned to check major compatibility.
 
 - [private oci](../examples/oci-private)
 - [github oci](../examples/oci-private)
-
 
 ## Repositories[]
 
@@ -170,7 +168,6 @@ releases:
   - a
   - memcached
 
-
 - name: memcached-b
   namespace: test
   chart:
@@ -180,8 +177,7 @@ releases:
   - memcached
 ```
 
-
-Match all redis
+Match all redises:
 
 ```bash
 helmwave build -t redis
@@ -191,8 +187,7 @@ helmwave build -t redis
           - redis-b@test
 ```
 
-
-Match the group `a`
+Match the group `a`:
 
 ```bash
 helmwave build -t a 
@@ -202,8 +197,16 @@ helmwave build -t a
           - memcached-a@test
 ```
 
+Match multiply groups:
 
-Match multiply group.
+```bash
+helmwave build -t redis,a 
+[🙃 aka INFO]: 🏗 Plan
+        releases: 
+          - redis-a@test
+          - redis-b@test
+          - memcached-a@test
+```
 
 If you know SQL. It looks like that:
 
@@ -242,7 +245,6 @@ helmwave build -t redis -t a --match-all-tags
 > It allows waiting releases
 
 It works when you call `$ helmwave up`
-
 
 Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application
 
@@ -331,7 +333,6 @@ You can change delimiter that helmwave uses to render values.
 Allows to disable templating values at all.
 
 [example](../examples/values-render-flag)
-
 
 ### strict
 

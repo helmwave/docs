@@ -6,7 +6,7 @@ If you want to install each application in your own namespace.
 
 **Project structure**
 
-```yaml
+```console
 ├── README.md
 ├── helmwave.yml.tpl
 ├── values
@@ -44,8 +44,6 @@ You will get it
 {% include "helmwave.yml" %}
 ```
 
-
-
 **Step 4. Build plan**
 
 ```shell
@@ -64,7 +62,6 @@ helmwave up
 looks how to work [HELMWAVE_TAGS](../../yaml/#tags)
 
 ## CI/CD with Gitlab-CI
-
 
 ```yaml
 {% include ".gitlab-ci.yml" %}

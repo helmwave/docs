@@ -8,7 +8,6 @@ Sometimes we need to disable render values. For example prometheus rules.
 {% include "values.yml" %}
 ```
 
-
 `cat helmwave.yml`
 ```yaml
 {% include "helmwave.yml" %}

@@ -7,7 +7,6 @@ export CI_ENVIRONMENT_NAME=stage
 helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f values/$CI_ENVIRONMENT_NAME.yaml
 ```
 
-
 **Project structure**
 
 ```
@@ -20,37 +19,35 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
     └── stage.yml
 ```
 
-Create `helmwave.yml.tpl`
-
+`cat helmwave.yml.tpl`
 
 ```yaml
 {% include "helmwave.yml.tpl" %}
 ```
 
-=== "values/_.yml"
+`cat values/_.yml`
 
-    ```yaml
-    {% include "values/_.yml" %}
-    ```
+```yaml
+{% include "values/_.yml" %}
+```
 
-=== "values/prod.yml"
+`cat values/prod.yml`
 
-    ```yaml
-    {% include "values/prod.yml" %}
-    ```
+```yaml
+{% include "values/prod.yml" %}
+```
 
-=== "values/qa.yml"
+`cat values/qa.yml`
 
-    ```yaml
-    {% include "values/qa.yml" %}
-    ```
+```yaml
+{% include "values/qa.yml" %}
+```
 
-=== "values/stage.yml"
+`cat values/stage.yml`
 
-    ```yaml
-    {% include "values/stage.yml" %}
-    ```
-
+```yaml
+{% include "values/stage.yml" %}
+```
 
 **Run**
 

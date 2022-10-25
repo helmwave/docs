@@ -2,7 +2,6 @@
 
 Learn more about GitLab Helm Registry: https://docs.gitlab.com/ee/user/packages/helm_repository/
 
-
 ```console
 .
 ├── README.md
@@ -10,7 +9,6 @@ Learn more about GitLab Helm Registry: https://docs.gitlab.com/ee/user/packages/
 ```
 
 **Suppose the `helmwave.yml.tpl` looks like**
-
 
 ```yaml
 {% include "helmwave.yml.tpl" %}

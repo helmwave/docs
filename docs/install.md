@@ -38,13 +38,11 @@ wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwav
 mv helmwave /usr/local/bin/
 ```
 
-
 ---
 
 ## 🪟 Windows
 
-!!! attention "We haven't tried running this on Windows."
-
+**!!! Attention "We haven't tried running this on Windows."**
 
 Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
@@ -75,7 +73,6 @@ docker run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:0
 0.24.0
 #
 ```
-
 
 **Use [scratch image](https://hub.docker.com/_/scratch)**
 
