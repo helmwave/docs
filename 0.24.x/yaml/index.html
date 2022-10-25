@@ -980,7 +980,6 @@
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">memcached</span><span class="w"></span>
 
-
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">memcached-b</span><span class="w"></span>
 <span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
 <span class="w">  </span><span class="nt">chart</span><span class="p">:</span><span class="w"></span>
@@ -989,21 +988,28 @@
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">memcached</span><span class="w"></span>
 </code></pre></div>
-<p>Match all redis</p>
+<p>Match all redises:</p>
 <div class="highlight"><pre><span></span><code>helmwave build -t redis
 <span class="o">[</span>🙃 aka INFO<span class="o">]</span>: 🏗 Plan
         releases: 
           - redis-a@test
           - redis-b@test
 </code></pre></div>
-<p>Match the group <code>a</code></p>
+<p>Match the group <code>a</code>:</p>
 <div class="highlight"><pre><span></span><code>helmwave build -t a 
 <span class="o">[</span>🙃 aka INFO<span class="o">]</span>: 🏗 Plan
         releases: 
           - redis-a@test
           - memcached-a@test
 </code></pre></div>
-<p>Match multiply group.</p>
+<p>Match multiply groups:</p>
+<div class="highlight"><pre><span></span><code>helmwave build -t redis,a 
+<span class="o">[</span>🙃 aka INFO<span class="o">]</span>: 🏗 Plan
+        releases: 
+          - redis-a@test
+          - redis-b@test
+          - memcached-a@test
+</code></pre></div>
 <p>If you know SQL. It looks like that:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">releases</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">"redis"</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">"a"</span><span class="w"></span>
 </code></pre></div>

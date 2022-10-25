@@ -878,14 +878,14 @@
 <p>If you want to install each application in your own namespace. </p>
 <h2 id="create-the-project">Create the project</h2>
 <p><strong>Project structure</strong></p>
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">├── README.md</span><span class="w"></span>
-<span class="l l-Scalar l-Scalar-Plain">├── helmwave.yml.tpl</span><span class="w"></span>
-<span class="l l-Scalar l-Scalar-Plain">├── values</span><span class="w"></span>
-<span class="l l-Scalar l-Scalar-Plain">│</span><span class="err">  </span><span class="l l-Scalar l-Scalar-Plain"> ├── harbor.yml</span><span class="w"></span>
-<span class="l l-Scalar l-Scalar-Plain">│</span><span class="err">  </span><span class="l l-Scalar l-Scalar-Plain"> ├── minio.yml</span><span class="w"></span>
-<span class="l l-Scalar l-Scalar-Plain">│</span><span class="err">  </span><span class="l l-Scalar l-Scalar-Plain"> ├── plantuml.yml</span><span class="w"></span>
-<span class="l l-Scalar l-Scalar-Plain">│</span><span class="err">  </span><span class="l l-Scalar l-Scalar-Plain"> └── renovate.yml</span><span class="w"></span>
-<span class="l l-Scalar l-Scalar-Plain">└── vars.yaml</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="go">├── README.md</span>
+<span class="go">├── helmwave.yml.tpl</span>
+<span class="go">├── values</span>
+<span class="go">│   ├── harbor.yml</span>
+<span class="go">│   ├── minio.yml</span>
+<span class="go">│   ├── plantuml.yml</span>
+<span class="go">│   └── renovate.yml</span>
+<span class="go">└── vars.yaml</span>
 </code></pre></div>
 <p><strong>Step 1. Create <code>helmwave.yml.tpl</code></strong></p>
 <div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.24.0</span><span class="w"></span>
