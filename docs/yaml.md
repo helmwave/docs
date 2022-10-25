@@ -185,7 +185,7 @@ releases:
   - memcached
 ```
 
-##### Match all redises
+#### Match all redises
 
 ```bash
 helmwave build -t redis
@@ -195,7 +195,7 @@ helmwave build -t redis
           - redis-b@test
 ```
 
-##### Match the group `a`
+#### Match the group `a`
 
 ```bash
 helmwave build -t a 
@@ -205,7 +205,7 @@ helmwave build -t a
           - memcached-a@test
 ```
 
-##### Match any tags
+#### Match any tags
 
 If you know SQL. It looks like that:
 
@@ -222,7 +222,7 @@ helmwave build -t redis -t a
           - memcached-a@test
 ```
 
-##### Match all tags
+#### Match all tags
 
 All that was above, we used the logical `OR` operator.
 If you need strongly logic with `AND` you should use `--match-all-tags` flag. 
