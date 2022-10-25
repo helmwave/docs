@@ -2,7 +2,7 @@
 
 > Works on [helm v3.10.1](https://github.com/helmwave/helmwave/blob/v0.24.0/go.mod)
 
-# `helmwave.yml`
+# helmwave.yml
 
 |    field     | required |  type  | default |
 | :----------: | :------: | :----: | :-----: |
@@ -12,11 +12,11 @@
 |  registries  |    🙅     | array  |   []    |
 |   releases   |    🙅     | array  |   []    |
 
-## `project`
+## project
 
 > Reserved for future.
 
-## `version`
+## version
 
 > Helmwave will check current version and project version.
 
@@ -55,15 +55,15 @@ In the future it is planned to check major compatibility.
 
 This repository will be stored in local helm repositories database.
 
-### `name`
+### name
 
 Local name alias.
 
-### `url`
+### url
 
 URL of the repository.
 
-### `force`
+### force
 
 Update existing repository exists if settings differ.
 
@@ -102,29 +102,29 @@ Update existing repository exists if settings differ.
 |            wait             |    🙅     |       bool       |  false  |                  |       ✅       |
 |        wait_for_jobs        |    🙅     |       bool       |  false  |                  |       ✅       |
 
-### `name`
+### name
 
 Release name. I hope you know what it is.
 
-### `namespace`
+### namespace
 
 Kubernetes namespace
 
-### `create_namespace`
+### create_namespace
 
 If `true` Helmwave will create the release namespace if not present.
 
-### `timeout`
+### timeout
 
 Time to wait for release to install.
 
-### `store` 🗳️
+### store 🗳️
 
 It allows to pass your custom fields from `helmwave.yml` to values.
 
 [example](../examples/store-greeting-hello/)
 
-### `tags` 🔖
+### tags 🔖
 
 It allows you to choose releases for build
 
@@ -235,7 +235,7 @@ helmwave build --match-all-tags -t redis -t a
           - redis-a@test
 ```
 
-### `depends_on`
+### depends_on
 
 It allows to set explicit dependencies between releases. Dependant release will start upgrading only after all it's dependencies finished upgrading
 
@@ -265,11 +265,11 @@ releases:
     namespace: test
 ```
 
-### `allow_failure`
+### allow_failure
 
 Allows all dependant releases to proceed even if release failed.
 
-### `pending_release_strategy`
+### pending_release_strategy
 
 Strategy to handle releases in pending statuses (`pending-install`, `pending-upgrade`, `pending-rollback`)
 
@@ -279,13 +279,13 @@ If helmwave tries to upgrade release that is currently in one of pending statuse
 - `rollback` - rollback release to previous version. Upgrade will happen after rollback is complete
 - `uninstall` - uninstall release. Upgrade will happen after uninstall is complete
 
-### `context`
+### context
 
 Allows to use custom kubecontext for release.
 
 **Kubedog cannot be enabled when there are releases in multiple contexts.**
 
-### `post_renderer`
+### post_renderer
 
 You can use custom commands to change rendered manifests.
 
@@ -317,19 +317,19 @@ You can use custom commands to change rendered manifests.
 |     strict      |    🙅     |  bool  |  false  |
 |     render      |    🙅     |  bool  |  true   |
 
-### `delimiter_left`, `delimiter_right`
+### delimiter_left, delimiter_right
 
 You can change delimiter that helmwave uses to render values.
 
 [example](../examples/values-delimiter-flags/)
 
-### `render`
+### render
 
 Allows to disable templating values at all.
 
 [example](../examples/values-render-flag)
 
-### `strict`
+### strict
 
 Allows to fail if values file doesn't exist.
 
@@ -343,16 +343,16 @@ Allows to fail if values file doesn't exist.
 |   tag    |    🙅     | string |   ""    |
 | optional |    🙅     |  bool  |  false  |
 
-### `name`
+### name
 
 Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in plan, it will be added to plan.
 
-### `tag`
+### tag
 
 You can include all releases that match this tag to be added as dependencies. If tag is not in plan, it will be added to plan.
 
 The planfile (`.helmwave/planfile` by default) will have normalized list of releases instead of tags.
 
-### `optional`
+### optional
 
 If dependency is not found in all available releases, helmwave will not fail due to missing dependency.
