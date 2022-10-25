@@ -2,7 +2,7 @@
 
 > Works on [helm v3.10.1](https://github.com/helmwave/helmwave/blob/v0.24.0/go.mod)
 
-## helmwave.yml
+# helmwave.yml aka planfile
 
 |    field     | required |  type  | default |
 | :----------: | :------: | :----: | :-----: |
@@ -343,7 +343,7 @@ Allows to fail if values file doesn't exist.
 |   tag    |    🙅     | string |   ""    |
 | optional |    🙅     |  bool  |  false  |
 
-### name
+### `name`
 
 Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in plan, it will be added to plan.
 
