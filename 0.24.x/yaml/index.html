@@ -367,7 +367,7 @@
 <blockquote>
 <p>Works on <a href="https://github.com/helmwave/helmwave/blob/v0.24.0/go.mod">helm v3.10.1</a></p>
 </blockquote>
-<h1 id="helmwaveyml">helmwave.yml</h1>
+<h1 id="helmwaveyml"><code>helmwave.yml</code></h1>
 <table>
 <thead>
 <tr>
@@ -410,11 +410,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="project">project</h2>
+<h2 id="project"><code>project</code></h2>
 <blockquote>
 <p>Reserved for future.</p>
 </blockquote>
-<h2 id="version">version</h2>
+<h2 id="version"><code>version</code></h2>
 <blockquote>
 <p>Helmwave will check current version and project version.</p>
 </blockquote>
@@ -538,11 +538,11 @@
 </tbody>
 </table>
 <p>This repository will be stored in local helm repositories database.</p>
-<h3 id="name">name</h3>
+<h3 id="name"><code>name</code></h3>
 <p>Local name alias.</p>
-<h3 id="url">url</h3>
+<h3 id="url"><code>url</code></h3>
 <p>URL of the repository.</p>
-<h3 id="force">force</h3>
+<h3 id="force"><code>force</code></h3>
 <p>Update existing repository exists if settings differ.</p>
 <h2 id="releases">Releases[]</h2>
 <blockquote>
@@ -786,18 +786,18 @@
 </tr>
 </tbody>
 </table>
-<h3 id="name_1">name</h3>
+<h3 id="name_1"><code>name</code></h3>
 <p>Release name. I hope you know what it is.</p>
-<h3 id="namespace">namespace</h3>
+<h3 id="namespace"><code>namespace</code></h3>
 <p>Kubernetes namespace</p>
-<h3 id="create_namespace">create_namespace</h3>
+<h3 id="create_namespace"><code>create_namespace</code></h3>
 <p>If <code>true</code> Helmwave will create the release namespace if not present.</p>
-<h3 id="timeout">timeout</h3>
+<h3 id="timeout"><code>timeout</code></h3>
 <p>Time to wait for release to install.</p>
-<h3 id="store">store 🗳️</h3>
+<h3 id="store"><code>store</code> 🗳️</h3>
 <p>It allows to pass your custom fields from <code>helmwave.yml</code> to values.</p>
 <p><a href="../examples/store-greeting-hello/">example</a></p>
-<h3 id="tags">tags 🔖</h3>
+<h3 id="tags"><code>tags</code> 🔖</h3>
 <p>It allows you to choose releases for build</p>
 <p>It works with next options when you call <code>helmwave build</code> (or <code>helmwave up --build</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="go">--tags value, -t value  It allows you choose releases for build. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]</span>
@@ -849,21 +849,21 @@
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">memcached</span><span class="w"></span>
 </code></pre></div>
-<h5 id="match-all-redises">Match all redises</h5>
+<h4 id="match-all-redises">Match all redises</h4>
 <div class="highlight"><pre><span></span><code>helmwave build -t redis
 <span class="o">[</span>🙃 aka INFO<span class="o">]</span>: 🏗 Plan
         releases: 
           - redis-a@test
           - redis-b@test
 </code></pre></div>
-<h5 id="match-the-group-a">Match the group <code>a</code></h5>
+<h4 id="match-the-group-a">Match the group <code>a</code></h4>
 <div class="highlight"><pre><span></span><code>helmwave build -t a 
 <span class="o">[</span>🙃 aka INFO<span class="o">]</span>: 🏗 Plan
         releases: 
           - redis-a@test
           - memcached-a@test
 </code></pre></div>
-<h5 id="match-any-tags">Match any tags</h5>
+<h4 id="match-any-tags">Match any tags</h4>
 <p>If you know SQL. It looks like that:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">releases</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">"redis"</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">"a"</span><span class="w"></span>
 </code></pre></div>
@@ -874,7 +874,7 @@
           - redis-b@test
           - memcached-a@test
 </code></pre></div>
-<h5 id="match-all-tags">Match all tags</h5>
+<h4 id="match-all-tags">Match all tags</h4>
 <p>All that was above, we used the logical <code>OR</code> operator.
 If you need strongly logic with <code>AND</code> you should use <code>--match-all-tags</code> flag. 
 This flag changes logic for query releases.</p>
@@ -883,7 +883,7 @@ This flag changes logic for query releases.</p>
         releases: 
           - redis-a@test
 </code></pre></div>
-<h3 id="depends_on">depends_on</h3>
+<h3 id="depends_on"><code>depends_on</code></h3>
 <p>It allows to set explicit dependencies between releases. Dependant release will start upgrading only after all it's dependencies finished upgrading</p>
 <p>Example for <a href="https://searchsoftwarequality.techtarget.com/definition/3-tier-application">3-tier</a> application</p>
 <div class="mermaid">graph LR
@@ -905,9 +905,9 @@ This flag changes logic for query releases.</p>
 <span class="w">    </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
 </code></pre></div>
-<h3 id="allow_failure">allow_failure</h3>
+<h3 id="allow_failure"><code>allow_failure</code></h3>
 <p>Allows all dependant releases to proceed even if release failed.</p>
-<h3 id="pending_release_strategy">pending_release_strategy</h3>
+<h3 id="pending_release_strategy"><code>pending_release_strategy</code></h3>
 <p>Strategy to handle releases in pending statuses (<code>pending-install</code>, <code>pending-upgrade</code>, <code>pending-rollback</code>)</p>
 <p>If helmwave tries to upgrade release that is currently in one of pending statuses it will follow specified strategy:</p>
 <ul>
@@ -915,10 +915,10 @@ This flag changes logic for query releases.</p>
 <li><code>rollback</code> - rollback release to previous version. Upgrade will happen after rollback is complete</li>
 <li><code>uninstall</code> - uninstall release. Upgrade will happen after uninstall is complete</li>
 </ul>
-<h3 id="context">context</h3>
+<h3 id="context"><code>context</code></h3>
 <p>Allows to use custom kubecontext for release.</p>
 <p><strong>Kubedog cannot be enabled when there are releases in multiple contexts.</strong></p>
-<h3 id="post_renderer">post_renderer</h3>
+<h3 id="post_renderer"><code>post_renderer</code></h3>
 <p>You can use custom commands to change rendered manifests.</p>
 <h2 id="chart">Chart</h2>
 <table>
@@ -1045,13 +1045,13 @@ This flag changes logic for query releases.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="delimiter_left-delimiter_right">delimiter_left, delimiter_right</h3>
+<h3 id="delimiter_left-delimiter_right"><code>delimiter_left</code>, <code>delimiter_right</code></h3>
 <p>You can change delimiter that helmwave uses to render values.</p>
 <p><a href="../examples/values-delimiter-flags/">example</a></p>
-<h3 id="render">render</h3>
+<h3 id="render"><code>render</code></h3>
 <p>Allows to disable templating values at all.</p>
 <p><a href="../examples/values-render-flag">example</a></p>
-<h3 id="strict">strict</h3>
+<h3 id="strict"><code>strict</code></h3>
 <p>Allows to fail if values file doesn't exist.</p>
 <p><a href="../examples/values-strict-flag">example</a></p>
 <h2 id="depends_on_1">Depends_on[]</h2>
@@ -1085,12 +1085,12 @@ This flag changes logic for query releases.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="name_2">name</h3>
+<h3 id="name_2"><code>name</code></h3>
 <p>Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in plan, it will be added to plan.</p>
-<h3 id="tag">tag</h3>
+<h3 id="tag"><code>tag</code></h3>
 <p>You can include all releases that match this tag to be added as dependencies. If tag is not in plan, it will be added to plan.</p>
 <p>The planfile (<code>.helmwave/planfile</code> by default) will have normalized list of releases instead of tags.</p>
-<h3 id="optional">optional</h3>
+<h3 id="optional"><code>optional</code></h3>
 <p>If dependency is not found in all available releases, helmwave will not fail due to missing dependency.</p>
 </article>
 </div>
