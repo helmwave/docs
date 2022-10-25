@@ -2,7 +2,7 @@
 
 > Works on [helm v3.10.1](https://github.com/helmwave/helmwave/blob/v0.24.0/go.mod)
 
-# helmwave.yml aka planfile
+## helmwave.yml aka planfile
 
 |    field     | required |  type  | default |
 | :----------: | :------: | :----: | :-----: |
