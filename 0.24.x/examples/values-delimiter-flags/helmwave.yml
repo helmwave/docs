@@ -13,5 +13,6 @@ releases:
     <<: *options
     chart: bitnami/nginx
     values:
-      - src: this_file_does_not_exist.yml
-        strict: true
+      - src: values.yml
+        delimiter_left: "[["
+        delimiter_right: "]]"

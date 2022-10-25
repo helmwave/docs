@@ -9,7 +9,7 @@
 <meta content="Dmitriy Zhilyaev" name="author"/>
 <link href="https://helmwave.github.io/0.24.x/yaml/" rel="canonical"/>
 <link href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico" rel="icon"/>
-<meta content="mkdocs-1.4.1, mkdocs-material-8.5.6" name="generator"/>
+<meta content="mkdocs-1.4.1, mkdocs-material-8.5.7" name="generator"/>
 <title>Yaml - Helmwave</title>
 <link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
@@ -305,20 +305,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#chart-options">
-    Chart Options
-  </a>
-<nav aria-label="Chart Options" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#values-option">
-    Values option
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#store">
     🗳️ Store
   </a>
@@ -341,6 +327,69 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#pending_release_strategy">
     pending_release_strategy
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#context">
+    context
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post_renderer">
+    post_renderer
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chart">
+    Chart
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#values">
+    Values[]
+  </a>
+<nav aria-label="Values[]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delimiter_left-delimiter_right">
+    delimiter_left, delimiter_right
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#render">
+    render
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strict">
+    strict
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#depends_on_1">
+    Depends_on[]
+  </a>
+<nav aria-label="Depends_on[]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#name_2">
+    name
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tag">
+    tag
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optional">
+    optional
   </a>
 </li>
 </ul>
@@ -479,7 +528,7 @@
 </a>
 <h1 id="yaml">Yaml</h1>
 <blockquote>
-<p>works on <a href="https://github.com/helmwave/helmwave/blob/v0.23.1/go.mod">helm v3.9.3</a></p>
+<p>works on <a href="https://github.com/helmwave/helmwave/blob/v0.24.0/go.mod">helm v3.10.1</a></p>
 </blockquote>
 <h2 id="project">Project</h2>
 <blockquote>
@@ -489,7 +538,7 @@
 <blockquote>
 <p>Helmwave will check current version and project version.</p>
 </blockquote>
-<p>In the future it is planned to be used for major compatibility. </p>
+<p>In the future it is planned to check major compatibility. </p>
 <h2 id="registries">Registries[]</h2>
 <blockquote>
 <p>OCI registries</p>
@@ -571,25 +620,31 @@
 <td align="center">""</td>
 </tr>
 <tr>
-<td align="center">certfile</td>
+<td align="center">certFile</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
 </tr>
 <tr>
-<td align="center">keyfile</td>
+<td align="center">keyFile</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
 </tr>
 <tr>
-<td align="center">cafile</td>
+<td align="center">caFile</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
 </tr>
 <tr>
-<td align="center">insecureskiptlsverify</td>
+<td align="center">insecure_skip_tls_verify</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">pass_credentials_all</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
@@ -612,7 +667,7 @@
 </blockquote>
 <h3 id="force">force</h3>
 <blockquote>
-<p>Don't skip if repository exists.</p>
+<p>Update existing repository exists if settings differ.</p>
 </blockquote>
 <h2 id="releases">Releases[]</h2>
 <blockquote>
@@ -655,11 +710,11 @@
 <td align="center">✅</td>
 </tr>
 <tr>
-<td align="center">description</td>
+<td align="center">store</td>
 <td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-<td align="center"></td>
+<td align="center">object</td>
+<td align="center">{}</td>
+<td align="center">✅</td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -667,14 +722,6 @@
 <td align="center">🙅</td>
 <td align="center">array</td>
 <td align="center">[]</td>
-<td align="center"></td>
-<td align="center">✅</td>
-</tr>
-<tr>
-<td align="center">allow_failure</td>
-<td align="center">🙅</td>
-<td align="center">bool</td>
-<td align="center">false</td>
 <td align="center"></td>
 <td align="center">✅</td>
 </tr>
@@ -695,18 +742,18 @@
 <td align="center"></td>
 </tr>
 <tr>
-<td align="center">store</td>
+<td align="center">post_renderer</td>
 <td align="center">🙅</td>
-<td align="center">object</td>
-<td align="center">{}</td>
+<td align="center">array</td>
+<td align="center">[]</td>
 <td align="center">✅</td>
-<td align="center"></td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">timeout</td>
 <td align="center">🙅</td>
 <td align="center">interval</td>
-<td align="center">0s</td>
+<td align="center">5m</td>
 <td align="center"></td>
 <td align="center">✅</td>
 </tr>
@@ -719,31 +766,31 @@
 <td align="center">✅</td>
 </tr>
 <tr>
-<td align="center">create_namespace</td>
+<td align="center">context</td>
 <td align="center">🙅</td>
-<td align="center">bool</td>
-<td align="center">false</td>
+<td align="center">string</td>
+<td align="center">""</td>
 <td align="center"></td>
 <td align="center">✅</td>
 </tr>
 <tr>
-<td align="center">reset_values</td>
+<td align="center">description</td>
 <td align="center">🙅</td>
-<td align="center">bool</td>
-<td align="center">false</td>
+<td align="center">string</td>
+<td align="center">""</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">pending_release_strategy</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
 <td align="center"></td>
 <td align="center">✅</td>
 </tr>
 <tr>
-<td align="center">recreate</td>
-<td align="center">🙅</td>
-<td align="center">bool</td>
-<td align="center">false</td>
-<td align="center"></td>
-<td align="center">✅</td>
-</tr>
-<tr>
-<td align="center">force</td>
+<td align="center">allow_failure</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
@@ -767,7 +814,15 @@
 <td align="center">✅</td>
 </tr>
 <tr>
-<td align="center">subnotes</td>
+<td align="center">create_namespace</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td align="center">devel</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
@@ -791,7 +846,7 @@
 <td align="center">✅</td>
 </tr>
 <tr>
-<td align="center">wait_for_jobs</td>
+<td align="center">force</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
@@ -799,7 +854,23 @@
 <td align="center">✅</td>
 </tr>
 <tr>
-<td align="center">wait</td>
+<td align="center">recreate</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td align="center">reset_values</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td align="center">reuse_values</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
@@ -815,7 +886,7 @@
 <td align="center">✅</td>
 </tr>
 <tr>
-<td align="center">devel</td>
+<td align="center">sub_notes</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
@@ -823,7 +894,15 @@
 <td align="center">✅</td>
 </tr>
 <tr>
-<td align="center">reuse_values</td>
+<td align="center">wait</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+<td align="center"></td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td align="center">wait_for_jobs</td>
 <td align="center">🙅</td>
 <td align="center">bool</td>
 <td align="center">false</td>
@@ -849,102 +928,6 @@
 <blockquote>
 <p>time to wait for any individual Kubernetes operation</p>
 </blockquote>
-<h3 id="chart-options">Chart Options</h3>
-<table>
-<thead>
-<tr>
-<th align="center">field</th>
-<th align="center">required</th>
-<th align="center">type</th>
-<th align="center">default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><strong>name</strong></td>
-<td align="center">✅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-</tr>
-<tr>
-<td align="center"><strong>version</strong></td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-</tr>
-<tr>
-<td align="center">username</td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-</tr>
-<tr>
-<td align="center">password</td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-</tr>
-<tr>
-<td align="center">certfile</td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-</tr>
-<tr>
-<td align="center">keyfile</td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-</tr>
-<tr>
-<td align="center">cafile</td>
-<td align="center">🙅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-</tr>
-<tr>
-<td align="center">insecureskiptlsverify</td>
-<td align="center">🙅</td>
-<td align="center">bool</td>
-<td align="center">false</td>
-</tr>
-</tbody>
-</table>
-<h4 id="values-option">Values option</h4>
-<table>
-<thead>
-<tr>
-<th align="center">field</th>
-<th align="center">required</th>
-<th align="center">type</th>
-<th align="center">default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><strong>src</strong></td>
-<td align="center">✅</td>
-<td align="center">string</td>
-<td align="center">""</td>
-</tr>
-<tr>
-<td align="center"><strong>strict</strong></td>
-<td align="center">🙅</td>
-<td align="center">bool</td>
-<td align="center">false</td>
-</tr>
-<tr>
-<td align="center"><strong>render</strong></td>
-<td align="center">🙅</td>
-<td align="center">bool</td>
-<td align="center">true</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><code>render</code> this flag controls render behavior. <a href="../examples/values-render-flag">example</a></li>
-<li><code>strict</code> disable skip behavior. <a href="../examples/values-strict-flag">example</a></li>
-</ul>
 <h3 id="store">🗳️ Store</h3>
 <blockquote>
 <p>It allows to pass your custom fields from <code>helmwave.yml</code> to values.</p>
@@ -1066,7 +1049,7 @@ This flag changes logic for query releases.</p>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
 </code></pre></div>
 <h3 id="allow_failure">allow_failure</h3>
-<p>When <code>allow_failure</code> is set true. It allows the installation to proceed.</p>
+<p>Allows all dependant releases to proceed even if release failed.</p>
 <h3 id="pending_release_strategy">pending_release_strategy</h3>
 <blockquote>
 <p>Strategy to handle releases in pending statuses (<code>pending-install</code>, <code>pending-upgrade</code>, <code>pending-rollback</code>)</p>
@@ -1077,6 +1060,183 @@ This flag changes logic for query releases.</p>
 <li><code>rollback</code> - rollback release to previous version. Upgrade will happen after rollback is complete</li>
 <li><code>uninstall</code> - uninstall release. Upgrade will happen after uninstall is complete</li>
 </ul>
+<h3 id="context">context</h3>
+<p>Allows to use custom kubecontext for release.</p>
+<p><strong>Kubedog cannot be enabled when there are releases in multiple contexts.</strong></p>
+<h3 id="post_renderer">post_renderer</h3>
+<p>You can use custom commands to change rendered manifests.</p>
+<h2 id="chart">Chart</h2>
+<table>
+<thead>
+<tr>
+<th align="center">field</th>
+<th align="center">required</th>
+<th align="center">type</th>
+<th align="center">default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>name</strong></td>
+<td align="center">✅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center"><strong>version</strong></td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">username</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">password</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">cafile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">certfile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">keyfile</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">insecureskiptlsverify</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">keyring</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">passcredentialsall</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">verify</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>If chart is remote it will be downloaded into <code>.helmwave/charts</code> and downloaded archive will be used during deploy.</p>
+</blockquote>
+<h2 id="values">Values[]</h2>
+<table>
+<thead>
+<tr>
+<th align="center">field</th>
+<th align="center">required</th>
+<th align="center">type</th>
+<th align="center">default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>src</strong></td>
+<td align="center">✅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">delimiter_left</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">"{{"</td>
+</tr>
+<tr>
+<td align="center">delimiter_right</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">"}}"</td>
+</tr>
+<tr>
+<td align="center">strict</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">render</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="delimiter_left-delimiter_right">delimiter_left, delimiter_right</h3>
+<p>You can change delimiter that helmwave uses to render values.</p>
+<p><a href="../examples/values-delimiter-flags/">example</a></p>
+<h3 id="render">render</h3>
+<p>Allows to disable templating values at all.</p>
+<p><a href="../examples/values-render-flag">example</a></p>
+<h3 id="strict">strict</h3>
+<p>Allows to fail if values file doesn't exist.</p>
+<p><a href="../examples/values-strict-flag">example</a></p>
+<h2 id="depends_on_1">Depends_on[]</h2>
+<table>
+<thead>
+<tr>
+<th align="center">field</th>
+<th align="center">required</th>
+<th align="center">type</th>
+<th align="center">default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">name</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">tag</td>
+<td align="center">🙅</td>
+<td align="center">string</td>
+<td align="center">""</td>
+</tr>
+<tr>
+<td align="center">optional</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="name_2">name</h3>
+<p>Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in plan, it will be added to plan.</p>
+<h3 id="tag">tag</h3>
+<p>You can include all releases that match this tag to be added as dependencies. If tag is not in plan, it will be added to plan.</p>
+<p>The planfile (<code>.helmwave/planfile</code> by default) will have normalized list of releases instead of tags.</p>
+<h3 id="optional">optional</h3>
+<p>If dependency is not found in all available releases, helmwave will not fail due to missing dependency.</p>
 </article>
 </div>
 </div>
@@ -1145,7 +1305,7 @@ This flag changes logic for query releases.</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
-<script src="../assets/javascripts/bundle.078830c0.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+<script src="../assets/javascripts/bundle.8492ddcf.min.js"></script>
 <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
 </html>
