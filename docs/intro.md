@@ -47,7 +47,7 @@ With 🌊 helmwave you will become a superhero:
 |              **Planfile**              |                                            Yes                                            |                                          No                                           |                              No                               |
 |            Vault / AWS SSM             |                                        `gomplate`                                         |                                   custom functions                                    |                               ?                               |
 
-🌊 Helmwave is inspired by docker-compose, terraform and helmfile,
+🌊 Helmwave was inspired by docker-compose, terraform and helmfile.
 
 ---
 
