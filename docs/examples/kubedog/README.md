@@ -44,6 +44,6 @@ export HELMWAVE_AUTO_BUILD=true
 helmwave up
 ```
 
-Log with helmwave v0.23.1
+Log with helmwave v0.24.0
 
 ![img.png](img.png)

@@ -1,6 +1,6 @@
 # Yaml
 
-> works on [helm v3.9.3](https://github.com/helmwave/helmwave/blob/v0.23.1/go.mod)
+> works on [helm v3.10.1](https://github.com/helmwave/helmwave/blob/v0.24.0/go.mod)
 
 
 ## Project
@@ -11,7 +11,7 @@
 
 > Helmwave will check current version and project version.
 
-In the future it is planned to be used for major compatibility. 
+In the future it is planned to check major compatibility. 
 
 ## Registries[]
 
@@ -32,17 +32,18 @@ In the future it is planned to be used for major compatibility.
 
 ## Repositories[]
 
-|         field         | required |  type  | default |
-| :-------------------: | :------: | :----: | :-----: |
-|         name          |    ✅     | string |   ""    |
-|          url          |    ✅     |  url   |   ""    |
-|       username        |    🙅     | string |   ""    |
-|       password        |    🙅     | string |   ""    |
-|       certfile        |    🙅     | string |   ""    |
-|        keyfile        |    🙅     | string |   ""    |
-|        cafile         |    🙅     | string |   ""    |
-| insecureskiptlsverify |    🙅     |  bool  |  false  |
-|         force         |    🙅     |  bool  |  false  |
+|          field           | required |  type  | default |
+| :----------------------: | :------: | :----: | :-----: |
+|           name           |    ✅     | string |   ""    |
+|           url            |    ✅     |  url   |   ""    |
+|         username         |    🙅     | string |   ""    |
+|         password         |    🙅     | string |   ""    |
+|         certFile         |    🙅     | string |   ""    |
+|         keyFile          |    🙅     | string |   ""    |
+|          caFile          |    🙅     | string |   ""    |
+| insecure_skip_tls_verify |    🙅     |  bool  |  false  |
+|   pass_credentials_all   |    🙅     |  bool  |  false  |
+|          force           |    🙅     |  bool  |  false  |
 
 ### name
 
@@ -54,9 +55,7 @@ In the future it is planned to be used for major compatibility.
 
 ### force
 
-> Don't skip if repository exists.
-
-
+> Update existing repository exists if settings differ.
 
 ## Releases[]
 
@@ -67,28 +66,31 @@ In the future it is planned to be used for major compatibility.
 |          **name**           |    ✅     |      string      |   ""    |        ✅         |       ✅       |
 |        **namespace**        |    ✅     |      string      |   ""    |        ✅         |       ✅       |
 |          **chart**          |    ✅     | string or object |   {}    |        ✅         |       ✅       |
-|         description         |    🙅     |      string      |   ""    |                  |               |
+|            store            |    🙅     |      object      |   {}    |        ✅         |               |
 |         depends_on          |    🙅     |      array       |   []    |                  |       ✅       |
-|        allow_failure        |    🙅     |       bool       |  false  |                  |       ✅       |
 |           values            |    🙅     |      array       |   []    |        ✅         |       ✅       |
 |            tags             |    🙅     |      array       |   []    |        ✅         |               |
-|            store            |    🙅     |      object      |   {}    |        ✅         |               |
-|           timeout           |    🙅     |     interval     |   0s    |                  |       ✅       |
+|        post_renderer        |    🙅     |      array       |   []    |        ✅         |       ✅       |
+|           timeout           |    🙅     |     interval     |   5m    |                  |       ✅       |
 |         max_history         |    🙅     |       int        |    0    |                  |       ✅       |
-|      create_namespace       |    🙅     |       bool       |  false  |                  |       ✅       |
-|        reset_values         |    🙅     |       bool       |  false  |                  |       ✅       |
-|          recreate           |    🙅     |       bool       |  false  |                  |       ✅       |
-|            force            |    🙅     |       bool       |  false  |                  |       ✅       |
+|           context           |    🙅     |      string      |   ""    |                  |       ✅       |
+|         description         |    🙅     |      string      |   ""    |                  |               |
+|  pending_release_strategy   |    🙅     |      string      |   ""    |                  |       ✅       |
+|        allow_failure        |    🙅     |       bool       |  false  |                  |       ✅       |
 |           atomic            |    🙅     |       bool       |  false  |                  |       ✅       |
 |       cleanup_on_fail       |    🙅     |       bool       |  false  |                  |       ✅       |
-|          subnotes           |    🙅     |       bool       |  false  |                  |       ✅       |
+|      create_namespace       |    🙅     |       bool       |  false  |                  |       ✅       |
+|            devel            |    🙅     |       bool       |  false  |                  |       ✅       |
 |        disable_hooks        |    🙅     |       bool       |  false  |                  |       ✅       |
 | disable_open_api_validation |    🙅     |       bool       |  false  |                  |       ✅       |
-|        wait_for_jobs        |    🙅     |       bool       |  false  |                  |       ✅       |
-|            wait             |    🙅     |       bool       |  false  |                  |       ✅       |
-|          skip_crds          |    🙅     |       bool       |  false  |                  |       ✅       |
-|            devel            |    🙅     |       bool       |  false  |                  |       ✅       |
+|            force            |    🙅     |       bool       |  false  |                  |       ✅       |
+|          recreate           |    🙅     |       bool       |  false  |                  |       ✅       |
+|        reset_values         |    🙅     |       bool       |  false  |                  |       ✅       |
 |        reuse_values         |    🙅     |       bool       |  false  |                  |       ✅       |
+|          skip_crds          |    🙅     |       bool       |  false  |                  |       ✅       |
+|          sub_notes          |    🙅     |       bool       |  false  |                  |       ✅       |
+|            wait             |    🙅     |       bool       |  false  |                  |       ✅       |
+|        wait_for_jobs        |    🙅     |       bool       |  false  |                  |       ✅       |
 
 ### name
 
@@ -100,7 +102,6 @@ I hope you know what it is.
 
 > Kubernetes namespace
 
-
 ### create_namespace
 
 > if `true` Helmwave will create the release namespace if not present
@@ -109,34 +110,6 @@ I hope you know what it is.
 
 >  time to wait for any individual Kubernetes operation
 
-### Chart Options
-
-
-|         field         | required |  type  | default |
-| :-------------------: | :------: | :----: | :-----: |
-|       **name**        |    ✅     | string |   ""    |
-|      **version**      |    🙅     | string |   ""    |
-|       username        |    🙅     | string |   ""    |
-|       password        |    🙅     | string |   ""    |
-|       certfile        |    🙅     | string |   ""    |
-|        keyfile        |    🙅     | string |   ""    |
-|        cafile         |    🙅     | string |   ""    |
-| insecureskiptlsverify |    🙅     |  bool  |  false  |
-
-
-
-#### Values option
-
-|   field    | required |  type  | default |
-| :--------: | :------: | :----: | :-----: |
-|  **src**   |    ✅     | string |   ""    |
-| **strict** |    🙅     |  bool  |  false  |
-| **render** |    🙅     |  bool  |  true   |
-
-- `render` this flag controls render behavior. [example](../examples/values-render-flag)
-- `strict` disable skip behavior. [example](../examples/values-strict-flag)
-
-
 ### 🗳️ Store
 
 > It allows to pass your custom fields from `helmwave.yml` to values.
@@ -144,8 +117,6 @@ I hope you know what it is.
 It works when you call `$ helmwave build`
 
 [example](../examples/store-greeting-hello/)
-
-
 
 ### 🔖 Tags
 
@@ -299,7 +270,7 @@ releases:
 
 ### allow_failure
 
-When `allow_failure` is set true. It allows the installation to proceed.
+Allows all dependant releases to proceed even if release failed.
 
 ### pending_release_strategy
 
@@ -310,3 +281,82 @@ If helmwave tries to upgrade release that is currently in one of pending statuse
 - `""` (or not specified) - do nothing. Helm will fail in this case
 - `rollback` - rollback release to previous version. Upgrade will happen after rollback is complete
 - `uninstall` - uninstall release. Upgrade will happen after uninstall is complete
+
+### context
+
+Allows to use custom kubecontext for release.
+
+**Kubedog cannot be enabled when there are releases in multiple contexts.**
+
+### post_renderer
+
+You can use custom commands to change rendered manifests.
+
+## Chart
+
+|         field         | required |  type  | default |
+| :-------------------: | :------: | :----: | :-----: |
+|       **name**        |    ✅     | string |   ""    |
+|      **version**      |    🙅     | string |   ""    |
+|       username        |    🙅     | string |   ""    |
+|       password        |    🙅     | string |   ""    |
+|        cafile         |    🙅     | string |   ""    |
+|       certfile        |    🙅     | string |   ""    |
+|        keyfile        |    🙅     | string |   ""    |
+| insecureskiptlsverify |    🙅     |  bool  |  false  |
+|        keyring        |    🙅     | string |   ""    |
+|  passcredentialsall   |    🙅     |  bool  |  false  |
+|        verify         |    🙅     |  bool  |  false  |
+
+> If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during deploy.
+
+## Values[]
+
+|      field      | required |  type  | default |
+| :-------------: | :------: | :----: | :-----: |
+|     **src**     |    ✅     | string |   ""    |
+| delimiter_left  |    🙅     | string |  "{{"   |
+| delimiter_right |    🙅     | string |  "}}"   |
+|     strict      |    🙅     |  bool  |  false  |
+|     render      |    🙅     |  bool  |  true   |
+
+### delimiter_left, delimiter_right
+
+You can change delimiter that helmwave uses to render values.
+
+[example](../examples/values-delimiter-flags/)
+
+### render
+
+Allows to disable templating values at all.
+
+[example](../examples/values-render-flag)
+
+
+### strict
+
+Allows to fail if values file doesn't exist.
+
+[example](../examples/values-strict-flag)
+
+## Depends_on[]
+
+|  field   | required |  type  | default |
+| :------: | :------: | :----: | :-----: |
+|   name   |    🙅     | string |   ""    |
+|   tag    |    🙅     | string |   ""    |
+| optional |    🙅     |  bool  |  false  |
+
+### name
+
+Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in plan, it will be added to plan.
+
+### tag
+
+You can include all releases that match this tag to be added as dependencies. If tag is not in plan, it will be added to plan.
+
+The planfile (`.helmwave/planfile` by default) will have normalized list of releases instead of tags.
+
+### optional
+
+If dependency is not found in all available releases, helmwave will not fail due to missing dependency.

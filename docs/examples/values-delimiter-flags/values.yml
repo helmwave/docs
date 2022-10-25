@@ -1,0 +1,8 @@
+## Prometheus Exporter / Metrics
+##
+metrics:
+  service:
+    annotations:
+      service_name: [[requiredEnv "SERVICE_NAME" | quote]]
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "{{ .Values.metrics.service.port }}"
