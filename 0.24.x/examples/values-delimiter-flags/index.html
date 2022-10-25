@@ -858,7 +858,7 @@
 <span class="nt">metrics</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">service</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">annotations</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">service_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">requiredEnv &quot;SERVICE_NAME&quot; | quote</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<span class="w">      </span><span class="nt">service_name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">.Release.Store.metadata | quote</span><span class="p p-Indicator">]]</span><span class="w"></span>
 <span class="w">      </span><span class="nt">prometheus.io/scrape</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"></span>
 <span class="w">      </span><span class="nt">prometheus.io/port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">.Values.metrics.service.port</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 </code></pre></div>
@@ -877,6 +877,8 @@
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span><span class="w"></span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span><span class="w"></span>
+<span class="w">    </span><span class="nt">store</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">metadata</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">123</span><span class="w"></span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values.yml</span><span class="w"></span>
 <span class="w">        </span><span class="nt">delimiter_left</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;[[&quot;</span><span class="w"></span>
