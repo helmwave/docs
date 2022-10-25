@@ -226,9 +226,182 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Yaml
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Yaml
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#helmwaveyml-aka-planfile">
+    helmwave.yml aka planfile
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#project">
+    project
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#version">
+    version
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#registries">
+    Registries[]
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repositories">
+    Repositories[]
+  </a>
+<nav aria-label="Repositories[]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#name">
+    name
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#url">
+    url
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#force">
+    force
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#releases">
+    Releases[]
+  </a>
+<nav aria-label="Releases[]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#name_1">
+    name
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#namespace">
+    namespace
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create_namespace">
+    create_namespace
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#timeout">
+    timeout
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#store">
+    store 🗳️
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tags">
+    tags 🔖
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#depends_on">
+    depends_on
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#allow_failure">
+    allow_failure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pending_release_strategy">
+    pending_release_strategy
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#context">
+    context
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#post_renderer">
+    post_renderer
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chart">
+    Chart
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#values">
+    Values[]
+  </a>
+<nav aria-label="Values[]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delimiter_left-delimiter_right">
+    delimiter_left, delimiter_right
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#render">
+    render
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strict">
+    strict
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#depends_on_1">
+    Depends_on[]
+  </a>
+<nav aria-label="Depends_on[]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#name_2">
+    name
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tag">
+    tag
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optional">
+    optional
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../cli/">
@@ -367,7 +540,7 @@
 <blockquote>
 <p>Works on <a href="https://github.com/helmwave/helmwave/blob/v0.24.0/go.mod">helm v3.10.1</a></p>
 </blockquote>
-<h1 id="helmwaveyml-aka-planfile">helmwave.yml aka planfile</h1>
+<h2 id="helmwaveyml-aka-planfile">helmwave.yml aka planfile</h2>
 <table>
 <thead>
 <tr>
