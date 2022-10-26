@@ -45,7 +45,7 @@ With 🌊 helmwave you will become a superhero:
 |          manage render values          |                    `render` option and options for setting delimiters                     |                                   by file extension                                   |                               ?                               |
 |             Remote values              |                                      HTTP/HTTPS only                                      |                                      `go-getter`                                      |                               ?                               |
 |              **Planfile**              |                                            Yes                                            |                                          No                                           |                              No                               |
-|            Vault / AWS SSM             |                                        `gomplate`                                         |                                   custom functions                                    |                               ?                               |
+|            Vault / AWS SSM             |                                via `gomplate` datasources                                 |                                   custom functions                                    |                               ?                               |
 
 🌊 Helmwave was inspired by docker-compose, terraform and helmfile.
 
