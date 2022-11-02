@@ -9,8 +9,6 @@ Why Umbrella chart is evil?
 - Umbrella chart doesn't provide separate your environments.
 - When sub-chart modified you need fix it twice.
 
-
-
 Suppose that you need to describe next architecture.
 
 ```mermaid
@@ -24,4 +22,3 @@ graph LR
 ```yaml
 {% include "helmwave.yml" %}
 ```
-

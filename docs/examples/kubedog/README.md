@@ -16,19 +16,15 @@ Create `helmwave.yml`
 {% include "helmwave.yml" %}
 ```
 
-
-
 Then you should create `values.yml`
 
 ```yaml
 {% include "values.yml" %}
 ```
 
-
 We are going to use `commonAnnotations`. 
 
 > `commonAnnotations` is a part of bitnami common library [chart](https://github.com/bitnami/charts/tree/master/bitnami/common).
-
 
 **Run**
 
@@ -44,6 +40,6 @@ export HELMWAVE_AUTO_BUILD=true
 helmwave up
 ```
 
-Log with helmwave v0.23.1
+Log with helmwave v0.24.0
 
 ![img.png](img.png)

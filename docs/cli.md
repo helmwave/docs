@@ -8,13 +8,14 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.23.1
+   0.24.0
 
 DESCRIPTION:
    This tool helps you compose your helm releases!
    0. $ helmwave yml
    1. $ helmwave build
    2. $ helmwave up
+
 
 COMMANDS:
    build         🏗 Build a plan
@@ -26,6 +27,7 @@ COMMANDS:
    down          🔪 Delete all
    validate      🛂 Validate your plan
    yml           📄 Render helmwave.yml.tpl -> helmwave.yml
+   schema        Generate helmwave json schema
    version, ver  Show shorts version
    completion    Generate completion script
    help, h       Shows a list of commands or help for one command
@@ -42,36 +44,96 @@ GLOBAL OPTIONS:
 
 ## step #2: Working with plan
 
+### build
+
+Helmwave builds plan in complete plan directory (`.helmwave` by default) that other commands use.
+
+Plan includes:
+
+- Downloaded remote charts
+- Downloaded and templated all used values files
+- Rendered manifests for each release
+- Markdown file with dependencies graph as mermaid diagram
+- Rendered `helmwave.yml` that uses plan files (e.g. downloaded chart and values)
+
+```console
+NAME:
+   helmwave build - 🏗 Build a plan
+
+USAGE:
+   helmwave build [command options] [arguments...]
+
+OPTIONS:
+   --plandir value, -p value                          Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
+   --tags value, -t value [ --tags value, -t value ]  It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+   --match-all-tags                                   Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+   --diff-mode value                                  You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
+   --yml                                              Auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
+   --wide value                                       Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
+   --show-secret                                      Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
+   --tpl value                                        Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+   --file value, -f value                             Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+   --templater value                                  Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+   --help, -h                                         show help (default: false)
+```
 
 ### up
 
 Helmwave will install repositories and helm-releases from plan.
 
 ```console
-   --build                          auto build (default: false) [$HELMWAVE_AUTO_BUILD]
-   --kubedog                        Enable/Disable kubedog (default: false) [$HELMWAVE_KUBEDOG_ENABLED, $HELMWAVE_KUBEDOG]
-   --kubedog-status-interval value  Interval of kubedog status messages (default: 5s) [$HELMWAVE_KUBEDOG_STATUS_INTERVAL]
-   --kubedog-start-delay value      Delay kubedog start, don't make it too late (default: 1s) [$HELMWAVE_KUBEDOG_START_DELAY]
-   --kubedog-timeout value          Timeout of kubedog multitrackers (default: 5m0s) [$HELMWAVE_KUBEDOG_TIMEOUT]
-   --progress                       Enable progress logs of helm (INFO log level) (default: false) [$HELMWAVE_PROGRESS]
-   --plandir value, -p value        Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
-   --tags value, -t value           It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
-   --match-all-tags                 Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
-   --diff-mode value                You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
-   --yml                            Auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
-   --wide value                     Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
-   --show-secret                    Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
-   --tpl value                      Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-   --file value, -f value           Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-   --templater value                Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
-   --help, -h                       show help (default: false)
+NAME:
+   helmwave up - 🚢 Apply your plan
+
+USAGE:
+   helmwave up [command options] [arguments...]
+
+OPTIONS:
+   --build                                            auto build (default: false) [$HELMWAVE_AUTO_BUILD]
+   --kubedog                                          Enable/Disable kubedog (default: false) [$HELMWAVE_KUBEDOG_ENABLED, $HELMWAVE_KUBEDOG]
+   --kubedog-status-interval value                    Interval of kubedog status messages (default: 5s) [$HELMWAVE_KUBEDOG_STATUS_INTERVAL]
+   --kubedog-start-delay value                        Delay kubedog start, don't make it too late (default: 1s) [$HELMWAVE_KUBEDOG_START_DELAY]
+   --kubedog-timeout value                            Timeout of kubedog multitrackers (default: 5m0s) [$HELMWAVE_KUBEDOG_TIMEOUT]
+   --progress                                         Enable progress logs of helm (INFO log level) (default: false) [$HELMWAVE_PROGRESS]
+   --parallel-limit value                             Limit amount of parallel releases (default: 0) [$HELMWAVE_PARALLEL_LIMIT]
+   --plandir value, -p value                          Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
+   --tags value, -t value [ --tags value, -t value ]  It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+   --match-all-tags                                   Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+   --diff-mode value                                  You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
+   --yml                                              Auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
+   --wide value                                       Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
+   --show-secret                                      Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
+   --tpl value                                        Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+   --file value, -f value                             Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+   --templater value                                  Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+   --help, -h                                         show help (default: false)
 ```
-
-
 
 ### down
 
 Helmwave will uninstall helm-releases from plan.
+
+```console
+NAME:
+   helmwave down - 🔪 Delete all
+
+USAGE:
+   helmwave down [command options] [arguments...]
+
+OPTIONS:
+   --build                                            auto build (default: false) [$HELMWAVE_AUTO_BUILD]
+   --plandir value, -p value                          Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
+   --tags value, -t value [ --tags value, -t value ]  It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+   --match-all-tags                                   Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+   --diff-mode value                                  You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
+   --yml                                              Auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
+   --wide value                                       Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
+   --show-secret                                      Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
+   --tpl value                                        Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+   --file value, -f value                             Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+   --templater value                                  Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+   --help, -h                                         show help (default: false)
+```
 
 ```bash
 $ helmwave down      
@@ -101,7 +163,6 @@ $ helmwave ls
 
 Helmwave try getting status of helm-releases from plan.
 
-
 ```bash
 $ helmwave status      
 [🙃 aka INFO]: Status of frontend@test
@@ -125,7 +186,6 @@ $ helmwave status
         last deployed: 2021-11-10 04:41:23.270076 +0300 MSK
         status: deployed
         revision: 1
-
 ```
 
 ### rollback
@@ -142,7 +202,6 @@ $ helmwave rollback
 ### validate
 
 Helmwave will validate plan.
-
 
 ### diff
 
@@ -178,10 +237,9 @@ Helmwave supports several log-format
 |        file content        |        ❌         |   ❌    |    ✅    |    ✅    |    ✅    |    ✅    |
 | helm manifests, bug report |        ❌         |   ❌    |    ❌    |    ❌    |    ❌    |    ✅    |
 
-`info` is prefer.
+`info` is preferred loglevel.
 
 You can enable `--progress` flag for helm-debug output.
-
 
 ### How to use?
 
@@ -198,32 +256,28 @@ export HELMWAVE_LOG_COLOR=true
 helmwave <cmd>
 ```
 
-
 ---
-
 
 ## Get Version
 
 ### Long version
 
-
 ```bash
 $ helmwave --version  
-helmwave version 0.23.1
+helmwave version 0.24.0
 
 $ helmwave -v
-helmwave version 0.23.1
+helmwave version 0.24.0
 ```
-
 
 ### Short version
 
 ```bash
 $ helmwave version
-0.23.1
+0.24.0
 
 $ helmwave ver
-0.23.1
+0.24.0
 ```
 
 ## Completion
@@ -239,7 +293,6 @@ source <(helmwave completion bash)
 ```bash
 echo "source <(helmwave completion bash)" >> ~/.bashrc
 ```
-
 
 ![completion-bash](assets/completion-bash.png)
 

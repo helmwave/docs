@@ -1,17 +1,26 @@
 # Yaml
 
-> works on [helm v3.9.3](https://github.com/helmwave/helmwave/blob/v0.23.1/go.mod)
+> Works on [helm v3.10.1](https://github.com/helmwave/helmwave/blob/v0.24.0/go.mod)
 
+## helmwave.yml aka planfile
 
-## Project
+|    field     | required |  type  | default |
+| :----------: | :------: | :----: | :-----: |
+|   project    |    🙅     | string |   ""    |
+|   version    |    🙅     | string |   ""    |
+| repositories |    🙅     | array  |   []    |
+|  registries  |    🙅     | array  |   []    |
+|   releases   |    🙅     | array  |   []    |
+
+## project
 
 > Reserved for future.
 
-## Version
+## version
 
-> Helmwave will check current version and project version.
+Helmwave will check current version and project version.
 
-In the future it is planned to be used for major compatibility. 
+In the future it is planned to check major compatibility. 
 
 ## Registries[]
 
@@ -20,43 +29,43 @@ In the future it is planned to be used for major compatibility.
 |  field   | required |  type  | default |
 | :------: | :------: | :----: | :-----: |
 |   host   |    ✅     | string |   ""    |
-| username |          | string |   ""    |
-| password |          | string |   ""    |
-| insecure |          |  bool  |  false  |
+| username |    🙅     | string |   ""    |
+| password |    🙅     | string |   ""    |
+| insecure |    🙅     |  bool  |  false  |
 
 **Examples**
 
 - [private oci](../examples/oci-private)
 - [github oci](../examples/oci-private)
 
-
 ## Repositories[]
 
-|         field         | required |  type  | default |
-| :-------------------: | :------: | :----: | :-----: |
-|         name          |    ✅     | string |   ""    |
-|          url          |    ✅     |  url   |   ""    |
-|       username        |    🙅     | string |   ""    |
-|       password        |    🙅     | string |   ""    |
-|       certfile        |    🙅     | string |   ""    |
-|        keyfile        |    🙅     | string |   ""    |
-|        cafile         |    🙅     | string |   ""    |
-| insecureskiptlsverify |    🙅     |  bool  |  false  |
-|         force         |    🙅     |  bool  |  false  |
+|          field           | required |  type  | default |
+| :----------------------: | :------: | :----: | :-----: |
+|           name           |    ✅     | string |   ""    |
+|           url            |    ✅     |  url   |   ""    |
+|         username         |    🙅     | string |   ""    |
+|         password         |    🙅     | string |   ""    |
+|         certFile         |    🙅     | string |   ""    |
+|         keyFile          |    🙅     | string |   ""    |
+|          caFile          |    🙅     | string |   ""    |
+| insecure_skip_tls_verify |    🙅     |  bool  |  false  |
+|   pass_credentials_all   |    🙅     |  bool  |  false  |
+|          force           |    🙅     |  bool  |  false  |
+
+This repository will be stored in local helm repositories database.
 
 ### name
 
-> Local name alias
+Local name alias.
 
 ### url
 
-> URL for chart repository
+URL of the repository.
 
 ### force
 
-> Don't skip if repository exists.
-
-
+Update existing repository exists if settings differ.
 
 ## Releases[]
 
@@ -67,93 +76,61 @@ In the future it is planned to be used for major compatibility.
 |          **name**           |    ✅     |      string      |   ""    |        ✅         |       ✅       |
 |        **namespace**        |    ✅     |      string      |   ""    |        ✅         |       ✅       |
 |          **chart**          |    ✅     | string or object |   {}    |        ✅         |       ✅       |
-|         description         |    🙅     |      string      |   ""    |                  |               |
+|            store            |    🙅     |      object      |   {}    |        ✅         |               |
 |         depends_on          |    🙅     |      array       |   []    |                  |       ✅       |
-|        allow_failure        |    🙅     |       bool       |  false  |                  |       ✅       |
 |           values            |    🙅     |      array       |   []    |        ✅         |       ✅       |
 |            tags             |    🙅     |      array       |   []    |        ✅         |               |
-|            store            |    🙅     |      object      |   {}    |        ✅         |               |
-|           timeout           |    🙅     |     interval     |   0s    |                  |       ✅       |
+|        post_renderer        |    🙅     |      array       |   []    |        ✅         |       ✅       |
+|           timeout           |    🙅     |     interval     |   5m    |                  |       ✅       |
 |         max_history         |    🙅     |       int        |    0    |                  |       ✅       |
-|      create_namespace       |    🙅     |       bool       |  false  |                  |       ✅       |
-|        reset_values         |    🙅     |       bool       |  false  |                  |       ✅       |
-|          recreate           |    🙅     |       bool       |  false  |                  |       ✅       |
-|            force            |    🙅     |       bool       |  false  |                  |       ✅       |
+|           context           |    🙅     |      string      |   ""    |                  |       ✅       |
+|         description         |    🙅     |      string      |   ""    |                  |               |
+|  pending_release_strategy   |    🙅     |      string      |   ""    |                  |       ✅       |
+|        allow_failure        |    🙅     |       bool       |  false  |                  |       ✅       |
 |           atomic            |    🙅     |       bool       |  false  |                  |       ✅       |
 |       cleanup_on_fail       |    🙅     |       bool       |  false  |                  |       ✅       |
-|          subnotes           |    🙅     |       bool       |  false  |                  |       ✅       |
+|      create_namespace       |    🙅     |       bool       |  false  |                  |       ✅       |
+|            devel            |    🙅     |       bool       |  false  |                  |       ✅       |
 |        disable_hooks        |    🙅     |       bool       |  false  |                  |       ✅       |
 | disable_open_api_validation |    🙅     |       bool       |  false  |                  |       ✅       |
-|        wait_for_jobs        |    🙅     |       bool       |  false  |                  |       ✅       |
-|            wait             |    🙅     |       bool       |  false  |                  |       ✅       |
-|          skip_crds          |    🙅     |       bool       |  false  |                  |       ✅       |
-|            devel            |    🙅     |       bool       |  false  |                  |       ✅       |
+|            force            |    🙅     |       bool       |  false  |                  |       ✅       |
+|          recreate           |    🙅     |       bool       |  false  |                  |       ✅       |
+|        reset_values         |    🙅     |       bool       |  false  |                  |       ✅       |
 |        reuse_values         |    🙅     |       bool       |  false  |                  |       ✅       |
+|          skip_crds          |    🙅     |       bool       |  false  |                  |       ✅       |
+|          sub_notes          |    🙅     |       bool       |  false  |                  |       ✅       |
+|            wait             |    🙅     |       bool       |  false  |                  |       ✅       |
+|        wait_for_jobs        |    🙅     |       bool       |  false  |                  |       ✅       |
 
 ### name
 
-> Release name
-
-I hope you know what it is.
+Release name. I hope you know what it is.
 
 ### namespace
 
-> Kubernetes namespace
-
+Kubernetes namespace
 
 ### create_namespace
 
-> if `true` Helmwave will create the release namespace if not present
+If set to `true` Helmwave will create the release namespace if not present.
 
 ### timeout
 
->  time to wait for any individual Kubernetes operation
+Time to wait for release to install.
 
-### Chart Options
+### store 🗳️
 
-
-|         field         | required |  type  | default |
-| :-------------------: | :------: | :----: | :-----: |
-|       **name**        |    ✅     | string |   ""    |
-|      **version**      |    🙅     | string |   ""    |
-|       username        |    🙅     | string |   ""    |
-|       password        |    🙅     | string |   ""    |
-|       certfile        |    🙅     | string |   ""    |
-|        keyfile        |    🙅     | string |   ""    |
-|        cafile         |    🙅     | string |   ""    |
-| insecureskiptlsverify |    🙅     |  bool  |  false  |
-
-
-
-#### Values option
-
-|   field    | required |  type  | default |
-| :--------: | :------: | :----: | :-----: |
-|  **src**   |    ✅     | string |   ""    |
-| **strict** |    🙅     |  bool  |  false  |
-| **render** |    🙅     |  bool  |  true   |
-
-- `render` this flag controls render behavior. [example](../examples/values-render-flag)
-- `strict` disable skip behavior. [example](../examples/values-strict-flag)
-
-
-### 🗳️ Store
-
-> It allows to pass your custom fields from `helmwave.yml` to values.
-
-It works when you call `$ helmwave build`
+It allows to pass your custom fields from `helmwave.yml` to values.
 
 [example](../examples/store-greeting-hello/)
 
+### tags 🔖
 
+It allows you to choose releases for build
 
-### 🔖 Tags
+It works with next options when you call `helmwave build` (or `helmwave up --build`):
 
-> It allows you to choose releases for build
-
-It works with next options when you call `$ helmwave build`:
-
-```bash
+```console
 --tags value, -t value  It allows you choose releases for build. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
 --match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
 ```
@@ -199,7 +176,6 @@ releases:
   - a
   - memcached
 
-
 - name: memcached-b
   namespace: test
   chart:
@@ -209,8 +185,7 @@ releases:
   - memcached
 ```
 
-
-Match all redis
+**Match all redises**
 
 ```bash
 helmwave build -t redis
@@ -220,8 +195,7 @@ helmwave build -t redis
           - redis-b@test
 ```
 
-
-Match the group `a`
+**Match the group `a`**
 
 ```bash
 helmwave build -t a 
@@ -231,8 +205,7 @@ helmwave build -t a
           - memcached-a@test
 ```
 
-
-Match multiply group.
+**Match any tags**
 
 If you know SQL. It looks like that:
 
@@ -241,7 +214,7 @@ SELECT * FROM releases WHERE tag = "redis" OR tag = "a"
 ```
 
 ```bash
-helmwave build -t redis -t a
+helmwave build -t redis -t a 
 [🙃 aka INFO]: 🏗 Plan
         releases: 
           - redis-a@test
@@ -249,18 +222,14 @@ helmwave build -t redis -t a
           - memcached-a@test
 ```
 
+**Match all tags**
+
 All that was above, we used the logical `OR` operator.
 If you need strongly logic with `AND` you should use `--match-all-tags` flag. 
 This flag changes logic for query releases.
 
-If you know SQL. It looks like that:
-
-```sql
-SELECT * FROM releases WHERE tag = "redis" AND tag = "a"
-```
-
-```console
-helmwave build -t redis -t a --match-all-tags
+```bash
+helmwave build --match-all-tags -t redis -t a 
 [🙃 aka INFO]: 🏗 Plan
         releases: 
           - redis-a@test
@@ -268,10 +237,7 @@ helmwave build -t redis -t a --match-all-tags
 
 ### depends_on
 
-> It allows waiting releases
-
-It works when you call `$ helmwave up`
-
+It allows to set explicit dependencies between releases. Dependant release will start upgrading only after all it's dependencies finished upgrading
 
 Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application
 
@@ -280,16 +246,18 @@ graph LR
     frontend --> backend --> db;
 ```
 
-Your `helmwave.yml` will
+Your `helmwave.yml` should look like this:
 
 ```yaml
 releases:
   - name: frontend
-    depends_on: backend@test
+    depends_on:
+      - backend
     namespace: test
 
   - name: backend
-    depends_on: db@test
+    depends_on:
+      - db
     namespace: test
 
   - name: db
@@ -299,14 +267,92 @@ releases:
 
 ### allow_failure
 
-When `allow_failure` is set true. It allows the installation to proceed.
+Allows all dependant releases to proceed even if release failed.
 
 ### pending_release_strategy
 
-> Strategy to handle releases in pending statuses (`pending-install`, `pending-upgrade`, `pending-rollback`)
+Strategy to handle releases in pending statuses (`pending-install`, `pending-upgrade`, `pending-rollback`)
 
 If helmwave tries to upgrade release that is currently in one of pending statuses it will follow specified strategy:
 
 - `""` (or not specified) - do nothing. Helm will fail in this case
 - `rollback` - rollback release to previous version. Upgrade will happen after rollback is complete
 - `uninstall` - uninstall release. Upgrade will happen after uninstall is complete
+
+### context
+
+Allows to use custom kubecontext for release.
+
+**Kubedog cannot be enabled when there are releases in multiple contexts.**
+
+### post_renderer
+
+You can use custom commands to change rendered manifests.
+
+## Chart
+
+|         field         | required |  type  | default |
+| :-------------------: | :------: | :----: | :-----: |
+|       **name**        |    ✅     | string |   ""    |
+|      **version**      |    🙅     | string |   ""    |
+|       username        |    🙅     | string |   ""    |
+|       password        |    🙅     | string |   ""    |
+|        cafile         |    🙅     | string |   ""    |
+|       certfile        |    🙅     | string |   ""    |
+|        keyfile        |    🙅     | string |   ""    |
+| insecureskiptlsverify |    🙅     |  bool  |  false  |
+|        keyring        |    🙅     | string |   ""    |
+|  passcredentialsall   |    🙅     |  bool  |  false  |
+|        verify         |    🙅     |  bool  |  false  |
+
+> If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during deploy.
+
+## Values[]
+
+|      field      | required |  type  | default |
+| :-------------: | :------: | :----: | :-----: |
+|     **src**     |    ✅     | string |   ""    |
+| delimiter_left  |    🙅     | string |  "{{"   |
+| delimiter_right |    🙅     | string |  "}}"   |
+|     strict      |    🙅     |  bool  |  false  |
+|     render      |    🙅     |  bool  |  true   |
+
+### delimiter_left, delimiter_right
+
+You can change delimiter that helmwave uses to render values.
+
+[example](../examples/values-delimiter-flags/)
+
+### render
+
+Allows to disable templating values at all.
+
+[example](../examples/values-render-flag)
+
+### strict
+
+Allows to fail if values file doesn't exist.
+
+[example](../examples/values-strict-flag)
+
+## Depends_on[]
+
+|  field   | required |  type  | default |
+| :------: | :------: | :----: | :-----: |
+|   name   |    🙅     | string |   ""    |
+|   tag    |    🙅     | string |   ""    |
+| optional |    🙅     |  bool  |  false  |
+
+### `name`
+
+Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in plan, it will be added to plan.
+
+### tag
+
+You can include all releases that match this tag to be added as dependencies. If tag is not in plan, it will be added to plan.
+
+The planfile (`.helmwave/planfile` by default) will have normalized list of releases instead of tags.
+
+### optional
+
+If dependency is not found in all available releases, helmwave will not fail due to missing dependency.

@@ -12,7 +12,6 @@ Helmwave supports all built-in functions / sprig / gomplate / custom.
     You cannot pass variables from helmwawve to your helm chart templates.
     You should use helmwave to render values of your chart.
 
-
 ## [Sprig](https://godoc.org/github.com/Masterminds/sprig)
 
 If you've ever written helm charts, then you're already familiar with it.
@@ -23,8 +22,7 @@ http://masterminds.github.io/sprig/
 
 > gomplate is a template renderer which supports a growing list of datasources, such as: JSON (including EJSON - encrypted JSON), YAML, AWS EC2 metadata, BoltDB, Hashicorp Consul and Hashicorp Vault secrets.
 
-
-## [Custom](https://github.com/helmwave/helmwave/blob/release-0.23.1/pkg/template/func.go)
+## [Custom](https://github.com/helmwave/helmwave/blob/release-0.24.0/pkg/template/func.go)
 
 - `toYaml` marshals a map into a string
 - `exec` exec command

@@ -1,6 +1,5 @@
 # 📔 Annotations
 
-
 ## How to use?
 
 You should add an annotation to your Deployment / StatefulSet / Jobs / DaemonSet
@@ -24,7 +23,6 @@ This is very useful for secret or sensitive data.
 
 mention with `--show-secret` flag.
 
-
 ```yaml
 apiVersion: v1
 kind: Secret
@@ -38,13 +36,9 @@ metadata:
 
 > Kubedog will track all your resources by default.
 
-
 [example](examples/kubedog/README.md)
 
-
 inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html)
-
-
 
 > First step you need enable kubedog for helmwave.
 >

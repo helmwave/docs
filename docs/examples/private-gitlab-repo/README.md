@@ -2,7 +2,6 @@
 
 Learn more about GitLab Helm Registry: https://docs.gitlab.com/ee/user/packages/helm_repository/
 
-
 ```console
 .
 ├── README.md
@@ -10,7 +9,6 @@ Learn more about GitLab Helm Registry: https://docs.gitlab.com/ee/user/packages/
 ```
 
 **Suppose the `helmwave.yml.tpl` looks like**
-
 
 ```yaml
 {% include "helmwave.yml.tpl" %}
@@ -22,7 +20,7 @@ Your `.gitlab-ci.yml`
 helmwave:
   stage: deploy
   image:
-    name: ghcr.io/helmwave/helmwave:0.23.1
+    name: ghcr.io/helmwave/helmwave:0.24.0
     entrypoint: [""]
   before_script:
   - printenv | grep HELMWAVE
