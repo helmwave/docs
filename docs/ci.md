@@ -78,11 +78,11 @@ variables:
   before_script:
     - printenv | grep HELMWAVE
     - ls -la $HELMWAVE_PLAN || true
-  after_script: 
+  after_script:
     - ls -la $HELMWAVE_PLAN
   image:
     name: ghcr.io/helmwave/helmwave:0.24.0
-    entrypoint: ['']
+    entrypoint: [ '' ]
 
 ###############  BUILD  ################
 plan:
@@ -97,21 +97,12 @@ plan:
     - cat helmwave.yml
     - helmwave build
 
-###############  Deploy  ################
-up:
-  stage: deploy
-  extends: .helmwave
-  when: manual
-  script: 
-    - helmwave up
-
-
 ###############  LINT  ################
 kube-linter:
   stage: lint
   image:
     name: stackrox/kube-linter:0.2.5-alpine
-    entrypoint: ['']
+    entrypoint: [ '' ]
   script:
     - /kube-linter lint $HELMWAVE_PLAN
 
@@ -120,15 +111,24 @@ kubeval:
   stage: lint
   image:
     name: garethr/kubeval
-    entrypoint: ['']
+    entrypoint: [ '' ]
   script:
-    - kubeval --force-color $HELMWAVE_PLAN/manifest/*.yml
-      
-      
+    - /kubeval --force-color $HELMWAVE_PLAN/manifest/*.yml
+
+
 pluto:
+  stage: lint
   image:
     name: quay.io/fairwinds/pluto:v5.1
-    entrypoint: ['']
+    entrypoint: [ '' ]
   script:
     - /pluto detect-files -d $HELMWAVE_PLAN
+
+###############  Deploy  ################
+up:
+  stage: deploy
+  extends: .helmwave
+  when: manual
+  script:
+    - helmwave up
 ```
