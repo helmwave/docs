@@ -1,5 +1,9 @@
 # 📺 Publications
 
+## 📺 DevOops conference
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zZoY0TTvyjs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## [New Wave for Helm!](https://medium.com/wriketechclub/new-wave-for-helm-b9800733587f)
 
 > https://medium.com/wriketechclub/new-wave-for-helm-b9800733587f
@@ -26,7 +30,7 @@
 
 > https://habr.com/ru/post/575646/
 
-## 📺 SberDevConf / SmartDev
+## 📺 SberDevConf / SmartDev conference
 
 > Расскажем, как одна микрокоманда управляет несколькими проектами: от CI/CD продуктовых микросервисов до всей инфраструктуры в облаке. Зачем и как мы версионируем и автоматизируем вообще всё и при чём здесь боты? Презентация open-source-решения для декларативного описания helm-релизов — helmwave
 
