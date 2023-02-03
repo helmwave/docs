@@ -1,0 +1,44 @@
+version: 0.24.0
+
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+
+.options: &options
+  namespace: stage
+  wait: true
+  max_history: 5
+
+releases:
+  - name: frontend
+    <<: *options
+    chart: charts/frontend
+    depends_on:
+      - api
+
+  - name: api
+    <<: *options
+    chart: charts/api
+    depends_on:
+      - rabbitmq
+      - minio
+
+  - name: consumer
+    <<: *options
+    chart: charts/consumer
+    depends_on:
+      - rabbitmq
+      - minio
+      - postgresql
+
+  - name: rabbitmq
+    <<: *options
+    chart: bitnami/rabbitmq
+
+  - name: minio
+    <<: *options
+    chart: bitnami/minio
+
+  - name: postgresql
+    <<: *options
+    chart: bitnami/postgresql
