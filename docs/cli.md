@@ -8,7 +8,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.24.0
+   0.25.0
 
 DESCRIPTION:
    This tool helps you compose your helm releases!
@@ -68,6 +68,7 @@ OPTIONS:
    --tags value, -t value [ --tags value, -t value ]  It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
    --match-all-tags                                   Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
    --diff-mode value                                  You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
+   --charts-cache-dir value                           Enable caching of helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
    --yml                                              Auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
    --wide value                                       Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
    --show-secret                                      Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
@@ -264,20 +265,20 @@ helmwave <cmd>
 
 ```bash
 $ helmwave --version  
-helmwave version 0.24.0
+helmwave version 0.25.0
 
 $ helmwave -v
-helmwave version 0.24.0
+helmwave version 0.25.0
 ```
 
 ### Short version
 
 ```bash
 $ helmwave version
-0.24.0
+0.25.0
 
 $ helmwave ver
-0.24.0
+0.25.0
 ```
 
 ## Completion
