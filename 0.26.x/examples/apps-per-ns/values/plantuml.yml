@@ -1,0 +1,9 @@
+
+image:
+  repository: plantuml/plantuml-server
+  tag: v1.2021.14
+
+ingress:
+  enabled: true
+  hosts:
+    - plantuml.example.com
