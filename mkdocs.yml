@@ -6,7 +6,7 @@ repo_name: "helmwave/helmwave"
 repo_url: "https://github.com/helmwave/helmwave"
 edit_uri: "https://github.com/helmwave/docs/edit/main/docs/"
 site_url: "https://helmwave.github.io"
-copyright: Copyright © 2020 - 2022 Dmitriy Zhilyaev
+copyright: Copyright © 2020 - 2023 Dmitrii Zhiliaev
 
 nav:
   - Home: index.md
