@@ -1,0 +1,9 @@
+version: 0.25.0
+
+releases:
+  - name: my-release
+    chart: my-chart-repo/my-chart-app
+    values:
+      - values.yml
+    namespace: my-namespace
+    create_namespace: true
