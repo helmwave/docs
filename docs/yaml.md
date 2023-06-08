@@ -1,16 +1,16 @@
 # Yaml
 
-> Works on [helm v3.10.1](https://github.com/helmwave/helmwave/blob/v0.25.0/go.mod)
+> Works on [helm v3.10.1](https://github.com/helmwave/helmwave/blob/v0.27.2/go.mod)
 
 ## helmwave.yml aka planfile
 
 |    field     | required |  type  | default |
-| :----------: | :------: | :----: | :-----: |
-|   project    |    🙅     | string |   ""    |
-|   version    |    🙅     | string |   ""    |
-| repositories |    🙅     | array  |   []    |
-|  registries  |    🙅     | array  |   []    |
-|   releases   |    🙅     | array  |   []    |
+|:------------:|:--------:|:------:|:-------:|
+|   project    |    🙅    | string |   ""    |
+|   version    |    🙅    | string |   ""    |
+| repositories |    🙅    | array  |   []    |
+|  registries  |    🙅    | array  |   []    |
+|   releases   |    🙅    | array  |   []    |
 
 ## project
 
@@ -27,11 +27,11 @@ In the future it is planned to check major compatibility.
 > OCI registries
 
 |  field   | required |  type  | default |
-| :------: | :------: | :----: | :-----: |
+|:--------:|:--------:|:------:|:-------:|
 |   host   |    ✅     | string |   ""    |
-| username |    🙅     | string |   ""    |
-| password |    🙅     | string |   ""    |
-| insecure |    🙅     |  bool  |  false  |
+| username |    🙅    | string |   ""    |
+| password |    🙅    | string |   ""    |
+| insecure |    🙅    |  bool  |  false  |
 
 **Examples**
 
@@ -41,17 +41,17 @@ In the future it is planned to check major compatibility.
 ## Repositories[]
 
 |          field           | required |  type  | default |
-| :----------------------: | :------: | :----: | :-----: |
+|:------------------------:|:--------:|:------:|:-------:|
 |           name           |    ✅     | string |   ""    |
 |           url            |    ✅     |  url   |   ""    |
-|         username         |    🙅     | string |   ""    |
-|         password         |    🙅     | string |   ""    |
-|         certFile         |    🙅     | string |   ""    |
-|         keyFile          |    🙅     | string |   ""    |
-|          caFile          |    🙅     | string |   ""    |
-| insecure_skip_tls_verify |    🙅     |  bool  |  false  |
-|   pass_credentials_all   |    🙅     |  bool  |  false  |
-|          force           |    🙅     |  bool  |  false  |
+|         username         |    🙅    | string |   ""    |
+|         password         |    🙅    | string |   ""    |
+|         certFile         |    🙅    | string |   ""    |
+|         keyFile          |    🙅    | string |   ""    |
+|          caFile          |    🙅    | string |   ""    |
+| insecure_skip_tls_verify |    🙅    |  bool  |  false  |
+|   pass_credentials_all   |    🙅    |  bool  |  false  |
+|          force           |    🙅    |  bool  |  false  |
 
 This repository will be stored in local helm repositories database.
 
@@ -72,35 +72,35 @@ Update existing repository exists if settings differ.
 > Almost all options that are here are native helm options
 
 |            field            | required |       type       | default | `helmwave build` | `helmwave up` |
-| :-------------------------: | :------: | :--------------: | :-----: | :--------------: | :-----------: |
+|:---------------------------:|:--------:|:----------------:|:-------:|:----------------:|:-------------:|
 |          **name**           |    ✅     |      string      |   ""    |        ✅         |       ✅       |
 |        **namespace**        |    ✅     |      string      |   ""    |        ✅         |       ✅       |
 |          **chart**          |    ✅     | string or object |   {}    |        ✅         |       ✅       |
-|            store            |    🙅     |      object      |   {}    |        ✅         |               |
-|         depends_on          |    🙅     |      array       |   []    |                  |       ✅       |
-|           values            |    🙅     |      array       |   []    |        ✅         |       ✅       |
-|            tags             |    🙅     |      array       |   []    |        ✅         |               |
-|        post_renderer        |    🙅     |      array       |   []    |        ✅         |       ✅       |
-|           timeout           |    🙅     |     interval     |   5m    |                  |       ✅       |
-|         max_history         |    🙅     |       int        |    0    |                  |       ✅       |
-|           context           |    🙅     |      string      |   ""    |                  |       ✅       |
-|         description         |    🙅     |      string      |   ""    |                  |               |
-|  pending_release_strategy   |    🙅     |      string      |   ""    |                  |       ✅       |
-|        allow_failure        |    🙅     |       bool       |  false  |                  |       ✅       |
-|           atomic            |    🙅     |       bool       |  false  |                  |       ✅       |
-|       cleanup_on_fail       |    🙅     |       bool       |  false  |                  |       ✅       |
-|      create_namespace       |    🙅     |       bool       |  false  |                  |       ✅       |
-|            devel            |    🙅     |       bool       |  false  |                  |       ✅       |
-|        disable_hooks        |    🙅     |       bool       |  false  |                  |       ✅       |
-| disable_open_api_validation |    🙅     |       bool       |  false  |                  |       ✅       |
-|            force            |    🙅     |       bool       |  false  |                  |       ✅       |
-|          recreate           |    🙅     |       bool       |  false  |                  |       ✅       |
-|        reset_values         |    🙅     |       bool       |  false  |                  |       ✅       |
-|        reuse_values         |    🙅     |       bool       |  false  |                  |       ✅       |
-|          skip_crds          |    🙅     |       bool       |  false  |                  |       ✅       |
-|          sub_notes          |    🙅     |       bool       |  false  |                  |       ✅       |
-|            wait             |    🙅     |       bool       |  false  |                  |       ✅       |
-|        wait_for_jobs        |    🙅     |       bool       |  false  |                  |       ✅       |
+|            store            |    🙅    |      object      |   {}    |        ✅         |               |
+|         depends_on          |    🙅    |      array       |   []    |                  |       ✅       |
+|           values            |    🙅    |      array       |   []    |        ✅         |       ✅       |
+|            tags             |    🙅    |      array       |   []    |        ✅         |               |
+|        post_renderer        |    🙅    |      array       |   []    |        ✅         |       ✅       |
+|           timeout           |    🙅    |     interval     |   5m    |                  |       ✅       |
+|         max_history         |    🙅    |       int        |    0    |                  |       ✅       |
+|           context           |    🙅    |      string      |   ""    |                  |       ✅       |
+|         description         |    🙅    |      string      |   ""    |                  |               |
+|  pending_release_strategy   |    🙅    |      string      |   ""    |                  |       ✅       |
+|        allow_failure        |    🙅    |       bool       |  false  |                  |       ✅       |
+|           atomic            |    🙅    |       bool       |  false  |                  |       ✅       |
+|       cleanup_on_fail       |    🙅    |       bool       |  false  |                  |       ✅       |
+|      create_namespace       |    🙅    |       bool       |  false  |                  |       ✅       |
+|            devel            |    🙅    |       bool       |  false  |                  |       ✅       |
+|        disable_hooks        |    🙅    |       bool       |  false  |                  |       ✅       |
+| disable_open_api_validation |    🙅    |       bool       |  false  |                  |       ✅       |
+|            force            |    🙅    |       bool       |  false  |                  |       ✅       |
+|          recreate           |    🙅    |       bool       |  false  |                  |       ✅       |
+|        reset_values         |    🙅    |       bool       |  false  |                  |       ✅       |
+|        reuse_values         |    🙅    |       bool       |  false  |                  |       ✅       |
+|          skip_crds          |    🙅    |       bool       |  false  |                  |       ✅       |
+|          sub_notes          |    🙅    |       bool       |  false  |                  |       ✅       |
+|            wait             |    🙅    |       bool       |  false  |                  |       ✅       |
+|        wait_for_jobs        |    🙅    |       bool       |  false  |                  |       ✅       |
 
 ### name
 
