@@ -1,4 +1,4 @@
-version: 0.25.0
+version: 0.27.2
 
 repositories:
   - name: your-private-git-repo-hosted-charts
