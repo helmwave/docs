@@ -43,6 +43,36 @@ GLOBAL OPTIONS:
 
 ```
 
+## step #0: yml
+
+It allows render `helmwave.yml.tpl` to `helmwave.yml`
+
+**Options**
+
+```console
+   --tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+   --file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+   --templater value       Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+```
+
+
+## step #1: build
+
+This command generates `.helmwave/`
+
+```console
+   --plandir value, -p value  Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
+   --tags value, -t value     It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+   --match-all-tags           Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+   --diff-mode value          You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
+   --yml                      Auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
+   --wide value               Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
+   --show-secret              Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
+   --tpl value                Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+   --file value, -f value     Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+   --templater value          Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+```
+
 ## step #2: Working with plan
 
 ### build
