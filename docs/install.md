@@ -21,7 +21,7 @@ brew install helmwave/tap/helmwave
 
 or use wget
 ```sh
-export VERSION=0.25.0
+export VERSION=0.27.2
 wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_darwin_amd64.tar.gz -O - | tar -xz
 mv helmwave /usr/local/bin/
 ```
@@ -33,7 +33,7 @@ mv helmwave /usr/local/bin/
 Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
 ```sh
-export VERSION=0.25.0
+export VERSION=0.27.2
 wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_linux_amd64.tar.gz -O - | tar -xz
 mv helmwave /usr/local/bin/
 ```
@@ -65,12 +65,12 @@ docker pull ghcr.io/helmwave/helmwave
 **Use specific version**
 
 ```bash
-docker pull diamon/helmwave:0.25.0
-docker pull ghcr.io/helmwave/helmwave:0.25.0
+docker pull diamon/helmwave:0.27.2
+docker pull ghcr.io/helmwave/helmwave:0.27.2
 
-docker run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:0.25.0
+docker run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:0.27.2
 # helmwave version
-0.25.0
+0.27.2
 #
 ```
 
@@ -82,15 +82,15 @@ scratch image run with [nobody user](https://unix.stackexchange.com/questions/18
 docker pull diamon/helmwave:scratch
 docker pull ghcr.io/helmwave/helmwave:scratch
 
-docker run ghcr.io/helmwave/helmwave:0.16.2-scratch version
-0.16.2
+docker run ghcr.io/helmwave/helmwave:0.27.2-scratch version
+0.27.2
 ```
 
 **Use [scratch image](https://hub.docker.com/_/scratch) with specific helmwave version**
 
 ```bash
-docker pull diamon/helmwave:0.25.0-scratch
-docker pull ghcr.io/helmwave/helmwave:0.25.0-scratch
+docker pull diamon/helmwave:0.27.2-scratch
+docker pull ghcr.io/helmwave/helmwave:0.27.2-scratch
 ```
 
 ---
@@ -98,7 +98,7 @@ docker pull ghcr.io/helmwave/helmwave:0.25.0-scratch
 ## Install with go get ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave)
 
 ```sh
-export VERSION=0.25.0
+export VERSION=0.27.2
 GO111MODULE=on go get github.com/helmwave/helmwave/cmd/helmwave@$VERSION
 ```
 

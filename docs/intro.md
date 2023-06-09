@@ -20,8 +20,8 @@ With 🌊 helmwave you will become a superhero:
 
 ## Comparison to alternatives
 
-|                                        |                                        🌊 HelmWave                                         |                                       Helmfile                                        |                           Helmsman                            |
-| :------------------------------------: | :---------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :-----------------------------------------------------------: |
+|                                        |                                        🌊 HelmWave                                        |                                       Helmfile                                        |                           Helmsman                            |
+|:--------------------------------------:|:-----------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------:|:-------------------------------------------------------------:|
 |               **Syntax**               | YAML + [sprig](http://masterminds.github.io/sprig/)/[gomplate](https://docs.gomplate.ca/) |                  YAML + [sprig](http://masterminds.github.io/sprig/)                  |                           TOML/YAML                           |
 |               Code style               |                                        snake_case                                         |                                       camelCase                                       |                           camelCase                           |
 |              Requirements              |                                            No                                             | `kubectl`, `helm`<br> *`helm-diff` (optional: `helm-secrets`, `helm-s3`, `helm-git`*) |              `kubectl`, `helm`<br> *`helm-diff`*              |
