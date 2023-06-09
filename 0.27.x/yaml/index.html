@@ -537,7 +537,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="yaml">Yaml</h1>
 <blockquote>
-<p>Works on <a href="https://github.com/helmwave/helmwave/blob/v0.27.2/go.mod">helm v3.10.1</a></p>
+<p>Works on <a href="https://github.com/helmwave/helmwave/blob/v0.27.2/go.mod">helm</a></p>
 </blockquote>
 <h2 id="helmwaveyml-aka-planfile">helmwave.yml aka planfile</h2>
 <table>
@@ -582,6 +582,9 @@
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>nothing is required</p>
+</blockquote>
 <h2 id="project">project</h2>
 <blockquote>
 <p>Reserved for future.</p>
@@ -726,7 +729,6 @@
 <th align="center">type</th>
 <th align="center">default</th>
 <th align="center"><code>helmwave build</code></th>
-<th align="center"><code>helmwave up</code></th>
 </tr>
 </thead>
 <tbody>
@@ -736,14 +738,12 @@
 <td align="center">string</td>
 <td align="center">""</td>
 <td align="center">✅</td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center"><strong>namespace</strong></td>
 <td align="center">✅</td>
 <td align="center">string</td>
 <td align="center">""</td>
-<td align="center">✅</td>
 <td align="center">✅</td>
 </tr>
 <tr>
@@ -752,7 +752,6 @@
 <td align="center">string or object</td>
 <td align="center">{}</td>
 <td align="center">✅</td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">store</td>
@@ -760,6 +759,12 @@
 <td align="center">object</td>
 <td align="center">{}</td>
 <td align="center">✅</td>
+</tr>
+<tr>
+<td align="center">enable_dns</td>
+<td align="center">🙅</td>
+<td align="center">bool</td>
+<td align="center">false</td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -767,7 +772,6 @@
 <td align="center">🙅</td>
 <td align="center">array</td>
 <td align="center">[]</td>
-<td align="center"></td>
 <td align="center">✅</td>
 </tr>
 <tr>
@@ -776,7 +780,6 @@
 <td align="center">array</td>
 <td align="center">[]</td>
 <td align="center">✅</td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">tags</td>
@@ -784,14 +787,12 @@
 <td align="center">array</td>
 <td align="center">[]</td>
 <td align="center">✅</td>
-<td align="center"></td>
 </tr>
 <tr>
 <td align="center">post_renderer</td>
 <td align="center">🙅</td>
 <td align="center">array</td>
 <td align="center">[]</td>
-<td align="center">✅</td>
 <td align="center">✅</td>
 </tr>
 <tr>
@@ -800,7 +801,6 @@
 <td align="center">interval</td>
 <td align="center">5m</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">max_history</td>
@@ -808,7 +808,6 @@
 <td align="center">int</td>
 <td align="center">0</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">context</td>
@@ -816,14 +815,12 @@
 <td align="center">string</td>
 <td align="center">""</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">description</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
-<td align="center"></td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -832,7 +829,6 @@
 <td align="center">string</td>
 <td align="center">""</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">allow_failure</td>
@@ -840,7 +836,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">atomic</td>
@@ -848,7 +843,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">cleanup_on_fail</td>
@@ -856,7 +850,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">create_namespace</td>
@@ -864,7 +857,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">devel</td>
@@ -872,7 +864,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">disable_hooks</td>
@@ -880,7 +871,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">disable_open_api_validation</td>
@@ -888,7 +878,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">force</td>
@@ -896,7 +885,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">recreate</td>
@@ -904,7 +892,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">reset_values</td>
@@ -912,7 +899,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">reuse_values</td>
@@ -920,7 +906,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">skip_crds</td>
@@ -928,7 +913,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">sub_notes</td>
@@ -936,7 +920,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">wait</td>
@@ -944,7 +927,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 <tr>
 <td align="center">wait_for_jobs</td>
@@ -952,7 +934,6 @@
 <td align="center">bool</td>
 <td align="center">false</td>
 <td align="center"></td>
-<td align="center">✅</td>
 </tr>
 </tbody>
 </table>
@@ -964,6 +945,7 @@
 <p>If set to <code>true</code> Helmwave will create the release namespace if not present.</p>
 <h3 id="timeout">timeout</h3>
 <p>Time to wait for release to install.</p>
+<p>if you enable <code>kubedog</code> this option will be required.</p>
 <h3 id="store">store 🗳️</h3>
 <p>It allows to pass your custom fields from <code>helmwave.yml</code> to values.</p>
 <p><a href="../examples/store-greeting-hello/">example</a></p>
@@ -1059,6 +1041,9 @@ This flag changes logic for query releases.</p>
 <div class="mermaid">graph LR
     frontend --&gt; backend --&gt; db;
 </div>
+<blockquote>
+<p>if you don't see diagram, please install reload the page.</p>
+</blockquote>
 <p>Your <code>helmwave.yml</code> should look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">releases</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>
