@@ -1,6 +1,6 @@
 # Yaml
 
-> Works on [helm v3.10.1](https://github.com/helmwave/helmwave/blob/v0.27.2/go.mod)
+> Works on [helm](https://github.com/helmwave/helmwave/blob/v0.27.2/go.mod)
 
 ## helmwave.yml aka planfile
 
@@ -11,6 +11,8 @@
 | repositories |    🙅    | array  |   []    |
 |  registries  |    🙅    | array  |   []    |
 |   releases   |    🙅    | array  |   []    |
+
+> nothing is required
 
 ## project
 
@@ -71,36 +73,37 @@ Update existing repository exists if settings differ.
 
 > Almost all options that are here are native helm options
 
-|            field            | required |       type       | default | `helmwave build` | `helmwave up` |
-|:---------------------------:|:--------:|:----------------:|:-------:|:----------------:|:-------------:|
-|          **name**           |    ✅     |      string      |   ""    |        ✅         |       ✅       |
-|        **namespace**        |    ✅     |      string      |   ""    |        ✅         |       ✅       |
-|          **chart**          |    ✅     | string or object |   {}    |        ✅         |       ✅       |
-|            store            |    🙅    |      object      |   {}    |        ✅         |               |
-|         depends_on          |    🙅    |      array       |   []    |                  |       ✅       |
-|           values            |    🙅    |      array       |   []    |        ✅         |       ✅       |
-|            tags             |    🙅    |      array       |   []    |        ✅         |               |
-|        post_renderer        |    🙅    |      array       |   []    |        ✅         |       ✅       |
-|           timeout           |    🙅    |     interval     |   5m    |                  |       ✅       |
-|         max_history         |    🙅    |       int        |    0    |                  |       ✅       |
-|           context           |    🙅    |      string      |   ""    |                  |       ✅       |
-|         description         |    🙅    |      string      |   ""    |                  |               |
-|  pending_release_strategy   |    🙅    |      string      |   ""    |                  |       ✅       |
-|        allow_failure        |    🙅    |       bool       |  false  |                  |       ✅       |
-|           atomic            |    🙅    |       bool       |  false  |                  |       ✅       |
-|       cleanup_on_fail       |    🙅    |       bool       |  false  |                  |       ✅       |
-|      create_namespace       |    🙅    |       bool       |  false  |                  |       ✅       |
-|            devel            |    🙅    |       bool       |  false  |                  |       ✅       |
-|        disable_hooks        |    🙅    |       bool       |  false  |                  |       ✅       |
-| disable_open_api_validation |    🙅    |       bool       |  false  |                  |       ✅       |
-|            force            |    🙅    |       bool       |  false  |                  |       ✅       |
-|          recreate           |    🙅    |       bool       |  false  |                  |       ✅       |
-|        reset_values         |    🙅    |       bool       |  false  |                  |       ✅       |
-|        reuse_values         |    🙅    |       bool       |  false  |                  |       ✅       |
-|          skip_crds          |    🙅    |       bool       |  false  |                  |       ✅       |
-|          sub_notes          |    🙅    |       bool       |  false  |                  |       ✅       |
-|            wait             |    🙅    |       bool       |  false  |                  |       ✅       |
-|        wait_for_jobs        |    🙅    |       bool       |  false  |                  |       ✅       |
+|            field            | required |       type       | default | `helmwave build` |
+|:---------------------------:|:--------:|:----------------:|:-------:|:----------------:|
+|          **name**           |    ✅     |      string      |   ""    |        ✅         |
+|        **namespace**        |    ✅     |      string      |   ""    |        ✅         |
+|          **chart**          |    ✅     | string or object |   {}    |        ✅         |
+|            store            |    🙅    |      object      |   {}    |        ✅         |
+|         enable_dns          |    🙅    |       bool       |  false  |                  |
+|         depends_on          |    🙅    |      array       |   []    |        ✅         |
+|           values            |    🙅    |      array       |   []    |        ✅         |
+|            tags             |    🙅    |      array       |   []    |        ✅         |
+|        post_renderer        |    🙅    |      array       |   []    |        ✅         |
+|           timeout           |    🙅    |     interval     |   5m    |                  |
+|         max_history         |    🙅    |       int        |    0    |                  |
+|           context           |    🙅    |      string      |   ""    |                  |
+|         description         |    🙅    |      string      |   ""    |                  |
+|  pending_release_strategy   |    🙅    |      string      |   ""    |                  |
+|        allow_failure        |    🙅    |       bool       |  false  |                  |
+|           atomic            |    🙅    |       bool       |  false  |                  |
+|       cleanup_on_fail       |    🙅    |       bool       |  false  |                  |
+|      create_namespace       |    🙅    |       bool       |  false  |                  |
+|            devel            |    🙅    |       bool       |  false  |                  |
+|        disable_hooks        |    🙅    |       bool       |  false  |                  |
+| disable_open_api_validation |    🙅    |       bool       |  false  |                  |
+|            force            |    🙅    |       bool       |  false  |                  |
+|          recreate           |    🙅    |       bool       |  false  |                  |
+|        reset_values         |    🙅    |       bool       |  false  |                  |
+|        reuse_values         |    🙅    |       bool       |  false  |                  |
+|          skip_crds          |    🙅    |       bool       |  false  |                  |
+|          sub_notes          |    🙅    |       bool       |  false  |                  |
+|            wait             |    🙅    |       bool       |  false  |                  |
+|        wait_for_jobs        |    🙅    |       bool       |  false  |                  |
 
 ### name
 
@@ -117,6 +120,8 @@ If set to `true` Helmwave will create the release namespace if not present.
 ### timeout
 
 Time to wait for release to install.
+
+if you enable `kubedog` this option will be required.
 
 ### store 🗳️
 
@@ -246,6 +251,8 @@ graph LR
     frontend --> backend --> db;
 ```
 
+> if you don't see diagram, please install reload the page.
+
 Your `helmwave.yml` should look like this:
 
 ```yaml
@@ -292,30 +299,30 @@ You can use custom commands to change rendered manifests.
 ## Chart
 
 |         field         | required |  type  | default |
-| :-------------------: | :------: | :----: | :-----: |
+|:---------------------:|:--------:|:------:|:-------:|
 |       **name**        |    ✅     | string |   ""    |
-|      **version**      |    🙅     | string |   ""    |
-|       username        |    🙅     | string |   ""    |
-|       password        |    🙅     | string |   ""    |
-|        cafile         |    🙅     | string |   ""    |
-|       certfile        |    🙅     | string |   ""    |
-|        keyfile        |    🙅     | string |   ""    |
-| insecureskiptlsverify |    🙅     |  bool  |  false  |
-|        keyring        |    🙅     | string |   ""    |
-|  passcredentialsall   |    🙅     |  bool  |  false  |
-|        verify         |    🙅     |  bool  |  false  |
+|      **version**      |    🙅    | string |   ""    |
+|       username        |    🙅    | string |   ""    |
+|       password        |    🙅    | string |   ""    |
+|        cafile         |    🙅    | string |   ""    |
+|       certfile        |    🙅    | string |   ""    |
+|        keyfile        |    🙅    | string |   ""    |
+| insecureskiptlsverify |    🙅    |  bool  |  false  |
+|        keyring        |    🙅    | string |   ""    |
+|  passcredentialsall   |    🙅    |  bool  |  false  |
+|        verify         |    🙅    |  bool  |  false  |
 
 > If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during deploy.
 
 ## Values[]
 
 |      field      | required |  type  | default |
-| :-------------: | :------: | :----: | :-----: |
+|:---------------:|:--------:|:------:|:-------:|
 |     **src**     |    ✅     | string |   ""    |
-| delimiter_left  |    🙅     | string |  "{{"   |
-| delimiter_right |    🙅     | string |  "}}"   |
-|     strict      |    🙅     |  bool  |  false  |
-|     render      |    🙅     |  bool  |  true   |
+| delimiter_left  |    🙅    | string |  "{{"   |
+| delimiter_right |    🙅    | string |  "}}"   |
+|     strict      |    🙅    |  bool  |  false  |
+|     render      |    🙅    |  bool  |  true   |
 
 ### delimiter_left, delimiter_right
 
@@ -338,10 +345,10 @@ Allows to fail if values file doesn't exist.
 ## Depends_on[]
 
 |  field   | required |  type  | default |
-| :------: | :------: | :----: | :-----: |
-|   name   |    🙅     | string |   ""    |
-|   tag    |    🙅     | string |   ""    |
-| optional |    🙅     |  bool  |  false  |
+|:--------:|:--------:|:------:|:-------:|
+|   name   |    🙅    | string |   ""    |
+|   tag    |    🙅    | string |   ""    |
+| optional |    🙅    |  bool  |  false  |
 
 ### `name`
 

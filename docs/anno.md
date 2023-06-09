@@ -2,7 +2,7 @@
 
 ## How to use?
 
-You should add an annotation to your Deployment / StatefulSet / Jobs / DaemonSet
+You should add an annotation to your `Deployment` / `StatefulSet` / `Jobs` / `DaemonSet`
 
 ```yaml
 apiVersion: apps/v1
