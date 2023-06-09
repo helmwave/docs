@@ -243,7 +243,7 @@ $ helmwave rollback
 [🙃 aka INFO]: ✅ backend@test rollback!
 ```
 
-# graph
+### graph
 
 Show only graph of helm releases from plan.
 
