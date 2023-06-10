@@ -79,11 +79,11 @@ Update existing repository exists if settings differ.
 |        **namespace**        |    ✅     |      string      |   ""    |        ✅         |
 |          **chart**          |    ✅     | string or object |   {}    |        ✅         |
 |            store            |    🙅    |      object      |   {}    |        ✅         |
-|         enable_dns          |    🙅    |       bool       |  false  |                  |
 |         depends_on          |    🙅    |      array       |   []    |        ✅         |
 |           values            |    🙅    |      array       |   []    |        ✅         |
 |            tags             |    🙅    |      array       |   []    |        ✅         |
 |        post_renderer        |    🙅    |      array       |   []    |        ✅         |
+|    offline_kube_version     |    🙅    |      string      |   ""    |        ✅         |
 |           timeout           |    🙅    |     interval     |   5m    |                  |
 |         max_history         |    🙅    |       int        |    0    |                  |
 |           context           |    🙅    |      string      |   ""    |                  |
@@ -97,6 +97,7 @@ Update existing repository exists if settings differ.
 |        disable_hooks        |    🙅    |       bool       |  false  |                  |
 | disable_open_api_validation |    🙅    |       bool       |  false  |                  |
 |            force            |    🙅    |       bool       |  false  |                  |
+|         enable_dns          |    🙅    |       bool       |  false  |                  |
 |          recreate           |    🙅    |       bool       |  false  |                  |
 |        reset_values         |    🙅    |       bool       |  false  |                  |
 |        reuse_values         |    🙅    |       bool       |  false  |                  |
@@ -295,6 +296,13 @@ Allows to use custom kubecontext for release.
 ### post_renderer
 
 You can use custom commands to change rendered manifests.
+
+### offline_kube_version
+
+If `offline_kube_version` set helmwave will use this version to build plan.
+Without this option helmwave will ask kubernetes for version.
+
+`offline_kube_version` also can help you if you want to use different environments for `helmwave build` and `helmwave up`.
 
 ## Chart
 
