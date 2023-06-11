@@ -35,7 +35,7 @@ After running `helmwave build` you get rendered values inside `.helmwave/values`
 
 ```yaml
 image:
-    repository: nginx
+  repository: nginx
 
 greeting: hello
 ```
@@ -44,7 +44,7 @@ greeting: hello
 
 ```yaml
 image:
-tag: v1.0.0
+  tag: v1.0.0
 
 message: hello world
 ```

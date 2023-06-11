@@ -1,7 +1,7 @@
 # 🔰 Quick Start
 
 1. **[Install helmwave](../../install)** 
-1. **Create helmwave.yml**
+2. **Create `helmwave.yml`**
 
     Suppose the `helmwave.yml` representing the desired state of your helm releases looks like:
 
@@ -9,7 +9,7 @@
     {% include "helmwave.yml" %}
     ```
 
-1. **Build plan**
+3. **Build plan**
 
     ```shell
     helmwave build
@@ -17,7 +17,7 @@
 
     This steps generates [plan](../../cli/#step-2-working-with-plan)
 
-1. If everything is ok , deploy plan
+4. If everything is ok , deploy plan
 
     ```shell
     helmwave up 
@@ -31,7 +31,7 @@
     [🙃 aka INFO]: Success 2 / 2
     ```
 
-1. **Check**
+5. **Check**
 
     ```shell
     $ helm list -n my-namespace
@@ -49,10 +49,8 @@
     redis-b-slave-1    1/1     Running   0          51s
     ```
 
-1. **Congratulations!**
+6. **Congratulations!**
 
 ## Live mode
-
-> !!! Ascinema cast is too old.
 
 <script id="asciicast-399676" src="https://asciinema.org/a/399676.js" async></script>

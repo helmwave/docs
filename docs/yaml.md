@@ -1,6 +1,6 @@
 # Yaml
 
-> Works on [helm](https://github.com/helmwave/helmwave/blob/v0.27.2/go.mod)
+> Works on [helm](https://github.com/helmwave/helmwave/blob/v0.27.3/go.mod)
 
 ## helmwave.yml aka planfile
 
@@ -251,8 +251,7 @@ Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-t
 graph LR
     frontend --> backend --> db;
 ```
-
-> if you don't see diagram, please install reload the page.
+*If you don't see a graph, please reload the page.*
 
 Your `helmwave.yml` should look like this:
 

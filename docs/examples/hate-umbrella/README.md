@@ -16,8 +16,9 @@ graph LR
   frontend --> api --> rabbitmq & minio_s3
   consumer --> rabbitmq & minio_s3 & postgresql
 ```
+*If you don't see a graph, please reload the page.*
 
-**helmwave.yml**
+Example of **helmwave.yml** for this architecture.
 
 ```yaml
 {% include "helmwave.yml" %}

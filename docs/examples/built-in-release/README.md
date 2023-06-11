@@ -1,6 +1,8 @@
 # Release object
 
-**Project Structure**
+> This an example is demonstrating how to use the `release` object.
+
+## Project Structure
 
 ```console
 .
@@ -8,6 +10,19 @@
 ├── _.yml
 └── helmwave.yml
 
+```
+
+Create `helmwave.yml`
+
+```yaml
+{% include "helmwave.yml" %}
+```
+
+
+Create `_.yml`
+
+```yaml
+{% include "_.yml" %}
 ```
 
 **Run build**

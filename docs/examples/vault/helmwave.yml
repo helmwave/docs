@@ -6,5 +6,6 @@ releases:
   - name: app
     chart: bitnami/nginx
     namespace: test
+    wait: true
     values:
       - values-secret.yaml
