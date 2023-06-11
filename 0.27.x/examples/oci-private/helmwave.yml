@@ -9,4 +9,4 @@ releases:
   - name: my
     chart:
       name: oci://localhost:5000/my-chart
-      version: 0.2.0 # prefer
+      version: 0.2.0 # best practice

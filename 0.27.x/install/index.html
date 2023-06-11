@@ -950,14 +950,14 @@ use Docker or compile from the source.</p>
 <div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>helmwave/tap/helmwave
 </code></pre></div>
 <p>or use wget
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.27.2
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.27.3
 wget<span class="w"> </span>-c<span class="w"> </span>https://github.com/helmwave/helmwave/releases/download/v<span class="nv">$VERSION</span>/helmwave_<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>_darwin_amd64.tar.gz<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>-xz
 mv<span class="w"> </span>helmwave<span class="w"> </span>/usr/local/bin/
 </code></pre></div></p>
 <hr />
 <h2 id="linux">🐧 Linux</h2>
 <p>Download one of <a href="https://github.com/helmwave/helmwave/releases">releases</a></p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.27.2
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.27.3
 wget<span class="w"> </span>-c<span class="w"> </span>https://github.com/helmwave/helmwave/releases/download/v<span class="nv">$VERSION</span>/helmwave_<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>_linux_amd64.tar.gz<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>-xz
 mv<span class="w"> </span>helmwave<span class="w"> </span>/usr/local/bin/
 </code></pre></div>
@@ -995,12 +995,12 @@ mv<span class="w"> </span>helmwave<span class="w"> </span>/usr/local/bin/
 docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/helmwave/helmwave
 </code></pre></div>
 <p><strong>Use specific version</strong></p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>diamon/helmwave:0.27.2
-docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/helmwave/helmwave:0.27.2
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>diamon/helmwave:0.27.3
+docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/helmwave/helmwave:0.27.3
 
-docker<span class="w"> </span>run<span class="w"> </span>--entrypoint<span class="o">=</span>ash<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>--name<span class="w"> </span>helmwave<span class="w"> </span>ghcr.io/helmwave/helmwave:0.27.2
+docker<span class="w"> </span>run<span class="w"> </span>--entrypoint<span class="o">=</span>ash<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>--name<span class="w"> </span>helmwave<span class="w"> </span>ghcr.io/helmwave/helmwave:0.27.3
 <span class="c1"># helmwave version</span>
-<span class="m">0</span>.27.2
+<span class="m">0</span>.27.3
 <span class="c1">#</span>
 </code></pre></div>
 <p><strong>Use <a href="https://hub.docker.com/_/scratch">scratch image</a></strong></p>
@@ -1008,16 +1008,16 @@ docker<span class="w"> </span>run<span class="w"> </span>--entrypoint<span class
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>diamon/helmwave:scratch
 docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/helmwave/helmwave:scratch
 
-docker<span class="w"> </span>run<span class="w"> </span>ghcr.io/helmwave/helmwave:0.27.2-scratch<span class="w"> </span>version
-<span class="m">0</span>.27.2
+docker<span class="w"> </span>run<span class="w"> </span>ghcr.io/helmwave/helmwave:0.27.3-scratch<span class="w"> </span>version
+<span class="m">0</span>.27.3
 </code></pre></div>
 <p><strong>Use <a href="https://hub.docker.com/_/scratch">scratch image</a> with specific helmwave version</strong></p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>diamon/helmwave:0.27.2-scratch
-docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/helmwave/helmwave:0.27.2-scratch
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>diamon/helmwave:0.27.3-scratch
+docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/helmwave/helmwave:0.27.3-scratch
 </code></pre></div>
 <hr />
 <h2 id="install-with-go-get">Install with go get <img alt="GitHub go.mod Go version" src="https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave" /></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.27.2
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">VERSION</span><span class="o">=</span><span class="m">0</span>.27.3
 <span class="nv">GO111MODULE</span><span class="o">=</span>on<span class="w"> </span>go<span class="w"> </span>get<span class="w"> </span>github.com/helmwave/helmwave/cmd/helmwave@<span class="nv">$VERSION</span>
 </code></pre></div>
 <hr />

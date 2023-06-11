@@ -542,7 +542,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="yaml">Yaml</h1>
 <blockquote>
-<p>Works on <a href="https://github.com/helmwave/helmwave/blob/v0.27.2/go.mod">helm</a></p>
+<p>Works on <a href="https://github.com/helmwave/helmwave/blob/v0.27.3/go.mod">helm</a></p>
 </blockquote>
 <h2 id="helmwaveyml-aka-planfile">helmwave.yml aka planfile</h2>
 <table>
@@ -1050,12 +1050,10 @@ This flag changes logic for query releases.</p>
 <h3 id="depends_on">depends_on</h3>
 <p>It allows to set explicit dependencies between releases. Dependant release will start upgrading only after all it's dependencies finished upgrading</p>
 <p>Example for <a href="https://searchsoftwarequality.techtarget.com/definition/3-tier-application">3-tier</a> application</p>
-<div class="mermaid">graph LR
+<p><div class="mermaid">graph LR
     frontend --&gt; backend --&gt; db;
 </div>
-<blockquote>
-<p>if you don't see diagram, please install reload the page.</p>
-</blockquote>
+<em>If you don't see a graph, please reload the page.</em></p>
 <p>Your <code>helmwave.yml</code> should look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">releases</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frontend</span>

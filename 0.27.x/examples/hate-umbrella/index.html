@@ -374,12 +374,13 @@
 <li>When sub-chart modified you need fix it twice.</li>
 </ul>
 <p>Suppose that you need to describe next architecture.</p>
-<div class="mermaid">graph LR
+<p><div class="mermaid">graph LR
   frontend --&gt; api --&gt; rabbitmq &amp; minio_s3
   consumer --&gt; rabbitmq &amp; minio_s3 &amp; postgresql
 </div>
-<p><strong>helmwave.yml</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.27.2</span>
+<em>If you don't see a graph, please reload the page.</em></p>
+<p>Example of <strong>helmwave.yml</strong> for this architecture.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.27.3</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span>
