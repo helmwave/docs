@@ -52,5 +52,5 @@ With 🌊 helmwave you will become a superhero:
 
 ---
 
-Here I would like to express our gratitude to all contributors for their commits, authors of third-party dependencies and all open source community ❤️
+Here I would like to express our gratitude to all contributors for their commits, authors of third-party dependencies and all open source communities ❤️
 

@@ -28,7 +28,7 @@ http://masterminds.github.io/sprig/
 - `exec` exec command
 - `fromYaml` reads a golang string and generates a map
 - `readFile` get file as string
-- `hasKey` get true if field is exists
+- `hasKey` get true if field is existed
 - `get` (Sprig's original `get` is available as `sprigGet`)
 - `setValueAtPath` PATH NEW_VALUE traverses a golang map, replaces the value at the PATH with NEW_VALUE
 - `requiredEnv` The requiredEnv function allows you to declare a particular environment variable as required for

@@ -16,13 +16,13 @@
 
 ## project
 
-> Reserved for future.
+> Reserved for the future.
 
 ## version
 
-Helmwave will check current version and project version.
+Helmwave will check the current version and project version.
 
-In the future it is planned to check major compatibility. 
+In the future, it is planned to check major compatibility. 
 
 ## Registries[]
 
@@ -57,7 +57,7 @@ In the future it is planned to check major compatibility.
 |   pass_credentials_all   |    🙅    |  bool  |  false  |
 |          force           |    🙅    |  bool  |  false  |
 
-This repository will be stored in local helm repositories database.
+This repository will be stored in a local helm repositories database.
 
 ### name
 
@@ -124,11 +124,22 @@ If set to `true` Helmwave will create the release namespace if not present.
 
 Time to wait for release to install.
 
-if you enable `kubedog` this option will be required.
+!!! if you enable `kubedog` this option will be required.
+
+
+## max_history
+Limit the maximum number of revisions saved per release. Use 0 for no limit (default 0)
+
+Recommendation is using `3` for this option.
+
+1. past
+2. current
+3. next
+
 
 ### store 🗳️
 
-It allows to pass your custom fields from `helmwave.yml` to values.
+It allows passing your custom fields from `helmwave.yml` to values.
 
 [example](../examples/store-greeting-hello/)
 
@@ -245,7 +256,7 @@ helmwave build --match-all-tags -t redis -t a
 
 ### depends_on
 
-It allows to set explicit dependencies between releases. Dependant release will start upgrading only after all it's dependencies finished upgrading
+It allows setting explicit dependencies between releases. Dependant release will start upgrading only after all its dependencies finished upgrading
 
 Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application
 
@@ -282,15 +293,16 @@ Allows all dependant releases to proceed even if release failed.
 
 Strategy to handle releases in pending statuses (`pending-install`, `pending-upgrade`, `pending-rollback`)
 
-If helmwave tries to upgrade release that is currently in one of pending statuses it will follow specified strategy:
+If helmwave tries to upgrade release that is currently in one of the pending statuses,
+it will follow specified strategy:
 
 - `""` (or not specified) - do nothing. Helm will fail in this case;
-- `rollback` - rollback release to previous version. Upgrade will happen after rollback is complete;
-- `uninstall` - uninstall release. Upgrade will happen after uninstall is complete.
+- `rollback` - rollback release to a previous version. Upgrade will happen after `rollback` is complete;
+- `uninstall` - uninstall release. Upgrade will happen after `uninstall` is complete.
 
 ### context
 
-Allows to use custom kubecontext for release.
+Allows using custom kubecontext for release.
 
 
 **!!! Kubedog can't be enabled when there are releases in multiple contexts.**
@@ -302,7 +314,7 @@ You can use custom commands to change rendered manifests.
 ### offline_kube_version
 
 If `offline_kube_version` set helmwave will use this version to build plan.
-Without this option helmwave will ask kubernetes for version.
+Without this option helmwave will ask kubernetes for a version.
 
 `offline_kube_version` also can help you if you want to use different environments for `helmwave build` and `helmwave up`.
 
@@ -334,7 +346,7 @@ Without this option helmwave will ask kubernetes for version.
 |     strict      |    🙅    |  bool  |  false  |
 |     render      |    🙅    |  bool  |  true   |
 
-> Values can be an object or a string. If it's a string it will be treated as a path to values file.
+> `values` can be an object or a string. If it's a string, it will be treated as a `src`.
 
 ### src
 
@@ -366,7 +378,7 @@ Allows to fail if values file doesn't exist.
 |   tag    |    🙅    | string |   ""    |
 | optional |    🙅    |  bool  |  false  |
 
-> depends_on can be an object or a string. If it's a string it will be treated as a name.
+> `depends_on` can be an object or a string. If it's a string, it will be treated as a `name`.
 
 ### **name**
 
