@@ -694,14 +694,23 @@ And you can also use <code>--yml</code> flag that renders <code>helmwave.yml.tpl
 </code></pre></div>
 <h3 id="rollback"><code>rollback</code></h3>
 <p>Rollback helm-releases from plan.</p>
+<div class="admonition info">
+<p class="admonition-title">Flags</p>
+<div class="highlight"><pre><span></span><code>--revision<span class="w"> </span>value<span class="w">  </span>rollback<span class="w"> </span>all<span class="w"> </span>releases<span class="w"> </span>to<span class="w"> </span>this<span class="w"> </span>revision<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>-1<span class="o">)</span>
+</code></pre></div>
+</div>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>helmwave<span class="w"> </span>rollback<span class="w">      </span>
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>✅<span class="w"> </span>frontend@test<span class="w"> </span>rollback!
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>✅<span class="w"> </span>database@test<span class="w"> </span>rollback!
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>✅<span class="w"> </span>backend@test<span class="w"> </span>rollback!
 </code></pre></div>
 <h3 id="graph"><code>graph</code></h3>
-<p>Show only graph of helm releases from plan.</p>
-<p>You can use <code>--graph-width</code> option to set width of graph.</p>
+<p>Show only <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 17c-.13 0-.26 0-.39.04l-1.61-3.25a2.5 2.5 0 0 0-1.75-4.29c-.13 0-.25 0-.39.04l-1.63-3.25c.48-.45.77-1.08.77-1.79a2.5 2.5 0 0 0-5 0c0 .71.29 1.34.76 1.79L8.64 9.54c-.14-.04-.26-.04-.39-.04a2.5 2.5 0 0 0-1.75 4.29l-1.61 3.25C4.76 17 4.63 17 4.5 17a2.5 2.5 0 0 0 0 5A2.5 2.5 0 0 0 7 19.5c0-.7-.29-1.34-.76-1.79l1.62-3.25c.14.04.26.04.39.04s.25 0 .39-.04l1.63 3.25c-.47.45-.77 1.09-.77 1.79a2.5 2.5 0 0 0 5 0A2.5 2.5 0 0 0 12 17c-.13 0-.26 0-.39.04L10 13.79c.46-.45.75-1.08.75-1.79s-.29-1.34-.75-1.79l1.61-3.25c.13.04.26.04.39.04s.26 0 .39-.04L14 10.21c-.45.45-.75 1.09-.75 1.79a2.5 2.5 0 0 0 2.5 2.5c.13 0 .25 0 .39-.04l1.63 3.25c-.47.45-.77 1.09-.77 1.79a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0-2.5-2.5Z"></path></svg></span> graph of helm releases from plan.</p>
+<div class="admonition info">
+<p class="admonition-title">Flags</p>
+<div class="highlight"><pre><span></span><code>--graph-width<span class="w"> </span>value<span class="w">  </span><span class="nb">set</span><span class="w"> </span>ceil<span class="w"> </span>width:<span class="w"> </span><span class="m">1</span><span class="w"> </span>–<span class="w"> </span>disable<span class="w"> </span>graph<span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>–<span class="w"> </span>full<span class="w"> </span>names<span class="p">;</span><span class="w"> </span>N&gt;1<span class="w"> </span>–<span class="w"> </span>show<span class="w"> </span>only<span class="w"> </span>N<span class="w"> </span>symbols<span class="p">;</span><span class="w"> </span>N&lt;<span class="m">0</span><span class="w"> </span>–<span class="w"> </span>drop<span class="w"> </span>N<span class="w"> </span>symbols<span class="w"> </span>from<span class="w"> </span>end.<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_GRAPH_WIDTH</span><span class="o">]</span>
+</code></pre></div>
+</div>
 <blockquote>
 <p>Graph draws with <a href="https://github.com/helmwave/asciigraph">helmwave/asciigraph</a></p>
 </blockquote>
@@ -716,11 +725,25 @@ And you can also use <code>--yml</code> flag that renders <code>helmwave.yml.tpl
 <li><code>helmwave diff live</code> will diff with manifests in the k8s-cluster </li>
 <li><code>helmwave diff plan</code> will diff with your another local plan.</li>
 </ul>
-<hr/>
+<div class="admonition info">
+<p class="admonition-title">Flags</p>
+<div class="highlight"><pre><span></span><code>--wide<span class="w"> </span>value<span class="w">   </span>show<span class="w"> </span>line<span class="w"> </span>around<span class="w"> </span>changes<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">5</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_DIFF_WIDE</span><span class="o">]</span>
+--show-secret<span class="w">  </span>show<span class="w"> </span>secret<span class="w"> </span><span class="k">in</span><span class="w"> </span>diff<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">true</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_DIFF_SHOW_SECRET</span><span class="o">]</span>
+--3-way-merge<span class="w">  </span>show<span class="w"> </span><span class="m">3</span>-way<span class="w"> </span>merge<span class="w"> </span>diff<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_DIFF_3_WAY_MERGE</span><span class="o">]</span>
+</code></pre></div>
+</div>
 <h2 id="logs">Logs</h2>
 <blockquote>
 <p>Logs options. Helmwave use <a href="https://github.com/sirupsen/logrus">logrus</a> as internal logger.</p>
 </blockquote>
+<div class="admonition info">
+<p class="admonition-title">Flags</p>
+<div class="highlight"><pre><span></span><code>--log-format<span class="w"> </span>value<span class="w">  </span>You<span class="w"> </span>can<span class="w"> </span>set:<span class="w"> </span><span class="o">[</span><span class="w"> </span>text<span class="w"> </span><span class="p">|</span><span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>pad<span class="w"> </span><span class="p">|</span><span class="w"> </span>emoji<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="s2">"emoji"</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_LOG_FORMAT</span><span class="o">]</span>
+--log-level<span class="w"> </span>value<span class="w">   </span>You<span class="w"> </span>can<span class="w"> </span>set:<span class="w"> </span><span class="o">[</span><span class="w"> </span>debug<span class="w"> </span><span class="p">|</span><span class="w"> </span>info<span class="w"> </span><span class="p">|</span><span class="w"> </span>warn<span class="w">  </span><span class="p">|</span><span class="w"> </span>fatal<span class="w"> </span><span class="p">|</span><span class="w"> </span>panic<span class="w"> </span><span class="p">|</span><span class="w"> </span>trace<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="s2">"info"</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_LOG_LEVEL</span>,<span class="w"> </span><span class="nv">$HELMWAVE_LOG_LVL</span><span class="o">]</span>
+--log-color<span class="w">         </span>Force<span class="w"> </span>color<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">true</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_LOG_COLOR</span><span class="o">]</span>
+--log-timestamps<span class="w">    </span>Add<span class="w"> </span>timestamps<span class="w"> </span>to<span class="w"> </span>log<span class="w"> </span>messages<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_LOG_TIMESTAMPS</span><span class="o">]</span>
+</code></pre></div>
+</div>
 <h3 id="log-format">Log Format</h3>
 <p>Helmwave supports several log-format</p>
 <table>
