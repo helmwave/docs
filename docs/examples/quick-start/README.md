@@ -35,7 +35,7 @@
     [🙃 aka INFO]: Success 2 / 2
     ```
 
-5. **Check**
+5. **Check ✔️**
 
     ```shell
     $ helm list -n my-namespace
@@ -49,4 +49,4 @@
     b-nats-0   1/1     Running   0          36s
     ```
 
-6. **Congratulations!**
+6. **Congratulations! 🥳**

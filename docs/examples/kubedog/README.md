@@ -35,6 +35,8 @@ We are going to use `commonAnnotations`.
 
 **Run**
 
+!!! tip "You can combine `--kubedog` and [`--progress`](../cli/#log-level)"
+
 ```shell
 helmwave up --build --kubedog
 ```

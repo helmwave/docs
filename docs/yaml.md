@@ -112,7 +112,7 @@ Release name. I hope you know what it is.
 
 ### namespace
 
-Kubernetes namespace.
+:simple-kubernetes: kubernetes namespace.
 
 ### create_namespace
 
@@ -139,7 +139,7 @@ It allows passing your custom fields from `helmwave.yml` to values.
 
 [example](../examples/store-greeting-hello/)
 
-### tags
+### tags[]
 
 It allows you to choose releases for build.
 
@@ -310,7 +310,7 @@ You can use custom commands to change rendered manifests.
 ### offline_kube_version
 
 If `offline_kube_version` set helmwave will use this version to build plan.
-Without this option, helmwave will ask kubernetes for a version.
+Without this option, helmwave will ask :simple-kubernetes: kubernetes for a version.
 
 !!! tip "`offline_kube_version` also can help you if you want to use different environments for `helmwave build` and `helmwave up`."
 

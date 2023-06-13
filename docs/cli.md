@@ -124,7 +124,7 @@ And you can also use `--yml` flag that renders `helmwave.yml.tpl` to `helmwave.y
 
 ### `up`
 
-Helmwave will install repositories and helm-releases from a plan.
+Helmwave will install repositories and helm releases from a plan.
 
 !!! info "Flags"
 
@@ -167,7 +167,7 @@ $ helmwave down
 
 ### `ls`
 
-Helmwave will get a list of helm-releases from a plan.
+Helmwave will get a list of helm releases from a plan.
 
 ```bash
 $ helmwave ls      
@@ -185,7 +185,7 @@ $ helmwave ls
 
 ### `status`
 
-Helmwave try getting status of helm-releases from plan.
+Helmwave try getting status of helm releases from a plan.
 
 ```bash
 $ helmwave status      
@@ -214,7 +214,7 @@ $ helmwave status
 
 ### `rollback`
 
-Rollback helm-releases from plan.
+Rollback helm releases from a plan.
 
 !!! info "Flags"
 
@@ -240,7 +240,7 @@ Show only :material-graph: graph of helm releases from plan.
     --graph-width value  set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
     ```
 
-> Graph draws with [helmwave/asciigraph](https://github.com/helmwave/asciigraph)
+> Graph draws with [:simple-github: helmwave/asciigraph](https://github.com/helmwave/asciigraph)
 
 
 ### `validate`
@@ -253,7 +253,7 @@ Helmwave will validate plan.
 
 Diff has 2 subcommands 
 
-- `helmwave diff live` will diff with manifests in the k8s-cluster 
+- `helmwave diff live` will diff with manifests in the :simple-kubernetes: kubernetes cluster 
 - `helmwave diff plan` will diff with your another local plan.
 
 !!! info "Flags"
@@ -268,7 +268,7 @@ Diff has 2 subcommands
 
 ## Logs
 
-> Logs options. Helmwave use [logrus](https://github.com/sirupsen/logrus) as internal logger.
+> Helmwave uses [:simple-github: sirupsen/logrus](https://github.com/sirupsen/logrus) as internal logger.
 
 !!! info "Flags"
 
