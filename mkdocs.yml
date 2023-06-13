@@ -19,6 +19,7 @@ nav:
       - install.md
       - 🔰 Quick Start: examples/quick-start/README.md
       - ci.md
+      - ide.md
       - pub.md
 
   - Reference:

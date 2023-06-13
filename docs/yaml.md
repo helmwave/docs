@@ -316,6 +316,8 @@ Without this option, helmwave will ask kubernetes for a version.
 
 ### chart
 
+> `chart` can be an object or a string. If it's a string, it will be treated as a `name`.
+
 |         field         | required |  type  | default |
 |:---------------------:|:--------:|:------:|:-------:|
 |       **name**        |    ✅     | string |   ""    |
@@ -384,6 +386,41 @@ Name of release (dependency) that has to be installed/upgraded before this relea
 
 Name support 2 kind of definitions: uniq name `<release-name>@<namespace>` or just `<release-name>`.
 If namespace is not specified, it will be taken from namespace filed of release.
+
+
+The same configuration can be written in 2 ways:
+
+=== "`<release-name>`"
+
+    ```yaml
+    releases:
+      - name: backend
+        namespace: test
+        depends_on:
+          - name: redis
+
+    - name: redis
+      namespace: test
+    ```
+
+=== "`<release-name>@<namespace>`"
+
+    ```yaml
+    releases:
+      - name: backend
+        namespace: test
+        depends_on:
+          - name: redis@test
+
+    - name: redis
+      namespace: test
+    ```
+
+
+Both of them will be normalized to `redis@test` in a planfile.
+
+
+    
 
 #### tag
 

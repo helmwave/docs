@@ -8,7 +8,7 @@ Let's see how we can get it working on popular CI software.
 
 ## :material-github: GitHub action
 
-- [official github action](https://github.com/marketplace/actions/helmwave-installer)
+You can use [official github action](https://github.com/marketplace/actions/helmwave-installer)
 
 ```yaml
 name: Deploy

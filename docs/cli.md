@@ -225,8 +225,8 @@ Helmwave will validate plan.
 
 Diff has 2 subcommands 
 
-1. `helmwave diff live` will diff with manifests in the k8s-cluster 
-2. `helmwave diff plan` will diff with your another local plan.
+- `helmwave diff live` will diff with manifests in the k8s-cluster 
+- `helmwave diff plan` will diff with your another local plan.
 
 ---
 
@@ -299,31 +299,38 @@ helmwave <cmd>
 
 ## Completion
 
-### Bash
+=== ":material-bash: bash"
 
-Add this code to your ~/.bashrc
+    Add this code to your ~/.bashrc
+    
+    ```bash
+    source <(helmwave completion bash)
+    ```
 
-```bash
-source <(helmwave completion bash)
+    ```bash
+    echo "source <(helmwave completion bash)" >> ~/.bashrc
+    ```
+
+    ![completion-bash](assets/completion-bash.png)
+
+=== ":material-bash: zsh"
+
+    Add this code to your ~/.zshrc
+    
+    ```bash
+    source <(helmwave completion zsh)
+    ```
+    
+    ```bash
+    echo "source <(helmwave completion zsh)" >> ~/.zshrc
+    ```
+    
+    ![completion-zsh](assets/completion-zsh.png)
+
+## schema
+
+You can generate json schema for autocomplete and validate `helmwave.yml` in your IDE.
+
+```shell
+helmwave schema > helmwave.schema.json
 ```
-
-```bash
-echo "source <(helmwave completion bash)" >> ~/.bashrc
-```
-
-![completion-bash](assets/completion-bash.png)
-
-### ZSH
-
-Add this code to your ~/.zshrc
-
-```bash
-source <(helmwave completion zsh)
-```
-
-```bash
-echo "source <(helmwave completion zsh)" >> ~/.zshrc
-```
-
-![completion-zsh](assets/completion-zsh.png)
-
