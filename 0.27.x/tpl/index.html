@@ -611,6 +611,75 @@ You're not viewing the latest version.
     Custom
   </a>
   
+    <nav class="md-nav" aria-label="Custom">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requiredenv" class="md-nav__link">
+    requiredEnv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exec" class="md-nav__link">
+    exec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readfile" class="md-nav__link">
+    readFile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toyaml" class="md-nav__link">
+    toYaml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fromyaml" class="md-nav__link">
+    fromYaml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvalueatpath" class="md-nav__link">
+    setValueAtPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    required
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -965,14 +1034,16 @@ You're not viewing the latest version.
 
 <h1 id="templating">📄 Templating</h1>
 <p>Helmwave uses <a href="https://godoc.org/text/template">Go templates</a> for templating.</p>
-<p>Helmwave supports all built-in functions / sprig / gomplate / custom.</p>
+<p>Helmwave supports all built-in functions / <code>sprig</code> / <code>gomplate</code> / custom.</p>
 <p><code>--templater value                Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]</code></p>
-<details class="warning" open="open">
-<summary>Explain context helm vs helmwave</summary>
-<p>There is a different context between <code>helm</code> and <code>helmwave</code>.
-You can't pass variables from helmwawve to your helm chart templates.
-You should use helmwave to render values of your chart.</p>
-</details>
+<p>!!!+ danger "Explain context helm vs helmwave"</p>
+<div class="highlight"><pre><span></span><code>There is a different context between `helm` and `helmwave`.
+You can&#39;t pass variables from helmwawve to your helm chart templates.
+You should use helmwave to render values of your chart.
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">We recommend using <code>gomplate</code></p>
+</div>
 <h2 id="sprig"><a href="https://godoc.org/github.com/Masterminds/sprig">Sprig</a></h2>
 <p>If you've ever written helm charts, then you're already familiar with it.</p>
 <p>http://masterminds.github.io/sprig/</p>
@@ -981,18 +1052,47 @@ You should use helmwave to render values of your chart.</p>
 <p>gomplate is a template renderer which supports a growing list of datasources, such as: JSON (including EJSON - encrypted JSON), YAML, AWS EC2 metadata, BoltDB, Hashicorp Consul and Hashicorp Vault secrets.</p>
 </blockquote>
 <h2 id="custom"><a href="https://github.com/helmwave/helmwave/blob/release-0.27.3/pkg/template/func.go">Custom</a></h2>
-<ul>
-<li><code>toYaml</code> marshals a map into a string</li>
-<li><code>exec</code> exec command</li>
-<li><code>fromYaml</code> reads a golang string and generates a map</li>
-<li><code>readFile</code> get file as string</li>
-<li><code>hasKey</code> get true if field is existed</li>
-<li><code>get</code> (Sprig's original <code>get</code> is available as <code>sprigGet</code>)</li>
-<li><code>setValueAtPath</code> PATH NEW_VALUE traverses a golang map, replaces the value at the PATH with NEW_VALUE</li>
-<li><code>requiredEnv</code> The requiredEnv function allows you to declare a particular environment variable as required for
-  template rendering. If the environment variable is unset or empty, the template rendering will fail with an error
-  message.</li>
-</ul>
+<h4 id="env"><code>env</code></h4>
+<p>The <code>env</code> function allows you to declare a particular environment variable as an optional for template rendering.
+If the environment variable is unset or empty, the template rendering will continue with an empty string as a value.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$envValue</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= env &quot;envName&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<h4 id="requiredenv"><code>requiredEnv</code></h4>
+<p>The <code>requiredEnv</code> function allows you to declare a particular environment variable as required for template rendering.
+If the environment variable is unset or empty, the template rendering will fail with an error message.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$envValue</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= requiredEnv &quot;envName&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<blockquote>
+<p>If the environment variable value starts with '/' (forward slash) and <a href="https://git-scm.com/download/win">Git for Windows</a> is used, you must set <code>MSYS_NO_PATHCONV=1</code> to preserve values as-is, or the environment variable value will be prefixed with the <code>C:\Program Files\Git</code>. <a href="https://github.com/git-for-windows/build-extra/blob/main/ReleaseNotes.md#known-issues">reference</a></p>
+</blockquote>
+<h4 id="exec"><code>exec</code></h4>
+<p>The <code>exec</code> function allows you to run a command, returning the stdout of the command. When the command fails, the template rendering will fail with an error message.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$cmdOutpot</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= exec &quot;./mycmd&quot; (list &quot;arg1&quot; &quot;arg2&quot; &quot;--flag1&quot;)</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<h4 id="readfile"><code>readFile</code></h4>
+<p>The <code>readFile</code> function allows you to read a file and return its content as the function output. On failure, the template rendering will fail with an error message.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$fileContent</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= readFile &quot;./myfile&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<h4 id="toyaml"><code>toYaml</code></h4>
+<p>The <code>toYaml</code> function allows you to convert a value to YAML string. When has failed, the template rendering will fail with an error message.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$yaml</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">=  $value | toYaml</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<h4 id="fromyaml"><code>fromYaml</code></h4>
+<p>The <code>fromYaml</code> function allows you to convert a YAML string to a value. When has failed, the template rendering will fail with an error message.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$value</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">=  $yamlString | fromYaml</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<h4 id="setvalueatpath"><code>setValueAtPath</code></h4>
+<p>The <code>setValueAtPath</code> function allows you to set a value at a path. When has failed, the template rendering will fail with an error message.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$value | setValueAtPath &quot;path.key&quot; $newValue</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<h4 id="get"><code>get</code></h4>
+<p>The <code>get</code> function allows you to get a value at a path. when defaultValue not set. It will return nil. When has failed, the template rendering will fail with an error message.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$Getvalue</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">=  $value | get &quot;path.key&quot; &quot;defaultValue&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<h4 id="required"><code>required</code></h4>
+<p>The <code>required</code> function returns the second argument as-is only if it is not empty. If empty, the template rendering will fail with an error message containing the first argument.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$requiredValue</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">=  $value | required &quot;value not set&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
 
 
   
