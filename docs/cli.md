@@ -216,6 +216,13 @@ $ helmwave status
 
 Rollback helm-releases from plan.
 
+!!! info "Flags"
+
+    ```shell
+    --revision value  rollback all releases to this revision (default: -1)
+    ```
+
+
 ```bash
 $ helmwave rollback      
 [🙃 aka INFO]: ✅ frontend@test rollback!
@@ -225,9 +232,13 @@ $ helmwave rollback
 
 ### `graph`
 
-Show only graph of helm releases from plan.
+Show only :material-graph: graph of helm releases from plan.
 
-You can use `--graph-width` option to set width of graph.
+!!! info "Flags"
+
+    ```shell
+    --graph-width value  set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
+    ```
 
 > Graph draws with [helmwave/asciigraph](https://github.com/helmwave/asciigraph)
 
@@ -245,11 +256,28 @@ Diff has 2 subcommands
 - `helmwave diff live` will diff with manifests in the k8s-cluster 
 - `helmwave diff plan` will diff with your another local plan.
 
----
+!!! info "Flags"
+
+    ```shell
+    --wide value   show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
+    --show-secret  show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
+    --3-way-merge  show 3-way merge diff (default: false) [$HELMWAVE_DIFF_3_WAY_MERGE]
+    ```
+
+
 
 ## Logs
 
 > Logs options. Helmwave use [logrus](https://github.com/sirupsen/logrus) as internal logger.
+
+!!! info "Flags"
+
+    ```shell
+    --log-format value  You can set: [ text | json | pad | emoji ] (default: "emoji") [$HELMWAVE_LOG_FORMAT]
+    --log-level value   You can set: [ debug | info | warn  | fatal | panic | trace ] (default: "info") [$HELMWAVE_LOG_LEVEL, $HELMWAVE_LOG_LVL]
+    --log-color         Force color (default: true) [$HELMWAVE_LOG_COLOR]
+    --log-timestamps    Add timestamps to log messages (default: false) [$HELMWAVE_LOG_TIMESTAMPS]
+    ```
 
 ### Log Format
 
