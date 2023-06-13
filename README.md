@@ -14,9 +14,10 @@ mike serve
 
 ### Prod
 
-Done automatically via GitHub Actions. Fresh created branches will update `latest` symlink, other pushes will just trigger deploy of corresponding version.
+Done automatically via GitHub Actions.
+Fresh-created branches will update `latest` symlink, other pushes will just trigger deploy of a corresponding version.
 
-The only thing you need to update is helmwave version in:
+The only thing you need to update is `helmwave` version in:
 
 - [examples](docs/examples)
 - [docs/tpl.md](docs/tpl.md)

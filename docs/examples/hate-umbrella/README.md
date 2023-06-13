@@ -9,14 +9,14 @@ Why is Umbrella chart evil?
 - Umbrella chart doesn't provide separate your environments.
 - When sub-chart is modified, you need to fix it twice.
 
-Suppose that you need to describe the next architecture.
+!!! info "Suppose that you need to describe the next architecture."
 
-```mermaid
-graph LR
-  frontend --> api --> rabbitmq & minio_s3
-  consumer --> rabbitmq & minio_s3 & postgresql
-```
-*If you don't see a graph, please reload the page.*
+    ```mermaid
+    graph LR
+      frontend --> api --> rabbitmq & minio_s3
+      consumer --> rabbitmq & minio_s3 & postgresql
+    ```
+    *If you don't see a graph, please reload the page.*
 
 Example of **helmwave.yml** for this architecture.
 

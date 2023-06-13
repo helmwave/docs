@@ -43,6 +43,7 @@ nav:
       - examples/private-gitlab-repo/README.md
       - examples/single-app-multi-envs/README.md
       - Store: examples/store-greeting-hello/README.md
+      - examples/private-env/README.md
       - examples/values-delimiter-flags/README.md
       - examples/values-render-flag/README.md
       - examples/values-strict-flag/README.md

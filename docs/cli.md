@@ -43,6 +43,19 @@ GLOBAL OPTIONS:
 
 ```
 
+```mermaid
+flowchart TD
+    helmwave.yml.tpl -- yml --> helmwave.yml -- build --> .helmwave/planfile
+    .helmwave/planfile --> up(up)
+    .helmwave/planfile --> down(down)
+    .helmwave/planfile --> ls(ls)
+    .helmwave/planfile --> s(status)
+    .helmwave/planfile --> r(rollback)
+    .helmwave/planfile --> g(graph)
+    .helmwave/planfile --> v(validate)
+    .helmwave/planfile --> diff(diff)
+```
+
 ## step 0: templating
 
 ### `yml`
