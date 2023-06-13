@@ -481,6 +481,11 @@ You're not viewing the latest version.
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../examples/private-env/">
+        Private environment
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../examples/values-delimiter-flags/">
         Delimiter flags for values
       </a>
@@ -551,6 +556,17 @@ GLOBAL OPTIONS:
    --help, -h          show help
    --version, -v       print the version
 </code></pre></div>
+<div class="mermaid">flowchart TD
+    helmwave.yml.tpl -- yml --&gt; helmwave.yml -- build --&gt; .helmwave/planfile
+    .helmwave/planfile --&gt; up(up)
+    .helmwave/planfile --&gt; down(down)
+    .helmwave/planfile --&gt; ls(ls)
+    .helmwave/planfile --&gt; s(status)
+    .helmwave/planfile --&gt; r(rollback)
+    .helmwave/planfile --&gt; g(graph)
+    .helmwave/planfile --&gt; v(validate)
+    .helmwave/planfile --&gt; diff(diff)
+</div>
 <h2 id="step-0-templating">step 0: templating</h2>
 <h3 id="yml"><code>yml</code></h3>
 <p>This command renders <code>helmwave.yml.tpl</code> to <code>helmwave.yml</code>.</p>
@@ -934,5 +950,5 @@ $<span class="w"> </span>helmwave<span class="w"> </span>ver
 <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
 <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.top", "navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
 <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
-</body>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
 </html>

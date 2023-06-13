@@ -12,20 +12,20 @@
         <meta name="author" content="Dmitriy Zhilyaev">
       
       
-        <link rel="canonical" href="https://helmwave.github.io/0.27.x/examples/oci-private/">
+        <link rel="canonical" href="https://helmwave.github.io/0.27.x/examples/private-env/">
       
       
-        <link rel="prev" href="../kubedog/">
+        <link rel="prev" href="../store-greeting-hello/">
       
       
-        <link rel="next" href="../oci-public/">
+        <link rel="next" href="../values-delimiter-flags/">
       
       <link rel="icon" href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>OCI private - Helmwave</title>
+        <title>Private environment - Helmwave</title>
       
     
     
@@ -72,9 +72,9 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Helmwave - OCI private">
+<meta property="og:title" content="Helmwave - Private environment">
 <meta property="og:description" content="The helmwave`s docs">
-<meta property="og:url" content="https://helmwave.github.io/0.27.x/examples/oci-private/">
+<meta property="og:url" content="https://helmwave.github.io/0.27.x/examples/private-env/">
 <meta property="og:image" content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#oci-private" class="md-skip">
+        <a href="#private-environment" class="md-skip">
           Skip to content
         </a>
       
@@ -150,7 +150,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OCI private
+              Private environment
             
           </span>
         </div>
@@ -706,21 +706,11 @@ You're not viewing the latest version.
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../oci-private/" class="md-nav__link">
         OCI private
       </a>
-      
     </li>
   
 
@@ -828,11 +818,21 @@ You're not viewing the latest version.
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../private-env/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Private environment
       </a>
+      
     </li>
   
 
@@ -918,21 +918,33 @@ You're not viewing the latest version.
   
 
 
-<h1 id="oci-private">OCI private</h1>
-<p>Just add <code>oci://</code> to your chart name and define a registry.</p>
-<p><strong><code>cat helmwave.yml</code></strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.27.3</span>
-
-<span class="nt">registries</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost:5000</span>
-<span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;pass_username_here&gt;</span>
-<span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;pass_password_here&gt;</span>
+<h1 id="private-environment">Private environment</h1>
+<p><strong><code>helmwave.yml</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">repositories</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jetstack</span>
+<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://charts.jetstack.io</span>
 
 <span class="nt">releases</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cert-manager</span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oci://localhost:5000/my-chart</span>
-<span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2.0</span><span class="w"> </span><span class="c1"># best practice</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jetstack/cert-manager</span>
+<span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1.12.1</span>
+<span class="w">    </span><span class="nt">offline_kube_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.22.2</span>
+<span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cert-manager</span>
+</code></pre></div>
+<p><strong>Disable diff</strong></p>
+<p>You can also use <code>local</code></p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HELMWAVE_DIFF_MODE</span><span class="o">=</span>none
+</code></pre></div>
+<p><strong>build a plan</strong></p>
+<p>you can also use <code>--charts-cache-dir</code>.</p>
+<div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>build
+</code></pre></div>
+<p><strong>upload plan to private environment</strong></p>
+<div class="highlight"><pre><span></span><code>whatever<span class="w"> </span>you<span class="w"> </span>want
+</code></pre></div>
+<p><strong>on the private environment</strong></p>
+<div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>up
 </code></pre></div>
 
 
