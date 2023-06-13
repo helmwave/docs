@@ -1,4 +1,4 @@
-# Yaml
+# 🧬 helmwave.yml
 
 Works on [helm](https://github.com/helmwave/helmwave/blob/v0.27.3/go.mod)
 
@@ -22,7 +22,7 @@ Helmwave will check the current version and project version.
 
 In the future, it is planned to check major compatibility. 
 
-## Registries[]
+## registries[]
 
 > [OCI registries](https://helm.sh/docs/topics/registries/)
 
@@ -38,7 +38,7 @@ In the future, it is planned to check major compatibility.
 - [private oci](../examples/oci-private)
 - [public (github) oci](../examples/oci-public)
 
-## Repositories[]
+## repositories[]
 
 > Helm [repositories](https://helm.sh/docs/helm/helm_repo) also know as `helm repo add`
 
@@ -69,7 +69,7 @@ URL of the repository.
 
 Update existing repository exists if settings differ.
 
-## Releases[]
+## releases[]
 
 > Almost all options that are here are native helm options.
 
@@ -133,13 +133,13 @@ Limit the maximum number of revisions saved per release. Use 0 for no limit (def
     `previous release` + `current release` + `next release` = **`3`**
 
 
-### store 🗳️
+### store
 
 It allows passing your custom fields from `helmwave.yml` to values.
 
 [example](../examples/store-greeting-hello/)
 
-### tags 🔖
+### tags
 
 It allows you to choose releases for build.
 
@@ -152,14 +152,15 @@ It works with next options when you call `helmwave build` (or `helmwave up --bui
  
 **Matching with tags**
 
-Suppose we have next `helmwave.yml` with 4 releases
+!!! example inline "Suppose we have next `helmwave.yml` with 4 releases"
 
-1. redis-a
-2. redis-b
-3. memcached-a
-4. memcached-b
+    1. redis-a
+    2. redis-b
+    3. memcached-a
+    4. memcached-b
 
 <img width="200" src="https://habrastorage.org/webt/45/f7/o_/45f7o_wad_mokyvpy-rtmqs7rno.png" />
+
 
 ```yaml
 repositories:
@@ -250,17 +251,17 @@ releases:
               - redis-a@test
     ```
 
-### depends_on
+### depends_on[]
 
 It allows setting explicit dependencies between releases. Dependant release will start upgrading only after all its dependencies finished upgrading
 
-Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application
+!!! example "Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application"
 
-```mermaid
-graph LR
-    frontend --> backend --> db;
-```
-*If you don't see a graph, please reload the page.*
+    ```mermaid
+    graph LR
+        frontend --> backend --> db;
+    ```
+    *If you don't see a graph, please reload the page.*
 
 Your `helmwave.yml` should look like this:
 
@@ -313,7 +314,7 @@ Without this option, helmwave will ask kubernetes for a version.
 
 !!! tip "`offline_kube_version` also can help you if you want to use different environments for `helmwave build` and `helmwave up`."
 
-## Chart
+### chart
 
 |         field         | required |  type  | default |
 |:---------------------:|:--------:|:------:|:-------:|
@@ -329,9 +330,11 @@ Without this option, helmwave will ask kubernetes for a version.
 |  passcredentialsall   |    🙅    |  bool  |  false  |
 |        verify         |    🙅    |  bool  |  false  |
 
-> If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during deploy.
+!!! tip "If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during deploy."
 
-## Values[]
+### values[]
+
+> `values` can be an object or a string. If it's a string, it will be treated as a `src` field.
 
 |      field      | required |  type  | default |
 |:---------------:|:--------:|:------:|:-------:|
@@ -341,31 +344,32 @@ Without this option, helmwave will ask kubernetes for a version.
 |     strict      |    🙅    |  bool  |  false  |
 |     render      |    🙅    |  bool  |  true   |
 
-> `values` can be an object or a string. If it's a string, it will be treated as a `src`.
 
-### **src**
+#### **src**
 
 Path to values file. It can be local or remote.
 
-### delimiter_left, delimiter_right
+#### delimiter_left, delimiter_right
 
 You can change the delimiter that helmwave uses to render values.
 
 [example](../examples/values-delimiter-flags/)
 
-### render
+#### render
 
 Allows disabling templating values at all.
 
 [example](../examples/values-render-flag)
 
-### strict
+#### strict
 
 Allows to fail if values file doesn't exist.
 
 [example](../examples/values-strict-flag)
 
-## depends_on[]
+### depends_on[]
+
+> `depends_on` can be an object or a string. If it's a string, it will be treated as a `name`.
 
 |  field   | required |  type  | default |
 |:--------:|:--------:|:------:|:-------:|
@@ -373,22 +377,21 @@ Allows to fail if values file doesn't exist.
 |   tag    |    🙅    | string |   ""    |
 | optional |    🙅    |  bool  |  false  |
 
-> `depends_on` can be an object or a string. If it's a string, it will be treated as a `name`.
 
-### **name**
+#### **name**
 
 Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in a plan, it will be added to a plan.
 
 Name support 2 kind of definitions: uniq name `<release-name>@<namespace>` or just `<release-name>`.
 If namespace is not specified, it will be taken from namespace filed of release.
 
-### tag
+#### tag
 
 You can include all releases that match this tag to be added as dependencies.
 If a tag is not in a plan, it will be added to a plan.
 
 The planfile (`.helmwave/planfile` by default) will have a normalized list of releases instead of tags.
 
-### optional
+#### optional
 
 If dependency is not found in all available releases, helmwave will not fail due to missing dependency.
