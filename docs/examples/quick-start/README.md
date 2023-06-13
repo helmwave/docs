@@ -28,8 +28,10 @@
     Output will be like that:
 
     ```shell
-    [🙃 aka INFO]: ✅ redis-a@my-namespace
-    [🙃 aka INFO]: ✅ redis-b@my-namespace
+    [🙃 aka INFO]: ✅
+        release: a@my-namespace
+    [🙃 aka INFO]: ✅
+        release: b@my-namespace
     [🙃 aka INFO]: Success 2 / 2
     ```
 
