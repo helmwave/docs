@@ -43,18 +43,21 @@ GLOBAL OPTIONS:
 
 ```
 
-```mermaid
-flowchart TD
-    helmwave.yml.tpl -- yml --> helmwave.yml -- build --> .helmwave/planfile
-    .helmwave/planfile --> up(up)
-    .helmwave/planfile --> down(down)
-    .helmwave/planfile --> ls(ls)
-    .helmwave/planfile --> s(status)
-    .helmwave/planfile --> r(rollback)
-    .helmwave/planfile --> g(graph)
-    .helmwave/planfile --> v(validate)
-    .helmwave/planfile --> diff(diff)
-```
+!!! note "workflow"
+
+    ```mermaid
+    flowchart TD
+        helmwave.yml.tpl -- yml --> helmwave.yml -- build --> .helmwave/planfile
+        .helmwave/planfile --> up(up)
+        .helmwave/planfile --> down(down)
+        .helmwave/planfile --> ls(ls)
+        .helmwave/planfile --> s(status)
+        .helmwave/planfile --> r(rollback)
+        .helmwave/planfile --> g(graph)
+        .helmwave/planfile --> v(validate)
+        .helmwave/planfile --> diff(diff)
+    ```
+    *If you don't see a graph, please reload the page.*
 
 ## step 0: templating
 
@@ -226,6 +229,7 @@ Show only graph of helm releases from plan.
 
 You can use `--graph-width` option to set width of graph.
 
+> Graph draws with [helmwave/asciigraph](https://github.com/helmwave/asciigraph)
 
 
 ### `validate`
@@ -342,7 +346,7 @@ helmwave <cmd>
 
 ## schema
 
-You can generate json schema for autocomplete and validate `helmwave.yml` in your IDE.
+You can generate json schema for autocomplete and validate `helmwave.yml` in your [IDE](../ide).
 
 ```shell
 helmwave schema > helmwave.schema.json
