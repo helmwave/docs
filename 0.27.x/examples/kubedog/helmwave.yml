@@ -13,3 +13,5 @@ releases:
       - values.yml
     namespace: my-redis
     create_namespace: true
+    wait: true
+    timeout: 3m

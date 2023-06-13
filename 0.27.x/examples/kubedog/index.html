@@ -25,7 +25,7 @@
     
     
       
-        <title>🐶Kubedog - Helmwave</title>
+        <title>🐶 Kubedog - Helmwave</title>
       
     
     
@@ -72,7 +72,7 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Helmwave - 🐶Kubedog">
+<meta property="og:title" content="Helmwave - 🐶 Kubedog">
 <meta property="og:description" content="The helmwave`s docs">
 <meta property="og:url" content="https://helmwave.github.io/0.27.x/examples/kubedog/">
 <meta property="og:image" content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png">
@@ -138,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              🐶Kubedog
+              🐶 Kubedog
             
           </span>
         </div>
@@ -664,7 +664,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        🐶Kubedog
+        🐶 Kubedog
       </a>
       
     </li>
@@ -864,7 +864,7 @@
   
 
 
-<h1 id="kubedog">🐶Kubedog</h1>
+<h1 id="kubedog">🐶 Kubedog</h1>
 <p><a href="../../anno/#kubedogs">full documentation</a></p>
 <p><strong>Project Structure</strong></p>
 <div class="highlight"><pre><span></span><code>.
@@ -887,6 +887,8 @@
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values.yml</span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-redis</span>
 <span class="w">    </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">wait</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3m</span>
 </code></pre></div>
 <p>Then you should create <code>values.yml</code></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Uncommented it if you need</span>
@@ -916,12 +918,12 @@
 <p><code>commonAnnotations</code> is a part of bitnami common library <a href="https://github.com/bitnami/charts/tree/master/bitnami/common">chart</a>.</p>
 </blockquote>
 <p><strong>Run</strong></p>
-<div class="highlight"><pre><span></span><code><span class="go">helmwave up --build --kubedog</span>
+<div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>--kubedog
 </code></pre></div>
 <p>or </p>
-<div class="highlight"><pre><span></span><code><span class="go">export HELMWAVE_KUBEDOG_ENABLED=true</span>
-<span class="go">export HELMWAVE_AUTO_BUILD=true</span>
-<span class="go">helmwave up</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HELMWAVE_KUBEDOG_ENABLED</span><span class="o">=</span><span class="nb">true</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HELMWAVE_AUTO_BUILD</span><span class="o">=</span><span class="nb">true</span>
+helmwave<span class="w"> </span>up
 </code></pre></div>
 <p><strong>Output</strong></p>
 <p><img alt="img.png" src="img.png" /></p>
