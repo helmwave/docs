@@ -556,7 +556,9 @@ GLOBAL OPTIONS:
    --help, -h          show help
    --version, -v       print the version
 </code></pre></div>
-<div class="mermaid">flowchart TD
+<div class="admonition note">
+<p class="admonition-title">workflow</p>
+<p><div class="mermaid">flowchart TD
     helmwave.yml.tpl -- yml --&gt; helmwave.yml -- build --&gt; .helmwave/planfile
     .helmwave/planfile --&gt; up(up)
     .helmwave/planfile --&gt; down(down)
@@ -566,6 +568,8 @@ GLOBAL OPTIONS:
     .helmwave/planfile --&gt; g(graph)
     .helmwave/planfile --&gt; v(validate)
     .helmwave/planfile --&gt; diff(diff)
+</div>
+<em>If you don't see a graph, please reload the page.</em></p>
 </div>
 <h2 id="step-0-templating">step 0: templating</h2>
 <h3 id="yml"><code>yml</code></h3>
@@ -698,6 +702,9 @@ And you can also use <code>--yml</code> flag that renders <code>helmwave.yml.tpl
 <h3 id="graph"><code>graph</code></h3>
 <p>Show only graph of helm releases from plan.</p>
 <p>You can use <code>--graph-width</code> option to set width of graph.</p>
+<blockquote>
+<p>Graph draws with <a href="https://github.com/helmwave/asciigraph">helmwave/asciigraph</a></p>
+</blockquote>
 <h3 id="validate"><code>validate</code></h3>
 <p>Helmwave will validate plan.</p>
 <div class="admonition info">
@@ -872,7 +879,7 @@ $<span class="w"> </span>helmwave<span class="w"> </span>ver
 </div>
 </input></input></div>
 <h2 id="schema">schema</h2>
-<p>You can generate json schema for autocomplete and validate <code>helmwave.yml</code> in your IDE.</p>
+<p>You can generate json schema for autocomplete and validate <code>helmwave.yml</code> in your <a href="../ide">IDE</a>.</p>
 <div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>schema<span class="w"> </span>&gt;<span class="w"> </span>helmwave.schema.json
 </code></pre></div>
 </article>
