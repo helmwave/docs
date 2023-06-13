@@ -8,11 +8,11 @@
 <meta content="The helmwave`s docs" name="description"/>
 <meta content="Dmitriy Zhilyaev" name="author"/>
 <link href="https://helmwave.github.io/0.27.x/examples/hate-umbrella/" rel="canonical"/>
-<link href="../quick-start/" rel="prev"/>
+<link href="../built-in-release/" rel="prev"/>
 <link href="../kubedog/" rel="next"/>
 <link href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.15" name="generator"/>
-<title>Umbrella chart is evil - Helmwave</title>
+<title>☂️ Umbrella chart is evil - Helmwave</title>
 <link href="../../assets/stylesheets/main.26e3688c.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTBLK54FKZ"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTBLK54FKZ",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTBLK54FKZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Helmwave - Umbrella chart is evil" property="og:title"/>
+<meta content="Helmwave - ☂️ Umbrella chart is evil" property="og:title"/>
 <meta content="The helmwave`s docs" property="og:description"/>
 <meta content="https://helmwave.github.io/0.27.x/examples/hate-umbrella/" property="og:url"/>
 <meta content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png" property="og:image"/>
@@ -62,7 +62,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Umbrella chart is evil
+              ☂️ Umbrella chart is evil
             
           </span>
 </div>
@@ -144,7 +144,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../apps-per-ns/">
+<a class="md-tabs__link md-tabs__link--active" href="../quick-start/">
         Examples
       </a>
 </li>
@@ -262,6 +262,11 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../quick-start/">
+        🔰 Quick Start
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../apps-per-ns/">
         Apps per namespace
       </a>
@@ -276,20 +281,15 @@
         Release object
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../quick-start/">
-        🔰 Quick Start
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Umbrella chart is evil
+        ☂️ Umbrella chart is evil
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../kubedog/">
-        Kubedog
+        🐶Kubedog
       </a>
 </li>
 <li class="md-nav__item">
@@ -362,18 +362,18 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="umbrella-chart-is-evil">Umbrella chart is evil</h1>
+<h1 id="umbrella-chart-is-evil">☂️ Umbrella chart is evil</h1>
 <blockquote>
 <p>Helmwave is only what you actually need.</p>
 </blockquote>
-<p>Why Umbrella chart is evil?</p>
+<p>Why is Umbrella chart evil?</p>
 <ul>
 <li>You must keep extra chart.</li>
 <li>You have new layer for conventional values.</li>
 <li>Umbrella chart doesn't provide separate your environments.</li>
-<li>When sub-chart modified you need fix it twice.</li>
+<li>When sub-chart is modified, you need to fix it twice.</li>
 </ul>
-<p>Suppose that you need to describe next architecture.</p>
+<p>Suppose that you need to describe the next architecture.</p>
 <p><div class="mermaid">graph LR
   frontend --&gt; api --&gt; rabbitmq &amp; minio_s3
   consumer --&gt; rabbitmq &amp; minio_s3 &amp; postgresql

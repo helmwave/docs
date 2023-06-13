@@ -294,7 +294,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../apps-per-ns/" class="md-tabs__link md-tabs__link--active">
+      <a href="../quick-start/" class="md-tabs__link md-tabs__link--active">
         Examples
       </a>
     </li>
@@ -584,6 +584,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        🔰 Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../apps-per-ns/" class="md-nav__link">
         Apps per namespace
       </a>
@@ -626,22 +640,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick-start/" class="md-nav__link">
-        🔰 Quick Start
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../hate-umbrella/" class="md-nav__link">
-        Umbrella chart is evil
+        ☂️ Umbrella chart is evil
       </a>
     </li>
   
@@ -655,7 +655,7 @@
   
     <li class="md-nav__item">
       <a href="../kubedog/" class="md-nav__link">
-        Kubedog
+        🐶Kubedog
       </a>
     </li>
   
@@ -865,7 +865,7 @@
 
 
 <h1 id="single-app-multi-envs">Single app multi envs</h1>
-<p>When we work with helm sometimes we need dynamics chose environment.</p>
+<p>When we work with helm, sometimes we need dynamics chose environment.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CI_ENVIRONMENT_NAME</span><span class="o">=</span>stage
 helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class="w"> </span>my-release<span class="w"> </span>my-chart-repo/my-chart-app<span class="w"> </span>-f<span class="w"> </span>values/_.yml<span class="w"> </span>-f<span class="w"> </span>values/<span class="nv">$CI_ENVIRONMENT_NAME</span>.yaml
 </code></pre></div>

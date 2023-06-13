@@ -144,7 +144,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../examples/apps-per-ns/">
+<a class="md-tabs__link" href="../examples/quick-start/">
         Examples
       </a>
 </li>
@@ -446,6 +446,11 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../examples/quick-start/">
+        🔰 Quick Start
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../examples/apps-per-ns/">
         Apps per namespace
       </a>
@@ -461,18 +466,13 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../examples/quick-start/">
-        🔰 Quick Start
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../examples/hate-umbrella/">
-        Umbrella chart is evil
+        ☂️ Umbrella chart is evil
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../examples/kubedog/">
-        Kubedog
+        🐶Kubedog
       </a>
 </li>
 <li class="md-nav__item">
@@ -1228,10 +1228,10 @@ Without this option helmwave will ask kubernetes for version.</p>
 <h3 id="src">src</h3>
 <p>Path to values file. It can be local or remote.</p>
 <h3 id="delimiter_left-delimiter_right">delimiter_left, delimiter_right</h3>
-<p>You can change delimiter that helmwave uses to render values.</p>
+<p>You can change the delimiter that helmwave uses to render values.</p>
 <p><a href="../examples/values-delimiter-flags/">example</a></p>
 <h3 id="render">render</h3>
-<p>Allows to disable templating values at all.</p>
+<p>Allows disabling templating values at all.</p>
 <p><a href="../examples/values-render-flag">example</a></p>
 <h3 id="strict">strict</h3>
 <p>Allows to fail if values file doesn't exist.</p>
@@ -1271,11 +1271,12 @@ Without this option helmwave will ask kubernetes for version.</p>
 <p>depends_on can be an object or a string. If it's a string it will be treated as a name.</p>
 </blockquote>
 <h3 id="name_2"><strong>name</strong></h3>
-<p>Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in plan, it will be added to plan.</p>
+<p>Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in a plan, it will be added to a plan.</p>
 <p>Name support 2 kind of definitions: uniq name <release-name>@<namespace> or just <release-name>. If namespace is not specified, it will be taken from namespace filed of release.</release-name></namespace></release-name></p>
 <h3 id="tag">tag</h3>
-<p>You can include all releases that match this tag to be added as dependencies. If tag is not in plan, it will be added to plan.</p>
-<p>The planfile (<code>.helmwave/planfile</code> by default) will have normalized list of releases instead of tags.</p>
+<p>You can include all releases that match this tag to be added as dependencies.
+If a tag is not in a plan, it will be added to a plan.</p>
+<p>The planfile (<code>.helmwave/planfile</code> by default) will have a normalized list of releases instead of tags.</p>
 <h3 id="optional">optional</h3>
 <p>If dependency is not found in all available releases, helmwave will not fail due to missing dependency.</p>
 </article>
