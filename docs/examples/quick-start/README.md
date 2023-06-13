@@ -1,7 +1,9 @@
 # 🔰 Quick Start
 
+<script async id="asciicast-591181" src="https://asciinema.org/a/591181.js"></script>
+
 1. **[Install helmwave](../../install)** 
-1. **Create helmwave.yml**
+2. **Create `helmwave.yml`**
 
     Suppose the `helmwave.yml` representing the desired state of your helm releases looks like:
 
@@ -9,50 +11,42 @@
     {% include "helmwave.yml" %}
     ```
 
-1. **Build plan**
+3. **Build plan**
 
     ```shell
     helmwave build
     ```
 
-    This steps generates [plan](../../cli/#step-2-working-with-plan)
+    This step generates [plan](../../cli/#step-2-working-with-plan)
 
-1. If everything is ok , deploy plan
+4. **Deploy plan**
 
     ```shell
-    helmwave up 
+    helmwave up
     ```
 
     Output will be like that:
 
     ```shell
-    [🙃 aka INFO]: ✅ redis-a@my-namespace
-    [🙃 aka INFO]: ✅ redis-b@my-namespace
+    [🙃 aka INFO]: ✅
+        release: a@my-namespace
+    [🙃 aka INFO]: ✅
+        release: b@my-namespace
     [🙃 aka INFO]: Success 2 / 2
     ```
 
-1. **Check**
+5. **Check**
 
     ```shell
     $ helm list -n my-namespace
-    NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
-    redis-a                 my-namespace    1               2020-10-31 17:05:35.829766 +0300 MSK    deployed        redis-11.2.3            6.0.9      
-    redis-b                 my-namespace    1               2020-10-31 17:05:39.437556 +0300 MSK    deployed        redis-11.2.3            6.0.9  
+    NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+    a       my-namespace    1               2023-06-13 16:25:42.446056 +0400 +04    deployed        nats-7.8.3      2.9.17     
+    b       my-namespace    1               2023-06-13 16:25:42.444662 +0400 +04    deployed        nats-7.8.3      2.9.17
 
     $ k get po -n my-namespace                                                                                                                         
-    NAME               READY   STATUS    RESTARTS   AGE
-    redis-a-master-0   1/1     Running   0          64s
-    redis-a-slave-0    1/1     Running   0          31s
-    redis-a-slave-1    1/1     Running   0          62s
-    redis-b-master-0   1/1     Running   0          59s
-    redis-b-slave-0    1/1     Running   0          32s
-    redis-b-slave-1    1/1     Running   0          51s
+    NAME       READY   STATUS    RESTARTS   AGE
+    a-nats-0   1/1     Running   0          37s
+    b-nats-0   1/1     Running   0          36s
     ```
 
-1. **Congratulations!**
-
-## Live mode
-
-> !!! Ascinema cast is too old.
-
-<script id="asciicast-399676" src="https://asciinema.org/a/399676.js" async></script>
+6. **Congratulations!**

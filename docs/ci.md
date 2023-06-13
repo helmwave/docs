@@ -8,7 +8,7 @@ Let's see how we can get it working on popular CI software.
 
 ## :material-github: GitHub action
 
-- [official github action](https://github.com/marketplace/actions/helmwave-installer)
+You can use [official github action](https://github.com/marketplace/actions/helmwave-installer)
 
 ```yaml
 name: Deploy
@@ -24,7 +24,7 @@ jobs:
       - uses: helmwave/setup-action@v0.2.0
         name: Install helmwave
         with:
-          version: '0.27.2'
+          version: '0.27.3'
       - name: templating helmwave.yml.tpl  
         run: helmwave yml
       - name: plan
@@ -44,12 +44,12 @@ helmwave:
   environment:
     name: "ref/$CI_COMMIT_REF_SLUG"
   image:
-    name: diamon/helmwave:0.27.2
+    name: diamon/helmwave:0.27.3
     entrypoint: [""]
   before_script:
     - printenv | grep HELMWAVE
   script:
-    - helmwave yml # if it needs
+    - helmwave yml
     - helmwave build
     - helmwave up
   artifacts:
@@ -81,7 +81,7 @@ variables:
   after_script:
     - ls -la $HELMWAVE_PLAN
   image:
-    name: ghcr.io/helmwave/helmwave:0.27.2
+    name: ghcr.io/helmwave/helmwave:0.27.3
     entrypoint: [ '' ]
 
 ###############  BUILD  ################

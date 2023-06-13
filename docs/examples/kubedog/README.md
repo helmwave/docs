@@ -1,6 +1,13 @@
-# Kubedog
+# 🐶 Kubedog
 
-[full documentation](../../anno/#kubedogs)
+!!! info "The first thing you need to do is turn on `kubedog`"
+
+    ```shell
+    export HELMWAVE_KUBEDOG_ENABLED=true
+    ```
+
+Kubedog will track all your resources by default.
+For more information, see the [annotation's documentation](../../anno/#kubedogs).
 
 **Project Structure**
 
@@ -28,18 +35,18 @@ We are going to use `commonAnnotations`.
 
 **Run**
 
-```console
+```shell
 helmwave up --build --kubedog
 ```
 
 or 
 
-```console
+```shell
 export HELMWAVE_KUBEDOG_ENABLED=true
 export HELMWAVE_AUTO_BUILD=true
 helmwave up
 ```
 
-Log with helmwave v0.27.2
+**Output**
 
 ![img.png](img.png)

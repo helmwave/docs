@@ -1,4 +1,4 @@
-version: 0.27.2
+version: 0.27.3
 
 repositories:
   - name: bitnami
@@ -13,3 +13,5 @@ releases:
       - values.yml
     namespace: my-redis
     create_namespace: true
+    wait: true
+    timeout: 3m

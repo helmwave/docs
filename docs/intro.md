@@ -1,5 +1,4 @@
-🌊 Helmwave is **[helm3](https://github.com/helm/helm/)-native** tool for deploy your Helm Charts via **GitOps**.
-HelmWave is like docker-compose for helm.
+🌊 Helmwave is **[helm](https://github.com/helm/helm/)-native** tool for deploy your Helm Charts.
 
 ## 🚀 Features
 
@@ -20,7 +19,9 @@ With 🌊 helmwave you will become a superhero:
 
 ## Comparison to alternatives
 
-|                                        |                                        🌊 HelmWave                                        |                                       Helmfile                                        |                           Helmsman                            |
+> Some comparisons may be outdated. If any of the tools have improved, please open a [PR](https://github.com/helmwave/docs/issues/new).
+
+|                                        |                                        🌊 Helmwave                                        |                                       Helmfile                                        |                           Helmsman                            |
 |:--------------------------------------:|:-----------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------:|:-------------------------------------------------------------:|
 |               **Syntax**               | YAML + [sprig](http://masterminds.github.io/sprig/)/[gomplate](https://docs.gomplate.ca/) |                  YAML + [sprig](http://masterminds.github.io/sprig/)                  |                           TOML/YAML                           |
 |               Code style               |                                        snake_case                                         |                                       camelCase                                       |                           camelCase                           |
@@ -51,6 +52,5 @@ With 🌊 helmwave you will become a superhero:
 
 ---
 
-Here I would like to express our gratitude to all contributors for their commits, authors of third-party dependencies and all open source community ❤️
+Here I would like to express our gratitude to all contributors for their commits, authors of third-party dependencies and all open source communities ❤️
 
-<a data-theme="dark" data-layers="1,2,3,4" data-stack-embed="true" href="https://embed.stackshare.io/stacks/embed/c53d33cff1a65c5a640b1f64c4e49c"></a><script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script>

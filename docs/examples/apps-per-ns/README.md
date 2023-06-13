@@ -6,7 +6,7 @@ If you want to install each application in your own namespace.
 
 **Project structure**
 
-```console
+```shell
 ├── README.md
 ├── helmwave.yml.tpl
 ├── values

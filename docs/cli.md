@@ -8,7 +8,7 @@ USAGE:
    helmwave [global options] command [command options] [arguments...]
 
 VERSION:
-   0.27.2
+   0.27.3
 
 DESCRIPTION:
    This tool helps you compose your helm releases!
@@ -43,141 +43,104 @@ GLOBAL OPTIONS:
 
 ```
 
-## step #0: yml
+## step 0: templating
 
-It allows render `helmwave.yml.tpl` to `helmwave.yml`
+### `yml`
 
-**Options**
+This command renders `helmwave.yml.tpl` to `helmwave.yml`.
 
-```console
-   --tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-   --file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-   --templater value       Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
-```
+!!! info "Flags"
+
+    ```shell
+    --tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+    --file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+    --templater value       Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+    ```
 
 
-## step #1: build
-
-This command generates `.helmwave/`
-
-```console
-   --plandir value, -p value  Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
-   --tags value, -t value     It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
-   --match-all-tags           Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
-   --diff-mode value          You can set: [ live | local ] (default: "live") [$HELMWAVE_DIFF_MODE]
-   --yml                      Auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
-   --wide value               Show line around change (default: 5) [$HELMWAVE_DIFF_WIDE]
-   --show-secret              Show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
-   --tpl value                Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-   --file value, -f value     Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-   --templater value          Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
-```
-
-## step #2: Working with plan
-
-### build
+## step 1: building a plan
 
 Helmwave builds plan in complete plan directory (`.helmwave` by default) that other commands use.
 
-Plan includes:
+A plan includes:
 
 - Downloaded remote charts
 - Downloaded and templated all used values files
 - Rendered manifests for each release
-- Markdown file with dependencies graph as mermaid diagram
-- Rendered `helmwave.yml` that uses plan files (e.g. downloaded chart and values)
+- Markdown file with dependency graph as mermaid diagram
+- Rendered `helmwave.yml` that uses plan files (e.g., downloaded chart and values)
 
-```console
-NAME:
-   helmwave build - 🏗 Build a plan
+### `build`
 
-USAGE:
-   helmwave build [command options] [arguments...]
+This command generates a plan.
 
-OPTIONS:
-   --plandir value, -p value                          path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
-   --tags value, -t value [ --tags value, -t value ]  build releases by tags: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
-   --match-all-tags                                   match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
-   --graph-width value                                set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
-   --skip-unchanged                                   skip unchanged releases (default: false) [$HELMWAVE_SKIP_UNCHANGED]
-   --diff-mode value                                  You can set: [ live | local | none ] (default: "live") [$HELMWAVE_DIFF_MODE]
-   --charts-cache-dir value                           enable caching of helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
-   --yml                                              auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
-   --wide value                                       show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
-   --show-secret                                      show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
-   --3-way-merge                                      show 3-way merge diff (default: false) [$HELMWAVE_DIFF_3_WAY_MERGE]
-   --tpl value                                        main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-   --file value, -f value                             main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-   --templater value                                  select template engine: [ sprig | gomplate ] (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
-   --help, -h                                         show help
-```
+As you can see, [`build`](#build) command includes [`yml`](#yml) command flags. 
+You can pass `--yml` flag into [`build`](#build) command for launching [`yml`](#yml) command before building a plan.
 
-### up
+!!! info "Flags"
 
-Helmwave will install repositories and helm-releases from plan.
+    ```shell
+    --plandir value, -p value                          path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
+    --tags value, -t value [ --tags value, -t value ]  build releases by tags: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+    --match-all-tags                                   match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+    --graph-width value                                set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
+    --skip-unchanged                                   skip unchanged releases (default: false) [$HELMWAVE_SKIP_UNCHANGED]
+    --diff-mode value                                  You can set: [ live | local | none ] (default: "live") [$HELMWAVE_DIFF_MODE]
+    --charts-cache-dir value                           enable caching of helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
+    --yml                                              auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
+    --wide value                                       show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
+    --show-secret                                      show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
+    --3-way-merge                                      show 3-way merge diff (default: false) [$HELMWAVE_DIFF_3_WAY_MERGE]
+    --tpl value                                        main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+    --file value, -f value                             main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+    --templater value                                  select template engine: [ sprig | gomplate ] (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+    --help, -h                                         show help
+    ```
+    
 
-```console
-NAME:
-   helmwave up - 🚢 apply your plan
 
-USAGE:
-   helmwave up [command options] [arguments...]
+## step 2: working with plan
 
-OPTIONS:
-   --build                                            auto build (default: false) [$HELMWAVE_AUTO_BUILD]
-   --kubedog                                          enable/disable kubedog (default: false) [$HELMWAVE_KUBEDOG_ENABLED, $HELMWAVE_KUBEDOG]
-   --kubedog-status-interval value                    interval of kubedog status messages (default: 5s) [$HELMWAVE_KUBEDOG_STATUS_INTERVAL]
-   --kubedog-start-delay value                        delay kubedog start, don't make it too late (default: 1s) [$HELMWAVE_KUBEDOG_START_DELAY]
-   --kubedog-timeout value                            timeout of kubedog multitrackers (default: 5m0s) [$HELMWAVE_KUBEDOG_TIMEOUT]
-   --kubedog-log-width value                          Set kubedog max log line width (default: 140) [$HELMWAVE_KUBEDOG_LOG_WIDTH]
-   --progress                                         Enable progress logs of helm (INFO log level) (default: false) [$HELMWAVE_PROGRESS]
-   --parallel-limit value                             Limit amount of parallel releases (default: 0) [$HELMWAVE_PARALLEL_LIMIT]
-   --plandir value, -p value                          path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
-   --tags value, -t value [ --tags value, -t value ]  build releases by tags: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
-   --match-all-tags                                   match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
-   --graph-width value                                set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
-   --skip-unchanged                                   skip unchanged releases (default: false) [$HELMWAVE_SKIP_UNCHANGED]
-   --diff-mode value                                  You can set: [ live | local | none ] (default: "live") [$HELMWAVE_DIFF_MODE]
-   --charts-cache-dir value                           enable caching of helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
-   --yml                                              auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
-   --wide value                                       show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
-   --show-secret                                      show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
-   --3-way-merge                                      show 3-way merge diff (default: false) [$HELMWAVE_DIFF_3_WAY_MERGE]
-   --tpl value                                        main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-   --file value, -f value                             main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-   --templater value                                  select template engine: [ sprig | gomplate ] (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
-   --help, -h                                         show help
-```
+When the plan is ready, you can use it for other commands.
 
-### down
+Any commands below has `--build` flag that [builds](#build) a plan before executing command. 
+And you can also use `--yml` flag that renders `helmwave.yml.tpl` to `helmwave.yml` before running `--build` command.
+
+### `up`
+
+Helmwave will install repositories and helm-releases from a plan.
+
+!!! info "Flags"
+
+    ```shell
+    --build                                            auto build (default: false) [$HELMWAVE_AUTO_BUILD]
+    --kubedog                                          enable/disable kubedog (default: false) [$HELMWAVE_KUBEDOG_ENABLED, $HELMWAVE_KUBEDOG]
+    --kubedog-status-interval value                    interval of kubedog status messages (default: 5s) [$HELMWAVE_KUBEDOG_STATUS_INTERVAL]
+    --kubedog-start-delay value                        delay kubedog start, don't make it too late (default: 1s) [$HELMWAVE_KUBEDOG_START_DELAY]
+    --kubedog-timeout value                            timeout of kubedog multitrackers (default: 5m0s) [$HELMWAVE_KUBEDOG_TIMEOUT]
+    --kubedog-log-width value                          Set kubedog max log line width (default: 140) [$HELMWAVE_KUBEDOG_LOG_WIDTH]
+    --progress                                         Enable progress logs of helm (INFO log level) (default: false) [$HELMWAVE_PROGRESS]
+    --parallel-limit value                             Limit amount of parallel releases (default: 0) [$HELMWAVE_PARALLEL_LIMIT]
+    --plandir value, -p value                          path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
+    --tags value, -t value [ --tags value, -t value ]  build releases by tags: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
+    --match-all-tags                                   match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
+    --graph-width value                                set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
+    --skip-unchanged                                   skip unchanged releases (default: false) [$HELMWAVE_SKIP_UNCHANGED]
+    --diff-mode value                                  You can set: [ live | local | none ] (default: "live") [$HELMWAVE_DIFF_MODE]
+    --charts-cache-dir value                           enable caching of helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
+    --yml                                              auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
+    --wide value                                       show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
+    --show-secret                                      show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
+    --3-way-merge                                      show 3-way merge diff (default: false) [$HELMWAVE_DIFF_3_WAY_MERGE]
+    --tpl value                                        main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
+    --file value, -f value                             main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
+    --templater value                                  select template engine: [ sprig | gomplate ] (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+    --help, -h                                         show help
+    ```
+
+### `down`
 
 Helmwave will uninstall helm-releases from plan.
-
-```console
-NAME:
-   helmwave down - 🔪 Delete all
-
-USAGE:
-   helmwave down [command options] [arguments...]
-
-OPTIONS:
-   --build                                            auto build (default: false) [$HELMWAVE_AUTO_BUILD]
-   --plandir value, -p value                          path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
-   --tags value, -t value [ --tags value, -t value ]  build releases by tags: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
-   --match-all-tags                                   match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
-   --graph-width value                                set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
-   --skip-unchanged                                   skip unchanged releases (default: false) [$HELMWAVE_SKIP_UNCHANGED]
-   --diff-mode value                                  You can set: [ live | local | none ] (default: "live") [$HELMWAVE_DIFF_MODE]
-   --charts-cache-dir value                           enable caching of helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
-   --yml                                              auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
-   --wide value                                       show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
-   --show-secret                                      show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
-   --3-way-merge                                      show 3-way merge diff (default: false) [$HELMWAVE_DIFF_3_WAY_MERGE]
-   --tpl value                                        main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-   --file value, -f value                             main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-   --templater value                                  select template engine: [ sprig | gomplate ] (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
-   --help, -h                                         show help
-```
 
 ```bash
 $ helmwave down      
@@ -186,9 +149,9 @@ $ helmwave down
 [🙃 aka INFO]: ✅ backend@test uninstalled!
 ```
 
-### ls
+### `ls`
 
-Helmwave try getting list of helm-releases from plan.
+Helmwave will get a list of helm-releases from a plan.
 
 ```bash
 $ helmwave ls      
@@ -203,7 +166,8 @@ $ helmwave ls
            |           |          | +0300 MSK                      |          |       |
 ```
 
-### status
+
+### `status`
 
 Helmwave try getting status of helm-releases from plan.
 
@@ -232,7 +196,7 @@ $ helmwave status
         revision: 1
 ```
 
-### rollback
+### `rollback`
 
 Rollback helm-releases from plan.
 
@@ -243,7 +207,7 @@ $ helmwave rollback
 [🙃 aka INFO]: ✅ backend@test rollback!
 ```
 
-### graph
+### `graph`
 
 Show only graph of helm releases from plan.
 
@@ -251,16 +215,18 @@ You can use `--graph-width` option to set width of graph.
 
 
 
-### validate
+### `validate`
 
 Helmwave will validate plan.
 
-### diff
+!!! info "You should know that helmwave always validate plan before any command."
+
+### `diff`
 
 Diff has 2 subcommands 
 
-1. `helmwave diff live` will diff with manifests in the k8s-cluster 
-2. `helmwave diff plan` will diff with your another local plan.
+- `helmwave diff live` will diff with manifests in the k8s-cluster 
+- `helmwave diff plan` will diff with your another local plan.
 
 ---
 
@@ -272,12 +238,12 @@ Diff has 2 subcommands
 
 Helmwave supports several log-format
 
-|    features    |                  `text`                   |                  `json`                   |                   `pad`                   |                                         `emoji` (default)                                         |
-|:--------------:|:-----------------------------------------:|:-----------------------------------------:|:-----------------------------------------:|:-------------------------------------------------------------------------------------------------:|
-|     Color      |                     ✅                     |                     ❌                     |                     ✅                     |                                                🌈                                                 |
-| Human readable |                    🧐                     |                    🤖                     |                   🧐🧐                    |                                                 ✅                                                 |
-|  Performance   |                    🚀                     |                    🐢                     |                    ✈️                     |                                                🐢                                                 |
-|     Module     | TextFormatter (in-built logrus formatter) | JSONFormatter (in-built logrus formatter) | TextFormatter (in-built logrus formatter) | [logrus-emoji-formatter](https://github.com/helmwave/logrus-emoji-formatter) special for helmwave |
+|    features    |                   `text`                    |                   `json`                    |                    `pad`                    |                                         `emoji` (default)                                         |
+|:--------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------------------------------------------------------------:|
+|     Color      |                      ✅                      |                      ❌                      |                      ✅                      |                                                🌈                                                 |
+| Human readable |                     🧐                      |                     🤖                      |                    🧐🧐                     |                                                 ✅                                                 |
+|  Performance   |                     🚀                      |                     🐢                      |                     ✈️                      |                                                🐢                                                 |
+|     Module     | TextFormatter (in-built `logrus` formatter) | JSONFormatter (in-built `logrus` formatter) | TextFormatter (in-built `logrus` formatter) | [logrus-emoji-formatter](https://github.com/helmwave/logrus-emoji-formatter) special for helmwave |
 
 ### Log Level
 
@@ -308,56 +274,63 @@ export HELMWAVE_LOG_COLOR=true
 helmwave <cmd>
 ```
 
----
 
 ## Get Version
 
-### Long version
+=== "Long version"
 
-```bash
-$ helmwave --version  
-helmwave version 0.27.2
+    ```bash
+    $ helmwave --version  
+    helmwave version 0.27.3
+    
+    $ helmwave -v
+    helmwave version 0.27.3
+    ```
 
-$ helmwave -v
-helmwave version 0.27.2
-```
+=== "Short version"
 
-### Short version
-
-```bash
-$ helmwave version
-0.27.2
-
-$ helmwave ver
-0.27.2
-```
+    ```bash
+    $ helmwave version
+    0.27.3
+    
+    $ helmwave ver
+    0.27.3
+    ```
 
 ## Completion
 
-### Bash
+=== ":material-bash: bash"
 
-Add this code to your ~/.bashrc
+    Add this code to your ~/.bashrc
+    
+    ```bash
+    source <(helmwave completion bash)
+    ```
 
-```bash
-source <(helmwave completion bash)
+    ```bash
+    echo "source <(helmwave completion bash)" >> ~/.bashrc
+    ```
+
+    ![completion-bash](assets/completion-bash.png)
+
+=== ":material-bash: zsh"
+
+    Add this code to your ~/.zshrc
+    
+    ```bash
+    source <(helmwave completion zsh)
+    ```
+    
+    ```bash
+    echo "source <(helmwave completion zsh)" >> ~/.zshrc
+    ```
+    
+    ![completion-zsh](assets/completion-zsh.png)
+
+## schema
+
+You can generate json schema for autocomplete and validate `helmwave.yml` in your IDE.
+
+```shell
+helmwave schema > helmwave.schema.json
 ```
-
-```bash
-echo "source <(helmwave completion bash)" >> ~/.bashrc
-```
-
-![completion-bash](assets/completion-bash.png)
-
-### ZSH
-
-Add this code to your ~/.zshrc
-
-```bash
-source <(helmwave completion zsh)
-```
-
-```bash
-echo "source <(helmwave completion zsh)" >> ~/.zshrc
-```
-
-![completion-zsh](assets/completion-zsh.png)

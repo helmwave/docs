@@ -1,8 +1,8 @@
 # Private GitLab repo 
 
-Learn more about GitLab Helm Registry: https://docs.gitlab.com/ee/user/packages/helm_repository/
+Learn more about GitLab Helm Registry [here](https://docs.gitlab.com/ee/user/packages/helm_repository/)
 
-```console
+```shell
 .
 ├── README.md
 └── helmwave.yml.tpl
@@ -20,7 +20,7 @@ Your `.gitlab-ci.yml`
 helmwave:
   stage: deploy
   image:
-    name: ghcr.io/helmwave/helmwave:0.27.2
+    name: ghcr.io/helmwave/helmwave:0.27.3
     entrypoint: [""]
   before_script:
   - printenv | grep HELMWAVE
