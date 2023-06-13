@@ -2,87 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://helmwave.github.io/0.11.x/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/anno/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/ci/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/cli/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/cookbooks/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/install/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/tpl/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/examples/CI_COMMIT_SHORT_SHA/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/examples/CI_COMMIT_TAG/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/examples/CI_ENVIRONMENT_NAME/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/examples/GITHUB_TOKEN/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/examples/quick-start/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/yml/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/yml/depends_on/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/yml/options/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/yml/store/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://helmwave.github.io/0.11.x/yml/tags/</loc>
-         <lastmod>2021-07-22</lastmod>
+         <lastmod>2023-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
