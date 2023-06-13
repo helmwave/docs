@@ -1,4 +1,4 @@
-# Kubedog
+# 🐶Kubedog
 
 [full documentation](../../anno/#kubedogs)
 

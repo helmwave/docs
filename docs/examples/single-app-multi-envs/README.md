@@ -1,6 +1,6 @@
 # Single app multi envs
 
-When we work with helm sometimes we need dynamics chose environment.
+When we work with helm, sometimes we need dynamics chose environment.
 
 ```shell
 export CI_ENVIRONMENT_NAME=stage

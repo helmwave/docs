@@ -342,13 +342,13 @@ Path to values file. It can be local or remote.
 
 ### delimiter_left, delimiter_right
 
-You can change delimiter that helmwave uses to render values.
+You can change the delimiter that helmwave uses to render values.
 
 [example](../examples/values-delimiter-flags/)
 
 ### render
 
-Allows to disable templating values at all.
+Allows disabling templating values at all.
 
 [example](../examples/values-render-flag)
 
@@ -370,15 +370,16 @@ Allows to fail if values file doesn't exist.
 
 ### **name**
 
-Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in plan, it will be added to plan.
+Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in a plan, it will be added to a plan.
 
 Name support 2 kind of definitions: uniq name <release-name>@<namespace> or just <release-name>. If namespace is not specified, it will be taken from namespace filed of release.
 
 ### tag
 
-You can include all releases that match this tag to be added as dependencies. If tag is not in plan, it will be added to plan.
+You can include all releases that match this tag to be added as dependencies.
+If a tag is not in a plan, it will be added to a plan.
 
-The planfile (`.helmwave/planfile` by default) will have normalized list of releases instead of tags.
+The planfile (`.helmwave/planfile` by default) will have a normalized list of releases instead of tags.
 
 ### optional
 

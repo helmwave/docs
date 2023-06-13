@@ -24,10 +24,10 @@ nav:
       - anno.md
 
   - Examples:
+      - examples/quick-start/README.md
       - examples/apps-per-ns/README.md
       - examples/aws-sm/README.md
       - examples/built-in-release/README.md
-      - examples/quick-start/README.md
       - examples/hate-umbrella/README.md
       - examples/kubedog/README.md
       - examples/oci-private/README.md

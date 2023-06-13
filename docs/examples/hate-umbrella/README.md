@@ -1,15 +1,15 @@
-# Umbrella chart is evil
+# ☂️ Umbrella chart is evil
 
 > Helmwave is only what you actually need.
 
-Why Umbrella chart is evil?
+Why is Umbrella chart evil?
 
 - You must keep extra chart.
 - You have new layer for conventional values.
 - Umbrella chart doesn't provide separate your environments.
-- When sub-chart modified you need fix it twice.
+- When sub-chart is modified, you need to fix it twice.
 
-Suppose that you need to describe next architecture.
+Suppose that you need to describe the next architecture.
 
 ```mermaid
 graph LR
