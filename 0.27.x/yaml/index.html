@@ -366,6 +366,11 @@
 <nav aria-label="Values[]" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#src">
+    src
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#delimiter_left-delimiter_right">
     delimiter_left, delimiter_right
   </a>
@@ -385,9 +390,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#depends_on_1">
-    Depends_on[]
+    depends_on[]
   </a>
-<nav aria-label="Depends_on[]" class="md-nav">
+<nav aria-label="depends_on[]" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#name_2">
@@ -588,7 +593,7 @@
 </tbody>
 </table>
 <blockquote>
-<p>nothing is required</p>
+<p>Nothing is required.</p>
 </blockquote>
 <h2 id="project">project</h2>
 <blockquote>
@@ -599,7 +604,7 @@
 <p>In the future it is planned to check major compatibility. </p>
 <h2 id="registries">Registries[]</h2>
 <blockquote>
-<p>OCI registries</p>
+<p><a href="https://helm.sh/docs/topics/registries/">OCI registries</a></p>
 </blockquote>
 <table>
 <thead>
@@ -640,9 +645,12 @@
 <p><strong>Examples</strong></p>
 <ul>
 <li><a href="../examples/oci-private">private oci</a></li>
-<li><a href="../examples/oci-private">github oci</a></li>
+<li><a href="../examples/oci-public">public (github) oci</a></li>
 </ul>
 <h2 id="repositories">Repositories[]</h2>
+<blockquote>
+<p>Helm <a href="https://helm.sh/docs/helm/helm_repo">repositories</a> also know as <code>helm repo add</code></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -724,7 +732,7 @@
 <p>Update existing repository exists if settings differ.</p>
 <h2 id="releases">Releases[]</h2>
 <blockquote>
-<p>Almost all options that are here are native helm options</p>
+<p>Almost all options that are here are native helm options.</p>
 </blockquote>
 <table>
 <thead>
@@ -952,7 +960,7 @@
 <h3 id="name_1">name</h3>
 <p>Release name. I hope you know what it is.</p>
 <h3 id="namespace">namespace</h3>
-<p>Kubernetes namespace</p>
+<p>Kubernetes namespace.</p>
 <h3 id="create_namespace">create_namespace</h3>
 <p>If set to <code>true</code> Helmwave will create the release namespace if not present.</p>
 <h3 id="timeout">timeout</h3>
@@ -962,7 +970,7 @@
 <p>It allows to pass your custom fields from <code>helmwave.yml</code> to values.</p>
 <p><a href="../examples/store-greeting-hello/">example</a></p>
 <h3 id="tags">tags 🔖</h3>
-<p>It allows you to choose releases for build</p>
+<p>It allows you to choose releases for build.</p>
 <p>It works with next options when you call <code>helmwave build</code> (or <code>helmwave up --build</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="go">--tags value, -t value  It allows you choose releases for build. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]</span>
 <span class="go">--match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]</span>
@@ -1076,13 +1084,13 @@ This flag changes logic for query releases.</p>
 <p>Strategy to handle releases in pending statuses (<code>pending-install</code>, <code>pending-upgrade</code>, <code>pending-rollback</code>)</p>
 <p>If helmwave tries to upgrade release that is currently in one of pending statuses it will follow specified strategy:</p>
 <ul>
-<li><code>""</code> (or not specified) - do nothing. Helm will fail in this case</li>
-<li><code>rollback</code> - rollback release to previous version. Upgrade will happen after rollback is complete</li>
-<li><code>uninstall</code> - uninstall release. Upgrade will happen after uninstall is complete</li>
+<li><code>""</code> (or not specified) - do nothing. Helm will fail in this case;</li>
+<li><code>rollback</code> - rollback release to previous version. Upgrade will happen after rollback is complete;</li>
+<li><code>uninstall</code> - uninstall release. Upgrade will happen after uninstall is complete.</li>
 </ul>
 <h3 id="context">context</h3>
 <p>Allows to use custom kubecontext for release.</p>
-<p><strong>Kubedog cannot be enabled when there are releases in multiple contexts.</strong></p>
+<p><strong>!!! Kubedog can't be enabled when there are releases in multiple contexts.</strong></p>
 <h3 id="post_renderer">post_renderer</h3>
 <p>You can use custom commands to change rendered manifests.</p>
 <h3 id="offline_kube_version">offline_kube_version</h3>
@@ -1214,6 +1222,11 @@ Without this option helmwave will ask kubernetes for version.</p>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>Values can be an object or a string. If it's a string it will be treated as a path to values file.</p>
+</blockquote>
+<h3 id="src">src</h3>
+<p>Path to values file. It can be local or remote.</p>
 <h3 id="delimiter_left-delimiter_right">delimiter_left, delimiter_right</h3>
 <p>You can change delimiter that helmwave uses to render values.</p>
 <p><a href="../examples/values-delimiter-flags/">example</a></p>
@@ -1223,7 +1236,7 @@ Without this option helmwave will ask kubernetes for version.</p>
 <h3 id="strict">strict</h3>
 <p>Allows to fail if values file doesn't exist.</p>
 <p><a href="../examples/values-strict-flag">example</a></p>
-<h2 id="depends_on_1">Depends_on[]</h2>
+<h2 id="depends_on_1">depends_on[]</h2>
 <table>
 <thead>
 <tr>
@@ -1235,7 +1248,7 @@ Without this option helmwave will ask kubernetes for version.</p>
 </thead>
 <tbody>
 <tr>
-<td align="center">name</td>
+<td align="center"><strong>name</strong></td>
 <td align="center">🙅</td>
 <td align="center">string</td>
 <td align="center">""</td>
@@ -1254,8 +1267,12 @@ Without this option helmwave will ask kubernetes for version.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="name_2"><code>name</code></h3>
+<blockquote>
+<p>depends_on can be an object or a string. If it's a string it will be treated as a name.</p>
+</blockquote>
+<h3 id="name_2"><strong>name</strong></h3>
 <p>Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in plan, it will be added to plan.</p>
+<p>Name support 2 kind of definitions: uniq name <release-name>@<namespace> or just <release-name>. If namespace is not specified, it will be taken from namespace filed of release.</release-name></namespace></release-name></p>
 <h3 id="tag">tag</h3>
 <p>You can include all releases that match this tag to be added as dependencies. If tag is not in plan, it will be added to plan.</p>
 <p>The planfile (<code>.helmwave/planfile</code> by default) will have normalized list of releases instead of tags.</p>

@@ -635,40 +635,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          🔰 Quick Start
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         🔰 Quick Start
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#live-mode" class="md-nav__link">
-    Live mode
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -896,40 +865,49 @@
 
 
 <h1 id="quick-start">🔰 Quick Start</h1>
+<script async id="asciicast-591181" src="https://asciinema.org/a/591181.js"></script>
+
 <ol>
 <li><strong><a href="../../install">Install helmwave</a></strong> </li>
 <li>
 <p><strong>Create <code>helmwave.yml</code></strong></p>
 <p>Suppose the <code>helmwave.yml</code> representing the desired state of your helm releases looks like:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.27.3</span>
+<div class="highlight"><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QuickStart</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.27.3</span>
 
-<span class="nt">repositories</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span>
-<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span>
+<span class="c1"># OCI: modern way to get chart from registry</span>
+<span class="nt">registries</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry-1.docker.io</span>
 
 <span class="nt">.options</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;options</span>
 <span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-namespace</span>
+<span class="w">  </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">wait</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
+<span class="w">  </span><span class="nt">max_history</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"> </span><span class="c1"># best practice</span>
+<span class="w">  </span><span class="nt">chart</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># For example, we will use bitnami/nats chart, because it&#39;s small and fast</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oci://registry-1.docker.io/bitnamicharts/nats</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7.8.3</span><span class="w"> </span><span class="c1"># best practice</span>
 
+<span class="c1"># We will install 2 releases with the same options</span>
 <span class="nt">releases</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis-a</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
 <span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span>
-<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/redis</span>
 
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis-b</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span>
 <span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span>
-<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/redis</span>
 </code></pre></div>
 </li>
 <li>
 <p><strong>Build plan</strong></p>
 <div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>build
 </code></pre></div>
-<p>This steps generates <a href="../../cli/#step-2-working-with-plan">plan</a></p>
+<p>This step generates <a href="../../cli/#step-2-working-with-plan">plan</a></p>
 </li>
 <li>
-<p>If everything is ok , deploy plan</p>
-<div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>up<span class="w"> </span>
+<p>If everything is ok, deploy plan</p>
+<div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>up
 </code></pre></div>
 <p>Output will be like that:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>✅<span class="w"> </span>redis-a@my-namespace
@@ -940,26 +918,20 @@
 <li>
 <p><strong>Check</strong></p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>helm<span class="w"> </span>list<span class="w"> </span>-n<span class="w"> </span>my-namespace
-NAME<span class="w">                    </span>NAMESPACE<span class="w">       </span>REVISION<span class="w">        </span>UPDATED<span class="w">                                 </span>STATUS<span class="w">          </span>CHART<span class="w">                   </span>APP<span class="w"> </span>VERSION
-redis-a<span class="w">                 </span>my-namespace<span class="w">    </span><span class="m">1</span><span class="w">               </span><span class="m">2020</span>-10-31<span class="w"> </span><span class="m">17</span>:05:35.829766<span class="w"> </span>+0300<span class="w"> </span>MSK<span class="w">    </span>deployed<span class="w">        </span>redis-11.2.3<span class="w">            </span><span class="m">6</span>.0.9<span class="w">      </span>
-redis-b<span class="w">                 </span>my-namespace<span class="w">    </span><span class="m">1</span><span class="w">               </span><span class="m">2020</span>-10-31<span class="w"> </span><span class="m">17</span>:05:39.437556<span class="w"> </span>+0300<span class="w"> </span>MSK<span class="w">    </span>deployed<span class="w">        </span>redis-11.2.3<span class="w">            </span><span class="m">6</span>.0.9<span class="w">  </span>
+NAME<span class="w">    </span>NAMESPACE<span class="w">       </span>REVISION<span class="w">        </span>UPDATED<span class="w">                                 </span>STATUS<span class="w">          </span>CHART<span class="w">           </span>APP<span class="w"> </span>VERSION
+a<span class="w">       </span>my-namespace<span class="w">    </span><span class="m">1</span><span class="w">               </span><span class="m">2023</span>-06-13<span class="w"> </span><span class="m">16</span>:25:42.446056<span class="w"> </span>+0400<span class="w"> </span>+04<span class="w">    </span>deployed<span class="w">        </span>nats-7.8.3<span class="w">      </span><span class="m">2</span>.9.17<span class="w">     </span>
+b<span class="w">       </span>my-namespace<span class="w">    </span><span class="m">1</span><span class="w">               </span><span class="m">2023</span>-06-13<span class="w"> </span><span class="m">16</span>:25:42.444662<span class="w"> </span>+0400<span class="w"> </span>+04<span class="w">    </span>deployed<span class="w">        </span>nats-7.8.3<span class="w">      </span><span class="m">2</span>.9.17
 
 $<span class="w"> </span>k<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>-n<span class="w"> </span>my-namespace<span class="w">                                                                                                                         </span>
-NAME<span class="w">               </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
-redis-a-master-0<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>64s
-redis-a-slave-0<span class="w">    </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>31s
-redis-a-slave-1<span class="w">    </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>62s
-redis-b-master-0<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>59s
-redis-b-slave-0<span class="w">    </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>32s
-redis-b-slave-1<span class="w">    </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>51s
+NAME<span class="w">       </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+a-nats-0<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>37s
+b-nats-0<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>36s
 </code></pre></div>
 </li>
 <li>
 <p><strong>Congratulations!</strong></p>
 </li>
 </ol>
-<h2 id="live-mode">Live mode</h2>
-<script id="asciicast-399676" src="https://asciinema.org/a/399676.js" async></script>
 
 
   

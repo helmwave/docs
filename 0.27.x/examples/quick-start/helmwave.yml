@@ -1,18 +1,25 @@
+project: QuickStart
 version: 0.27.3
 
-repositories:
-  - name: bitnami
-    url: https://charts.bitnami.com/bitnami
+# OCI: modern way to get chart from registry
+registries:
+  - host: registry-1.docker.io
 
 .options: &options
   namespace: my-namespace
+  create_namespace: true
   wait: true
+  timeout: 1m
+  max_history: 3 # best practice
+  chart:
+    # For example, we will use bitnami/nats chart, because it's small and fast
+    name: oci://registry-1.docker.io/bitnamicharts/nats
+    version: 7.8.3 # best practice
 
+# We will install 2 releases with the same options
 releases:
-  - name: redis-a
+  - name: a
     <<: *options
-    chart: bitnami/redis
 
-  - name: redis-b
+  - name: b
     <<: *options
-    chart: bitnami/redis
