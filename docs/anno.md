@@ -34,17 +34,12 @@ metadata:
 
 ## [kubedog's annotations](https://github.com/werf/kubedog) 🐶
 
-> Kubedog will track all your resources by default.
+!!! danger "Kubedog can't be enabled when there are releases in multiple contexts."
+
 
 [example](examples/kubedog/README.md)
 
 inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html)
-
-> First step you need enable kubedog for helmwave.
->
->  ```shell
->  export HELMWAVE_KUBEDOG_ENABLED=true
->  ```
 
 ---
 

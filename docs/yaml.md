@@ -152,7 +152,7 @@ It works with next options when you call `helmwave build` (or `helmwave up --bui
  
 **Matching with tags**
 
-Suppose we have next `helmwave.yml` with 4 releases.
+Suppose we have next `helmwave.yml` with 4 releases
 
 1. redis-a
 2. redis-b
@@ -300,7 +300,7 @@ it will follow specified strategy:
 
 Allows using custom kubecontext for release.
 
-!!! Warning "Kubedog can't be enabled when there are releases in multiple contexts."
+!!! danger "Kubedog can't be enabled when there are releases in multiple contexts."
 
 ### post_renderer
 

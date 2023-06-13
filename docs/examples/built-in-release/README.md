@@ -2,7 +2,7 @@
 
 > This an example is demonstrating how to use the `release` object.
 
-## Project Structure
+**Project Structure**
 
 ```shell
 .
@@ -12,14 +12,14 @@
 
 ```
 
-Create `helmwave.yml`
+**Create `helmwave.yml`**
 
 ```yaml
 {% include "helmwave.yml" %}
 ```
 
 
-Create `_.yml`
+**Create `_.yml`**
 
 ```yaml
 {% include "_.yml" %}

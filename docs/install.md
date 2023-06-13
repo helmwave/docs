@@ -53,7 +53,7 @@ Download one of [releases](https://github.com/helmwave/helmwave/releases)
 > We use 2 docker registries. 
 
 |         Registry          |          URL           |                                 project page                                  |
-| :-----------------------: | :--------------------: | :---------------------------------------------------------------------------: |
+|:-------------------------:|:----------------------:|:-----------------------------------------------------------------------------:|
 |        Docker hub         | https://hub.docker.com |       [view](https://hub.docker.com/repository/docker/diamon/helmwave)        |
 | Github Container registry |    https://ghcr.io     | [view](https://github.com/orgs/helmwave/packages/container/helmwave/settings) |
 

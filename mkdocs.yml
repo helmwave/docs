@@ -6,7 +6,10 @@ repo_name: "helmwave/helmwave"
 repo_url: "https://github.com/helmwave/helmwave"
 edit_uri: "https://github.com/helmwave/docs/edit/main/docs/"
 site_url: "https://helmwave.github.io"
-copyright: Copyright © 2020 - 2023 Dmitrii Zhiliaev
+copyright: >
+  Copyright © 2020 – 2023 Dmitrii Zhiliaev –
+  <a href="#__consent">Change cookie settings</a>
+
 
 nav:
   - Home: index.md
@@ -14,6 +17,7 @@ nav:
   - Getting started:
       - intro.md
       - install.md
+      - 🔰 Quick Start: examples/quick-start/README.md
       - ci.md
       - pub.md
 
@@ -70,6 +74,7 @@ theme:
   analytics:
     gtag: G-FTBLK54FKZ
   features:
+    - content.code.copy
     - navigation.top
     - navigation.instant
     - navigation.tabs
@@ -86,6 +91,13 @@ extra:
   analytics:
     provider: google
     property: G-FTBLK54FKZ
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
 
   social:
     - icon: fontawesome/brands/docker

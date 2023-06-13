@@ -49,7 +49,7 @@ helmwave:
   before_script:
     - printenv | grep HELMWAVE
   script:
-    - helmwave yml # if it needs
+    - helmwave yml
     - helmwave build
     - helmwave up
   artifacts:

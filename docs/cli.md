@@ -43,7 +43,7 @@ GLOBAL OPTIONS:
 
 ```
 
-## step #0: yml
+## step 0: yml
 
 It allows render `helmwave.yml.tpl` to `helmwave.yml`
 
@@ -56,7 +56,7 @@ It allows render `helmwave.yml.tpl` to `helmwave.yml`
 ```
 
 
-## step #1: build
+## step 1: build
 
 This command generates `.helmwave/`
 
@@ -73,7 +73,7 @@ This command generates `.helmwave/`
    --templater value          Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
 ```
 
-## step #2: Working with plan
+## step 2: working with plan
 
 ### build
 
@@ -84,8 +84,8 @@ Plan includes:
 - Downloaded remote charts
 - Downloaded and templated all used values files
 - Rendered manifests for each release
-- Markdown file with dependencies graph as mermaid diagram
-- Rendered `helmwave.yml` that uses plan files (e.g. downloaded chart and values)
+- Markdown file with dependency graph as mermaid diagram
+- Rendered `helmwave.yml` that uses plan files (e.g., downloaded chart and values)
 
 ```shell
 NAME:
@@ -114,7 +114,7 @@ OPTIONS:
 
 ### up
 
-Helmwave will install repositories and helm-releases from plan.
+Helmwave will install repositories and helm-releases from a plan.
 
 ```shell
 NAME:
@@ -188,7 +188,7 @@ $ helmwave down
 
 ### ls
 
-Helmwave try getting list of helm-releases from plan.
+Helmwave will get a list of helm-releases from a plan.
 
 ```bash
 $ helmwave ls      
@@ -272,12 +272,12 @@ Diff has 2 subcommands
 
 Helmwave supports several log-format
 
-|    features    |                  `text`                   |                  `json`                   |                   `pad`                   |                                         `emoji` (default)                                         |
-|:--------------:|:-----------------------------------------:|:-----------------------------------------:|:-----------------------------------------:|:-------------------------------------------------------------------------------------------------:|
-|     Color      |                     ✅                     |                     ❌                     |                     ✅                     |                                                🌈                                                 |
-| Human readable |                    🧐                     |                    🤖                     |                   🧐🧐                    |                                                 ✅                                                 |
-|  Performance   |                    🚀                     |                    🐢                     |                    ✈️                     |                                                🐢                                                 |
-|     Module     | TextFormatter (in-built logrus formatter) | JSONFormatter (in-built logrus formatter) | TextFormatter (in-built logrus formatter) | [logrus-emoji-formatter](https://github.com/helmwave/logrus-emoji-formatter) special for helmwave |
+|    features    |                   `text`                    |                   `json`                    |                    `pad`                    |                                         `emoji` (default)                                         |
+|:--------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------------------------------------------------------------:|
+|     Color      |                      ✅                      |                      ❌                      |                      ✅                      |                                                🌈                                                 |
+| Human readable |                     🧐                      |                     🤖                      |                    🧐🧐                     |                                                 ✅                                                 |
+|  Performance   |                     🚀                      |                     🐢                      |                     ✈️                      |                                                🐢                                                 |
+|     Module     | TextFormatter (in-built `logrus` formatter) | JSONFormatter (in-built `logrus` formatter) | TextFormatter (in-built `logrus` formatter) | [logrus-emoji-formatter](https://github.com/helmwave/logrus-emoji-formatter) special for helmwave |
 
 ### Log Level
 
