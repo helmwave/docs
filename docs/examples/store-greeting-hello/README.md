@@ -2,7 +2,7 @@
 
 **Project Structure**
 
-```console
+```shell
 .
 ├── README.md
 ├── a.yml

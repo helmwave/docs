@@ -49,7 +49,7 @@ It allows render `helmwave.yml.tpl` to `helmwave.yml`
 
 **Options**
 
-```console
+```shell
    --tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
    --file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
    --templater value       Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
@@ -60,7 +60,7 @@ It allows render `helmwave.yml.tpl` to `helmwave.yml`
 
 This command generates `.helmwave/`
 
-```console
+```shell
    --plandir value, -p value  Path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
    --tags value, -t value     It allows you choose releases for sync. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
    --match-all-tags           Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
@@ -87,7 +87,7 @@ Plan includes:
 - Markdown file with dependencies graph as mermaid diagram
 - Rendered `helmwave.yml` that uses plan files (e.g. downloaded chart and values)
 
-```console
+```shell
 NAME:
    helmwave build - 🏗 Build a plan
 
@@ -116,7 +116,7 @@ OPTIONS:
 
 Helmwave will install repositories and helm-releases from plan.
 
-```console
+```shell
 NAME:
    helmwave up - 🚢 apply your plan
 
@@ -153,7 +153,7 @@ OPTIONS:
 
 Helmwave will uninstall helm-releases from plan.
 
-```console
+```shell
 NAME:
    helmwave down - 🔪 Delete all
 

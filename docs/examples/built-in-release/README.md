@@ -4,7 +4,7 @@
 
 ## Project Structure
 
-```console
+```shell
 .
 ├── README.md
 ├── _.yml

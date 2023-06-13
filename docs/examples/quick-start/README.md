@@ -19,7 +19,7 @@
 
     This step generates [plan](../../cli/#step-2-working-with-plan)
 
-4. If everything is ok, deploy plan
+4. **Deploy plan**
 
     ```shell
     helmwave up

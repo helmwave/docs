@@ -1,6 +1,6 @@
 # Private GitHub repo 
 
-```console
+```shell
 .
 ├── README.md
 ├── helmwave.yml

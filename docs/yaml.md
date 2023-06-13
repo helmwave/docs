@@ -1,8 +1,6 @@
 # Yaml
 
-> Works on [helm](https://github.com/helmwave/helmwave/blob/v0.27.3/go.mod)
-
-## helmwave.yml aka planfile
+Works on [helm](https://github.com/helmwave/helmwave/blob/v0.27.3/go.mod)
 
 |    field     | required |  type  | default |
 |:------------:|:--------:|:------:|:-------:|
@@ -124,17 +122,15 @@ If set to `true` Helmwave will create the release namespace if not present.
 
 Time to wait for release to install.
 
-!!! if you enable `kubedog` this option will be required.
+!!! danger "if you enable `kubedog` this option will be required."
 
+### max_history
 
-## max_history
 Limit the maximum number of revisions saved per release. Use 0 for no limit (default 0)
 
-Recommendation is using `3` for this option.
+???+ tip "Recommendation is using `3` for this option."
 
-1. past
-2. current
-3. next
+    `previous release` + `current release` + `next release` = **`3`**
 
 
 ### store 🗳️
@@ -149,7 +145,7 @@ It allows you to choose releases for build.
 
 It works with next options when you call `helmwave build` (or `helmwave up --build`):
 
-```console
+```shell
 --tags value, -t value  It allows you choose releases for build. Example: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
 --match-all-tags        Match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
 ```
@@ -204,55 +200,55 @@ releases:
   - memcached
 ```
 
-**Match all redises**
+=== "Match all redises"
 
-```bash
-helmwave build -t redis
-[🙃 aka INFO]: 🏗 Plan
-        releases: 
-          - redis-a@test
-          - redis-b@test
-```
+    ```bash
+    helmwave build -t redis
+    [🙃 aka INFO]: 🏗 Plan
+            releases: 
+              - redis-a@test
+              - redis-b@test
+    ```
 
-**Match the group `a`**
+=== "Match the group `a`"
 
-```bash
-helmwave build -t a 
-[🙃 aka INFO]: 🏗 Plan
-        releases: 
-          - redis-a@test
-          - memcached-a@test
-```
+    ```bash
+    helmwave build -t a 
+    [🙃 aka INFO]: 🏗 Plan
+            releases: 
+              - redis-a@test
+              - memcached-a@test
+    ```
 
-**Match any tags**
+=== "Match any tags"
 
-If you know SQL. It looks like that:
+    If you know SQL. It looks like that:
+    
+    ```sql
+    SELECT * FROM releases WHERE tag = "redis" OR tag = "a"
+    ```
+    
+    ```bash
+    helmwave build -t redis -t a 
+    [🙃 aka INFO]: 🏗 Plan
+            releases: 
+              - redis-a@test
+              - redis-b@test
+              - memcached-a@test
+    ```
 
-```sql
-SELECT * FROM releases WHERE tag = "redis" OR tag = "a"
-```
+=== "Match all tags"
 
-```bash
-helmwave build -t redis -t a 
-[🙃 aka INFO]: 🏗 Plan
-        releases: 
-          - redis-a@test
-          - redis-b@test
-          - memcached-a@test
-```
-
-**Match all tags**
-
-All that was above, we used the logical `OR` operator.
-If you need strongly logic with `AND` you should use `--match-all-tags` flag. 
-This flag changes logic for query releases.
-
-```bash
-helmwave build --match-all-tags -t redis -t a 
-[🙃 aka INFO]: 🏗 Plan
-        releases: 
-          - redis-a@test
-```
+    All that was above, we used the logical `OR` operator.
+    If you need strongly logic with `AND` you should use `--match-all-tags` flag. 
+    This flag changes logic for query releases.
+    
+    ```bash
+    helmwave build --match-all-tags -t redis -t a 
+    [🙃 aka INFO]: 🏗 Plan
+            releases: 
+              - redis-a@test
+    ```
 
 ### depends_on
 
@@ -304,8 +300,7 @@ it will follow specified strategy:
 
 Allows using custom kubecontext for release.
 
-
-**!!! Kubedog can't be enabled when there are releases in multiple contexts.**
+!!! Warning "Kubedog can't be enabled when there are releases in multiple contexts."
 
 ### post_renderer
 
@@ -314,9 +309,9 @@ You can use custom commands to change rendered manifests.
 ### offline_kube_version
 
 If `offline_kube_version` set helmwave will use this version to build plan.
-Without this option helmwave will ask kubernetes for a version.
+Without this option, helmwave will ask kubernetes for a version.
 
-`offline_kube_version` also can help you if you want to use different environments for `helmwave build` and `helmwave up`.
+!!! tip "`offline_kube_version` also can help you if you want to use different environments for `helmwave build` and `helmwave up`."
 
 ## Chart
 
@@ -348,7 +343,7 @@ Without this option helmwave will ask kubernetes for a version.
 
 > `values` can be an object or a string. If it's a string, it will be treated as a `src`.
 
-### src
+### **src**
 
 Path to values file. It can be local or remote.
 
@@ -384,7 +379,8 @@ Allows to fail if values file doesn't exist.
 
 Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in a plan, it will be added to a plan.
 
-Name support 2 kind of definitions: uniq name <release-name>@<namespace> or just <release-name>. If namespace is not specified, it will be taken from namespace filed of release.
+Name support 2 kind of definitions: uniq name `<release-name>@<namespace>` or just `<release-name>`.
+If namespace is not specified, it will be taken from namespace filed of release.
 
 ### tag
 

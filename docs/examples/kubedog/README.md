@@ -1,4 +1,4 @@
-# 🐶Kubedog
+# 🐶 Kubedog
 
 [full documentation](../../anno/#kubedogs)
 
@@ -28,13 +28,13 @@ We are going to use `commonAnnotations`.
 
 **Run**
 
-```console
+```shell
 helmwave up --build --kubedog
 ```
 
 or 
 
-```console
+```shell
 export HELMWAVE_KUBEDOG_ENABLED=true
 export HELMWAVE_AUTO_BUILD=true
 helmwave up

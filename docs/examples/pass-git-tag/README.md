@@ -42,7 +42,7 @@ This values will override default values
 
 **Run**
 
-```console
+```shell
 helmwave build
 helmwave up
 ```

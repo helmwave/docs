@@ -40,7 +40,7 @@ revision_of_secret: 2
 1. install gomplate binary
 2. run it in your console
 
-```console
+```shell
 gomplate -d "vault=vault+https:///secret/data/test" -i '{{(ds "vault").metadata.version}}'
 gomplate -d "vault=vault+https:///secret/data/test" -i '{{(ds "vault").data.hello}}'
 ```

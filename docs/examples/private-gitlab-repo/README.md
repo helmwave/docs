@@ -1,8 +1,8 @@
 # Private GitLab repo 
 
-Learn more about GitLab Helm Registry: https://docs.gitlab.com/ee/user/packages/helm_repository/
+Learn more about GitLab Helm Registry [here](https://docs.gitlab.com/ee/user/packages/helm_repository/)
 
-```console
+```shell
 .
 ├── README.md
 └── helmwave.yml.tpl

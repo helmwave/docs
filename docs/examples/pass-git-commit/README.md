@@ -38,7 +38,7 @@ Suppose that `CI_COMMIT_SHORT_SHA` contains commit short sha hash.
 
 **Run**
 
-```console
+```shell
 helmwave build
 helmwave up
 ```

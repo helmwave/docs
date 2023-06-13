@@ -42,7 +42,7 @@ mv helmwave /usr/local/bin/
 
 ## 🪟 Windows
 
-**!!! Attention "We haven't tried running this on Windows."**
+!!! Warning "We haven't tried running this on Windows."
 
 Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
