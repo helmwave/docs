@@ -1,18 +1,19 @@
+project: QuickStart
 version: 0.27.3
 
-repositories:
-  - name: bitnami
-    url: https://charts.bitnami.com/bitnami
+registries:
+  - host: registry-1.docker.io
 
 .options: &options
   namespace: my-namespace
+  create_namespace: true
   wait: true
+  chart:
+    name: oci://registry-1.docker.io/bitnamicharts/nats
+    version: 7.8.3
 
 releases:
-  - name: redis-a
+  - name: a
     <<: *options
-    chart: bitnami/redis
-
-  - name: redis-b
+  - name: b
     <<: *options
-    chart: bitnami/redis

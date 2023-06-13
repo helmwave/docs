@@ -12,7 +12,7 @@
 |  registries  |    🙅    | array  |   []    |
 |   releases   |    🙅    | array  |   []    |
 
-> nothing is required
+> Nothing is required.
 
 ## project
 
@@ -26,7 +26,7 @@ In the future it is planned to check major compatibility.
 
 ## Registries[]
 
-> OCI registries
+> [OCI registries](https://helm.sh/docs/topics/registries/)
 
 |  field   | required |  type  | default |
 |:--------:|:--------:|:------:|:-------:|
@@ -38,9 +38,11 @@ In the future it is planned to check major compatibility.
 **Examples**
 
 - [private oci](../examples/oci-private)
-- [github oci](../examples/oci-private)
+- [public (github) oci](../examples/oci-public)
 
 ## Repositories[]
+
+> Helm [repositories](https://helm.sh/docs/helm/helm_repo) also know as `helm repo add`
 
 |          field           | required |  type  | default |
 |:------------------------:|:--------:|:------:|:-------:|
@@ -71,7 +73,7 @@ Update existing repository exists if settings differ.
 
 ## Releases[]
 
-> Almost all options that are here are native helm options
+> Almost all options that are here are native helm options.
 
 |            field            | required |       type       | default | `helmwave build` |
 |:---------------------------:|:--------:|:----------------:|:-------:|:----------------:|
@@ -112,7 +114,7 @@ Release name. I hope you know what it is.
 
 ### namespace
 
-Kubernetes namespace
+Kubernetes namespace.
 
 ### create_namespace
 
@@ -132,7 +134,7 @@ It allows to pass your custom fields from `helmwave.yml` to values.
 
 ### tags 🔖
 
-It allows you to choose releases for build
+It allows you to choose releases for build.
 
 It works with next options when you call `helmwave build` (or `helmwave up --build`):
 
@@ -282,15 +284,16 @@ Strategy to handle releases in pending statuses (`pending-install`, `pending-upg
 
 If helmwave tries to upgrade release that is currently in one of pending statuses it will follow specified strategy:
 
-- `""` (or not specified) - do nothing. Helm will fail in this case
-- `rollback` - rollback release to previous version. Upgrade will happen after rollback is complete
-- `uninstall` - uninstall release. Upgrade will happen after uninstall is complete
+- `""` (or not specified) - do nothing. Helm will fail in this case;
+- `rollback` - rollback release to previous version. Upgrade will happen after rollback is complete;
+- `uninstall` - uninstall release. Upgrade will happen after uninstall is complete.
 
 ### context
 
 Allows to use custom kubecontext for release.
 
-**Kubedog cannot be enabled when there are releases in multiple contexts.**
+
+**!!! Kubedog can't be enabled when there are releases in multiple contexts.**
 
 ### post_renderer
 
@@ -331,6 +334,12 @@ Without this option helmwave will ask kubernetes for version.
 |     strict      |    🙅    |  bool  |  false  |
 |     render      |    🙅    |  bool  |  true   |
 
+> Values can be an object or a string. If it's a string it will be treated as a path to values file.
+
+### src
+
+Path to values file. It can be local or remote.
+
 ### delimiter_left, delimiter_right
 
 You can change delimiter that helmwave uses to render values.
@@ -349,17 +358,21 @@ Allows to fail if values file doesn't exist.
 
 [example](../examples/values-strict-flag)
 
-## Depends_on[]
+## depends_on[]
 
 |  field   | required |  type  | default |
 |:--------:|:--------:|:------:|:-------:|
-|   name   |    🙅    | string |   ""    |
+| **name** |    🙅    | string |   ""    |
 |   tag    |    🙅    | string |   ""    |
 | optional |    🙅    |  bool  |  false  |
 
-### `name`
+> depends_on can be an object or a string. If it's a string it will be treated as a name.
+
+### **name**
 
 Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in plan, it will be added to plan.
+
+Name support 2 kind of definitions: uniq name <release-name>@<namespace> or just <release-name>. If namespace is not specified, it will be taken from namespace filed of release.
 
 ### tag
 

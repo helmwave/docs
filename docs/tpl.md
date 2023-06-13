@@ -9,7 +9,7 @@ Helmwave supports all built-in functions / sprig / gomplate / custom.
 ???+ warning "Explain context helm vs helmwave"
 
     There is a different context between `helm` and `helmwave`.
-    You cannot pass variables from helmwawve to your helm chart templates.
+    You can't pass variables from helmwawve to your helm chart templates.
     You should use helmwave to render values of your chart.
 
 ## [Sprig](https://godoc.org/github.com/Masterminds/sprig)
