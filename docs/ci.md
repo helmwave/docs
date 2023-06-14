@@ -58,7 +58,7 @@ helmwave:
     expire_in: 2 week
 ```
 
-See  the [example](../examples/apps-per-ns/#cicd-with-gitlab-ci)
+See  the [:material-duck: example](../examples/apps-per-ns/#cicd-with-gitlab-ci)
 
 
 ###  Kube-Linter and Helmwave
