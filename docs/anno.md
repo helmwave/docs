@@ -37,7 +37,7 @@ metadata:
 !!! danger "Kubedog can't be enabled when there are releases in multiple contexts."
 
 
-[example](examples/kubedog/README.md)
+[:material-duck: example](examples/kubedog/README.md)
 
 inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html)
 

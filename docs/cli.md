@@ -11,7 +11,7 @@ VERSION:
    0.27.3
 
 DESCRIPTION:
-   This tool helps you compose your helm releases!
+   This tool helps you compose your :simple-helm: helm releases!
    0. $ helmwave yml
    1. $ helmwave build
    2. $ helmwave up
@@ -102,7 +102,7 @@ You can pass `--yml` flag into [`build`](#build) command for launching [`yml`](#
     --graph-width value                                set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
     --skip-unchanged                                   skip unchanged releases (default: false) [$HELMWAVE_SKIP_UNCHANGED]
     --diff-mode value                                  You can set: [ live | local | none ] (default: "live") [$HELMWAVE_DIFF_MODE]
-    --charts-cache-dir value                           enable caching of helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
+    --charts-cache-dir value                           enable caching of :simple-helm: helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
     --yml                                              auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
     --wide value                                       show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
     --show-secret                                      show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
@@ -124,7 +124,7 @@ And you can also use `--yml` flag that renders `helmwave.yml.tpl` to `helmwave.y
 
 ### `up`
 
-Helmwave will install repositories and helm releases from a plan.
+Helmwave will install repositories and :simple-helm: helm releases from a plan.
 
 !!! info "Flags"
 
@@ -135,7 +135,7 @@ Helmwave will install repositories and helm releases from a plan.
     --kubedog-start-delay value                        delay kubedog start, don't make it too late (default: 1s) [$HELMWAVE_KUBEDOG_START_DELAY]
     --kubedog-timeout value                            timeout of kubedog multitrackers (default: 5m0s) [$HELMWAVE_KUBEDOG_TIMEOUT]
     --kubedog-log-width value                          Set kubedog max log line width (default: 140) [$HELMWAVE_KUBEDOG_LOG_WIDTH]
-    --progress                                         Enable progress logs of helm (INFO log level) (default: false) [$HELMWAVE_PROGRESS]
+    --progress                                         Enable progress logs of :simple-helm: helm (INFO log level) (default: false) [$HELMWAVE_PROGRESS]
     --parallel-limit value                             Limit amount of parallel releases (default: 0) [$HELMWAVE_PARALLEL_LIMIT]
     --plandir value, -p value                          path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
     --tags value, -t value [ --tags value, -t value ]  build releases by tags: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
@@ -143,7 +143,7 @@ Helmwave will install repositories and helm releases from a plan.
     --graph-width value                                set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
     --skip-unchanged                                   skip unchanged releases (default: false) [$HELMWAVE_SKIP_UNCHANGED]
     --diff-mode value                                  You can set: [ live | local | none ] (default: "live") [$HELMWAVE_DIFF_MODE]
-    --charts-cache-dir value                           enable caching of helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
+    --charts-cache-dir value                           enable caching of :simple-helm: helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
     --yml                                              auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
     --wide value                                       show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
     --show-secret                                      show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
@@ -167,7 +167,7 @@ $ helmwave down
 
 ### `ls`
 
-Helmwave will get a list of helm releases from a plan.
+Helmwave will get a list of :simple-helm: helm releases from a plan.
 
 ```bash
 $ helmwave ls      
@@ -185,7 +185,7 @@ $ helmwave ls
 
 ### `status`
 
-Helmwave try getting status of helm releases from a plan.
+Helmwave try getting status of :simple-helm: helm releases from a plan.
 
 ```bash
 $ helmwave status      
@@ -214,7 +214,7 @@ $ helmwave status
 
 ### `rollback`
 
-Rollback helm releases from a plan.
+Rollback :simple-helm: helm releases from a plan.
 
 !!! info "Flags"
 
@@ -232,7 +232,7 @@ $ helmwave rollback
 
 ### `graph`
 
-Show only :material-graph: graph of helm releases from plan.
+Show only :material-graph: graph of :simple-helm: helm releases from plan.
 
 !!! info "Flags"
 
@@ -298,7 +298,7 @@ Helmwave supports several log-format
 |    incompatible version    |        ❌         |   ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
 |         helm-debug         |        ❌         |   ❌    |    ✅    |    ✅    |    ✅    |    ✅    |
 |        file content        |        ❌         |   ❌    |    ✅    |    ✅    |    ✅    |    ✅    |
-| helm manifests, bug report |        ❌         |   ❌    |    ❌    |    ❌    |    ❌    |    ✅    |
+| :simple-helm: helm manifests, bug report |        ❌         |   ❌    |    ❌    |    ❌    |    ❌    |    ✅    |
 
 `info` is preferred loglevel.
 

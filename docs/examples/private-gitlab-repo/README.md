@@ -1,6 +1,6 @@
 # Private GitLab repo 
 
-Learn more about GitLab Helm Registry [here](https://docs.gitlab.com/ee/user/packages/helm_repository/)
+Learn more about GitLab :simple-helm: helm Registry [here](https://docs.gitlab.com/ee/user/packages/helm_repository/)
 
 ```shell
 .
