@@ -65,7 +65,7 @@ GLOBAL OPTIONS:
 
 This command renders `helmwave.yml.tpl` to `helmwave.yml`.
 
-!!! info "Flags"
+!!! success "Flags"
 
     ```shell
     --tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
