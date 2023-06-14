@@ -1,4 +1,4 @@
-# [helmwave.github.io/docs](https://helmwave.github.io/docs)
+# [docs.helmwave.app](https://docs.helmwave.app)
 
 > The helmwave's docs
 
