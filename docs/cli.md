@@ -156,7 +156,7 @@ Helmwave will install repositories and :simple-helm: helm releases from a plan.
 
 ### `down`
 
-Helmwave will uninstall helm-releases from plan.
+Helmwave will uninstall :simple-helm: helm releases from plan.
 
 ```bash
 $ helmwave down      
@@ -302,7 +302,19 @@ Helmwave supports several log-format
 
 `info` is preferred loglevel.
 
-You can enable `--progress` flag for helm-debug output.
+You can enable `--progress` flag for helm-debug output:
+
+```shell
+[🙃 aka INFO]: beginning wait for 4 resources with timeout of 5m0s
+[🙃 aka INFO]: beginning wait for 4 resources with timeout of 5m0s
+[🙃 aka INFO]: StatefulSet is not ready: my-namespace/a-nats. 0 out of 1 expected pods are ready
+[🙃 aka INFO]: StatefulSet is not ready: my-namespace/b-nats. 0 out of 1 expected pods are ready
+[🙃 aka INFO]: StatefulSet is not ready: my-namespace/b-nats. 0 out of 1 expected pods are ready
+[🙃 aka INFO]: StatefulSet is not ready: my-namespace/a-nats. 0 out of 1 expected pods are ready
+[🙃 aka INFO]: StatefulSet is ready: my-namespace/a-nats. 1 out of 1 expected pods are ready
+[🙃 aka INFO]: StatefulSet is not ready: my-namespace/b-nats. 0 out of 1 expected pods are ready
+[🙃 aka INFO]: StatefulSet is ready: my-namespace/b-nats. 1 out of 1 expected pods are ready
+```
 
 ### How to use?
 

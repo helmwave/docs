@@ -245,8 +245,6 @@ Release name. I hope you know what it is.
 
 ### chart
 
-> `chart` can be an object or a string. If it's a string, it will be treated as a `name`.
-
 |         field         | required |  type  | default |
 |:---------------------:|:--------:|:------:|:-------:|
 |       **name**        |    ✅     | string |   ""    |
@@ -261,7 +259,29 @@ Release name. I hope you know what it is.
 |  passcredentialsall   |    🙅    |  bool  |  false  |
 |        verify         |    🙅    |  bool  |  false  |
 
+`chart` can be an object or a string. If it's a string, it will be treated as a `name`.
+
+=== "string"
+
+    ```yaml
+    releases:
+      - name: nginx-ingress
+        namespace: nginx-ingress
+        chart: stable/nginx-ingress
+    ```
+
+=== "object"
+
+    ```yaml
+    releases:
+      - name: nginx-ingress
+        namespace: nginx-ingress
+        chart: 
+          name: stable/nginx-ingress
+    ```
+
 !!! tip "If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during deploy."
+
 
 ### create_namespace
 
@@ -269,7 +289,6 @@ If set to `true` Helmwave will create the release namespace if not present.
 
 ### values[]
 
-> `values` can be an object or a string. If it's a string, it will be treated as a `src` field.
 
 |      field      | required |  type  | default |
 |:---------------:|:--------:|:------:|:-------:|
@@ -279,10 +298,47 @@ If set to `true` Helmwave will create the release namespace if not present.
 |     strict      |    🙅    |  bool  |  false  |
 |     render      |    🙅    |  bool  |  true   |
 
+`values` can be an object or a string. If it's a string, it will be treated as a `src`.
+
+=== "string"
+
+    ```yaml
+    ...
+    values:
+      - values.yaml
+    ```
+
+=== "object"
+
+    ```yaml
+    ...
+    values:
+      - src: values.yaml
+        delimiter_left: "{{"
+        delimiter_right: "}}"
+        strict: false
+        render: true
+    ```
 
 #### **src**
 
 Path to values file. It can be local or remote.
+
+=== "local"
+
+    ```yaml
+    ...
+    values:
+      - 06_values.yaml
+    ```
+
+=== "remote"
+
+    ```yaml
+    ...
+    values:
+      - https://raw.githubusercontent.com/helmwave/helmwave/main/tests/06_values.yaml
+    ```
 
 #### delimiter_left, delimiter_right
 
@@ -618,7 +674,6 @@ Enable DNS resolution in templates.
 Allows deleting and then creating resources (pods) when needed instead of updating.
 
 !!! tip "We don't recommend using this option."
-
 
 ### reset_values
 
