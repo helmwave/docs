@@ -1500,13 +1500,13 @@ so as not to confuse you with the original functionality of <a href="https://hel
 <td align="center">delimiter_left</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
-<td align="center">"</td>
+<td align="center">"{{"</td>
 </tr>
 <tr>
 <td align="center">delimiter_right</td>
 <td align="center">🙅</td>
 <td align="center">string</td>
-<td align="center">"</td>
+<td align="center">"}}"</td>
 </tr>
 <tr>
 <td align="center">strict</td>
@@ -1758,6 +1758,9 @@ If a tag is not in a plan, it will be added to a plan.</p>
 <h3 id="allow_failure">allow_failure</h3>
 <p>Allows all dependant releases to proceed even if release failed.</p>
 <h3 id="pending_release_strategy">pending_release_strategy</h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.21.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.21.0</a></p>
+</blockquote>
 <p>Strategy to handle releases in pending statuses (<code>pending-install</code>, <code>pending-upgrade</code>, <code>pending-rollback</code>)</p>
 <p>If helmwave tries to upgrade release that is currently in one of the pending statuses,
 it will follow specified strategy:</p>
