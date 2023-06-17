@@ -19,9 +19,5 @@ Fresh-created branches will update `latest` symlink, other pushes will just trig
 
 The only thing you need to update is `helmwave` version in:
 
-- [examples](docs/examples)
-- [docs/tpl.md](docs/tpl.md)
-- [docs/install.md](docs/install.md)
-- [docs/cli.md](docs/cli.md)
-- [docs/yaml.md](docs/yaml.md)
-- [docs/ci.md](docs/ci.md)
+- [mkdocs.yml](mkdocs.yml): `extra.ver`
+

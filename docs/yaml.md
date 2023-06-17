@@ -147,6 +147,8 @@ In the future, it is planned to check major compatibility.
 
 ## registries[]
 
+> Introduced in [:material-tag: v0.19.0](https://github.com/helmwave/helmwave/releases/tag/v0.19.0)
+
 Describe which [OCI registries](https://helm.sh/docs/topics/registries/) need to be added.
 
 |  field   | required |  type  | default |
@@ -250,7 +252,7 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
 === "short syntax"
 
     ```yaml
-    version: 0.28.0
+    version: {{ ver }}
     lifecycle:
       pre_build:
         - echo "run global pre_build script"
@@ -259,7 +261,7 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
 === "full syntax"
 
     ```yaml
-    version: 0.28.0
+    version: {{ ver }}
     lifecycle:
       pre_build:
         - cmd: echo 
@@ -499,6 +501,8 @@ releases:
     ```
 
 ### offline_kube_version
+
+> Introduced in [:material-tag: v0.27.3](https://github.com/helmwave/helmwave/releases/tag/v0.27.3)
 
 If `offline_kube_version` set helmwave will use this version to build plan.
 Without this option, helmwave will ask :simple-kubernetes: kubernetes for a version.
