@@ -1,3 +1,6 @@
+project: "Example: built-in object release"
+version: "⟨⟨ ver ⟩⟩"
+
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami

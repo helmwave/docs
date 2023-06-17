@@ -1,7 +1,3 @@
----
-ignore_macros: true
----
-
 # How to use [Store](../../yaml/#store)
 
 **Project Structure**

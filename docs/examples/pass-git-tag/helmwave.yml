@@ -1,3 +1,6 @@
+project: "Example: pass git tag"
+version: "⟨⟨ ver ⟩⟩"
+
 releases:
   - name: my-release
     chart: my-chart-repo/my-chart-app

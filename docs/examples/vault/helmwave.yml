@@ -1,3 +1,6 @@
+project: "Example: vault"
+version: "⟨⟨ ver ⟩⟩"
+
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami

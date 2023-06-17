@@ -1,7 +1,3 @@
----
-ignore_macros: true
----
-
 # 🐶 Kubedog
 
 !!! info "The first thing you need to do is turn on `kubedog`"

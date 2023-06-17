@@ -1,7 +1,3 @@
----
-ignore_macros: true
----
-
 # Apps per namespace
 
 If you want to install each application in your own namespace. 

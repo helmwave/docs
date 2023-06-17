@@ -1,6 +1,4 @@
----
-ignore_macros: true
----
+
 
 # 📄 Templating
 

@@ -1,7 +1,3 @@
----
-ignore_macros: true
----
-
 # ☂️ Umbrella chart is evil
 
 > Helmwave is only what you actually need.

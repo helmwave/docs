@@ -1,7 +1,3 @@
----
-ignore_macros: true
----
-
 # OCI public
 
 This example demonstrates how to use public repositories with `ghcr.io`

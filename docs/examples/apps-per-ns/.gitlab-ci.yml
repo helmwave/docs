@@ -7,7 +7,7 @@ deploy to prod:
   environment:
     name: prod
   image:
-    name: ghcr.io/helmwave/helmwave:latest
+    name: ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩
     entrypoint: [""]
   before_script:
   - printenv | grep HELMWAVE

@@ -1,7 +1,3 @@
----
-ignore_macros: true
----
-
 # Git tag -> image tag
 
 Suppose `my-chart` has default `values.yaml`:

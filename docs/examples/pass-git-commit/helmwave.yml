@@ -1,3 +1,6 @@
+project: "Example: pass git commit"
+version: "⟨⟨ ver ⟩⟩"
+
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami

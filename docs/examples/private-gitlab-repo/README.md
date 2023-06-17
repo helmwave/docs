@@ -1,7 +1,3 @@
----
-ignore_macros: true
----
-
 # Private GitLab repo 
 
 Learn more about GitLab :simple-helm: helm Registry [here](https://docs.gitlab.com/ee/user/packages/helm_repository/)
@@ -21,19 +17,5 @@ Learn more about GitLab :simple-helm: helm Registry [here](https://docs.gitlab.c
 Your `.gitlab-ci.yml` 
 
 ```yaml
-helmwave:
-  stage: deploy
-  image:
-    name: ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩
-    entrypoint: [""]
-  before_script:
-  - printenv | grep HELMWAVE
-  script:
-  - helmwave yml
-  - helmwave build
-  - helmwave up
-  artifacts:
-    paths:
-    - .helmwave
-    expire_in: 2 week
+{% include ".gitlab-ci.yml" %}
 ```
