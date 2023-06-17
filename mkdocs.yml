@@ -50,6 +50,7 @@ nav:
 
 plugins:
   - search
+  - macros
   - mermaid2
   - include-markdown
 
@@ -86,6 +87,7 @@ theme:
     - search.share
 
 extra:
+  ver: 0.28.0
   version:
     provider: mike
     default: latest

@@ -1,3 +1,7 @@
+---
+ignore_macros: true
+---
+
 # Release object
 
 > This an example is demonstrating how to use the `release` object.

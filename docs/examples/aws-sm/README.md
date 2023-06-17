@@ -1,3 +1,7 @@
+---
+ignore_macros: true
+---
+
 # AWS secret manager
 
 **Project structure**

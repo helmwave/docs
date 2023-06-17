@@ -1,3 +1,7 @@
+---
+ignore_macros: true
+---
+
 # 🔰 Quick Start
 
 <script async id="asciicast-591181" src="https://asciinema.org/a/591181.js"></script>

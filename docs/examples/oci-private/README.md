@@ -1,3 +1,7 @@
+---
+ignore_macros: true
+---
+
 # OCI private
 
 Just add `oci://` to your chart name and define a registry.

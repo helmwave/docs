@@ -8,22 +8,32 @@ This documentation describes all entities inside a `helmwave.yml`
 |   version    |    🙅    | string |   ""    |
 | repositories |    🙅    | array  |   []    |
 |  registries  |    🙅    | array  |   []    |
+|  lifecycle   |    🙅    | object |   {}    |
 |   releases   |    🙅    | array  |   []    |
 
 === "Short `helmwave.yml`"
 
     ```yaml
     project: "HelloWorld"
-    version: "0.27.3"
+    version: "{{ ver }}"
     repositories: []
     registries: []
     releases: []
+    lifecycle:
+      pre_up: []
+      post_up: []
+      pre_down: []
+      post_down: []
+      pre_build: []
+      post_build: []
+      pre_rollback: []
+      post_rollback: []
     ```
 === "Full `helmwave.yml`"
 
     ```yaml
     project: "HelloWorld"
-    version: "0.27.3"
+    version: "{{ ver }}"
 
     repositories:
       - name: stable
@@ -36,13 +46,22 @@ This documentation describes all entities inside a `helmwave.yml`
         certFile: ./cert.pem
         keyFile: ./key.pem
         caFile: ./ca.pem
-    
+
+    lifecycle:
+      pre_build:
+        - cmd: "ls"
+          args: ["-l", "-a"]
+          show: false
+        - echo "run global pre_build script"
+      post_build:
+        - echo "run global post_build script"
+
     registries:
-      - host: https://localhost:5000
-        # private registries
-        username: oci_user
-        password: 98765431
-        insecure: false
+        - host: https://localhost:5000
+          # private registries
+          username: oci_user
+          password: 98765431
+          insecure: false
 
 
     releases:
@@ -64,6 +83,16 @@ This documentation describes all entities inside a `helmwave.yml`
 
         store:
           greeting: "HelloWorld"
+
+        lifecycle:
+          pre_up:
+            - echo "running pre_up script for my"
+          post_up:
+            - echo "running post_up script for my"
+          pre_build:
+            - echo "running pre_build script for my"
+          post_build:
+            - echo "running post_build script for my"
 
         depends_on:
           - name: db@prod
@@ -198,6 +227,47 @@ Password for the repository.
 
 Update existing repository exists if settings differ.
 
+## lifecycle
+
+> Aka global hooks. Introduced in [:material-tag: v0.28.0](https://github.com/helmwave/helmwave/releases/tag/v0.28.0)
+
+|     field     | required | type  | default |
+|:-------------:|:--------:|:-----:|:-------:|
+|    pre_up     |    🙅    | array |   []    |
+|    post_up    |    🙅    | array |   []    |
+|   pre_down    |    🙅    | array |   []    |
+|   post_down   |    🙅    | array |   []    |
+|   pre_build   |    🙅    | array |   []    |
+|  post_build   |    🙅    | array |   []    |
+| pre_rollback  |    🙅    | array |   []    |
+| post_rollback |    🙅    | array |   []    |
+
+
+
+We don't call lifecycle the hooks on purpose
+so as not to confuse you with the original functionality of [:simple-helm: helm hooks](https://helm.sh/docs/topics/charts_hooks/).
+
+=== "short syntax"
+
+    ```yaml
+    version: 0.28.0
+    lifecycle:
+      pre_build:
+        - echo "run global pre_build script"
+    ```
+
+=== "full syntax"
+
+    ```yaml
+    version: 0.28.0
+    lifecycle:
+      pre_build:
+        - cmd: echo 
+          args: ['"run', 'global', 'pre_build', 'script"']
+          show: true
+    ```
+
+
 ## releases[]
 
 Almost all options that are here are native :simple-helm: helm options.
@@ -212,6 +282,7 @@ Almost all options that are here are native :simple-helm: helm options.
 |            tags             |    🙅    |      array       |   []    |        ✅         |               |
 |    offline_kube_version     |    🙅    |      string      |   ""    |        ✅         |               |
 |            store            |    🙅    |      object      |   {}    |        ✅         |               |
+|          lifecycle          |    🙅    |      object      |   {}    |        ✅         |               |
 |         depends_on          |    🙅    |      array       |   []    |        ✅         |               |
 |        allow_failure        |    🙅    |       bool       |  false  |                  |               |
 |  pending_release_strategy   |    🙅    |      string      |   ""    |                  |               |
@@ -441,6 +512,15 @@ Without this option, helmwave will ask :simple-kubernetes: kubernetes for a vers
 It allows passing your custom fields from `helmwave.yml` to values.
 
 [:material-duck: example](../examples/store-greeting-hello/)
+
+### lifecycle
+
+> aka hooks
+
+We don't call lifecycle the hooks on purpose so as not to confuse you with the original functionality of
+[:simple-helm: helm hooks](https://helm.sh/docs/topics/charts_hooks/).
+
+
 
 ### depends_on[]
 

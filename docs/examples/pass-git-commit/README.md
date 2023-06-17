@@ -1,3 +1,7 @@
+---
+ignore_macros: true
+---
+
 # Restart pods via git-commit
 
 **Project Structure**

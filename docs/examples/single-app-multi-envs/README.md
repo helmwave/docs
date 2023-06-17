@@ -1,3 +1,7 @@
+---
+ignore_macros: true
+---
+
 # Single app multi envs
 
 When we work with helm, sometimes we need dynamics chose environment.

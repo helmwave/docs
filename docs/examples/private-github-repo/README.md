@@ -1,3 +1,7 @@
+---
+ignore_macros: true
+---
+
 # Private GitHub repo 
 
 ```shell
