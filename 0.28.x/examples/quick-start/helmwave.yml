@@ -1,4 +1,5 @@
 project: QuickStart
+version: "⟨⟨ ver ⟩⟩"
 
 # OCI: modern way to get chart from registry
 registries:

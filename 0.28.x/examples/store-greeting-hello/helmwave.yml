@@ -1,3 +1,6 @@
+project: "Example: store"
+version: "⟨⟨ ver ⟩⟩"
+
 releases:
 - name: a
   chart: my/a

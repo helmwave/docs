@@ -1,3 +1,6 @@
+project: "Example: values render flag"
+version: "⟨⟨ ver ⟩⟩"
+
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami

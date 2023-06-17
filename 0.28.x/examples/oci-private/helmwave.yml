@@ -1,3 +1,6 @@
+project: "Example: oci private"
+version: "⟨⟨ ver ⟩⟩"
+
 registries:
   - host: localhost:5000
     username: <pass_username_here>

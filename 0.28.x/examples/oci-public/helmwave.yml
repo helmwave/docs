@@ -1,3 +1,6 @@
+project: "Example: oci public"
+version: "⟨⟨ ver ⟩⟩"
+
 registries:
   - host: ghcr.io
 

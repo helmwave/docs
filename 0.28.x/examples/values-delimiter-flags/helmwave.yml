@@ -1,3 +1,6 @@
+project: "Example: values delimiter flags"
+version: ⟨⟨ ver ⟩⟩
+
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami

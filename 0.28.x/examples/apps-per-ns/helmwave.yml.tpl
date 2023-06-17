@@ -1,3 +1,6 @@
+project: "Example: apps per own namespace"
+version: "⟨⟨ ver ⟩⟩"
+
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami

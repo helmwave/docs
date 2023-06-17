@@ -1,3 +1,6 @@
+project: "Example: single app multi envs"
+version: "⟨⟨ ver ⟩⟩"
+
 releases:
   - name: my-release
     chart:
