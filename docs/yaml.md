@@ -626,6 +626,8 @@ Allows all dependant releases to proceed even if release failed.
 
 ### pending_release_strategy
 
+> Introduced in [:material-tag: v0.21.0](https://github.com/helmwave/helmwave/releases/tag/v0.21.0)
+
 Strategy to handle releases in pending statuses (`pending-install`, `pending-upgrade`, `pending-rollback`)
 
 If helmwave tries to upgrade release that is currently in one of the pending statuses,
