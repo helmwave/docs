@@ -1,0 +1,16 @@
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+
+releases:
+- name: a
+  chart: bitnami/nginx
+  namespace: test
+  values:
+  - _.yml
+
+- name: b
+  chart: bitnami/nginx
+  namespace: test
+  values:
+    - _.yml
