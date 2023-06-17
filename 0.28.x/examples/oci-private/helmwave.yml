@@ -1,5 +1,3 @@
-version: 0.27.3
-
 registries:
   - host: localhost:5000
     username: <pass_username_here>

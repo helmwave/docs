@@ -926,9 +926,7 @@ You're not viewing the latest version.
 └──<span class="w"> </span>helmwave.yml.tpl
 </code></pre></div>
 <p><strong>Suppose the <code>helmwave.yml.tpl</code> looks like</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.27.3</span>
-
-<span class="nt">repositories</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="nt">repositories</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Docs: https://docs.gitlab.com/ee/user/packages/helm_repository/</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_API_V4_URL&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">/projects/{{env &quot;CI_PROJECT_ID&quot; }}/packages/helm/stable</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_PROJECT_TITLE&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
@@ -946,7 +944,7 @@ You're not viewing the latest version.
 <div class="highlight"><pre><span></span><code><span class="nt">helmwave</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 <span class="w">  </span><span class="nt">image</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/helmwave/helmwave:0.27.3</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/helmwave/helmwave:{{ ver }}</span>
 <span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;&quot;</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">printenv | grep HELMWAVE</span>
