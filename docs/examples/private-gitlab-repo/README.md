@@ -24,7 +24,7 @@ Your `.gitlab-ci.yml`
 helmwave:
   stage: deploy
   image:
-    name: ghcr.io/helmwave/helmwave:{{ ver }}
+    name: ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩
     entrypoint: [""]
   before_script:
   - printenv | grep HELMWAVE

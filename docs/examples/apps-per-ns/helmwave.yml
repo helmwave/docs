@@ -1,4 +1,4 @@
-version: {{ ver }}
+version: ⟨⟨ ver ⟩⟩
 
 repositories:
   - name: bitnami

@@ -39,7 +39,7 @@ If you've ever written :simple-helm: helm charts, then you're already familiar w
 `Gomplate` is a template renderer which supports a growing list of datasources,
 such as JSON (including EJSON - encrypted JSON), YAML, :simple-amazonaws: AWS EC2 metadata, BoltDB, :simple-consul: Hashicorp Consul and :simple-vault: Hashicorp Vault secrets.
 
-## [Custom](https://github.com/helmwave/helmwave/blob/release-{{ ver }}/pkg/template/func.go)
+## [Custom](https://github.com/helmwave/helmwave/blob/release-⟨⟨ ver ⟩⟩/pkg/template/func.go)
 
 Custom functions will work with any template engine.
 

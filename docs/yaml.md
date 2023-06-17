@@ -15,7 +15,7 @@ This documentation describes all entities inside a `helmwave.yml`
 
     ```yaml
     project: "HelloWorld"
-    version: "{{ ver }}"
+    version: "⟨⟨ ver ⟩⟩"
     repositories: []
     registries: []
     releases: []
@@ -33,7 +33,7 @@ This documentation describes all entities inside a `helmwave.yml`
 
     ```yaml
     project: "HelloWorld"
-    version: "{{ ver }}"
+    version: "⟨⟨ ver ⟩⟩"
 
     repositories:
       - name: stable
@@ -252,7 +252,7 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
 === "short syntax"
 
     ```yaml
-    version: {{ ver }}
+    version: ⟨⟨ ver ⟩⟩
     lifecycle:
       pre_build:
         - echo "run global pre_build script"
@@ -261,7 +261,7 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
 === "full syntax"
 
     ```yaml
-    version: {{ ver }}
+    version: ⟨⟨ ver ⟩⟩
     lifecycle:
       pre_build:
         - cmd: echo 

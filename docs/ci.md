@@ -24,7 +24,7 @@ jobs:
       - uses: helmwave/setup-action@v0.2.0
         name: Install helmwave
         with:
-          version: '{{ ver }}'
+          version: '⟨⟨ ver ⟩⟩'
       - name: templating helmwave.yml.tpl  
         run: helmwave yml
       - name: plan
@@ -44,7 +44,7 @@ helmwave:
   environment:
     name: "ref/$CI_COMMIT_REF_SLUG"
   image:
-    name: diamon/helmwave:{{ ver }}
+    name: diamon/helmwave:⟨⟨ ver ⟩⟩
     entrypoint: [""]
   before_script:
     - printenv | grep HELMWAVE
@@ -81,7 +81,7 @@ variables:
   after_script:
     - ls -la $HELMWAVE_PLAN
   image:
-    name: ghcr.io/helmwave/helmwave:{{ ver }}
+    name: ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩
     entrypoint: [ '' ]
 
 ###############  BUILD  ################

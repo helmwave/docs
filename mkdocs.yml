@@ -50,7 +50,9 @@ nav:
 
 plugins:
   - search
-  - macros
+  - macros:
+      j2_variable_start_string: '⟨⟨'
+      j2_variable_end_string: '⟩⟩'
   - mermaid2
   - include-markdown
 

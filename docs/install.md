@@ -21,7 +21,7 @@ brew install helmwave/tap/helmwave
 
 or use wget
 ```sh
-export VERSION={{ ver }}
+export VERSION=⟨⟨ ver ⟩⟩
 wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_darwin_amd64.tar.gz -O - | tar -xz
 mv helmwave /usr/local/bin/
 ```
@@ -33,7 +33,7 @@ mv helmwave /usr/local/bin/
 Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
 ```sh
-export VERSION={{ ver }}
+export VERSION=⟨⟨ ver ⟩⟩
 wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_linux_amd64.tar.gz -O - | tar -xz
 mv helmwave /usr/local/bin/
 ```
@@ -65,12 +65,12 @@ docker pull ghcr.io/helmwave/helmwave
 **Use specific version**
 
 ```bash
-docker pull diamon/helmwave:{{ ver }}
-docker pull ghcr.io/helmwave/helmwave:{{ ver }}
+docker pull diamon/helmwave:⟨⟨ ver ⟩⟩
+docker pull ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩
 
-docker run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:{{ ver }}
+docker run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩
 # helmwave version
-{{ ver }}
+⟨⟨ ver ⟩⟩
 #
 ```
 
@@ -82,15 +82,15 @@ scratch image run with [nobody user](https://unix.stackexchange.com/questions/18
 docker pull diamon/helmwave:scratch
 docker pull ghcr.io/helmwave/helmwave:scratch
 
-docker run ghcr.io/helmwave/helmwave:{{ ver }}-scratch version
-{{ ver }}
+docker run ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩-scratch version
+⟨⟨ ver ⟩⟩
 ```
 
 **Use [scratch image](https://hub.docker.com/_/scratch) with specific helmwave version**
 
 ```bash
-docker pull diamon/helmwave:{{ ver }}-scratch
-docker pull ghcr.io/helmwave/helmwave:{{ ver }}-scratch
+docker pull diamon/helmwave:⟨⟨ ver ⟩⟩-scratch
+docker pull ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩-scratch
 ```
 
 ---
@@ -98,7 +98,7 @@ docker pull ghcr.io/helmwave/helmwave:{{ ver }}-scratch
 ## Install with go get ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave)
 
 ```sh
-export VERSION={{ ver }}
+export VERSION=⟨⟨ ver ⟩⟩
 GO111MODULE=on go get github.com/helmwave/helmwave/cmd/helmwave@$VERSION
 ```
 
