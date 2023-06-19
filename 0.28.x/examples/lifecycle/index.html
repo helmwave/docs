@@ -396,7 +396,7 @@ You're not viewing the latest version.
 </div>
 </div>
 </div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden="">
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
@@ -412,7 +412,7 @@ You're not viewing the latest version.
 <h1 id="lifecycle">Lifecycle<a class="headerlink" href="#lifecycle" title="Permanent link">¶</a></h1>
 <p>Lifecycle defines scripts that are triggered by helmwave.</p>
 <p><strong>Flow hooks for <code>helmwave up --build</code></strong></p>
-<div class="mermaid">flowchart TD
+<div class="mermaid">flowchart LR
 
 
     subgraph build
@@ -478,8 +478,7 @@ You're not viewing the latest version.
 <span class="w">      </span><span class="nt">post_build</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "post_build for nats"</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">output</span><pre><span></span><code>helmwave<span class="w"> </span>build<span class="w"> </span>--diff-mode<span class="w"> </span>none
-<span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>Running<span class="w"> </span>pre-build<span class="w"> </span>hooks...
+<div class="highlight"><span class="filename">$ helmwave build --diff-mode none</span><pre><span></span><code><span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>Running<span class="w"> </span>pre-build<span class="w"> </span>hooks...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>running<span class="w"> </span>hook...
 <span class="w">        </span>args:
 <span class="w">          </span>-<span class="w"> </span><span class="s2">"global</span>

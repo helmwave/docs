@@ -993,6 +993,9 @@ GLOBAL OPTIONS:
 <h3 id="-file"><code>--file</code><a class="headerlink" href="#-file" title="Permanent link">¶</a></h3>
 <p>Set path to <code>helmwave.yml</code></p>
 <h3 id="-templater"><code>--templater</code><a class="headerlink" href="#-templater" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.17.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.17.0</a></p>
+</blockquote>
 <p>You can define template engine, which will be used to render <code>helmwave.yml</code> file or <code>values</code> files.</p>
 <p>Please visit <a href="../tpl">templating reference</a> for more details.</p>
 <h2 id="build"><code>build</code><a class="headerlink" href="#build" title="Permanent link">¶</a></h2>
@@ -1047,8 +1050,14 @@ You can pass <code>--yml</code> flag into <a href="#build"><code>build</code></a
 <div class="highlight"><pre><span></span><code>TODO:<span class="w"> </span>add<span class="w"> </span>example
 </code></pre></div>
 <h3 id="-charts-cache-dir"><code>--charts-cache-dir</code><a class="headerlink" href="#-charts-cache-dir" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.25.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.25.0</a></p>
+</blockquote>
 <p>The directory to use for storing cached charts. If not specified, the default is <code>.helmwave/charts</code>.</p>
 <h3 id="-graph-width"><code>--graph-width</code><a class="headerlink" href="#-graph-width" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.27.1"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.27.1</a></p>
+</blockquote>
 <p>You can change logic of graph rendering by changing this flag.</p>
 <ul>
 <li>1: <code>--graph-width=1</code> - disable graph rendering</li>
@@ -1058,6 +1067,9 @@ You can pass <code>--yml</code> flag into <a href="#build"><code>build</code></a
 </ul>
 <hr/>
 <h3 id="-diff-mode"><code>--diff-mode</code><a class="headerlink" href="#-diff-mode" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.12.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.12.0</a></p>
+</blockquote>
 <ul>
 <li><code>live</code> - diff with live cluster</li>
 <li><code>plan</code> - diff with local plan</li>
@@ -1068,10 +1080,16 @@ You can pass <code>--yml</code> flag into <a href="#build"><code>build</code></a
 <div class="highlight"><pre><span></span><code>TODO:<span class="w"> </span>add<span class="w"> </span>example
 </code></pre></div>
 <h3 id="-show-secret"><code>--show-secret</code><a class="headerlink" href="#-show-secret" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.16.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.16.0</a></p>
+</blockquote>
 <p>Enable showing secret values in diff output.</p>
 <div class="highlight"><pre><span></span><code>TODO:<span class="w"> </span>add<span class="w"> </span>example
 </code></pre></div>
 <h3 id="-3-way-merge"><code>--3-way-merge</code><a class="headerlink" href="#-3-way-merge" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.24.4"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.24.4</a></p>
+</blockquote>
 <p>Enable 3-way merge for when call diff.</p>
 <div class="highlight"><pre><span></span><code>TODO:<span class="w"> </span>add<span class="w"> </span>example
 </code></pre></div>
@@ -1108,6 +1126,9 @@ You can pass <code>--yml</code> flag into <a href="#build"><code>build</code></a
 <p>Enable execute <code>build</code> command before.</p>
 <p>And you can also use <code>--yml</code> flag that renders <code>helmwave.yml.tpl</code> to <code>helmwave.yml</code> before running <code>--build</code> command.</p>
 <h3 id="-progress"><code>--progress</code><a class="headerlink" href="#-progress" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.17.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.17.0</a></p>
+</blockquote>
 <p>Enable helm debug progress output.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">true</label><label for="__tabbed_1_2">false</label></div>
 <div class="tabbed-content">
@@ -1124,9 +1145,15 @@ todo:<span class="w"> </span>add<span class="w"> </span>example
 </div>
 </input></input></div>
 <h3 id="-parallel-limit"><code>--parallel-limit</code><a class="headerlink" href="#-parallel-limit" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.20.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.20.0</a></p>
+</blockquote>
 <p>Limit the number of parallel helm operations.</p>
 <hr/>
 <h3 id="-kubedog"><code>--kubedog</code><a class="headerlink" href="#-kubedog" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.8.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.8.0</a></p>
+</blockquote>
 <p>Enable kubedog.</p>
 <h3 id="-kubedog-status-interval"><code>--kubedog-status-interval</code><a class="headerlink" href="#-kubedog-status-interval" title="Permanent link">¶</a></h3>
 <p>Set interval for kubedog status.</p>
@@ -1305,6 +1332,9 @@ Graph draws with <a href="https://github.com/helmwave/asciigraph"><span class="t
 </code></pre></div>
 </details>
 <h3 id="-graph-width_1"><code>--graph-width</code><a class="headerlink" href="#-graph-width_1" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.27.1"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.27.1</a></p>
+</blockquote>
 <p>You can change logic of graph rendering by changing this flag.</p>
 <ul>
 <li>1: <code>--graph-width=1</code> - disable graph rendering</li>
@@ -1342,10 +1372,16 @@ $<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><sp
 <div class="highlight"><pre><span></span><code>TODO:<span class="w"> </span>add<span class="w"> </span>example
 </code></pre></div>
 <h3 id="-show-secret_1"><code>--show-secret</code><a class="headerlink" href="#-show-secret_1" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.16.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.16.0</a></p>
+</blockquote>
 <p>Enable showing secret values in diff output.</p>
 <div class="highlight"><pre><span></span><code>TODO:<span class="w"> </span>add<span class="w"> </span>example
 </code></pre></div>
 <h3 id="-3-way-merge_1"><code>--3-way-merge</code><a class="headerlink" href="#-3-way-merge_1" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.24.4"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.24.4</a></p>
+</blockquote>
 <p>Enable 3-way merge for when call diff.</p>
 <div class="highlight"><pre><span></span><code>TODO:<span class="w"> </span>add<span class="w"> </span>example
 </code></pre></div>
