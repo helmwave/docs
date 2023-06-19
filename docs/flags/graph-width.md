@@ -1,5 +1,8 @@
 ### `--graph-width`
 
+> Introduced in [:material-tag: v0.27.1](https://github.com/helmwave/helmwave/releases/tag/v0.27.1)
+
+
 You can change logic of graph rendering by changing this flag.
 
 - 1: `--graph-width=1` - disable graph rendering

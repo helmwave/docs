@@ -228,8 +228,6 @@ Release name. I hope you know what it is.
 
 ### chart
 
-> `chart` can be an object or a string. If it's a string, it will be treated as a `name`.
-
 |         field         | required |  type  | default |
 |:---------------------:|:--------:|:------:|:-------:|
 |       **name**        |    ✅     | string |   ""    |
@@ -243,6 +241,31 @@ Release name. I hope you know what it is.
 |        keyring        |    🙅    | string |   ""    |
 |  passcredentialsall   |    🙅    |  bool  |  false  |
 |        verify         |    🙅    |  bool  |  false  |
+
+`chart` can be an object or a string. If it's a string, it will be treated as a `name`.
+
+=== "short syntax"
+    
+    > Introduced in [:material-tag: v0.20.0](https://github.com/helmwave/helmwave/releases/tag/v0.20.0)
+    
+
+    ```yaml
+    releases:
+      - name: my-release
+        namespace: my-namespace
+        chart: my-chart
+    ```
+
+=== "long syntax"
+
+    ```yaml
+    releases:
+      - name: my-release
+        namespace: my-namespace
+        chart:
+          name: my-chart
+    ```
+
 
 !!! tip "If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during deploy."
 
@@ -313,11 +336,17 @@ You can change the delimiter that helmwave uses to render values.
 
 #### render
 
+> Introduced in [:material-tag: v0.20.0](https://github.com/helmwave/helmwave/releases/tag/v0.20.0)
+    
+
 Allows disabling templating values at all.
 
 [:material-duck: example](examples/values-render-flag/README.md)
 
 #### strict
+
+> Introduced in [:material-tag: v0.20.0](https://github.com/helmwave/helmwave/releases/tag/v0.20.0)
+    
 
 Allows to fail if values file doesn't exist.
 
@@ -412,6 +441,8 @@ If namespace is not specified, it will be taken from namespace filed of release.
 The same configuration can be written in 2 ways:
 
 === "`<release-name>`"
+    
+    > Introduced in [:material-tag: v0.21.1](https://github.com/helmwave/helmwave/releases/tag/v0.21.1)
 
     ```yaml
     releases:
@@ -443,12 +474,17 @@ Both of them will be normalized to `redis@test` in a planfile.
 
 #### tag
 
+> Introduced in [:material-tag: v0.24.0](https://github.com/helmwave/helmwave/releases/tag/v0.24.0)
+
 You can include all releases that match this tag to be added as dependencies.
 If a tag is not in a plan, it will be added to a plan.
 
 The planfile (`.helmwave/planfile` by default) will have a normalized list of releases instead of tags.
 
 #### optional
+
+> Introduced in [:material-tag: v0.24.0](https://github.com/helmwave/helmwave/releases/tag/v0.24.0)
+
 
 If dependency is not found in all available releases, helmwave will not fail due to missing dependency.
 
@@ -573,7 +609,7 @@ This option determines whether sub-notes are rendered in the chart.
 
 ### post_renderer
 
-> Introduced in [:material-tag: v0.26.0](https://github.com/helmwave/helmwave/releases/tag/v0.26.0)
+> Introduced in [:material-tag: v0.24.0](https://github.com/helmwave/helmwave/releases/tag/v0.24.0)
 
 
 You can use custom commands to change rendered manifests.

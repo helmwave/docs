@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # Lifecycle
 
 Lifecycle defines scripts that are triggered by helmwave.
@@ -5,7 +9,7 @@ Lifecycle defines scripts that are triggered by helmwave.
 **Flow hooks for `helmwave up --build`**
 
 ```mermaid
-flowchart TD
+flowchart LR
     
     
     subgraph build
@@ -32,6 +36,6 @@ flowchart TD
 {% include "helmwave.yml" %}
 ```
 
-```shell title="output"
+```shell title="$ helmwave build --diff-mode none"
 {% include "log" %}
 ```

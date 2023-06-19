@@ -1,5 +1,8 @@
 ### `--progress`
 
+> Introduced in [:material-tag: v0.17.0](https://github.com/helmwave/helmwave/releases/tag/v0.17.0)
+ 
+
 Enable helm debug progress output.
 
 === "true"
