@@ -1,4 +1,4 @@
-# Store
+# 🗳️ Store
 
 [`Store`](../../yaml/#store) is very useful feature when you need to share the same values between different values fields.
 

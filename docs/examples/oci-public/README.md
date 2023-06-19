@@ -1,4 +1,4 @@
-# OCI public
+# OCI public registry
 
 This example demonstrates how to use public repositories with `ghcr.io`
 
