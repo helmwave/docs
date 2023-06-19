@@ -66,11 +66,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.helmwave.app/0.28.x/examples/hate-umbrella/</loc>
-         <lastmod>2023-06-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.helmwave.app/0.28.x/examples/kubedog/</loc>
          <lastmod>2023-06-19</lastmod>
          <changefreq>daily</changefreq>
@@ -132,6 +127,11 @@
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.28.x/examples/tags/</loc>
+         <lastmod>2023-06-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.helmwave.app/0.28.x/examples/umbrella-evil/</loc>
          <lastmod>2023-06-19</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -7,9 +7,9 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="The helmwave`s docs" name="description"/>
 <meta content="Dmitrii Zhiliaev" name="author"/>
-<link href="https://docs.helmwave.app/0.28.x/examples/hate-umbrella/" rel="canonical"/>
+<link href="https://docs.helmwave.app/0.28.x/examples/umbrella-evil/" rel="canonical"/>
 <link href="../tags/" rel="prev"/>
-<link href="../kubedog/" rel="next"/>
+<link href="../private-env/" rel="next"/>
 <link href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.16" name="generator"/>
 <title>☂️ Umbrella chart is evil - Helmwave</title>
@@ -24,7 +24,7 @@
 <meta content="website" property="og:type"/>
 <meta content="Helmwave - ☂️ Umbrella chart is evil" property="og:title"/>
 <meta content="The helmwave`s docs" property="og:description"/>
-<meta content="https://docs.helmwave.app/0.28.x/examples/hate-umbrella/" property="og:url"/>
+<meta content="https://docs.helmwave.app/0.28.x/examples/umbrella-evil/" property="og:url"/>
 <meta content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
@@ -288,6 +288,23 @@ You're not viewing the latest version.
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../kubedog/">
+        🐶 Kubedog
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          Templating
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+          Templating
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
 <a class="md-nav__link" href="../apps-per-ns/">
         Apps per namespace
       </a>
@@ -308,8 +325,21 @@ You're not viewing the latest version.
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../store-greeting-hello/">
+        🗳️ Store
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../built-in-release/">
+        Release object
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../tags/">
-        Tags
+        🔖 Tags
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
@@ -319,25 +349,52 @@ You're not viewing the latest version.
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../kubedog/">
-        🐶 Kubedog
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../oci-private/">
-        OCI private
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../oci-public/">
-        OCI public
+<a class="md-nav__link" href="../private-env/">
+        Private environment
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../lifecycle/">
-        Lifecycle
+        ♻️ Lifecycle
       </a>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          OCI
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_8">
+<span class="md-nav__icon md-icon"></span>
+          OCI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../oci-private/">
+        OCI private registry
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../oci-public/">
+        OCI public registry
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          Repositories
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_9">
+<span class="md-nav__icon md-icon"></span>
+          Repositories
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../private-github-repo/">
         Private GitHub repo
@@ -348,21 +405,21 @@ You're not viewing the latest version.
         Private GitLab repo
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../store-greeting-hello/">
-        Store
-      </a>
+</ul>
+</nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../built-in-release/">
-        Release object
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../private-env/">
-        Private environment
-      </a>
-</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          Values flags
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_10">
+<span class="md-nav__icon md-icon"></span>
+          Values flags
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../values-delimiter-flags/">
         Delimiter flags for values
@@ -378,15 +435,33 @@ You're not viewing the latest version.
         Strict flag for values
       </a>
 </li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+          Data sources
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_11">
+<span class="md-nav__icon md-icon"></span>
+          Data sources
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../vault/">
-        Vault
+        Hashicorp Vault
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../aws-sm/">
         AWS secret manager
       </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -406,7 +481,7 @@ You're not viewing the latest version.
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/helmwave/docs/raw/main/docs/examples/hate-umbrella/README.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/helmwave/docs/raw/main/docs/examples/umbrella-evil/README.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
 <h1 id="umbrella-chart-is-evil">☂️ Umbrella chart is evil<a class="headerlink" href="#umbrella-chart-is-evil" title="Permanent link">¶</a></h1>
