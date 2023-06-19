@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # 🔰 Quick Start
 
 <script async id="asciicast-591181" src="https://asciinema.org/a/591181.js"></script>
@@ -17,7 +21,7 @@
     helmwave build
     ```
 
-    This step generates [plan](../../cli/#step-2-working-with-plan)
+    This step generates [plan](../../cli/#build)
 
 4. **Deploy plan**
 

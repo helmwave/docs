@@ -1,0 +1,64 @@
+helmwave build --diff-mode none
+[🙃 aka INFO]: 🩼 Running pre-build hooks...
+[🙃 aka INFO]: 🩼 running hook...
+        args:
+          - "global
+          - pre_build"
+        cmd: echo
+[🙃 aka INFO]: "global pre_build"
+[🙃 aka INFO]: 🔨 Building releases...
+[🙃 aka INFO]: 🔨 Building graphs...
+[🙃 aka INFO]: show graph:
+┌────────────────┐
+│ nats@my-nam... │
+└────────────────┘
+
+[🙃 aka INFO]: 🔨 Building values...
+[🙃 aka INFO]: 🔨 no values provided
+        release: nats@my-namespace
+[🙃 aka INFO]: 🔨 Building repositories...
+[🙃 aka INFO]: 🔨 Building registries...
+[🙃 aka INFO]: 🗄 registry has been added to the plan
+        registry: registry-1.docker.io
+[🙃 aka INFO]: 🔨 Building charts...
+[🙃 aka INFO]: Pulled: registry-1.docker.io/bitnamicharts/nats:7.8.3
+[🙃 aka INFO]: Digest: sha256:5f80350b8a85177e4a9c7ed968f77c47bedcc461418172fb66594bc61fa1ffac
+[🙃 aka INFO]: 🔨 Building manifests...
+[🙃 aka INFO]: ❎ skipping updating dependencies for remote chart
+        release: nats@my-namespace
+[🙃 aka INFO]: 🩼 Running pre-build hooks...
+[🙃 aka INFO]: 🩼 running hook...
+        args:
+          - "pre_build
+          - for
+          - nats"
+        cmd: echo
+[🙃 aka INFO]: "pre_build for nats"
+[🙃 aka INFO]: Pulled: registry-1.docker.io/bitnamicharts/nats:7.8.3
+[🙃 aka INFO]: Digest: sha256:5f80350b8a85177e4a9c7ed968f77c47bedcc461418172fb66594bc61fa1ffac
+[🙃 aka INFO]: 🩼 Running post-build hooks...
+[🙃 aka INFO]: 🩼 running hook...
+        args:
+          - "post_build
+          - for
+          - nats"
+        cmd: echo
+[🙃 aka INFO]: "post_build for nats"
+[🙃 aka INFO]: ✅  manifest done
+        release: nats@my-namespace
+[🙃 aka INFO]: 🩼 Running post-build hooks...
+[🙃 aka INFO]: 🩼 running hook...
+        cmd: echo
+        args:
+          - "global
+          - post_build"
+[🙃 aka INFO]: "global post_build"
+[🙃 aka INFO]: 🏗 Plan
+        repositories:
+          -
+        registries:
+          - registry-1.docker.io
+        releases:
+          - nats@my-namespace
+[🙃 aka INFO]: 🆚 Skip diffing
+[🙃 aka INFO]: 🏗 Planfile is ready!

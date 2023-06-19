@@ -134,6 +134,10 @@ Update existing repository exists if settings differ.
 
 > Aka global hooks. Introduced in [:material-tag: v0.28.0](https://github.com/helmwave/helmwave/releases/tag/v0.28.0)
 
+We don't call lifecycle the hooks on purpose
+so as not to confuse you with the original functionality of [:simple-helm: helm hooks](https://helm.sh/docs/topics/charts_hooks/).
+
+
 |     field     | required | type  | default |
 |:-------------:|:--------:|:-----:|:-------:|
 |    pre_up     |    🙅    | array |   []    |
@@ -144,11 +148,6 @@ Update existing repository exists if settings differ.
 |  post_build   |    🙅    | array |   []    |
 | pre_rollback  |    🙅    | array |   []    |
 | post_rollback |    🙅    | array |   []    |
-
-
-
-We don't call lifecycle the hooks on purpose
-so as not to confuse you with the original functionality of [:simple-helm: helm hooks](https://helm.sh/docs/topics/charts_hooks/).
 
 === "short syntax"
 
@@ -169,6 +168,16 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
           args: ['"run', 'global', 'pre_build', 'script"']
           show: true
     ```
+
+```mermaid
+flowchart LR
+    pre_build --> post_build
+    post_build --> pre_up --> post_up
+    post_build --> pre_down --> post_down
+    post_build --> pre_rollback --> post_rollback
+```
+
+[:material-duck: example](examples/lifecycle/README.md)
 
 
 ## releases[]
@@ -243,6 +252,21 @@ Release name. I hope you know what it is.
 
 If set to `true` Helmwave will create the release namespace if not present.
 
+
+```shell
+helm upgrade --install --create-namespace my-release my-chart --namespace my-namespace
+```
+
+```yaml
+releases:
+  - name: my-release
+    namespace: my-namespace
+    chart: my-chart
+    create_namespace: true
+```
+
+
+
 ### values[]
 
 > `values` can be an object or a string. If it's a string, it will be treated as a `src` field.
@@ -255,6 +279,24 @@ If set to `true` Helmwave will create the release namespace if not present.
 |     strict      |    🙅    |  bool  |  false  |
 |     render      |    🙅    |  bool  |  true   |
 
+=== "short syntax"
+
+    ```yaml
+    values:
+      - values.yaml
+      - values2.yaml
+    ```
+
+=== "full syntax"
+
+    ```yaml
+    values:
+      - src: values.yaml
+        delimiter_left: "{{"
+        delimiter_right: "}}"
+        strict: false
+        render: true
+    ```
 
 #### **src**
 
@@ -273,13 +315,13 @@ You can change the delimiter that helmwave uses to render values.
 
 Allows disabling templating values at all.
 
-[:material-duck: example](../examples/values-render-flag)
+[:material-duck: example](examples/values-render-flag/README.md)
 
 #### strict
 
 Allows to fail if values file doesn't exist.
 
-[:material-duck: example](../examples/values-strict-flag)
+[:material-duck: example](examples/values-strict-flag/README.md)
 
 ### tags[]
 > Aka labels. Introduced in [:material-tag: v0.4.0](https://github.com/helmwave/helmwave/releases/tag/v0.4.0)
@@ -308,16 +350,13 @@ Without this option, helmwave will ask :simple-kubernetes: kubernetes for a vers
 
 It allows passing your custom fields from `helmwave.yml` to values.
 
-[:material-duck: example](../examples/store-greeting-hello/)
+[:material-duck: example](examples/store-greeting-hello/README.md)
 
 ### lifecycle
 
-> aka hooks
+> Aka hooks. Introduced in [:material-tag: v0.28.0](https://github.com/helmwave/helmwave/releases/tag/v0.28.0)
 
-We don't call lifecycle the hooks on purpose so as not to confuse you with the original functionality of
-[:simple-helm: helm hooks](https://helm.sh/docs/topics/charts_hooks/).
-
-
+[:material-duck: example](examples/lifecycle/README.md)
 
 ### depends_on[]
 

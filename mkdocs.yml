@@ -29,24 +29,25 @@ nav:
   - Examples:
       - examples/quick-start/README.md
       - examples/apps-per-ns/README.md
-      - examples/aws-sm/README.md
-      - examples/built-in-release/README.md
+      - examples/single-app-multi-envs/README.md
+      - examples/pass-git-commit/README.md
+      - examples/pass-git-tag/README.md
+      - examples/tags/README.md
       - examples/hate-umbrella/README.md
       - examples/kubedog/README.md
       - examples/oci-private/README.md
       - examples/oci-public/README.md
-      - examples/pass-git-commit/README.md
-      - examples/pass-git-tag/README.md
-      - examples/tags/README.md
+      - examples/lifecycle/README.md
       - examples/private-github-repo/README.md
       - examples/private-gitlab-repo/README.md
-      - examples/single-app-multi-envs/README.md
-      - Store: examples/store-greeting-hello/README.md
+      - examples/store-greeting-hello/README.md
+      - examples/built-in-release/README.md
       - examples/private-env/README.md
       - examples/values-delimiter-flags/README.md
       - examples/values-render-flag/README.md
       - examples/values-strict-flag/README.md
       - examples/vault/README.md
+      - examples/aws-sm/README.md
 
 plugins:
   - search
@@ -82,19 +83,18 @@ theme:
     - content.code.copy
     - content.action.view
 
-#    - toc.integrate
+#    - toc.integrate # right/left side
     - toc.follow
-
+#
     - navigation.top
-#    - navigation.instant
-    - navigation.indexes
+#    - navigation.instant # disable because mermaid is not working
+#    - navigation.indexes # disable because quick-start works not correctly
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
-    - navigation.path # now only insiders
+    - navigation.path # only insiders
 
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/#search-suggestions
     - search.suggest
     - search.share
     - search.highlight

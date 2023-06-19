@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 🔌 IDE supports
 
 Currently, we don't have any plugins for popular IDEs. You can help us with it 🩵.
