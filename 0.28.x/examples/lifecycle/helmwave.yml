@@ -11,6 +11,14 @@ lifecycle:
     - echo "global pre_up"
   post_up:
     - echo "global post_up"
+  pre_down:
+    - echo "global pre_down"
+  post_down:
+    - echo "global post_down"
+  pre_rollback:
+    - echo "global pre_rollback"
+  post_rollback:
+    - echo "global post_rollback"
 
 registries:
   - host: registry-1.docker.io
@@ -41,3 +49,11 @@ releases:
         - echo "pre_build for nats"
       post_build:
         - echo "post_build for nats"
+      pre_down:
+        - echo "pre_down for nats"
+      post_down:
+        - echo "post_down for nats"
+      pre_rollback:
+        - echo "pre_rollback for nats"
+      post_rollback:
+        - echo "post_rollback for nats"

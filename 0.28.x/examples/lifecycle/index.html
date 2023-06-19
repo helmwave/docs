@@ -522,6 +522,14 @@ You're not viewing the latest version.
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "global pre_up"</span>
 <span class="w">  </span><span class="nt">post_up</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "global post_up"</span>
+<span class="w">  </span><span class="nt">pre_down</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "global pre_down"</span>
+<span class="w">  </span><span class="nt">post_down</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "global post_down"</span>
+<span class="w">  </span><span class="nt">pre_rollback</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "global pre_rollback"</span>
+<span class="w">  </span><span class="nt">post_rollback</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "global post_rollback"</span>
 
 <span class="nt">registries</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry-1.docker.io</span>
@@ -552,6 +560,14 @@ You're not viewing the latest version.
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "pre_build for nats"</span>
 <span class="w">      </span><span class="nt">post_build</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "post_build for nats"</span>
+<span class="w">      </span><span class="nt">pre_down</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "pre_down for nats"</span>
+<span class="w">      </span><span class="nt">post_down</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "post_down for nats"</span>
+<span class="w">      </span><span class="nt">pre_rollback</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "pre_rollback for nats"</span>
+<span class="w">      </span><span class="nt">post_rollback</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "post_rollback for nats"</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">$ helmwave build --diff-mode none</span><pre><span></span><code><span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>Running<span class="w"> </span>pre-build<span class="w"> </span>hooks...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>running<span class="w"> </span>hook...
