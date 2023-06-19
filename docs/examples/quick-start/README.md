@@ -7,7 +7,7 @@
 
     Suppose the `helmwave.yml` representing the desired state of your :simple-helm: helm releases looks like:
 
-    ```yaml
+    ```yaml title="helmwave.yml"
     {% include "helmwave.yml" %}
     ```
 

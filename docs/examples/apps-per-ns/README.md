@@ -40,7 +40,7 @@ helmwave yml
 
 You will get it
 
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```
 
@@ -63,7 +63,7 @@ looks how to work [HELMWAVE_TAGS](../../yaml/#tags)
 
 ## CI/CD with Gitlab-CI
 
-```yaml
+```yaml title=".gitlab-ci.yml"
 {% include ".gitlab-ci.yml" %}
 ```
 

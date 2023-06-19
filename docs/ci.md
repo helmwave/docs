@@ -26,7 +26,7 @@ jobs:
         with:
           version: '⟨⟨ ver ⟩⟩'
       - name: templating helmwave.yml.tpl  
-        run: helmwave yml
+        run: '[[ -f "helmwave.yml.tpl" ]] && helmwave yml'
       - name: plan
         run: helmwave build
       - name: deploy
@@ -49,7 +49,7 @@ helmwave:
   before_script:
     - printenv | grep HELMWAVE
   script:
-    - helmwave yml
+    - '[[ -f "helmwave.yml.tpl" ]] && helmwave yml'
     - helmwave build
     - helmwave up
   artifacts:

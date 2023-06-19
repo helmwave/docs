@@ -2,13 +2,11 @@
 
 Sometimes we need to include strings in values that will be templated by :simple-helm: helm itself (via `tpl` function). In this case we can change helmwave delimiters, so it won't render foreign expressions.
 
-`cat values.yml`
 
-```yaml
+```yaml title="values.yml"
 {% include "values.yml" %}
 ```
 
-`cat helmwave.yml`
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```

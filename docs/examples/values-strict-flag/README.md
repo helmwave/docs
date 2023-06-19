@@ -2,8 +2,7 @@
 
 Helmwave will fail when the file does not exist.
 
-`cat helmwave.yml`
 
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```

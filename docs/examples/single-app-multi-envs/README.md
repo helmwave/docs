@@ -19,47 +19,45 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
     └── stage.yml
 ```
 
-`cat helmwave.yml.tpl`
 
-```yaml
+```yaml title="helmwave.yml.tpl"
 {% include "helmwave.yml.tpl" %}
 ```
 
-`cat values/_.yml`
+=== "`values/_.yml`"
 
-```yaml
-{% include "values/_.yml" %}
-```
+    Common values for all envs
+    ```yaml
+    {% include "values/_.yml" %}
+    ```
 
-`cat values/prod.yml`
+=== "`values/prod.yml`"
 
-```yaml
-{% include "values/prod.yml" %}
-```
+    ```yaml
+    {% include "values/prod.yml" %}
+    ```
 
-`cat values/qa.yml`
+=== "`values/qa.yml`"
 
-```yaml
-{% include "values/qa.yml" %}
-```
+    ```yaml
+    {% include "values/qa.yml" %}
+    ```
 
-`cat values/stage.yml`
+=== "`values/stage.yml`"
 
-```yaml
-{% include "values/stage.yml" %}
-```
+    ```yaml
+    {% include "values/stage.yml" %}
+    ```
 
-**Run**
+**step 0: templating**
 
 ```shell
 export CI_ENVIRONMENT_NAME=stage
 helmwave yml
-helmwave build
-helmwave up
 ```
 
-or in one command 
+You will get next `helmwave.yml`:
 
-```shell
-helmwave up --build --yml
+```yaml title="helmwave.yml"
+{% include "helmwave.yml" %}
 ```
