@@ -5,11 +5,7 @@
 **Project Structure**
 
 ```shell
-.
-├── a.yml
-├── b.yml
-└── helmwave.yml
-
+⟨⟨ run_script("tree docs/examples/store-greeting-hello") ⟩⟩
 ```
 
 ```yaml title="helmwave.yml"

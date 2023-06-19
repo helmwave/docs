@@ -17,13 +17,10 @@ helm upgrade --instal my-release my-chart-repo/my-chart-app --set="image.tag=$CI
 
 HelmWave allows use declarative way to approach this goal.
 
-**Project Structure**
+**Project structure**
 
-```
-.
-├── helmwave.yml
-└── values.yml
-
+```shell
+⟨⟨ run_script("tree docs/examples/pass-git-tag") ⟩⟩
 ```
 
 ```yaml title="helmwave.yml"

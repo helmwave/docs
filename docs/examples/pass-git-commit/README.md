@@ -2,10 +2,8 @@
 
 **Project Structure**
 
-```
-.
-├── helmwave.yml
-└── values.yml
+```shell
+⟨⟨ run_script("tree docs/examples/pass-git-commit") ⟩⟩
 ```
 
 ```yaml title="helmwave.yml"

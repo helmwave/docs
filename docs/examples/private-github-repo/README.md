@@ -1,5 +1,7 @@
 # Private GitHub repo 
 
+**Project structure**
+
 ```shell
 .
 ├── README.md

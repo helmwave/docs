@@ -2,10 +2,8 @@
 
 **Project structure**
 
-```
-├── README.md
-├── helmwave.yml
-└── values-secret.yaml
+```shell
+⟨⟨ run_script("tree docs/examples/aws-sm") ⟩⟩
 ```
 
 **Step 1. Create next secret**

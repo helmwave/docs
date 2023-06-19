@@ -15,10 +15,8 @@ For more information, see the [annotation's documentation](../../anno/#kubedogs)
 
 **Project Structure**
 
-```
-.
-├── helmwave.yml
-└── values.yml
+```shell
+⟨⟨ run_script("tree docs/examples/kubedog") ⟩⟩
 ```
 
 Create `helmwave.yml`
@@ -55,4 +53,4 @@ helmwave up
 
 **Output**
 
-![img.png](img.png)
+![kubedog](img.png)
