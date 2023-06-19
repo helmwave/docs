@@ -1000,44 +1000,44 @@ You're not viewing the latest version.
 </a>
 <h1 id="cli-reference">🛠 CLI Reference<a class="headerlink" href="#cli-reference" title="Permanent link">¶</a></h1>
 <div class="highlight"><pre><span></span><code>NAME:
-   helmwave - true release management for helm
+<span class="w">   </span>helmwave<span class="w"> </span>-<span class="w"> </span><span class="nb">true</span><span class="w"> </span>release<span class="w"> </span>management<span class="w"> </span><span class="k">for</span><span class="w"> </span>helm
 
 USAGE:
-   helmwave [global options] command [command options] [arguments...]
+<span class="w">   </span>helmwave<span class="w"> </span><span class="o">[</span>global<span class="w"> </span>options<span class="o">]</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="o">[</span><span class="nb">command</span><span class="w"> </span>options<span class="o">]</span><span class="w"> </span><span class="o">[</span>arguments...<span class="o">]</span>
 
 VERSION:
-   0.28.0
+<span class="w">   </span><span class="m">0</span>.28.0
 
 DESCRIPTION:
-   This tool helps you compose your helm releases!
-   0. $ helmwave yml
-   1. $ helmwave build
-   2. $ helmwave up
+<span class="w">   </span>This<span class="w"> </span>tool<span class="w"> </span>helps<span class="w"> </span>you<span class="w"> </span>compose<span class="w"> </span>your<span class="w"> </span>helm<span class="w"> </span>releases!
+<span class="w">   </span><span class="m">0</span>.<span class="w"> </span>$<span class="w"> </span>helmwave<span class="w"> </span>yml
+<span class="w">   </span><span class="m">1</span>.<span class="w"> </span>$<span class="w"> </span>helmwave<span class="w"> </span>build
+<span class="w">   </span><span class="m">2</span>.<span class="w"> </span>$<span class="w"> </span>helmwave<span class="w"> </span>up
 
 
 COMMANDS:
-   build         🏗 build a plan
-   diff, vs      🆚 show differences
-   up            🚢 apply your plan
-   list, ls      👀 list of deployed releases
-   rollback      ⏮  rollback your plan
-   status        👁️status of deployed releases
-   down          🔪 delete all
-   validate      🛂 validate your plan
-   yml           📄 render helmwave.yml.tpl -&gt; helmwave.yml
-   schema        generate json schema
-   graph         show graph
-   version, ver  show shorts version
-   completion    generate completion script
-   help, h       Shows a list of commands or help for one command
+<span class="w">   </span>build<span class="w">         </span>🏗<span class="w"> </span>build<span class="w"> </span>a<span class="w"> </span>plan
+<span class="w">   </span>diff,<span class="w"> </span>vs<span class="w">      </span>🆚<span class="w"> </span>show<span class="w"> </span>differences
+<span class="w">   </span>up<span class="w">            </span>🚢<span class="w"> </span>apply<span class="w"> </span>your<span class="w"> </span>plan
+<span class="w">   </span>list,<span class="w"> </span>ls<span class="w">      </span>👀<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>deployed<span class="w"> </span>releases
+<span class="w">   </span>rollback<span class="w">      </span>⏮<span class="w">  </span>rollback<span class="w"> </span>your<span class="w"> </span>plan
+<span class="w">   </span>status<span class="w">        </span>👁️status<span class="w"> </span>of<span class="w"> </span>deployed<span class="w"> </span>releases
+<span class="w">   </span>down<span class="w">          </span>🔪<span class="w"> </span>delete<span class="w"> </span>all
+<span class="w">   </span>validate<span class="w">      </span>🛂<span class="w"> </span>validate<span class="w"> </span>your<span class="w"> </span>plan
+<span class="w">   </span>yml<span class="w">           </span>📄<span class="w"> </span>render<span class="w"> </span>helmwave.yml.tpl<span class="w"> </span>-&gt;<span class="w"> </span>helmwave.yml
+<span class="w">   </span>schema<span class="w">        </span>generate<span class="w"> </span>json<span class="w"> </span>schema
+<span class="w">   </span>graph<span class="w">         </span>show<span class="w"> </span>graph
+<span class="w">   </span>version,<span class="w"> </span>ver<span class="w">  </span>show<span class="w"> </span>shorts<span class="w"> </span>version
+<span class="w">   </span>completion<span class="w">    </span>generate<span class="w"> </span>completion<span class="w"> </span>script
+<span class="w">   </span>help,<span class="w"> </span>h<span class="w">       </span>Shows<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>commands<span class="w"> </span>or<span class="w"> </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>one<span class="w"> </span><span class="nb">command</span>
 
-GLOBAL OPTIONS:
-   --log-format value  You can set: [ text | json | pad | emoji ] (default: "emoji") [$HELMWAVE_LOG_FORMAT]
-   --log-level value   You can set: [ debug | info | warn  | fatal | panic | trace ] (default: "info") [$HELMWAVE_LOG_LEVEL, $HELMWAVE_LOG_LVL]
-   --log-color         on/off color (default: true) [$HELMWAVE_LOG_COLOR]
-   --log-timestamps    Add timestamps to log messages (default: false) [$HELMWAVE_LOG_TIMESTAMPS]
-   --help, -h          show help
-   --version, -v       print the version
+GLOBAL<span class="w"> </span>OPTIONS:
+<span class="w">   </span>--log-format<span class="w"> </span>value<span class="w">  </span>You<span class="w"> </span>can<span class="w"> </span>set:<span class="w"> </span><span class="o">[</span><span class="w"> </span>text<span class="w"> </span><span class="p">|</span><span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>pad<span class="w"> </span><span class="p">|</span><span class="w"> </span>emoji<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="s2">"emoji"</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_LOG_FORMAT</span><span class="o">]</span>
+<span class="w">   </span>--log-level<span class="w"> </span>value<span class="w">   </span>You<span class="w"> </span>can<span class="w"> </span>set:<span class="w"> </span><span class="o">[</span><span class="w"> </span>debug<span class="w"> </span><span class="p">|</span><span class="w"> </span>info<span class="w"> </span><span class="p">|</span><span class="w"> </span>warn<span class="w">  </span><span class="p">|</span><span class="w"> </span>fatal<span class="w"> </span><span class="p">|</span><span class="w"> </span>panic<span class="w"> </span><span class="p">|</span><span class="w"> </span>trace<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="s2">"info"</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_LOG_LEVEL</span>,<span class="w"> </span><span class="nv">$HELMWAVE_LOG_LVL</span><span class="o">]</span>
+<span class="w">   </span>--log-color<span class="w">         </span>on/off<span class="w"> </span>color<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">true</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_LOG_COLOR</span><span class="o">]</span>
+<span class="w">   </span>--log-timestamps<span class="w">    </span>Add<span class="w"> </span>timestamps<span class="w"> </span>to<span class="w"> </span>log<span class="w"> </span>messages<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_LOG_TIMESTAMPS</span><span class="o">]</span>
+<span class="w">   </span>--help,<span class="w"> </span>-h<span class="w">          </span>show<span class="w"> </span><span class="nb">help</span>
+<span class="w">   </span>--version,<span class="w"> </span>-v<span class="w">       </span>print<span class="w"> </span>the<span class="w"> </span>version
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">workflow</p>

@@ -1152,10 +1152,13 @@ You're not viewing the latest version.
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>--instal<span class="w"> </span>my-release<span class="w"> </span>my-chart-repo/my-chart-app<span class="w"> </span>--set<span class="o">=</span><span class="s2">&quot;image.tag=</span><span class="nv">$CI_COMMIT_TAG</span><span class="s2">&quot;</span><span class="w"> </span>-n<span class="w"> </span>my-namespace
 </code></pre></div>
 <p>HelmWave allows use declarative way to approach this goal.</p>
-<p><strong>Project Structure</strong></p>
-<div class="highlight"><pre><span></span><code>.
-├── helmwave.yml
-└── values.yml
+<p><strong>Project structure</strong></p>
+<div class="highlight"><pre><span></span><code>docs/examples/pass-git-tag
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>helmwave.yml
+└──<span class="w"> </span>values.yml
+
+<span class="m">0</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
 </code></pre></div>
 <div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">pass</span><span class="nv"> </span><span class="s">git</span><span class="nv"> </span><span class="s">tag&quot;</span>
 <span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.28.0&quot;</span>
