@@ -1,14 +1,13 @@
 site_name: Helmwave
 site_description: "The helmwave`s docs"
-site_author: "Dmitriy Zhilyaev"
+site_author: "Dmitrii Zhiliaev"
 docs_dir: docs/
 repo_name: "helmwave/helmwave"
 repo_url: "https://github.com/helmwave/helmwave"
 edit_uri: "https://github.com/helmwave/docs/edit/main/docs/"
 site_url: "https://docs.helmwave.app"
 copyright: >
-  Copyright © 2020 – 2023 Dmitrii Zhiliaev –
-  <a href="#__consent">Change cookie settings</a>
+  Copyright © 2020 – 2023 Dmitrii Zhiliaev
 
 nav:
   - Home: index.md
@@ -38,6 +37,7 @@ nav:
       - examples/oci-public/README.md
       - examples/pass-git-commit/README.md
       - examples/pass-git-tag/README.md
+      - examples/tags/README.md
       - examples/private-github-repo/README.md
       - examples/private-gitlab-repo/README.md
       - examples/single-app-multi-envs/README.md
@@ -53,6 +53,7 @@ plugins:
   - macros:
       j2_variable_start_string: '⟨⟨'
       j2_variable_end_string: '⟩⟩'
+      module_name: lib # lib.py
   - mermaid2
   - include-markdown
 
@@ -79,14 +80,24 @@ theme:
     gtag: G-FTBLK54FKZ
   features:
     - content.code.copy
+    - content.action.view
+
+#    - toc.integrate
+    - toc.follow
+
     - navigation.top
-    - navigation.instant
+#    - navigation.instant
+    - navigation.indexes
+    - navigation.tracking
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
-    - toc.integrate
+    - navigation.path # now only insiders
+
     - search.suggest
     - search.share
+    - search.highlight
 
 extra:
   ver: 0.28.0
@@ -127,3 +138,6 @@ markdown_extensions:
           format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.tabbed:
       alternate_style: true
+  - toc:
+      toc_depth: 3
+      permalink: true

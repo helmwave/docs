@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 🌊 Helmwave is **[helm](https://github.com/helm/helm/)-native** tool for deploy your :simple-helm: helm Charts.
 
 ## 🚀 Features

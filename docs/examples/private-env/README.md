@@ -1,10 +1,6 @@
-
-
 # Private environment
 
-**`helmwave.yml`**
-
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```
 

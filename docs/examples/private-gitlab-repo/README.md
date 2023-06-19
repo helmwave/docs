@@ -5,17 +5,15 @@ Learn more about GitLab :simple-helm: helm Registry [here](https://docs.gitlab.c
 ```shell
 .
 ├── README.md
+├── .gitlab-ci.yml
 └── helmwave.yml.tpl
 ```
 
-**Suppose the `helmwave.yml.tpl` looks like**
-
-```yaml
+```yaml title="helmwave.yml.tpl"
 {% include "helmwave.yml.tpl" %}
 ```
 
-Your `.gitlab-ci.yml` 
 
-```yaml
+```yaml title=".gitlab-ci.yml"
 {% include ".gitlab-ci.yml" %}
 ```

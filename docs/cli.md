@@ -1,80 +1,42 @@
 # 🛠 CLI Reference
 
 ```
-NAME:
-   helmwave - is like docker-compose for helm
-
-USAGE:
-   helmwave [global options] command [command options] [arguments...]
-
-VERSION:
-   ⟨⟨ ver ⟩⟩
-
-DESCRIPTION:
-   This tool helps you compose your :simple-helm: helm releases!
-   0. $ helmwave yml
-   1. $ helmwave build
-   2. $ helmwave up
-
-
-COMMANDS:
-   build         🏗 Build a plan
-   diff, vs      🆚 Show Differences
-   up            🚢 Apply your plan
-   list, ls      👀 List of deployed releases
-   rollback      ⏮ Rollback your plan
-   status        👁️ Status of deployed releases
-   down          🔪 Delete all
-   validate      🛂 validate your plan
-   yml           📄 render helmwave.yml.tpl -> helmwave.yml
-   schema        generate json schema
-   graph         show graph
-   version, ver  show shorts version
-   completion    generate completion script
-   help, h       Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --log-format value  You can set: [ text | json | pad | emoji ] (default: "emoji") [$HELMWAVE_LOG_FORMAT]
-   --log-level value   You can set: [ debug | info | warn  | fatal | panic | trace ] (default: "info") [$HELMWAVE_LOG_LEVEL, $HELMWAVE_LOG_LVL]
-   --log-color         Force color (default: true) [$HELMWAVE_LOG_COLOR]
-   --log-timestamps    Add timestamps to log messages (default: false) [$HELMWAVE_LOG_TIMESTAMPS]
-   --help, -h          show help
-   --version, -v       print the version
-
+⟨⟨ run_script("helmwave -h") ⟩⟩
 ```
 
 !!! note "workflow"
 
     ```mermaid
     flowchart TD
-        helmwave.yml.tpl -- yml --> helmwave.yml -- build --> .helmwave/planfile
-        .helmwave/planfile --> up(up)
-        .helmwave/planfile --> down(down)
-        .helmwave/planfile --> ls(ls)
-        .helmwave/planfile --> s(status)
-        .helmwave/planfile --> r(rollback)
-        .helmwave/planfile --> g(graph)
-        .helmwave/planfile --> v(validate)
-        .helmwave/planfile --> diff(diff)
+        step0[step 0: helmwave.yml.tpl] -- yml --> step1[step 1: helmwave.yml] -- build --> step2[step 2: .helmwave/planfile]
+        step2 --> up(up)
+        step2 --> down(down)
+        step2 --> ls(ls)
+        step2 --> s(status)
+        step2 --> r(rollback)
+        step2 --> g(graph)
+        step2 --> v(validate)
+        step2 --> diff(diff)
     ```
     *If you don't see a graph, please reload the page.*
 
-## step 0: templating
 
-### `yml`
+## `yml`
 
 This command renders `helmwave.yml.tpl` to `helmwave.yml`.
 
-!!! success "Flags"
+??? success "Flags"
 
     ```shell
-    --tpl value             Main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-    --file value, -f value  Main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-    --templater value       Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
+    ⟨⟨ run_script("helmwave yml -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
     ```
 
+{% include "flags/tpl.md" %}
+{% include "flags/file.md" %}
+{% include "flags/templater.md" %}
 
-## step 1: building a plan
+
+## `build`
 
 Helmwave builds plan in complete plan directory (`.helmwave` by default) that other commands use.
 
@@ -86,77 +48,62 @@ A plan includes:
 - Markdown file with dependency graph as mermaid diagram
 - Rendered `helmwave.yml` that uses plan files (e.g., downloaded chart and values)
 
-### `build`
+??? success "Flags"
 
-This command generates a plan.
+    As you can see, [`build`](#build) command includes [`yml`](#yml) command flags. 
+    You can pass `--yml` flag into [`build`](#build) command for launching [`yml`](#yml) command before building a plan.
 
-As you can see, [`build`](#build) command includes [`yml`](#yml) command flags. 
-You can pass `--yml` flag into [`build`](#build) command for launching [`yml`](#yml) command before building a plan.
-
-!!! info "Flags"
 
     ```shell
-    --plandir value, -p value                          path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
-    --tags value, -t value [ --tags value, -t value ]  build releases by tags: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
-    --match-all-tags                                   match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
-    --graph-width value                                set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
-    --skip-unchanged                                   skip unchanged releases (default: false) [$HELMWAVE_SKIP_UNCHANGED]
-    --diff-mode value                                  You can set: [ live | local | none ] (default: "live") [$HELMWAVE_DIFF_MODE]
-    --charts-cache-dir value                           enable caching of :simple-helm: helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
-    --yml                                              auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
-    --wide value                                       show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
-    --show-secret                                      show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
-    --3-way-merge                                      show 3-way merge diff (default: false) [$HELMWAVE_DIFF_3_WAY_MERGE]
-    --tpl value                                        main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-    --file value, -f value                             main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-    --templater value                                  select template engine: [ sprig | gomplate ] (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
-    --help, -h                                         show help
+    ⟨⟨ run_script("helmwave build -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
     ```
-    
+
+<!-- build -->
+{% include "flags/yml.md" %}
+{% include "flags/tags.md" %}
+{% include "flags/match-all-tags.md" %}
+{% include "flags/skip-unchanged.md" %}
+{% include "flags/charts-cache-dir.md" %}
+{% include "flags/graph-width.md" %}
+---
+{% include "flags/diff-mode.md" %}
+{% include "flags/wide.md" %}
+{% include "flags/show-secret.md" %}
+{% include "flags/3-way-merge.md" %}
 
 
-## step 2: working with plan
-
-When the plan is ready, you can use it for other commands.
-
-Any commands below has `--build` flag that [builds](#build) a plan before executing command. 
-And you can also use `--yml` flag that renders `helmwave.yml.tpl` to `helmwave.yml` before running `--build` command.
-
-### `up`
+## `up`
 
 Helmwave will install repositories and :simple-helm: helm releases from a plan.
 
-!!! info "Flags"
+??? success "Flags"
 
     ```shell
-    --build                                            auto build (default: false) [$HELMWAVE_AUTO_BUILD]
-    --kubedog                                          enable/disable kubedog (default: false) [$HELMWAVE_KUBEDOG_ENABLED, $HELMWAVE_KUBEDOG]
-    --kubedog-status-interval value                    interval of kubedog status messages (default: 5s) [$HELMWAVE_KUBEDOG_STATUS_INTERVAL]
-    --kubedog-start-delay value                        delay kubedog start, don't make it too late (default: 1s) [$HELMWAVE_KUBEDOG_START_DELAY]
-    --kubedog-timeout value                            timeout of kubedog multitrackers (default: 5m0s) [$HELMWAVE_KUBEDOG_TIMEOUT]
-    --kubedog-log-width value                          Set kubedog max log line width (default: 140) [$HELMWAVE_KUBEDOG_LOG_WIDTH]
-    --progress                                         Enable progress logs of :simple-helm: helm (INFO log level) (default: false) [$HELMWAVE_PROGRESS]
-    --parallel-limit value                             Limit amount of parallel releases (default: 0) [$HELMWAVE_PARALLEL_LIMIT]
-    --plandir value, -p value                          path to plandir (default: ".helmwave/") [$HELMWAVE_PLANDIR, $HELMWAVE_PLAN]
-    --tags value, -t value [ --tags value, -t value ]  build releases by tags: -t tag1 -t tag3,tag4 [$HELMWAVE_TAGS]
-    --match-all-tags                                   match all provided tags (default: false) [$HELMWAVE_MATCH_ALL_TAGS]
-    --graph-width value                                set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
-    --skip-unchanged                                   skip unchanged releases (default: false) [$HELMWAVE_SKIP_UNCHANGED]
-    --diff-mode value                                  You can set: [ live | local | none ] (default: "live") [$HELMWAVE_DIFF_MODE]
-    --charts-cache-dir value                           enable caching of :simple-helm: helm charts in specified directory [$HELMWAVE_CHARTS_CACHE]
-    --yml                                              auto helmwave.yml.tpl --> helmwave.yml (default: false) [$HELMWAVE_AUTO_YML, $HELMWAVE_AUTO_YAML]
-    --wide value                                       show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
-    --show-secret                                      show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
-    --3-way-merge                                      show 3-way merge diff (default: false) [$HELMWAVE_DIFF_3_WAY_MERGE]
-    --tpl value                                        main tpl file (default: "helmwave.yml.tpl") [$HELMWAVE_TPL]
-    --file value, -f value                             main yml file (default: "helmwave.yml") [$HELMWAVE_YAML, $HELMWAVE_YML]
-    --templater value                                  select template engine: [ sprig | gomplate ] (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]
-    --help, -h                                         show help
+    ⟨⟨ run_script("helmwave up -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
     ```
 
-### `down`
+<!-- up -->
+{% include "flags/build.md" %}
+{% include "flags/progress.md" %}
+{% include "flags/parallel-limit.md" %}
+---
+{% include "flags/kubedog.md" %}
+{% include "flags/kubedog-status-interval.md" %}
+{% include "flags/kubedog-start-delay.md" %}
+{% include "flags/kubedog-timeout.md" %}
+{% include "flags/kubedog-log-width.md" %}
 
-Helmwave will uninstall helm-releases from plan.
+## `down`
+
+> Introduced in [:material-tag: v0.12.2](https://github.com/helmwave/helmwave/releases/tag/v0.12.2)
+
+Helmwave will uninstall :simple-helm: helm releases from plan.
+
+??? success "Flags"
+
+    ```shell
+    ⟨⟨ run_script("helmwave down -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
+    ```
 
 ```bash
 $ helmwave down      
@@ -165,9 +112,18 @@ $ helmwave down
 [🙃 aka INFO]: ✅ backend@test uninstalled!
 ```
 
-### `ls`
+## `ls`
+
+> Introduced in [:material-tag: v0.11.0](https://github.com/helmwave/helmwave/releases/tag/v0.11.0)
+
 
 Helmwave will get a list of :simple-helm: helm releases from a plan.
+
+??? success "Flags"
+
+    ```shell
+    ⟨⟨ run_script("helmwave ls -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
+    ```
 
 ```bash
 $ helmwave ls      
@@ -183,9 +139,17 @@ $ helmwave ls
 ```
 
 
-### `status`
+## `status`
+
+> Introduced in [:material-tag: v0.11.0](https://github.com/helmwave/helmwave/releases/tag/v0.11.0)
 
 Helmwave try getting status of :simple-helm: helm releases from a plan.
+
+??? success "Flags"
+
+    ```shell
+    ⟨⟨ run_script("helmwave status -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
+    ```
 
 ```bash
 $ helmwave status      
@@ -212,16 +176,20 @@ $ helmwave status
         revision: 1
 ```
 
-### `rollback`
+## `rollback`
+
+> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
 
 Rollback :simple-helm: helm releases from a plan.
 
-!!! info "Flags"
+??? success "Flags"
 
     ```shell
-    --revision value  rollback all releases to this revision (default: -1)
+    --revision value                                   rollback all releases to this revision (default: -1)
+    ⟨⟨ run_script("helmwave rollback -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
     ```
 
+{% include "flags/revision.md" %}
 
 ```bash
 $ helmwave rollback      
@@ -230,97 +198,84 @@ $ helmwave rollback
 [🙃 aka INFO]: ✅ backend@test rollback!
 ```
 
-### `graph`
+## `graph`
+
+> Introduced in [:material-tag: v0.27.2](https://github.com/helmwave/helmwave/releases/tag/v0.27.2)
 
 Show only :material-graph: graph of :simple-helm: helm releases from plan.
+Graph draws with [:simple-github: helmwave/asciigraph](https://github.com/helmwave/asciigraph)
 
-!!! info "Flags"
-
-    ```shell
-    --graph-width value  set ceil width: 1 – disable graph; 0 – full names; N>1 – show only N symbols; N<0 – drop N symbols from end. (default: 0) [$HELMWAVE_GRAPH_WIDTH]
-    ```
-
-> Graph draws with [:simple-github: helmwave/asciigraph](https://github.com/helmwave/asciigraph)
-
-
-### `validate`
-
-Helmwave will validate plan.
-
-!!! info "You should know that helmwave always validate plan before any command."
-
-### `diff`
-
-Diff has 2 subcommands 
-
-- `helmwave diff live` will diff with manifests in the :simple-kubernetes: kubernetes cluster 
-- `helmwave diff plan` will diff with your another local plan.
-
-!!! info "Flags"
+??? success "Flags"
 
     ```shell
-    --wide value   show line around changes (default: 5) [$HELMWAVE_DIFF_WIDE]
-    --show-secret  show secret in diff (default: true) [$HELMWAVE_DIFF_SHOW_SECRET]
-    --3-way-merge  show 3-way merge diff (default: false) [$HELMWAVE_DIFF_3_WAY_MERGE]
+    ⟨⟨ run_script("helmwave graph -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
     ```
 
+{% include "flags/graph-width.md" %}
+
+## `validate`
+
+> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
 
 
-## Logs
+Helmwave will validate a plan. Helmwave always validates plan before any command.
 
-> Helmwave uses [:simple-github: sirupsen/logrus](https://github.com/sirupsen/logrus) as internal logger.
-
-!!! info "Flags"
+??? success "Flags"
 
     ```shell
-    --log-format value  You can set: [ text | json | pad | emoji ] (default: "emoji") [$HELMWAVE_LOG_FORMAT]
-    --log-level value   You can set: [ debug | info | warn  | fatal | panic | trace ] (default: "info") [$HELMWAVE_LOG_LEVEL, $HELMWAVE_LOG_LVL]
-    --log-color         Force color (default: true) [$HELMWAVE_LOG_COLOR]
-    --log-timestamps    Add timestamps to log messages (default: false) [$HELMWAVE_LOG_TIMESTAMPS]
+    ⟨⟨ run_script("helmwave validate -h | grep HELMWAVE_ | cut -c 4-")  | indent(4) ⟩⟩
     ```
 
-### Log Format
-
-Helmwave supports several log-format
-
-|    features    |                   `text`                    |                   `json`                    |                    `pad`                    |                                         `emoji` (default)                                         |
-|:--------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------------------------------------------------------------:|
-|     Color      |                      ✅                      |                      ❌                      |                      ✅                      |                                                🌈                                                 |
-| Human readable |                     🧐                      |                     🤖                      |                    🧐🧐                     |                                                 ✅                                                 |
-|  Performance   |                     🚀                      |                     🐢                      |                     ✈️                      |                                                🐢                                                 |
-|     Module     | TextFormatter (in-built `logrus` formatter) | JSONFormatter (in-built `logrus` formatter) | TextFormatter (in-built `logrus` formatter) | [logrus-emoji-formatter](https://github.com/helmwave/logrus-emoji-formatter) special for helmwave |
-
-### Log Level
-
-|             _              | `info` (default) | `warn` | `debug` | `fatal` | `panic` | `trace` |
-|:--------------------------:|:----------------:|:------:|:-------:|:-------:|:-------:|:-------:|
-|        general info        |        ✅         |   ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
-|    incompatible version    |        ❌         |   ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
-|         helm-debug         |        ❌         |   ❌    |    ✅    |    ✅    |    ✅    |    ✅    |
-|        file content        |        ❌         |   ❌    |    ✅    |    ✅    |    ✅    |    ✅    |
-| :simple-helm: helm manifests, bug report |        ❌         |   ❌    |    ❌    |    ❌    |    ❌    |    ✅    |
-
-`info` is preferred loglevel.
-
-You can enable `--progress` flag for helm-debug output.
-
-### How to use?
-
-```bash
-helmwave --log-color=true --log-level=debug --log-format=pad <cmd>
-```
-
-or
-
-```bash
-export HELMWAVE_LOG_FORMAT=pad
-export HELMWAVE_LOG_LEVEL=debug
-export HELMWAVE_LOG_COLOR=true
-helmwave <cmd>
+```shell
+$ helmwave validate                                                          
+$ echo $?                   
+0
 ```
 
 
-## Get Version
+## `diff`
+
+> Introduced in [:material-tag: v0.18.0](https://github.com/helmwave/helmwave/releases/tag/v0.18.0)
+
+??? success "Flags"
+
+    ```shell
+    ⟨⟨ run_script("helmwave diff -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
+    ```
+
+{% include "flags/wide.md" %}
+{% include "flags/show-secret.md" %}
+{% include "flags/3-way-merge.md" %}
+
+Diff has 2 subcommands `plan` and `live`.
+
+=== "`live`"
+
+    This command will diff with manifests in the :simple-kubernetes: kubernetes cluster 
+
+    ```shell title="options"
+    ⟨⟨ run_script("helmwave diff live -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
+    ```
+    
+    ```shell
+    helmwave diff live
+    ```
+
+=== "`plan`"
+
+    This command will diff with local plan
+
+    ```shell title="options"
+    ⟨⟨ run_script("helmwave diff plan -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
+    ```
+    
+    ```shell
+    helmwave diff plan
+    ```
+
+## `version`
+
+Get version of current helmwave.
 
 === "Long version"
 
@@ -342,7 +297,9 @@ helmwave <cmd>
     ⟨⟨ ver ⟩⟩
     ```
 
-## Completion
+## `completion`
+
+Generates scripts for shell completion.
 
 === ":material-bash: bash"
 
@@ -372,10 +329,27 @@ helmwave <cmd>
     
     ![completion-zsh](assets/completion-zsh.png)
 
-## schema
+## `schema`
 
 You can generate json schema for autocomplete and validate `helmwave.yml` in your [IDE](../ide).
 
 ```shell
 helmwave schema > helmwave.schema.json
 ```
+
+## 🏳️ Global flags
+
+Global flags available in any command.
+
+???+ success "Flags"
+
+    ```shell
+    ⟨⟨ run_script("helmwave -h | grep HELMWAVE_LOG | cut -c 4-") | indent(4) ⟩⟩
+    ```
+
+> Helmwave uses [:simple-github: sirupsen/logrus](https://github.com/sirupsen/logrus) as internal logger.
+
+{% include "flags/log-format.md" %}
+{% include "flags/log-level.md" %}
+{% include "flags/log-color.md" %}
+{% include "flags/log-timestamps.md" %}

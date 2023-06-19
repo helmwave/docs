@@ -20,7 +20,7 @@ If you want to install each application in your own namespace.
 
 **Step 1. Create `helmwave.yml.tpl`**
 
-```yaml
+```yaml title="helmwave.yml.tpl"
 {% include "helmwave.yml.tpl" %}
 ```
 
@@ -28,7 +28,7 @@ If you want to install each application in your own namespace.
 
 We will manage list apps with additional `vars.yaml` file
 
-```yaml
+```yaml title="vars.yaml"
 {% include "vars.yaml" %}
 ```
 
