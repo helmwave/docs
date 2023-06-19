@@ -1,4 +1,5 @@
-version: 0.27.3
+project: "Example: private github repo"
+version: "⟨⟨ ver ⟩⟩"
 
 repositories:
   - name: your-private-git-repo-hosted-charts

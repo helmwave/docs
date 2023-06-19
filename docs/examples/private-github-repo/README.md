@@ -9,7 +9,7 @@
 
 **Suppose the `helmwave.yml.tpl` looks like**
 
-```yaml
+```yaml title="helmwave.yml.tpl"
 {% include "helmwave.yml.tpl" %}
 ```
 
@@ -25,6 +25,6 @@ $ helmwave yml
 
 Once applied, your `helmwave.yml` will look like
 
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```

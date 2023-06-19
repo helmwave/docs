@@ -15,6 +15,9 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
+      - uses: helmwave/setup-action@v0.2.0
+        with:
+          version: '0.28.0'
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0

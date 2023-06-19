@@ -19,9 +19,17 @@ Fresh-created branches will update `latest` symlink, other pushes will just trig
 
 The only thing you need to update is `helmwave` version in:
 
-- [examples](docs/examples)
-- [docs/tpl.md](docs/tpl.md)
-- [docs/install.md](docs/install.md)
-- [docs/cli.md](docs/cli.md)
-- [docs/yaml.md](docs/yaml.md)
-- [docs/ci.md](docs/ci.md)
+- [mkdocs.yml](mkdocs.yml): `extra.ver`
+
+
+# Delimiters table
+
+This documentation contains 4 different delimiters for different purposes.
+
+| delimiters |             what             |   engine    |
+|:----------:|:----------------------------:|:-----------:|
+|  `{{ }}`   |           helmwave           | go template |
+|  `[[ ]]`   | gomplate for helmwave values | go template |
+|  `{% %}`   |        jekyll mkdocs         |   jinja2    |
+|  `⟨⟨ ⟩⟩`   |        macros mkdocs         |   jinja2    |
+

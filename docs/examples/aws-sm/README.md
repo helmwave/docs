@@ -16,13 +16,13 @@ aws secretsmanager create-secret --name hello/foobar --secret-string '{"foo":"ba
 
 **Step 2. Create `helmwave.yml`**
 
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```
 
 **Step 3. Create `values-secret.yaml`**
 
-```yaml
+```yaml title="values-secret.yaml"
 {% include "values-secret.yaml" %}
 ```
 

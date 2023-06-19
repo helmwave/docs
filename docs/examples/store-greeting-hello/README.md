@@ -1,48 +1,42 @@
-# How to use [Store](../../yaml/#store)
+# Store
+
+[`Store`](../../yaml/#store) is very useful feature when you need to share the same values between different values fields.
 
 **Project Structure**
 
 ```shell
 .
-├── README.md
 ├── a.yml
 ├── b.yml
 └── helmwave.yml
 
 ```
 
-`cat helmwave.yml`
-
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```
 
-`cat a.yml`
 
-```yaml
+```yaml title="a.yml"
 {% include "a.yml" %}
 ```
 
-`cat b.yml`
 
-```yaml
+```yaml title="b.yml"
 {% include "b.yml" %}
 ```
 
-After running `helmwave build` you get rendered values inside `.helmwave/values`:
+After running `helmwave build` you will get rendered values inside `.helmwave/values`:
 
-`a.yml`
-
-```yaml
+```yaml title="a.yml"
 image:
   repository: nginx
 
 greeting: hello
 ```
 
-`b.yml`
 
-```yaml
+```yaml title="b.yml"
 image:
   tag: v1.0.0
 

@@ -2,7 +2,7 @@
 
 ## How to use?
 
-You should add an annotation to your `Deployment` / `StatefulSet` / `Jobs` / `DaemonSet`
+You should add an annotation to your `Deployment` / `StatefulSet` / `Jobs` / `DaemonSet` / etc
 
 ```yaml
 apiVersion: apps/v1
@@ -16,6 +16,9 @@ metadata:
 ## Helmwave's annotations
 
 ### `helmwave.dev/skip-diff`
+
+> Introduced in [:material-tag: v0.18.0](https://github.com/helmwave/helmwave/releases/tag/v0.18.0)
+
 
 Skip resource for `helm diff` function.
 
@@ -34,12 +37,13 @@ metadata:
 
 ## [kubedog's annotations](https://github.com/werf/kubedog) 🐶
 
+> Inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html).
+Introduced in [:material-tag: v0.8.0](https://github.com/helmwave/helmwave/releases/tag/v0.8.0)
+
 !!! danger "Kubedog can't be enabled when there are releases in multiple contexts."
 
 
 [:material-duck: example](examples/kubedog/README.md)
-
-inspired by [werf annotations](https://werf.io/documentation/reference/deploy_annotations.html)
 
 ---
 
@@ -80,7 +84,7 @@ situation using fail mode.
 
 ### `helmwave.dev/log-regex`
 
-Defines a Re2 regex template that applies to all logs of all containers of all Pods owned by a resource with this
+Define a Re2 regex template that applies to all logs of all containers of all Pods owned by a resource with this
 annotation. helmwave would show only those log lines that fit the specified regex template. By default, helmwave shows
 all log lines.
 

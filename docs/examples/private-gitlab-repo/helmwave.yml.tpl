@@ -1,4 +1,5 @@
-version: 0.27.3
+project: "Example: gitlab private repo"
+version: "⟨⟨ ver ⟩⟩"
 
 repositories:
   # Docs: https://docs.gitlab.com/ee/user/packages/helm_repository/

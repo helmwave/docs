@@ -2,8 +2,6 @@
 
 This example demonstrates how to use public repositories with `ghcr.io`
 
-`cat helmwave.yml`
-
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```

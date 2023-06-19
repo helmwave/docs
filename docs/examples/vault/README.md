@@ -1,5 +1,7 @@
 # Vault
 
+Example shows how to use :simple-vault: hashicorp vault as a data source.
+
 **Project structure**
 
 ```

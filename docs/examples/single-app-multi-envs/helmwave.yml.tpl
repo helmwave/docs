@@ -1,10 +1,11 @@
-version: 0.27.3
+project: "Example: single app multi envs"
+version: "⟨⟨ ver ⟩⟩"
 
 releases:
   - name: my-release
     chart:
       name: my-chart-repo/my-chart-app
-    # yaml says "Who is the last one is right."
+    # yaml says, "Who is the last one is right."
     values:
       # Default
       - values/_.yml

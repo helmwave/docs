@@ -2,8 +2,6 @@
 
 Just add `oci://` to your chart name and define a registry.
 
-**`cat helmwave.yml`**
-
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```

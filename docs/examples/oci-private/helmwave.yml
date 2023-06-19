@@ -1,4 +1,5 @@
-version: 0.27.3
+project: "Example: oci private"
+version: "⟨⟨ ver ⟩⟩"
 
 registries:
   - host: localhost:5000

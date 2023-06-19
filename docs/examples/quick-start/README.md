@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # 🔰 Quick Start
 
 <script async id="asciicast-591181" src="https://asciinema.org/a/591181.js"></script>
@@ -7,7 +11,7 @@
 
     Suppose the `helmwave.yml` representing the desired state of your :simple-helm: helm releases looks like:
 
-    ```yaml
+    ```yaml title="helmwave.yml"
     {% include "helmwave.yml" %}
     ```
 
@@ -17,7 +21,7 @@
     helmwave build
     ```
 
-    This step generates [plan](../../cli/#step-2-working-with-plan)
+    This step generates [plan](../../cli/#build)
 
 4. **Deploy plan**
 

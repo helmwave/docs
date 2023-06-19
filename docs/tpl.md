@@ -1,3 +1,5 @@
+
+
 # 📄 Templating
 
 > Helmwave using [go templates](https://godoc.org/text/template) for templating.
@@ -5,11 +7,10 @@
 Helmwave supports all built-in functions / [`sprig`](#sprig) / [`gomplate`](#gomplate) and several custom functions.
 We recommend using [`gomplate`](#gomplate).
 
-!!! success "Flags"
 
-    ```shell
-    --templater value   Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]`
-    ```
+```shell title="flag"
+--templater value   Select template engine: sprig or gomplate (default: "sprig") [$HELMWAVE_TEMPLATER, $HELMWAVE_TEMPLATE_ENGINE]`
+```
 
 !!! danger "Explain context :simple-helm: helm vs helmwave"
 
@@ -35,11 +36,11 @@ If you've ever written :simple-helm: helm charts, then you're already familiar w
 `Gomplate` is a template renderer which supports a growing list of datasources,
 such as JSON (including EJSON - encrypted JSON), YAML, :simple-amazonaws: AWS EC2 metadata, BoltDB, :simple-consul: Hashicorp Consul and :simple-vault: Hashicorp Vault secrets.
 
-## [Custom](https://github.com/helmwave/helmwave/blob/release-0.27.3/pkg/template/func.go)
+## [Custom](https://github.com/helmwave/helmwave/blob/release-⟨⟨ ver ⟩⟩/pkg/template/func.go)
 
 Custom functions will work with any template engine.
 
-#### `env`
+### `env`
 
 The `env` function allows you to declare a particular environment variable as an optional for template rendering.
 If the environment variable is unset or empty, the template rendering will continue with an empty string as a value.
@@ -48,7 +49,7 @@ If the environment variable is unset or empty, the template rendering will conti
 {{ $envValue := env "envName" }}
 ```
 
-#### `requiredEnv`
+### `requiredEnv`
 
 The `requiredEnv` function allows you to declare a particular environment variable as required for template rendering.
 If the environment variable is unset or empty, the template rendering will fail with an error message.
@@ -59,7 +60,7 @@ If the environment variable is unset or empty, the template rendering will fail 
 
 > If the environment variable value starts with '/' (forward slash) and [Git for Windows](https://git-scm.com/download/win) is used, you must set `MSYS_NO_PATHCONV=1` to preserve values as-is, or the environment variable value will be prefixed with the `C:\Program Files\Git`. [Reference](https://github.com/git-for-windows/build-extra/blob/main/ReleaseNotes.md#known-issues)
 
-#### `exec`
+### `exec`
 
 The `exec` function allows you to run a command, returning the stdout of the command. When the command fails, the template rendering will fail with an error message.
 
@@ -68,7 +69,7 @@ The `exec` function allows you to run a command, returning the stdout of the com
 ```
 
 
-#### `readFile`
+### `readFile`
 
 The `readFile` function allows you to read a file and return its content as the function output. On failure, the template rendering will fail with an error message.
 
@@ -77,7 +78,7 @@ The `readFile` function allows you to read a file and return its content as the 
 ```
 
 
-#### `toYaml`
+### `toYaml`
 
 The :simple-yaml: `toYaml` function allows you to convert a value to YAML string. When has failed, the template rendering will fail with an error message.
 
@@ -85,7 +86,7 @@ The :simple-yaml: `toYaml` function allows you to convert a value to YAML string
 {{ $yaml :=  $value | toYaml }}
 ```
 
-#### `fromYaml`
+### `fromYaml`
 
 The `fromYaml` function allows you to convert a YAML string to a value. When has failed, the template rendering will fail with an error message.
 
@@ -93,7 +94,7 @@ The `fromYaml` function allows you to convert a YAML string to a value. When has
 {{ $value :=  $yamlString | fromYaml }}
 ```
 
-#### `setValueAtPath`
+### `setValueAtPath`
 
 The `setValueAtPath` function allows you to set a value at a path. When has failed, the template rendering will fail with an error message.
 
@@ -101,7 +102,7 @@ The `setValueAtPath` function allows you to set a value at a path. When has fail
 {{ $value | setValueAtPath "path.key" $newValue }}
 ```
 
-#### `get`
+### `get`
 
 The `get` function allows you to get a value at a path. when defaultValue not set. It will return nil. When has failed, the template rendering will fail with an error message.
 
@@ -110,7 +111,7 @@ The `get` function allows you to get a value at a path. when defaultValue not se
 ```
 
 
-#### `required`
+### `required`
 
 The `required` function returns the second argument as-is only if it is not empty. If empty, the template rendering will fail with an error message containing the first argument.
 

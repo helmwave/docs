@@ -1,5 +1,5 @@
-version: 0.27.3
-
+project: "Example: apps per own namespace"
+version: "⟨⟨ ver ⟩⟩"
 
 repositories:
   - name: bitnami

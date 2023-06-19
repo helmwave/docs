@@ -2,13 +2,12 @@
 
 Sometimes we need to disable render values. For example prometheus rules.
 
-`cat values.yml`
 
-```yaml
+```yaml title="values.yml"
 {% include "values.yml" %}
 ```
 
-`cat helmwave.yml`
-```yaml
+
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```

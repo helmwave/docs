@@ -14,14 +14,14 @@
 
 **Create `helmwave.yml`**
 
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```
 
 
 **Create `_.yml`**
 
-```yaml
+```yaml title="_.yml"
 {% include "_.yml" %}
 ```
 
@@ -47,9 +47,11 @@ tree .helmwave
         └── 454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml
 ```
 
+> TODO: fix titles
+
 === "`a` values"
 
-    ```yaml
+    ```yaml title="454b1cc1f7b3ffe503edf44c0ad0eea2ac39923c.yml"
     release:
       chart:
         name: bitnami/nginx

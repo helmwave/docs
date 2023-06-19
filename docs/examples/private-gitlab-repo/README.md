@@ -5,31 +5,15 @@ Learn more about GitLab :simple-helm: helm Registry [here](https://docs.gitlab.c
 ```shell
 .
 ├── README.md
+├── .gitlab-ci.yml
 └── helmwave.yml.tpl
 ```
 
-**Suppose the `helmwave.yml.tpl` looks like**
-
-```yaml
+```yaml title="helmwave.yml.tpl"
 {% include "helmwave.yml.tpl" %}
 ```
 
-Your `.gitlab-ci.yml` 
 
-```yaml
-helmwave:
-  stage: deploy
-  image:
-    name: ghcr.io/helmwave/helmwave:0.27.3
-    entrypoint: [""]
-  before_script:
-  - printenv | grep HELMWAVE
-  script:
-  - helmwave yml
-  - helmwave build
-  - helmwave up
-  artifacts:
-    paths:
-    - .helmwave
-    expire_in: 2 week
+```yaml title=".gitlab-ci.yml"
+{% include ".gitlab-ci.yml" %}
 ```

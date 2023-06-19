@@ -1,3 +1,6 @@
+project: "Example: aws secret manager"
+version: "⟨⟨ ver ⟩⟩"
+
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami

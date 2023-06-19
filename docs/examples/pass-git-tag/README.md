@@ -26,17 +26,14 @@ HelmWave allows use declarative way to approach this goal.
 
 ```
 
-`cat helmwave.yml`
-
-```yaml
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```
 
-`cat values.yml`
 
 This values will override default values
 
-```yaml
+```yaml title="values.yml"
 {% include "values.yml" %}
 ```
 

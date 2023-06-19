@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 🔌 IDE supports
 
 Currently, we don't have any plugins for popular IDEs. You can help us with it 🩵.
@@ -10,10 +15,10 @@ You can [generate schema](../cli/#schema) with cli command `helmwave schema` and
 helmwave schema > helmwave.schema.json
 ```
 
-Or you can get it from [:simple-github: github](https://github.com/helmwave/helmwave/releases/download/v0.27.3/schema.json)
+Or you can get it from [:simple-github: github](https://github.com/helmwave/helmwave/releases/download/v⟨⟨ ver ⟩⟩/schema.json)
 
 ```shell
-wget -L https://github.com/helmwave/helmwave/releases/download/v0.27.3/schema.json -o helmwave.schema.json
+wget -L https://github.com/helmwave/helmwave/releases/download/v⟨⟨ ver ⟩⟩/schema.json -o helmwave.schema.json
 ```
 
 
@@ -28,7 +33,7 @@ wget -L https://github.com/helmwave/helmwave/releases/download/v0.27.3/schema.js
                 "fileMatch": [
                     "helmwave.yml"
                 ],
-                "url": "https://github.com/helmwave/helmwave/releases/download/v0.27.3/schema.json"
+                "url": "https://github.com/helmwave/helmwave/releases/download/v⟨⟨ ver ⟩⟩/schema.json"
             }
         ]
     }

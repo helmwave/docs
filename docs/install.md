@@ -1,4 +1,6 @@
-# 📥 Installation
+# 📥 Installation 
+
+![GitHub all releases](https://img.shields.io/github/downloads/helmwave/helmwave/total)
 
 You can install the pre-compiled binary from 
 [releases](https://github.com/helmwave/helmwave/releases), 
@@ -9,102 +11,135 @@ Here are the steps for each of them:
 
 --- 
 
-## 🍏 Mac OS
+## :material-apple: Mac OS
 
 Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
-Install with :beer: brew
+=== ":beer: brew"
 
-```sh
-brew install helmwave/tap/helmwave
-```
+    ```shell
+    brew install helmwave/tap/helmwave
+    ```
 
-or use wget
-```sh
-export VERSION=0.27.3
-wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_darwin_amd64.tar.gz -O - | tar -xz
-mv helmwave /usr/local/bin/
-```
+=== "wget"
+
+    ```shell
+    export VERSION=⟨⟨ ver ⟩⟩
+    export ARCH=$(uname -m) # amd64, arm64
+    wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_darwin_${ARCH}.tar.gz -O - | tar -xz
+    mv helmwave /usr/local/bin/
+    ```
 
 ---
 
-## 🐧 Linux
+## :material-linux: Linux
 
 Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
-```sh
-export VERSION=0.27.3
-wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_linux_amd64.tar.gz -O - | tar -xz
-mv helmwave /usr/local/bin/
-```
+
+=== "wget"
+
+    ```shell
+    export VERSION=⟨⟨ ver ⟩⟩
+    export ARCH=$(uname -m) # amd64, arm64
+    wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_linux_${ARCH}.tar.gz -O - | tar -xz
+    mv helmwave /usr/local/bin/
+    ```
+
+=== ":material-debian: Debian"
+
+    ```shell
+    export VERSION=⟨⟨ ver ⟩⟩
+    export ARCH=$(uname -m) # amd64, arm64
+    wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_linux_${ARCH}.deb -o helmwave.deb
+    apt install ./helmwave.deb
+    ```
+
+=== ":material-redhat: RedHat"
+
+    ```shell
+    export VERSION=⟨⟨ ver ⟩⟩
+    export ARCH=$(uname -m) # amd64, arm64
+    wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_linux_${ARCH}.rpm -o helmwave.rpm
+    yum localinstall ./helmwave.rpm
+    ```
+
+=== ":simple-alpinelinux: Alpine"
+
+    ```shell
+    export VERSION=⟨⟨ ver ⟩⟩
+    export ARCH=$(uname -m) # amd64, arm64
+    wget -c https://github.com/helmwave/helmwave/releases/download/v$VERSION/helmwave_${VERSION}_linux_${ARCH}.apk -o helmwave.apk
+    apk add --allow-untrusted ./helmwave.apk
+    ```
 
 ---
 
-## 🪟 Windows
-
-!!! Warning "We haven't tried running this on Windows."
+## :material-microsoft: Windows
 
 Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
 ---
 
-## :material-docker: Run as a container ![Docker Pulls](https://img.shields.io/docker/pulls/diamon/helmwave)
+## :simple-linuxcontainers: Containers
 
-> We use 2 docker registries. 
+![Docker Image Size (latest)](https://img.shields.io/docker/image-size/diamon/helmwave/latest)
 
-|         Registry          |          URL           |                                 project page                                  |
-|:-------------------------:|:----------------------:|:-----------------------------------------------------------------------------:|
-|        Docker hub         | https://hub.docker.com |       [view](https://hub.docker.com/repository/docker/diamon/helmwave)        |
-| Github Container registry |    https://ghcr.io     | [view](https://github.com/orgs/helmwave/packages/container/helmwave/settings) |
 
-```bash
-docker pull diamon/helmwave
-docker pull ghcr.io/helmwave/helmwave
-```
+We use 2 container registries. We recommend using the [:octicons-container-24: GitHub container registry](https://github.com/helmwave/helmwave/pkgs/container/helmwave)
 
-**Use specific version**
+|                                                     Registry                                                      |          URL           |                                 Pulls                                  |
+|:-----------------------------------------------------------------------------------------------------------------:|:----------------------:|:----------------------------------------------------------------------:|
+|              [:simple-docker: Docker hub](https://hub.docker.com/repository/docker/diamon/helmwave)               | https://hub.docker.com | ![DockerHub pull](https://img.shields.io/docker/pulls/diamon/helmwave) |
+| [:octicons-container-24: GitHub container registry](https://github.com/helmwave/helmwave/pkgs/container/helmwave) |    https://ghcr.io     |                            *not available*                             |
 
-```bash
-docker pull diamon/helmwave:0.27.3
-docker pull ghcr.io/helmwave/helmwave:0.27.3
+=== ":simple-docker: docker with dockerhub"
 
-docker run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:0.27.3
-# helmwave version
-0.27.3
-#
-```
+    ```bash
+    docker pull diamon/helmwave
 
-**Use [scratch image](https://hub.docker.com/_/scratch)**
+    # with tag
+    docker pull diamon/helmwave:⟨⟨ ver ⟩⟩
+    
+    docker run --entrypoint=ash -it --rm --name helmwave diamon/helmwave:⟨⟨ ver ⟩⟩
+    # helmwave version
+    ⟨⟨ ver ⟩⟩
+    #
+    ```
 
-scratch image run with [nobody user](https://unix.stackexchange.com/questions/186568/what-is-nobody-user-and-group).
+=== ":simple-podman: podman with ghcr.io"
 
-```bash
-docker pull diamon/helmwave:scratch
-docker pull ghcr.io/helmwave/helmwave:scratch
+    ```bash
+    podman pull ghcr.io/helmwave/helmwave
 
-docker run ghcr.io/helmwave/helmwave:0.27.3-scratch version
-0.27.3
-```
-
-**Use [scratch image](https://hub.docker.com/_/scratch) with specific helmwave version**
-
-```bash
-docker pull diamon/helmwave:0.27.3-scratch
-docker pull ghcr.io/helmwave/helmwave:0.27.3-scratch
-```
+    # with tag
+    podman pull ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩
+    
+    podman run --entrypoint=ash -it --rm --name helmwave ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩
+    # helmwave version
+    ⟨⟨ ver ⟩⟩
+    #
+    ```
 
 ---
 
-## Install with go get ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave)
+## :fontawesome-brands-golang:  `go get` 
+
+> You must install [![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave)
+](https://golang.org/doc/install) first.
 
 ```sh
-export VERSION=0.27.3
+export VERSION=⟨⟨ ver ⟩⟩
 GO111MODULE=on go get github.com/helmwave/helmwave/cmd/helmwave@$VERSION
 ```
 
 ---
 
 ## :material-git: Compile from source
+
+> You must install [![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/zhilyaev/helmwave)
+](https://golang.org/doc/install) first.
+
 
 ```bash
 git clone git@github.com:helmwave/helmwave.git
@@ -115,7 +150,7 @@ mv -f helmwave /usr/local/bin/
 
 ---
 
-## Install with [marcosnils/bin](https://github.com/marcosnils/bin)
+## Install with [:material-github: marcosnils/bin](https://github.com/marcosnils/bin)
 
 ```bash
 bin install github.com/helmwave/helmwave
