@@ -1056,15 +1056,14 @@ You're not viewing the latest version.
 
 
 <h1 id="how-to-use-store">How to use <a href="../../yaml/#store">Store</a><a class="headerlink" href="#how-to-use-store" title="Permanent link">&para;</a></h1>
+<p><code>Store</code> is very useful feature when you need to share the same values between different values fields.</p>
 <p><strong>Project Structure</strong></p>
 <div class="highlight"><pre><span></span><code>.
-├──<span class="w"> </span>README.md
 ├──<span class="w"> </span>a.yml
 ├──<span class="w"> </span>b.yml
 └──<span class="w"> </span>helmwave.yml
 </code></pre></div>
-<p><code>cat helmwave.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">store&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">store&quot;</span>
 <span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.28.0&quot;</span>
 
 <span class="nt">releases</span><span class="p">:</span>
@@ -1082,27 +1081,23 @@ You're not viewing the latest version.
 <span class="w">  </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b.yml</span>
 </code></pre></div>
-<p><code>cat a.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
+<div class="highlight"><span class="filename">a.yml</span><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
 
 <span class="nt">greeting</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Store.msg</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 </code></pre></div>
-<p><code>cat b.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
+<div class="highlight"><span class="filename">b.yml</span><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1.0.0</span>
 
 <span class="nt">message</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Store.msg</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">world</span>
 </code></pre></div>
-<p>After running <code>helmwave build</code> you get rendered values inside <code>.helmwave/values</code>:</p>
-<p><code>a.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
+<p>After running <code>helmwave build</code> you will get rendered values inside <code>.helmwave/values</code>:</p>
+<div class="highlight"><span class="filename">a.yml</span><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
 
 <span class="nt">greeting</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span>
 </code></pre></div>
-<p><code>b.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
+<div class="highlight"><span class="filename">b.yml</span><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1.0.0</span>
 
 <span class="nt">message</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello world</span>

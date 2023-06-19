@@ -1057,8 +1057,7 @@ You're not viewing the latest version.
 
 <h1 id="render-flag-for-values">Render flag for values<a class="headerlink" href="#render-flag-for-values" title="Permanent link">&para;</a></h1>
 <p>Sometimes we need to disable render values. For example prometheus rules.</p>
-<p><code>cat values.yml</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">## Prometheus Exporter / Metrics</span>
+<div class="highlight"><span class="filename">values.yml</span><pre><span></span><code><span class="c1">## Prometheus Exporter / Metrics</span>
 <span class="c1">##</span>
 <span class="nt">metrics</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">service</span><span class="p">:</span>
@@ -1066,8 +1065,7 @@ You're not viewing the latest version.
 <span class="w">      </span><span class="nt">prometheus.io/scrape</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
 <span class="w">      </span><span class="nt">prometheus.io/port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">.Values.metrics.service.port</span><span class="nv"> </span><span class="s">}}&quot;</span>
 </code></pre></div>
-<p><code>cat helmwave.yml</code>
-<div class="highlight"><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">render</span><span class="nv"> </span><span class="s">flag&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">render</span><span class="nv"> </span><span class="s">flag&quot;</span>
 <span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.28.0&quot;</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
@@ -1085,7 +1083,7 @@ You're not viewing the latest version.
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values.yml</span>
 <span class="w">        </span><span class="nt">render</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-</code></pre></div></p>
+</code></pre></div>
 
 
   
