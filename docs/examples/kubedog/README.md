@@ -53,4 +53,4 @@ helmwave up
 
 **Output**
 
-![kubedog](img.png)
+![kubedog](../../assets/kubedog.png)

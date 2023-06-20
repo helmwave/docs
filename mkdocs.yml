@@ -29,6 +29,7 @@ nav:
   - Examples:
       - examples/quick-start/README.md
       - examples/kubedog/README.md
+      - examples/graph/README.md
       - Templating:
           - examples/apps-per-ns/README.md
           - examples/single-app-multi-envs/README.md
