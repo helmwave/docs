@@ -10,4 +10,4 @@ You can change logic of graph rendering by changing this flag.
 - N<0: `--graph-width=-10` - drop 10 symbols.
 - N>1: `--graph-width=10` - show only first 10 symbols.
 
-[:material-docs: example](example/graph/README.md)
+[:material-docs: example](examples/graph/README.md)
