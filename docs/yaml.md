@@ -220,13 +220,22 @@ Almost all options that are here are native :simple-helm: helm options.
 
 ### name
 
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
+
+
 Release name. I hope you know what it is.
 
 ### namespace
 
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
+
+
 :simple-kubernetes: kubernetes namespace.
 
 ### chart
+
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
+
 
 |         field         | required |  type  | default |
 |:---------------------:|:--------:|:------:|:-------:|
@@ -291,6 +300,9 @@ releases:
 
 
 ### values[]
+
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
+
 
 > `values` can be an object or a string. If it's a string, it will be treated as a `src` field.
 
@@ -493,6 +505,8 @@ It allows setting explicit dependencies between releases. Dependant release will
 
 ### allow_failure
 
+> Introduced in [:material-tag: v0.15.0](https://github.com/helmwave/helmwave/releases/tag/v0.15.0)
+
 Allows all dependant releases to proceed even if release failed.
 
 ### pending_release_strategy
@@ -514,15 +528,22 @@ We recommend using `wait` for all releases. It will wait for all resources to be
 
 ### wait_for_jobs
 
+> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
+
+
 We recommend using `wait_for_jobs` for all releases. It will wait for all jobs to be completed.
 
 ### timeout
+
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
 
 Time to wait for release to install.
 
 !!! danger "if you enable `kubedog` this option will be required."
 
 ### max_history
+
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
 
 Limit the maximum number of revisions saved per release. Use 0 for no limit (default 0)
 
@@ -541,29 +562,50 @@ Allows using custom :simple-kubernetes: kubecontext for release.
 
 ### description
 
+> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
+
+
 Additional information about release.
 
 ### atomic
+
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
+
 
 if set, upgrade process rolls back changes made in case of failed upgrade.
 
 ### cleanup_on_fail
 
+> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
+
+
 Allow deletion of new resources created in this upgrade when upgrade fails.
 
 ### devel
+
+> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
+
 
 Use development versions, too. Equivalent to version '>0.0.0-0'.
 
 ### disable_hooks
 
-Disable pre/post upgrade hooks
+> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
+
+
+Disable pre/post upgrade :simple-helm:  helm hooks
 
 ### disable_open_api_validation
+
+> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
+
 
 If set, the upgrade process will not validate rendered templates against the Kubernetes OpenAPI Schema
 
 ### force
+
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
+
 
 Force resource updates through a replacement strategy
 
@@ -578,6 +620,9 @@ Enable DNS resolution in templates.
 
 ### recreate
 
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
+
+
 Allows deleting and then creating resources (pods) when needed instead of updating.
 
 !!! tip "We don't recommend using this option."
@@ -585,15 +630,24 @@ Allows deleting and then creating resources (pods) when needed instead of updati
 
 ### reset_values
 
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
+
+
 When upgrading, reset the values to the ones built into the chart.
 
 ### reuse_values
+
+> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
+
 
 When upgrading, reuse the last release's values and merge it into the new configuration.
 
 !!! tip "We don't recommend using this option."
 
 ### skip_crds
+
+> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
+
 
 If set, no CRDs will be installed. By default, CRDs are installed if not already present.
 
@@ -603,6 +657,9 @@ Be careful with this option.
 - Sometimes you should enable `installCRD: true` in your chart like cert-manager.
 
 ### sub_notes
+
+> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
+
 
 If set, render sub chart notes along with the parent.
 This option determines whether sub-notes are rendered in the chart.
