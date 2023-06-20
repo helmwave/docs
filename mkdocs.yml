@@ -35,8 +35,8 @@ nav:
           - examples/single-app-multi-envs/README.md
           - examples/pass-git-commit/README.md
           - examples/pass-git-tag/README.md
-          - examples/store-greeting-hello/README.md
           - examples/built-in-release/README.md
+          - examples/store-greeting-hello/README.md
       - examples/tags/README.md
       - examples/umbrella-evil/README.md
       - examples/private-env/README.md
