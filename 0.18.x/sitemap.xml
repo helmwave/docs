@@ -2,87 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.helmwave.app/0.18.x/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/anno/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/ci/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/cli/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/install/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/intro/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/pub/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/tpl/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/yaml/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/examples/apps-per-ns/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/examples/aws-sm/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/examples/pass-git-commit/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/examples/pass-git-tag/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/examples/private-github-repo/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/examples/quick-start/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/examples/single-app-multi-envs/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.18.x/examples/store-greeting-hello/</loc>
-         <lastmod>2023-06-13</lastmod>
+         <lastmod>2023-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
