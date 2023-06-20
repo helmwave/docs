@@ -3,7 +3,7 @@
 This example shows how to use the `graph` command with the `--graph-width` flag.
 
 
-```shell title="helmwave.yml"
+```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
 ```
 
