@@ -378,9 +378,12 @@ Tags allow you to choose releases for build.
 > Introduced in [:material-tag: v0.27.3](https://github.com/helmwave/helmwave/releases/tag/v0.27.3)
 
 If `offline_kube_version` set helmwave will use this version to build plan.
-Without this option, helmwave will ask :simple-kubernetes: kubernetes for a version.
+Without this option, helmwave will ask :simple-kubernetes: kubernetes for a version. 
+It is very useful if you want to build a plan without access to a cluster.
 
-!!! tip "`offline_kube_version` also can help you if you want to use different environments for `helmwave build` and `helmwave up`."
+Combine `offline_kube_version` and `--diff-mode=local` or `--diff-mode=none` to build a plan without kubernetes.
+
+
 
 [:material-duck: example](examples/private-env/README.md)
 
