@@ -237,19 +237,19 @@ Release name. I hope you know what it is.
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
 
 
-|         field         | required |  type  | default |
-|:---------------------:|:--------:|:------:|:-------:|
-|       **name**        |    ✅     | string |   ""    |
-|      **version**      |    🙅    | string |   ""    |
-|       username        |    🙅    | string |   ""    |
-|       password        |    🙅    | string |   ""    |
-|        cafile         |    🙅    | string |   ""    |
-|       certfile        |    🙅    | string |   ""    |
-|        keyfile        |    🙅    | string |   ""    |
-| insecureskiptlsverify |    🙅    |  bool  |  false  |
-|        keyring        |    🙅    | string |   ""    |
-|  passcredentialsall   |    🙅    |  bool  |  false  |
-|        verify         |    🙅    |  bool  |  false  |
+|      field       | required |  type  | default |
+|:----------------:|:--------:|:------:|:-------:|
+|     **name**     |    ✅     | string |   ""    |
+|   **version**    |    🙅    | string |   ""    |
+|     username     |    🙅    | string |   ""    |
+|     password     |    🙅    | string |   ""    |
+|     ca_file      |    🙅    | string |   ""    |
+|    cert_file     |    🙅    | string |   ""    |
+|     key_file     |    🙅    | string |   ""    |
+|     insecure     |    🙅    |  bool  |  false  |
+|     keyring      |    🙅    | string |   ""    |
+| pass_credentials |    🙅    |  bool  |  false  |
+|      verify      |    🙅    |  bool  |  false  |
 
 `chart` can be an object or a string. If it's a string, it will be treated as a `name`.
 
@@ -559,7 +559,7 @@ Limit the maximum number of revisions saved per release. Use 0 for no limit (def
 > Introduced in [:material-tag: v0.24.0](https://github.com/helmwave/helmwave/releases/tag/v0.24.0)
 
 
-Allows using custom :simple-kubernetes: kubecontext for release.
+Allows using custom :simple-kubernetes: kube-context for release.
 
 !!! danger "Kubedog can't be enabled when there are releases in multiple contexts."
 
