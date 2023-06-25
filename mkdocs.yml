@@ -107,7 +107,7 @@ theme:
     - search.highlight
 
 extra:
-  ver: 0.28.0
+  ver: 0.28.1
   version:
     provider: mike
     default: latest
