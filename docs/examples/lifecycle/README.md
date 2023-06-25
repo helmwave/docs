@@ -2,7 +2,7 @@
 hide:
   - toc
 ---
-# Lifecycle
+# ♻️ Lifecycle
 
 Lifecycle defines scripts that are triggered by helmwave.
 

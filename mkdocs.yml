@@ -28,26 +28,32 @@ nav:
 
   - Examples:
       - examples/quick-start/README.md
-      - examples/apps-per-ns/README.md
-      - examples/single-app-multi-envs/README.md
-      - examples/pass-git-commit/README.md
-      - examples/pass-git-tag/README.md
-      - examples/tags/README.md
-      - examples/hate-umbrella/README.md
       - examples/kubedog/README.md
-      - examples/oci-private/README.md
-      - examples/oci-public/README.md
-      - examples/lifecycle/README.md
-      - examples/private-github-repo/README.md
-      - examples/private-gitlab-repo/README.md
-      - examples/store-greeting-hello/README.md
-      - examples/built-in-release/README.md
+      - examples/graph/README.md
+      - Templating:
+          - examples/apps-per-ns/README.md
+          - examples/single-app-multi-envs/README.md
+          - examples/pass-git-commit/README.md
+          - examples/pass-git-tag/README.md
+          - examples/built-in-release/README.md
+          - examples/store-greeting-hello/README.md
+      - examples/tags/README.md
+      - examples/umbrella-evil/README.md
       - examples/private-env/README.md
-      - examples/values-delimiter-flags/README.md
-      - examples/values-render-flag/README.md
-      - examples/values-strict-flag/README.md
-      - examples/vault/README.md
-      - examples/aws-sm/README.md
+      - examples/lifecycle/README.md
+      - OCI:
+        - examples/oci-private/README.md
+        - examples/oci-public/README.md
+      - Repositories:
+        - examples/private-github-repo/README.md
+        - examples/private-gitlab-repo/README.md
+      - Values flags:
+        - examples/values-delimiter-flags/README.md
+        - examples/values-render-flag/README.md
+        - examples/values-strict-flag/README.md
+      - Data sources:
+        - examples/vault/README.md
+        - examples/aws-sm/README.md
 
 plugins:
   - search
@@ -89,6 +95,7 @@ theme:
     - navigation.top
 #    - navigation.instant # disable because mermaid is not working
 #    - navigation.indexes # disable because quick-start works not correctly
+#    - navigation.expand
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
@@ -100,7 +107,7 @@ theme:
     - search.highlight
 
 extra:
-  ver: 0.28.0
+  ver: 0.28.1
   version:
     provider: mike
     default: latest

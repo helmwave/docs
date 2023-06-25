@@ -44,21 +44,22 @@ helmwave:
   environment:
     name: "ref/$CI_COMMIT_REF_SLUG"
   image:
-    name: diamon/helmwave:⟨⟨ ver ⟩⟩
+    name: ghcr.io/helmwave/helmwave:⟨⟨ ver ⟩⟩
     entrypoint: [""]
   before_script:
-    - printenv | grep HELMWAVE
+    - env | grep HELMWAVE
   script:
     - '[[ -f "helmwave.yml.tpl" ]] && helmwave yml'
+    - cat helmwave.yml
     - helmwave build
     - helmwave up
   artifacts:
     paths:
     - .helmwave
-    expire_in: 2 week
+    expire_in: 2 weeks
 ```
 
-See  the [:material-duck: example](../examples/apps-per-ns/#cicd-with-gitlab-ci)
+See the [:material-duck: example](../examples/apps-per-ns/#cicd-with-gitlab-ci)
 
 
 ###  Kube-Linter and Helmwave

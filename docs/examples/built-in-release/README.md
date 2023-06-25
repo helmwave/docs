@@ -5,11 +5,7 @@
 **Project Structure**
 
 ```shell
-.
-├── README.md
-├── _.yml
-└── helmwave.yml
-
+⟨⟨ run_script("tree docs/examples/built-in-release") ⟩⟩
 ```
 
 **Create `helmwave.yml`**

@@ -1,15 +1,11 @@
-# Store
+# 🗳️ Store
 
 [`Store`](../../yaml/#store) is very useful feature when you need to share the same values between different values fields.
 
 **Project Structure**
 
 ```shell
-.
-├── a.yml
-├── b.yml
-└── helmwave.yml
-
+⟨⟨ run_script("tree docs/examples/store-greeting-hello") ⟩⟩
 ```
 
 ```yaml title="helmwave.yml"

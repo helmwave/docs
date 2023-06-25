@@ -1,6 +1,6 @@
 # 🛠 CLI Reference
 
-```
+```shell
 ⟨⟨ run_script("helmwave -h") ⟩⟩
 ```
 

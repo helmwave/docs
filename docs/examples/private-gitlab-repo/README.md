@@ -1,12 +1,12 @@
 # Private GitLab repo 
 
-Learn more about GitLab :simple-helm: helm Registry [here](https://docs.gitlab.com/ee/user/packages/helm_repository/)
+Learn more about :material-gitlab: GitLab :simple-helm: helm registry [here](https://docs.gitlab.com/ee/user/packages/helm_repository/)
+
+
+**Project structure**
 
 ```shell
-.
-├── README.md
-├── .gitlab-ci.yml
-└── helmwave.yml.tpl
+⟨⟨ run_script("tree docs/examples/private-github-repo") ⟩⟩
 ```
 
 ```yaml title="helmwave.yml.tpl"

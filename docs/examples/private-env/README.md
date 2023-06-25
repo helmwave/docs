@@ -1,4 +1,4 @@
-# Private environment
+# 🔒 Private environment
 
 ```yaml title="helmwave.yml"
 {% include "helmwave.yml" %}
