@@ -19,7 +19,10 @@ Or you can get it from [:simple-github: github](https://github.com/helmwave/helm
 
 ```shell
 wget -L https://github.com/helmwave/helmwave/releases/download/v⟨⟨ ver ⟩⟩/schema.json -o helmwave.schema.json
+# latest version
+wget -L https://github.com/helmwave/helmwave/releases/latest/download/schema.json
 ```
+
 
 
 === ":material-microsoft-visual-studio-code: VScode"
@@ -33,7 +36,7 @@ wget -L https://github.com/helmwave/helmwave/releases/download/v⟨⟨ ver ⟩�
                 "fileMatch": [
                     "helmwave.yml"
                 ],
-                "url": "https://github.com/helmwave/helmwave/releases/download/v⟨⟨ ver ⟩⟩/schema.json"
+                "url": "https://github.com/helmwave/helmwave/releases/latest/download/schema.json"
             }
         ]
     }

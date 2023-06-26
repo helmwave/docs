@@ -40,44 +40,6 @@ such as JSON (including EJSON - encrypted JSON), YAML, :simple-amazonaws: AWS EC
 
 Custom functions will work with any template engine.
 
-### `env`
-
-The `env` function allows you to declare a particular environment variable as an optional for template rendering.
-If the environment variable is unset or empty, the template rendering will continue with an empty string as a value.
-
-```shell
-{{ $envValue := env "envName" }}
-```
-
-### `requiredEnv`
-
-The `requiredEnv` function allows you to declare a particular environment variable as required for template rendering.
-If the environment variable is unset or empty, the template rendering will fail with an error message.
-
-```shell
-{{ $envValue := requiredEnv "envName" }}
-```
-
-> If the environment variable value starts with '/' (forward slash) and [Git for Windows](https://git-scm.com/download/win) is used, you must set `MSYS_NO_PATHCONV=1` to preserve values as-is, or the environment variable value will be prefixed with the `C:\Program Files\Git`. [Reference](https://github.com/git-for-windows/build-extra/blob/main/ReleaseNotes.md#known-issues)
-
-### `exec`
-
-The `exec` function allows you to run a command, returning the stdout of the command. When the command fails, the template rendering will fail with an error message.
-
-```shell
-{{ $cmdOutpot := exec "./mycmd" (list "arg1" "arg2" "--flag1") }}
-```
-
-
-### `readFile`
-
-The `readFile` function allows you to read a file and return its content as the function output. On failure, the template rendering will fail with an error message.
-
-```shell
-{{ $fileContent := readFile "./myfile" }}
-```
-
-
 ### `toYaml`
 
 The :simple-yaml: `toYaml` function allows you to convert a value to YAML string. When has failed, the template rendering will fail with an error message.
@@ -94,6 +56,14 @@ The `fromYaml` function allows you to convert a YAML string to a value. When has
 {{ $value :=  $yamlString | fromYaml }}
 ```
 
+### `exec`
+
+The `exec` function allows you to run a command, returning the stdout of the command. When the command fails, the template rendering will fail with an error message.
+
+```shell
+{{ $cmdOutpot := exec "./mycmd" (list "arg1" "arg2" "--flag1") }}
+```
+
 ### `setValueAtPath`
 
 The `setValueAtPath` function allows you to set a value at a path. When has failed, the template rendering will fail with an error message.
@@ -102,14 +72,16 @@ The `setValueAtPath` function allows you to set a value at a path. When has fail
 {{ $value | setValueAtPath "path.key" $newValue }}
 ```
 
-### `get`
+### `requiredEnv`
 
-The `get` function allows you to get a value at a path. when defaultValue not set. It will return nil. When has failed, the template rendering will fail with an error message.
+The `requiredEnv` function allows you to declare a particular environment variable as required for template rendering.
+If the environment variable is unset or empty, the template rendering will fail with an error message.
 
 ```shell
-{{ $Getvalue :=  $value | get "path.key" "defaultValue" }}
+{{ $envValue := requiredEnv "envName" }}
 ```
 
+> If the environment variable value starts with '/' (forward slash) and [Git for Windows](https://git-scm.com/download/win) is used, you must set `MSYS_NO_PATHCONV=1` to preserve values as-is, or the environment variable value will be prefixed with the `C:\Program Files\Git`. [Reference](https://github.com/git-for-windows/build-extra/blob/main/ReleaseNotes.md#known-issues)
 
 ### `required`
 
@@ -119,3 +91,26 @@ The `required` function returns the second argument as-is only if it is not empt
 {{ $requiredValue :=  $value | required "value not set" }}
 ```
 
+### `readFile`
+
+The `readFile` function allows you to read a file and return its content as the function output. On failure, the template rendering will fail with an error message.
+
+```shell
+{{ $fileContent := readFile "./myfile" }}
+```
+
+### `get`
+
+The `get` function allows you to get a value at a path. When defaultValue not set it will return nil. On failure, the template rendering will fail with an error message.
+
+```shell
+{{ $Getvalue := $value | get "path.key" "defaultValue" }}
+```
+
+### `hasKey`
+
+The `hasKey` function allows you to check if key exists in the value. Dot-separated key will recurse. On failure, the template rendering will fail with an error message.
+
+```shell
+{{ $exists := $value | hasKey "path.key" }}
+```
