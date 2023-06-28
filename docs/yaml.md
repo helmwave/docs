@@ -3,13 +3,13 @@
 This documentation describes all entities inside a `helmwave.yml`
 
 |    field     | required |  type  | default |
-| :----------: | :------: | :----: | :-----: |
-|   project    |    🙅     | string |   ""    |
-|   version    |    🙅     | string |   ""    |
-| repositories |    🙅     | array  |   []    |
-|  registries  |    🙅     | array  |   []    |
-|  lifecycle   |    🙅     | object |   {}    |
-|   releases   |    🙅     | array  |   []    |
+|:------------:|:--------:|:------:|:-------:|
+|   project    |    🙅    | string |   ""    |
+|   version    |    🙅    | string |   ""    |
+| repositories |    🙅    | array  |   []    |
+|  registries  |    🙅    | array  |   []    |
+|  lifecycle   |    🙅    | object |   {}    |
+|   releases   |    🙅    | array  |   []    |
 
 === "Short `helmwave.yml`"
 
@@ -53,11 +53,11 @@ In the future, it is planned to check major compatibility.
 Describe which [OCI registries](https://helm.sh/docs/topics/registries/) need to be added.
 
 |  field   | required |  type  | default |
-| :------: | :------: | :----: | :-----: |
+|:--------:|:--------:|:------:|:-------:|
 |   host   |    ✅     | string |   ""    |
-| username |    🙅     | string |   ""    |
-| password |    🙅     | string |   ""    |
-| insecure |    🙅     |  bool  |  false  |
+| username |    🙅    | string |   ""    |
+| password |    🙅    | string |   ""    |
+| insecure |    🙅    |  bool  |  false  |
 
 
 === ":material-duck: private oci"
@@ -95,17 +95,17 @@ Password for the registry.
 :simple-helm: helm [repositories](https://helm.sh/docs/helm/helm_repo) also know as `helm repo add`
 
 |          field           | required |  type  | default |
-| :----------------------: | :------: | :----: | :-----: |
+|:------------------------:|:--------:|:------:|:-------:|
 |           name           |    ✅     | string |   ""    |
 |           url            |    ✅     |  url   |   ""    |
-|         username         |    🙅     | string |   ""    |
-|         password         |    🙅     | string |   ""    |
-|          force           |    🙅     |  bool  |  false  |
-|         certFile         |    🙅     | string |   ""    |
-|         keyFile          |    🙅     | string |   ""    |
-|          caFile          |    🙅     | string |   ""    |
-| insecure_skip_tls_verify |    🙅     |  bool  |  false  |
-|   pass_credentials_all   |    🙅     |  bool  |  false  |
+|         username         |    🙅    | string |   ""    |
+|         password         |    🙅    | string |   ""    |
+|          force           |    🙅    |  bool  |  false  |
+|         certFile         |    🙅    | string |   ""    |
+|         keyFile          |    🙅    | string |   ""    |
+|          caFile          |    🙅    | string |   ""    |
+| insecure_skip_tls_verify |    🙅    |  bool  |  false  |
+|   pass_credentials_all   |    🙅    |  bool  |  false  |
 
 This repository will be stored in a local :simple-helm: helm repositories database.
 
@@ -139,15 +139,23 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
 
 
 |     field     | required | type  | default |
-| :-----------: | :------: | :---: | :-----: |
-|    pre_up     |    🙅     | array |   []    |
-|    post_up    |    🙅     | array |   []    |
-|   pre_down    |    🙅     | array |   []    |
-|   post_down   |    🙅     | array |   []    |
-|   pre_build   |    🙅     | array |   []    |
-|  post_build   |    🙅     | array |   []    |
-| pre_rollback  |    🙅     | array |   []    |
-| post_rollback |    🙅     | array |   []    |
+|:-------------:|:--------:|:-----:|:-------:|
+|    pre_up     |    🙅    | array |   []    |
+|    post_up    |    🙅    | array |   []    |
+|   pre_down    |    🙅    | array |   []    |
+|   post_down   |    🙅    | array |   []    |
+|   pre_build   |    🙅    | array |   []    |
+|  post_build   |    🙅    | array |   []    |
+| pre_rollback  |    🙅    | array |   []    |
+| post_rollback |    🙅    | array |   []    |
+
+|     field     | required |  type  | default |
+|:-------------:|:--------:|:------:|:-------:|
+|      cmd      |    ✅     | string |   ""    |
+|     args      |    🙅    | array  |   []    |
+|     show      |    🙅    |  bool  |  true   |
+| allow_failure |    🙅    |  bool  |  false  |
+
 
 === "short syntax"
 
@@ -159,13 +167,6 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
     ```
 
 === "full syntax"
-
-    |     field     | required |  type  | default |
-    | :-----------: | :------: | :----: | :-----: |
-    |      cmd      |    ✅     | string |   ""    |
-    |     args      |    🙅     | array  |   []    |
-    |     show      |    🙅     |  bool  |  true   |
-    | allow_failure |    🙅     |  bool  |  false  |
 
     ```yaml
     version: ⟨⟨ ver ⟩⟩
@@ -186,6 +187,8 @@ flowchart LR
     post_build --> pre_rollback --> post_rollback
 ```
 
+[:material-duck: example](examples/lifecycle/README.md)
+
 **environment**
 
 > Introduced in [:material-tag: v0.29.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
@@ -195,46 +198,44 @@ To each lifecycle command several environment variables are passed:
 - `${HELMWAVE_LIFECYCLE_TYPE}` - contains lifecycle stage/type (`pre_build`/`post_build`/etc.)
 - `${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}` - *(only for per-release lifecycle)* contains release uniqname (`release@namespace`)
 
-[:material-duck: example](examples/lifecycle/README.md)
-
 
 ## releases[]
 
 Almost all options that are here are native :simple-helm: helm options.
 
 |            field            | required |       type       | default | `helmwave build` |  helm option  |
-| :-------------------------: | :------: | :--------------: | :-----: | :--------------: | :-----------: |
+|:---------------------------:|:--------:|:----------------:|:-------:|:----------------:|:-------------:|
 |          **name**           |    ✅     |      string      |   ""    |        ✅         | :simple-helm: |
 |        **namespace**        |    ✅     |      string      |   ""    |        ✅         | :simple-helm: |
 |          **chart**          |    ✅     | string or object |   {}    |        ✅         | :simple-helm: |
-|      create_namespace       |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|           values            |    🙅     |      array       |   []    |        ✅         | :simple-helm: |
-|            tags             |    🙅     |      array       |   []    |        ✅         |               |
-|    offline_kube_version     |    🙅     |      string      |   ""    |        ✅         |               |
-|            store            |    🙅     |      object      |   {}    |        ✅         |               |
-|          lifecycle          |    🙅     |      object      |   {}    |        ✅         |               |
-|         depends_on          |    🙅     |      array       |   []    |        ✅         |               |
-|        allow_failure        |    🙅     |       bool       |  false  |                  |               |
-|  pending_release_strategy   |    🙅     |      string      |   ""    |                  |               |
-|            wait             |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|        wait_for_jobs        |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|           timeout           |    🙅     |     interval     |   5m    |                  | :simple-helm: |
-|         max_history         |    🙅     |       int        |    0    |                  | :simple-helm: |
-|           context           |    🙅     |      string      |   ""    |                  |               |
-|         description         |    🙅     |      string      |   ""    |                  | :simple-helm: |
-|           atomic            |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|       cleanup_on_fail       |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|            devel            |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|        disable_hooks        |    🙅     |       bool       |  false  |                  | :simple-helm: |
-| disable_open_api_validation |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|            force            |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|         enable_dns          |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|          recreate           |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|        reset_values         |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|        reuse_values         |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|          skip_crds          |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|          sub_notes          |    🙅     |       bool       |  false  |                  | :simple-helm: |
-|        post_renderer        |    🙅     |      array       |   []    |        ✅         | :simple-helm: |
+|      create_namespace       |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|           values            |    🙅    |      array       |   []    |        ✅         | :simple-helm: |
+|            tags             |    🙅    |      array       |   []    |        ✅         |               |
+|    offline_kube_version     |    🙅    |      string      |   ""    |        ✅         |               |
+|            store            |    🙅    |      object      |   {}    |        ✅         |               |
+|          lifecycle          |    🙅    |      object      |   {}    |        ✅         |               |
+|         depends_on          |    🙅    |      array       |   []    |        ✅         |               |
+|        allow_failure        |    🙅    |       bool       |  false  |                  |               |
+|  pending_release_strategy   |    🙅    |      string      |   ""    |                  |               |
+|            wait             |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|        wait_for_jobs        |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|           timeout           |    🙅    |     interval     |   5m    |                  | :simple-helm: |
+|         max_history         |    🙅    |       int        |    0    |                  | :simple-helm: |
+|           context           |    🙅    |      string      |   ""    |                  |               |
+|         description         |    🙅    |      string      |   ""    |                  | :simple-helm: |
+|           atomic            |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|       cleanup_on_fail       |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|            devel            |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|        disable_hooks        |    🙅    |       bool       |  false  |                  | :simple-helm: |
+| disable_open_api_validation |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|            force            |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|         enable_dns          |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|          recreate           |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|        reset_values         |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|        reuse_values         |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|          skip_crds          |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|          sub_notes          |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|        post_renderer        |    🙅    |      array       |   []    |        ✅         | :simple-helm: |
 
 ### name
 
@@ -256,20 +257,20 @@ Release name. I hope you know what it is.
 
 
 |         field          | required |  type  | default |
-| :--------------------: | :------: | :----: | :-----: |
+|:----------------------:|:--------:|:------:|:-------:|
 |        **name**        |    ✅     | string |   ""    |
-|      **version**       |    🙅     | string |   ""    |
-|        username        |    🙅     | string |   ""    |
-|        password        |    🙅     | string |   ""    |
-|        ca_file         |    🙅     | string |   ""    |
-|       cert_file        |    🙅     | string |   ""    |
-|        key_file        |    🙅     | string |   ""    |
-|        insecure        |    🙅     |  bool  |  false  |
-|        keyring         |    🙅     | string |   ""    |
-|    pass_credentials    |    🙅     |  bool  |  false  |
-|         verify         |    🙅     |  bool  |  false  |
-| skip_dependency_update |    🙅     |  bool  |  false  |
-|      skip_refresh      |    🙅     |  bool  |  false  |
+|      **version**       |    🙅    | string |   ""    |
+|        username        |    🙅    | string |   ""    |
+|        password        |    🙅    | string |   ""    |
+|        ca_file         |    🙅    | string |   ""    |
+|       cert_file        |    🙅    | string |   ""    |
+|        key_file        |    🙅    | string |   ""    |
+|        insecure        |    🙅    |  bool  |  false  |
+|        keyring         |    🙅    | string |   ""    |
+|    pass_credentials    |    🙅    |  bool  |  false  |
+|         verify         |    🙅    |  bool  |  false  |
+| skip_dependency_update |    🙅    |  bool  |  false  |
+|      skip_refresh      |    🙅    |  bool  |  false  |
 
 `chart` can be an object or a string. If it's a string, it will be treated as a `name`.
 
@@ -327,12 +328,12 @@ releases:
 > `values` can be an object or a string. If it's a string, it will be treated as a `src` field.
 
 |      field      | required |  type  | default |
-| :-------------: | :------: | :----: | :-----: |
+|:---------------:|:--------:|:------:|:-------:|
 |     **src**     |    ✅     | string |   ""    |
-| delimiter_left  |    🙅     | string |  "{{"   |
-| delimiter_right |    🙅     | string |  "}}"   |
-|     strict      |    🙅     |  bool  |  false  |
-|     render      |    🙅     |  bool  |  true   |
+| delimiter_left  |    🙅    | string |  "{{"   |
+| delimiter_right |    🙅    | string |  "}}"   |
+|     strict      |    🙅    |  bool  |  false  |
+|     render      |    🙅    |  bool  |  true   |
 
 === "short syntax"
 
@@ -430,10 +431,10 @@ It allows passing your custom fields from `helmwave.yml` to values.
 `depends_on` can be an object or a string. If it's a string, it will be treated as a `name`.
 
 |  field   | required |  type  | default |
-| :------: | :------: | :----: | :-----: |
-| **name** |    🙅     | string |   ""    |
-|   tag    |    🙅     | string |   ""    |
-| optional |    🙅     |  bool  |  false  |
+|:--------:|:--------:|:------:|:-------:|
+| **name** |    🙅    | string |   ""    |
+|   tag    |    🙅    | string |   ""    |
+| optional |    🙅    |  bool  |  false  |
 
 `depends_on` is a list of releases that allow you to deploy a sequence.
 
