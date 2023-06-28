@@ -18,6 +18,7 @@ lifecycle:
       - cmd: "ls"
         args: ["-l", "-a"]
         show: false
+        allow_failure: false
       - echo "run global pre_build script"
     post_build:
       - echo "run global post_build script"
@@ -36,14 +37,14 @@ releases:
       chart:
         name: stable/my-chart
         version: "0.2.0"
-        cafile: ""
-        certfile: ""
-        keyfile: ""
-        insecureskiptlsverify: false
+        ca_file: ""
+        cert_file: ""
+        key_file: ""
+        insecure: false
         keyring: ""
         password: ""
-        passcredentialsall: false
-        repourl: ""
+        pass_credentials: false
+        repo_url: ""
         username: ""
         verify: false
 
