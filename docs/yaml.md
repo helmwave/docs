@@ -299,6 +299,63 @@ Release name. I hope you know what it is.
 
 !!! tip "If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during deploy."
 
+#### name
+
+Can be `oci://`, local or repository chart.
+
+=== oci
+
+    ```yaml
+    releases:
+      - name: my-release
+        namespace: my-namespace
+        chart: oci://my-registry.io/my-chart
+    ```
+
+=== local
+
+    ```yaml
+    releases:
+      - name: my-release
+        namespace: my-namespace
+        chart: ./my-chart
+    ```
+
+=== repository
+
+    ```yaml
+    releases:
+      - name: my-release
+        namespace: my-namespace
+        chart: bitnami/nats
+    ```
+
+#### version
+
+Chart version. If not set, latest will be used.
+
+    ```yaml
+    releases:
+      - name: my-release
+        namespace: my-namespace
+        chart:
+          name: my-chart
+          version: 1.2.3
+    ```
+
+#### skip_dependency_update
+
+> Introduced in [:material-tag: v0.29.1](https://github.com/helmwave/helmwave/releases/tag/v0.29.1)
+
+Disable Helm dependency update.
+
+#### skip_refresh
+
+> Introduced in [:material-tag: v0.29.1](https://github.com/helmwave/helmwave/releases/tag/v0.29.1)
+
+Disable Helm repository refresh.
+
+
 ### create_namespace
 
 > Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
