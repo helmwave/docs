@@ -520,7 +520,10 @@ You're not viewing the latest version.
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="s">"ls"</span>
 <span class="w">      </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"-l"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-a"</span><span class="p p-Indicator">]</span>
 <span class="w">      </span><span class="nt">show</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "global pre_build"</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash</span>
+<span class="w">      </span><span class="nt">args</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-c</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "global ${HELMWAVE_LIFECYCLE_TYPE}"</span>
 <span class="w">  </span><span class="nt">post_build</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "global post_build"</span>
 <span class="w">  </span><span class="nt">pre_up</span><span class="p">:</span>
@@ -551,7 +554,6 @@ You're not viewing the latest version.
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oci://registry-1.docker.io/bitnamicharts/nats</span>
 <span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7.8.3</span><span class="w"> </span><span class="c1"># best practice</span>
 
-
 <span class="nt">releases</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nats</span>
 <span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span>
@@ -562,7 +564,10 @@ You're not viewing the latest version.
 <span class="w">      </span><span class="nt">post_up</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "post_up for nats"</span>
 <span class="w">      </span><span class="nt">pre_build</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "pre_build for nats"</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash</span>
+<span class="w">          </span><span class="nt">args</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-c</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "${HELMWAVE_LIFECYCLE_TYPE} for ${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}"</span>
 <span class="w">      </span><span class="nt">post_build</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "post_build for nats"</span>
 <span class="w">      </span><span class="nt">pre_down</span><span class="p">:</span>
@@ -576,11 +581,11 @@ You're not viewing the latest version.
 </code></pre></div>
 <div class="highlight"><span class="filename">$ helmwave build --diff-mode none</span><pre><span></span><code><span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>Running<span class="w"> </span>pre-build<span class="w"> </span>hooks...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>running<span class="w"> </span>hook...
-<span class="w">        </span>args:
-<span class="w">          </span>-<span class="w"> </span><span class="s2">"global</span>
-<span class="s2">          - pre_build"</span>
-<span class="w">        </span>cmd:<span class="w"> </span><span class="nb">echo</span>
-<span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span><span class="s2">"global pre_build"</span>
+<span class="w">    </span>cmd:<span class="w"> </span>bash
+<span class="w">    </span>args:
+<span class="w">      </span>-<span class="w"> </span>-c
+<span class="w">      </span>-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"global </span><span class="si">${</span><span class="nv">HELMWAVE_LIFECYCLE_TYPE</span><span class="si">}</span><span class="s2">"</span>
+<span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>global<span class="w"> </span>pre-build
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🔨<span class="w"> </span>Building<span class="w"> </span>releases...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🔨<span class="w"> </span>Building<span class="w"> </span>graphs...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>show<span class="w"> </span>graph:
@@ -590,52 +595,52 @@ You're not viewing the latest version.
 
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🔨<span class="w"> </span>Building<span class="w"> </span>values...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🔨<span class="w"> </span>no<span class="w"> </span>values<span class="w"> </span>provided
-<span class="w">        </span>release:<span class="w"> </span>nats@my-namespace
+<span class="w">    </span>release:<span class="w"> </span>nats@my-namespace
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🔨<span class="w"> </span>Building<span class="w"> </span>repositories...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🔨<span class="w"> </span>Building<span class="w"> </span>registries...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🗄<span class="w"> </span>registry<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>added<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>plan
-<span class="w">        </span>registry:<span class="w"> </span>registry-1.docker.io
+<span class="w">    </span>registry:<span class="w"> </span>registry-1.docker.io
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🔨<span class="w"> </span>Building<span class="w"> </span>charts...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>Pulled:<span class="w"> </span>registry-1.docker.io/bitnamicharts/nats:7.8.3
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>Digest:<span class="w"> </span>sha256:5f80350b8a85177e4a9c7ed968f77c47bedcc461418172fb66594bc61fa1ffac
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🔨<span class="w"> </span>Building<span class="w"> </span>manifests...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>❎<span class="w"> </span>skipping<span class="w"> </span>updating<span class="w"> </span>dependencies<span class="w"> </span><span class="k">for</span><span class="w"> </span>remote<span class="w"> </span>chart
-<span class="w">        </span>release:<span class="w"> </span>nats@my-namespace
+<span class="w">    </span>release:<span class="w"> </span>nats@my-namespace
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>Running<span class="w"> </span>pre-build<span class="w"> </span>hooks...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>running<span class="w"> </span>hook...
-<span class="w">        </span>args:
-<span class="w">          </span>-<span class="w"> </span><span class="s2">"pre_build</span>
-<span class="s2">          - for</span>
-<span class="s2">          - nats"</span>
-<span class="w">        </span>cmd:<span class="w"> </span><span class="nb">echo</span>
-<span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span><span class="s2">"pre_build for nats"</span>
+<span class="w">    </span>args:
+<span class="w">      </span>-<span class="w"> </span>-c
+<span class="w">      </span>-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">HELMWAVE_LIFECYCLE_TYPE</span><span class="si">}</span><span class="s2"> for </span><span class="si">${</span><span class="nv">HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">    </span>cmd:<span class="w"> </span>bash
+<span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>pre-build<span class="w"> </span><span class="k">for</span><span class="w"> </span>nats@my-namespace
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>Pulled:<span class="w"> </span>registry-1.docker.io/bitnamicharts/nats:7.8.3
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>Digest:<span class="w"> </span>sha256:5f80350b8a85177e4a9c7ed968f77c47bedcc461418172fb66594bc61fa1ffac
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>Running<span class="w"> </span>post-build<span class="w"> </span>hooks...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>running<span class="w"> </span>hook...
-<span class="w">        </span>args:
-<span class="w">          </span>-<span class="w"> </span><span class="s2">"post_build</span>
-<span class="s2">          - for</span>
-<span class="s2">          - nats"</span>
-<span class="w">        </span>cmd:<span class="w"> </span><span class="nb">echo</span>
+<span class="w">    </span>cmd:<span class="w"> </span><span class="nb">echo</span>
+<span class="w">    </span>args:
+<span class="w">      </span>-<span class="w"> </span><span class="s2">"post_build</span>
+<span class="s2">      - for</span>
+<span class="s2">      - nats"</span>
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span><span class="s2">"post_build for nats"</span>
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>✅<span class="w">  </span>manifest<span class="w"> </span><span class="k">done</span>
-<span class="w">        </span>release:<span class="w"> </span>nats@my-namespace
+<span class="w">    </span>release:<span class="w"> </span>nats@my-namespace
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>Running<span class="w"> </span>post-build<span class="w"> </span>hooks...
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🩼<span class="w"> </span>running<span class="w"> </span>hook...
-<span class="w">        </span>cmd:<span class="w"> </span><span class="nb">echo</span>
-<span class="w">        </span>args:
-<span class="w">          </span>-<span class="w"> </span><span class="s2">"global</span>
-<span class="s2">          - post_build"</span>
+<span class="w">    </span>cmd:<span class="w"> </span><span class="nb">echo</span>
+<span class="w">    </span>args:
+<span class="w">      </span>-<span class="w"> </span><span class="s2">"global</span>
+<span class="s2">      - post_build"</span>
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span><span class="s2">"global post_build"</span>
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🏗<span class="w"> </span>Plan
-<span class="w">        </span>repositories:
-<span class="w">          </span>-
-<span class="w">        </span>registries:
-<span class="w">          </span>-<span class="w"> </span>registry-1.docker.io
-<span class="w">        </span>releases:
-<span class="w">          </span>-<span class="w"> </span>nats@my-namespace
-<span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🆚<span class="w"> </span>Skip<span class="w"> </span>diffing
+<span class="w">    </span>releases:
+<span class="w">      </span>-<span class="w"> </span>nats@my-namespace
+<span class="w">    </span>repositories:
+<span class="w">      </span>-
+<span class="w">    </span>registries:
+<span class="w">      </span>-<span class="w"> </span>registry-1.docker.io
+<span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🆚<span class="w"> </span>Diff<span class="w"> </span>manifests<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>kubernetes<span class="w"> </span>cluster
+<span class="o">[</span>🙈<span class="w"> </span>aka<span class="w"> </span>WARNING<span class="o">]</span>:<span class="w"> </span>I<span class="w"> </span>can<span class="err">'</span>t<span class="w"> </span>get<span class="w"> </span>release<span class="w"> </span>from<span class="w"> </span>k8s:<span class="w"> </span>failed<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>release<span class="w"> </span>nats@my-namespace:<span class="w"> </span>release:<span class="w"> </span>not<span class="w"> </span>found
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>🏗<span class="w"> </span>Planfile<span class="w"> </span>is<span class="w"> </span>ready!
 </code></pre></div>
 </article>
