@@ -158,6 +158,16 @@ flowchart LR
     post_build --> pre_rollback --> post_rollback
 ```
 
+**environment**
+
+> Introduced in [:material-tag: v0.29.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
+
+To each lifecycle command several environment variables are passed:
+
+- `${HELMWAVE_LIFECYCLE_TYPE}` - contains lifecycle stage/type (`pre_build`/`post_build`/etc.)
+- `${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}` - *(only for per-release lifecycle)* contains release uniqname (`release@namespace`)
+
+
 ** Hook **
 
 |     field     | required |  type  | default |
@@ -203,16 +213,6 @@ Show output of the command.
 > Introduced in [:material-tag: v0.29.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
 
 Allow failure of the command.
-
-
-**environment**
-
-> Introduced in [:material-tag: v0.29.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
-
-To each lifecycle command several environment variables are passed:
-
-- `${HELMWAVE_LIFECYCLE_TYPE}` - contains lifecycle stage/type (`pre_build`/`post_build`/etc.)
-- `${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}` - *(only for per-release lifecycle)* contains release uniqname (`release@namespace`)
 
 
 ## releases[]
