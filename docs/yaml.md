@@ -341,7 +341,7 @@ releases:
     chart:
       name: my-chart
       version: 1.2.3
- ```
+```
 
 #### skip_dependency_update
 
