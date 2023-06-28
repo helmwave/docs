@@ -138,16 +138,48 @@ We don't call lifecycle the hooks on purpose
 so as not to confuse you with the original functionality of [:simple-helm: helm hooks](https://helm.sh/docs/topics/charts_hooks/).
 
 
-|     field     | required | type  | default |
-|:-------------:|:--------:|:-----:|:-------:|
-|    pre_up     |    🙅    | array |   []    |
-|    post_up    |    🙅    | array |   []    |
-|   pre_down    |    🙅    | array |   []    |
-|   post_down   |    🙅    | array |   []    |
-|   pre_build   |    🙅    | array |   []    |
-|  post_build   |    🙅    | array |   []    |
-| pre_rollback  |    🙅    | array |   []    |
-| post_rollback |    🙅    | array |   []    |
+|     field     | required |  type  | default |
+|:-------------:|:--------:|:------:|:-------:|
+|    pre_up     |    🙅    | []Hook |   []    |
+|    post_up    |    🙅    | []Hook |   []    |
+|   pre_down    |    🙅    | []Hook |   []    |
+|   post_down   |    🙅    | []Hook |   []    |
+|   pre_build   |    🙅    | []Hook |   []    |
+|  post_build   |    🙅    | []Hook |   []    |
+| pre_rollback  |    🙅    | []Hook |   []    |
+| post_rollback |    🙅    | []Hook |   []    |
+
+
+```mermaid
+flowchart LR
+    pre_build --> post_build
+    post_build --> pre_up --> post_up
+    post_build --> pre_down --> post_down
+    post_build --> pre_rollback --> post_rollback
+```
+
+**environment**
+
+> Introduced in [:material-tag: v0.29.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
+
+To each lifecycle command several environment variables are passed:
+
+- `${HELMWAVE_LIFECYCLE_TYPE}` - contains lifecycle stage/type (`pre_build`/`post_build`/etc.)
+- `${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}` - *(only for per-release lifecycle)* contains release uniqname (`release@namespace`)
+
+
+** Hook **
+
+|     field     | required |  type  | default |
+|:-------------:|:--------:|:------:|:-------:|
+|      cmd      |    ✅     | string |   ""    |
+|     args      |    🙅    | array  |   []    |
+|     show      |    🙅    |  bool  |  true   |
+| allow_failure |    🙅    |  bool  |  false  |
+
+[:material-duck: example](examples/lifecycle/README.md)
+
+### cmd, args
 
 === "short syntax"
 
@@ -165,19 +197,22 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
     lifecycle:
       pre_build:
         - cmd: echo 
-          args: ['"run', 'global', 'pre_build', 'script"']
+          args:
+            - "run global pre_build script"
           show: true
+          allow_failure: false
     ```
+### show
 
-```mermaid
-flowchart LR
-    pre_build --> post_build
-    post_build --> pre_up --> post_up
-    post_build --> pre_down --> post_down
-    post_build --> pre_rollback --> post_rollback
-```
+> Introduced in [:material-tag: v0.28.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
 
-[:material-duck: example](examples/lifecycle/README.md)
+Show output of the command.
+
+### allow_failure
+
+> Introduced in [:material-tag: v0.29.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
+
+Allow failure of the command.
 
 
 ## releases[]
@@ -237,19 +272,22 @@ Release name. I hope you know what it is.
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
 
 
-|      field       | required |  type  | default |
-|:----------------:|:--------:|:------:|:-------:|
-|     **name**     |    ✅     | string |   ""    |
-|   **version**    |    🙅    | string |   ""    |
-|     username     |    🙅    | string |   ""    |
-|     password     |    🙅    | string |   ""    |
-|     ca_file      |    🙅    | string |   ""    |
-|    cert_file     |    🙅    | string |   ""    |
-|     key_file     |    🙅    | string |   ""    |
-|     insecure     |    🙅    |  bool  |  false  |
-|     keyring      |    🙅    | string |   ""    |
-| pass_credentials |    🙅    |  bool  |  false  |
-|      verify      |    🙅    |  bool  |  false  |
+|         field          | required |  type  | default |
+|:----------------------:|:--------:|:------:|:-------:|
+|        **name**        |    ✅     | string |   ""    |
+|      **version**       |    🙅    | string |   ""    |
+|        username        |    🙅    | string |   ""    |
+|        password        |    🙅    | string |   ""    |
+|        ca_file         |    🙅    | string |   ""    |
+|       cert_file        |    🙅    | string |   ""    |
+|        key_file        |    🙅    | string |   ""    |
+|        repo_url        |    🙅    | string |   ""    |
+|        insecure        |    🙅    |  bool  |  false  |
+|        keyring         |    🙅    | string |   ""    |
+|    pass_credentials    |    🙅    |  bool  |  false  |
+|         verify         |    🙅    |  bool  |  false  |
+| skip_dependency_update |    🙅    |  bool  |  false  |
+|      skip_refresh      |    🙅    |  bool  |  false  |
 
 `chart` can be an object or a string. If it's a string, it will be treated as a `name`.
 
@@ -277,6 +315,63 @@ Release name. I hope you know what it is.
 
 
 !!! tip "If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during deploy."
+
+#### name
+
+Can be `oci://`, local or repository chart.
+
+=== "oci"
+
+    ```yaml
+    releases:
+      - name: my-release
+        namespace: my-namespace
+        chart: oci://my-registry.io/my-chart
+    ```
+
+=== "local"
+
+    ```yaml
+    releases:
+      - name: my-release
+        namespace: my-namespace
+        chart: ./my-chart
+    ```
+
+=== "repository"
+
+    ```yaml
+    releases:
+      - name: my-release
+        namespace: my-namespace
+        chart: bitnami/nats
+    ```
+
+#### version
+
+Chart version. If not set, latest will be used.
+
+```yaml
+releases:
+  - name: my-release
+    namespace: my-namespace
+    chart:
+      name: my-chart
+      version: 1.2.3
+```
+
+#### skip_dependency_update
+
+> Introduced in [:material-tag: v0.29.1](https://github.com/helmwave/helmwave/releases/tag/v0.29.1)
+
+Disable Helm dependency update.
+
+#### skip_refresh
+
+> Introduced in [:material-tag: v0.29.1](https://github.com/helmwave/helmwave/releases/tag/v0.29.1)
+
+Disable Helm repository refresh.
+
 
 ### create_namespace
 
@@ -673,4 +768,3 @@ This option determines whether sub-notes are rendered in the chart.
 
 
 You can use custom commands to change rendered manifests.
-
