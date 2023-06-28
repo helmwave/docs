@@ -303,7 +303,7 @@ Release name. I hope you know what it is.
 
 Can be `oci://`, local or repository chart.
 
-=== oci
+=== "oci"
 
     ```yaml
     releases:
@@ -312,7 +312,7 @@ Can be `oci://`, local or repository chart.
         chart: oci://my-registry.io/my-chart
     ```
 
-=== local
+=== "local"
 
     ```yaml
     releases:
@@ -321,7 +321,7 @@ Can be `oci://`, local or repository chart.
         chart: ./my-chart
     ```
 
-=== repository
+=== "repository"
 
     ```yaml
     releases:
