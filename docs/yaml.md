@@ -334,14 +334,14 @@ Can be `oci://`, local or repository chart.
 
 Chart version. If not set, latest will be used.
 
-    ```yaml
-    releases:
-      - name: my-release
-        namespace: my-namespace
-        chart:
-          name: my-chart
-          version: 1.2.3
-    ```
+```yaml
+releases:
+  - name: my-release
+    namespace: my-namespace
+    chart:
+      name: my-chart
+      version: 1.2.3
+ ```
 
 #### skip_dependency_update
 
