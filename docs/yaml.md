@@ -160,12 +160,12 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
 
 === "full syntax"
 
-|     field     | required |  type  | default |
-| :-----------: | :------: | :----: | :-----: |
-|      cmd      |    ✅     | string |   ""    |
-|     args      |    🙅     | array  |   []    |
-|     show      |    🙅     |  bool  |  true   |
-| allow_failure |    🙅     |  bool  |  false  |
+    |     field     | required |  type  | default |
+    | :-----------: | :------: | :----: | :-----: |
+    |      cmd      |    ✅     | string |   ""    |
+    |     args      |    🙅     | array  |   []    |
+    |     show      |    🙅     |  bool  |  true   |
+    | allow_failure |    🙅     |  bool  |  false  |
 
     ```yaml
     version: ⟨⟨ ver ⟩⟩
