@@ -186,14 +186,16 @@ flowchart LR
     post_build --> pre_rollback --> post_rollback
 ```
 
-[:material-duck: example](examples/lifecycle/README.md)
+**environment**
 
-### environment
+> Introduced in [:material-tag: v0.29.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
 
 To each lifecycle command several environment variables are passed:
 
 - `${HELMWAVE_LIFECYCLE_TYPE}` - contains lifecycle stage/type (`pre_build`/`post_build`/etc.)
 - `${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}` - *(only for per-release lifecycle)* contains release uniqname (`release@namespace`)
+
+[:material-duck: example](examples/lifecycle/README.md)
 
 
 ## releases[]
@@ -253,20 +255,21 @@ Release name. I hope you know what it is.
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
 
 
-|          field          | required |  type  | default |
-| :---------------------: | :------: | :----: | :-----: |
-|        **name**         |    ✅     | string |   ""    |
-|       **version**       |    🙅     | string |   ""    |
-|        username         |    🙅     | string |   ""    |
-|        password         |    🙅     | string |   ""    |
-|         ca_file         |    🙅     | string |   ""    |
-|        cert_file        |    🙅     | string |   ""    |
-|        key_file         |    🙅     | string |   ""    |
-|        insecure         |    🙅     |  bool  |  false  |
-|         keyring         |    🙅     | string |   ""    |
-|    pass_credentials     |    🙅     |  bool  |  false  |
-|         verify          |    🙅     |  bool  |  false  |
-| skip_dependency_refresh |    🙅     |  bool  |  false  |
+|         field          | required |  type  | default |
+| :--------------------: | :------: | :----: | :-----: |
+|        **name**        |    ✅     | string |   ""    |
+|      **version**       |    🙅     | string |   ""    |
+|        username        |    🙅     | string |   ""    |
+|        password        |    🙅     | string |   ""    |
+|        ca_file         |    🙅     | string |   ""    |
+|       cert_file        |    🙅     | string |   ""    |
+|        key_file        |    🙅     | string |   ""    |
+|        insecure        |    🙅     |  bool  |  false  |
+|        keyring         |    🙅     | string |   ""    |
+|    pass_credentials    |    🙅     |  bool  |  false  |
+|         verify         |    🙅     |  bool  |  false  |
+| skip_dependency_update |    🙅     |  bool  |  false  |
+|      skip_refresh      |    🙅     |  bool  |  false  |
 
 `chart` can be an object or a string. If it's a string, it will be treated as a `name`.
 

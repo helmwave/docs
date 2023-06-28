@@ -4,7 +4,10 @@ lifecycle:
     - cmd: "ls"
       args: ["-l", "-a"]
       show: false
-    - echo "global pre_build"
+    - cmd: bash
+      args:
+        - -c
+        - echo "global ${HELMWAVE_LIFECYCLE_TYPE}"
   post_build:
     - echo "global post_build"
   pre_up:
@@ -35,7 +38,6 @@ registries:
     name: oci://registry-1.docker.io/bitnamicharts/nats
     version: 7.8.3 # best practice
 
-
 releases:
   - name: nats
     <<: *options
@@ -46,7 +48,10 @@ releases:
       post_up:
         - echo "post_up for nats"
       pre_build:
-        - echo "pre_build for nats"
+        - cmd: bash
+          args:
+            - -c
+            - echo "${HELMWAVE_LIFECYCLE_TYPE} for ${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}"
       post_build:
         - echo "post_build for nats"
       pre_down:
