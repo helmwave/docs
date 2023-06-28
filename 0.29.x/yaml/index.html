@@ -1426,9 +1426,7 @@ so as not to confuse you with the original functionality of <a href="https://hel
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "run global pre_build script"</span>
 </code></pre></div>
 </div>
-<div class="tabbed-block"></div>
-</div>
-</input></input></div>
+<div class="tabbed-block">
 <table>
 <thead>
 <tr>
@@ -1465,17 +1463,18 @@ so as not to confuse you with the original functionality of <a href="https://hel
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code>```yaml
-version: 0.29.0
-lifecycle:
-  pre_build:
-    - cmd: echo 
-      args:
-        - "run global pre_build script"
-      show: true
-      allow_failure: false
-```
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.29.0</span>
+<span class="nt">lifecycle</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pre_build</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">args</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"run</span><span class="nv"> </span><span class="s">global</span><span class="nv"> </span><span class="s">pre_build</span><span class="nv"> </span><span class="s">script"</span>
+<span class="w">      </span><span class="nt">show</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
+</div>
+</div>
+</input></input></div>
 <div class="mermaid">flowchart LR
     pre_build --&gt; post_build
     post_build --&gt; pre_up --&gt; post_up
