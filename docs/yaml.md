@@ -138,16 +138,27 @@ We don't call lifecycle the hooks on purpose
 so as not to confuse you with the original functionality of [:simple-helm: helm hooks](https://helm.sh/docs/topics/charts_hooks/).
 
 
-|     field     | required | type  | default |
-|:-------------:|:--------:|:-----:|:-------:|
-|    pre_up     |    🙅    | array |   []    |
-|    post_up    |    🙅    | array |   []    |
-|   pre_down    |    🙅    | array |   []    |
-|   post_down   |    🙅    | array |   []    |
-|   pre_build   |    🙅    | array |   []    |
-|  post_build   |    🙅    | array |   []    |
-| pre_rollback  |    🙅    | array |   []    |
-| post_rollback |    🙅    | array |   []    |
+|     field     | required |  type  | default |
+|:-------------:|:--------:|:------:|:-------:|
+|    pre_up     |    🙅    | []Hook |   []    |
+|    post_up    |    🙅    | []Hook |   []    |
+|   pre_down    |    🙅    | []Hook |   []    |
+|   post_down   |    🙅    | []Hook |   []    |
+|   pre_build   |    🙅    | []Hook |   []    |
+|  post_build   |    🙅    | []Hook |   []    |
+| pre_rollback  |    🙅    | []Hook |   []    |
+| post_rollback |    🙅    | []Hook |   []    |
+
+
+```mermaid
+flowchart LR
+    pre_build --> post_build
+    post_build --> pre_up --> post_up
+    post_build --> pre_down --> post_down
+    post_build --> pre_rollback --> post_rollback
+```
+
+** Hook **
 
 |     field     | required |  type  | default |
 |:-------------:|:--------:|:------:|:-------:|
@@ -156,6 +167,9 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
 |     show      |    🙅    |  bool  |  true   |
 | allow_failure |    🙅    |  bool  |  false  |
 
+[:material-duck: example](examples/lifecycle/README.md)
+
+### cmd, args
 
 === "short syntax"
 
@@ -178,16 +192,18 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
           show: true
           allow_failure: false
     ```
+### show
 
-```mermaid
-flowchart LR
-    pre_build --> post_build
-    post_build --> pre_up --> post_up
-    post_build --> pre_down --> post_down
-    post_build --> pre_rollback --> post_rollback
-```
+> Introduced in [:material-tag: v0.28.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
 
-[:material-duck: example](examples/lifecycle/README.md)
+Show output of the command.
+
+### allow_failure
+
+> Introduced in [:material-tag: v0.29.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
+
+Allow failure of the command.
+
 
 **environment**
 
@@ -265,6 +281,7 @@ Release name. I hope you know what it is.
 |        ca_file         |    🙅    | string |   ""    |
 |       cert_file        |    🙅    | string |   ""    |
 |        key_file        |    🙅    | string |   ""    |
+|        repo_url        |    🙅    | string |   ""    |
 |        insecure        |    🙅    |  bool  |  false  |
 |        keyring         |    🙅    | string |   ""    |
 |    pass_credentials    |    🙅    |  bool  |  false  |
