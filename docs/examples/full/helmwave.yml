@@ -88,7 +88,6 @@ releases:
       atomic: true
       cleanup_on_fail: false
       create_namespace: false
-      devel: false
       disable_hooks: false
       disable_openapi_validation: false
       force: false
