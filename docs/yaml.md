@@ -241,7 +241,6 @@ Almost all options that are here are native :simple-helm: helm options.
 |         description         |    🙅    |      string      |   ""    |                  | :simple-helm: |
 |           atomic            |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |       cleanup_on_fail       |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|            devel            |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |        disable_hooks        |    🙅    |       bool       |  false  |                  | :simple-helm: |
 | disable_open_api_validation |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |            force            |    🙅    |       bool       |  false  |                  | :simple-helm: |
@@ -681,10 +680,10 @@ Allow deletion of new resources created in this upgrade when upgrade fails.
 
 ### devel
 
-> Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
+> Removed in [:material-tag: v0.29.3](https://github.com/helmwave/helmwave/releases/tag/v0.29.3) as it wasn't functioning properly.
 
 
-Use development versions, too. Equivalent to version '>0.0.0-0'.
+If you need to use development version, set `version: ">0.0.0-0"`.
 
 ### disable_hooks
 
