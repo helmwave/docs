@@ -59,7 +59,7 @@ helmwave build -t plantuml
 helmwave up
 ```
 
-looks how to work [HELMWAVE_TAGS](../../yaml/#tags)
+Check out how to use [HELMWAVE_TAGS](../../yaml/#tags)
 
 ## CI/CD with Gitlab-CI
 
