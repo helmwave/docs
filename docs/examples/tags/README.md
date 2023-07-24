@@ -19,7 +19,7 @@ It works with next flags for [`build` command](../cli/#step-1-building-a-plan)
     3. memcached-a
     4. memcached-b
 
-<img width="200" src="https://habrastorage.org/webt/45/f7/o_/45f7o_wad_mokyvpy-rtmqs7rno.png" />
+<img width="200" alt="which tags include which releases" src="https://habrastorage.org/webt/45/f7/o_/45f7o_wad_mokyvpy-rtmqs7rno.png" />
 
 :material-duck: example of `helmwave.yml` for this case.
 
