@@ -7,4 +7,4 @@
 - `plan` - diff with local plan
 - `none` - disable diff
 
-![diff example](../assets/diff.png)
+![diff example](assets/diff.png)
