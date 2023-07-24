@@ -4,8 +4,8 @@ Enable/Disable color in output.
 
 === "--log-color=false"
 
-    ![log-color=false](assets/log-color-false.png)
+    ![output with disabled log colors](assets/log-color-false.png)
 
 === "--log-color=true"
 
-    ![log-color=true](assets/log-color-true.png)
+    ![output with enabled log colors](assets/log-color-true.png)

@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# 🔌 IDE supports
+# 🔌 IDE support
 
 Currently, we don't have any plugins for popular IDEs. You can help us with it 🩵.
 
@@ -42,17 +42,17 @@ wget -L https://github.com/helmwave/helmwave/releases/latest/download/schema.jso
     }
     ```
 
-    ![vscode yaml schema](assets/yaml-schema-vscode.png)
+    ![How to update yaml schema in VSCode](assets/yaml-schema-vscode.png)
 
 
 === ":simple-intellijidea: IntelliJ IDEA"
 
-    ![idea bar](assets/yaml-schema-idea-bar.png)
-    ![vscode yaml schema](assets/yaml-schema-idea.png)
+    ![How to enable jsonschema in IntelliJ IDEA](assets/yaml-schema-idea-bar.png)
+    ![How to update JSONSchema in IntelliJ IDEA](assets/yaml-schema-idea.png)
 
     set file pattern: helmwave.yml
 
-    ![vscode yaml schema](assets/yaml-schema-idea-file.png)
+    ![How to set file patter for JSONSchema in IntelliJ IDEA](assets/yaml-schema-idea-file.png)
 
     restart idea.
 

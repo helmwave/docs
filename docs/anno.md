@@ -22,9 +22,9 @@ metadata:
 
 Skip resource for `helm diff` function.
 
-This is very useful for secret or sensitive data.
+This is very useful for hiding Secret or sensitive data.
 
-mention with `--show-secret` flag.
+Useful with `--show-secret` flag.
 
 ```yaml
 apiVersion: v1
@@ -32,7 +32,7 @@ kind: Secret
 metadata:
   name: my-secret
   annotations:
-    helmwave.dev/show-service-messages: "true"
+    helmwave.dev/skip-diff: "true"
 ```
 
 ## [kubedog's annotations](https://github.com/werf/kubedog) 🐶
