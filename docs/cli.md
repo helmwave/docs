@@ -313,7 +313,7 @@ Generates scripts for shell completion.
     echo "source <(helmwave completion bash)" >> ~/.bashrc
     ```
 
-    ![completion-bash](assets/completion-bash.png)
+    ![bash completion example](assets/completion-bash.png)
 
 === ":material-bash: zsh"
 
@@ -327,7 +327,7 @@ Generates scripts for shell completion.
     echo "source <(helmwave completion zsh)" >> ~/.zshrc
     ```
     
-    ![completion-zsh](assets/completion-zsh.png)
+    ![zsh completion example](assets/completion-zsh.png)
 
 ## `schema`
 
