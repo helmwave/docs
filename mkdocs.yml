@@ -63,6 +63,9 @@ plugins:
       module_name: lib # lib.py
   - mermaid2
   - include-markdown
+  - exclude:
+      glob:
+        - flags/*
 
 theme:
   palette:
