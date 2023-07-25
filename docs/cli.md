@@ -87,11 +87,14 @@ Helmwave will install repositories and :simple-helm: helm releases from a plan.
 {% include "flags/progress.md" %}
 {% include "flags/parallel-limit.md" %}
 ---
+> Introduced in [:material-tag: v0.8.0](https://github.com/helmwave/helmwave/releases/tag/v0.8.0)
+
 {% include "flags/kubedog.md" %}
 {% include "flags/kubedog-status-interval.md" %}
 {% include "flags/kubedog-start-delay.md" %}
 {% include "flags/kubedog-timeout.md" %}
 {% include "flags/kubedog-log-width.md" %}
+{% include "flags/kubedog-track-all.md" %}
 
 ## `down`
 
@@ -190,6 +193,16 @@ Rollback :simple-helm: helm releases from a plan.
     ```
 
 {% include "flags/revision.md" %}
+---
+> Introduced in [:material-tag: v0.30.0](https://github.com/helmwave/helmwave/releases/tag/v0.30.0)
+
+{% include "flags/kubedog.md" %}
+{% include "flags/kubedog-status-interval.md" %}
+{% include "flags/kubedog-start-delay.md" %}
+{% include "flags/kubedog-timeout.md" %}
+{% include "flags/kubedog-log-width.md" %}
+{% include "flags/kubedog-track-all.md" %}
+
 
 ```bash
 $ helmwave rollback      
