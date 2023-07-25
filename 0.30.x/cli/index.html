@@ -397,6 +397,11 @@ You're not viewing the latest version.
     --kubedog-log-width
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-track-all">
+    --kubedog-track-all
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -424,6 +429,36 @@ You're not viewing the latest version.
 <li class="md-nav__item">
 <a class="md-nav__link" href="#-revision">
     --revision
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog_1">
+    --kubedog
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-status-interval_1">
+    --kubedog-status-interval
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-start-delay_1">
+    --kubedog-start-delay
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-timeout_1">
+    --kubedog-timeout
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-log-width_1">
+    --kubedog-log-width
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-track-all_1">
+    --kubedog-track-all
   </a>
 </li>
 </ul>
@@ -875,6 +910,11 @@ You're not viewing the latest version.
     --kubedog-log-width
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-track-all">
+    --kubedog-track-all
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -902,6 +942,36 @@ You're not viewing the latest version.
 <li class="md-nav__item">
 <a class="md-nav__link" href="#-revision">
     --revision
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog_1">
+    --kubedog
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-status-interval_1">
+    --kubedog-status-interval
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-start-delay_1">
+    --kubedog-start-delay
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-timeout_1">
+    --kubedog-timeout
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-log-width_1">
+    --kubedog-log-width
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-kubedog-track-all_1">
+    --kubedog-track-all
   </a>
 </li>
 </ul>
@@ -1012,7 +1082,7 @@ USAGE:
 <span class="w">   </span>helmwave<span class="w"> </span><span class="o">[</span>global<span class="w"> </span>options<span class="o">]</span><span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="o">[</span><span class="nb">command</span><span class="w"> </span>options<span class="o">]</span><span class="w"> </span><span class="o">[</span>arguments...<span class="o">]</span>
 
 VERSION:
-<span class="w">   </span><span class="m">0</span>.29.3
+<span class="w">   </span><span class="m">0</span>.30.0
 
 DESCRIPTION:
 <span class="w">   </span>This<span class="w"> </span>tool<span class="w"> </span>helps<span class="w"> </span>you<span class="w"> </span>compose<span class="w"> </span>your<span class="w"> </span>helm<span class="w"> </span>releases!
@@ -1181,13 +1251,14 @@ You can pass <code>--yml</code> flag into <a href="#build"><code>build</code></a
 <details class="success">
 <summary>Flags</summary>
 <div class="highlight"><pre><span></span><code>--build<span class="w">                                            </span>auto<span class="w"> </span>build<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_AUTO_BUILD</span><span class="o">]</span>
+--progress<span class="w">                                         </span><span class="nb">enable</span><span class="w"> </span>progress<span class="w"> </span>logs<span class="w"> </span>of<span class="w"> </span>helm<span class="w"> </span><span class="o">(</span>INFO<span class="w"> </span>log<span class="w"> </span>level<span class="o">)</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_PROGRESS</span><span class="o">]</span>
+--parallel-limit<span class="w"> </span>value<span class="w">                             </span>limit<span class="w"> </span>amount<span class="w"> </span>of<span class="w"> </span>parallel<span class="w"> </span>releases<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_PARALLEL_LIMIT</span><span class="o">]</span>
 --kubedog<span class="w">                                          </span>enable/disable<span class="w"> </span>kubedog<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_ENABLED</span>,<span class="w"> </span><span class="nv">$HELMWAVE_KUBEDOG</span><span class="o">]</span>
 --kubedog-status-interval<span class="w"> </span>value<span class="w">                    </span>interval<span class="w"> </span>of<span class="w"> </span>kubedog<span class="w"> </span>status<span class="w"> </span>messages<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>5s<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_STATUS_INTERVAL</span><span class="o">]</span>
 --kubedog-start-delay<span class="w"> </span>value<span class="w">                        </span>delay<span class="w"> </span>kubedog<span class="w"> </span>start,<span class="w"> </span>don<span class="err">'</span>t<span class="w"> </span>make<span class="w"> </span>it<span class="w"> </span>too<span class="w"> </span>late<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>1s<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_START_DELAY</span><span class="o">]</span>
 --kubedog-timeout<span class="w"> </span>value<span class="w">                            </span>timeout<span class="w"> </span>of<span class="w"> </span>kubedog<span class="w"> </span>multitrackers<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>5m0s<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_TIMEOUT</span><span class="o">]</span>
 --kubedog-log-width<span class="w"> </span>value<span class="w">                          </span><span class="nb">set</span><span class="w"> </span>kubedog<span class="w"> </span>max<span class="w"> </span>log<span class="w"> </span>line<span class="w"> </span>width<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">140</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_LOG_WIDTH</span><span class="o">]</span>
---progress<span class="w">                                         </span><span class="nb">enable</span><span class="w"> </span>progress<span class="w"> </span>logs<span class="w"> </span>of<span class="w"> </span>helm<span class="w"> </span><span class="o">(</span>INFO<span class="w"> </span>log<span class="w"> </span>level<span class="o">)</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_PROGRESS</span><span class="o">]</span>
---parallel-limit<span class="w"> </span>value<span class="w">                             </span>limit<span class="w"> </span>amount<span class="w"> </span>of<span class="w"> </span>parallel<span class="w"> </span>releases<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_PARALLEL_LIMIT</span><span class="o">]</span>
+--kubedog-track-all<span class="w">                                </span>track<span class="w"> </span>almost<span class="w"> </span>all<span class="w"> </span>resources,<span class="w"> </span>experimental<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_TRACK_ALL</span><span class="o">]</span>
 --plandir<span class="w"> </span>value,<span class="w"> </span>-p<span class="w"> </span>value<span class="w">                          </span>path<span class="w"> </span>to<span class="w"> </span>plandir<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="s2">".helmwave/"</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_PLANDIR</span>,<span class="w"> </span><span class="nv">$HELMWAVE_PLAN</span><span class="o">]</span>
 --tags<span class="w"> </span>value,<span class="w"> </span>-t<span class="w"> </span>value<span class="w"> </span><span class="o">[</span><span class="w"> </span>--tags<span class="w"> </span>value,<span class="w"> </span>-t<span class="w"> </span>value<span class="w"> </span><span class="o">]</span><span class="w">  </span>build<span class="w"> </span>releases<span class="w"> </span>by<span class="w"> </span>tags:<span class="w"> </span>-t<span class="w"> </span>tag1<span class="w"> </span>-t<span class="w"> </span>tag3,tag4<span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_TAGS</span><span class="o">]</span>
 --match-all-tags<span class="w">                                   </span>match<span class="w"> </span>all<span class="w"> </span>provided<span class="w"> </span>tags<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_MATCH_ALL_TAGS</span><span class="o">]</span>
@@ -1297,10 +1368,10 @@ You can pass <code>--yml</code> flag into <a href="#build"><code>build</code></a
 </blockquote>
 <p>Limit the number of parallel helm operations.</p>
 <hr/>
-<h3 id="-kubedog"><code>--kubedog</code><a class="headerlink" href="#-kubedog" title="Permanent link">¶</a></h3>
 <blockquote>
 <p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.8.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.8.0</a></p>
 </blockquote>
+<h3 id="-kubedog"><code>--kubedog</code><a class="headerlink" href="#-kubedog" title="Permanent link">¶</a></h3>
 <p>Enable kubedog.</p>
 <h3 id="-kubedog-status-interval"><code>--kubedog-status-interval</code><a class="headerlink" href="#-kubedog-status-interval" title="Permanent link">¶</a></h3>
 <p>Set interval for kubedog status.</p>
@@ -1310,6 +1381,15 @@ You can pass <code>--yml</code> flag into <a href="#build"><code>build</code></a
 <p>Set timeout for kubedog.</p>
 <h3 id="-kubedog-log-width"><code>--kubedog-log-width</code><a class="headerlink" href="#-kubedog-log-width" title="Permanent link">¶</a></h3>
 <p>Set width of kubedog logboek.</p>
+<h3 id="-kubedog-track-all"><code>--kubedog-track-all</code><a class="headerlink" href="#-kubedog-track-all" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.30.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.30.0</a></p>
+</blockquote>
+<p>Track all resources, not only <code>Deployment</code>, <code>DaemonSet</code>, <code>StatefulSet</code>, <code>Job</code>.
+Annotations are also respected for these resources but it wasn't tested.</p>
+<div class="admonition danger">
+<p class="admonition-title">It will probably fail for some non-namespaced custom resources because kubedog can track only namespaced resources. In this case kubedog will fail with a warning</p>
+</div>
 <h2 id="down"><code>down</code><a class="headerlink" href="#down" title="Permanent link">¶</a></h2>
 <blockquote>
 <p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.12.2"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.12.2</a></p>
@@ -1430,6 +1510,12 @@ You can pass <code>--yml</code> flag into <a href="#build"><code>build</code></a
 <summary>Flags</summary>
 <div class="highlight"><pre><span></span><code>--revision<span class="w"> </span>value<span class="w">                                   </span>rollback<span class="w"> </span>all<span class="w"> </span>releases<span class="w"> </span>to<span class="w"> </span>this<span class="w"> </span>revision<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>-1<span class="o">)</span>
 --build<span class="w">                                            </span>auto<span class="w"> </span>build<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_AUTO_BUILD</span><span class="o">]</span>
+--kubedog<span class="w">                                          </span>enable/disable<span class="w"> </span>kubedog<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_ENABLED</span>,<span class="w"> </span><span class="nv">$HELMWAVE_KUBEDOG</span><span class="o">]</span>
+--kubedog-status-interval<span class="w"> </span>value<span class="w">                    </span>interval<span class="w"> </span>of<span class="w"> </span>kubedog<span class="w"> </span>status<span class="w"> </span>messages<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>5s<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_STATUS_INTERVAL</span><span class="o">]</span>
+--kubedog-start-delay<span class="w"> </span>value<span class="w">                        </span>delay<span class="w"> </span>kubedog<span class="w"> </span>start,<span class="w"> </span>don<span class="err">'</span>t<span class="w"> </span>make<span class="w"> </span>it<span class="w"> </span>too<span class="w"> </span>late<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>1s<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_START_DELAY</span><span class="o">]</span>
+--kubedog-timeout<span class="w"> </span>value<span class="w">                            </span>timeout<span class="w"> </span>of<span class="w"> </span>kubedog<span class="w"> </span>multitrackers<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>5m0s<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_TIMEOUT</span><span class="o">]</span>
+--kubedog-log-width<span class="w"> </span>value<span class="w">                          </span><span class="nb">set</span><span class="w"> </span>kubedog<span class="w"> </span>max<span class="w"> </span>log<span class="w"> </span>line<span class="w"> </span>width<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">140</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_LOG_WIDTH</span><span class="o">]</span>
+--kubedog-track-all<span class="w">                                </span>track<span class="w"> </span>almost<span class="w"> </span>all<span class="w"> </span>resources,<span class="w"> </span>experimental<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_KUBEDOG_TRACK_ALL</span><span class="o">]</span>
 --plandir<span class="w"> </span>value,<span class="w"> </span>-p<span class="w"> </span>value<span class="w">                          </span>path<span class="w"> </span>to<span class="w"> </span>plandir<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="s2">".helmwave/"</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_PLANDIR</span>,<span class="w"> </span><span class="nv">$HELMWAVE_PLAN</span><span class="o">]</span>
 --tags<span class="w"> </span>value,<span class="w"> </span>-t<span class="w"> </span>value<span class="w"> </span><span class="o">[</span><span class="w"> </span>--tags<span class="w"> </span>value,<span class="w"> </span>-t<span class="w"> </span>value<span class="w"> </span><span class="o">]</span><span class="w">  </span>build<span class="w"> </span>releases<span class="w"> </span>by<span class="w"> </span>tags:<span class="w"> </span>-t<span class="w"> </span>tag1<span class="w"> </span>-t<span class="w"> </span>tag3,tag4<span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_TAGS</span><span class="o">]</span>
 --match-all-tags<span class="w">                                   </span>match<span class="w"> </span>all<span class="w"> </span>provided<span class="w"> </span>tags<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">$HELMWAVE_MATCH_ALL_TAGS</span><span class="o">]</span>
@@ -1448,6 +1534,29 @@ You can pass <code>--yml</code> flag into <a href="#build"><code>build</code></a
 </details>
 <h3 id="-revision"><code>--revision</code><a class="headerlink" href="#-revision" title="Permanent link">¶</a></h3>
 <p>Rollback all releases to specific revision.</p>
+<hr/>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.30.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.30.0</a></p>
+</blockquote>
+<h3 id="-kubedog_1"><code>--kubedog</code><a class="headerlink" href="#-kubedog_1" title="Permanent link">¶</a></h3>
+<p>Enable kubedog.</p>
+<h3 id="-kubedog-status-interval_1"><code>--kubedog-status-interval</code><a class="headerlink" href="#-kubedog-status-interval_1" title="Permanent link">¶</a></h3>
+<p>Set interval for kubedog status.</p>
+<h3 id="-kubedog-start-delay_1"><code>--kubedog-start-delay</code><a class="headerlink" href="#-kubedog-start-delay_1" title="Permanent link">¶</a></h3>
+<p>Set delay before kubedog will start.</p>
+<h3 id="-kubedog-timeout_1"><code>--kubedog-timeout</code><a class="headerlink" href="#-kubedog-timeout_1" title="Permanent link">¶</a></h3>
+<p>Set timeout for kubedog.</p>
+<h3 id="-kubedog-log-width_1"><code>--kubedog-log-width</code><a class="headerlink" href="#-kubedog-log-width_1" title="Permanent link">¶</a></h3>
+<p>Set width of kubedog logboek.</p>
+<h3 id="-kubedog-track-all_1"><code>--kubedog-track-all</code><a class="headerlink" href="#-kubedog-track-all_1" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.30.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.30.0</a></p>
+</blockquote>
+<p>Track all resources, not only <code>Deployment</code>, <code>DaemonSet</code>, <code>StatefulSet</code>, <code>Job</code>.
+Annotations are also respected for these resources but it wasn't tested.</p>
+<div class="admonition danger">
+<p class="admonition-title">It will probably fail for some non-namespaced custom resources because kubedog can track only namespaced resources. In this case kubedog will fail with a warning</p>
+</div>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>helmwave<span class="w"> </span>rollback<span class="w">      </span>
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>✅<span class="w"> </span>frontend@test<span class="w"> </span>rollback!
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>✅<span class="w"> </span>database@test<span class="w"> </span>rollback!
@@ -1559,18 +1668,18 @@ $<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><sp
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>helmwave<span class="w"> </span>--version<span class="w">  </span>
-helmwave<span class="w"> </span>version<span class="w"> </span><span class="m">0</span>.29.3
+helmwave<span class="w"> </span>version<span class="w"> </span><span class="m">0</span>.30.0
 
 $<span class="w"> </span>helmwave<span class="w"> </span>-v
-helmwave<span class="w"> </span>version<span class="w"> </span><span class="m">0</span>.29.3
+helmwave<span class="w"> </span>version<span class="w"> </span><span class="m">0</span>.30.0
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>helmwave<span class="w"> </span>version
-<span class="m">0</span>.29.3
+<span class="m">0</span>.30.0
 
 $<span class="w"> </span>helmwave<span class="w"> </span>ver
-<span class="m">0</span>.29.3
+<span class="m">0</span>.30.0
 </code></pre></div>
 </div>
 </div>
