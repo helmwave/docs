@@ -115,8 +115,10 @@ extra:
     provider: mike
     default: latest
   analytics:
-    provider: google
-    property: G-FTBLK54FKZ
+    provider: custom
+    google: G-FTBLK54FKZ
+    microsoft: i5s767s7xf
+    yandex: 94456965
   consent:
     title: Cookie consent
     description: >-
