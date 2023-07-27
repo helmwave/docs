@@ -69,6 +69,6 @@ Check out how to use [HELMWAVE_TAGS](../../yaml/#tags)
 
 if you want to deploy only `plantuml` via CI.
 
-![](https://habrastorage.org/webt/bd/aq/3r/bdaq3rroa0ak03g3qycvlp84w90.png)
+![How to run GitLab CI pipeline](https://habrastorage.org/webt/bd/aq/3r/bdaq3rroa0ak03g3qycvlp84w90.png)
 
-![](https://habrastorage.org/webt/ew/2k/5v/ew2k5vrv7tmbcjpngwehknymjy4.png)
+![Helmwave output](https://habrastorage.org/webt/ew/2k/5v/ew2k5vrv7tmbcjpngwehknymjy4.png)
