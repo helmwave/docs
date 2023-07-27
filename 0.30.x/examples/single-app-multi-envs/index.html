@@ -21,7 +21,7 @@
         <link rel="next" href="../pass-git-commit/">
       
       <link rel="icon" href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.0, mkdocs-material-9.1.19">
     
     
       
@@ -54,12 +54,68 @@
   
 
 
-  
-  
+  <script id="__analytics">
+function __md_analytics() {
+    function n() {
+        dataLayer.push(arguments);
+    }
+    (window.dataLayer = window.dataLayer || []),
+        n("js", new Date()),
+        n("config", "G-FTBLK54FKZ"),
+        document.addEventListener("DOMContentLoaded", function () {
+            document.forms.search &&
+                document.forms.search.query.addEventListener("blur", function () {
+                    this.value && n("event", "search", { search_term: this.value });
+                }),
+                document$.subscribe(function () {
+                    var a = document.forms.feedback;
+                    if (void 0 !== a)
+                        for (var e of a.querySelectorAll("[type=submit]"))
+                            e.addEventListener("click", function (e) {
+                                e.preventDefault();
+                                var t = document.location.pathname,
+                                    e = this.getAttribute("data-md-value");
+                                n("event", "feedback", { page: t, data: e }), (a.firstElementChild.disabled = !0);
+                                e = a.querySelector(".md-feedback__note [data-md-value='" + e + "']");
+                                e && (e.hidden = !1);
+                            }),
+                                (a.hidden = !1);
+                }),
+                location$.subscribe(function (e) {
+                    n("config", "G-FTBLK54FKZ", { page_path: e.pathname });
+                });
+        });
 
+    var e = document.createElement("script");
+    (e.async = !0), (e.src = "https://www.googletagmanager.com/gtag/js?id=G-FTBLK54FKZ"), document.getElementById("__analytics").insertAdjacentElement("afterEnd", e);
 
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTBLK54FKZ"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTBLK54FKZ",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTBLK54FKZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "i5s767s7xf");
 
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(94456965, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+   
+   var ns = document.createElement("noscript");
+   var div = document.createElement("div");
+   var img = document.createElement("img");
+
+   (img.src = "https://mc.yandex.ru/watch/94456965"), (img.style="position:absolute; left:-9999px;"), (img.alt="");
+   div.replaceChildren(img), ns.replaceChildren(div), document.getElementById("__analytics").insertAdjacentElement("afterEnd", ns);
+}
+</script>
   
     <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
   

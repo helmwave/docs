@@ -11,7 +11,7 @@
 <link href="../yaml/" rel="prev"/>
 <link href="../tpl/" rel="next"/>
 <link href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico" rel="icon"/>
-<meta content="mkdocs-1.4.3, mkdocs-material-9.1.19" name="generator"/>
+<meta content="mkdocs-1.5.0, mkdocs-material-9.1.19" name="generator"/>
 <title>🛠 CLI Reference - Helmwave</title>
 <link href="../assets/stylesheets/main.eebd395e.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
@@ -19,7 +19,68 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-FTBLK54FKZ"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-FTBLK54FKZ",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-FTBLK54FKZ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+<script id="__analytics">
+function __md_analytics() {
+    function n() {
+        dataLayer.push(arguments);
+    }
+    (window.dataLayer = window.dataLayer || []),
+        n("js", new Date()),
+        n("config", "G-FTBLK54FKZ"),
+        document.addEventListener("DOMContentLoaded", function () {
+            document.forms.search &&
+                document.forms.search.query.addEventListener("blur", function () {
+                    this.value && n("event", "search", { search_term: this.value });
+                }),
+                document$.subscribe(function () {
+                    var a = document.forms.feedback;
+                    if (void 0 !== a)
+                        for (var e of a.querySelectorAll("[type=submit]"))
+                            e.addEventListener("click", function (e) {
+                                e.preventDefault();
+                                var t = document.location.pathname,
+                                    e = this.getAttribute("data-md-value");
+                                n("event", "feedback", { page: t, data: e }), (a.firstElementChild.disabled = !0);
+                                e = a.querySelector(".md-feedback__note [data-md-value='" + e + "']");
+                                e && (e.hidden = !1);
+                            }),
+                                (a.hidden = !1);
+                }),
+                location$.subscribe(function (e) {
+                    n("config", "G-FTBLK54FKZ", { page_path: e.pathname });
+                });
+        });
+
+    var e = document.createElement("script");
+    (e.async = !0), (e.src = "https://www.googletagmanager.com/gtag/js?id=G-FTBLK54FKZ"), document.getElementById("__analytics").insertAdjacentElement("afterEnd", e);
+
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "i5s767s7xf");
+
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(94456965, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+   
+   var ns = document.createElement("noscript");
+   var div = document.createElement("div");
+   var img = document.createElement("img");
+
+   (img.src = "https://mc.yandex.ru/watch/94456965"), (img.style="position:absolute; left:-9999px;"), (img.alt="");
+   div.replaceChildren(img), ns.replaceChildren(div), document.getElementById("__analytics").insertAdjacentElement("afterEnd", ns);
+}
+</script>
 <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
 <meta content="Helmwave - 🛠 CLI Reference" property="og:title"/>
@@ -1728,41 +1789,41 @@ $<span class="w"> </span>helmwave<span class="w"> </span>ver
 <table>
 <thead>
 <tr>
-<th align="center">features</th>
-<th align="center"><code>text</code></th>
-<th align="center"><code>json</code></th>
-<th align="center"><code>pad</code></th>
-<th align="center"><code>emoji</code> (default)</th>
+<th style="text-align: center;">features</th>
+<th style="text-align: center;"><code>text</code></th>
+<th style="text-align: center;"><code>json</code></th>
+<th style="text-align: center;"><code>pad</code></th>
+<th style="text-align: center;"><code>emoji</code> (default)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">Color</td>
-<td align="center">✅</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">🌈</td>
+<td style="text-align: center;">Color</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">🌈</td>
 </tr>
 <tr>
-<td align="center">Human readable</td>
-<td align="center">🧐</td>
-<td align="center">🤖</td>
-<td align="center">🧐🧐</td>
-<td align="center">✅</td>
+<td style="text-align: center;">Human readable</td>
+<td style="text-align: center;">🧐</td>
+<td style="text-align: center;">🤖</td>
+<td style="text-align: center;">🧐🧐</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td align="center">Performance</td>
-<td align="center">🚀</td>
-<td align="center">🐢</td>
-<td align="center">✈️</td>
-<td align="center">🐢</td>
+<td style="text-align: center;">Performance</td>
+<td style="text-align: center;">🚀</td>
+<td style="text-align: center;">🐢</td>
+<td style="text-align: center;">✈️</td>
+<td style="text-align: center;">🐢</td>
 </tr>
 <tr>
-<td align="center">Module</td>
-<td align="center">TextFormatter (in-built <code>logrus</code> formatter)</td>
-<td align="center">JSONFormatter (in-built <code>logrus</code> formatter)</td>
-<td align="center">TextFormatter (in-built <code>logrus</code> formatter)</td>
-<td align="center"><a href="https://github.com/helmwave/logrus-emoji-formatter">logrus-emoji-formatter</a> special for helmwave</td>
+<td style="text-align: center;">Module</td>
+<td style="text-align: center;">TextFormatter (in-built <code>logrus</code> formatter)</td>
+<td style="text-align: center;">JSONFormatter (in-built <code>logrus</code> formatter)</td>
+<td style="text-align: center;">TextFormatter (in-built <code>logrus</code> formatter)</td>
+<td style="text-align: center;"><a href="https://github.com/helmwave/logrus-emoji-formatter">logrus-emoji-formatter</a> special for helmwave</td>
 </tr>
 </tbody>
 </table>
@@ -1881,87 +1942,87 @@ INFO<span class="w">    </span>🔨<span class="w"> </span>Building<span class="
 <table>
 <thead>
 <tr>
-<th align="center">_</th>
-<th align="center"><code>info</code> (default)</th>
-<th align="center"><code>debug</code></th>
-<th align="center"><code>warn</code></th>
-<th align="center"><code>fatal</code></th>
-<th align="center"><code>panic</code></th>
-<th align="center"><code>trace</code></th>
+<th style="text-align: center;">_</th>
+<th style="text-align: center;"><code>info</code> (default)</th>
+<th style="text-align: center;"><code>debug</code></th>
+<th style="text-align: center;"><code>warn</code></th>
+<th style="text-align: center;"><code>fatal</code></th>
+<th style="text-align: center;"><code>panic</code></th>
+<th style="text-align: center;"><code>trace</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">general info</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td style="text-align: center;">general info</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td align="center">incompatible version</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td style="text-align: center;">incompatible version</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td align="center">helm-debug without <code>--progress</code></td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td style="text-align: center;">helm-debug without <code>--progress</code></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td align="center">helm-debug with <code>--progress</code></td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td style="text-align: center;">helm-debug with <code>--progress</code></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td align="center">lifecycle hooks <code>show=true</code></td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td style="text-align: center;">lifecycle hooks <code>show=true</code></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td align="center">lifecycle hooks <code>show=false</code></td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td style="text-align: center;">lifecycle hooks <code>show=false</code></td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td align="center">file content</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td style="text-align: center;">file content</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td align="center"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.337 0c-.475 0-.861 1.016-.861 2.269 0 .527.069 1.011.183 1.396a8.514 8.514 0 0 0-3.961 1.22 5.229 5.229 0 0 0-.595-1.093c-.606-.866-1.34-1.436-1.79-1.43a.381.381 0 0 0-.217.066c-.39.273-.123 1.326.596 2.353.267.381.559.705.84.948a8.683 8.683 0 0 0-1.528 1.716h1.734a7.179 7.179 0 0 1 5.381-2.421 7.18 7.18 0 0 1 5.382 2.42h1.733a8.687 8.687 0 0 0-1.32-1.53c.35-.249.735-.643 1.078-1.133.719-1.027.986-2.08.596-2.353a.382.382 0 0 0-.217-.065c-.45-.007-1.184.563-1.79 1.43a4.897 4.897 0 0 0-.676 1.325 8.52 8.52 0 0 0-3.899-1.42c.12-.39.193-.887.193-1.429 0-1.253-.386-2.269-.862-2.269zM1.624 9.443v5.162h1.358v-1.968h1.64v1.968h1.357V9.443H4.62v1.838H2.98V9.443zm5.912 0v5.162h3.21v-1.108H8.893v-.95h1.64v-1.142h-1.64v-.84h1.853V9.443zm4.698 0v5.162h3.218v-1.362h-1.86v-3.8zm4.706 0v5.162h1.364v-2.643l1.357 1.225 1.35-1.232v2.65h1.365V9.443h-.614l-2.1 1.914-2.109-1.914zm-11.82 7.28a8.688 8.688 0 0 0 1.412 1.548 5.206 5.206 0 0 0-.841.948c-.719 1.027-.985 2.08-.596 2.353.39.273 1.289-.338 2.007-1.364a5.23 5.23 0 0 0 .595-1.092 8.514 8.514 0 0 0 3.961 1.219 5.01 5.01 0 0 0-.183 1.396c0 1.253.386 2.269.861 2.269.476 0 .862-1.016.862-2.269 0-.542-.072-1.04-.193-1.43a8.52 8.52 0 0 0 3.9-1.42c.121.4.352.865.675 1.327.719 1.026 1.617 1.637 2.007 1.364.39-.273.123-1.326-.596-2.353-.343-.49-.727-.885-1.077-1.135a8.69 8.69 0 0 0 1.202-1.36h-1.771a7.174 7.174 0 0 1-5.227 2.252 7.174 7.174 0 0 1-5.226-2.252z"></path></svg></span> helm manifests, bug report</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td style="text-align: center;"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.337 0c-.475 0-.861 1.016-.861 2.269 0 .527.069 1.011.183 1.396a8.514 8.514 0 0 0-3.961 1.22 5.229 5.229 0 0 0-.595-1.093c-.606-.866-1.34-1.436-1.79-1.43a.381.381 0 0 0-.217.066c-.39.273-.123 1.326.596 2.353.267.381.559.705.84.948a8.683 8.683 0 0 0-1.528 1.716h1.734a7.179 7.179 0 0 1 5.381-2.421 7.18 7.18 0 0 1 5.382 2.42h1.733a8.687 8.687 0 0 0-1.32-1.53c.35-.249.735-.643 1.078-1.133.719-1.027.986-2.08.596-2.353a.382.382 0 0 0-.217-.065c-.45-.007-1.184.563-1.79 1.43a4.897 4.897 0 0 0-.676 1.325 8.52 8.52 0 0 0-3.899-1.42c.12-.39.193-.887.193-1.429 0-1.253-.386-2.269-.862-2.269zM1.624 9.443v5.162h1.358v-1.968h1.64v1.968h1.357V9.443H4.62v1.838H2.98V9.443zm5.912 0v5.162h3.21v-1.108H8.893v-.95h1.64v-1.142h-1.64v-.84h1.853V9.443zm4.698 0v5.162h3.218v-1.362h-1.86v-3.8zm4.706 0v5.162h1.364v-2.643l1.357 1.225 1.35-1.232v2.65h1.365V9.443h-.614l-2.1 1.914-2.109-1.914zm-11.82 7.28a8.688 8.688 0 0 0 1.412 1.548 5.206 5.206 0 0 0-.841.948c-.719 1.027-.985 2.08-.596 2.353.39.273 1.289-.338 2.007-1.364a5.23 5.23 0 0 0 .595-1.092 8.514 8.514 0 0 0 3.961 1.219 5.01 5.01 0 0 0-.183 1.396c0 1.253.386 2.269.861 2.269.476 0 .862-1.016.862-2.269 0-.542-.072-1.04-.193-1.43a8.52 8.52 0 0 0 3.9-1.42c.121.4.352.865.675 1.327.719 1.026 1.617 1.637 2.007 1.364.39-.273.123-1.326-.596-2.353-.343-.49-.727-.885-1.077-1.135a8.69 8.69 0 0 0 1.202-1.36h-1.771a7.174 7.174 0 0 1-5.227 2.252 7.174 7.174 0 0 1-5.226-2.252z"></path></svg></span> helm manifests, bug report</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: center;">✅</td>
 </tr>
 </tbody>
 </table>
