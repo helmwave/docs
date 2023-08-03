@@ -14,6 +14,7 @@ nav:
 
   - Getting started:
       - intro.md
+      - comparison.md
       - install.md
       - 🔰 Quick Start: examples/quick-start/README.md
       - ci.md
