@@ -767,3 +767,10 @@ This option determines whether sub-notes are rendered in the chart.
 
 
 You can use custom commands to change rendered manifests.
+
+### show_notes
+
+> Introduced in [:material-tag: v0.31.0](https://github.com/helmwave/helmwave/releases/tag/v0.31.0)
+
+
+If enabled, rendered [chart notes](https://helm.sh/docs/chart_template_guide/notes_files/) will be shown after successful release.
