@@ -1,7 +1,7 @@
 # 🔒 Private environment
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```
 
 **Disable diff**

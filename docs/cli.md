@@ -31,9 +31,9 @@ This command renders `helmwave.yml.tpl` to `helmwave.yml`.
     ⟨⟨ run_script("helmwave yml -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
     ```
 
-{% include "flags/tpl.md" %}
-{% include "flags/file.md" %}
-{% include "flags/templater.md" %}
+{% include "./flags/tpl.md" %}
+{% include "./flags/file.md" %}
+{% include "./flags/templater.md" %}
 
 
 ## `build`
@@ -59,17 +59,17 @@ A plan includes:
     ```
 
 <!-- build -->
-{% include "flags/yml.md" %}
-{% include "flags/tags.md" %}
-{% include "flags/match-all-tags.md" %}
-{% include "flags/skip-unchanged.md" %}
-{% include "flags/charts-cache-dir.md" %}
-{% include "flags/graph-width.md" %}
+{% include "./flags/yml.md" %}
+{% include "./flags/tags.md" %}
+{% include "./flags/match-all-tags.md" %}
+{% include "./flags/skip-unchanged.md" %}
+{% include "./flags/charts-cache-dir.md" %}
+{% include "./flags/graph-width.md" %}
 ---
-{% include "flags/diff-mode.md" %}
-{% include "flags/wide.md" %}
-{% include "flags/show-secret.md" %}
-{% include "flags/3-way-merge.md" %}
+{% include "./flags/diff-mode.md" %}
+{% include "./flags/wide.md" %}
+{% include "./flags/show-secret.md" %}
+{% include "./flags/3-way-merge.md" %}
 
 
 ## `up`
@@ -83,18 +83,18 @@ Helmwave will install repositories and :simple-helm: helm releases from a plan.
     ```
 
 <!-- up -->
-{% include "flags/build.md" %}
-{% include "flags/progress.md" %}
-{% include "flags/parallel-limit.md" %}
+{% include "./flags/build.md" %}
+{% include "./flags/progress.md" %}
+{% include "./flags/parallel-limit.md" %}
 ---
 > Introduced in [:material-tag: v0.8.0](https://github.com/helmwave/helmwave/releases/tag/v0.8.0)
 
-{% include "flags/kubedog.md" %}
-{% include "flags/kubedog-status-interval.md" %}
-{% include "flags/kubedog-start-delay.md" %}
-{% include "flags/kubedog-timeout.md" %}
-{% include "flags/kubedog-log-width.md" %}
-{% include "flags/kubedog-track-all.md" %}
+{% include "./flags/kubedog.md" %}
+{% include "./flags/kubedog-status-interval.md" %}
+{% include "./flags/kubedog-start-delay.md" %}
+{% include "./flags/kubedog-timeout.md" %}
+{% include "./flags/kubedog-log-width.md" %}
+{% include "./flags/kubedog-track-all.md" %}
 
 ## `down`
 
@@ -192,16 +192,16 @@ Rollback :simple-helm: helm releases from a plan.
     ⟨⟨ run_script("helmwave rollback -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
     ```
 
-{% include "flags/revision.md" %}
+{% include "./flags/revision.md" %}
 ---
 > Introduced in [:material-tag: v0.30.0](https://github.com/helmwave/helmwave/releases/tag/v0.30.0)
 
-{% include "flags/kubedog.md" %}
-{% include "flags/kubedog-status-interval.md" %}
-{% include "flags/kubedog-start-delay.md" %}
-{% include "flags/kubedog-timeout.md" %}
-{% include "flags/kubedog-log-width.md" %}
-{% include "flags/kubedog-track-all.md" %}
+{% include "./flags/kubedog.md" %}
+{% include "./flags/kubedog-status-interval.md" %}
+{% include "./flags/kubedog-start-delay.md" %}
+{% include "./flags/kubedog-timeout.md" %}
+{% include "./flags/kubedog-log-width.md" %}
+{% include "./flags/kubedog-track-all.md" %}
 
 
 ```bash
@@ -224,7 +224,7 @@ Graph draws with [:simple-github: helmwave/asciigraph](https://github.com/helmwa
     ⟨⟨ run_script("helmwave graph -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
     ```
 
-{% include "flags/graph-width.md" %}
+{% include "./flags/graph-width.md" %}
 
 ## `validate`
 
@@ -256,9 +256,9 @@ $ echo $?
     ⟨⟨ run_script("helmwave diff -h | grep HELMWAVE_ | cut -c 4-") | indent(4) ⟩⟩
     ```
 
-{% include "flags/wide.md" %}
-{% include "flags/show-secret.md" %}
-{% include "flags/3-way-merge.md" %}
+{% include "./flags/wide.md" %}
+{% include "./flags/show-secret.md" %}
+{% include "./flags/3-way-merge.md" %}
 
 Diff has 2 subcommands `plan` and `live`.
 
@@ -362,7 +362,7 @@ Global flags available in any command.
 
 > Helmwave uses [:simple-github: sirupsen/logrus](https://github.com/sirupsen/logrus) as internal logger.
 
-{% include "flags/log-format.md" %}
-{% include "flags/log-level.md" %}
-{% include "flags/log-color.md" %}
-{% include "flags/log-timestamps.md" %}
+{% include "./flags/log-format.md" %}
+{% include "./flags/log-level.md" %}
+{% include "./flags/log-color.md" %}
+{% include "./flags/log-timestamps.md" %}

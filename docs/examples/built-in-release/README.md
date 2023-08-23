@@ -11,14 +11,14 @@
 **Create `helmwave.yml`**
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```
 
 
 **Create `_.yml`**
 
 ```yaml title="_.yml"
-{% include "_.yml" %}
+{% include "./_.yml" %}
 ```
 
 **Run build**

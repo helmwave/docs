@@ -22,13 +22,13 @@ For more information, see the [annotation's documentation](../../anno/#kubedogs)
 Create `helmwave.yml`
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```
 
 Then you should create `values.yml`
 
 ```yaml title="values.yml"
-{% include "values.yml" %}
+{% include "./values.yml" %}
 ```
 
 We are going to use `commonAnnotations`. 

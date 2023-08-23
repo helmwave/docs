@@ -19,13 +19,13 @@ vault kv put secret/test hello=world
 **Step 2. Create `helmwave.yml`**
 
 ```yaml
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```
 
 **Step 3. Create `values-secret.yaml`**
 
 ```yaml
-{% include "values-secret.yaml" %}
+{% include "./values-secret.yaml" %}
 ```
 
 **Step 4. Run `helmwave build --templater gomplate`**

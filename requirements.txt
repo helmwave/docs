@@ -1,5 +1,5 @@
-mkdocs-include-markdown-plugin>=2.8.0
-mkdocs-mermaid2-plugin>=0.5.1
+mkdocs-include-markdown-plugin==6.0.0
+mkdocs-mermaid2-plugin==1.0.8
 mike==1.1.2
 mkdocs-macros-plugin==1.0.1
 mkdocs-material==9.1.19

@@ -24,7 +24,7 @@ It works with next flags for [`build` command](../cli/#step-1-building-a-plan)
 :material-duck: example of `helmwave.yml` for this case.
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```
 
 === "Match all redises"

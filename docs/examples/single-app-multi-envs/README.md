@@ -21,32 +21,32 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
 
 
 ```yaml title="helmwave.yml.tpl"
-{% include "helmwave.yml.tpl" %}
+{% include "./helmwave.yml.tpl" %}
 ```
 
 === "`values/_.yml`"
 
     Common values for all envs
     ```yaml
-    {% include "values/_.yml" %}
+    {% include "./values/_.yml" %}
     ```
 
 === "`values/prod.yml`"
 
     ```yaml
-    {% include "values/prod.yml" %}
+    {% include "./values/prod.yml" %}
     ```
 
 === "`values/qa.yml`"
 
     ```yaml
-    {% include "values/qa.yml" %}
+    {% include "./values/qa.yml" %}
     ```
 
 === "`values/stage.yml`"
 
     ```yaml
-    {% include "values/stage.yml" %}
+    {% include "./values/stage.yml" %}
     ```
 
 **step 0: templating**
@@ -59,5 +59,5 @@ helmwave yml
 You will get next `helmwave.yml`:
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```

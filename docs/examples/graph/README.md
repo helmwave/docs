@@ -4,7 +4,7 @@ This example shows how to use the `graph` command with the `--graph-width` flag.
 
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```
 
 === "--graph-width 20"

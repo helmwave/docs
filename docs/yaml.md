@@ -33,7 +33,7 @@ This documentation describes all entities inside a `helmwave.yml`
 === "Full `helmwave.yml`"
 
     ```yaml
-    {% include "examples/full/helmwave.yml" %}
+    {% include "./examples/full/helmwave.yml" %}
     ```
 
 ## project
@@ -63,13 +63,13 @@ Describe which [OCI registries](https://helm.sh/docs/topics/registries/) need to
 === ":material-duck: private oci"
 
     ```yaml
-    {% include "examples/oci-private/helmwave.yml" %}
+    {% include "./examples/oci-private/helmwave.yml" %}
     ```
 
 === ":material-duck: public oci"
     
     ```yaml
-    {% include "examples/oci-public/helmwave.yml" %}
+    {% include "./examples/oci-public/helmwave.yml" %}
     ```
 
 ### host

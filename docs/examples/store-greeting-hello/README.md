@@ -9,17 +9,17 @@
 ```
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```
 
 
 ```yaml title="a.yml"
-{% include "a.yml" %}
+{% include "./a.yml" %}
 ```
 
 
 ```yaml title="b.yml"
-{% include "b.yml" %}
+{% include "./b.yml" %}
 ```
 
 After running `helmwave build` you will get rendered values inside `.helmwave/values`:

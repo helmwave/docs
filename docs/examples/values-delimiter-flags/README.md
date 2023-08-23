@@ -4,9 +4,9 @@ Sometimes we need to include strings in values that will be templated by :simple
 
 
 ```yaml title="values.yml"
-{% include "values.yml" %}
+{% include "./values.yml" %}
 ```
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```

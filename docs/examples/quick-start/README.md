@@ -12,7 +12,7 @@ hide:
     Suppose the `helmwave.yml` representing the desired state of your :simple-helm: helm releases looks like:
 
     ```yaml title="helmwave.yml"
-    {% include "helmwave.yml" %}
+    {% include "./helmwave.yml" %}
     ```
 
 3. **Build plan**

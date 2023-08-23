@@ -10,10 +10,10 @@ Learn more about :material-gitlab: GitLab :simple-helm: helm registry [here](htt
 ```
 
 ```yaml title="helmwave.yml.tpl"
-{% include "helmwave.yml.tpl" %}
+{% include "./helmwave.yml.tpl" %}
 ```
 
 
 ```yaml title=".gitlab-ci.yml"
-{% include ".gitlab-ci.yml" %}
+{% include "./.gitlab-ci.yml" %}
 ```
