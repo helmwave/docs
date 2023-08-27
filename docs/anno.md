@@ -15,7 +15,7 @@ metadata:
 
 ## Helmwave's annotations
 
-> Initially annotations used `helmwave.dev/` namespace but in [:material-tag: v0.31.1](https://github.com/helmwave/helmwave/releases/tag/v0.31.1) it was switched to `helmwave.app/` with backward compatibility.
+!!! danger "Initially annotations used `helmwave.dev/` namespace but in [:material-tag: v0.31.1](https://github.com/helmwave/helmwave/releases/tag/v0.31.1) it was switched to `helmwave.app/` with backward compatibility."
 
 
 ### `helmwave.app/skip-diff`
