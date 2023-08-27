@@ -24,14 +24,14 @@ HelmWave allows use declarative way to approach this goal.
 ```
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```
 
 
 This values will override default values
 
 ```yaml title="values.yml"
-{% include "values.yml" %}
+{% include "./values.yml" %}
 ```
 
 **Run**

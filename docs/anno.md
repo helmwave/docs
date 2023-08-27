@@ -10,12 +10,15 @@ kind: Deployment
 metadata:
   name: api
   annotations:
-    helmwave.dev/show-service-messages: "true"
+    helmwave.app/show-service-messages: "true"
 ```
 
 ## Helmwave's annotations
 
-### `helmwave.dev/skip-diff`
+!!! danger "Initially annotations used `helmwave.dev/` namespace but in [:material-tag: v0.31.1](https://github.com/helmwave/helmwave/releases/tag/v0.31.1) it was switched to `helmwave.app/` with backward compatibility."
+
+
+### `helmwave.app/skip-diff`
 
 > Introduced in [:material-tag: v0.18.0](https://github.com/helmwave/helmwave/releases/tag/v0.18.0)
 
@@ -32,7 +35,7 @@ kind: Secret
 metadata:
   name: my-secret
   annotations:
-    helmwave.dev/skip-diff: "true"
+    helmwave.app/skip-diff: "true"
 ```
 
 ## [kubedog's annotations](https://github.com/werf/kubedog) 🐶
@@ -47,7 +50,7 @@ Introduced in [:material-tag: v0.8.0](https://github.com/helmwave/helmwave/relea
 
 ---
 
-### `helmwave.dev/track-termination-mode`
+### `helmwave.app/track-termination-mode`
 
 Defines a condition when helmwave should stop tracking of the resource:
 
@@ -58,7 +61,7 @@ Defines a condition when helmwave should stop tracking of the resource:
 
 ---
 
-### `helmwave.dev/fail-mode`
+### `helmwave.app/fail-mode`
 
 Defines how helmwave will handle a resource failure condition which occured after failures threshold has been reached
 for the resource during deploy process:
@@ -72,7 +75,7 @@ for the resource during deploy process:
 
 ---
 
-### `helmwave.dev/failures-allowed-per-replica`
+### `helmwave.app/failures-allowed-per-replica`
 
 By default, one error per replica is allowed before considering the whole deployment process unsuccessful. This setting
 defines a threshold of failures after which resource will be considered as failed and helmwave will handle this
@@ -82,7 +85,7 @@ situation using fail mode.
 
 ---
 
-### `helmwave.dev/log-regex`
+### `helmwave.app/log-regex`
 
 Define a Re2 regex template that applies to all logs of all containers of all Pods owned by a resource with this
 annotation. helmwave would show only those log lines that fit the specified regex template. By default, helmwave shows
@@ -92,7 +95,7 @@ all log lines.
 
 ---
 
-### `helmwave.dev/log-regex-for-{container}`
+### `helmwave.app/log-regex-for-{container}`
 
 Defines a Re2 regex template that applies to all logs of specified container of all Pods owned by a resource with this
 annotation. helmwave would show only those log lines that fit the specified regex template. By default, helmwave shows
@@ -102,7 +105,7 @@ all log lines.
 
 ---
 
-### `helmwave.dev/skip-logs`
+### `helmwave.app/skip-logs`
 
 Set to "true" to turn off printing logs of all containers of all Pods owned by a resource with this annotation. This
 annotation is disabled by default.
@@ -111,7 +114,7 @@ annotation is disabled by default.
 
 ---
 
-### `helmwave.dev/skip-logs-for-containers`
+### `helmwave.app/skip-logs-for-containers`
 
 Turn off printing logs of specified containers of all Pods owned by a resource with this annotation. This annotation is
 disabled by default.
@@ -120,7 +123,7 @@ disabled by default.
 
 ---
 
-### `helmwave.dev/show-logs-only-for-containers`
+### `helmwave.app/show-logs-only-for-containers`
 
 Turn off printing logs of all containers except specified of all Pods owned by a resource with this annotation. This
 annotation is disabled by default.
@@ -129,7 +132,7 @@ annotation is disabled by default.
 
 ---
 
-### `helmwave.dev/show-service-messages`
+### `helmwave.app/show-service-messages`
 
 Set to "true" to enable additional real-time debugging info (including Kubernetes events) for a resource during
 tracking. By default, helmwave would show these service messages only if the resource has failed the entire deploy

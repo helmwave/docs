@@ -33,9 +33,9 @@ flowchart LR
 ```
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```
 
 ```shell title="$ helmwave build --diff-mode none"
-{% include "log" %}
+{% include "./log" %}
 ```

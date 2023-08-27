@@ -21,5 +21,5 @@ Why is Umbrella chart evil?
 Example of **helmwave.yml** for this architecture.
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```

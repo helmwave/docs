@@ -7,7 +7,7 @@
 ```
 
 ```yaml title="helmwave.yml"
-{% include "helmwave.yml" %}
+{% include "./helmwave.yml" %}
 ```
 
 `nginx/template/deployment.yaml` looks like that:
@@ -27,7 +27,7 @@ We will pass pod annotations with  `values`
 Suppose that `CI_COMMIT_SHORT_SHA` contains commit short sha hash.
 
 ```yaml title="values.yml"
-{% include "values.yml" %}
+{% include "./values.yml" %}
 ```
 
 **Run**
