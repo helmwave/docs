@@ -50,11 +50,13 @@ nav:
           - examples/private-github-repo/README.md
           - examples/private-gitlab-repo/README.md
       - Values flags:
+          - examples/values-disable-render/README.md
+          - examples/values-sops/README.md
           - examples/values-delimiter-flags/README.md
-          - examples/values-render-flag/README.md
           - examples/values-strict-flag/README.md
       - Data sources:
           - examples/vault/README.md
+          - examples/values-sops/README.md
           - examples/aws-sm/README.md
 
 plugins:
