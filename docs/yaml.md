@@ -713,7 +713,7 @@ Which monitors should be triggered after the releases is successfully deployed.
 | **name** |    ✅     | string |   ""    |
 |  action  |    🙅    | string |   ""    |
 
-[:material-duck: example](examples/values-renderer-flag/README.md)
+[:material-duck: example](examples/monitors/README.md)
 
 #### **name**
 
