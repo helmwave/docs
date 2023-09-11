@@ -232,6 +232,8 @@ Monitors run after all dependant releases succeeded. They are triggered every `i
 |    prometheus     |    🙅    |  object  |   {}    |
 |       http        |    🙅    |  object  |   {}    |
 
+[:material-duck: example](examples/values-renderer-flag/README.md)
+
 ### **name**
 
 Monitor name, must be unique.
@@ -708,9 +710,10 @@ Which monitors should be triggered after the releases is successfully deployed.
 
 |  field   | required |  type  | default |
 |:--------:|:--------:|:------:|:-------:|
-| **name** |    ✅    | string |   ""    |
+| **name** |    ✅     | string |   ""    |
 |  action  |    🙅    | string |   ""    |
 
+[:material-duck: example](examples/values-renderer-flag/README.md)
 
 #### **name**
 
