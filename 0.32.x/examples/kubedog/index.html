@@ -1085,8 +1085,8 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../values-delimiter-flags/" class="md-nav__link">
-        Delimiter flags for values
+      <a href="../values-disable-render/" class="md-nav__link">
+        Disable templating
       </a>
     </li>
   
@@ -1099,8 +1099,22 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../values-render-flag/README.md" class="md-nav__link">
+      <a href="../values-sops/" class="md-nav__link">
         None
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../values-delimiter-flags/" class="md-nav__link">
+        Delimiter flags for values
       </a>
     </li>
   
@@ -1163,6 +1177,20 @@ You're not viewing the latest version.
     <li class="md-nav__item">
       <a href="../vault/" class="md-nav__link">
         Hashicorp Vault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../values-sops/" class="md-nav__link">
+        Decode values with SOPS
       </a>
     </li>
   
@@ -1259,17 +1287,21 @@ For more information, see the <a href="../../anno/#kubedogs">annotation's docume
 <span class="m">0</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
 </code></pre></div>
 <p>Create <code>helmwave.yml</code></p>
-<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">kubedog&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.32.1&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="c1">#project: &quot;Example: kubedog&quot;</span>
+<span class="c1">#version: &quot;0.32.1&quot;</span>
 
-<span class="nt">repositories</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span>
-<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span>
+
+<span class="nt">registries</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry-1.docker.io</span>
+
+<span class="c1">#repositories:</span>
+<span class="c1">#  - name: bitnami</span>
+<span class="c1">#    url: https://charts.bitnami.com/bitnami</span>
 
 <span class="nt">releases</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my1</span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/redis</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oci://registry-1.docker.io/bitnamicharts/redis</span>
 <span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16.8.5</span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values.yml</span>
@@ -1280,9 +1312,9 @@ For more information, see the <a href="../../anno/#kubedogs">annotation's docume
 </code></pre></div>
 <p>Then you should create <code>values.yml</code></p>
 <div class="highlight"><span class="filename">values.yml</span><pre><span></span><code><span class="c1"># Uncommented it if you need</span>
-<span class="c1">#commonAnnotations:</span>
-<span class="c1">#  helmwave.app/show-service-messages: &quot;true&quot;</span>
-<span class="c1">#  helmwave.app/show-logs-only-for-containers: &quot;redis&quot;</span>
+<span class="nt">commonAnnotations</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">helmwave.app/show-service-messages</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">  </span><span class="nt">helmwave.app/show-logs-only-for-containers</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;redis&quot;</span>
 
 <span class="nt">podAnnotations</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">datetime</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">now</span><span class="w"> </span><span class="p p-Indicator">}}</span>

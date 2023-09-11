@@ -12,20 +12,20 @@
         <meta name="author" content="Dmitrii Zhiliaev">
       
       
-        <link rel="canonical" href="https://docs.helmwave.app/0.32.x/examples/private-gitlab-repo/">
+        <link rel="canonical" href="https://docs.helmwave.app/0.32.x/examples/values-sops/">
       
       
-        <link rel="prev" href="../private-github-repo/">
+        <link rel="prev" href="../vault/">
       
       
-        <link rel="next" href="../values-disable-render/">
+        <link rel="next" href="../aws-sm/">
       
       <link rel="icon" href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.19">
     
     
       
-        <title>Private GitLab repo - Helmwave</title>
+        <title>Decode values with SOPS - Helmwave</title>
       
     
     
@@ -128,9 +128,9 @@ function __md_analytics() {
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Helmwave - Private GitLab repo">
+<meta property="og:title" content="Helmwave - Decode values with SOPS">
 <meta property="og:description" content="The helmwave`s docs">
-<meta property="og:url" content="https://docs.helmwave.app/0.32.x/examples/private-gitlab-repo/">
+<meta property="og:url" content="https://docs.helmwave.app/0.32.x/examples/values-sops/">
 <meta property="og:image" content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -160,7 +160,7 @@ function __md_analytics() {
     <div data-md-component="skip">
       
         
-        <a href="#private-gitlab-repo" class="md-skip">
+        <a href="#decode-values-with-sops" class="md-skip">
           Skip to content
         </a>
       
@@ -210,7 +210,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Private GitLab repo
+              Decode values with SOPS
             
           </span>
         </div>
@@ -982,16 +982,14 @@ You're not viewing the latest version.
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
       
       
       
@@ -1000,7 +998,7 @@ You're not viewing the latest version.
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_11">
           <span class="md-nav__icon md-icon"></span>
           Repositories
@@ -1025,21 +1023,11 @@ You're not viewing the latest version.
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../private-gitlab-repo/" class="md-nav__link">
         Private GitLab repo
       </a>
-      
     </li>
   
 
@@ -1099,7 +1087,7 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
-      <a href="../values-sops/" class="md-nav__link">
+      <a href="./" class="md-nav__link">
         None
       </a>
     </li>
@@ -1146,14 +1134,16 @@ You're not viewing the latest version.
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13" checked>
       
       
       
@@ -1162,7 +1152,7 @@ You're not viewing the latest version.
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_13">
           <span class="md-nav__icon md-icon"></span>
           Data sources
@@ -1187,11 +1177,21 @@ You're not viewing the latest version.
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../values-sops/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Decode values with SOPS
       </a>
+      
     </li>
   
 
@@ -1261,55 +1261,68 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/helmwave/docs/raw/main/docs/examples/private-gitlab-repo/README.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/helmwave/docs/raw/main/docs/examples/values-sops/README.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="private-gitlab-repo">Private GitLab repo<a class="headerlink" href="#private-gitlab-repo" title="Permanent link">&para;</a></h1>
-<p>Learn more about <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.94 13.11-1.05-3.22c0-.03-.01-.06-.02-.09l-2.11-6.48a.859.859 0 0 0-.8-.57c-.36 0-.68.25-.79.58l-2 6.17H8.84L6.83 3.33a.851.851 0 0 0-.79-.58c-.37 0-.69.25-.8.58L3.13 9.82v.01l-1.07 3.28c-.16.5.01 1.04.44 1.34l9.22 6.71c.17.12.39.12.56-.01l9.22-6.7c.43-.3.6-.84.44-1.34M8.15 10.45l2.57 7.91-6.17-7.91m8.73 7.92 2.47-7.59.1-.33h3.61l-5.59 7.16m4.1-13.67 1.81 5.56h-3.62m-1.3.95-1.79 5.51L12 19.24l-2.86-8.79M6.03 3.94 7.84 9.5H4.23m-1.18 4.19c-.09-.07-.13-.19-.09-.29l.79-2.43 5.82 7.45m11.38-4.73-6.51 4.73.02-.03 5.79-7.42.79 2.43c.04.1 0 .22-.09.29"/></svg></span> GitLab <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.337 0c-.475 0-.861 1.016-.861 2.269 0 .527.069 1.011.183 1.396a8.514 8.514 0 0 0-3.961 1.22 5.229 5.229 0 0 0-.595-1.093c-.606-.866-1.34-1.436-1.79-1.43a.381.381 0 0 0-.217.066c-.39.273-.123 1.326.596 2.353.267.381.559.705.84.948a8.683 8.683 0 0 0-1.528 1.716h1.734a7.179 7.179 0 0 1 5.381-2.421 7.18 7.18 0 0 1 5.382 2.42h1.733a8.687 8.687 0 0 0-1.32-1.53c.35-.249.735-.643 1.078-1.133.719-1.027.986-2.08.596-2.353a.382.382 0 0 0-.217-.065c-.45-.007-1.184.563-1.79 1.43a4.897 4.897 0 0 0-.676 1.325 8.52 8.52 0 0 0-3.899-1.42c.12-.39.193-.887.193-1.429 0-1.253-.386-2.269-.862-2.269zM1.624 9.443v5.162h1.358v-1.968h1.64v1.968h1.357V9.443H4.62v1.838H2.98V9.443zm5.912 0v5.162h3.21v-1.108H8.893v-.95h1.64v-1.142h-1.64v-.84h1.853V9.443zm4.698 0v5.162h3.218v-1.362h-1.86v-3.8zm4.706 0v5.162h1.364v-2.643l1.357 1.225 1.35-1.232v2.65h1.365V9.443h-.614l-2.1 1.914-2.109-1.914zm-11.82 7.28a8.688 8.688 0 0 0 1.412 1.548 5.206 5.206 0 0 0-.841.948c-.719 1.027-.985 2.08-.596 2.353.39.273 1.289-.338 2.007-1.364a5.23 5.23 0 0 0 .595-1.092 8.514 8.514 0 0 0 3.961 1.219 5.01 5.01 0 0 0-.183 1.396c0 1.253.386 2.269.861 2.269.476 0 .862-1.016.862-2.269 0-.542-.072-1.04-.193-1.43a8.52 8.52 0 0 0 3.9-1.42c.121.4.352.865.675 1.327.719 1.026 1.617 1.637 2.007 1.364.39-.273.123-1.326-.596-2.353-.343-.49-.727-.885-1.077-1.135a8.69 8.69 0 0 0 1.202-1.36h-1.771a7.174 7.174 0 0 1-5.227 2.252 7.174 7.174 0 0 1-5.226-2.252z"/></svg></span> helm registry <a href="https://docs.gitlab.com/ee/user/packages/helm_repository/">here</a></p>
-<p><strong>Project structure</strong></p>
-<div class="highlight"><pre><span></span><code>docs/examples/private-github-repo
-├──<span class="w"> </span>README.md
-├──<span class="w"> </span>helmwave.yml
-└──<span class="w"> </span>helmwave.yml.tpl
+<h1 id="decode-values-with-sops">Decode values with SOPS<a class="headerlink" href="#decode-values-with-sops" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.32.0"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"/></svg></span> v0.32.0</a></p>
+</blockquote>
+<p><a href="https://github.com/getsops/sops">SOPS</a> is an awesome to provide easy way to encode and decode files.
+Helmwave allows you to automatically decode them during <code>helmwave build</code>.</p>
+<div class="highlight"><span class="filename">values.yml</span><pre><span></span><code><span class="c1">#ENC[AES256_GCM,data:GgOHfI2ALHVRMutwzbbj1xB/AO0oz9IQExewzxqn+A==,iv:2SMqOaISe7ErBHgrG0fUAEG2PZ0VxPk217eWxnjug5k=,tag:NfTKnKsz3Tq4VILEDvvFkA==,type:comment]</span>
+<span class="c1">#ENC[AES256_GCM,data:Cw==,iv:ROEhMOyTjnApauHRyZZbqWCCIKaWY+5DVM8fWlZtslg=,tag:HEEQpFaEGUKM2VusUC+0mw==,type:comment]</span>
+<span class="nt">metrics</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">service</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">prometheus.io/scrape</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENC[AES256_GCM,data:2L7+8w==,iv:/deSPkA8lPHHJVUGoIDd0x368mPsGMAFAPenAeXz68Y=,tag:efKHi/5X/wJPVSqI6oHldA==,type:str]</span>
+<span class="w">            </span><span class="nt">prometheus.io/port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENC[AES256_GCM,data:bErIwr71Yuv1nT+pha8e97Tspo015YWTMfSrSd/aRqyqBA==,iv:lodkK84z6MHtzrQBdMIe+KtaDdZjlagu3F0qpfOU7rs=,tag:jMslNtzbJe6/cYQnKf9OlQ==,type:str]</span>
+<span class="nt">sops</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">kms</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">    </span><span class="nt">gcp_kms</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">    </span><span class="nt">azure_kv</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">    </span><span class="nt">hc_vault</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">    </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">    </span><span class="nt">lastmodified</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2023-09-11T16:44:33Z&quot;</span>
+<span class="w">    </span><span class="nt">mac</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENC[AES256_GCM,data:5+vWLYhYCmaKZvuQpRpDKZNS0z9EL1VpppuIssKqG4XFmoLgeigjc4noa2LLuM3iY9rHy+ICNcjdzWIjHhA1Zw6T7B6TpkTR3xyyzqQZ6fx8yw1QfZVE/MRac6Zg5/UIGoTocJzwfHUE84wzn5Na/9FclDYwGYR2O6dvMOrm5uU=,iv:owmjYXD7wib62U+qZPgG1U3SbGU48NLRx4j7yK+UoTA=,tag:tMjD5M4kJBguvQ3DoFeyvg==,type:str]</span>
+<span class="w">    </span><span class="nt">pgp</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">created_at</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2023-09-11T16:44:32Z&quot;</span>
+<span class="w">          </span><span class="nt">enc</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">-----BEGIN PGP MESSAGE-----</span>
 
-<span class="m">0</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
+<span class="w">            </span><span class="no">hF4DMeHY6nye/U4SAQdAEzD3I/ufCNIhuaAPZ1/8RtzZEVLlEaPlGk6FYviyinAw</span>
+<span class="w">            </span><span class="no">+fynfTRvLNdFFXrRUdQibDEc3kJ8v5n/vpto3OYwXSDV3VXflXYVxKHIcXwkAgIy</span>
+<span class="w">            </span><span class="no">1GgBCQIQhKZtYYky8MLckqiWoJhvH7p/K7U9DGZkSGrv6f7YJJ2OtpkkDvpZHHAQ</span>
+<span class="w">            </span><span class="no">ghdGY8M9T0zU/ZN+9xRgsp7n/ukk/w6ChwZdg7ebCNAMGAdWOu2F+rERckMTEwBI</span>
+<span class="w">            </span><span class="no">rRMNUMbeTNMjwA==</span>
+<span class="w">            </span><span class="no">=eETi</span>
+<span class="w">            </span><span class="no">-----END PGP MESSAGE-----</span>
+<span class="w">          </span><span class="nt">fp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DCB1B50CC55217886566ED93FFA4CA11112C922E</span>
+<span class="w">    </span><span class="nt">unencrypted_suffix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_unencrypted</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.7.3</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">gitlab</span><span class="nv"> </span><span class="s">private</span><span class="nv"> </span><span class="s">repo&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">render</span><span class="nv"> </span><span class="s">flag&quot;</span>
 <span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.32.1&quot;</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
-<span class="w">  </span><span class="c1"># Docs: https://docs.gitlab.com/ee/user/packages/helm_repository/</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_API_V4_URL&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">/projects/{{env &quot;CI_PROJECT_ID&quot; }}/packages/helm/stable</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_PROJECT_TITLE&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
-<span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab-ci-token</span>
-<span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_JOB_TOKEN&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span>
+<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com/bitnami</span>
 
+<span class="nt">.options</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;options</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-namespace</span>
+<span class="w">  </span><span class="nt">wait</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 
 <span class="nt">releases</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span>
-<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_PROJECT_TITLE&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">/my-chart</span>
-<span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
-<span class="w">    </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">.gitlab-ci.yml</span><pre><span></span><code><span class="nt">helmwave</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
-<span class="w">  </span><span class="nt">image</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/helmwave/helmwave:0.32.1</span>
-<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">printenv | grep HELMWAVE</span>
-<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">helmwave yml</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">helmwave build</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">helmwave up</span>
-<span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.helmwave</span>
-<span class="w">    </span><span class="nt">expire_in</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2 weeks</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span>
+<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami/nginx</span>
+<span class="w">    </span><span class="nt">values</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values-sops.yml</span>
+<span class="w">        </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sops</span>
 </code></pre></div>
 
 
