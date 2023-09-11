@@ -21,7 +21,7 @@ We recommend using [`gomplate`](#gomplate).
 
 !!! note "Overriding templater"
 
-    You can override used templater using [`renderer` option in values](examples/values-renderer-flag/README.md)
+    You can override used templater using [`renderer` option in values](examples/values-disable-render/README.md)
 
 
 ## [Sprig](http://masterminds.github.io/sprig/)

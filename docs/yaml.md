@@ -554,7 +554,8 @@ Allows overriding how values file is rendered. These renderers are supported:
 - `copy` - do not template file at all (overrides global `--templater` argument)
 - `sops` - use [sops](https://github.com/getsops/sops) to decode encrypted file
 
-[:material-duck: example](examples/values-renderer-flag/README.md)
+- [:material-duck: example](examples/values-sops/README.md)
+- [:material-duck: example](examples/values-disable-render/README.md)
 
 #### strict
 
