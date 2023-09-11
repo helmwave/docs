@@ -6,7 +6,7 @@ hide:
 
 Monitors run custom releases validations and can rollback releases.
 
-**Monitors flow**
+### Monitors flow
 
 ```mermaid
 flowchart LR
@@ -48,6 +48,10 @@ flowchart LR
         monitor2_iteration --success threshold-->monitor2_succeeded
     end
 ```
+
+### Demo
+
+[![asciicast](https://asciinema.org/a/NMGo0NMZOMQjtx0bZPxtlETaL.svg)](https://asciinema.org/a/NMGo0NMZOMQjtx0bZPxtlETaL)
 
 ```yaml title="helmwave.yml"
 {% include "./helmwave.yml" %}
