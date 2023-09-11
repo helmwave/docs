@@ -232,7 +232,7 @@ Monitors run after all dependant releases succeeded. They are triggered every `i
 |    prometheus     |    🙅    |  object  |   {}    |
 |       http        |    🙅    |  object  |   {}    |
 
-[:material-duck: example](examples/values-renderer-flag/README.md)
+[:material-duck: example](examples/monitors/README.md)
 
 ### **name**
 
