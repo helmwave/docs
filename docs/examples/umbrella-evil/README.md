@@ -6,7 +6,7 @@ Why is Umbrella chart evil?
 
 - You must keep extra chart.
 - You have new layer for conventional values.
-- Umbrella chart doesn't provide separate your environments.
+- Umbrella chart doesn't provide you environments separation.
 - When sub-chart is modified, you need to fix it twice.
 
 !!! info "Suppose that you need to describe the next architecture."
