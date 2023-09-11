@@ -14,5 +14,5 @@ releases:
     <<: *options
     chart: bitnami/nginx
     values:
-      - src: values-sops.yml
+      - src: values.yml
         renderer: sops
