@@ -1,0 +1,44 @@
+registries:
+  - host: registry-1.docker.io
+
+monitors:
+  - name: nats-up-metric
+    type: prometheus
+    total_timeout: 1m # fail if it flaps between success and failure for so long
+    iteration_timeout: 1s
+    interval: 2s
+    success_threshold: 5
+    failure_threshold: 5
+    prometheus:
+      url: http://localhost:9090
+      expr: |
+        up == 1
+  - name: nats-delivered-metric
+    type: prometheus
+    total_timeout: 1m # fail if it flaps between success and failure for so long
+    iteration_timeout: 5s
+    interval: 10s
+    success_threshold: 5
+    failure_threshold: 5
+    prometheus:
+      url: http://localhost:9090
+      expr: |
+        sum(rate(nats_consumer_delivered_consumer_seq[15s])) > 0
+
+.options: &options
+  namespace: nats
+  create_namespace: true
+  wait: true
+  timeout: 1m
+  max_history: 3 # best practice
+  chart:
+    # For example, we will use bitnami/nats chart, because it's small and fast
+    name: oci://registry-1.docker.io/bitnamicharts/nats
+    version: 7.8.3 # best practice
+
+releases:
+  - name: nats
+    <<: *options
+    monitors:
+      - name: nats-up-metric
+      - name: nats-delivered-metric

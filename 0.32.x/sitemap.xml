@@ -86,6 +86,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.helmwave.app/0.32.x/examples/monitors/</loc>
+         <lastmod>2023-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.helmwave.app/0.32.x/examples/oci-private/</loc>
          <lastmod>2023-09-11</lastmod>
          <changefreq>daily</changefreq>
