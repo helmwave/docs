@@ -111,7 +111,7 @@ theme:
     - search.highlight
 
 extra:
-  ver: 0.31.0
+  ver: 0.32.0
   version:
     provider: mike
     default: latest

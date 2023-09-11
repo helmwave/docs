@@ -44,7 +44,7 @@ Reserved for the future.
 
 Helmwave will check the current version and project version.
 
-In the future, it is planned to check major compatibility. 
+In the future, it is planned to check major compatibility.
 
 ## registries[]
 
@@ -59,7 +59,6 @@ Describe which [OCI registries](https://helm.sh/docs/topics/registries/) need to
 | password |    🙅    | string |   ""    |
 | insecure |    🙅    |  bool  |  false  |
 
-
 === ":material-duck: private oci"
 
     ```yaml
@@ -67,7 +66,7 @@ Describe which [OCI registries](https://helm.sh/docs/topics/registries/) need to
     ```
 
 === ":material-duck: public oci"
-    
+
     ```yaml
     {% include "./examples/oci-public/helmwave.yml" %}
     ```
@@ -82,13 +81,11 @@ Username for the registry.
 
 !!! note "only if registry is private"
 
-
 ### password
 
 Password for the registry.
 
 !!! note "only if registry is private"
-
 
 ## repositories[]
 
@@ -125,7 +122,6 @@ Username for the repository.
 
 Password for the repository.
 
-
 ### force
 
 Update existing repository exists if settings differ.
@@ -135,8 +131,8 @@ Update existing repository exists if settings differ.
 > Aka global hooks. Introduced in [:material-tag: v0.28.0](https://github.com/helmwave/helmwave/releases/tag/v0.28.0)
 
 We don't call lifecycle the hooks on purpose
-so as not to confuse you with the original functionality of [:simple-helm: helm hooks](https://helm.sh/docs/topics/charts_hooks/).
-
+so as not to confuse you with the original functionality
+of [:simple-helm: helm hooks](https://helm.sh/docs/topics/charts_hooks/).
 
 |     field     | required |  type  | default |
 |:-------------:|:--------:|:------:|:-------:|
@@ -148,7 +144,6 @@ so as not to confuse you with the original functionality of [:simple-helm: helm 
 |  post_build   |    🙅    | []Hook |   []    |
 | pre_rollback  |    🙅    | []Hook |   []    |
 | post_rollback |    🙅    | []Hook |   []    |
-
 
 ```mermaid
 flowchart LR
@@ -165,8 +160,8 @@ flowchart LR
 To each lifecycle command several environment variables are passed:
 
 - `${HELMWAVE_LIFECYCLE_TYPE}` - contains lifecycle stage/type (`pre_build`/`post_build`/etc.)
-- `${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}` - *(only for per-release lifecycle)* contains release uniqname (`release@namespace`)
-
+- `${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}` - *(only for per-release lifecycle)* contains release
+  uniqname (`release@namespace`)
 
 ** Hook **
 
@@ -202,6 +197,7 @@ To each lifecycle command several environment variables are passed:
           show: true
           allow_failure: false
     ```
+
 ### show
 
 > Introduced in [:material-tag: v0.28.0](https://github.com/helmwave/helmwave/releases/tag/v0.29.0)
@@ -214,6 +210,115 @@ Show output of the command.
 
 Allow failure of the command.
 
+## monitors[]
+
+> Introduced in [:material-tag: v0.32.0](https://github.com/helmwave/helmwave/releases/tag/v0.32.0)
+
+Monitors run after all dependant releases succeeded. They are triggered every `interval` and end when:
+
+- Either `success_threshold` is met - monitor succeeds
+- Either `failure_threshold` is met - monitor fails
+- Or `total_timeout` is triggered - monitor fails
+
+|       field       | required |   type   | default |
+|:-----------------:|:--------:|:--------:|:-------:|
+|     **name**      |    ✅     |  string  |   ""    |
+|     **type**      |    ✅     |  string  |   ""    |
+|   total_timeout   |    🙅    | interval |   5m    |
+| iteration_timeout |    🙅    | interval |   10s   |
+|     interval      |    🙅    | interval |   1m    |
+| success_threshold |    🙅    |   int    |    3    |
+| failure_threshold |    🙅    |   int    |    3    |
+|    prometheus     |    🙅    |  object  |   {}    |
+|       http        |    🙅    |  object  |   {}    |
+
+### **name**
+
+Monitor name, must be unique.
+
+### **type**
+
+Type of monitor to run. Must be one of:
+
+- `prometheus`
+- `http`
+
+### total_timeout
+
+Total timeout for whole monitor run. If monitor haven't finished within `total_timeout`, it is considered as failed.
+
+### iteration_timout
+
+Timeout for each monitor iteration. If monitor iteration haven't finished within `iteration_timeout`, iteration is
+considered as failed.
+
+### interval
+
+Interval between iterations. Must be lower than `iteration_timeout`.
+
+### success_threshold
+
+Count of sequential succeeded iterations that make monitor succeed.
+
+### failure_threshold
+
+Count of sequential failed iterations that make monitor fail.
+
+### prometheus
+
+|  field   | required |  type  | default |
+|:--------:|:--------:|:------:|:-------:|
+| **url**  |    ✅     | string |   ""    |
+| **expr** |    ✅     | string |   ""    |
+| insecure |    🙅    |  bool  |  false  |
+
+#### **url**
+
+Prometheus base URL
+
+#### **expr**
+
+Prometheus expression to query on each iteration. Iteration is considered successful if expression returns 1 or more
+rows.
+
+#### insecure
+
+Whether to skip SSL certificate validation
+
+### http
+
+|       field        | required |  type  | default |
+|:------------------:|:--------:|:------:|:-------:|
+|      **url**       |    ✅     | string |   ""    |
+| **expected_codes** |    ✅     | []int  |   []    |
+|       method       |    🙅    | string | "HEAD"  |
+|        body        |    🙅    | string |   ""    |
+|      headers       |    🙅    | object |   {}    |
+|      insecure      |    🙅    |  bool  |  false  |
+
+#### **url**
+
+URL to query
+
+#### **expected_codes**
+
+List of expected HTTP response codes that are considered to be successful
+
+#### method
+
+HTTP method to query
+
+#### body
+
+HTTP body to send
+
+#### headers
+
+Map of HTTP headers to set in request
+
+#### insecure
+
+Whether to skip SSL certificate validation
 
 ## releases[]
 
@@ -231,6 +336,7 @@ Almost all options that are here are native :simple-helm: helm options.
 |            store            |    🙅    |      object      |   {}    |        ✅         |               |
 |          lifecycle          |    🙅    |      object      |   {}    |        ✅         |               |
 |         depends_on          |    🙅    |      array       |   []    |        ✅         |               |
+|          monitors           |    🙅    |      array       |   []    |        ✅         |               |
 |        allow_failure        |    🙅    |       bool       |  false  |                  |               |
 |  pending_release_strategy   |    🙅    |      string      |   ""    |                  |               |
 |            wait             |    🙅    |       bool       |  false  |                  | :simple-helm: |
@@ -270,7 +376,6 @@ Release name. I hope you know what it is.
 
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
 
-
 |         field          | required |  type  | default |
 |:----------------------:|:--------:|:------:|:-------:|
 |        **name**        |    ✅     | string |   ""    |
@@ -291,7 +396,7 @@ Release name. I hope you know what it is.
 `chart` can be an object or a string. If it's a string, it will be treated as a `name`.
 
 === "short syntax"
-    
+
     > Introduced in [:material-tag: v0.20.0](https://github.com/helmwave/helmwave/releases/tag/v0.20.0)
     
 
@@ -312,8 +417,8 @@ Release name. I hope you know what it is.
           name: my-chart
     ```
 
-
-!!! tip "If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during deploy."
+!!! tip "If chart is remote it will be downloaded into `.helmwave/charts` and downloaded archive will be used during
+deploy."
 
 #### name
 
@@ -371,13 +476,11 @@ Disable Helm dependency update.
 
 Disable Helm repository refresh.
 
-
 ### create_namespace
 
 > Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
 
 If set to `true` Helmwave will create the release namespace if not present.
-
 
 ```shell
 helm upgrade --install --create-namespace my-release my-chart --namespace my-namespace
@@ -390,8 +493,6 @@ releases:
     chart: my-chart
     create_namespace: true
 ```
-
-
 
 ### values[]
 
@@ -406,7 +507,7 @@ releases:
 | delimiter_left  |    🙅    | string |  "{{"   |
 | delimiter_right |    🙅    | string |  "}}"   |
 |     strict      |    🙅    |  bool  |  false  |
-|     render      |    🙅    |  bool  |  true   |
+|    renderer     |    🙅    | string |   ""    |
 
 === "short syntax"
 
@@ -424,7 +525,7 @@ releases:
         delimiter_left: "{{"
         delimiter_right: "}}"
         strict: false
-        render: true
+        renderer: ""
     ```
 
 #### **src**
@@ -440,30 +541,33 @@ You can change the delimiter that helmwave uses to render values.
 
 [:material-duck: example](../examples/values-delimiter-flags/)
 
-#### render
+#### renderer
 
-> Introduced in [:material-tag: v0.20.0](https://github.com/helmwave/helmwave/releases/tag/v0.20.0)
-    
+> Introduced in [:material-tag: v0.32.0](https://github.com/helmwave/helmwave/releases/tag/v0.32.0)
 
-Allows disabling templating values at all.
+Allows overriding how values file is rendered. These renderers are supported:
 
-[:material-duck: example](examples/values-render-flag/README.md)
+- `sprig` - template file with `sprig` (overrides global `--templater` argument)
+- `gomplate` - template file with `gomplate` (overrides global `--templater` argument)
+- `copy` - do not template file at all (overrides global `--templater` argument)
+- `sops` - use [sops](https://github.com/getsops/sops) to decode encrypted file
+
+[:material-duck: example](examples/values-renderer-flag/README.md)
 
 #### strict
 
 > Introduced in [:material-tag: v0.20.0](https://github.com/helmwave/helmwave/releases/tag/v0.20.0)
-    
+
 
 Allows to fail if values file doesn't exist.
 
 [:material-duck: example](examples/values-strict-flag/README.md)
 
 ### tags[]
+
 > Aka labels. Introduced in [:material-tag: v0.4.0](https://github.com/helmwave/helmwave/releases/tag/v0.4.0)
 
 Tags allow you to choose releases for build.
-
-
 
 [:material-duck: example](examples/tags/README.md)
 
@@ -472,12 +576,10 @@ Tags allow you to choose releases for build.
 > Introduced in [:material-tag: v0.27.3](https://github.com/helmwave/helmwave/releases/tag/v0.27.3)
 
 If `offline_kube_version` set helmwave will use this version to build plan.
-Without this option, helmwave will ask :simple-kubernetes: kubernetes for a version. 
+Without this option, helmwave will ask :simple-kubernetes: kubernetes for a version.
 It is very useful if you want to build a plan without access to a cluster.
 
 Combine `offline_kube_version` and `--diff-mode=local` or `--diff-mode=none` to build a plan without kubernetes.
-
-
 
 [:material-duck: example](examples/private-env/README.md)
 
@@ -511,14 +613,14 @@ It allows passing your custom fields from `helmwave.yml` to values.
 
 `depends_on` is a list of releases that allow you to deploy a sequence.
 
-!!! example "Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application) application"
+!!! example "Example for [3-tier](https://searchsoftwarequality.techtarget.com/definition/3-tier-application)
+application"
 
     ```mermaid
     graph LR
         frontend --> backend --> db;
     ```
     *If you don't see a graph, please reload the page.*
-
 
 Your `helmwave.yml` should look like this:
 
@@ -541,16 +643,16 @@ releases:
 
 #### **name**
 
-Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in a plan, it will be added to a plan.
+Name of release (dependency) that has to be installed/upgraded before this release (dependant). If dependency is not in
+a plan, it will be added to a plan.
 
 Name support 2 kind of definitions: uniq name `<release-name>@<namespace>` or just `<release-name>`.
 If namespace is not specified, it will be taken from namespace filed of release.
 
-
 The same configuration can be written in 2 ways:
 
 === "`<release-name>`"
-    
+
     > Introduced in [:material-tag: v0.21.1](https://github.com/helmwave/helmwave/releases/tag/v0.21.1)
 
     ```yaml
@@ -577,9 +679,7 @@ The same configuration can be written in 2 ways:
       namespace: test
     ```
 
-
 Both of them will be normalized to `redis@test` in a planfile.
-
 
 #### tag
 
@@ -597,8 +697,32 @@ The planfile (`.helmwave/planfile` by default) will have a normalized list of re
 
 If dependency is not found in all available releases, helmwave will not fail due to missing dependency.
 
+It allows setting explicit dependencies between releases. Dependant release will start upgrading only after all its
+dependencies finished upgrading
 
-It allows setting explicit dependencies between releases. Dependant release will start upgrading only after all its dependencies finished upgrading
+### monitors[]
+
+> Introduced in [:material-tag: v0.32.0](https://github.com/helmwave/helmwave/releases/tag/v0.32.0)
+
+Which monitors should be triggered after the releases is successfully deployed.
+
+|  field   | required |  type  | default |
+|:--------:|:--------:|:------:|:-------:|
+| **name** |    ✅    | string |   ""    |
+|  action  |    🙅    | string |   ""    |
+
+
+#### **name**
+
+Name of the monitor to trigger
+
+#### action
+
+Action to perform if the monitor is failed. Should be one of:
+
+- `""` - do nothing
+- `rollback` - rollback release to the previous version
+- `uninstall` - uninstall release
 
 ### allow_failure
 
@@ -680,7 +804,8 @@ Allow deletion of new resources created in this upgrade when upgrade fails.
 
 ### devel
 
-> Removed in [:material-tag: v0.29.3](https://github.com/helmwave/helmwave/releases/tag/v0.29.3) as it wasn't functioning properly.
+> Removed in [:material-tag: v0.29.3](https://github.com/helmwave/helmwave/releases/tag/v0.29.3) as it wasn't
+> functioning properly.
 
 
 If you need to use development version, set `version: ">0.0.0-0"`.
@@ -723,7 +848,6 @@ Enable DNS resolution in templates.
 Allows deleting and then creating resources (pods) when needed instead of updating.
 
 !!! tip "We don't recommend using this option."
-
 
 ### reset_values
 
@@ -773,4 +897,5 @@ You can use custom commands to change rendered manifests.
 > Introduced in [:material-tag: v0.31.0](https://github.com/helmwave/helmwave/releases/tag/v0.31.0)
 
 
-If enabled, rendered [chart notes](https://helm.sh/docs/chart_template_guide/notes_files/) will be shown after successful release.
+If enabled, rendered [chart notes](https://helm.sh/docs/chart_template_guide/notes_files/) will be shown after
+successful release.
