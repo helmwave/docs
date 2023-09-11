@@ -42,11 +42,13 @@ Imagine you have multiple environments for same release (e.g. dev, stage, produc
 settings.
 
 === ":simple-helm: helm"
-You will likely have bunch of bash scripts that run helm with different values files. It is quite hard to support and
-improve.
+
+    You will likely have bunch of bash scripts that run helm with different values files. It is quite hard to support and
+    improve.
 
 === "🌊 helmwave"
-Set up `helmwave.yml.tpl` to include different values for different environments.
+
+    Set up `helmwave.yml.tpl` to include different values for different environments.
 
 Check out [:material-duck: the example](../examples/single-app-multi-envs)
 
@@ -55,12 +57,14 @@ Check out [:material-duck: the example](../examples/single-app-multi-envs)
 For example, you need to pass docker image tag.
 
 === ":simple-helm: helm"
-Either you template values file (e.g. with ansible/jinja2 or any other templater) or you pass every individual value
-via `--set`.
+
+    Either you template values file (e.g. with ansible/jinja2 or any other templater) or you pass every individual value
+    via `--set`.
 
 === "🌊 helmwave"
-Every values file are templated via `sprig` or `gomplate` which allows you to generate any values even with external
-commands.
+
+    Every values file are templated via `sprig` or `gomplate` which allows you to generate any values even with external
+    commands.
 
 Check out [:material-duck: the example](../examples/pass-git-tag)
 
@@ -69,10 +73,12 @@ Check out [:material-duck: the example](../examples/pass-git-tag)
 Imagine you need to deploy more than 1 release (e.g. deploy 10+ microservices to dynamic feature environment).
 
 === ":simple-helm: helm"
-Either deploy releases one-by-one or create an umbrella chart (we think it is bad pattern).
+
+    Either deploy releases one-by-one or create an umbrella chart (we think it is bad pattern).
 
 === "🌊 helmwave"
-All releases are deployed in parallel with a dependency mechanism.
+
+    All releases are deployed in parallel with a dependency mechanism.
 
 Check out [:material-duck: the example](../examples/umbrella-evil)
 
@@ -82,10 +88,12 @@ Imagine you need to deploy some DBMS and an app that uses it. While DBMS is prov
 already starts failing probes. It may lead to failing app release.
 
 === ":simple-helm: helm"
-Manually deploy releases one-by-one.
+
+    Manually deploy releases one-by-one.
 
 === "🌊 helmwave"
-Use `depends_on` to set up explicit dependencies between releases.
+
+    Use `depends_on` to set up explicit dependencies between releases.
 
 ### Release stuck in pending state
 
@@ -93,19 +101,23 @@ If your CI for some reason killed helm process your next `helm upgrade` will fai
 in `pending-upgrade` state.
 
 === ":simple-helm: helm"
-You need to either do `helm rollback` (doesn't work for `pending-install`) or `helm delete` (destructive in production)
-and try upgrade one more time.
+
+    You need to either do `helm rollback` (doesn't work for `pending-install`) or `helm delete` (destructive in production)
+    and try upgrade one more time.
 
 === "🌊 helmwave"
-Use `pending_release_strategy` to automatically do rollbacks or delete before upgrade if required.
+
+    Use `pending_release_strategy` to automatically do rollbacks or delete before upgrade if required.
 
 ### Live-tracking release
 
 === ":simple-helm: helm"
-You can enable debug logs which will provide you logs of what helm does.
+
+    You can enable debug logs which will provide you logs of what helm does.
 
 === "🌊 helmwave"
-Use [kubedog](https://github.com/werf/kubedog) to show status progress.
+
+    Use [kubedog](https://github.com/werf/kubedog) to show status progress.
 
 Check out [:material-duck: the example](../examples/kubedog)
 
@@ -117,14 +129,16 @@ same in a bit different way with some other features. Probably there would be no
 ### Helm execution
 
 === "helmfile"
-Helmfile runs `helm` via `os.Exec`. It means that:
+
+    Helmfile runs `helm` via `os.Exec`. It means that:
 
     - You need `helm` binary as well as a lot of other dependencies (e.g. libc). Helmfile's official docker image requires for around 300MB.
     - Helmfile collects, parses and outputs `helm` stdout/stderr. Any helm backward incompatibility (even occasional) may be a big pain in the ass.
     - `os.Exec` is not the fastest way to run helm. If 10ns of overhead does really matter to you.
 
 === "🌊 helmwave"
-Helmwave runs `helm` as an internal bundled library. It means that:
+
+    Helmwave runs `helm` as an internal bundled library. It means that:
 
     - Helmwave already contains builtin specific (we try to keep it up to date) `helm` version.
     - There are no helmwave dependencies at all - it can be completely static binary. Official docker image requires for around 30MB. And it can run both in musl and glibc environments.
@@ -133,11 +147,13 @@ Helmwave runs `helm` as an internal bundled library. It means that:
 ### Live-tracking release
 
 === "helmfile"
-Only helm progress is available although there
-is [a discussion about kubedog integration](https://github.com/helmfile/helmfile/discussions/660).
+
+    Only helm progress is available although there
+    is [a discussion about kubedog integration](https://github.com/helmfile/helmfile/discussions/660).
 
 === "🌊 helmwave"
-Use [kubedog](https://github.com/werf/kubedog) to show status progress.
+
+    Use [kubedog](https://github.com/werf/kubedog) to show status progress.
 
 Check out [:material-duck: the example](../examples/kubedog)
 
@@ -147,18 +163,22 @@ If your CI for some reason killed helm process your next `helm upgrade` will fai
 in `pending-upgrade` state.
 
 === "helmfile"
-The same as for helm
+
+    The same as for helm
 
 === "🌊 helmwave"
-Use `pending_release_strategy` to automatically do rollbacks or delete before upgrade if required.
+
+    Use `pending_release_strategy` to automatically do rollbacks or delete before upgrade if required.
 
 ### Templating engine
 
 By templating engine we understand collection of builtin functions for default golang templates.
 
 === "helmfile"
-Helmfile only supports `sprig` as a template engine.
+
+    Helmfile only supports `sprig` as a template engine.
 
 === "🌊 helmwave"
-Every values file can be templated via `sprig` or `gomplate` (or even non-templated at all). Gomplate is an awesome huge
-engine that has a lot of features.
+
+    Every values file can be templated via `sprig` or `gomplate` (or even non-templated at all). Gomplate is an awesome huge
+    engine that has a lot of features.
