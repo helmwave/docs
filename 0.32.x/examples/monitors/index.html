@@ -610,6 +610,7 @@ You're not viewing the latest version.
 <div class="mermaid">flowchart LR
     helmwave_up[helmwave up]
     exit0[exit 0]
+    exit1[exit 1]
 
     helmwave_up --&gt; release1[upgrade release 1]
     helmwave_up --&gt; release2[upgrade release 2]
@@ -624,6 +625,10 @@ You're not viewing the latest version.
     monitor1_failed -.rollback release.-&gt;release_rollback2[rollback release 2]
     monitor2_failed -.rollback release.-&gt;release_rollback2[rollback release 2]
     monitor2_failed -.rollback release.-&gt;release_rollback3[rollback release 3]
+
+    release_rollback1 -.-&gt; exit1
+    release_rollback2 -.-&gt; exit1
+    release_rollback3 -.-&gt; exit1
 
     monitor1_succeeded -.-&gt; exit0
     monitor2_succeeded -.-&gt; exit0
