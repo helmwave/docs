@@ -12,6 +12,7 @@ Monitors run custom releases validations and can rollback releases.
 flowchart LR
     helmwave_up[helmwave up]
     exit0[exit 0]
+    exit1[exit 1]
     
     helmwave_up --> release1[upgrade release 1]
     helmwave_up --> release2[upgrade release 2]
@@ -26,6 +27,10 @@ flowchart LR
     monitor1_failed -.rollback release.->release_rollback2[rollback release 2]
     monitor2_failed -.rollback release.->release_rollback2[rollback release 2]
     monitor2_failed -.rollback release.->release_rollback3[rollback release 3]
+
+    release_rollback1 -.-> exit1
+    release_rollback2 -.-> exit1
+    release_rollback3 -.-> exit1
 
     monitor1_succeeded -.-> exit0
     monitor2_succeeded -.-> exit0
