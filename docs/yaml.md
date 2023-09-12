@@ -728,6 +728,8 @@ Action to perform if the monitor is failed. Should be one of:
 - `rollback` - rollback release to the previous version
 - `uninstall` - uninstall release
 
+If multiple monitors of the release failed and they have different actions, chosen action is a random one from the list.
+
 ### allow_failure
 
 > Introduced in [:material-tag: v0.15.0](https://github.com/helmwave/helmwave/releases/tag/v0.15.0)
