@@ -609,18 +609,24 @@ You're not viewing the latest version.
 <h3 id="monitors-flow">Monitors flow<a class="headerlink" href="#monitors-flow" title="Permanent link">¶</a></h3>
 <div class="mermaid">flowchart LR
     helmwave_up[helmwave up]
+    exit0[exit 0]
 
     helmwave_up --&gt; release1[upgrade release 1]
     helmwave_up --&gt; release2[upgrade release 2]
     helmwave_up --&gt; release3[upgrade release 3]
-    release1 -- succeeded --&gt; monitor1
-    release2 -- succeeded --&gt; monitor1
-    release2 -- succeeded --&gt; monitor2
-    release3 -- succeeded --&gt; monitor2
+
+    release1 -- succeeded --&gt; monitor1_start
+    release2 -- succeeded --&gt; monitor1_start
+    release2 -- succeeded --&gt; monitor2_start
+    release3 -- succeeded --&gt; monitor2_start
+
     monitor1_failed -.rollback release.-&gt;release_rollback1[rollback release 1]
     monitor1_failed -.rollback release.-&gt;release_rollback2[rollback release 2]
     monitor2_failed -.rollback release.-&gt;release_rollback2[rollback release 2]
     monitor2_failed -.rollback release.-&gt;release_rollback3[rollback release 3]
+
+    monitor1_succeeded -.-&gt; exit0
+    monitor2_succeeded -.-&gt; exit0
 
     subgraph monitor1[Monitor 1]
         monitor1_start[Monitor start]
@@ -646,6 +652,13 @@ You're not viewing the latest version.
         monitor2_iteration --success threshold--&gt;monitor2_succeeded
     end
 </div>
+<ul>
+<li>Each monitor starts when its all dependant releases succeeded</li>
+<li>Each monitor runs its iterations every <code>iterval</code> with <code>iteration_timeout</code></li>
+<li>Consecutive successful iterations are counted towards <code>success_threshold</code></li>
+<li>Consecutive failed iterations are counted towards <code>failure_threshold</code></li>
+<li>After all monitors exited dependant releases do actions for their failed monitors </li>
+</ul>
 <h3 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">¶</a></h3>
 <p><a href="https://asciinema.org/a/NMGo0NMZOMQjtx0bZPxtlETaL"><img alt="asciicast" src="https://asciinema.org/a/NMGo0NMZOMQjtx0bZPxtlETaL.svg"/></a></p>
 <div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">registries</span><span class="p">:</span>
