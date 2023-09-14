@@ -43,6 +43,7 @@ nav:
       - examples/private-env/README.md
       - examples/lifecycle/README.md
       - examples/monitors/README.md
+      - examples/helmfile-migration/README.md
       - OCI:
           - examples/oci-private/README.md
           - examples/oci-public/README.md
