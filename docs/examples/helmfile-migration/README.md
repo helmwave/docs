@@ -32,8 +32,11 @@ Trasform as is.
 
 ## Environments
 
-Helmwave will use templating for resolve this problem.
+Helmwave will use gomplate templater for resolve this problem.
 
+```shell
+export HELMWAVE_TEMPLATER=gomplate
+```
 
     
 === "helmfile"
