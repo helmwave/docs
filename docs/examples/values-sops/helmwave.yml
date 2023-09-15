@@ -15,4 +15,4 @@ releases:
     chart: bitnami/nginx
     values:
       - src: values.yml
-        render: false
+        renderer: sops

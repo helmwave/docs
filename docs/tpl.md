@@ -19,6 +19,10 @@ We recommend using [`gomplate`](#gomplate).
     You should use helmwave to render values of your chart.
 
 
+!!! note "Overriding templater"
+
+    You can override used templater using [`renderer` option in values](examples/values-disable-render/README.md)
+
 
 ## [Sprig](http://masterminds.github.io/sprig/)
 
