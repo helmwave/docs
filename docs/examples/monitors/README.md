@@ -11,19 +11,30 @@ Monitors run custom releases validations and can rollback releases.
 ```mermaid
 flowchart LR
     helmwave_up[helmwave up]
+    exit0[exit 0]
+    exit1[exit 1]
     
     helmwave_up --> release1[upgrade release 1]
     helmwave_up --> release2[upgrade release 2]
     helmwave_up --> release3[upgrade release 3]
-    release1 -- succeeded --> monitor1
-    release2 -- succeeded --> monitor1
-    release2 -- succeeded --> monitor2
-    release3 -- succeeded --> monitor2
+
+    release1 -- succeeded --> monitor1_start
+    release2 -- succeeded --> monitor1_start
+    release2 -- succeeded --> monitor2_start
+    release3 -- succeeded --> monitor2_start
+
     monitor1_failed -.rollback release.->release_rollback1[rollback release 1]
     monitor1_failed -.rollback release.->release_rollback2[rollback release 2]
     monitor2_failed -.rollback release.->release_rollback2[rollback release 2]
     monitor2_failed -.rollback release.->release_rollback3[rollback release 3]
-    
+
+    release_rollback1 -.-> exit1
+    release_rollback2 -.-> exit1
+    release_rollback3 -.-> exit1
+
+    monitor1_succeeded -.-> exit0
+    monitor2_succeeded -.-> exit0
+
     subgraph monitor1[Monitor 1]
         monitor1_start[Monitor start]
         monitor1_iteration[Monitor iteration]
@@ -48,6 +59,12 @@ flowchart LR
         monitor2_iteration --success threshold-->monitor2_succeeded
     end
 ```
+
+- Each monitor starts when its all dependant releases succeeded
+- Each monitor runs its iterations every `iterval` with `iteration_timeout`
+- Consecutive successful iterations are counted towards `success_threshold`
+- Consecutive failed iterations are counted towards `failure_threshold`
+- After all monitors exited dependant releases do actions for their failed monitors 
 
 ### Demo
 
