@@ -1,0 +1,69 @@
+environments:  
+    dev:  
+        kubeContext: dev
+        values:  
+        - filebeat:  
+            enabled: true  
+        - minio:  
+            enabled: true  
+        - gitlab:  
+            enabled: false  
+        - grafana:  
+            enabled: true
+    prod:  
+        kubeContext: prod
+        values:  
+        - filebeat:  
+            enabled: true  
+        - minio:  
+            enabled: false  
+        - gitlab:  
+            enabled: true  
+        - grafana:  
+            enabled: false
+
+repositories:
+  - name: gitlab  
+    url: https://charts.gitlab.io/  
+
+
+helmDefaults:  
+    atomic: true  
+    historyMax: 3
+    timeout: 1200
+
+releases:
+  - name: gitlab  
+    condition: gitlab.enabled  
+    chart: gitlab/gitlab  
+    version: 7.2.2  
+    namespace: gitlab  
+    values:  
+    - ./values/{{ .Environment.Name }}/gitlab.yaml
+
+  - name: minio  
+    condition: minio.enabled  
+    chart: ./charts/minio  
+    namespace: minio  
+    values:  
+    - ./values/{{ .Environment.Name }}/minio.gotmpl  
+    secrets:  
+    - ./values/{{ .Environment.Name }}/minio-secret.yaml
+
+  - name: grafana  
+    condition: grafana.enabled  
+    chart: ./charts/grafana  
+    namespace: grafana
+    values:  
+    - ./values/{{ .Environment.Name }}/grafana.yaml  
+    secrets:  
+    - ./values/{{ .Environment.Name }}/grafana-secrets.yaml
+
+  - name: filebeat  
+    condition: filebeat.enabled  
+    chart: ./charts/filebeat  
+    namespace: filebeat  
+    values:  
+    - ./values/{{ .Environment.Name }}/filebeat.yaml  
+    secrets:  
+    - ./values/{{ .Environment.Name }}/filebeat-secrets.yaml

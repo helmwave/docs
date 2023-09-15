@@ -1,0 +1,18 @@
+envs:
+
+
+  dev:
+    kubecontext: dev
+    releases:
+      minio: true
+      grafana: true
+      filebeat: true
+
+
+
+  prod:
+    kubecontext: prod
+    releases:
+      gitlab: true
+      filebeat: true
+
