@@ -1,14 +1,10 @@
 envs:
-
-
   dev:
     kubecontext: dev
     releases:
       minio: true
       grafana: true
       filebeat: true
-
-
 
   prod:
     kubecontext: prod
