@@ -34,6 +34,7 @@ nav:
       - Templating:
           - examples/apps-per-ns/README.md
           - examples/single-app-multi-envs/README.md
+          - examples/dir-as-name/README.md
           - examples/pass-git-commit/README.md
           - examples/pass-git-tag/README.md
           - examples/built-in-release/README.md
