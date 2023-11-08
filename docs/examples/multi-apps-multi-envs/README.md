@@ -25,7 +25,7 @@ This example will render all apps and all settings for all environments.
 **Now we are dropping `$region`**
 
 - values/$env/ <s>$region</s> /$app.yml –>  `values/$env/$app.yml`
-- values/$env/ <s>$region</s> /$app.yml –>  `values/$env/$app.yml`
+- values/ <strike>$region</strike> /$env/$app.yml –>  `values/$env/$app.yml`
 
 **And the best name convention is**
 
