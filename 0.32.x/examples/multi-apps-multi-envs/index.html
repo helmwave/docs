@@ -1398,9 +1398,14 @@ This example will render all apps and all settings for all environments.</p>
 <li>✅ <code>values/$region/$env/$app.yml</code></li>
 <li>✅ <code>values/$env/$region/$app.yml</code></li>
 </ul>
-<p><strong>Now we are dropping <code>$region</code>. And the best name convention is</strong></p>
+<p><strong>Now we are dropping <code>$region</code></strong></p>
 <ul>
-<li><code>values/$env/&lt;s&gt;$region&lt;/s&gt;/$app.yml</code> –&gt;  <code>values/$env/$app.yml</code> 👍</li>
+<li>values/$env/ <s>$region</s> /$app.yml –&gt;  <code>values/$env/$app.yml</code></li>
+<li>values/$env/ <s>$region</s> /$app.yml –&gt;  <code>values/$env/$app.yml</code></li>
+</ul>
+<p><strong>And the best name convention is</strong></p>
+<ul>
+<li>👍<code>values/$env/$app.yml</code></li>
 </ul>
 <p>This is also a good way when you will write your policy like:</p>
 <div class="highlight"><pre><span></span><code>prod/* @DevOps @SecOps
