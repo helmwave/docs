@@ -1,7 +1,6 @@
 # Directory as release
 
 - If you want to keep a group of releases where release name is a dir name.
-- If you want to manage a group of releases in 
 
 ## Create the project
 
