@@ -5,26 +5,26 @@ This example will render all apps and all settings for all environments.
 
 **We can use one of two name conventions**
 
-- `values/$app/$env.yml`
-- `values/$env/$app.yml`
+- 🤔 `values/$app/$env.yml`
+- 🤔 `values/$env/$app.yml`
 
 **But if we add some regions we will have**
 
-- `values/$app/$env/$region.yml`
-- `values/$app/$region/$env.yml`
-- `values/$region/$env/$app.yml`
-- `values/$region/$app/$env.yml`
-- `values/$env/$region/$app.yml`
-- `values/$env/$app/$region.yml`
+- ❌ `values/$app/$env/$region.yml`
+- ❌ `values/$app/$region/$env.yml`
+- ✅ `values/$region/$env/$app.yml`
+- ❌ `values/$region/$app/$env.yml`
+- ✅ `values/$env/$region/$app.yml`
+- ❌ `values/$env/$app/$region.yml`
 
 **We see that next name convention is more suitable than others**
 
-- `values/$region/$env/$app.yml`
-- `values/$env/$region/$app.yml`
+- ✅ `values/$region/$env/$app.yml`
+- ✅ `values/$env/$region/$app.yml`
 
 **Now we are dropping `$region`. And the best name convention is**
 
-- values/$env/ ~~$region~~ /$app.yml –> `values/$env/$app.yml`
+- values/$env/ ~~$region~~ /$app.yml –>  `values/$env/$app.yml` 👍
 
 This is also a good way when you will write your policy like:
 
@@ -32,7 +32,6 @@ This is also a good way when you will write your policy like:
 prod/* @DevOps @SecOps
 dev/* @Developers
 ```
-
 
 
 ## Create the project
