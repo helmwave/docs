@@ -27,9 +27,7 @@ This example will render all apps and all settings for all environments.
 - values/$env/ <s>$region</s> /$app.yml –>  `values/$env/$app.yml`
 - values/ <strike>$region</strike> /$env/$app.yml –>  `values/$env/$app.yml`
 
-**And the best name convention is**
-
-- 👍`values/$env/$app.yml`
+**Then the best name convention is 👍`values/$env/$app.yml`**
 
 This is also a good way when you will write your policy like:
 
