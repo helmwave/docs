@@ -1,5 +1,5 @@
-#project: "Example: kubedog"
-#version: "⟨⟨ ver ⟩⟩"
+project: "Example: kubedog"
+version: "⟨⟨ ver ⟩⟩"
 
 
 registries:

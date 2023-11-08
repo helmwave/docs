@@ -1,3 +1,4 @@
+version: "⟨⟨ ver ⟩⟩"
 registries:
   - host: registry-1.docker.io
 

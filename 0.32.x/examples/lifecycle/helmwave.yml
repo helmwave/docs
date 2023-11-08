@@ -1,3 +1,4 @@
+version: "⟨⟨ ver ⟩⟩"
 # Global hooks
 lifecycle:
   pre_build:
