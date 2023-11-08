@@ -1,4 +1,3 @@
-project: &project my-project
 version: "⟨⟨ ver ⟩⟩"
 
 {{- defineDatasource "envs" "envs.yml" }}
@@ -20,10 +19,10 @@ version: "⟨⟨ ver ⟩⟩"
 releases:
   {{- range $env, $settings := $envs}}
   ###############################
-  #
+  #                             #
   #       {{ $env }}
-  #
-  ##############################
+  #                             #
+  ###############################
   {{- range $app := (file.ReadDir "./values") }}
   {{- if ne $app "_" }}
   {{- if has $settings.releases $app}}

@@ -1435,8 +1435,7 @@ dev/* @Developers
 
 <span class="m">6</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">18</span><span class="w"> </span>files
 </code></pre></div>
-<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;project</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.32.3&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.32.3&quot;</span>
 
 <span class="p p-Indicator">{{</span><span class="nv">- defineDatasource &quot;envs&quot; &quot;envs.yml&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 <span class="p p-Indicator">{{</span><span class="nv">- $envs</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= (ds &quot;envs&quot;)</span><span class="w"> </span><span class="p p-Indicator">}}</span>
@@ -1457,10 +1456,10 @@ dev/* @Developers
 <span class="nt">releases</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- range $env</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">$settings</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= $envs</span><span class="p p-Indicator">}}</span>
 <span class="w">  </span><span class="c1">###############################</span>
-<span class="w">  </span><span class="c1">#</span>
+<span class="w">  </span><span class="c1">#                             #</span>
 <span class="w">  </span><span class="c1">#       {{ $env }}</span>
-<span class="w">  </span><span class="c1">#</span>
-<span class="w">  </span><span class="c1">##############################</span>
+<span class="w">  </span><span class="c1">#                             #</span>
+<span class="w">  </span><span class="c1">###############################</span>
 <span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- range $app</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= (file.ReadDir &quot;./values&quot;)</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 <span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- if ne $app &quot;_&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 <span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- if has $settings.releases $app</span><span class="p p-Indicator">}}</span>
@@ -1484,8 +1483,7 @@ dev/* @Developers
 <p><strong>Build</strong></p>
 <div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>yml<span class="w"> </span>--templater<span class="w"> </span>gomplate<span class="w"> </span>
 </code></pre></div>
-<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;project</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.32.3&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.32.3&quot;</span>
 
 <span class="c1"># general options for all releases</span>
 <span class="nt">.options</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;options</span>
@@ -1502,10 +1500,10 @@ dev/* @Developers
 
 <span class="nt">releases</span><span class="p">:</span>
 <span class="w">  </span><span class="c1">###############################</span>
-<span class="w">  </span><span class="c1">#</span>
+<span class="w">  </span><span class="c1">#                             #</span>
 <span class="w">  </span><span class="c1">#       prod</span>
-<span class="w">  </span><span class="c1">#</span>
-<span class="w">  </span><span class="c1">##############################</span>
+<span class="w">  </span><span class="c1">#                             #</span>
+<span class="w">  </span><span class="c1">###############################</span>
 <span class="w">  </span><span class="c1"># use next command to deploy: helmwave up --build -t my-app-a -t prod</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app-a</span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
@@ -1548,10 +1546,10 @@ dev/* @Developers
 
 
 <span class="w">  </span><span class="c1">###############################</span>
-<span class="w">  </span><span class="c1">#</span>
+<span class="w">  </span><span class="c1">#                             #</span>
 <span class="w">  </span><span class="c1">#       qa</span>
-<span class="w">  </span><span class="c1">#</span>
-<span class="w">  </span><span class="c1">##############################</span>
+<span class="w">  </span><span class="c1">#                             #</span>
+<span class="w">  </span><span class="c1">###############################</span>
 
 
 <span class="w">  </span><span class="c1"># use next command to deploy: helmwave up --build -t my-app-c -t qa</span>
@@ -1570,10 +1568,10 @@ dev/* @Developers
 
 
 <span class="w">  </span><span class="c1">###############################</span>
-<span class="w">  </span><span class="c1">#</span>
+<span class="w">  </span><span class="c1">#                             #</span>
 <span class="w">  </span><span class="c1">#       stage</span>
-<span class="w">  </span><span class="c1">#</span>
-<span class="w">  </span><span class="c1">##############################</span>
+<span class="w">  </span><span class="c1">#                             #</span>
+<span class="w">  </span><span class="c1">###############################</span>
 
 
 <span class="w">  </span><span class="c1"># use next command to deploy: helmwave up --build -t my-app-c -t stage</span>
