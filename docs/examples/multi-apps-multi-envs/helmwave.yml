@@ -1,4 +1,3 @@
-project: &project my-project
 version: "⟨⟨ ver ⟩⟩"
 
 # general options for all releases
@@ -16,10 +15,10 @@ version: "⟨⟨ ver ⟩⟩"
 
 releases:
   ###############################
-  #
+  #                             #
   #       prod
-  #
-  ##############################
+  #                             #
+  ###############################
   # use next command to deploy: helmwave up --build -t my-app-a -t prod
   - name: my-app-a
     namespace: prod
@@ -62,10 +61,10 @@ releases:
   
   
   ###############################
-  #
+  #                             #
   #       qa
-  #
-  ##############################
+  #                             #
+  ###############################
   
   
   # use next command to deploy: helmwave up --build -t my-app-c -t qa
@@ -84,10 +83,10 @@ releases:
   
   
   ###############################
-  #
+  #                             #
   #       stage
-  #
-  ##############################
+  #                             #
+  ###############################
   
   
   # use next command to deploy: helmwave up --build -t my-app-c -t stage
