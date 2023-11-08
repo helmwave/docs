@@ -1480,6 +1480,27 @@ dev/* @Developers
 <span class="w">  </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">end</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 <span class="w">  </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">end</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 </code></pre></div>
+<div class="highlight"><span class="filename">envs.yml</span><pre><span></span><code><span class="nt">prod</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">kubecontext</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod-kube-context</span>
+<span class="w">  </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+<span class="w">  </span><span class="nt">releases</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">my-app-a</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">    </span><span class="nt">my-app-b</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">    </span><span class="nt">my-app-c</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+
+<span class="nt">stage</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">kubecontext</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stage-kube-context</span>
+<span class="w">  </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4m</span>
+<span class="w">  </span><span class="nt">releases</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">my-app-b</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">    </span><span class="nt">my-app-c</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+
+<span class="nt">qa</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">kubecontext</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qa-kube-context</span>
+<span class="w">  </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4m</span>
+<span class="w">  </span><span class="nt">releases</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">my-app-c</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</code></pre></div>
 <p><strong>Build</strong></p>
 <div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>yml<span class="w"> </span>--templater<span class="w"> </span>gomplate<span class="w"> </span>
 </code></pre></div>
