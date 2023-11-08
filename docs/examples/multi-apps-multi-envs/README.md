@@ -50,6 +50,10 @@ dev/* @Developers
 {% include "./helmwave.yml.tpl" %}
 ```
 
+```yaml title="envs.yml"
+{% include "./envs.yml" %}
+```
+
 **Build**
 
 ```shell
