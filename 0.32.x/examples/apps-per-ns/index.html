@@ -1395,7 +1395,9 @@ You're not viewing the latest version.
 This example is using <code>vars.yaml</code> for registration your group of releases.</p>
 <h2 id="create-the-project">Create the project<a class="headerlink" href="#create-the-project" title="Permanent link">&para;</a></h2>
 <p><strong>Project structure</strong></p>
-<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>README.md
+<div class="highlight"><pre><span></span><code>docs/examples/apps-per-ns
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>helmwave.yml
 ├──<span class="w"> </span>helmwave.yml.tpl
 ├──<span class="w"> </span>values
 │<span class="w">   </span>├──<span class="w"> </span>harbor.yml
@@ -1403,6 +1405,8 @@ This example is using <code>vars.yaml</code> for registration your group of rele
 │<span class="w">   </span>├──<span class="w"> </span>plantuml.yml
 │<span class="w">   </span>└──<span class="w"> </span>renovate.yml
 └──<span class="w"> </span>vars.yaml
+
+<span class="m">1</span><span class="w"> </span>directory,<span class="w"> </span><span class="m">8</span><span class="w"> </span>files
 </code></pre></div>
 <p><strong>Step 1. Create <code>helmwave.yml.tpl</code></strong></p>
 <div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">apps</span><span class="nv"> </span><span class="s">per</span><span class="nv"> </span><span class="s">own</span><span class="nv"> </span><span class="s">namespace&quot;</span>

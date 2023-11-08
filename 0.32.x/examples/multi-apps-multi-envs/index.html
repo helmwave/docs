@@ -1410,8 +1410,10 @@ dev/* @Developers
 </code></pre></div>
 <h2 id="create-the-project">Create the project<a class="headerlink" href="#create-the-project" title="Permanent link">&para;</a></h2>
 <p><strong>Project structure</strong></p>
-<div class="highlight"><pre><span></span><code>.
+<div class="highlight"><pre><span></span><code>docs/examples/multi-apps-multi-envs
 ├──<span class="w"> </span>README.md
+├──<span class="w"> </span>envs.yml
+├──<span class="w"> </span>helmwave.yml
 ├──<span class="w"> </span>helmwave.yml.tpl
 └──<span class="w"> </span>values
 <span class="w">    </span>├──<span class="w"> </span>_
@@ -1420,14 +1422,10 @@ dev/* @Developers
 <span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>qa.yml
 <span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>stage.yml
 <span class="w">    </span>├──<span class="w"> </span>my-app-a
-<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>_.yml
-<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>prod.yml
-<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>qa.yml
-<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>stage.yml
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>prod.yml
 <span class="w">    </span>├──<span class="w"> </span>my-app-b
 <span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>_.yml
 <span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>prod.yml
-<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>qa.yml
 <span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>stage.yml
 <span class="w">    </span>└──<span class="w"> </span>my-app-c
 <span class="w">        </span>├──<span class="w"> </span>_.yml
@@ -1435,7 +1433,7 @@ dev/* @Developers
 <span class="w">        </span>├──<span class="w"> </span>qa.yml
 <span class="w">        </span>└──<span class="w"> </span>stage.yml
 
-<span class="m">6</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">18</span><span class="w"> </span>files
+<span class="m">5</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">16</span><span class="w"> </span>files
 </code></pre></div>
 <div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.32.3&quot;</span>
 
