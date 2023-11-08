@@ -1381,26 +1381,26 @@ You're not viewing the latest version.
 This example will render all apps and all settings for all environments.</p>
 <p><strong>We can use one of two name conventions</strong></p>
 <ul>
-<li><code>values/$app/$env.yml</code></li>
-<li><code>values/$env/$app.yml</code></li>
+<li>🤔 <code>values/$app/$env.yml</code></li>
+<li>🤔 <code>values/$env/$app.yml</code></li>
 </ul>
 <p><strong>But if we add some regions we will have</strong></p>
 <ul>
-<li><code>values/$app/$env/$region.yml</code></li>
-<li><code>values/$app/$region/$env.yml</code></li>
-<li><code>values/$region/$env/$app.yml</code></li>
-<li><code>values/$region/$app/$env.yml</code></li>
-<li><code>values/$env/$region/$app.yml</code></li>
-<li><code>values/$env/$app/$region.yml</code></li>
+<li>❌ <code>values/$app/$env/$region.yml</code></li>
+<li>❌ <code>values/$app/$region/$env.yml</code></li>
+<li>✅ <code>values/$region/$env/$app.yml</code></li>
+<li>❌ <code>values/$region/$app/$env.yml</code></li>
+<li>✅ <code>values/$env/$region/$app.yml</code></li>
+<li>❌ <code>values/$env/$app/$region.yml</code></li>
 </ul>
 <p><strong>We see that next name convention is more suitable than others</strong></p>
 <ul>
-<li><code>values/$region/$env/$app.yml</code></li>
-<li><code>values/$env/$region/$app.yml</code></li>
+<li>✅ <code>values/$region/$env/$app.yml</code></li>
+<li>✅ <code>values/$env/$region/$app.yml</code></li>
 </ul>
 <p><strong>Now we are dropping <code>$region</code>. And the best name convention is</strong></p>
 <ul>
-<li>values/$env/ ~~$region~~ /$app.yml –&gt; <code>values/$env/$app.yml</code></li>
+<li>values/$env/ ~~$region~~ /$app.yml –&gt;  <code>values/$env/$app.yml</code> 👍</li>
 </ul>
 <p>This is also a good way when you will write your policy like:</p>
 <div class="highlight"><pre><span></span><code>prod/* @DevOps @SecOps
