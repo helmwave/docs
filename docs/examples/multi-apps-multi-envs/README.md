@@ -42,32 +42,7 @@ dev/* @Developers
 **Project structure**
 
 ```shell
-.
-├── README.md
-├── helmwave.yml.tpl
-└── values
-    ├── _
-    │   ├── _.yml
-    │   ├── prod.yml
-    │   ├── qa.yml
-    │   └── stage.yml
-    ├── my-app-a
-    │   ├── _.yml
-    │   ├── prod.yml
-    │   ├── qa.yml
-    │   └── stage.yml
-    ├── my-app-b
-    │   ├── _.yml
-    │   ├── prod.yml
-    │   ├── qa.yml
-    │   └── stage.yml
-    └── my-app-c
-        ├── _.yml
-        ├── prod.yml
-        ├── qa.yml
-        └── stage.yml
-
-6 directories, 18 files
+⟨⟨ run_script("tree docs/examples/multi-apps-multi-envs") ⟩⟩
 ```
 
 

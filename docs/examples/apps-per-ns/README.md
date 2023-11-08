@@ -8,15 +8,7 @@ This example is using `vars.yaml` for registration your group of releases.
 **Project structure**
 
 ```shell
-├── README.md
-├── helmwave.yml.tpl
-├── values
-│   ├── harbor.yml
-│   ├── minio.yml
-│   ├── plantuml.yml
-│   └── renovate.yml
-└── vars.yaml
-
+⟨⟨ run_script("tree docs/examples/apps-per-ns") ⟩⟩
 ```
 
 **Step 1. Create `helmwave.yml.tpl`**
