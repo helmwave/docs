@@ -36,7 +36,7 @@ nav:
           - examples/single-app-multi-envs/README.md
           - examples/multi-apps-multi-envs/README.md
       - examples/graph/README.md
-      - Templating:
+      - 📄 Templating:
           - examples/pass-git-commit/README.md
           - examples/pass-git-tag/README.md
           - examples/built-in-release/README.md
