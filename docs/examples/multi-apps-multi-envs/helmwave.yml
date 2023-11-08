@@ -1,0 +1,120 @@
+project: &project my-project
+version: "⟨⟨ ver ⟩⟩"
+
+# general options for all releases
+.options: &options
+  wait: true
+  wait_for_jobs: true
+  force: false
+  chart: some-chart
+  atomic: false
+  max_history: 3
+  create_namespace: true
+  offline_kube_version: 1.25
+  pending_release_strategy: rollback
+  
+
+releases:
+  ###############################
+  #
+  #       prod
+  #
+  ##############################
+  # use next command to deploy: helmwave up --build -t my-app-a -t prod
+  - name: my-app-a
+    namespace: prod
+    timeout: 10m
+    kubecontext: prod-kube-context
+    values:
+      - _/_.yml # values for all envs & all apps
+      - _/prod.yml # default values for specific env
+      - my-app-a/_.yml # default values for an application
+      - my-app-a/prod.yml # values for specific application and specific env
+    tags: [my-app-a, prod]
+    <<: *options
+  
+  
+  # use next command to deploy: helmwave up --build -t my-app-c -t prod
+  - name: my-app-c
+    namespace: prod
+    timeout: 10m
+    kubecontext: prod-kube-context
+    values:
+      - _/_.yml # values for all envs & all apps
+      - _/prod.yml # default values for specific env
+      - my-app-c/_.yml # default values for an application
+      - my-app-c/prod.yml # values for specific application and specific env
+    tags: [my-app-c, prod]
+    <<: *options
+  
+  # use next command to deploy: helmwave up --build -t my-app-b -t prod
+  - name: my-app-b
+    namespace: prod
+    timeout: 10m
+    kubecontext: prod-kube-context
+    values:
+      - _/_.yml # values for all envs & all apps
+      - _/prod.yml # default values for specific env
+      - my-app-b/_.yml # default values for an application
+      - my-app-b/prod.yml # values for specific application and specific env
+    tags: [my-app-b, prod]
+    <<: *options
+  
+  
+  ###############################
+  #
+  #       qa
+  #
+  ##############################
+  
+  
+  # use next command to deploy: helmwave up --build -t my-app-c -t qa
+  - name: my-app-c
+    namespace: qa
+    timeout: 4m
+    kubecontext: qa-kube-context
+    values:
+      - _/_.yml # values for all envs & all apps
+      - _/qa.yml # default values for specific env
+      - my-app-c/_.yml # default values for an application
+      - my-app-c/qa.yml # values for specific application and specific env
+    tags: [my-app-c, qa]
+    <<: *options
+  
+  
+  
+  ###############################
+  #
+  #       stage
+  #
+  ##############################
+  
+  
+  # use next command to deploy: helmwave up --build -t my-app-c -t stage
+  - name: my-app-c
+    namespace: stage
+    timeout: 4m
+    kubecontext: stage-kube-context
+    values:
+      - _/_.yml # values for all envs & all apps
+      - _/stage.yml # default values for specific env
+      - my-app-c/_.yml # default values for an application
+      - my-app-c/stage.yml # values for specific application and specific env
+    tags: [my-app-c, stage]
+    <<: *options
+  
+  # use next command to deploy: helmwave up --build -t my-app-b -t stage
+  - name: my-app-b
+    namespace: stage
+    timeout: 4m
+    kubecontext: stage-kube-context
+    values:
+      - _/_.yml # values for all envs & all apps
+      - _/stage.yml # default values for specific env
+      - my-app-b/_.yml # default values for an application
+      - my-app-b/stage.yml # values for specific application and specific env
+    tags: [my-app-b, stage]
+    <<: *options
+  
+  
+  

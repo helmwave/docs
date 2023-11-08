@@ -2,6 +2,8 @@
 
 When we work with helm, sometimes we need dynamics chose environment.
 
+If you want to install one application to different environments.
+
 ```shell
 export CI_ENVIRONMENT_NAME=stage
 helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f values/$CI_ENVIRONMENT_NAME.yaml

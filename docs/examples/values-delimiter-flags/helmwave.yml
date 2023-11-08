@@ -1,5 +1,5 @@
 project: "Example: values delimiter flags"
-version: ⟨⟨ ver ⟩⟩
+version: "⟨⟨ ver ⟩⟩"
 
 repositories:
   - name: bitnami

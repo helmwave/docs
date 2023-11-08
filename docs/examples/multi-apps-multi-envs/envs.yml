@@ -1,0 +1,20 @@
+prod:
+  kubecontext: prod-kube-context
+  timeout: 10m
+  releases:
+    my-app-a: {}
+    my-app-b: {}
+    my-app-c: {}
+    
+stage:
+  kubecontext: stage-kube-context
+  timeout: 4m
+  releases:
+    my-app-b: {}
+    my-app-c: {}
+
+qa:
+  kubecontext: qa-kube-context
+  timeout: 4m
+  releases:
+    my-app-c: {}

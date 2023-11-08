@@ -31,10 +31,12 @@ nav:
       - examples/quick-start/README.md
       - examples/kubedog/README.md
       - examples/graph/README.md
-      - Templating:
+      - Project structure:
           - examples/apps-per-ns/README.md
-          - examples/single-app-multi-envs/README.md
           - examples/dir-as-name/README.md
+          - examples/single-app-multi-envs/README.md
+          - examples/multi-apps-multi-envs/README.md
+      - Templating:
           - examples/pass-git-commit/README.md
           - examples/pass-git-tag/README.md
           - examples/built-in-release/README.md

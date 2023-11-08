@@ -1,6 +1,7 @@
 # Apps per namespace
 
 If you want to install each application in your own namespace. 
+This example is using `vars.yaml` for registration your group of releases.
 
 ## Create the project
 

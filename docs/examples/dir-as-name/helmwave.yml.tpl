@@ -9,7 +9,6 @@ version: "⟨⟨ ver ⟩⟩"
   chart: some-chart
   atomic: false
   max_history: 3
-  namespace: *project
   create_namespace: true
   offline_kube_version: 1.25.2
   pending_release_strategy: rollback
@@ -18,6 +17,7 @@ releases:
   {{- range (file.ReadDir "./releases") }}
   - name: {{.}}
     tags: [{{.}}]
+    namespace: *project # `namespace: {{.}}` if you want a release in own namespace
     <<: *options
     values:
       - {{.}}/values.yml
