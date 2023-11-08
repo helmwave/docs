@@ -1,4 +1,4 @@
-# Multi apps -> multi envs
+# Multi apps for multi envs
 
 If you want to manage a group of releases for several environments.
 This example will render all apps and all settings for all environments.
