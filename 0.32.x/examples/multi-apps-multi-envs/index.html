@@ -1400,7 +1400,7 @@ This example will render all apps and all settings for all environments.</p>
 </ul>
 <p><strong>Now we are dropping <code>$region</code>. And the best name convention is</strong></p>
 <ul>
-<li>values/$env/ ~~$region~~ /$app.yml –&gt;  <code>values/$env/$app.yml</code> 👍</li>
+<li><code>values/$env/&lt;s&gt;$region&lt;/s&gt;/$app.yml</code> –&gt;  <code>values/$env/$app.yml</code> 👍</li>
 </ul>
 <p>This is also a good way when you will write your policy like:</p>
 <div class="highlight"><pre><span></span><code>prod/* @DevOps @SecOps
