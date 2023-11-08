@@ -30,7 +30,7 @@ nav:
   - Examples:
       - examples/quick-start/README.md
       - examples/kubedog/README.md
-      - Project structure:
+      - 📁 Project structure:
           - examples/apps-per-ns/README.md
           - examples/dir-as-name/README.md
           - examples/single-app-multi-envs/README.md
