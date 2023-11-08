@@ -1,4 +1,4 @@
-# Single app multi envs
+# Single app & multi envs
 
 When we work with helm, sometimes we need dynamics chose environment.
 
@@ -50,6 +50,8 @@ helm upgrade --install my-release my-chart-repo/my-chart-app -f values/_.yml -f 
     ```yaml
     {% include "./values/stage.yml" %}
     ```
+
+---
 
 **step 0: templating**
 
