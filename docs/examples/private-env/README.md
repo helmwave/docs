@@ -14,8 +14,6 @@ export HELMWAVE_DIFF_MODE=none
 
 **build a plan**
 
-you can also use `--charts-cache-dir`.
-
 ```shell
 helmwave build
 ```

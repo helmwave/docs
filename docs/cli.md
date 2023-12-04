@@ -63,8 +63,8 @@ A plan includes:
 {% include "./flags/tags.md" %}
 {% include "./flags/match-all-tags.md" %}
 {% include "./flags/skip-unchanged.md" %}
-{% include "./flags/charts-cache-dir.md" %}
 {% include "./flags/graph-width.md" %}
+{% include "./flags/remote-source.md" %}
 ---
 {% include "./flags/diff-mode.md" %}
 {% include "./flags/wide.md" %}
@@ -362,6 +362,7 @@ Global flags available in any command.
 
 > Helmwave uses [:simple-github: sirupsen/logrus](https://github.com/sirupsen/logrus) as internal logger.
 
+{% include "./flags/cache-dir.md" %}
 {% include "./flags/log-format.md" %}
 {% include "./flags/log-level.md" %}
 {% include "./flags/log-color.md" %}
