@@ -1,6 +1,9 @@
 on:
   push:
 
+permissions:
+  contents: read
+
 name: linter
 jobs:
   linkinator:
