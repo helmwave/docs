@@ -70,6 +70,9 @@ A plan includes:
 {% include "./flags/wide.md" %}
 {% include "./flags/show-secret.md" %}
 {% include "./flags/3-way-merge.md" %}
+{% include "./flags/suppress.md" %}
+{% include "./flags/strip-trailing-cr.md" %}
+{% include "./flags/find-renames.md" %}
 
 
 ## `up`
@@ -259,6 +262,10 @@ $ echo $?
 {% include "./flags/wide.md" %}
 {% include "./flags/show-secret.md" %}
 {% include "./flags/3-way-merge.md" %}
+{% include "./flags/suppress.md" %}
+{% include "./flags/strip-trailing-cr.md" %}
+{% include "./flags/find-renames.md" %}
+
 
 Diff has 2 subcommands `plan` and `live`.
 

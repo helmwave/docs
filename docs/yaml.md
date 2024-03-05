@@ -42,6 +42,8 @@ Reserved for the future.
 
 ## version
 
+This version for helmwave.
+
 Helmwave will check the current version and project version.
 
 In the future, it is planned to check major compatibility.
