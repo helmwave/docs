@@ -77,7 +77,12 @@ Download one of [releases](https://github.com/helmwave/helmwave/releases)
 
 ## :material-microsoft: Windows
 
-Download one of [releases](https://github.com/helmwave/helmwave/releases)
+!!! danger "Don't use helmwave.exe"
+
+    The [windows releases](https://github.com/helmwave/helmwave/releases) 
+    have issues [#809](https://github.com/helmwave/helmwave/issues/809), [#805](https://github.com/helmwave/helmwave/issues/805)
+
+**Recommended way is [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).**
 
 ---
 
