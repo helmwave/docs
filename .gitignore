@@ -27,9 +27,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
-
 .idea/
 .vscode/
 site/
 **/.helmwave/
+__pycache__/
