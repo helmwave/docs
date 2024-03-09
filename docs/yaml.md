@@ -46,6 +46,10 @@ Helmwave will check the current version and project version.
 
 In the future, it is planned to check major compatibility.
 
+Note that this is the version of the Helmwave itself (not your service/application) to check for compatibility of the schema, version, etc.
+
+**RECOMMENDED**: Set this explicitly to `helmwave version` command result to be safe later on.
+
 ## registries[]
 
 > Introduced in [:material-tag: v0.19.0](https://github.com/helmwave/helmwave/releases/tag/v0.19.0)
@@ -163,7 +167,7 @@ To each lifecycle command several environment variables are passed:
 - `${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}` - *(only for per-release lifecycle)* contains release
   uniqname (`release@namespace`)
 
-** Hook **
+**Hook**
 
 |     field     | required |  type  | default |
 |:-------------:|:--------:|:------:|:-------:|
@@ -191,7 +195,7 @@ To each lifecycle command several environment variables are passed:
     version: ⟨⟨ ver ⟩⟩
     lifecycle:
       pre_build:
-        - cmd: echo 
+        - cmd: echo
           args:
             - "run global pre_build script"
           show: true
@@ -364,13 +368,11 @@ Almost all options that are here are native :simple-helm: helm options.
 
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
 
-
 Release name. I hope you know what it is.
 
 ### namespace
 
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
-
 
 :simple-kubernetes: kubernetes namespace.
 
@@ -400,7 +402,7 @@ Release name. I hope you know what it is.
 === "short syntax"
 
     > Introduced in [:material-tag: v0.20.0](https://github.com/helmwave/helmwave/releases/tag/v0.20.0)
-    
+
 
     ```yaml
     releases:
@@ -500,7 +502,6 @@ releases:
 
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
 
-
 > `values` can be an object or a string. If it's a string, it will be treated as a `src` field.
 
 |      field      | required |  type  | default |
@@ -538,7 +539,6 @@ Path to values file. It can be local or remote.
 
 > Introduced in [:material-tag: v0.24.0](https://github.com/helmwave/helmwave/releases/tag/v0.24.0)
 
-
 You can change the delimiter that helmwave uses to render values.
 
 [:material-duck: example](../examples/values-delimiter-flags/)
@@ -560,7 +560,6 @@ Allows overriding how values file is rendered. These renderers are supported:
 #### strict
 
 > Introduced in [:material-tag: v0.20.0](https://github.com/helmwave/helmwave/releases/tag/v0.20.0)
-
 
 Allows to fail if values file doesn't exist.
 
@@ -590,7 +589,6 @@ Combine `offline_kube_version` and `--diff-mode=local` or `--diff-mode=none` to 
 
 > Introduced in [:material-tag: v0.2.0](https://github.com/helmwave/helmwave/releases/tag/v0.2.0)
 
-
 It allows passing your custom fields from `helmwave.yml` to values.
 
 [:material-duck: example](examples/store-greeting-hello/README.md)
@@ -604,7 +602,6 @@ It allows passing your custom fields from `helmwave.yml` to values.
 ### depends_on[]
 
 > Introduced in [:material-tag: v0.9.0](https://github.com/helmwave/helmwave/releases/tag/v0.9.0)
-
 
 `depends_on` can be an object or a string. If it's a string, it will be treated as a `name`.
 
@@ -697,7 +694,6 @@ The planfile (`.helmwave/planfile` by default) will have a normalized list of re
 
 > Introduced in [:material-tag: v0.24.0](https://github.com/helmwave/helmwave/releases/tag/v0.24.0)
 
-
 If dependency is not found in all available releases, helmwave will not fail due to missing dependency.
 
 It allows setting explicit dependencies between releases. Dependant release will start upgrading only after all its
@@ -757,7 +753,6 @@ We recommend using `wait` for all releases. It will wait for all resources to be
 
 > Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
 
-
 We recommend using `wait_for_jobs` for all releases. It will wait for all jobs to be completed.
 
 ### timeout
@@ -782,7 +777,6 @@ Limit the maximum number of revisions saved per release. Use 0 for no limit (def
 
 > Introduced in [:material-tag: v0.24.0](https://github.com/helmwave/helmwave/releases/tag/v0.24.0)
 
-
 Allows using custom :simple-kubernetes: kube-context for release.
 
 !!! danger "Kubedog can't be enabled when there are releases in multiple contexts."
@@ -791,20 +785,17 @@ Allows using custom :simple-kubernetes: kube-context for release.
 
 > Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
 
-
 Additional information about release.
 
 ### atomic
 
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
 
-
 if set, upgrade process rolls back changes made in case of failed upgrade.
 
 ### cleanup_on_fail
 
 > Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
-
 
 Allow deletion of new resources created in this upgrade when upgrade fails.
 
@@ -813,13 +804,11 @@ Allow deletion of new resources created in this upgrade when upgrade fails.
 > Removed in [:material-tag: v0.29.3](https://github.com/helmwave/helmwave/releases/tag/v0.29.3) as it wasn't
 > functioning properly.
 
-
 If you need to use development version, set `version: ">0.0.0-0"`.
 
 ### disable_hooks
 
 > Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
-
 
 Disable pre/post upgrade :simple-helm:  helm hooks
 
@@ -827,13 +816,11 @@ Disable pre/post upgrade :simple-helm:  helm hooks
 
 > Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
 
-
 If set, the upgrade process will not validate rendered templates against the Kubernetes OpenAPI Schema
 
 ### force
 
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
-
 
 Force resource updates through a replacement strategy
 
@@ -843,13 +830,11 @@ Force resource updates through a replacement strategy
 
 > Introduced in [:material-tag: v0.27.1](https://github.com/helmwave/helmwave/releases/tag/v0.27.1)
 
-
 Enable DNS resolution in templates.
 
 ### recreate
 
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
-
 
 Allows deleting and then creating resources (pods) when needed instead of updating.
 
@@ -859,13 +844,11 @@ Allows deleting and then creating resources (pods) when needed instead of updati
 
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
 
-
 When upgrading, reset the values to the ones built into the chart.
 
 ### reuse_values
 
 > Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
-
 
 When upgrading, reuse the last release's values and merge it into the new configuration.
 
@@ -874,7 +857,6 @@ When upgrading, reuse the last release's values and merge it into the new config
 ### skip_crds
 
 > Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
-
 
 If set, no CRDs will be installed. By default, CRDs are installed if not already present.
 
@@ -887,7 +869,6 @@ Be careful with this option.
 
 > Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
 
-
 If set, render sub chart notes along with the parent.
 This option determines whether sub-notes are rendered in the chart.
 
@@ -895,13 +876,11 @@ This option determines whether sub-notes are rendered in the chart.
 
 > Introduced in [:material-tag: v0.24.0](https://github.com/helmwave/helmwave/releases/tag/v0.24.0)
 
-
 You can use custom commands to change rendered manifests.
 
 ### show_notes
 
 > Introduced in [:material-tag: v0.31.0](https://github.com/helmwave/helmwave/releases/tag/v0.31.0)
-
 
 If enabled, rendered [chart notes](https://helm.sh/docs/chart_template_guide/notes_files/) will be shown after
 successful release.
