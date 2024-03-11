@@ -1410,6 +1410,8 @@ You're not viewing the latest version.
 <p>This version for helmwave.</p>
 <p>Helmwave will check the current version and project version.</p>
 <p>In the future, it is planned to check major compatibility.</p>
+<p>Note that this is the version of the Helmwave itself (not your service/application) to check for compatibility of the schema, version, etc.</p>
+<p><strong>RECOMMENDED</strong>: Set this explicitly to <code>helmwave version</code> command result to be safe later on.</p>
 <h2 id="registries">registries[]<a class="headerlink" href="#registries" title="Permanent link">¶</a></h2>
 <blockquote>
 <p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.19.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.19.0</a></p>
@@ -1665,7 +1667,7 @@ of <a href="https://helm.sh/docs/topics/charts_hooks/"><span class="twemoji"><sv
 <li><code>${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}</code> - <em>(only for per-release lifecycle)</em> contains release
   uniqname (<code>release@namespace</code>)</li>
 </ul>
-<p>** Hook **</p>
+<p><strong>Hook</strong></p>
 <table>
 <thead>
 <tr>
@@ -1717,7 +1719,7 @@ of <a href="https://helm.sh/docs/topics/charts_hooks/"><span class="twemoji"><sv
 <div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.35.1</span>
 <span class="nt">lifecycle</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">pre_build</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo</span><span class="w"> </span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo</span>
 <span class="w">      </span><span class="nt">args</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"run</span><span class="nv"> </span><span class="s">global</span><span class="nv"> </span><span class="s">pre_build</span><span class="nv"> </span><span class="s">script"</span>
 <span class="w">      </span><span class="nt">show</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
