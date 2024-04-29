@@ -161,6 +161,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.helmwave.app/0.36.x/examples/values-dependencies/</loc>
+         <lastmod>2024-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.helmwave.app/0.36.x/examples/values-disable-render/</loc>
          <lastmod>2024-04-29</lastmod>
          <changefreq>daily</changefreq>
