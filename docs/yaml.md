@@ -48,7 +48,8 @@ Helmwave will check the current version and project version.
 
 In the future, it is planned to check major compatibility.
 
-Note that this is the version of the Helmwave itself (not your service/application) to check for compatibility of the schema, version, etc.
+Note that this is the version of the Helmwave itself (not your service/application) to check for compatibility of the
+schema, version, etc.
 
 **RECOMMENDED**: Set this explicitly to `helmwave version` command result to be safe later on.
 
@@ -362,6 +363,7 @@ Almost all options that are here are native :simple-helm: helm options.
 |          recreate           |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |        reset_values         |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |        reuse_values         |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|   reset_then_reuse_values   |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |          skip_crds          |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |          sub_notes          |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |        post_renderer        |    🙅    |      array       |   []    |        ✅         | :simple-helm: |

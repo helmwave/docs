@@ -118,3 +118,16 @@ The `hasKey` function allows you to check if key exists in the value. Dot-separa
 ```shell
 {{ $exists := $value | hasKey "path.key" }}
 ```
+
+
+### `getValues`
+
+> Introduced in [:material-tag: v0.36.0](https://github.com/helmwave/helmwave/releases/tag/v0.36.0)
+
+The `getValues` function returns the contents of another values file of the current release parsed as YAML. On failure, the template rendering will fail with an error message.
+
+```shell
+{{ $common := getValues "common.yaml" }}
+```
+
+[:material-duck: example](examples/values-dependencies/README.md)
