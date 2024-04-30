@@ -55,7 +55,7 @@ nav:
           - SOPS: examples/values-sops/README.md
           - examples/values-delimiter-flags/README.md
           - examples/values-strict-flag/README.md
-          - examples/values-dependencies/README.md
+          - Values in Values: examples/values-dependencies/README.md
       - Data sources:
           - examples/vault/README.md
           - examples/aws-sm/README.md
