@@ -76,6 +76,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.helmwave.app/0.36.x/examples/helm-chart-as-git-repo/</loc>
+         <lastmod>2024-05-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.helmwave.app/0.36.x/examples/helmfile-migration/</loc>
          <lastmod>2024-05-01</lastmod>
          <changefreq>daily</changefreq>
