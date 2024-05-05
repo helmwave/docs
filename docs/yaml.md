@@ -365,8 +365,11 @@ Almost all options that are here are native :simple-helm: helm options.
 |        reuse_values         |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |   reset_then_reuse_values   |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |          skip_crds          |    🙅    |       bool       |  false  |                  | :simple-helm: |
+|         show_notes          |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |          sub_notes          |    🙅    |       bool       |  false  |                  | :simple-helm: |
 |        post_renderer        |    🙅    |      array       |   []    |        ✅         | :simple-helm: |
+|           labels            |    🙅    |      object      |   {}    |                  | :simple-helm: |
+|            tests            |    🙅    |      object      |   {}    |                  | :simple-helm: |
 
 ### name
 
@@ -858,6 +861,15 @@ When upgrading, reuse the last release's values and merge it into the new config
 
 !!! tip "We don't recommend using this option."
 
+### reset_then_reuse_values
+
+> Introduced in [:material-tag: v0.36.0](https://github.com/helmwave/helmwave/releases/tag/v0.36.0)
+
+When upgrading, reset the values to the ones built into the chart, apply the last release's values and merge in any
+overrides from the values files. If 'reset_values' or 'reuse_values' is specified, this is ignored.
+
+!!! tip "We don't recommend using this option."
+
 ### skip_crds
 
 > Introduced in [:material-tag: v0.12.0](https://github.com/helmwave/helmwave/releases/tag/v0.12.0)
@@ -888,3 +900,25 @@ You can use custom commands to change rendered manifests.
 
 If enabled, rendered [chart notes](https://helm.sh/docs/chart_template_guide/notes_files/) will be shown after
 successful release.
+
+### tests
+
+> Introduced in [:material-tag: v0.34.0](https://github.com/helmwave/helmwave/releases/tag/v0.34.0)
+
+|      field      | required | type | default |
+|:---------------:|:--------:|:----:|:-------:|
+|     enabled     |    🙅    | bool |  false  |
+| force_show_logs |    🙅    | bool |  false  |
+|     filters     |    🙅    | map  |   {}    |
+
+#### enabled
+
+Whether to run helm chart tests.
+
+#### force_show_logs
+
+If enabled, helmwave will show logs even if tests are successful.
+
+#### filters
+
+Map of filters to run only specific tests.
