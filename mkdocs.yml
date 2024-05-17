@@ -26,6 +26,7 @@ nav:
       - cli.md
       - tpl.md
       - anno.md
+      - plan.md
 
   - Examples:
       - examples/quick-start/README.md
