@@ -35,7 +35,7 @@ Sure! You can apply that manifests directly like that: `kubectl apply -f .helmwa
 
 ## values
 
-Manifest is a directory where you can find rendered values files of your releases.
+Values is a directory where you can find rendered values files of your releases.
 To find the values for your releases you can use next pattern : `./helmwave/values/<release>@<namespace>/<hash>.yml`
 
 ## charts
