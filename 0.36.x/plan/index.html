@@ -676,7 +676,7 @@ Planfile is a computed <code>helmwave.yml</code> file.</p>
 <p>See the <a href="../ci/?h=ci#kube-linter-and-helmwave"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 5A1.5 1.5 0 0 0 7 6.5 1.5 1.5 0 0 0 8.5 8 1.5 1.5 0 0 0 10 6.5 1.5 1.5 0 0 0 8.5 5M10 2a5 5 0 0 1 5 5c0 1.7-.85 3.2-2.14 4.1 1.58.15 3.36.51 5.14 1.4 3 1.5 4-.5 4-.5s-1 9-7 9H9s-5 0-5-5c0-3 3-4 2-6-4 0-4-3.5-4-3.5 1 .5 2.24.5 3 .15A5.02 5.02 0 0 1 10 2Z"></path></svg></span> example</a></p>
 <p>Sure! You can apply that manifests directly like that: <code>kubectl apply -f .helmwave/manifest</code></p>
 <h2 id="values">values<a class="headerlink" href="#values" title="Permanent link">¶</a></h2>
-<p>Manifest is a directory where you can find rendered values files of your releases.
+<p>Values is a directory where you can find rendered values files of your releases.
 To find the values for your releases you can use next pattern : <code>./helmwave/values/&lt;release&gt;@&lt;namespace&gt;/&lt;hash&gt;.yml</code></p>
 <h2 id="charts">charts<a class="headerlink" href="#charts" title="Permanent link">¶</a></h2>
 <p>Charts is a directory where helmwave can store downloaded charts for all your releases. 
