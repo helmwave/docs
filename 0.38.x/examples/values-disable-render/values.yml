@@ -1,0 +1,7 @@
+## Prometheus Exporter / Metrics
+##
+metrics:
+  service:
+    annotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "{{ .Values.metrics.service.port }}"
