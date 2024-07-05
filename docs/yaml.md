@@ -333,43 +333,44 @@ Whether to skip SSL certificate validation
 
 Almost all options that are here are native :simple-helm: helm options.
 
-|            field            | required |       type       | default | `helmwave build` |  helm option  |
-|:---------------------------:|:--------:|:----------------:|:-------:|:----------------:|:-------------:|
-|          **name**           |    ✅     |      string      |   ""    |        ✅         | :simple-helm: |
-|        **namespace**        |    ✅     |      string      |   ""    |        ✅         | :simple-helm: |
-|          **chart**          |    ✅     | string or object |   {}    |        ✅         | :simple-helm: |
-|      create_namespace       |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|           values            |    🙅    |      array       |   []    |        ✅         | :simple-helm: |
-|            tags             |    🙅    |      array       |   []    |        ✅         |               |
-|    offline_kube_version     |    🙅    |      string      |   ""    |        ✅         |               |
-|            store            |    🙅    |      object      |   {}    |        ✅         |               |
-|          lifecycle          |    🙅    |      object      |   {}    |        ✅         |               |
-|         depends_on          |    🙅    |      array       |   []    |        ✅         |               |
-|          monitors           |    🙅    |      array       |   []    |        ✅         |               |
-|        allow_failure        |    🙅    |       bool       |  false  |                  |               |
-|  pending_release_strategy   |    🙅    |      string      |   ""    |                  |               |
-|            wait             |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|        wait_for_jobs        |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|           timeout           |    🙅    |     interval     |   5m    |                  | :simple-helm: |
-|         max_history         |    🙅    |       int        |    0    |                  | :simple-helm: |
-|           context           |    🙅    |      string      |   ""    |                  |               |
-|         description         |    🙅    |      string      |   ""    |                  | :simple-helm: |
-|           atomic            |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|       cleanup_on_fail       |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|        disable_hooks        |    🙅    |       bool       |  false  |                  | :simple-helm: |
-| disable_open_api_validation |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|            force            |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|         enable_dns          |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|          recreate           |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|        reset_values         |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|        reuse_values         |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|   reset_then_reuse_values   |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|          skip_crds          |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|         show_notes          |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|          sub_notes          |    🙅    |       bool       |  false  |                  | :simple-helm: |
-|        post_renderer        |    🙅    |      array       |   []    |        ✅         | :simple-helm: |
-|           labels            |    🙅    |      object      |   {}    |                  | :simple-helm: |
-|            tests            |    🙅    |      object      |   {}    |                  | :simple-helm: |
+|            field            | required |       type       |   default    | `helmwave build` |  helm option  |
+|:---------------------------:|:--------:|:----------------:|:------------:|:----------------:|:-------------:|
+|          **name**           |    ✅     |      string      |      ""      |        ✅         | :simple-helm: |
+|        **namespace**        |    ✅     |      string      |      ""      |        ✅         | :simple-helm: |
+|          **chart**          |    ✅     | string or object |      {}      |        ✅         | :simple-helm: |
+|      create_namespace       |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|           values            |    🙅    |      array       |      []      |        ✅         | :simple-helm: |
+|            tags             |    🙅    |      array       |      []      |        ✅         |               |
+|    offline_kube_version     |    🙅    |      string      |      ""      |        ✅         |               |
+|            store            |    🙅    |      object      |      {}      |        ✅         |               |
+|          lifecycle          |    🙅    |      object      |      {}      |        ✅         |               |
+|         depends_on          |    🙅    |      array       |      []      |        ✅         |               |
+|          monitors           |    🙅    |      array       |      []      |        ✅         |               |
+|        allow_failure        |    🙅    |       bool       |    false     |                  |               |
+|  pending_release_strategy   |    🙅    |      string      |      ""      |                  |               |
+|            wait             |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|        wait_for_jobs        |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|           timeout           |    🙅    |     interval     |      5m      |                  | :simple-helm: |
+|         max_history         |    🙅    |       int        |      0       |                  | :simple-helm: |
+|           context           |    🙅    |      string      |      ""      |                  |               |
+|         description         |    🙅    |      string      |      ""      |                  | :simple-helm: |
+|           atomic            |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|       cleanup_on_fail       |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|        disable_hooks        |    🙅    |       bool       |    false     |                  | :simple-helm: |
+| disable_open_api_validation |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|            force            |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|         enable_dns          |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|          recreate           |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|        reset_values         |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|        reuse_values         |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|   reset_then_reuse_values   |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|          skip_crds          |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|         show_notes          |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|          sub_notes          |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|        post_renderer        |    🙅    |      array       |      []      |        ✅         | :simple-helm: |
+|     delete_propagation      |    🙅    |      string      | "background" |                  | :simple-helm: |
+|           labels            |    🙅    |      object      |      {}      |                  | :simple-helm: |
+|            tests            |    🙅    |      object      |      {}      |                  | :simple-helm: |
 
 ### name
 
@@ -922,3 +923,9 @@ If enabled, helmwave will show logs even if tests are successful.
 #### filters
 
 Map of filters to run only specific tests.
+
+### deletion_propagation
+
+> Introduced in [:material-tag: v0.36.3](https://github.com/helmwave/helmwave/releases/tag/v0.36.3)
+
+Sets deletion cascading strategy. Should be one of `background`, `foreground`, `orphan`.
