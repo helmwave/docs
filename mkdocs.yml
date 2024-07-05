@@ -7,7 +7,7 @@ repo_url: "https://github.com/helmwave/helmwave"
 edit_uri: "https://github.com/helmwave/docs/edit/main/docs/"
 site_url: "https://docs.helmwave.app"
 copyright: >
-  Copyright © 2020 – 2023 Dmitrii Zhiliaev
+  Copyright © 2020 – 2024 Dmitrii Zhiliaev
 
 nav:
   - Home: index.md
@@ -26,6 +26,7 @@ nav:
       - cli.md
       - tpl.md
       - anno.md
+      - plan.md
 
   - Examples:
       - examples/quick-start/README.md
@@ -116,7 +117,7 @@ theme:
     - search.highlight
 
 extra:
-  ver: 0.36.0
+  ver: 0.36.3
   version:
     provider: mike
     default: latest
