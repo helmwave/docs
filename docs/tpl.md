@@ -1,5 +1,3 @@
-
-
 # 📄 Templating
 
 > Helmwave using [go templates](https://godoc.org/text/template) for templating.
