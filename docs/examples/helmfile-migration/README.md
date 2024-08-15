@@ -70,9 +70,9 @@ export HELMWAVE_TEMPLATER=gomplate
         {% include "./envs.yml" %}
         ```
 
-    2. Add next code to helwmave.yml.tpl
+    2. Add next code to helmwave.yml.tpl
 
-        ```yaml title="helwmave.yml.tpl"
+        ```yaml title="helmwave.yml.tpl"
         {{- $env := getenv "ENV" -}}
     
         {{- defineDatasource "envs" "envs.yml" -}}
@@ -103,7 +103,7 @@ export HELMWAVE_TEMPLATER=gomplate
 
 === "🌊 helmwave"
 
-    ```yaml title="helwmave.yml.tpl"
+    ```yaml title="helmwave.yml.tpl"
     ...
     {{ $r := $e.releases }}
     releases:
@@ -134,7 +134,7 @@ Just use yaml anchors.
 
 === "🌊 helmwave"
 
-    ```yaml title="helwmave.yml.tpl"
+    ```yaml title="helmwave.yml.tpl"
     .options: &options
       atomic: true
       timeout: 1200
@@ -157,7 +157,7 @@ Just use yaml anchors.
 
 === "🌊 helmwave"
 
-    ```yaml title="helwmave.yml.tpl"
+    ```yaml title="helmwave.yml.tpl"
     {{- $kubecontext := $e.kubecontext -}}
     .options: &options
       atomic: true
