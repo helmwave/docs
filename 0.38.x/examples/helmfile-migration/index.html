@@ -1577,8 +1577,8 @@ You're not viewing the latest version.
 </code></pre></div>
 </li>
 <li>
-<p>Add next code to helwmave.yml.tpl</p>
-<div class="highlight"><span class="filename">helwmave.yml.tpl</span><pre><span></span><code><span class="p p-Indicator">{{</span><span class="nv">- $env</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getenv &quot;ENV&quot; -</span><span class="p p-Indicator">}}</span>
+<p>Add next code to helmwave.yml.tpl</p>
+<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="p p-Indicator">{{</span><span class="nv">- $env</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getenv &quot;ENV&quot; -</span><span class="p p-Indicator">}}</span>
 
 <span class="p p-Indicator">{{</span><span class="nv">- defineDatasource &quot;envs&quot; &quot;envs.yml&quot; -</span><span class="p p-Indicator">}}</span>
 <span class="p p-Indicator">{{</span><span class="nv">- $envs</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= (ds &quot;envs&quot;).envs -</span><span class="p p-Indicator">}}</span>
@@ -1610,7 +1610,7 @@ You're not viewing the latest version.
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">helwmave.yml.tpl</span><pre><span></span><code><span class="nn">...</span>
+<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nn">...</span>
 <span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$r</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= $e.releases</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 <span class="nt">releases</span><span class="p">:</span>
 <span class="p p-Indicator">{{</span><span class="nv">- if (index $r &quot;gitlab&quot;)</span><span class="w"> </span><span class="p p-Indicator">}}</span>
@@ -1639,7 +1639,7 @@ You're not viewing the latest version.
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">helwmave.yml.tpl</span><pre><span></span><code><span class="nt">.options</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;options</span>
+<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">.options</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;options</span>
 <span class="w">  </span><span class="nt">atomic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1200</span>
 <span class="w">  </span><span class="nt">max_history</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
@@ -1661,7 +1661,7 @@ You're not viewing the latest version.
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">helwmave.yml.tpl</span><pre><span></span><code><span class="p p-Indicator">{{</span><span class="nv">- $kubecontext</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= $e.kubecontext -</span><span class="p p-Indicator">}}</span>
+<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="p p-Indicator">{{</span><span class="nv">- $kubecontext</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= $e.kubecontext -</span><span class="p p-Indicator">}}</span>
 <span class="nt">.options</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;options</span>
 <span class="w">  </span><span class="nt">atomic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1200</span>
