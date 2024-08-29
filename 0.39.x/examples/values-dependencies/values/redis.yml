@@ -1,0 +1,7 @@
+{{ $common := getValues "values/common.yml" }}
+
+master:
+  podLabels:
+    {{- range $key, $value := $common.global.podLabels }}
+    {{ $key }}: {{ $value }}
+    {{- end }}
