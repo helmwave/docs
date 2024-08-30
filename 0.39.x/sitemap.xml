@@ -2,197 +2,158 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.helmwave.app/0.39.x/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/anno/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/ci/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/cli/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/comparison/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/ide/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/install/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/intro/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/plan/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/pub/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/tpl/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/yaml/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/apps-per-ns/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/aws-sm/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/built-in-release/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/graph/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/helm-chart-as-git-repo/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/helmfile-migration/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/kubedog/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/lifecycle/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/monitors/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/oci-private/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/oci-public/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/pass-git-commit/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/pass-git-tag/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/private-env/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/private-github-repo/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/private-gitlab-repo/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/quick-start/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/single-app-multi-envs/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/store-greeting-hello/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/tags/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/umbrella-evil/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/values-delimiter-flags/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/values-dependencies/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/values-disable-render/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/values-sops/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/values-strict-flag/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
     <url>
          <loc>https://docs.helmwave.app/0.39.x/examples/vault/</loc>
-         <lastmod>2024-08-29</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-08-30</lastmod>
     </url>
 </urlset>
