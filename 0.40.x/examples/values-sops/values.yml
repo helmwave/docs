@@ -1,0 +1,30 @@
+#ENC[AES256_GCM,data:GgOHfI2ALHVRMutwzbbj1xB/AO0oz9IQExewzxqn+A==,iv:2SMqOaISe7ErBHgrG0fUAEG2PZ0VxPk217eWxnjug5k=,tag:NfTKnKsz3Tq4VILEDvvFkA==,type:comment]
+#ENC[AES256_GCM,data:Cw==,iv:ROEhMOyTjnApauHRyZZbqWCCIKaWY+5DVM8fWlZtslg=,tag:HEEQpFaEGUKM2VusUC+0mw==,type:comment]
+metrics:
+    service:
+        annotations:
+            prometheus.io/scrape: ENC[AES256_GCM,data:2L7+8w==,iv:/deSPkA8lPHHJVUGoIDd0x368mPsGMAFAPenAeXz68Y=,tag:efKHi/5X/wJPVSqI6oHldA==,type:str]
+            prometheus.io/port: ENC[AES256_GCM,data:bErIwr71Yuv1nT+pha8e97Tspo015YWTMfSrSd/aRqyqBA==,iv:lodkK84z6MHtzrQBdMIe+KtaDdZjlagu3F0qpfOU7rs=,tag:jMslNtzbJe6/cYQnKf9OlQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-09-11T16:44:33Z"
+    mac: ENC[AES256_GCM,data:5+vWLYhYCmaKZvuQpRpDKZNS0z9EL1VpppuIssKqG4XFmoLgeigjc4noa2LLuM3iY9rHy+ICNcjdzWIjHhA1Zw6T7B6TpkTR3xyyzqQZ6fx8yw1QfZVE/MRac6Zg5/UIGoTocJzwfHUE84wzn5Na/9FclDYwGYR2O6dvMOrm5uU=,iv:owmjYXD7wib62U+qZPgG1U3SbGU48NLRx4j7yK+UoTA=,tag:tMjD5M4kJBguvQ3DoFeyvg==,type:str]
+    pgp:
+        - created_at: "2023-09-11T16:44:32Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hF4DMeHY6nye/U4SAQdAEzD3I/ufCNIhuaAPZ1/8RtzZEVLlEaPlGk6FYviyinAw
+            +fynfTRvLNdFFXrRUdQibDEc3kJ8v5n/vpto3OYwXSDV3VXflXYVxKHIcXwkAgIy
+            1GgBCQIQhKZtYYky8MLckqiWoJhvH7p/K7U9DGZkSGrv6f7YJJ2OtpkkDvpZHHAQ
+            ghdGY8M9T0zU/ZN+9xRgsp7n/ukk/w6ChwZdg7ebCNAMGAdWOu2F+rERckMTEwBI
+            rRMNUMbeTNMjwA==
+            =eETi
+            -----END PGP MESSAGE-----
+          fp: DCB1B50CC55217886566ED93FFA4CA11112C922E
+    unencrypted_suffix: _unencrypted
+    version: 3.7.3
