@@ -1,0 +1,3 @@
+global:
+  podLabels:
+    foo: {{ now }}
