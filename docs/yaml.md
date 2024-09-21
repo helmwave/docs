@@ -365,7 +365,9 @@ Almost all options that are here are native :simple-helm: helm options.
 |        reuse_values         |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |   reset_then_reuse_values   |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |          skip_crds          |    🙅    |       bool       |    false     |                  | :simple-helm: |
-|         show_notes          |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|       take_ownership        |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|   skip_schema_validation    |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|         hide_notes          |    🙅    |       bool       |     true     |                  | :simple-helm: |
 |          sub_notes          |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |        post_renderer        |    🙅    |      array       |      []      |        ✅         | :simple-helm: |
 |     delete_propagation      |    🙅    |      string      | "background" |                  | :simple-helm: |
@@ -889,15 +891,29 @@ Be careful with this option.
 If set, render sub chart notes along with the parent.
 This option determines whether sub-notes are rendered in the chart.
 
+### take_ownership
+
+> Introduced in [:material-tag: v0.41.1](https://github.com/helmwave/helmwave/releases/tag/v0.41.1)
+
+Will ignore the check for helm annotations and take ownership of the resources
+
+### skip_schema_validation
+
+> Introduced in [:material-tag: v0.41.1](https://github.com/helmwave/helmwave/releases/tag/v0.41.1)
+
+Determines if JSON schema validation is disabled
+
 ### post_renderer
 
 > Introduced in [:material-tag: v0.24.0](https://github.com/helmwave/helmwave/releases/tag/v0.24.0)
 
 You can use custom commands to change rendered manifests.
 
-### show_notes
+### hide_notes (ex:show_notes)
 
 > Introduced in [:material-tag: v0.31.0](https://github.com/helmwave/helmwave/releases/tag/v0.31.0)
+
+> !!! It was renamed form `show_notes=false`, to `hide_notes=true` in [:material-tag: v0.41.1](https://github.com/helmwave/helmwave/releases/tag/v0.41.1)
 
 If enabled, rendered [chart notes](https://helm.sh/docs/chart_template_guide/notes_files/) will be shown after
 successful release.
