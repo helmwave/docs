@@ -7,6 +7,6 @@
 - `local` - diff with local plan
 - `none` - disable diff
 
-Combine `--diff-mode=local` or `--diff-mode=none` with `offline_kube_version` to build a plan without kubernetes.
+Combine `--diff-mode=local` or `--diff-mode=none` with [`offline_kube_version`](yaml/#offline_kube_version) to build a plan without kubernetes.
 
 ![diff example](assets/diff.png)
