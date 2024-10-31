@@ -591,7 +591,7 @@ If `offline_kube_version` set helmwave will use this version to build plan.
 Without this option, helmwave will ask :simple-kubernetes: kubernetes for a version.
 It is very useful if you want to build a plan without access to a cluster.
 
-Combine `offline_kube_version` and `--diff-mode=local` or `--diff-mode=none` to build a plan without kubernetes.
+Combine `offline_kube_version` and [`--diff-mode=local`](cli/#-diff-mode) or `--diff-mode=none` to build a plan without kubernetes.
 
 [:material-duck: example](examples/private-env/README.md)
 
