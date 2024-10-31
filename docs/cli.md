@@ -40,6 +40,8 @@ This command renders `helmwave.yml.tpl` to `helmwave.yml`.
 
 Helmwave builds plan in complete plan directory (`.helmwave` by default) that other commands use.
 
+Build process by default includes schema validation against specific :simple-kubernetes: Kubernetes version (taken online), as well as diff. To build plan offline, combine [`--diff-mode=local`](cli/#-diff-mode) or `--diff-mode=none` with [`offline_kube_version`](yaml/#offline_kube_version).
+
 A plan includes:
 
 - Downloaded remote charts
