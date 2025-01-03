@@ -1,0 +1,7 @@
+project: c
+
+releases:
+  - name: c
+
+repositories:
+  - name: c
