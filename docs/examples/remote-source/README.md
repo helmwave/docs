@@ -1,6 +1,6 @@
 # Remote Source
 
-!!! note "Experimental feature"
+!!! danger "Experimental feature"
 
     This feature can change in future
 
