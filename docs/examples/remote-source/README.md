@@ -4,7 +4,7 @@
 
     This feature can change in future
 
-`Remote source` allows you use [go-getter](https://github.com/hashicorp/go-getter) syntax to fetch helmwave.yml form Git Mercurial, HTTP ,Amazon S3, Google GCP 
+`Remote source` allows you use [go-getter](https://github.com/hashicorp/go-getter) syntax to fetch helmwave.yml form Git, Mercurial, HTTP, Amazon S3, Google GCP 
 
 
 
