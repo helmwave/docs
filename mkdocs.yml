@@ -38,7 +38,6 @@ nav:
           - examples/pass-git-tag/README.md
           - examples/built-in-release/README.md
           - examples/store-greeting-hello/README.md
-      - examples/helm-chart-as-git-repo/README.md
       - examples/graph/README.md
       - examples/tags/README.md
       - examples/umbrella-evil/README.md
@@ -52,6 +51,7 @@ nav:
       - Repositories:
           - examples/private-github-repo/README.md
           - examples/private-gitlab-repo/README.md
+          - examples/helm-chart-as-git-repo/README.md
       - Values flags:
           - examples/values-disable-render/README.md
           - SOPS: examples/values-sops/README.md
