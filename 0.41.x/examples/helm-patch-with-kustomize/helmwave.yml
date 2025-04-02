@@ -1,0 +1,6 @@
+releases:
+  - name: world
+    chart: ./hello
+    namespace: my-namespace
+    post_renderer:
+      - ./kustomize.sh

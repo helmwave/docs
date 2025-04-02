@@ -12,20 +12,20 @@
         <meta name="author" content="Dmitrii Zhiliaev">
       
       
-        <link rel="canonical" href="https://docs.helmwave.app/0.41.x/examples/pass-git-tag/">
+        <link rel="canonical" href="https://docs.helmwave.app/0.41.x/examples/helm-patch-with-kustomize/">
       
       
-        <link rel="prev" href="../pass-git-commit/">
+        <link rel="prev" href="../umbrella-evil/">
       
       
-        <link rel="next" href="../built-in-release/">
+        <link rel="next" href="../private-env/">
       
       <link rel="icon" href="https://raw.githubusercontent.com/helmwave/logo/main/logo.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.1.19">
     
     
       
-        <title>Git tag -> image tag - Helmwave</title>
+        <title>Helm patch with Kustomize - Helmwave</title>
       
     
     
@@ -128,9 +128,9 @@ function __md_analytics() {
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Helmwave - Git tag -> image tag">
+<meta property="og:title" content="Helmwave - Helm patch with Kustomize">
 <meta property="og:description" content="The helmwave`s docs">
-<meta property="og:url" content="https://docs.helmwave.app/0.41.x/examples/pass-git-tag/">
+<meta property="og:url" content="https://docs.helmwave.app/0.41.x/examples/helm-patch-with-kustomize/">
 <meta property="og:image" content="https://raw.githubusercontent.com/helmwave/logo/main/logo.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -160,7 +160,7 @@ function __md_analytics() {
     <div data-md-component="skip">
       
         
-        <a href="#git-tag-image-tag" class="md-skip">
+        <a href="#helm-patch-with-kustomize" class="md-skip">
           Skip to content
         </a>
       
@@ -210,7 +210,7 @@ You're not viewing the latest version.
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Git tag -&gt; image tag
+              Helm patch with Kustomize
             
           </span>
         </div>
@@ -746,16 +746,14 @@ You're not viewing the latest version.
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
       
       
       
@@ -764,7 +762,7 @@ You're not viewing the latest version.
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           Templating
@@ -817,21 +815,11 @@ You're not viewing the latest version.
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pass-git-tag/" class="md-nav__link">
         Git tag -&gt; image tag
       </a>
-      
     </li>
   
 
@@ -918,11 +906,52 @@ You're not viewing the latest version.
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../helm-patch-with-kustomize/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Helm patch with Kustomize
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Helm patch with Kustomize
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1328,6 +1357,21 @@ You're not viewing the latest version.
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1345,52 +1389,53 @@ You're not viewing the latest version.
     
       
     
-    <a href="https://github.com/helmwave/docs/raw/main/docs/examples/pass-git-tag/README.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/helmwave/docs/raw/main/docs/examples/helm-patch-with-kustomize/README.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="git-tag-image-tag">Git tag -&gt; image tag<a class="headerlink" href="#git-tag-image-tag" title="Permanent link">&para;</a></h1>
-<p>Suppose <code>my-chart</code> has default <code>values.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.gitlab.local/example/app</span>
-<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1.0.0</span>
-<span class="nn">...</span>
+<h1 id="helm-patch-with-kustomize">Helm patch with Kustomize<a class="headerlink" href="#helm-patch-with-kustomize" title="Permanent link">&para;</a></h1>
+<p>Helm charts often miss required fields, leading to frequent forking to add necessary elements. This example shows how to patch a Helm chart without forking, using the external tool kustomize.</p>
+<p>Suppose we have the chart <code>hello</code>. (It was created by <code>$ helm create hello</code>). The deployment doesn't have <code>priorityClassName</code> in this chart.</p>
+<p>For example, we'll add <code>priorityClassName: high</code> for the deployment.</p>
+<p>Describe your patch with Kustomize</p>
+<div class="highlight"><span class="filename">kustomization.yaml</span><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kustomize.config.k8s.io/v1beta1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kustomization</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all.yaml</span>
+<span class="nt">patches</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">target</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps</span>
+<span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">world-hello</span>
+<span class="w">    </span><span class="nt">patch</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">- op: replace</span>
+<span class="w">        </span><span class="no">path: /spec/template/spec/priorityClassName</span>
+<span class="w">        </span><span class="no">value: high</span>
 </code></pre></div>
-<p>If we need to create CI/CD pipeline, we need use next script</p>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>--instal<span class="w"> </span>my-release<span class="w"> </span>my-chart-repo/my-chart-app<span class="w"> </span>--set<span class="o">=</span><span class="s2">&quot;image.tag=</span><span class="nv">$CI_COMMIT_TAG</span><span class="s2">&quot;</span><span class="w"> </span>-n<span class="w"> </span>my-namespace
-</code></pre></div>
-<p>HelmWave allows use declarative way to approach this goal.</p>
-<p><strong>Project structure</strong></p>
-<div class="highlight"><pre><span></span><code>docs/examples/pass-git-tag
-├──<span class="w"> </span>README.md
-├──<span class="w"> </span>helmwave.yml
-└──<span class="w"> </span>values.yml
+<p>Kustomize has <a href="https://helm.sh/docs/topics/advanced/#usage">official</a> trick <a href="https://github.com/thomastaylor312/advanced-helm-demos/tree/master/post-render">script</a> for helm.</p>
+<div class="highlight"><span class="filename">kustomize.sh</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-<span class="m">1</span><span class="w"> </span>directory,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
-</code></pre></div>
-<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">pass</span><span class="nv"> </span><span class="s">git</span><span class="nv"> </span><span class="s">tag&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.41.4&quot;</span>
+cat<span class="w"> </span>&lt;<span class="p">&amp;</span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>all.yaml
 
-<span class="nt">releases</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-release</span>
-<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-chart-repo/my-chart-app</span>
-<span class="w">    </span><span class="nt">values</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values.yml</span>
+kustomize<span class="w"> </span>build<span class="w"> </span>.<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>all.yaml
+</code></pre></div>
+<p>Ask helmwave use kustomize</p>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">releases</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">world</span>
+<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./hello</span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-namespace</span>
-<span class="w">    </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">post_renderer</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./kustomize.sh</span>
 </code></pre></div>
-<p>This values will override default values</p>
-<div class="highlight"><span class="filename">values.yml</span><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_COMMIT_TAG&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
-</code></pre></div>
-<p><strong>Run</strong></p>
+<h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>build
-helmwave<span class="w"> </span>up
+cat<span class="w"> </span>.helmwave/manifest/world@my-namespace.yml<span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>priorityClassName
+<span class="w">      </span>priorityClassName:<span class="w"> </span>high
 </code></pre></div>
-<p>or <code>helmwave up --build</code></p>
 
 
   
