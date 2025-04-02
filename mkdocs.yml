@@ -42,6 +42,7 @@ nav:
       - examples/graph/README.md
       - examples/tags/README.md
       - examples/umbrella-evil/README.md
+      - examples/helm-patch-with-kustomize/README.md
       - examples/private-env/README.md
       - examples/lifecycle/README.md
       - examples/monitors/README.md
