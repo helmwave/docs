@@ -7,7 +7,7 @@ repo_url: "https://github.com/helmwave/helmwave"
 edit_uri: "https://github.com/helmwave/docs/edit/main/docs/"
 site_url: "https://docs.helmwave.app"
 copyright: >
-  Copyright © 2020 – 2024 Dmitrii Zhiliaev
+  Copyright © 2020 – 2025 Dmitrii Zhiliaev
 
 nav:
   - Home: index.md
@@ -18,6 +18,7 @@ nav:
       - install.md
       - 🔰 Quick Start: examples/quick-start/README.md
       - ci.md
+      - argocd.md
       - ide.md
       - pub.md
 
@@ -38,10 +39,10 @@ nav:
           - examples/pass-git-tag/README.md
           - examples/built-in-release/README.md
           - examples/store-greeting-hello/README.md
-      - examples/helm-chart-as-git-repo/README.md
       - examples/graph/README.md
       - examples/tags/README.md
       - examples/umbrella-evil/README.md
+      - examples/helm-patch-with-kustomize/README.md
       - examples/private-env/README.md
       - examples/lifecycle/README.md
       - examples/monitors/README.md
@@ -52,6 +53,7 @@ nav:
       - Repositories:
           - examples/private-github-repo/README.md
           - examples/private-gitlab-repo/README.md
+          - examples/helm-chart-as-git-repo/README.md
       - Values flags:
           - examples/values-disable-render/README.md
           - SOPS: examples/values-sops/README.md
@@ -61,6 +63,7 @@ nav:
       - Data sources:
           - examples/vault/README.md
           - examples/aws-sm/README.md
+          - examples/remote-source/README.md
 
 plugins:
   - search

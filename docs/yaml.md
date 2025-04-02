@@ -909,11 +909,13 @@ Determines if JSON schema validation is disabled
 
 You can use custom commands to change rendered manifests.
 
+Check out [:material-duck: the example](../examples/helm-patch-with-kustomize)
+
 ### hide_notes (ex:show_notes)
 
 > Introduced in [:material-tag: v0.31.0](https://github.com/helmwave/helmwave/releases/tag/v0.31.0)
 
-> !!! It was renamed form `show_notes=false`, to `hide_notes=true` in [:material-tag: v0.41.1](https://github.com/helmwave/helmwave/releases/tag/v0.41.1)
+!!! It was renamed form `show_notes=false`, to `hide_notes=true` in [:material-tag: v0.41.1](https://github.com/helmwave/helmwave/releases/tag/v0.41.1)
 
 If enabled, rendered [chart notes](https://helm.sh/docs/chart_template_guide/notes_files/) will be shown after
 successful release.

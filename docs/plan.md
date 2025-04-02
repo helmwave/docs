@@ -1,4 +1,4 @@
-# Deep dive to plan
+# 🤿 Deep dive to plan
 
 
 ## Definitions
