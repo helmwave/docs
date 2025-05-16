@@ -1,0 +1,28 @@
+name: "Example: graph"
+version: "⟨⟨ ver ⟩⟩"
+
+# OCI: modern way to get chart from registry
+registries:
+  - host: registry-1.docker.io
+
+.options: &options
+  namespace: my-namespace
+  create_namespace: true
+  wait: true
+  timeout: 1m
+  max_history: 3 # best practice
+  offline_kube_version: 1.22.2
+  chart:
+    # For example, we will use bitnami/nats chart, because it's small and fast
+    name: oci://registry-1.docker.io/bitnamicharts/nats
+    version: 7.8.3 # best practice
+
+# We will install 2 releases with the same options
+releases:
+  - name: short-name
+    <<: *options
+    depends_on:
+      - long-name-with-very-long-name
+
+  - name: long-name-with-very-long-name
+    <<: *options

@@ -1,0 +1,101 @@
+project: "HelloWorld"
+version: "⟨⟨ ver ⟩⟩"
+
+repositories:
+    - name: stable
+      url: https://localhost:8080
+      # private repositories
+      username: user
+      password: 12345679
+
+      # cert
+      certFile: ./cert.pem
+      keyFile: ./key.pem
+      caFile: ./ca.pem
+
+lifecycle:
+    pre_build:
+      - cmd: "ls"
+        args: ["-l", "-a"]
+        show: false
+        allow_failure: false
+      - echo "run global pre_build script"
+    post_build:
+      - echo "run global post_build script"
+
+registries:
+    - host: https://localhost:5000
+      # private registries
+      username: oci_user
+      password: 98765431
+      insecure: false
+
+
+releases:
+    - name: my
+      namespace: prod
+      chart:
+        name: stable/my-chart
+        version: "0.2.0"
+        ca_file: ""
+        cert_file: ""
+        key_file: ""
+        insecure: false
+        keyring: ""
+        password: ""
+        pass_credentials: false
+        repo_url: ""
+        username: ""
+        verify: false
+
+      store:
+        greeting: "HelloWorld"
+
+      lifecycle:
+        pre_up:
+          - echo "running pre_up script for my"
+        post_up:
+          - echo "running post_up script for my"
+        pre_build:
+          - echo "running pre_build script for my"
+        post_build:
+          - echo "running post_build script for my"
+
+      depends_on:
+        - name: db@prod
+          tag: prod
+          optional: false
+
+      values:
+        - src: values.yml
+          delimiter_left: "[["
+          delimiter_right: "]]"
+          render: false
+          strict: true
+
+      tags:
+        - my
+        - product
+
+      post_renderer: "./gomplate"
+      offline_kube_version: "1.22.0"
+      timeout: "5m"
+      max_history: 3
+      context: prod
+      description: "my chart"
+      pending_release_strategy: rollback
+      allow_failure: false
+      atomic: true
+      cleanup_on_fail: false
+      create_namespace: false
+      disable_hooks: false
+      disable_openapi_validation: false
+      force: false
+      enable_dns: false
+      recreate: false
+      reset_values: false
+      reuse_values: false
+      skip_crds: false
+      sub_notes: false
+      wait: true
+      wait_for_jobs: true
