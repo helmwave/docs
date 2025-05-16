@@ -1380,9 +1380,9 @@ You're not viewing the latest version.
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values-secret.yaml</span>
 </code></pre></div>
 <p><strong>Step 3. Create <code>values-secret.yaml</code></strong></p>
-<div class="highlight"><span class="filename">values-secret.yaml</span><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">defineDatasource &quot;aws&quot; &quot;aws+sm</span><span class="p p-Indicator">:</span><span class="nv">///hello/foobar&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<div class="highlight"><span class="filename">values-secret.yaml</span><pre><span></span><code><span class="c1"># [[ defineDatasource &quot;aws&quot; &quot;aws+sm:///hello/foobar&quot; ]]</span>
 
-<span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">datasource &quot;aws&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;[[</span><span class="nv"> </span><span class="s">datasource</span><span class="nv"> </span><span class="s">&quot;aws&quot;</span><span class="nv"> </span><span class="s">]]&#39;</span>
 </code></pre></div>
 <p><strong>Step 4. Run <code>helmwave build --templater gomplate</code></strong></p>
 <p>You will get <code>secret: {"foo":"bar"}</code></p>

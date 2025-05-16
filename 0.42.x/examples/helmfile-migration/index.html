@@ -1792,27 +1792,27 @@ You're not viewing the latest version.
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="p p-Indicator">{{</span><span class="nv">- $env</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getenv &quot;ENV&quot; -</span><span class="p p-Indicator">}}</span>
+<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="p p-Indicator">[[</span><span class="nv">- $env</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getenv &quot;ENV&quot; -</span><span class="p p-Indicator">]]</span>
 
-<span class="p p-Indicator">{{</span><span class="nv">- defineDatasource &quot;envs&quot; &quot;envs.yml&quot; -</span><span class="p p-Indicator">}}</span>
-<span class="p p-Indicator">{{</span><span class="nv">- $envs</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= (ds &quot;envs&quot;).envs -</span><span class="p p-Indicator">}}</span>
+<span class="p p-Indicator">[[</span><span class="nv">- defineDatasource &quot;envs&quot; &quot;envs.yml&quot; -</span><span class="p p-Indicator">]]</span>
+<span class="p p-Indicator">[[</span><span class="nv">- $envs</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= (ds &quot;envs&quot;).envs -</span><span class="p p-Indicator">]]</span>
 
-<span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$e</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= index $envs $env</span><span class="w"> </span><span class="p p-Indicator">}}</span>
-<span class="p p-Indicator">{{</span><span class="nv">- $kubecontext</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= $e.kubecontext -</span><span class="p p-Indicator">}}</span>
-<span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$r</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= $e.releases</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="p p-Indicator">[[</span><span class="w"> </span><span class="nv">$e</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= index $envs $env</span><span class="w"> </span><span class="p p-Indicator">]]</span>
+<span class="p p-Indicator">[[</span><span class="nv">- $kubecontext</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= $e.kubecontext -</span><span class="p p-Indicator">]]</span>
+<span class="p p-Indicator">[[</span><span class="w"> </span><span class="nv">$r</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= $e.releases</span><span class="w"> </span><span class="p p-Indicator">]]</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab</span>
 <span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://charts.gitlab.io/</span>
 
 <span class="nt">.options</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;options</span>
-<span class="w">  </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$kubecontext</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="w"> </span><span class="nv">$kubecontext</span><span class="w"> </span><span class="p p-Indicator">]]</span>
 <span class="w">  </span><span class="nt">atomic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1200</span>
 <span class="w">  </span><span class="nt">max_history</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
 
 <span class="nt">releases</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- if (index $r &quot;gitlab&quot;)</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="c1"># [[- if (index $r &quot;gitlab&quot;) ]]</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab</span>
 <span class="w">    </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab/gitlab</span>
@@ -1820,42 +1820,42 @@ You're not viewing the latest version.
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab</span>
 <span class="w">    </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;gitlab&quot;</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/{{ $env }}/gitlab.yaml</span>
-<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- end</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/[[ $env ]]/gitlab.yaml</span>
+<span class="w">  </span><span class="c1"># [[- end ]]</span>
 
-<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- if (index $r &quot;minio&quot;)</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="c1"># [[- if (index $r &quot;minio&quot;) ]]</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minio</span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./charts/minio</span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minio</span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/{{ $env }}/minio.yaml</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/[[ $env ]]/minio.yaml</span>
 <span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/{{ $env }}/minio-secret.yaml</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/[[ $env ]]/minio-secret.yaml</span>
 <span class="w">        </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sops</span>
-<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- end</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="c1"># [[- end ]]</span>
 
-<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- if (index $r &quot;grafana&quot;)</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="c1"># [[- if (index $r &quot;grafana&quot;) ]]</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grafana</span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./charts/grafana</span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grafana</span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/{{ $env }}/grafana.yaml</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/[[ $env ]]/grafana.yaml</span>
 <span class="w">        </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">copy</span>
 <span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/{{ $env }}/grafana-secret.yaml</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/[[ $env ]]/grafana-secret.yaml</span>
 <span class="w">        </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sops</span>
-<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- end</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="c1"># [[- end ]]</span>
 
-<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- if (index $r &quot;filebeat&quot;)</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="c1"># [[- if (index $r &quot;filebeat&quot;) ]]</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">filebeat</span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./charts/filebeat</span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">filebeat</span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/{{ $env }}/filebeat.yaml</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/[[ $env ]]/filebeat.yaml</span>
 <span class="w">    </span><span class="nt">secrets</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/{{ $env }}/filebeat-secret.yaml</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/[[ $env ]]/filebeat-secret.yaml</span>
 <span class="w">        </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sops</span>
-<span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- end</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="c1"># [[- end ]]</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">envs.yml</span><pre><span></span><code><span class="nt">envs</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">dev</span><span class="p">:</span>
