@@ -1,0 +1,29 @@
+# Example: Access redis's rendered values
+{{ $redisValues := getValues "redis@my-namespace" "values/redis.yml" }}
+
+# Example: Access redis's rendered manifests to get helm-generated secrets
+{{ $manifests := getManifests "redis@my-namespace" }}
+
+# Example: Access plan configuration
+{{ $plan := getPlan }}
+
+# Use data from redis release values
+redis:
+  host: {{ $redisValues.connection.host }}
+  port: {{ $redisValues.connection.port }}
+
+# Extract redis password from helm-generated secret
+{{- range $manifests }}
+{{- if eq .kind "Secret" }}
+{{- if contains "redis" .metadata.name }}
+  password: {{ index .data "redis-password" }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+# Access store from plan
+{{- range $plan.releases }}
+{{- if eq .name "redis" }}
+  store_port: {{ .store.port }}
+{{- end }}
+{{- end }}

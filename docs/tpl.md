@@ -118,14 +118,71 @@ The `hasKey` function allows you to check if key exists in the value. Dot-separa
 ```
 
 
+### `getPlan`
+
+> Introduced in [:material-tag: v0.43.0](https://github.com/helmwave/helmwave/releases/tag/v0.43.0)
+
+The `getPlan` function returns the entire plan configuration as a map. This allows values to access any release's `store` field or other configuration.
+
+```shell
+{{ $plan := getPlan }}
+{{ $redis := index $plan.releases 0 }}
+{{ $redis.store.someKey }}
+```
+
+[:material-duck: example](examples/cross-release-reference/README.md)
+
 ### `getValues`
 
 > Introduced in [:material-tag: v0.36.0](https://github.com/helmwave/helmwave/releases/tag/v0.36.0)
+>
+> Enhanced in [:material-tag: v0.43.0](https://github.com/helmwave/helmwave/releases/tag/v0.43.0)
 
-The `getValues` function returns the contents of another values file of the current release parsed as YAML. On failure, the template rendering will fail with an error message.
+The `getValues` function returns the contents of a values file parsed as YAML. On failure, the template rendering will fail with an error message.
+
+**Single argument** - get values from another values file of the current release:
 
 ```shell
 {{ $common := getValues "common.yaml" }}
 ```
 
+**Two arguments** - get rendered values from a depending release (v0.43.0+). The release must be declared in `depends_on`.
+
+```shell
+{{ $redisValues := getValues "redis@my-namespace" "values.yaml" }}
+```
+
 [:material-duck: example](examples/values-dependencies/README.md)
+
+### `getTags`
+
+> Introduced in [:material-tag: v0.43.0](https://github.com/helmwave/helmwave/releases/tag/v0.43.0)
+
+The `getTags` function returns the tags of the current build as a list: the tags passed via
+[`--tags`](cli.md#build), or every tag in the plan when none were passed.
+
+Useful to render values differently depending on what is being deployed:
+
+```shell
+{{- if getTags | len | eq 1 | and (getTags | first | eq "crd") }}
+prometheusOperator:
+  enabled: false
+{{- end }}
+```
+
+### `getManifests`
+
+> Introduced in [:material-tag: v0.43.0](https://github.com/helmwave/helmwave/releases/tag/v0.43.0)
+
+The `getManifests` function returns rendered manifests of a depending release as an array of objects. The release must be declared in `depends_on`.
+
+```shell
+{{ $manifests := getManifests "redis@my-namespace" }}
+{{- range $manifests }}
+{{- if eq .kind "Secret" }}
+redis_password: {{ index .data "redis-password" }}
+{{- end }}
+{{- end }}
+```
+
+[:material-duck: example](examples/cross-release-reference/README.md)

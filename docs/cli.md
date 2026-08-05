@@ -62,6 +62,8 @@ A plan includes:
 
 <!-- build -->
 {% include "./flags/yml.md" %}
+{% include "./flags/yml-templater.md" %}
+{% include "./flags/build-templater.md" %}
 {% include "./flags/tags.md" %}
 {% include "./flags/match-all-tags.md" %}
 {% include "./flags/skip-unchanged.md" %}
