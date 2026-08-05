@@ -1,0 +1,102 @@
+[INFO]: 🔨 Building releases...
+[INFO]: 🔨 Building values...
+[INFO]: 🔨 no values provided
+	release: nats@nats
+[INFO]: 🔨 Building repositories...
+[INFO]: 🔨 Building registries...
+[INFO]: 🗄 registry has been added to the plan
+	registry: registry-1.docker.io
+[INFO]: 🔨 Building charts...
+[INFO]: Pulled: registry-1.docker.io/bitnamicharts/nats:7.8.3
+[INFO]: Digest: sha256:5f80350b8a85177e4a9c7ed968f77c47bedcc461418172fb66594bc61fa1ffac
+[INFO]: 🔨 Building manifests...
+[INFO]: ❎ skipping updating dependencies for remote chart
+	release: nats@nats
+[INFO]: Pulled: registry-1.docker.io/bitnamicharts/nats:7.8.3
+[INFO]: Digest: sha256:5f80350b8a85177e4a9c7ed968f77c47bedcc461418172fb66594bc61fa1ffac
+[INFO]: ✅  manifest done
+	release: nats@nats
+[INFO]: 🔨 Building graphs...
+[INFO]: show graph:
+┌───────────┐
+│ nats@nats │
+└───────────┘
+
+[INFO]: 🏗 Plan
+	registries: 
+	  - registry-1.docker.io
+	releases: 
+	  - nats@nats
+	repositories: 
+	  - 
+[INFO]: 🆚 Skip diffing
+[INFO]: 🏗 Planfile is ready!
+[INFO]: 🏗 Plan
+	releases: 
+	  - nats@nats
+	repositories: 
+	  - 
+	registries: 
+	  - registry-1.docker.io
+[INFO]: 🗄 sync repositories...
+[INFO]: 🗄 sync registries...
+[INFO]: 🛥 sync releases...
+[INFO]: 🛥 deploying... 
+	release: nats@nats
+[INFO]: ✅
+	release: nats@nats
+[INFO]: monitor succeeded
+	monitor: nats-up-metric
+	streak: 1/5
+[INFO]: monitor succeeded
+	monitor: nats-up-metric
+	streak: 2/5
+[INFO]: monitor succeeded
+	streak: 3/5
+	monitor: nats-up-metric
+[INFO]: monitor succeeded
+	streak: 4/5
+	monitor: nats-up-metric
+[INFO]: monitor did not succeed
+	monitor: nats-delivered-metric
+	streak: 1/5
+	error: result is empty
+[INFO]: monitor succeeded
+	monitor: nats-up-metric
+	streak: 5/5
+[INFO]: ✅
+	monitor: nats-up-metric
+[INFO]: monitor did not succeed
+	monitor: nats-delivered-metric
+	streak: 2/5
+	error: result is empty
+[INFO]: monitor did not succeed
+	error: result is empty
+	monitor: nats-delivered-metric
+	streak: 3/5
+[INFO]: monitor did not succeed
+	error: result is empty
+	streak: 4/5
+	monitor: nats-delivered-metric
+[INFO]: monitor did not succeed
+	monitor: nats-delivered-metric
+	streak: 5/5
+	error: result is empty
+[ERROR]: ❌ monitor failed
+	monitor: nats-delivered-metric
+	error: monitor triggered failure threshold
+[ERROR]: monitors failed, need to take actions
+	error: one of goroutines in waitgroup sent error: 1 error occurred:
+	* monitor triggered failure threshold
+
+
+[INFO]: chose action to perform for failed monitors
+	action: rollback
+	release: nats@nats
+[INFO]: Releases Success 1 / 1
+[INFO]: Monitors Success 1 / 2
+          NAME          |             ERROR               
+------------------------+---------------------------------
+  nats-delivered-metric | [1;41mmonitor triggered failure[0m       
+                        | threshold                       
+[FATAL]: deploy failed
