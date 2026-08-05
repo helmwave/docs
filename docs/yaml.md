@@ -348,7 +348,7 @@ Almost all options that are here are native :simple-helm: helm options.
 |          monitors           |    🙅    |      array       |      []      |        ✅         |               |
 |        allow_failure        |    🙅    |       bool       |    false     |                  |               |
 |  pending_release_strategy   |    🙅    |      string      |      ""      |                  |               |
-|            wait             |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|            wait             |    🙅    |      string      |  "hookOnly"  |                  | :simple-helm: |
 |        wait_for_jobs        |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |           timeout           |    🙅    |     interval     |      5m      |                  | :simple-helm: |
 |         max_history         |    🙅    |       int        |      0       |                  | :simple-helm: |
@@ -359,17 +359,19 @@ Almost all options that are here are native :simple-helm: helm options.
 |        disable_hooks        |    🙅    |       bool       |    false     |                  | :simple-helm: |
 | disable_open_api_validation |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |            force            |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|       force_conflicts       |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |         enable_dns          |    🙅    |       bool       |    false     |                  | :simple-helm: |
-|          recreate           |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |        reset_values         |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |        reuse_values         |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |   reset_then_reuse_values   |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |          skip_crds          |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |       take_ownership        |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |   skip_schema_validation    |    🙅    |       bool       |    false     |                  | :simple-helm: |
+|      server_side_apply      |    🙅    |      string      |    "auto"    |                  | :simple-helm: |
 |         hide_notes          |    🙅    |       bool       |     true     |                  | :simple-helm: |
 |          sub_notes          |    🙅    |       bool       |    false     |                  | :simple-helm: |
 |        post_renderer        |    🙅    |      array       |      []      |        ✅         | :simple-helm: |
+|    post_render_strategy     |    🙅    |      string      |  "combined"  |                  | :simple-helm: |
 |     delete_propagation      |    🙅    |      string      | "background" |                  | :simple-helm: |
 |           labels            |    🙅    |      object      |      {}      |                  | :simple-helm: |
 |            tests            |    🙅    |      object      |      {}      |                  | :simple-helm: |
@@ -757,7 +759,19 @@ it will follow specified strategy:
 
 ### wait
 
-We recommend using `wait` for all releases. It will wait for all resources to be ready.
+> Changed in [:material-tag: v0.44.4](https://github.com/helmwave/helmwave/releases/tag/v0.44.4)
+
+How to wait for the release resources:
+
+- `watcher` — wait for every resource using kubernetes watches;
+- `legacy` — wait by polling;
+- `hookOnly` (default) — wait only for hooks, not for the chart's own resources.
+
+We recommend `watcher` for all releases.
+
+!!! danger "The booleans are gone since v0.44.4"
+
+    `wait: true` and `wait: false` are rejected: use `watcher` instead of `true` and `hookOnly` instead of `false`.
 
 ### wait_for_jobs
 
@@ -836,6 +850,12 @@ Force resource updates through a replacement strategy
 
 !!! tip "We don't recommend using this option."
 
+### force_conflicts
+
+> Introduced in [:material-tag: v0.44.4](https://github.com/helmwave/helmwave/releases/tag/v0.44.4)
+
+Force [server-side apply](#server_side_apply) changes against field-ownership conflicts.
+
 ### enable_dns
 
 > Introduced in [:material-tag: v0.27.1](https://github.com/helmwave/helmwave/releases/tag/v0.27.1)
@@ -844,11 +864,8 @@ Enable DNS resolution in templates.
 
 ### recreate
 
-> Introduced in [:material-tag: v0.5.0](https://github.com/helmwave/helmwave/releases/tag/v0.5.0)
-
-Allows deleting and then creating resources (pods) when needed instead of updating.
-
-!!! tip "We don't recommend using this option."
+> Removed in [:material-tag: v0.44.4](https://github.com/helmwave/helmwave/releases/tag/v0.44.4) — helm v4
+> removed the option behind it. The key is still parsed but has no effect.
 
 ### reset_values
 
@@ -903,6 +920,12 @@ Will ignore the check for helm annotations and take ownership of the resources
 
 Determines if JSON schema validation is disabled
 
+### server_side_apply
+
+> Introduced in [:material-tag: v0.44.4](https://github.com/helmwave/helmwave/releases/tag/v0.44.4)
+
+Whether to apply objects server-side: `true`, `false` or `auto` (default).
+
 ### post_renderer
 
 > Introduced in [:material-tag: v0.24.0](https://github.com/helmwave/helmwave/releases/tag/v0.24.0)
@@ -910,6 +933,20 @@ Determines if JSON schema validation is disabled
 You can use custom commands to change rendered manifests.
 
 Check out [:material-duck: the example](../examples/helm-patch-with-kustomize)
+
+!!! note "Since v0.44.4 the command also receives hook manifests by default"
+
+    Set [`post_render_strategy: nohooks`](#post_render_strategy) to feed it manifests only.
+
+### post_render_strategy
+
+> Introduced in [:material-tag: v0.44.4](https://github.com/helmwave/helmwave/releases/tag/v0.44.4)
+
+How manifests are handed to the [`post_renderer`](#post_renderer):
+
+- `combined` (default) — templates and hooks in one stream;
+- `separate` — templates and hooks in separate runs;
+- `nohooks` — templates only.
 
 ### hide_notes (ex:show_notes)
 

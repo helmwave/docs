@@ -8,7 +8,7 @@ registries:
 .options: &options
   namespace: my-namespace
   create_namespace: true
-  wait: true
+  wait: watcher
   timeout: 1m
   max_history: 3 # best practice
   chart:

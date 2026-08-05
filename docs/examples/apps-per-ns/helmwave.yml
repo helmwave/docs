@@ -13,7 +13,7 @@ repositories:
 
 # General options
 .options: &options
-  wait: true
+  wait: watcher
   wait_for_jobs: true
   force: false
   timeout: 10m
