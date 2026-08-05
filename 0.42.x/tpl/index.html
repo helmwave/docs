@@ -713,6 +713,20 @@ You're not viewing the latest version.
 </li>
         
           <li class="md-nav__item">
+  <a href="#fromyamlarray" class="md-nav__link">
+    fromYamlArray
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fromyamlall" class="md-nav__link">
+    fromYamlAll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exec" class="md-nav__link">
     exec
   </a>
@@ -1490,6 +1504,20 @@ You're not viewing the latest version.
 </li>
         
           <li class="md-nav__item">
+  <a href="#fromyamlarray" class="md-nav__link">
+    fromYamlArray
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fromyamlall" class="md-nav__link">
+    fromYamlAll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exec" class="md-nav__link">
     exec
   </a>
@@ -1614,16 +1642,46 @@ such as JSON (including EJSON - encrypted JSON), YAML, <span class="twemoji"><sv
 <div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$yaml</span><span class="w"> </span>:<span class="o">=</span><span class="w">  </span><span class="nv">$value</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>toYaml<span class="w"> </span><span class="o">}}</span>
 </code></pre></div>
 <h3 id="fromyaml"><code>fromYaml</code><a class="headerlink" href="#fromyaml" title="Permanent link">&para;</a></h3>
-<p>The <code>fromYaml</code> function allows you to convert a YAML string to a value. When has failed, the template rendering will fail with an error message.</p>
+<p>The <code>fromYaml</code> function allows you to convert a YAML string to a value (map). When has failed, the template rendering will fail with an error message.</p>
 <div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$value</span><span class="w"> </span>:<span class="o">=</span><span class="w">  </span><span class="nv">$yamlString</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>fromYaml<span class="w"> </span><span class="o">}}</span>
+</code></pre></div>
+<h3 id="fromyamlarray"><code>fromYamlArray</code><a class="headerlink" href="#fromyamlarray" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.42.3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"/></svg></span> v0.42.3</a></p>
+</blockquote>
+<p>The <code>fromYamlArray</code> function allows you to parse a YAML array (single document) into a list. When has failed, the template rendering will fail with an error message.</p>
+<div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$list</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="s2">&quot;[1, 2, 3]&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>fromYamlArray<span class="w"> </span><span class="o">}}</span>
+<span class="o">{{</span><span class="w"> </span><span class="nv">$list</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="s2">&quot;- a\n- b\n- c&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>fromYamlArray<span class="w"> </span><span class="o">}}</span>
+</code></pre></div>
+<h3 id="fromyamlall"><code>fromYamlAll</code><a class="headerlink" href="#fromyamlall" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.42.3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"/></svg></span> v0.42.3</a></p>
+</blockquote>
+<p>The <code>fromYamlAll</code> function allows you to parse multiple YAML documents (separated by <code>---</code>) into a list. When has failed, the template rendering will fail with an error message.</p>
+<div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$docs</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="s2">&quot;---\napiVersion: v1\n---\nkind: ConfigMap&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>fromYamlAll<span class="w"> </span><span class="o">}}</span>
 </code></pre></div>
 <h3 id="exec"><code>exec</code><a class="headerlink" href="#exec" title="Permanent link">&para;</a></h3>
 <p>The <code>exec</code> function allows you to run a command, returning the stdout of the command. When the command fails, the template rendering will fail with an error message.</p>
-<div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$cmdOutpot</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">&quot;./mycmd&quot;</span><span class="w"> </span><span class="o">(</span>list<span class="w"> </span><span class="s2">&quot;arg1&quot;</span><span class="w"> </span><span class="s2">&quot;arg2&quot;</span><span class="w"> </span><span class="s2">&quot;--flag1&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">}}</span>
+<div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$cmdOutput</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">&quot;./mycmd&quot;</span><span class="w"> </span><span class="o">(</span>list<span class="w"> </span><span class="s2">&quot;arg1&quot;</span><span class="w"> </span><span class="s2">&quot;arg2&quot;</span><span class="w"> </span><span class="s2">&quot;--flag1&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">}}</span>
 </code></pre></div>
+<p>Since v0.42.3, can be called in 4 ways:</p>
+<div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">&quot;command arg1 arg2&quot;</span><span class="w"> </span><span class="o">}}</span>
+<span class="o">{{</span><span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">&quot;command&quot;</span><span class="w"> </span><span class="o">(</span>list<span class="w"> </span><span class="s2">&quot;arg1&quot;</span><span class="w"> </span><span class="s2">&quot;arg2&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">}}</span>
+<span class="o">{{</span><span class="w"> </span><span class="s2">&quot;input&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">&quot;command arg1 arg2&quot;</span><span class="w"> </span><span class="o">}}</span>
+<span class="o">{{</span><span class="w"> </span><span class="s2">&quot;input&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="s2">&quot;command&quot;</span><span class="w"> </span><span class="o">(</span>list<span class="w"> </span><span class="s2">&quot;arg1&quot;</span><span class="w"> </span><span class="s2">&quot;arg2&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">}}</span>
+</code></pre></div>
+<ul>
+<li>Command string with arguments (split by shell-like rules)</li>
+<li>Command with explicit argument list</li>
+<li>Piped input with command string</li>
+<li>Piped input with explicit argument list</li>
+</ul>
 <h3 id="setvalueatpath"><code>setValueAtPath</code><a class="headerlink" href="#setvalueatpath" title="Permanent link">&para;</a></h3>
-<p>The <code>setValueAtPath</code> function allows you to set a value at a path. When has failed, the template rendering will fail with an error message.</p>
+<p>The <code>setValueAtPath</code> function allows you to set a value at a dot-separated path. When has failed, the template rendering will fail with an error message.</p>
 <div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$value</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>setValueAtPath<span class="w"> </span><span class="s2">&quot;path.key&quot;</span><span class="w"> </span><span class="nv">$newValue</span><span class="w"> </span><span class="o">}}</span>
+</code></pre></div>
+<p>Since v0.42.3, numeric indices are supported for arrays:</p>
+<div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$value</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>setValueAtPath<span class="w"> </span><span class="s2">&quot;items.0.name&quot;</span><span class="w"> </span><span class="s2">&quot;first-item&quot;</span><span class="w"> </span><span class="o">}}</span>
 </code></pre></div>
 <h3 id="requiredenv"><code>requiredEnv</code><a class="headerlink" href="#requiredenv" title="Permanent link">&para;</a></h3>
 <p>The <code>requiredEnv</code> function allows you to declare a particular environment variable as required for template rendering.
