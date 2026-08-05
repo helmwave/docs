@@ -9,6 +9,6 @@ releases:
   - name: app
     chart: bitnami/nginx
     namespace: test
-    wait: true
+    wait: watcher
     values:
       - values-secret.yaml

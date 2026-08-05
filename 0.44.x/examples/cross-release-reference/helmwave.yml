@@ -7,7 +7,7 @@ repositories:
 
 .options: &options
   namespace: my-namespace
-  wait: true
+  wait: watcher
 
 releases:
   # redis is built first (no dependencies)

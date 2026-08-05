@@ -5,7 +5,7 @@ repositories:
 .options: &options
   namespace: ips
   create_namespace: true
-  wait: true
+  wait: watcher
 
 releases:
   - name: hello
