@@ -803,6 +803,20 @@ You're not viewing the latest version.
   
   
     <li class="md-nav__item">
+      <a href="../cross-release-reference/" class="md-nav__link">
+        Cross-release reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../pass-git-commit/" class="md-nav__link">
         Restart pods via git-commit
       </a>
@@ -1210,9 +1224,40 @@ You're not viewing the latest version.
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Values in Values
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Values in Values
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cross-release-values" class="md-nav__link">
+    Cross-release values
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1328,6 +1373,21 @@ You're not viewing the latest version.
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cross-release-values" class="md-nav__link">
+    Cross-release values
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1417,6 +1477,15 @@ values file for each release. We use <code>getValues</code> function to referenc
 <span class="w">  </span><span class="nt">podLabels</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-29 19:06:12.135011 +0400 +04 m=+0.142734251</span>
 </code></pre></div>
+<h2 id="cross-release-values">Cross-release values<a class="headerlink" href="#cross-release-values" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.43.0"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"/></svg></span> v0.43.0</a></p>
+</blockquote>
+<p>Starting from v0.43.0, <code>getValues</code> also supports fetching rendered values from depending releases.
+The depending release must be declared in <code>depends_on</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$redisValues</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getValues &quot;redis@my-namespace&quot; &quot;values/redis.yml&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<p>See <a href="../cross-release-reference/">Cross-release reference</a> for a complete example.</p>
 
 
   

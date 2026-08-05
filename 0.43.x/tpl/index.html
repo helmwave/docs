@@ -762,8 +762,22 @@ You're not viewing the latest version.
 </li>
         
           <li class="md-nav__item">
+  <a href="#getplan" class="md-nav__link">
+    getPlan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getvalues" class="md-nav__link">
     getValues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmanifests" class="md-nav__link">
+    getManifests
   </a>
   
 </li>
@@ -922,6 +936,20 @@ You're not viewing the latest version.
     <li class="md-nav__item">
       <a href="../examples/single-app-multi-envs/" class="md-nav__link">
         Single app multi envs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/cross-release-reference/" class="md-nav__link">
+        Cross-release reference
       </a>
     </li>
   
@@ -1539,8 +1567,22 @@ You're not viewing the latest version.
 </li>
         
           <li class="md-nav__item">
+  <a href="#getplan" class="md-nav__link">
+    getPlan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getvalues" class="md-nav__link">
     getValues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmanifests" class="md-nav__link">
+    getManifests
   </a>
   
 </li>
@@ -1649,14 +1691,42 @@ If the environment variable is unset or empty, the template rendering will fail 
 <p>The <code>hasKey</code> function allows you to check if key exists in the value. Dot-separated key will recurse. On failure, the template rendering will fail with an error message.</p>
 <div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$exists</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="nv">$value</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>hasKey<span class="w"> </span><span class="s2">&quot;path.key&quot;</span><span class="w"> </span><span class="o">}}</span>
 </code></pre></div>
+<h3 id="getplan"><code>getPlan</code><a class="headerlink" href="#getplan" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.43.0"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"/></svg></span> v0.43.0</a></p>
+</blockquote>
+<p>The <code>getPlan</code> function returns the entire plan configuration as a map. This allows values to access any release's <code>store</code> field or other configuration.</p>
+<div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$plan</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span>getPlan<span class="w"> </span><span class="o">}}</span>
+<span class="o">{{</span><span class="w"> </span><span class="nv">$redis</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span>index<span class="w"> </span><span class="nv">$plan</span>.releases<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">}}</span>
+<span class="o">{{</span><span class="w"> </span><span class="nv">$redis</span>.store.someKey<span class="w"> </span><span class="o">}}</span>
+</code></pre></div>
+<p><a href="../examples/cross-release-reference/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.5 5A1.5 1.5 0 0 0 7 6.5 1.5 1.5 0 0 0 8.5 8 1.5 1.5 0 0 0 10 6.5 1.5 1.5 0 0 0 8.5 5M10 2a5 5 0 0 1 5 5c0 1.7-.85 3.2-2.14 4.1 1.58.15 3.36.51 5.14 1.4 3 1.5 4-.5 4-.5s-1 9-7 9H9s-5 0-5-5c0-3 3-4 2-6-4 0-4-3.5-4-3.5 1 .5 2.24.5 3 .15A5.02 5.02 0 0 1 10 2Z"/></svg></span> example</a></p>
 <h3 id="getvalues"><code>getValues</code><a class="headerlink" href="#getvalues" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.36.0"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"/></svg></span> v0.36.0</a></p>
+<p>Enhanced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.43.0"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"/></svg></span> v0.43.0</a></p>
 </blockquote>
-<p>The <code>getValues</code> function returns the contents of another values file of the current release parsed as YAML. On failure, the template rendering will fail with an error message.</p>
+<p>The <code>getValues</code> function returns the contents of a values file parsed as YAML. On failure, the template rendering will fail with an error message.</p>
+<p><strong>Single argument</strong> - get values from another values file of the current release:</p>
 <div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$common</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span>getValues<span class="w"> </span><span class="s2">&quot;common.yaml&quot;</span><span class="w"> </span><span class="o">}}</span>
 </code></pre></div>
+<p><strong>Two arguments</strong> - get rendered values from a depending release (v0.43.0+). The release must be declared in <code>depends_on</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$redisValues</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span>getValues<span class="w"> </span><span class="s2">&quot;redis@my-namespace&quot;</span><span class="w"> </span><span class="s2">&quot;values.yaml&quot;</span><span class="w"> </span><span class="o">}}</span>
+</code></pre></div>
 <p><a href="../examples/values-dependencies/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.5 5A1.5 1.5 0 0 0 7 6.5 1.5 1.5 0 0 0 8.5 8 1.5 1.5 0 0 0 10 6.5 1.5 1.5 0 0 0 8.5 5M10 2a5 5 0 0 1 5 5c0 1.7-.85 3.2-2.14 4.1 1.58.15 3.36.51 5.14 1.4 3 1.5 4-.5 4-.5s-1 9-7 9H9s-5 0-5-5c0-3 3-4 2-6-4 0-4-3.5-4-3.5 1 .5 2.24.5 3 .15A5.02 5.02 0 0 1 10 2Z"/></svg></span> example</a></p>
+<h3 id="getmanifests"><code>getManifests</code><a class="headerlink" href="#getmanifests" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.43.0"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"/></svg></span> v0.43.0</a></p>
+</blockquote>
+<p>The <code>getManifests</code> function returns rendered manifests of a depending release as an array of objects. The release must be declared in <code>depends_on</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">{{</span><span class="w"> </span><span class="nv">$manifests</span><span class="w"> </span>:<span class="o">=</span><span class="w"> </span>getManifests<span class="w"> </span><span class="s2">&quot;redis@my-namespace&quot;</span><span class="w"> </span><span class="o">}}</span>
+<span class="o">{{</span>-<span class="w"> </span>range<span class="w"> </span><span class="nv">$manifests</span><span class="w"> </span><span class="o">}}</span>
+<span class="o">{{</span>-<span class="w"> </span><span class="k">if</span><span class="w"> </span>eq<span class="w"> </span>.kind<span class="w"> </span><span class="s2">&quot;Secret&quot;</span><span class="w"> </span><span class="o">}}</span>
+redis_password:<span class="w"> </span><span class="o">{{</span><span class="w"> </span>index<span class="w"> </span>.data<span class="w"> </span><span class="s2">&quot;redis-password&quot;</span><span class="w"> </span><span class="o">}}</span>
+<span class="o">{{</span>-<span class="w"> </span>end<span class="w"> </span><span class="o">}}</span>
+<span class="o">{{</span>-<span class="w"> </span>end<span class="w"> </span><span class="o">}}</span>
+</code></pre></div>
+<p><a href="../examples/cross-release-reference/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.5 5A1.5 1.5 0 0 0 7 6.5 1.5 1.5 0 0 0 8.5 8 1.5 1.5 0 0 0 10 6.5 1.5 1.5 0 0 0 8.5 5M10 2a5 5 0 0 1 5 5c0 1.7-.85 3.2-2.14 4.1 1.58.15 3.36.51 5.14 1.4 3 1.5 4-.5 4-.5s-1 9-7 9H9s-5 0-5-5c0-3 3-4 2-6-4 0-4-3.5-4-3.5 1 .5 2.24.5 3 .15A5.02 5.02 0 0 1 10 2Z"/></svg></span> example</a></p>
 
 
   
