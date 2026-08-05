@@ -154,6 +154,22 @@ The `getValues` function returns the contents of a values file parsed as YAML. O
 
 [:material-duck: example](examples/values-dependencies/README.md)
 
+### `getTags`
+
+> Introduced in [:material-tag: v0.43.0](https://github.com/helmwave/helmwave/releases/tag/v0.43.0)
+
+The `getTags` function returns the tags of the current build as a list: the tags passed via
+[`--tags`](cli.md#build), or every tag in the plan when none were passed.
+
+Useful to render values differently depending on what is being deployed:
+
+```shell
+{{- if getTags | len | eq 1 | and (getTags | first | eq "crd") }}
+prometheusOperator:
+  enabled: false
+{{- end }}
+```
+
 ### `getManifests`
 
 > Introduced in [:material-tag: v0.43.0](https://github.com/helmwave/helmwave/releases/tag/v0.43.0)
