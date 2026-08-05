@@ -375,6 +375,16 @@ You're not viewing the latest version.
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#-yml-templater">
+    --yml-templater
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-build-templater">
+    --build-templater
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#-tags">
     --tags
   </a>
@@ -968,6 +978,16 @@ You're not viewing the latest version.
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#-yml-templater">
+    --yml-templater
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-build-templater">
+    --build-templater
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#-tags">
     --tags
   </a>
@@ -1387,6 +1407,20 @@ You can pass <code>--yml</code> flag into <a href="#build"><code>build</code></a
 <span class="o">[</span>🙃<span class="w"> </span>aka<span class="w"> </span>INFO<span class="o">]</span>:<span class="w"> </span>📄<span class="w"> </span>YML<span class="w"> </span>is<span class="w"> </span>ready!
 <span class="w">        </span>build<span class="w"> </span>plan<span class="w"> </span>with<span class="w"> </span>next<span class="w"> </span>command:<span class="w"> </span>helmwave<span class="w"> </span>build<span class="w"> </span>-f<span class="w"> </span>helmwave.yml
 </code></pre></div>
+<h3 id="-yml-templater"><code>--yml-templater</code><a class="headerlink" href="#-yml-templater" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.43.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.43.0</a></p>
+</blockquote>
+<p>You can define template engine only for rendering <code>helmwave.yml.tpl</code> --&gt; <code>helmwave.yml</code>.
+It overrides <a href="#-templater"><code>--templater</code></a> for that step.</p>
+<p>Please visit <a href="../tpl">templating reference</a> for more details.</p>
+<h3 id="-build-templater"><code>--build-templater</code><a class="headerlink" href="#-build-templater" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>Introduced in <a href="https://github.com/helmwave/helmwave/releases/tag/v0.43.0"><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 7A1.5 1.5 0 0 1 4 5.5 1.5 1.5 0 0 1 5.5 4 1.5 1.5 0 0 1 7 5.5 1.5 1.5 0 0 1 5.5 7m15.91 4.58-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59.55 0 1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.56-.23-1.06-.59-1.42Z"></path></svg></span> v0.43.0</a></p>
+</blockquote>
+<p>You can define template engine only for rendering <code>values</code> files during build.
+It overrides <a href="#-templater"><code>--templater</code></a> for that step.</p>
+<p>Please visit <a href="../tpl">templating reference</a> for more details.</p>
 <h3 id="-tags"><code>--tags</code><a class="headerlink" href="#-tags" title="Permanent link">¶</a></h3>
 <p>Allow to filter releases by tags. You can use this flag multiple times.</p>
 <p>It works with <code>--match-all-tags</code> flag and <a href="../yaml/#tags"><code>tags</code></a> field in <code>helmwave.yaml</code> file.</p>
@@ -1934,18 +1968,18 @@ $<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><sp
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>helmwave<span class="w"> </span>--version<span class="w">  </span>
-helmwave<span class="w"> </span>version<span class="w"> </span><span class="m">0</span>.41.4
+helmwave<span class="w"> </span>version<span class="w"> </span><span class="m">0</span>.43.0
 
 $<span class="w"> </span>helmwave<span class="w"> </span>-v
-helmwave<span class="w"> </span>version<span class="w"> </span><span class="m">0</span>.41.4
+helmwave<span class="w"> </span>version<span class="w"> </span><span class="m">0</span>.43.0
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>helmwave<span class="w"> </span>version
-<span class="m">0</span>.41.4
+<span class="m">0</span>.43.0
 
 $<span class="w"> </span>helmwave<span class="w"> </span>ver
-<span class="m">0</span>.41.4
+<span class="m">0</span>.43.0
 </code></pre></div>
 </div>
 </div>
