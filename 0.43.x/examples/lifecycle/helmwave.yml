@@ -1,0 +1,64 @@
+# Global hooks
+lifecycle:
+  pre_build:
+    - cmd: "ls"
+      args: ["-l", "-a"]
+      show: false
+    - cmd: bash
+      args:
+        - -c
+        - echo "global ${HELMWAVE_LIFECYCLE_TYPE}"
+  post_build:
+    - echo "global post_build"
+  pre_up:
+    - echo "global pre_up"
+  post_up:
+    - echo "global post_up"
+  pre_down:
+    - echo "global pre_down"
+  post_down:
+    - echo "global post_down"
+  pre_rollback:
+    - echo "global pre_rollback"
+  post_rollback:
+    - echo "global post_rollback"
+
+registries:
+  - host: registry-1.docker.io
+
+.options: &options
+  namespace: my-namespace
+  create_namespace: true
+  offline_kube_version: 1.22.0
+  wait: true
+  timeout: 1m
+  max_history: 3 # best practice
+  chart:
+    # For example, we will use bitnami/nats chart, because it's small and fast
+    name: oci://registry-1.docker.io/bitnamicharts/nats
+    version: 7.8.3 # best practice
+
+releases:
+  - name: nats
+    <<: *options
+    # Special hooks for nats release
+    lifecycle:
+      pre_up:
+        - echo "pre_up for nats"
+      post_up:
+        - echo "post_up for nats"
+      pre_build:
+        - cmd: bash
+          args:
+            - -c
+            - echo "${HELMWAVE_LIFECYCLE_TYPE} for ${HELMWAVE_LIFECYCLE_RELEASE_UNIQNAME}"
+      post_build:
+        - echo "post_build for nats"
+      pre_down:
+        - echo "pre_down for nats"
+      post_down:
+        - echo "post_down for nats"
+      pre_rollback:
+        - echo "pre_rollback for nats"
+      post_rollback:
+        - echo "post_rollback for nats"

@@ -1,0 +1,2 @@
+podAnnotations:
+  gitCommit: {{ requiredEnv "CI_COMMIT_SHORT_SHA" | quote }}

@@ -1,0 +1,8 @@
+lifecycle:
+  pre_build:
+    - git clone https://github.com/helmwave/unit-test-oci.git
+
+releases:
+  - name: test
+    namespace: test
+    chart: ./unit-test-oci
