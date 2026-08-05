@@ -30,7 +30,7 @@ registries:
   namespace: my-namespace
   create_namespace: true
   offline_kube_version: 1.22.0
-  wait: true
+  wait: watcher
   timeout: 1m
   max_history: 3 # best practice
   chart:

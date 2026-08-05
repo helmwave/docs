@@ -9,7 +9,7 @@ repositories:
 .options: &options
   namespace: {{ requiredEnv "NS" }}
   create_namespace: true
-  wait: true
+  wait: watcher
 
 
 releases:

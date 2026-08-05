@@ -91,11 +91,13 @@ releases:
       disable_hooks: false
       disable_openapi_validation: false
       force: false
+      force_conflicts: false
+      server_side_apply: auto
+      post_render_strategy: combined
       enable_dns: false
-      recreate: false
       reset_values: false
       reuse_values: false
       skip_crds: false
       sub_notes: false
-      wait: true
+      wait: watcher
       wait_for_jobs: true
