@@ -1,0 +1,3 @@
+connection:
+  host: redis-master
+  port: {{ .Release.store.port }}

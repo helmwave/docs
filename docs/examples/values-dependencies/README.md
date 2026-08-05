@@ -39,3 +39,15 @@ Rendered values files will look like that:
 {% include "./rendered/redis/redis.yml" %}
 ```
 
+## Cross-release values
+
+> Introduced in [:material-tag: v0.43.0](https://github.com/helmwave/helmwave/releases/tag/v0.43.0)
+
+Starting from v0.43.0, `getValues` also supports fetching rendered values from depending releases.
+The depending release must be declared in `depends_on`.
+
+```yaml
+{{ $redisValues := getValues "redis@my-namespace" "values/redis.yml" }}
+```
+
+See [Cross-release reference](../cross-release-reference/README.md) for a complete example.
