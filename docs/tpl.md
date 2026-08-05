@@ -52,10 +52,31 @@ The :simple-yaml: `toYaml` function allows you to convert a value to YAML string
 
 ### `fromYaml`
 
-The `fromYaml` function allows you to convert a YAML string to a value. When has failed, the template rendering will fail with an error message.
+The `fromYaml` function allows you to convert a YAML string to a value (map). When has failed, the template rendering will fail with an error message.
 
 ```shell
 {{ $value :=  $yamlString | fromYaml }}
+```
+
+### `fromYamlArray`
+
+> Introduced in [:material-tag: v0.42.3](https://github.com/helmwave/helmwave/releases/tag/v0.42.3)
+
+The `fromYamlArray` function allows you to parse a YAML array (single document) into a list. When has failed, the template rendering will fail with an error message.
+
+```shell
+{{ $list := "[1, 2, 3]" | fromYamlArray }}
+{{ $list := "- a\n- b\n- c" | fromYamlArray }}
+```
+
+### `fromYamlAll`
+
+> Introduced in [:material-tag: v0.42.3](https://github.com/helmwave/helmwave/releases/tag/v0.42.3)
+
+The `fromYamlAll` function allows you to parse multiple YAML documents (separated by `---`) into a list. When has failed, the template rendering will fail with an error message.
+
+```shell
+{{ $docs := "---\napiVersion: v1\n---\nkind: ConfigMap" | fromYamlAll }}
 ```
 
 ### `exec`
@@ -63,15 +84,35 @@ The `fromYaml` function allows you to convert a YAML string to a value. When has
 The `exec` function allows you to run a command, returning the stdout of the command. When the command fails, the template rendering will fail with an error message.
 
 ```shell
-{{ $cmdOutpot := exec "./mycmd" (list "arg1" "arg2" "--flag1") }}
+{{ $cmdOutput := exec "./mycmd" (list "arg1" "arg2" "--flag1") }}
 ```
+
+Since v0.42.3, can be called in 4 ways:
+
+```shell
+{{ exec "command arg1 arg2" }}
+{{ exec "command" (list "arg1" "arg2") }}
+{{ "input" | exec "command arg1 arg2" }}
+{{ "input" | exec "command" (list "arg1" "arg2") }}
+```
+
+- Command string with arguments (split by shell-like rules)
+- Command with explicit argument list
+- Piped input with command string
+- Piped input with explicit argument list
 
 ### `setValueAtPath`
 
-The `setValueAtPath` function allows you to set a value at a path. When has failed, the template rendering will fail with an error message.
+The `setValueAtPath` function allows you to set a value at a dot-separated path. When has failed, the template rendering will fail with an error message.
 
 ```shell
 {{ $value | setValueAtPath "path.key" $newValue }}
+```
+
+Since v0.42.3, numeric indices are supported for arrays:
+
+```shell
+{{ $value | setValueAtPath "items.0.name" "first-item" }}
 ```
 
 ### `requiredEnv`
