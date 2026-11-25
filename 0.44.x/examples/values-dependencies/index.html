@@ -1414,7 +1414,7 @@ You're not viewing the latest version.
 
 <h1 id="values-dependencies">Values dependencies<a class="headerlink" href="#values-dependencies" title="Permanent link">&para;</a></h1>
 <p>Sometimes we need to include values from another values file. In this case we can use <code>getValues</code> function.</p>
-<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">dependencies&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">"Example:</span><span class="nv"> </span><span class="s">values</span><span class="nv"> </span><span class="s">dependencies"</span>
 <span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.44.4</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
@@ -1444,14 +1444,14 @@ You're not viewing the latest version.
 <span class="w">  </span><span class="nt">podLabels</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">now</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">values/nginx.yml</span><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$common</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getValues &quot;values/common.yml&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<div class="highlight"><span class="filename">values/nginx.yml</span><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$common</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getValues "values/common.yml"</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 
 <span class="nt">podLabels</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- range $key</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">$value</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= $common.global.podLabels</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 <span class="w">  </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$key</span><span class="w"> </span><span class="p p-Indicator">}}:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$value</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 <span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- end</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">values/redis.yml</span><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$common</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getValues &quot;values/common.yml&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<div class="highlight"><span class="filename">values/redis.yml</span><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$common</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getValues "values/common.yml"</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 
 <span class="nt">master</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">podLabels</span><span class="p">:</span>
@@ -1483,7 +1483,7 @@ values file for each release. We use <code>getValues</code> function to referenc
 </blockquote>
 <p>Starting from v0.43.0, <code>getValues</code> also supports fetching rendered values from depending releases.
 The depending release must be declared in <code>depends_on</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$redisValues</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getValues &quot;redis@my-namespace&quot; &quot;values/redis.yml&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$redisValues</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= getValues "redis@my-namespace" "values/redis.yml"</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 </code></pre></div>
 <p>See <a href="../cross-release-reference/">Cross-release reference</a> for a complete example.</p>
 

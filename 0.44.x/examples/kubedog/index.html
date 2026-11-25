@@ -1385,8 +1385,8 @@ For more information, see the <a href="../../anno/#kubedogs">annotation's docume
 <span class="m">1</span><span class="w"> </span>directory,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
 </code></pre></div>
 <p>Create <code>helmwave.yml</code></p>
-<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">kubedog&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.44.4&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">"Example:</span><span class="nv"> </span><span class="s">kubedog"</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.44.4"</span>
 
 
 <span class="nt">registries</span><span class="p">:</span>
@@ -1411,12 +1411,12 @@ For more information, see the <a href="../../anno/#kubedogs">annotation's docume
 <p>Then you should create <code>values.yml</code></p>
 <div class="highlight"><span class="filename">values.yml</span><pre><span></span><code><span class="c1"># Uncommented it if you need</span>
 <span class="nt">commonAnnotations</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">helmwave.app/show-service-messages</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
-<span class="w">  </span><span class="nt">helmwave.app/show-logs-only-for-containers</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;redis&quot;</span>
+<span class="w">  </span><span class="nt">helmwave.app/show-service-messages</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">  </span><span class="nt">helmwave.app/show-logs-only-for-containers</span><span class="p">:</span><span class="w"> </span><span class="s">"redis"</span>
 
 <span class="nt">podAnnotations</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">datetime</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">now</span><span class="w"> </span><span class="p p-Indicator">}}</span>
-<span class="w">  </span><span class="nt">blame</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;USER&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="nt">blame</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env "USER"</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 
 <span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 

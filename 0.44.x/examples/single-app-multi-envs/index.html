@@ -1380,19 +1380,19 @@ helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class=
     ├── qa.yml
     └── stage.yml
 </code></pre></div>
-<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">single</span><span class="nv"> </span><span class="s">app</span><span class="nv"> </span><span class="s">multi</span><span class="nv"> </span><span class="s">envs&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.44.4&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">"Example:</span><span class="nv"> </span><span class="s">single</span><span class="nv"> </span><span class="s">app</span><span class="nv"> </span><span class="s">multi</span><span class="nv"> </span><span class="s">envs"</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.44.4"</span>
 
 <span class="nt">releases</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-release</span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-chart-repo/my-chart-app</span>
-<span class="w">    </span><span class="c1"># yaml says, &quot;Who is the last one is right.&quot;</span>
+<span class="w">    </span><span class="c1"># yaml says, "Who is the last one is right."</span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">      </span><span class="c1"># Default</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values/_.yml</span>
 <span class="w">      </span><span class="c1"># For specific ENVIRONMENT</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values/{{ requiredEnv &quot;CI_ENVIRONMENT_NAME&quot; }}.yml</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values/{{ requiredEnv "CI_ENVIRONMENT_NAME" }}.yml</span>
 <span class="w">    </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><code>values/_.yml</code></label><label for="__tabbed_1_2"><code>values/prod.yml</code></label><label for="__tabbed_1_3"><code>values/qa.yml</code></label><label for="__tabbed_1_4"><code>values/stage.yml</code></label></div>
@@ -1424,14 +1424,14 @@ helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class=
 helmwave<span class="w"> </span>yml
 </code></pre></div>
 <p>You will get next <code>helmwave.yml</code>:</p>
-<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">single</span><span class="nv"> </span><span class="s">app</span><span class="nv"> </span><span class="s">multi</span><span class="nv"> </span><span class="s">envs&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.44.4&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">"Example:</span><span class="nv"> </span><span class="s">single</span><span class="nv"> </span><span class="s">app</span><span class="nv"> </span><span class="s">multi</span><span class="nv"> </span><span class="s">envs"</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.44.4"</span>
 
 <span class="nt">releases</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-release</span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-chart-repo/my-chart-app</span>
-<span class="w">    </span><span class="c1"># yaml says, &quot;Who is the last one is right.&quot;</span>
+<span class="w">    </span><span class="c1"># yaml says, "Who is the last one is right."</span>
 <span class="w">    </span><span class="nt">values</span><span class="p">:</span>
 <span class="w">      </span><span class="c1"># Default</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values/_.yml</span>

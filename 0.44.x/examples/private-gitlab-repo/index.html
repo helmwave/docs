@@ -1376,20 +1376,20 @@ You're not viewing the latest version.
 
 <span class="m">1</span><span class="w"> </span>directory,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
 </code></pre></div>
-<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">gitlab</span><span class="nv"> </span><span class="s">private</span><span class="nv"> </span><span class="s">repo&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.44.4&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">"Example:</span><span class="nv"> </span><span class="s">gitlab</span><span class="nv"> </span><span class="s">private</span><span class="nv"> </span><span class="s">repo"</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.44.4"</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Docs: https://docs.gitlab.com/ee/user/packages/helm_repository/</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_API_V4_URL&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">/projects/{{env &quot;CI_PROJECT_ID&quot; }}/packages/helm/stable</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_PROJECT_TITLE&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env "CI_API_V4_URL"</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">/projects/{{env "CI_PROJECT_ID" }}/packages/helm/stable</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env "CI_PROJECT_TITLE"</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 <span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab-ci-token</span>
-<span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_JOB_TOKEN&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env "CI_JOB_TOKEN"</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 
 
 <span class="nt">releases</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span>
-<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env &quot;CI_PROJECT_TITLE&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">/my-chart</span>
+<span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">env "CI_PROJECT_TITLE"</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">/my-chart</span>
 <span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
 <span class="w">    </span><span class="nt">create_namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
@@ -1397,7 +1397,7 @@ You're not viewing the latest version.
 <span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 <span class="w">  </span><span class="nt">image</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/helmwave/helmwave:0.44.4</span>
-<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">printenv | grep HELMWAVE</span>
 <span class="w">  </span><span class="nt">script</span><span class="p">:</span>

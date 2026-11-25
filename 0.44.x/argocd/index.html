@@ -1464,7 +1464,7 @@ So features like <a href="examples/kubedog">kubedog</a> and <a href="examples/mo
 <span class="w">    </span><span class="nt">plugins</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">helmwave-plugin</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">generate</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&quot;/bin/ash&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;-c&quot;</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">"/bin/ash"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-c"</span><span class="w"> </span><span class="p p-Indicator">]</span>
 <span class="w">          </span><span class="nt">args</span><span class="p">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <span class="w">              </span><span class="no">helmwave build &amp;&gt; /tmp/log.txt &amp;&amp; find .helmwave/manifest -type f | xargs cat</span>

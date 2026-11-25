@@ -1440,8 +1440,8 @@ You're not viewing the latest version.
 └──<span class="w"> </span>vars.yaml
 </code></pre></div>
 <p><strong>Step 1. Create <code>helmwave.yml.tpl</code></strong></p>
-<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">apps</span><span class="nv"> </span><span class="s">per</span><span class="nv"> </span><span class="s">own</span><span class="nv"> </span><span class="s">namespace&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.44.4&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml.tpl</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">"Example:</span><span class="nv"> </span><span class="s">apps</span><span class="nv"> </span><span class="s">per</span><span class="nv"> </span><span class="s">own</span><span class="nv"> </span><span class="s">namespace"</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.44.4"</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span>
@@ -1465,22 +1465,22 @@ You're not viewing the latest version.
 
 
 <span class="nt">releases</span><span class="p">:</span>
-<span class="p p-Indicator">{{</span><span class="nv">- with readFile &quot;vars.yaml&quot; | fromYaml | get &quot;releases&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="p p-Indicator">{{</span><span class="nv">- with readFile "vars.yaml" | fromYaml | get "releases"</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 <span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">range $v</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="nv">= .</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 
 <span class="c1">#################################</span>
 <span class="c1">#                               #</span>
-<span class="c1">#      {{ $v | get &quot;name&quot; }}</span>
+<span class="c1">#      {{ $v | get "name" }}</span>
 <span class="c1">#                               #</span>
 <span class="c1">#################################</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$v | get &quot;name&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$v | get "name"</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 <span class="w">  </span><span class="nt">chart</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$v | get &quot;repo&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">/{{ $v | get &quot;name&quot; }}</span>
-<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$v | get &quot;version&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$v | get &quot;name&quot;</span><span class="w"> </span><span class="p p-Indicator">}}</span>
-<span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[{{</span><span class="w"> </span><span class="nv">$v | get &quot;name&quot;</span><span class="w"> </span><span class="p p-Indicator">}}]</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$v | get "repo"</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">/{{ $v | get "name" }}</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$v | get "version"</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">$v | get "name"</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[{{</span><span class="w"> </span><span class="nv">$v | get "name"</span><span class="w"> </span><span class="p p-Indicator">}}]</span>
 <span class="w">  </span><span class="nt">values</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values/{{ $v | get &quot;name&quot; }}.yml</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values/{{ $v | get "name" }}.yml</span>
 <span class="w">  </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*options</span>
 
 <span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">end</span><span class="w"> </span><span class="p p-Indicator">}}</span>
@@ -1509,8 +1509,8 @@ You're not viewing the latest version.
 <div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>yml
 </code></pre></div>
 <p>You will get it</p>
-<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">apps</span><span class="nv"> </span><span class="s">per</span><span class="nv"> </span><span class="s">own</span><span class="nv"> </span><span class="s">namespace&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.44.4&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">"Example:</span><span class="nv"> </span><span class="s">apps</span><span class="nv"> </span><span class="s">per</span><span class="nv"> </span><span class="s">own</span><span class="nv"> </span><span class="s">namespace"</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.44.4"</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span>
@@ -1622,7 +1622,7 @@ helmwave<span class="w"> </span>up
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
 <span class="w">  </span><span class="nt">image</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/helmwave/helmwave:0.44.4</span>
-<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">printenv | grep HELMWAVE</span>
 <span class="w">  </span><span class="nt">script</span><span class="p">:</span>

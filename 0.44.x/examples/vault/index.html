@@ -1423,8 +1423,8 @@ You're not viewing the latest version.
 <div class="highlight"><pre><span></span><code>vault<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>secret/test<span class="w"> </span><span class="nv">hello</span><span class="o">=</span>world<span class="w"> </span>
 </code></pre></div>
 <p><strong>Step 2. Create <code>helmwave.yml</code></strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">vault&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.44.4&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">"Example:</span><span class="nv"> </span><span class="s">vault"</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.44.4"</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span>
@@ -1439,10 +1439,10 @@ You're not viewing the latest version.
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values-secret.yaml</span>
 </code></pre></div>
 <p><strong>Step 3. Create <code>values-secret.yaml</code></strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># [[ defineDatasource &quot;vault&quot; &quot;vault:///secret/data/test&quot; ]] # `data` is required for vault kv2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># [[ defineDatasource "vault" "vault:///secret/data/test" ]] # `data` is required for vault kv2</span>
 
-<span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="w"> </span><span class="nv">(ds &quot;vault&quot;).data.hello</span><span class="w"> </span><span class="p p-Indicator">]]</span>
-<span class="nt">revesion_of_secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="w"> </span><span class="nv">(ds &quot;vault&quot;).metadata.version</span><span class="w"> </span><span class="p p-Indicator">]]</span>
+<span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="w"> </span><span class="nv">(ds "vault").data.hello</span><span class="w"> </span><span class="p p-Indicator">]]</span>
+<span class="nt">revesion_of_secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="w"> </span><span class="nv">(ds "vault").metadata.version</span><span class="w"> </span><span class="p p-Indicator">]]</span>
 </code></pre></div>
 <p><strong>Step 4. Run <code>helmwave build --templater gomplate</code></strong></p>
 <p>You will get </p>
@@ -1454,8 +1454,8 @@ You're not viewing the latest version.
 <li>install gomplate binary</li>
 <li>run it in your console</li>
 </ol>
-<div class="highlight"><pre><span></span><code>gomplate<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;vault=vault+https:///secret/data/test&quot;</span><span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;{{(ds &quot;vault&quot;).metadata.version}}&#39;</span>
-gomplate<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;vault=vault+https:///secret/data/test&quot;</span><span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;{{(ds &quot;vault&quot;).data.hello}}&#39;</span>
+<div class="highlight"><pre><span></span><code>gomplate<span class="w"> </span>-d<span class="w"> </span><span class="s2">"vault=vault+https:///secret/data/test"</span><span class="w"> </span>-i<span class="w"> </span><span class="s1">'{{(ds "vault").metadata.version}}'</span>
+gomplate<span class="w"> </span>-d<span class="w"> </span><span class="s2">"vault=vault+https:///secret/data/test"</span><span class="w"> </span>-i<span class="w"> </span><span class="s1">'{{(ds "vault").data.hello}}'</span>
 </code></pre></div>
 <p>see gomplate docs <a href="https://gomplate.ca/">here</a></p>
 

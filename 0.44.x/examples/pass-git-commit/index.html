@@ -1375,8 +1375,8 @@ You're not viewing the latest version.
 
 <span class="m">1</span><span class="w"> </span>directory,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
 </code></pre></div>
-<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">pass</span><span class="nv"> </span><span class="s">git</span><span class="nv"> </span><span class="s">commit&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.44.4&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">"Example:</span><span class="nv"> </span><span class="s">pass</span><span class="nv"> </span><span class="s">git</span><span class="nv"> </span><span class="s">commit"</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.44.4"</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span>
@@ -1402,7 +1402,7 @@ You're not viewing the latest version.
 <p>We will pass pod annotations with  <code>values</code></p>
 <p>Suppose that <code>CI_COMMIT_SHORT_SHA</code> contains commit short sha hash.</p>
 <div class="highlight"><span class="filename">values.yml</span><pre><span></span><code><span class="nt">podAnnotations</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">gitCommit</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">requiredEnv &quot;CI_COMMIT_SHORT_SHA&quot; | quote</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">  </span><span class="nt">gitCommit</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">requiredEnv "CI_COMMIT_SHORT_SHA" | quote</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 </code></pre></div>
 <p><strong>Run</strong></p>
 <div class="highlight"><pre><span></span><code>helmwave<span class="w"> </span>build

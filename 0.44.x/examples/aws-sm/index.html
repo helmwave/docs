@@ -1376,11 +1376,11 @@ You're not viewing the latest version.
 <span class="m">1</span><span class="w"> </span>directory,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
 </code></pre></div>
 <p><strong>Step 1. Create next secret</strong></p>
-<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>secretsmanager<span class="w"> </span>create-secret<span class="w"> </span>--name<span class="w"> </span>hello/foobar<span class="w"> </span>--secret-string<span class="w"> </span><span class="s1">&#39;{&quot;foo&quot;:&quot;bar&quot;}&#39;</span>
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>secretsmanager<span class="w"> </span>create-secret<span class="w"> </span>--name<span class="w"> </span>hello/foobar<span class="w"> </span>--secret-string<span class="w"> </span><span class="s1">'{"foo":"bar"}'</span>
 </code></pre></div>
 <p><strong>Step 2. Create <code>helmwave.yml</code></strong></p>
-<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Example:</span><span class="nv"> </span><span class="s">aws</span><span class="nv"> </span><span class="s">secret</span><span class="nv"> </span><span class="s">manager&quot;</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.44.4&quot;</span>
+<div class="highlight"><span class="filename">helmwave.yml</span><pre><span></span><code><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="s">"Example:</span><span class="nv"> </span><span class="s">aws</span><span class="nv"> </span><span class="s">secret</span><span class="nv"> </span><span class="s">manager"</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"0.44.4"</span>
 
 <span class="nt">repositories</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span>
@@ -1394,9 +1394,9 @@ You're not viewing the latest version.
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values-secret.yaml</span>
 </code></pre></div>
 <p><strong>Step 3. Create <code>values-secret.yaml</code></strong></p>
-<div class="highlight"><span class="filename">values-secret.yaml</span><pre><span></span><code><span class="c1"># [[ defineDatasource &quot;aws&quot; &quot;aws+sm:///hello/foobar&quot; ]]</span>
+<div class="highlight"><span class="filename">values-secret.yaml</span><pre><span></span><code><span class="c1"># [[ defineDatasource "aws" "aws+sm:///hello/foobar" ]]</span>
 
-<span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;[[</span><span class="nv"> </span><span class="s">datasource</span><span class="nv"> </span><span class="s">&quot;aws&quot;</span><span class="nv"> </span><span class="s">]]&#39;</span>
+<span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="s">'[[</span><span class="nv"> </span><span class="s">datasource</span><span class="nv"> </span><span class="s">"aws"</span><span class="nv"> </span><span class="s">]]'</span>
 </code></pre></div>
 <p><strong>Step 4. Run <code>helmwave build --templater gomplate</code></strong></p>
 <p>You will get <code>secret: {"foo":"bar"}</code></p>
